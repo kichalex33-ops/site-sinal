@@ -1,0 +1,49 @@
+:root {
+  /* shell: navegação, arquivo, mídia, coleções, ferramentas */
+  --bg: #0b0e14;
+  --surface: #161b22;
+  --surface-2: #1c2128;
+  --border: #21262d;
+  --text: #e6edf3;
+  --muted: #8b949e;
+
+  /* marca — não muda entre modos */
+  --signal: #e8541d;
+  --signal-ink: #ffffff;
+
+  /* estado técnico (proveniência/integridade/estado editorial) */
+  --verified: #3fb950;
+  --warning: #d29922;
+  --contradiction: #f85149;
+
+  /* superfície de leitura ("a evidência parece papel") */
+  --paper: #f3f4ef;
+  --paper-2: #eef1e7;
+  --paper-text: #171a18;
+  --paper-text-2: #343936;
+  --paper-muted: #747a72;
+  --paper-border: #d6dad2;
+
+  /* camadas D/T/E, só usadas dentro de superfícies "paper" */
+  --documento: #2e6b4f;
+  --testemunho: #b98a1f;
+  --especulacao: #8a5fa8;
+
+  --radius-lg: 28px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+
+  --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --sans: "Inter", "Segoe UI", Arial, sans-serif;
+
+  --focus-ring: 0 0 0 3px rgba(232, 84, 29, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

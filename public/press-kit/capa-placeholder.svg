@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200">
+  <rect width="800" height="1200" fill="#eef1e7"/>
+  <rect x="20" y="20" width="760" height="1160" fill="none" stroke="#171a18" stroke-width="2"/>
+  <text x="400" y="560" font-family="Georgia, serif" font-size="56" fill="#171a18" text-anchor="middle">SINAL</text>
+  <text x="400" y="640" font-family="Georgia, serif" font-size="56" fill="#e8541d" text-anchor="middle">/RUÍDO</text>
+  <text x="400" y="1100" font-family="Arial, sans-serif" font-size="20" fill="#747a72" text-anchor="middle">Capa placeholder — substituir pela capa autorizada final</text>
+</svg>
