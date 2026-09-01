@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { page } from "../src/js/render/shell.js";
 import { caseCard, collectionCard, mediaCard } from "../src/js/render/cards.js";
-import { editorialBadge, provenanceBadge, integrityBadge, escapeHtml } from "../src/js/render/badges.js";
+import { editorialBadge, maturityBadge, provenanceBadge, integrityBadge, escapeHtml } from "../src/js/render/badges.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -226,6 +226,7 @@ function caseDossierPage(item) {
         <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:13px;color:var(--paper-muted)">
           <span>${escapeHtml(item.date)}</span><span>•</span><span>${escapeHtml(item.location)}</span><span>•</span>
           ${editorialBadge(item.status, item.statusLabel)}
+          ${maturityBadge(item.maturidade)}
         </div>
       </div>
 

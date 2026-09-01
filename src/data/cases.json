@@ -127,7 +127,8 @@
         "url": "https://www.scientificamerican.com/article/the-wow-signal-seti-mystery-might-at-last-be-solved/"
       }
     ],
-    "bookNote": "Este caso é o ponto de partida do romance SINAL/RUÍDO. O que a trama imagina ter acontecido com o sinal a partir daí é inteiramente ficcional — consulte a página do livro para a relação entre pesquisa factual e ficção, sem spoiler aqui."
+    "bookNote": "Este caso é o ponto de partida do romance SINAL/RUÍDO. O que a trama imagina ter acontecido com o sinal a partir daí é inteiramente ficcional — consulte a página do livro para a relação entre pesquisa factual e ficção, sem spoiler aqui.",
+    "maturidade": "dossie"
   },
   {
     "slug": "operacao-prato-colares",
@@ -223,7 +224,8 @@
         "url": "https://en.wikipedia.org/wiki/Opera%C3%A7%C3%A3o_Prato"
       }
     ],
-    "bookNote": "O romance usa o cenário real da região e o fato da existência do acervo como ponto de partida para uma investigação inventada. O que a equipe fictícia encontra ali não corresponde a nenhum documento real — veja a página do livro."
+    "bookNote": "O romance usa o cenário real da região e o fato da existência do acervo como ponto de partida para uma investigação inventada. O que a equipe fictícia encontra ali não corresponde a nenhum documento real — veja a página do livro.",
+    "maturidade": "dossie"
   },
   {
     "slug": "noite-oficial-dos-ovnis",
@@ -341,7 +343,8 @@
         "label": "CNN Brasil — Noite dos OVNIs: FAB perseguiu objetos voadores há 40 anos",
         "url": "https://www.cnnbrasil.com.br/ciencia/noite-dos-ovnis-fab-perseguiu-objetos-voadores-ha-40-anos-no-brasil/"
       }
-    ]
+    ],
+    "maturidade": "dossie"
   },
   {
     "slug": "varginha",
@@ -456,7 +459,8 @@
         "label": "Wikipedia (EN) — Varginha UFO incident",
         "url": "https://en.wikipedia.org/wiki/Varginha_UFO_incident"
       }
-    ]
+    ],
+    "maturidade": "dossie"
   },
   {
     "slug": "antonio-villas-boas",
@@ -523,7 +527,8 @@
         "qualidade": "Fonte primária",
         "label": "Relato e entrevista original de Antônio Villas-Boas"
       }
-    ]
+    ],
+    "maturidade": "registro"
   },
   {
     "slug": "ilha-da-trindade",
@@ -645,7 +650,8 @@
         "label": "Arquivo UFO Eurisko — As fotografias do OVNI na Ilha de Trindade",
         "url": "https://arquivoufo.eurisko.com.br/2017/08/31/as-fotografias-do-ovni-na-ilha-de-trindade/"
       }
-    ]
+    ],
+    "maturidade": "dossie"
   },
   {
     "slug": "roswell",
@@ -725,21 +731,26 @@
     "fontes": [
       {
         "qualidade": "Fonte institucional",
-        "label": "USAF — The Roswell Report: Fact vs. Fiction (1994)"
+        "label": "USAF — The Roswell Report: Fact vs. Fiction (1994)",
+        "url": "https://archive.org/details/DTIC_ADA326148"
       },
       {
         "qualidade": "Fonte institucional",
-        "label": "USAF — The Roswell Report: Case Closed (1997)"
+        "label": "USAF — The Roswell Report: Case Closed (1997)",
+        "url": "https://www.govinfo.gov/app/details/GOVPUB-D301-PURL-gpo92195"
       },
       {
         "qualidade": "Imprensa contemporânea",
-        "label": "Roswell Daily Record, 08·07·1947"
+        "label": "Roswell Daily Record, 08·07·1947",
+        "url": "https://commons.wikimedia.org/wiki/File:RoswellDailyRecordJuly8,1947.jpg"
       },
       {
         "qualidade": "Referência contextual",
-        "label": "Smithsonian Magazine / Encyclopaedia Britannica"
+        "label": "Smithsonian Magazine / Encyclopaedia Britannica",
+        "url": "https://www.smithsonianmag.com/smithsonian-institution/in-1947-high-altitude-balloon-crash-landed-roswell-aliens-never-left-180963917/"
       }
-    ]
+    ],
+    "maturidade": "dossie"
   },
   {
     "slug": "kenneth-arnold",
@@ -826,13 +837,16 @@
     "fontes": [
       {
         "qualidade": "Fonte primária",
-        "label": "Carta manuscrita de Kenneth Arnold à AAF Intelligence, 12·07·1947"
+        "label": "Carta manuscrita de Kenneth Arnold à AAF Intelligence, 12·07·1947",
+        "url": "https://commons.wikimedia.org/wiki/File:Arnold_AAF_document.jpg"
       },
       {
         "qualidade": "Referência contextual",
-        "label": "Wikipedia / History.com"
+        "label": "Wikipedia / History.com",
+        "url": "https://en.wikipedia.org/wiki/Kenneth_Arnold_UFO_sighting"
       }
-    ]
+    ],
+    "maturidade": "dossie"
   },
   {
     "slug": "washington-dc-1952",
@@ -913,7 +927,8 @@
     "fontes": [
       {
         "qualidade": "Fonte institucional",
-        "label": "Project Blue Book / USAF"
+        "label": "Project Blue Book / USAF",
+        "url": "https://www.archives.gov/research/military/air-force/ufos"
       },
       {
         "qualidade": "Imprensa contemporânea",
@@ -921,9 +936,11 @@
       },
       {
         "qualidade": "Investigação posterior",
-        "label": "Curtis Peebles, historiador do Project Blue Book"
+        "label": "Curtis Peebles, historiador do Project Blue Book",
+        "url": "https://archive.org/details/watchskieschroni0000peeb_k3q2"
       }
-    ]
+    ],
+    "maturidade": "dossie"
   },
   {
     "slug": "mcminnville-trent",
@@ -997,7 +1014,8 @@
     "fontes": [
       {
         "qualidade": "Artigo acadêmico",
-        "label": "Análise de William K. Hartmann — Condon Report (1968–1969)"
+        "label": "Análise de William K. Hartmann — Condon Report (1968–1969)",
+        "url": "https://archive.org/details/scientificstudyo0000cond"
       },
       {
         "qualidade": "Imprensa contemporânea",
@@ -1007,7 +1025,8 @@
         "qualidade": "Investigação posterior",
         "label": "Análises fotogramétricas céticas posteriores"
       }
-    ]
+    ],
+    "maturidade": "indexado"
   },
   {
     "slug": "betty-barney-hill",
@@ -1086,13 +1105,15 @@
     "fontes": [
       {
         "qualidade": "Entrevista/podcast",
-        "label": "\"The Interrupted Journey\", John G. Fuller (1966) — obra jornalística/best-seller, não acadêmica"
+        "label": "\"The Interrupted Journey\", John G. Fuller (1966) — obra jornalística/best-seller, não acadêmica",
+        "url": "https://openlibrary.org/books/OL24950008M/The_interrupted_journey"
       },
       {
         "qualidade": "Investigação posterior",
         "label": "Sessões do Dr. Benjamin Simon (hipnose regressiva)"
       }
-    ]
+    ],
+    "maturidade": "indexado"
   },
   {
     "slug": "malmstrom-afb",
@@ -1191,17 +1212,21 @@
     "fontes": [
       {
         "qualidade": "Fonte institucional",
-        "label": "Relatório desclassificado via FOIA, 341st Strategic Missile Wing"
+        "label": "Relatório desclassificado via FOIA, 341st Strategic Missile Wing",
+        "url": "https://www.theblackvault.com/documentarchive/ufo-case-malmstrom-afb-ufomissile-incident-march-16-1967/"
       },
       {
         "qualidade": "Entrevista/podcast",
-        "label": "Depoimentos públicos do ex-capitão Robert Salas"
+        "label": "Depoimentos públicos do ex-capitão Robert Salas",
+        "url": "https://abcnews.com/Technology/airmen-govt-clean-ufos/story?id=11738715"
       },
       {
         "qualidade": "Imprensa contemporânea",
-        "label": "Cobertura jornalística da alegação de 2025 (EMP) — não confirmada em fonte primária"
+        "label": "Cobertura jornalística da alegação de 2025 (EMP) — não confirmada em fonte primária",
+        "url": "https://thehill.com/opinion/national-security/5381851-did-the-pentagon-spread-false-ufo-stories-were-skeptical/"
       }
-    ]
+    ],
+    "maturidade": "dossie"
   },
   {
     "slug": "incidente-de-teera",
@@ -1286,9 +1311,11 @@
     "fontes": [
       {
         "qualidade": "Fonte primária",
-        "label": "Relatório da Defense Intelligence Agency, desclassificado via FOIA em 31·08·1977"
+        "label": "Relatório da Defense Intelligence Agency, desclassificado via FOIA em 31·08·1977",
+        "url": "https://www.theblackvault.com/casefiles/the-1976-iran-incident/"
       }
-    ]
+    ],
+    "maturidade": "dossie"
   },
   {
     "slug": "rendlesham-forest",
@@ -1377,13 +1404,16 @@
     "fontes": [
       {
         "qualidade": "Fonte primária",
-        "label": "Memorando \"Unexplained Lights\", Ten.-Cel. Charles Halt, 13·01·1981"
+        "label": "Memorando \"Unexplained Lights\", Ten.-Cel. Charles Halt, 13·01·1981",
+        "url": "https://discovery.nationalarchives.gov.uk/details/r/C10342055"
       },
       {
         "qualidade": "Fonte institucional",
-        "label": "Ministério da Defesa do Reino Unido (liberação do documento)"
+        "label": "Ministério da Defesa do Reino Unido (liberação do documento)",
+        "url": "https://discovery.nationalarchives.gov.uk/details/r/C10342055"
       }
-    ]
+    ],
+    "maturidade": "dossie"
   },
   {
     "slug": "onda-belga-petit-rechain",
@@ -1472,9 +1502,11 @@
       },
       {
         "qualidade": "Investigação posterior",
-        "label": "Confissão pública do autor da foto de Petit-Rechain (2011)"
+        "label": "Confissão pública do autor da foto de Petit-Rechain (2011)",
+        "url": "https://badufos.blogspot.com/2011/07/classic-ufo-photo-from-belgian-wave.html"
       }
-    ]
+    ],
+    "maturidade": "dossie"
   },
   {
     "slug": "phoenix-lights",
@@ -1484,7 +1516,7 @@
     "location": "Arizona, EUA",
     "status": "controverso",
     "statusLabel": "Explicação oficial cobre parte, não todo o relato",
-    "resumo": "Na noite de 13 de março de 1997, duas formações de luzes distintas foram relatadas por centenas de testemunhas em diferentes pontos do Arizona: uma formação em \"V\" cruzando o céu no início da noite, e uma segunda série de esferas luminosas estacionárias perto da Sierra Estrella, por volta das 22h — este último momento captado no vídeo de Michael Krzyston, a referência mais citada do caso. É um dos episódios de UAP com mais testemunhas simultâneas da história recente dos Estados Unidos. A explicação oficial cobre cada formação separadamente: a formação em \"V\" é atribuída a um esquadrão de aviões em voo formal, e as esferas estacionárias, a bengalas de iluminação lançadas por A-10 da Guarda Nacional Aérea do Arizona durante um exercício confirmado em Barry Goldwater Range naquela mesma noite. O que essas duas explicações não cobrem é a parcela relevante de testemunhas que descreve, em vez de luzes pontuais, um único objeto sólido e silencioso — relato incompatível com aviões em formação ou bengalas caindo, e que mantém o caso controverso mesmo entre investigadores céticos.",
+    "resumo": "Na noite de 13 de março de 1997, duas formações de luzes distintas foram relatadas por centenas de testemunhas em diferentes pontos do Arizona: uma formação em \"V\" cruzando o céu no início da noite, e uma segunda série de esferas luminosas estacionárias perto da Sierra Estrella, por volta das 22h — este último momento captado no vídeo de Michael Krzyston, a referência mais citada do caso. É um dos episódios de UAP com mais testemunhas simultâneas da história recente dos Estados Unidos. A explicação oficial cobre cada formação separadamente: a formação em \"V\" é atribuída a um esquadrão de aviões em voo formal, e as esferas estacionárias, a bengalas de iluminação lançadas por A-10 de esquadrões visitantes da Guarda Nacional Aérea de Maryland, em exercício confirmado no Barry Goldwater Range naquela mesma noite. O que essas duas explicações não cobrem é a parcela relevante de testemunhas que descreve, em vez de luzes pontuais, um único objeto sólido e silencioso — relato incompatível com aviões em formação ou bengalas caindo, e que mantém o caso controverso mesmo entre investigadores céticos.",
     "documentos": [],
     "testemunhos": [
       {
@@ -1512,7 +1544,7 @@
       },
       {
         "tipo": "Erro instrumental",
-        "avaliacao": "Explicação oficial para as esferas estacionárias: bengalas de iluminação (illumination flares) lançadas por A-10 da Guarda Nacional Aérea do Arizona durante exercício em Barry Goldwater Range."
+        "avaliacao": "Explicação oficial para as esferas estacionárias: bengalas de iluminação (illumination flares) lançadas por A-10 de esquadrões visitantes da Guarda Nacional Aérea de Maryland, em exercício no Barry Goldwater Range naquela noite — não da Guarda Nacional Aérea do Arizona, como versões anteriores deste dossiê afirmavam."
       },
       {
         "tipo": "Hipótese extraordinária",
@@ -1525,7 +1557,7 @@
     ],
     "oQueSabemos": [
       "Duas formações de luzes distintas foram relatadas por centenas de testemunhas na mesma noite.",
-      "A Guarda Nacional Aérea do Arizona confirmou exercício com lançamento de bengalas de iluminação na mesma noite."
+      "A Guarda Nacional Aérea de Maryland confirmou exercício com lançamento de bengalas de iluminação na mesma noite, no Barry Goldwater Range."
     ],
     "oQueNaoSabemos": [
       "A causa dos relatos de objeto sólido único, não cobertos pelas explicações de aviões e bengalas."
@@ -1541,13 +1573,16 @@
       },
       {
         "qualidade": "Fonte institucional",
-        "label": "Guarda Nacional Aérea do Arizona — explicação das bengalas de iluminação"
+        "label": "Guarda Nacional Aérea de Maryland — explicação das bengalas de iluminação",
+        "url": "https://lasvegassun.com/news/1997/jul/25/military-now-says-flares-may-be-cause-of-mysteriou/"
       },
       {
         "qualidade": "Investigação posterior",
-        "label": "Phoenix New Times — cobertura cética extensa do caso"
+        "label": "Phoenix New Times — cobertura cética extensa do caso",
+        "url": "https://www.phoenixnewtimes.com/arts-culture/the-phoenix-lights-are-no-mystery-6661825/"
       }
-    ]
+    ],
+    "maturidade": "indexado"
   },
   {
     "slug": "nimitz-tic-tac-gimbal-gofast",
@@ -1636,13 +1671,16 @@
       },
       {
         "qualidade": "Investigação posterior",
-        "label": "Análise cética de Mick West sobre o vídeo GoFast"
+        "label": "Análise cética de Mick West sobre o vídeo GoFast",
+        "url": "https://www.metabunk.org/threads/go-fast-footage-from-tom-delonges-to-the-stars-academy-bird-balloon.9569/"
       },
       {
         "qualidade": "Imprensa contemporânea",
-        "label": "The New York Times, dez·2017 — primeira publicação ampla"
+        "label": "The New York Times, dez·2017 — primeira publicação ampla",
+        "url": "https://www.nytimes.com/2017/12/16/us/politics/pentagon-program-ufo-harry-reid.html"
       }
-    ]
+    ],
+    "maturidade": "dossie"
   },
   {
     "slug": "odni-aaro-uap",
@@ -1726,6 +1764,7 @@
         "label": "AARO — Relatório anual consolidado FY2024 (14·11·2024)",
         "url": "https://media.defense.gov/2024/Nov/14/2003583603/-1/-1/0/FY24-CONSOLIDATED-ANNUAL-REPORT-ON-UAP-508.PDF"
       }
-    ]
+    ],
+    "maturidade": "dossie"
   }
 ]

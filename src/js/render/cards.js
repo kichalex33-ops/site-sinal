@@ -1,4 +1,4 @@
-import { editorialBadge, escapeHtml } from "./badges.js";
+import { editorialBadge, maturityBadge, escapeHtml } from "./badges.js";
 
 export function caseCard(c) {
   return `
@@ -6,7 +6,7 @@ export function caseCard(c) {
       <span class="card__meta">${escapeHtml(c.code)} · ${escapeHtml(c.date)}</span>
       <h3>${escapeHtml(c.title)}</h3>
       <p>${escapeHtml(c.resumo)}</p>
-      <div class="card__badges">${editorialBadge(c.status, c.statusLabel)}</div>
+      <div class="card__badges">${editorialBadge(c.status, c.statusLabel)}${maturityBadge(c.maturidade)}</div>
     </a>`;
 }
 
