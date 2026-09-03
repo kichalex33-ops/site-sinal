@@ -3,11 +3,9 @@ const NAV = [
   { href: "/colecoes/", label: "Coleções" },
   { href: "/midia/", label: "Mídia" },
   { href: "/noticias/", label: "Notícias" },
-  { href: "/metodo/", label: "Método" },
-  { href: "/correcoes/", label: "Correções" },
   { href: "/livro/", label: "Livro" },
   { href: "/leitores/", label: "Leitores" },
-  { href: "/imprensa/", label: "Imprensa" },
+  { href: "/contato/", label: "Contato" },
 ];
 
 function navLink(item, currentPath) {
@@ -42,8 +40,13 @@ export function page({ title, description, path, bodyHtml, extraHead = "" }) {
   <meta property="og:description" content="${safeDescription}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="${escapeAttr(canonicalUrl)}" />
-  <meta property="og:image" content="${SITE_URL}/press-kit/capa-placeholder.svg" />
+  <meta property="og:site_name" content="SINAL/RUÍDO" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="${SITE_URL}/livro/capa.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" />
   <link rel="stylesheet" href="/src/css/tokens.css" />
   <link rel="stylesheet" href="/src/css/reset.css" />
   <link rel="stylesheet" href="/src/css/base.css" />
@@ -85,13 +88,8 @@ export function page({ title, description, path, bodyHtml, extraHead = "" }) {
         <p class="mono" style="margin-top:8px">Arquivo instrumental brasileiro, de escopo internacional, dedicado a organizar evidências, testemunhos e hipóteses com proveniência, contradição e revisão explícitas.</p>
       </div>
       <div class="mono" style="display:flex;flex-direction:column;gap:6px">
-        <a href="/metodo/">Metodologia pública</a>
-        <a href="/correcoes/">Histórico de correções</a>
-        <a href="/imprensa/">Imprensa</a>
-      </div>
-      <div class="mono" style="display:flex;flex-direction:column;gap:6px">
+        <a href="/contato/">Enviar relato, sugestão ou mensagem</a>
         <span>Não identificado não significa extraterrestre.</span>
-        <span>Sem coleta de dados pessoais nesta fase.</span>
       </div>
     </div>
   </footer>

@@ -79,7 +79,7 @@
         "data": "15·08·1977",
         "autoria": "Jerry R. Ehman (anotação); Big Ear Radio Observatory (registro)",
         "contexto": "Documento primário do evento — o printout que dá nome ao caso.",
-        "versao": "Original",
+        "versao": "Digitalização institucional",
         "license": "Domínio público",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wow_signal.jpg"
       },
@@ -128,7 +128,16 @@
       }
     ],
     "bookNote": "Este caso é o ponto de partida do romance SINAL/RUÍDO. O que a trama imagina ter acontecido com o sinal a partir daí é inteiramente ficcional — consulte a página do livro para a relação entre pesquisa factual e ficção, sem spoiler aqui.",
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "The Wow! Signal with Discoverer Dr. Jerry Ehman",
+        "youtubeId": "x67K-Vq1KWk",
+        "canal": "Event Horizon",
+        "contexto": "Entrevista com o astrônomo Jerry Ehman, que descobriu e anotou o sinal Wow! no printout original de 1977."
+      }
+    ]
   },
   {
     "slug": "operacao-prato-colares",
@@ -225,7 +234,16 @@
       }
     ],
     "bookNote": "O romance usa o cenário real da região e o fato da existência do acervo como ponto de partida para uma investigação inventada. O que a equipe fictícia encontra ali não corresponde a nenhum documento real — veja a página do livro.",
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "O.V.N.I.S. (Disco Voador) — Operação Prato, Aparição/Colares Amazônia — Fantástico",
+        "youtubeId": "kREa3qsoJZU",
+        "canal": "Reprodução de reportagem do Fantástico (Rede Globo)",
+        "contexto": "Reportagem jornalística do Fantástico sobre os relatos de luzes e a Operação Prato em Colares, Pará."
+      }
+    ]
   },
   {
     "slug": "noite-oficial-dos-ovnis",
@@ -344,7 +362,16 @@
         "url": "https://www.cnnbrasil.com.br/ciencia/noite-dos-ovnis-fab-perseguiu-objetos-voadores-ha-40-anos-no-brasil/"
       }
     ],
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "Veja depoimentos de pilotos brasileiros durante a \"Noite dos OVNIs\" de 1986",
+        "youtubeId": "ze1mBPIHx-A",
+        "canal": "CNN Brasil",
+        "contexto": "Depoimentos de pilotos da FAB envolvidos na perseguição aos contatos de radar da noite de 19 de maio de 1986."
+      }
+    ]
   },
   {
     "slug": "varginha",
@@ -460,7 +487,9 @@
         "url": "https://en.wikipedia.org/wiki/Varginha_UFO_incident"
       }
     ],
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": []
   },
   {
     "slug": "antonio-villas-boas",
@@ -528,7 +557,16 @@
         "label": "Relato e entrevista original de Antônio Villas-Boas"
       }
     ],
-    "maturidade": "registro"
+    "maturidade": "registro",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "Caso Villas Boas – Ufologia Brasileira | MFC 230",
+        "youtubeId": "MTgJb3c3rwM",
+        "canal": "Mundo Freak",
+        "contexto": "Análise em podcast sobre o caso de 1957, discutindo versões e cronologia do relato de Villas-Boas — comentário posterior, não registro primário."
+      }
+    ]
   },
   {
     "slug": "ilha-da-trindade",
@@ -621,7 +659,7 @@
         "data": "26·02·1958",
         "autoria": "O Globo",
         "contexto": "Cobertura jornalística contemporânea ao caso, publicada seis semanas após o evento — não é a fotografia de Baraúna em si (não localizada com licença aberta), mas registro de época do episódio e da controvérsia sobre o fotógrafo ter revelado o filme sozinho.",
-        "versao": "Original",
+        "versao": "Reprodução",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:OG,_33%C2%BA_ano,_n%C2%BA_9.758,_1%C2%BA_caderno,_quarta-feira,_26_fev._1958,_p._3_(O_fot%C3%B3grafo_estava_s%C3%B3_quando_revelou_o_filme)focadoerestau.jpg"
       }
@@ -651,7 +689,16 @@
         "url": "https://arquivoufo.eurisko.com.br/2017/08/31/as-fotografias-do-ovni-na-ilha-de-trindade/"
       }
     ],
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "O \"Disco-Voador\" da Ilha da Trindade (1958)",
+        "youtubeId": "N4v2Mb47qwg",
+        "canal": "Canal Memória",
+        "contexto": "Retrospectiva das fotografias tiradas por Almiro Baraúna a bordo do Almirante Saldanha em 1958 e da controvérsia sobre sua autenticidade."
+      }
+    ]
   },
   {
     "slug": "roswell",
@@ -723,7 +770,7 @@
         "data": "08·07·1947",
         "autoria": "Roswell Daily Record",
         "contexto": "Documento primário — a manchete do dia do comunicado (e do desmentido) oficial.",
-        "versao": "Original",
+        "versao": "Reprodução",
         "license": "Domínio público (publicado nos EUA 1931–1963, sem renovação de copyright)",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:RoswellDailyRecordJuly8,1947.jpg"
       }
@@ -750,7 +797,16 @@
         "url": "https://www.smithsonianmag.com/smithsonian-institution/in-1947-high-altitude-balloon-crash-landed-roswell-aliens-never-left-180963917/"
       }
     ],
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "History's Greatest Mysteries: Roswell Secrets Revealed in Eyewitness Journal (Part 1)",
+        "youtubeId": "BZpHEALNozw",
+        "canal": "HISTORY",
+        "contexto": "Episódio do canal oficial HISTORY revisitando depoimentos de testemunhas do caso Roswell (1947)."
+      }
+    ]
   },
   {
     "slug": "kenneth-arnold",
@@ -829,7 +885,7 @@
         "data": "12·07·1947",
         "autoria": "Kenneth Arnold",
         "contexto": "Documento primário — página da carta original de Arnold com seus próprios esboços.",
-        "versao": "Original",
+        "versao": "Digitalização institucional",
         "license": "Domínio público (documento do governo federal dos EUA)",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arnold_AAF_document.jpg"
       }
@@ -846,7 +902,16 @@
         "url": "https://en.wikipedia.org/wiki/Kenneth_Arnold_UFO_sighting"
       }
     ],
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "Pilot Kenneth Arnold on seeing UFOs flying in formation near Mt. Rainier, Washington, June 24, 1947",
+        "youtubeId": "g2EVNW3NJr8",
+        "canal": "Eyes On Cinema",
+        "contexto": "Filmagem de arquivo com Kenneth Arnold relatando seu avistamento perto do Monte Rainier."
+      }
+    ]
   },
   {
     "slug": "washington-dc-1952",
@@ -919,7 +984,7 @@
         "data": "set·1952",
         "autoria": "United States Air Force",
         "contexto": "Documento oficial de época mostrando o pico de relatos coincidente com o Washington flap — não é foto do evento, é registro estatístico institucional do próprio Blue Book.",
-        "versao": "Original",
+        "versao": "Digitalização institucional",
         "license": "Domínio público (obra do governo federal dos EUA)",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:1952_UFO_Flap_-_Air_Force_frequency_graph_of_UFO_reports.png"
       }
@@ -940,7 +1005,16 @@
         "url": "https://archive.org/details/watchskieschroni0000peeb_k3q2"
       }
     ],
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "UFO disclosure: Details emerge on 'Invasion of Washington' tape",
+        "youtubeId": "umcLuMrgQ9w",
+        "canal": "NewsNation",
+        "contexto": "Reportagem sobre a fita reencontrada da reunião de 1952 entre a Força Aérea e cientistas."
+      }
+    ]
   },
   {
     "slug": "mcminnville-trent",
@@ -1006,7 +1080,7 @@
         "data": "11·05·1950",
         "autoria": "Paul Trent",
         "contexto": "Uma das duas fotografias originais do caso — autenticidade disputada, ver seção de hipóteses.",
-        "versao": "Original",
+        "versao": "Reprodução",
         "license": "Domínio público (publicada nos EUA entre 1931–1977 sem aviso de copyright)",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:UFO_picture_taken_by_Paul_Trent_in_McMinnville,_Oregon.jpg"
       }
@@ -1026,7 +1100,9 @@
         "label": "Análises fotogramétricas céticas posteriores"
       }
     ],
-    "maturidade": "indexado"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": []
   },
   {
     "slug": "betty-barney-hill",
@@ -1113,7 +1189,9 @@
         "label": "Sessões do Dr. Benjamin Simon (hipnose regressiva)"
       }
     ],
-    "maturidade": "indexado"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": []
   },
   {
     "slug": "malmstrom-afb",
@@ -1191,7 +1269,7 @@
         "data": "02·04·2021",
         "autoria": "Moszkowicz Show (entrevistador); Robert Salas (entrevistado)",
         "contexto": "Depoimento em vídeo do ex-capitão Robert Salas, testemunha central do caso, gravado décadas após o evento — não é registro contemporâneo de 1967.",
-        "versao": "Depoimento posterior",
+        "versao": "Cópia preservada",
         "license": "CC BY 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Interview_with_Robert_Salas_about_UFOs_shutting_down_nukes_at_Malmstrom_Air_Force_Base.webm"
       },
@@ -1226,7 +1304,9 @@
         "url": "https://thehill.com/opinion/national-security/5381851-did-the-pentagon-spread-false-ufo-stories-were-skeptical/"
       }
     ],
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": []
   },
   {
     "slug": "incidente-de-teera",
@@ -1315,7 +1395,16 @@
         "url": "https://www.theblackvault.com/casefiles/the-1976-iran-incident/"
       }
     ],
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "Iran Military Intercepts Alien UFO",
+        "youtubeId": "qbH9OZupWOg",
+        "canal": "The Infographics Show",
+        "contexto": "Vídeo explicativo sobre o encontro radar/visual de 1976 entre caças F-4 Phantom da Força Aérea Iraniana e o objeto não identificado."
+      }
+    ]
   },
   {
     "slug": "rendlesham-forest",
@@ -1396,7 +1485,7 @@
         "data": "13·01·1981",
         "autoria": "Ten.-Cel. Charles I. Halt, USAF",
         "contexto": "Documento primário do caso — o memorando oficial que registra os avistamentos.",
-        "versao": "Original",
+        "versao": "Digitalização institucional",
         "license": "Domínio público (documento do governo federal dos EUA)",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Halt_Memorandum.jpg"
       }
@@ -1413,7 +1502,16 @@
         "url": "https://discovery.nationalarchives.gov.uk/details/r/C10342055"
       }
     ],
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "UFOs, interrogations, cover-ups: The Rendlesham Forest incident | Reality Check",
+        "youtubeId": "MnYBNT1KwrY",
+        "canal": "NewsNation",
+        "contexto": "No segmento \"Reality Check\", o jornalista Ross Coulthart entrevista o investigador Gary Heseltine sobre o incidente de 1980 na base de Bentwaters/Woodbridge."
+      }
+    ]
   },
   {
     "slug": "onda-belga-petit-rechain",
@@ -1489,7 +1587,7 @@
         "data": "abr·1990",
         "autoria": "J.S. Henrardi (autor confesso da fraude)",
         "contexto": "ATENÇÃO: esta fotografia é uma fraude confessada pelo próprio autor em 2011 (painel de isopor com luzes fixadas). Não é evidência do fenômeno — mantida aqui só como documento histórico da desinformação em torno do caso.",
-        "versao": "Original",
+        "versao": "Origem incerta",
         "ilustrativa": true,
         "license": "Domínio público (liberada pelo detentor dos direitos)",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:TriangleBelgium1990.jpg"
@@ -1506,7 +1604,9 @@
         "url": "https://badufos.blogspot.com/2011/07/classic-ufo-photo-from-belgian-wave.html"
       }
     ],
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": []
   },
   {
     "slug": "phoenix-lights",
@@ -1582,7 +1682,16 @@
         "url": "https://www.phoenixnewtimes.com/arts-culture/the-phoenix-lights-are-no-mystery-6661825/"
       }
     ],
-    "maturidade": "indexado"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "The Phoenix Lights Documentary Trailer",
+        "youtubeId": "VhAQrR8Jhkk",
+        "canal": "ThePhoenixLights",
+        "contexto": "Trailer do documentário da médica e testemunha Dra. Lynne Kitei sobre o avistamento em massa de 13 de março de 1997."
+      }
+    ]
   },
   {
     "slug": "nimitz-tic-tac-gimbal-gofast",
@@ -1680,7 +1789,16 @@
         "url": "https://www.nytimes.com/2017/12/16/us/politics/pentagon-program-ufo-harry-reid.html"
       }
     ],
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "Pentagon UFOs - FLIR, GIMBAL, GOFAST",
+        "youtubeId": "CrhhDmK2tfA",
+        "canal": "EncountersArchive",
+        "contexto": "Compilação dos três vídeos oficiais desclassificados pelo Departamento de Defesa dos EUA em 2020."
+      }
+    ]
   },
   {
     "slug": "odni-aaro-uap",
@@ -1748,7 +1866,7 @@
         "data": "26·07·2023",
         "autoria": "Transmissão oficial do Congresso dos EUA (captura de tela)",
         "contexto": "Depoimento público de David Grusch, ex-oficial de inteligência, em audiência do Congresso sobre UAP — parte do mesmo período institucional coberto pelo caso.",
-        "versao": "Original",
+        "versao": "Reprodução",
         "license": "Domínio público (obra do governo federal dos EUA)",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_Grusch_giving_testimony_on_26_July_2023_before_the_US_House_Subcommittee_on_National_Security_the_Border_and_Foreign_Affairs.png"
       }
@@ -1765,6 +1883,15 @@
         "url": "https://media.defense.gov/2024/Nov/14/2003583603/-1/-1/0/FY24-CONSOLIDATED-ANNUAL-REPORT-ON-UAP-508.PDF"
       }
     ],
-    "maturidade": "dossie"
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "WATCH: Whistleblower testifies on claims that US has concealed programs related to UFOs",
+        "youtubeId": "OV-SQkEGIDw",
+        "canal": "PBS NewsHour",
+        "contexto": "Cobertura da audiência da Câmara dos EUA de 26 de julho de 2023, com o depoimento do denunciante David Grusch."
+      }
+    ]
   }
 ]

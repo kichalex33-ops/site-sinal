@@ -45,9 +45,10 @@ function homePage() {
     <section class="section grid-texture" style="border-bottom:1px solid var(--border)">
       <div class="container--medium">
         <span class="kicker">Arquivo público</span>
-        <h1 style="font-size:clamp(32px,5vw,52px);margin-top:16px">SINAL<span style="color:var(--signal)">/</span>RUÍDO</h1>
+        <h1 style="font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:0.04em;font-size:clamp(32px,5vw,52px);margin-top:16px">SINAL<span style="color:var(--signal)">/</span>RUÍDO</h1>
         <p class="mono" style="margin-top:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:12px">Arquivo instrumental brasileiro</p>
-        <p style="margin-top:20px;max-width:60ch;color:var(--muted);font-size:17px">Nem deboche, nem fé. Método. Organizamos casos, documentos, testemunhos, mídia e hipóteses sobre fenômenos aéreos não identificados — separando sempre o que foi verificado do que ainda é interpretação.</p>
+        <p style="margin-top:16px;color:var(--signal);font-style:italic;font-size:15px">Nem todo sinal quer ser ouvido.</p>
+        <p style="margin-top:12px;max-width:60ch;color:var(--muted);font-size:17px">Organizamos casos, documentos, testemunhos, mídia e hipóteses sobre fenômenos aéreos não identificados — separando sempre o que foi verificado do que ainda é interpretação.</p>
         <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
           <button type="button" class="search-trigger" data-cmdk-open style="min-width:280px">Buscar caso, documento, órgão, local, coleção… <kbd>Ctrl K</kbd></button>
         </div>
@@ -55,7 +56,6 @@ function homePage() {
           <a class="btn btn--primary" href="/casos/">Ver casos</a>
           <a class="btn" href="/colecoes/">Coleções</a>
           <a class="btn" href="/midia/">Mídia</a>
-          <a class="btn" href="/metodo/">Método</a>
         </div>
       </div>
     </section>
@@ -119,8 +119,23 @@ function arquivoPage() {
       <div class="container">
         <span class="kicker">Arquivo</span>
         <h1 style="margin-top:12px">Busca geral no acervo.</h1>
-        <p style="margin-top:8px;color:var(--muted);max-width:640px">O arquivo reúne casos, coleções institucionais e biblioteca de mídia. Use <kbd class="mono">Ctrl K</kbd> para buscar por nome, órgão ou local, ou navegue pelas três áreas abaixo.</p>
-        <div class="grid grid--3" style="margin-top:32px">
+        <p style="margin-top:8px;color:var(--muted);max-width:640px">O arquivo reúne casos, coleções institucionais e biblioteca de mídia. Busque abaixo por nome, órgão ou local, ou navegue pelas três áreas.</p>
+
+        <div class="arquivo-search" style="margin-top:24px" data-arquivo-search-wrap>
+          <span class="arquivo-search__icon" aria-hidden="true">⌕</span>
+          <input type="search" class="arquivo-search__input" placeholder="Buscar caso, coleção, documento, órgão, local…" autocomplete="off" data-arquivo-input />
+        </div>
+
+        <div class="filter-row" style="margin-top:14px" data-filter-group="tipo" data-arquivo-filters>
+          <button type="button" class="filter-btn" aria-pressed="true" data-filter-value="all">Todos</button>
+          <button type="button" class="filter-btn" data-filter-value="caso">Casos</button>
+          <button type="button" class="filter-btn" data-filter-value="coleção">Coleções</button>
+          <button type="button" class="filter-btn" data-filter-value="mídia">Mídia</button>
+        </div>
+
+        <ul class="arquivo-results" style="margin-top:20px" data-arquivo-results></ul>
+
+        <div class="grid grid--3" style="margin-top:36px" data-arquivo-categories>
           <a class="card" href="/casos/"><span class="card__meta">${cases.length} casos</span><h3>Casos</h3><p>Dossiês factuais completos, com documentos, testemunhos, cronologia e hipóteses.</p></a>
           <a class="card" href="/colecoes/"><span class="card__meta">${collections.length} coleções</span><h3>Coleções</h3><p>Acervos institucionais de origem — nacionais e internacionais.</p></a>
           <a class="card" href="/midia/"><span class="card__meta">${media.length} itens</span><h3>Mídia</h3><p>Imagens, documentos e vídeos com origem, autoria e licença confirmadas.</p></a>
@@ -211,6 +226,22 @@ function caseImageBlock(img) {
         <div>Licença: ${escapeHtml(img.license)} — <a href="${escapeHtml(img.sourceUrl)}" target="_blank" rel="noopener noreferrer">página de origem</a></div>
       </figcaption>
     </figure>`;
+}
+
+function youtubeCard(v) {
+  return `
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="${escapeHtml(v.youtubeId)}" data-yt-title="${escapeHtml(v.titulo)}">
+        <img src="https://i.ytimg.com/vi/${escapeHtml(v.youtubeId)}/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">${escapeHtml(v.canal)}</span>
+        <h3>${escapeHtml(v.titulo)}</h3>
+        ${v.contexto ? `<p class="yt-card__context">${escapeHtml(v.contexto)}</p>` : ""}
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=${escapeHtml(v.youtubeId)}" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a>
+      </div>
+    </div>`;
 }
 
 function caseDossierPage(item) {
@@ -308,6 +339,13 @@ function caseDossierPage(item) {
         <div class="grid grid--2" style="margin-top:16px">${item.imagens.map(caseImageBlock).join("")}</div>
       </section>` : ""}
 
+      ${(item.videosYoutube || []).length ? `
+      <section style="margin-top:36px">
+        <span class="kicker">Vídeos</span>
+        <p class="mono" style="margin-top:6px;font-size:11px;color:var(--muted)">Documentários, entrevistas e cobertura sobre o caso. Vídeo de terceiro não é evidência do caso — é material de contexto.</p>
+        <div class="grid grid--2" style="margin-top:16px">${item.videosYoutube.map(youtubeCard).join("")}</div>
+      </section>` : ""}
+
       ${item.fontes.length ? `
       <section style="margin-top:36px">
         <span class="kicker">Fontes</span>
@@ -344,7 +382,6 @@ function caseDossierPage(item) {
       </section>` : ""}
 
       <div style="margin-top:40px;padding-top:24px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:16px;align-items:center">
-        <a href="/metodo/" class="mono" style="color:var(--muted)">Ler a metodologia usada nesta revisão →</a>
         <button type="button" class="btn" data-share data-share-title="${escapeHtml(item.title)}" data-share-text="${escapeHtml(item.resumo)}">Compartilhar</button>
       </div>
     </article>`;
@@ -468,61 +505,6 @@ function midiaDetailPage(m) {
 }
 
 // ---------------------------------------------------------------------
-// /metodo
-// ---------------------------------------------------------------------
-function metodoPage() {
-  const layers = [
-    { n: "01 / DOCUMENTO", cor: "var(--documento)", t: "Fonte verificável", d: "Arquivo, agência, data, origem e hash preservados. O texto extraído nunca substitui o documento original." },
-    { n: "02 / TESTEMUNHO", cor: "var(--testemunho)", t: "Memória contextualizada", d: "Relatos são relevantes, mas precisam de contexto, tempo decorrido, condições de observação e possíveis influências posteriores." },
-    { n: "03 / ESPECULAÇÃO", cor: "var(--especulacao)", t: "Hipótese identificada", d: "Inferências podem orientar novas perguntas, mas nunca recebem o mesmo peso de uma evidência independente." },
-  ];
-  const body = `
-    <section class="section container--medium">
-      <span class="kicker">Metodologia pública</span>
-      <h1 style="margin-top:12px">Três camadas. Nenhuma conclusão escondida.</h1>
-      <p style="margin-top:8px;color:var(--muted)">O visitante precisa saber se está lendo uma fonte original, um testemunho ou uma interpretação. Misturar essas camadas destrói confiança.</p>
-      <div class="grid grid--3" style="margin-top:28px">
-        ${layers.map((l) => `
-          <div class="card" style="cursor:default">
-            <span class="card__meta">${l.n}</span>
-            <h3>${l.t}</h3>
-            <p>${l.d}</p>
-            <div style="margin-top:16px;font-family:var(--mono);font-size:28px;color:${l.cor}">${l.n[l.n.length - 1]}</div>
-          </div>`).join("")}
-      </div>
-      <div class="paper" style="margin-top:32px;padding:24px">
-        <h2 style="font-size:16px">Como uma hipótese é aceita ou descartada</h2>
-        <p style="margin-top:10px">Uma explicação convencional não é aceita por ser convencional, e uma hipótese extraordinária não é descartada por ser extraordinária. O critério é o mesmo para as duas: a hipótese precisa explicar o conjunto de dados observado — não apenas a parte que lhe é favorável.</p>
-      </div>
-      <p style="margin-top:20px;font-size:14px;color:var(--muted)">Não identificado não significa extraterrestre. A ausência de explicação é uma propriedade do estado atual da evidência, não confirmação de nenhuma hipótese.</p>
-      <a href="/correcoes/" class="mono" style="display:inline-block;margin-top:16px">Ver o histórico público de correções →</a>
-    </section>`;
-  write("/metodo", page({ title: "Método", description: "As três camadas usadas para organizar documento, testemunho e especulação.", path: "/metodo/", bodyHtml: body }));
-}
-
-// ---------------------------------------------------------------------
-// /correcoes
-// ---------------------------------------------------------------------
-function correcoesPage() {
-  const body = `
-    <section class="section container--narrow">
-      <span class="kicker">Transparência</span>
-      <h1 style="margin-top:12px">Histórico público de correções.</h1>
-      <p style="margin-top:8px;color:var(--muted)">Erros fazem parte de qualquer arquivo vivo. Em vez de apagar, registramos o que mudou e por quê.</p>
-      <ol class="timeline" style="margin-top:28px">
-        ${corrections.map((c) => `
-          <li class="timeline__item">
-            <span class="timeline__when">${escapeHtml(c.date)}</span>
-            <h3 style="margin-top:4px;font-size:15px">${c.caseSlug ? `<a href="/casos/${c.caseSlug}/">${escapeHtml(c.caseTitle)}</a>` : escapeHtml(c.caseTitle)}</h3>
-            <p style="font-size:13px;margin-top:2px">${escapeHtml(c.change)}</p>
-            <p style="font-size:13px;color:var(--muted)">Motivo: ${escapeHtml(c.reason)}</p>
-          </li>`).join("")}
-      </ol>
-    </section>`;
-  write("/correcoes", page({ title: "Correções", description: "Histórico público de correções aplicadas ao arquivo.", path: "/correcoes/", bodyHtml: body }));
-}
-
-// ---------------------------------------------------------------------
 // /noticias — desenvolvimentos recentes reais sobre UAP/disclosure
 // ---------------------------------------------------------------------
 function noticiasPage() {
@@ -559,9 +541,35 @@ function livroPage() {
   const bookCases = cases.filter((c) => c.bookNote);
   const body = `
     <section class="section container--narrow">
-      <span class="badge" style="border-color:var(--signal);color:var(--signal)">Obra de ficção</span>
-      <h1 style="margin-top:16px">SINAL/RUÍDO — o romance.</h1>
-      <p style="margin-top:12px;font-size:17px;color:var(--muted)">SINAL/RUÍDO é um romance. Personagens, organizações, eventos e diálogos são invenção do autor. O livro se inspira em método de investigação e em casos reais tratados no arquivo público deste site, mas a trama, os nomes e os desfechos não correspondem a fatos verificados.</p>
+      <div class="book-hero">
+        <div class="book-hero__cover-col">
+          <img class="book-hero__cover" src="/livro/capa.jpg" alt="Capa do romance SINAL/RUÍDO" width="400" height="600" />
+          <a href="#apoio" class="book-hero__pix-badge">
+            <img src="/apoio/pix-qr.jpg" alt="QR Code Pix para apoiar o SINAL/RUÍDO" width="72" height="72" loading="lazy" />
+            <span>Apoiar via Pix</span>
+          </a>
+        </div>
+        <div class="book-hero__text">
+          <span class="badge" style="border-color:var(--signal);color:var(--signal)">Obra de ficção</span>
+          <h1 style="margin-top:16px">SINAL/RUÍDO — o romance.</h1>
+          <p style="margin-top:12px;font-size:17px;color:var(--muted)">SINAL/RUÍDO é um romance. Personagens, organizações, eventos e diálogos são invenção do autor. O livro se inspira em método de investigação e em casos reais tratados no arquivo público deste site, mas a trama, os nomes e os desfechos não correspondem a fatos verificados.</p>
+        </div>
+      </div>
+
+      <section id="apoio" style="margin-top:32px">
+        <span class="kicker">Apoie o projeto</span>
+        <div class="paper pix-card" style="margin-top:16px;padding:24px">
+          <div class="pix-card__qr">
+            <img src="/apoio/pix-qr.jpg" alt="QR Code Pix para apoiar o SINAL/RUÍDO" width="180" height="180" loading="lazy" />
+          </div>
+          <div class="pix-card__info">
+            <h2 style="font-size:16px">Manter o arquivo e o romance no ar tem custo.</h2>
+            <p style="margin-top:8px;color:var(--paper-muted)">Se este trabalho valeu a sua leitura e você quiser ajudar a manter o site, a pesquisa e o livro, pode contribuir via Pix — qualquer valor. Escaneie o QR Code com o app do seu banco ou copie a chave abaixo.</p>
+            <div class="pix-card__code mono" data-pix-code>00020126330014br.gov.bcb.pix0111026387420665204000053039865802BR5916Alex Junior Kich6009Sao Paulo62290525REC6A982558C600D1848319096304DD3C</div>
+            <button type="button" class="btn btn--primary" style="margin-top:12px" data-copy-pix>Copiar código Pix</button>
+          </div>
+        </div>
+      </section>
 
       <div class="paper" style="margin-top:24px;padding:24px">
         <h2 style="font-size:16px">Sinopse</h2>
@@ -597,7 +605,6 @@ function leitoresPage() {
       <section style="margin-top:32px">
         <h2 style="font-size:16px">Fato, testemunho, hipótese e ficção</h2>
         <p style="margin-top:8px;color:var(--muted)">Este site separa quatro coisas que costumam se misturar: o documento original (fato), o relato de quem viveu o episódio (testemunho), a interpretação sobre o que aconteceu (hipótese) e a história inventada do romance (ficção).</p>
-        <a href="/metodo/" class="mono" style="display:inline-block;margin-top:8px">Ver como essa separação é aplicada no arquivo →</a>
       </section>
 
       <section style="margin-top:32px">
@@ -615,35 +622,6 @@ function leitoresPage() {
 }
 
 // ---------------------------------------------------------------------
-// /imprensa
-// ---------------------------------------------------------------------
-function imprensaPage() {
-  const downloads = [
-    { href: "/press-kit/capa-placeholder.svg", label: "Capa (placeholder)" },
-    { href: "/press-kit/sinopse.txt", label: "Sinopse" },
-    { href: "/press-kit/bio-autor.txt", label: "Bio factual do autor" },
-    { href: "/press-kit/ficha-tecnica.txt", label: "Ficha técnica" },
-  ];
-  const body = `
-    <section class="section container--narrow">
-      <span class="kicker">Press kit</span>
-      <h1 style="margin-top:12px">Imprensa.</h1>
-
-      <section style="margin-top:24px"><h2 style="font-size:16px">Resumo</h2><p style="margin-top:8px;color:var(--muted)">SINAL/RUÍDO é um romance de investigação sobre o limite entre evidência e crença, acompanhado por um arquivo público real de casos brasileiros e internacionais de fenômenos aéreos não identificados.</p></section>
-
-      <section style="margin-top:24px"><h2 style="font-size:16px">Materiais para download</h2><p class="mono" style="font-size:12px;color:var(--muted)">Download direto, sem cadastro.</p>
-        <div class="grid grid--2" style="margin-top:12px">${downloads.map((d) => `<a class="card" href="${d.href}" download>${d.label} ↓</a>`).join("")}</div>
-      </section>
-
-      <section style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border)">
-        <h2 style="font-size:16px">Contato profissional</h2>
-        <p style="margin-top:8px;color:var(--muted)">Canal de contato profissional a definir.</p>
-      </section>
-    </section>`;
-  write("/imprensa", page({ title: "Imprensa", description: "Press kit público de SINAL/RUÍDO.", path: "/imprensa/", bodyHtml: body }));
-}
-
-// ---------------------------------------------------------------------
 // /r/[campanha] — redirecionamento estático para /leitores?campanha=X
 // ---------------------------------------------------------------------
 function campanhaRedirect(campanha) {
@@ -654,6 +632,56 @@ function campanhaRedirect(campanha) {
   <body><script>location.replace(${JSON.stringify(target)})</script>
   <p>Redirecionando para ${escapeHtml(target)}…</p></body></html>`;
   write(`/r/${campanha}`, html);
+}
+
+// ---------------------------------------------------------------------
+// /contato
+// ---------------------------------------------------------------------
+function contatoPage() {
+  const body = `
+    <section class="section container--narrow">
+      <span class="kicker">Fale com o arquivo</span>
+      <h1 style="margin-top:12px">Mensagem, relato ou sugestão de caso.</h1>
+      <p style="margin-top:8px;color:var(--muted);max-width:60ch">Viu um caso que devia estar aqui? Foi testemunha de algo? Achou um erro ou quer só mandar uma mensagem? Escreva abaixo. Toda mensagem é lida — nem toda mensagem vira resposta individual.</p>
+
+      <form class="contact-form" style="margin-top:28px" data-contact-form>
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <label class="contact-form__field">
+          <span>Nome</span>
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+
+        <label class="contact-form__field">
+          <span>Email</span>
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+
+        <label class="contact-form__field">
+          <span>Assunto</span>
+          <select name="assunto" required>
+            <option value="Mensagem geral">Mensagem geral</option>
+            <option value="Relato / testemunho">Relato / testemunho pessoal</option>
+            <option value="Sugestão de caso">Sugestão de caso para o arquivo</option>
+            <option value="Correção">Correção ou erro encontrado</option>
+          </select>
+        </label>
+
+        <label class="contact-form__field">
+          <span>Mensagem</span>
+          <textarea name="message" rows="7" required placeholder="Se for relato ou sugestão de caso, inclua data, local e, se possível, uma fonte."></textarea>
+        </label>
+
+        <button type="submit" class="btn btn--primary" data-contact-submit>Enviar</button>
+        <p class="contact-form__status" data-contact-status role="status" aria-live="polite"></p>
+      </form>
+    </section>`;
+  write("/contato", page({
+    title: "Contato",
+    description: "Envie uma mensagem, um relato ou sugira um caso para o arquivo SINAL/RUÍDO.",
+    path: "/contato/",
+    bodyHtml: body,
+  }));
 }
 
 // ---------------------------------------------------------------------
@@ -687,7 +715,7 @@ function buildSeoFiles() {
 // ---------------------------------------------------------------------
 // run
 // ---------------------------------------------------------------------
-["arquivo", "casos", "colecoes", "midia", "metodo", "noticias", "correcoes", "livro", "leitores", "imprensa", "r"].forEach(clean);
+["arquivo", "casos", "colecoes", "midia", "noticias", "livro", "leitores", "contato", "r"].forEach(clean);
 
 homePage();
 arquivoPage();
@@ -697,14 +725,12 @@ colecoesPage();
 collections.forEach(colecaoDetailPage);
 midiaPage();
 media.forEach(midiaDetailPage);
-metodoPage();
 noticiasPage();
-correcoesPage();
 livroPage();
 leitoresPage();
-imprensaPage();
+contatoPage();
 ["livro", "bunkerx", "cienciatododia", "spacetoday"].forEach(campanhaRedirect);
 buildSearchIndex();
 buildSeoFiles();
 
-console.log(`Geradas ${1 + 1 + 1 + cases.length + 1 + collections.length + 1 + media.length + 6 + 4} páginas.`);
+console.log(`Geradas ${1 + 1 + 1 + cases.length + 1 + collections.length + 1 + media.length + 4 + 4} páginas.`);

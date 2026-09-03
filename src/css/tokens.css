@@ -35,6 +35,7 @@
 
   --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
   --sans: "Inter", "Segoe UI", Arial, sans-serif;
+  --display: "Oswald", "Segoe UI", Arial, sans-serif;
 
   --focus-ring: 0 0 0 3px rgba(232, 84, 29, 0.55);
 }

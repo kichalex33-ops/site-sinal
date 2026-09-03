@@ -1,3 +1,5 @@
+import { gridLoader } from "./grid-loader.js";
+
 const backdrop = document.querySelector("[data-cmdk-backdrop]");
 const input = document.querySelector("[data-cmdk-input]");
 const results = document.querySelector("[data-cmdk-results]");
@@ -8,6 +10,10 @@ if (backdrop && input && results) {
 
   async function ensureIndex() {
     if (loaded) return;
+    const li = document.createElement("li");
+    li.className = "cmdk__loading";
+    li.appendChild(gridLoader());
+    results.replaceChildren(li);
     const res = await fetch("/search-index.json");
     index = await res.json();
     loaded = true;

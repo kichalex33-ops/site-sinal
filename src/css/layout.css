@@ -18,8 +18,8 @@
   padding: 16px 0;
 }
 .brand { display: flex; flex-direction: column; gap: 2px; }
-.brand__mark { font-family: var(--mono); font-size: 18px; }
-.brand__mark b { color: var(--signal); }
+.brand__mark { font-family: var(--display); font-weight: 700; font-size: 19px; letter-spacing: 0.05em; text-transform: uppercase; }
+.brand__mark b { color: var(--signal); font-weight: 700; }
 .brand__sub { font-family: var(--mono); font-size: 9px; letter-spacing: 0.17em; text-transform: uppercase; color: var(--muted); }
 
 .main-nav { display: none; align-items: center; gap: 22px; }
