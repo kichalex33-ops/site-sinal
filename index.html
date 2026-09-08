@@ -5,22 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SINAL/RUÍDO</title>
 <meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root{
-    --fundo:#05070c;
-    --superficie:#161B22;
-    --marca:#E8541D;
-    --papel:#F3F4EF;
+    --bg:#0b0e14;
+    --surface:#161b22;
+    --border:#21262d;
+    --muted:#8b949e;
+    --signal:#e8541d;
+    --ink:#f3f4ef;
+    --display:"Oswald","Segoe UI",Arial,sans-serif;
+    --mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
   }
   *{box-sizing:border-box;}
-  html,body{
-    margin:0;
-    height:100%;
-    background:var(--fundo);
-    color:var(--papel);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-    overflow:hidden;
-  }
+  html,body{ margin:0; height:100%; background:var(--bg); overflow:hidden; }
   body{
     position:relative;
     display:flex;
@@ -29,99 +29,80 @@
     min-height:100vh;
     padding:24px;
     text-align:center;
+    color:var(--ink);
+    font-family:var(--mono);
   }
-  #estrelas, #estrelas2, #estrelas3{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    background:transparent;
+
+  /* ---- Ambiência (idêntica ao site original: névoa, estrelas, pixels, Gray no canto) ---- */
+  .ambience-layer{ position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+  .ambience-stars{ position:absolute; inset:0; }
+  .ambience-star{
+    position:absolute; width:2px; height:2px; border-radius:50%;
+    background:#e6edf3; opacity:.15;
+    animation-name:ambience-twinkle; animation-timing-function:ease-in-out; animation-iteration-count:infinite;
   }
-  #estrelas{ animation:deriva 90s linear infinite; }
-  #estrelas2{ animation:deriva 150s linear infinite reverse; opacity:.7; }
-  #estrelas3{ animation:deriva 220s linear infinite; opacity:.5; }
-  @keyframes deriva{
-    from{ transform:translateY(0); }
-    to{ transform:translateY(-1200px); }
+  @keyframes ambience-twinkle{
+    0%,100%{ opacity:.12; transform:scale(.8); }
+    50%{ opacity:1; transform:scale(1.4); }
   }
-  .gray{
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:min(70vw,520px);
-    transform:translate(-50%,-56%);
-    opacity:.16;
-    filter:drop-shadow(0 0 60px rgba(232,84,29,.08));
-    pointer-events:none;
+  .ambience-pixels{ position:absolute; inset:0; width:100%; height:100%; }
+  .ambience-glitch{
+    position:absolute; inset:0; opacity:0; mix-blend-mode:overlay;
+    background:
+      repeating-linear-gradient(0deg, rgba(255,255,255,.08) 0px, transparent 1px, transparent 3px),
+      repeating-linear-gradient(90deg, rgba(232,84,29,.06) 0px, transparent 2px, transparent 5px);
   }
-  .wrap{
-    position:relative;
-    z-index:2;
-    max-width:560px;
+  .ambience-nebula{
+    position:absolute; top:50%; left:50%; width:220vmax; height:220vmax;
+    margin:-110vmax 0 0 -110vmax;
+    background:conic-gradient(from 0deg,
+      transparent 0deg, rgba(122,92,168,.14) 55deg, transparent 130deg,
+      rgba(90,110,168,.10) 200deg, transparent 280deg, transparent 360deg);
+    mix-blend-mode:screen;
+    animation:ambience-spin 260s linear infinite;
   }
-  .marca{
-    font-size:clamp(30px,7vw,52px);
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--papel);
-    margin:0 0 34px;
-    font-weight:700;
-    text-shadow:0 0 30px rgba(232,84,29,.25);
+  @keyframes ambience-spin{ to{ transform:rotate(360deg); } }
+  .ambience-alien{
+    position:absolute; width:52vmin; height:52vmin;
+    top:var(--a-top,2%); bottom:var(--a-bottom,auto);
+    left:var(--a-left,auto); right:var(--a-right,2%);
+    background-image:url('capa.jpg');
+    background-size:260% auto;
+    background-position:78% 34%;
+    -webkit-mask-image:radial-gradient(circle at 58% 46%, black 0%, black 26%, transparent 68%);
+    mask-image:radial-gradient(circle at 58% 46%, black 0%, black 26%, transparent 68%);
+    filter:grayscale(.1) brightness(1) contrast(1.05);
+    opacity:0;
+    will-change:transform, opacity;
   }
-  .contagem{
-    display:flex;
-    gap:16px;
-    justify-content:center;
-    flex-wrap:wrap;
-    margin-bottom:30px;
+
+  /* ---- Conteúdo ---- */
+  .wrap{ position:relative; z-index:1; max-width:560px; }
+  .brand{ display:flex; flex-direction:column; align-items:center; gap:4px; margin-bottom:40px; }
+  .brand__mark{
+    font-family:var(--display); font-weight:700; font-size:clamp(32px,7vw,52px);
+    letter-spacing:.05em; text-transform:uppercase; color:var(--ink);
   }
+  .brand__mark b{ color:var(--signal); font-weight:700; }
+  .contagem{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:30px; }
   .bloco{
-    background:rgba(22,27,34,.7);
-    backdrop-filter:blur(2px);
-    border:1px solid rgba(243,244,239,.1);
-    border-radius:10px;
-    padding:16px 18px;
-    min-width:76px;
+    background:rgba(22,27,34,.75); border:1px solid var(--border);
+    border-radius:10px; padding:16px 18px; min-width:76px;
   }
-  .num{
-    font-variant-numeric:tabular-nums;
-    font-size:clamp(24px,5vw,34px);
-    font-weight:700;
-    line-height:1;
-    color:var(--papel);
-  }
-  .label{
-    display:block;
-    margin-top:6px;
-    font-size:11px;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    color:rgba(243,244,239,.5);
-  }
-  p.sub{
-    color:rgba(243,244,239,.72);
-    font-size:15px;
-    letter-spacing:.04em;
-    margin:0;
-  }
+  .num{ font-variant-numeric:tabular-nums; font-size:clamp(24px,5vw,34px); font-weight:700; line-height:1; }
+  .label{ display:block; margin-top:6px; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+  p.sub{ color:rgba(243,244,239,.72); font-size:14px; letter-spacing:.05em; margin:0; }
+
   @media (prefers-reduced-motion: reduce){
-    #estrelas, #estrelas2, #estrelas3{ animation:none; }
+    .ambience-star, .ambience-nebula{ animation:none; }
   }
 </style>
 </head>
 <body>
-  <svg id="estrelas" xmlns="http://www.w3.org/2000/svg"></svg>
-  <svg id="estrelas2" xmlns="http://www.w3.org/2000/svg"></svg>
-  <svg id="estrelas3" xmlns="http://www.w3.org/2000/svg"></svg>
-
-  <svg class="gray" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path fill="#F3F4EF" d="M100 6C55 6 30 55 30 100c0 33 8 60 8 90 0 28 18 62 62 62s62-34 62-62c0-30 8-57 8-90C170 55 145 6 100 6z"/>
-    <ellipse cx="66" cy="108" rx="26" ry="34" fill="#05070c"/>
-    <ellipse cx="134" cy="108" rx="26" ry="34" fill="#05070c"/>
-  </svg>
-
   <div class="wrap">
-    <p class="marca">SINAL/RUÍDO</p>
+    <div class="brand">
+      <span class="brand__mark">SINAL<b>/</b>RUÍDO</span>
+    </div>
     <div class="contagem" id="contagem" aria-live="polite">
       <div class="bloco"><span class="num" id="d">00</span><span class="label">dias</span></div>
       <div class="bloco"><span class="num" id="h">00</span><span class="label">horas</span></div>
@@ -138,46 +119,170 @@
     var elH = document.getElementById("h");
     var elM = document.getElementById("m");
     var elS = document.getElementById("s");
-
     function pad(n){ return String(n).padStart(2, "0"); }
-
     function tick(){
       var diff = alvo - Date.now();
       if (diff < 0) diff = 0;
-      var dias = Math.floor(diff / 86400000);
-      var horas = Math.floor((diff % 86400000) / 3600000);
-      var min = Math.floor((diff % 3600000) / 60000);
-      var seg = Math.floor((diff % 60000) / 1000);
-      elD.textContent = pad(dias);
-      elH.textContent = pad(horas);
-      elM.textContent = pad(min);
-      elS.textContent = pad(seg);
+      elD.textContent = pad(Math.floor(diff / 86400000));
+      elH.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+      elM.textContent = pad(Math.floor((diff % 3600000) / 60000));
+      elS.textContent = pad(Math.floor((diff % 60000) / 1000));
     }
     tick();
     setInterval(tick, 1000);
+  </script>
 
-    // Gera um campo de estrelas simples via box-shadow, sem pedir imagens externas.
-    function gerarEstrelas(svgEl, quantidade, tamanho, opacidade){
-      var w = window.innerWidth || 1600;
-      var h = (window.innerHeight || 900) * 2.5;
-      var ns = "http://www.w3.org/2000/svg";
-      svgEl.setAttribute("viewBox", "0 0 " + w + " " + h);
-      svgEl.setAttribute("preserveAspectRatio", "xMidYMin slice");
-      var frag = document.createDocumentFragment();
-      for (var i = 0; i < quantidade; i++){
-        var c = document.createElementNS(ns, "circle");
-        c.setAttribute("cx", Math.random() * w);
-        c.setAttribute("cy", Math.random() * h);
-        c.setAttribute("r", tamanho);
-        c.setAttribute("fill", "#F3F4EF");
-        c.setAttribute("opacity", (Math.random() * opacidade).toFixed(2));
-        frag.appendChild(c);
+  <script>
+    // Ambiência de fundo do site original: névoa, estrelas cintilando, pixels reativos
+    // ao mouse e o Gray espiando de um canto aleatório. Sem áudio.
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!reduceMotion) {
+      var layer = document.createElement("div");
+      layer.className = "ambience-layer";
+      layer.setAttribute("aria-hidden", "true");
+
+      var nebula = document.createElement("div");
+      nebula.className = "ambience-nebula";
+
+      var starsWrap = document.createElement("div");
+      starsWrap.className = "ambience-stars";
+      var STAR_COUNT = 70;
+      for (var i = 0; i < STAR_COUNT; i++) {
+        var star = document.createElement("span");
+        star.className = "ambience-star";
+        star.style.left = (Math.random() * 100) + "%";
+        star.style.top = (Math.random() * 100) + "%";
+        var size = 1 + Math.random() * 1.4;
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+        star.style.animationDuration = (3 + Math.random() * 5) + "s";
+        star.style.animationDelay = "-" + (Math.random() * 8) + "s";
+        starsWrap.appendChild(star);
       }
-      svgEl.appendChild(frag);
+
+      var glitch = document.createElement("div");
+      glitch.className = "ambience-glitch";
+
+      var pixelsCanvas = document.createElement("canvas");
+      pixelsCanvas.className = "ambience-pixels";
+      layer.append(nebula, pixelsCanvas, starsWrap, glitch);
+      document.body.prepend(layer);
+      setupPixelHover(pixelsCanvas);
+
+      var alien = document.createElement("div");
+      alien.className = "ambience-alien";
+      var SPAWNS = [
+        { top: "2%", right: "2%", restX: "20vw", restY: "-20vh", midX: "-30vw", midY: "28vh" },
+        { top: "2%", left: "2%", restX: "-20vw", restY: "-20vh", midX: "30vw", midY: "28vh" },
+        { bottom: "2%", right: "2%", restX: "20vw", restY: "20vh", midX: "-30vw", midY: "-28vh" },
+        { bottom: "2%", left: "2%", restX: "-20vw", restY: "20vh", midX: "30vw", midY: "-28vh" },
+        { top: "50%", right: "2%", restX: "26vw", restY: "-50%", midX: "-34vw", midY: "-50%" },
+        { top: "50%", left: "2%", restX: "-26vw", restY: "-50%", midX: "34vw", midY: "-50%" },
+      ];
+      var corner = SPAWNS[Math.floor(Math.random() * SPAWNS.length)];
+      alien.style.top = corner.top || "auto";
+      alien.style.bottom = corner.bottom || "auto";
+      alien.style.left = corner.left || "auto";
+      alien.style.right = corner.right || "auto";
+      layer.appendChild(alien);
+
+      var mouseNX = 0, mouseNY = 0;
+      window.addEventListener("mousemove", function (e) {
+        mouseNX = (e.clientX / window.innerWidth) * 2 - 1;
+        mouseNY = (e.clientY / window.innerHeight) * 2 - 1;
+      });
+
+      function smoothstep(a, b, x) {
+        var t = Math.min(1, Math.max(0, (x - a) / (b - a)));
+        return t * t * (3 - 2 * t);
+      }
+      function closenessAt(t, approachFrac, holdEndFrac) {
+        if (t < approachFrac) return smoothstep(0, approachFrac, t);
+        if (t < holdEndFrac) return 1;
+        var u = Math.min(1, Math.max(0, (t - holdEndFrac) / (1 - holdEndFrac)));
+        return Math.pow(1 - u, 2);
+      }
+      function applyTransform(el, path, c, nx, ny) {
+        var x = "calc(" + path.restX + " + (" + path.midX + " - " + path.restX + ") * " + c + ")";
+        var y = "calc(" + path.restY + " + (" + path.midY + " - " + path.restY + ") * " + c + ")";
+        var tilt = nx * 3 * c;
+        var lean = ny * 2 * c;
+        el.style.transform = "translate(" + x + ", " + y + ") scale(" + (0.75 + c * 0.5) + ") rotate(" + tilt + "deg) translateY(" + lean + "px)";
+        el.style.opacity = String(c * 0.55);
+      }
+      function runEncounter() {
+        var PREROLL_MS = 1200;
+        var APPROACH_MS = 7000, HOLD_MS = 3000, RETREAT_MS = 9000;
+        var DURATION_MS = APPROACH_MS + HOLD_MS + RETREAT_MS;
+        var APPROACH_FRAC = APPROACH_MS / DURATION_MS;
+        var HOLD_END_FRAC = (APPROACH_MS + HOLD_MS) / DURATION_MS;
+        setTimeout(function () {
+          glitch.animate(
+            [{ opacity: 0 }, { opacity: 0.5, offset: 0.2 }, { opacity: 0.1, offset: 0.4 }, { opacity: 0.4, offset: 0.6 }, { opacity: 0 }],
+            { duration: 420, easing: "steps(6, end)" }
+          );
+          var start = performance.now();
+          function frame(now) {
+            var t = Math.min(1, (now - start) / DURATION_MS);
+            var c = closenessAt(t, APPROACH_FRAC, HOLD_END_FRAC);
+            applyTransform(alien, corner, c, mouseNX, mouseNY);
+            if (t < 1) requestAnimationFrame(frame);
+            else { alien.style.opacity = "0"; }
+          }
+          requestAnimationFrame(frame);
+        }, PREROLL_MS);
+      }
+      setTimeout(runEncounter, 5000);
     }
-    gerarEstrelas(document.getElementById("estrelas"), 140, 1.3, 0.9);
-    gerarEstrelas(document.getElementById("estrelas2"), 90, 1.8, 0.7);
-    gerarEstrelas(document.getElementById("estrelas3"), 60, 2.4, 0.5);
+
+    function setupPixelHover(canvas) {
+      var ctx = canvas.getContext("2d");
+      var GAP = 14, RADIUS = 100, DECAY = 0.045, RGB = "232, 84, 29", MAX_ALPHA = 0.5;
+      var cols = 0, rows = 0, energy = [], raf = null;
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        cols = Math.ceil(canvas.width / GAP);
+        rows = Math.ceil(canvas.height / GAP);
+        energy = new Float32Array(cols * rows);
+      }
+      function ignite(x, y) {
+        var cx = Math.floor(x / GAP), cy = Math.floor(y / GAP);
+        var reach = Math.ceil(RADIUS / GAP);
+        for (var j = -reach; j <= reach; j++) {
+          for (var i = -reach; i <= reach; i++) {
+            var gx = cx + i, gy = cy + j;
+            if (gx < 0 || gy < 0 || gx >= cols || gy >= rows) continue;
+            var dist = Math.hypot(i * GAP, j * GAP);
+            if (dist > RADIUS) continue;
+            var idx = gy * cols + gx;
+            energy[idx] = Math.max(energy[idx], 1 - dist / RADIUS);
+          }
+        }
+      }
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        var active = false;
+        for (var gy = 0; gy < rows; gy++) {
+          for (var gx = 0; gx < cols; gx++) {
+            var idx = gy * cols + gx;
+            var e = energy[idx];
+            if (e <= 0.01) continue;
+            active = true;
+            energy[idx] = Math.max(0, e - DECAY);
+            var size = 2 + e * 3;
+            ctx.fillStyle = "rgba(" + RGB + ", " + (e * MAX_ALPHA) + ")";
+            ctx.fillRect(gx * GAP + (GAP - size) / 2, gy * GAP + (GAP - size) / 2, size, size);
+          }
+        }
+        raf = active ? requestAnimationFrame(draw) : null;
+      }
+      function wake() { if (!raf) raf = requestAnimationFrame(draw); }
+      window.addEventListener("mousemove", function (e) { ignite(e.clientX, e.clientY); wake(); });
+      window.addEventListener("resize", resize);
+      resize();
+    }
   </script>
 </body>
 </html>
