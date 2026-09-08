@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SINAL/RUÍDO — em preparação</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+  :root{
+    --fundo:#0B0E14;
+    --superficie:#161B22;
+    --marca:#E8541D;
+    --papel:#F3F4EF;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    margin:0;
+    height:100%;
+    background:var(--fundo);
+    color:var(--papel);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    padding:24px;
+    text-align:center;
+  }
+  .wrap{
+    max-width:560px;
+  }
+  .marca{
+    font-size:13px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--marca);
+    margin:0 0 18px;
+  }
+  h1{
+    font-size:clamp(28px,6vw,44px);
+    letter-spacing:.02em;
+    margin:0 0 12px;
+    font-weight:600;
+  }
+  p.sub{
+    color:rgba(243,244,239,.68);
+    font-size:16px;
+    line-height:1.5;
+    margin:0 0 40px;
+  }
+  .contagem{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:36px;
+  }
+  .bloco{
+    background:var(--superficie);
+    border:1px solid rgba(243,244,239,.08);
+    border-radius:10px;
+    padding:16px 18px;
+    min-width:76px;
+  }
+  .num{
+    font-variant-numeric:tabular-nums;
+    font-size:clamp(24px,5vw,34px);
+    font-weight:700;
+    line-height:1;
+  }
+  .label{
+    display:block;
+    margin-top:6px;
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:rgba(243,244,239,.5);
+  }
+  .rodape{
+    font-size:13px;
+    color:rgba(243,244,239,.4);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="marca">SINAL/RUÍDO</p>
+    <h1>Em preparação</h1>
+    <p class="sub">O arquivo e a publicação digital estão sendo revisados.<br>Voltamos em breve.</p>
+    <div class="contagem" id="contagem" aria-live="polite">
+      <div class="bloco"><span class="num" id="d">00</span><span class="label">dias</span></div>
+      <div class="bloco"><span class="num" id="h">00</span><span class="label">horas</span></div>
+      <div class="bloco"><span class="num" id="m">00</span><span class="label">min</span></div>
+      <div class="bloco"><span class="num" id="s">00</span><span class="label">seg</span></div>
+    </div>
+    <p class="rodape">SINAL/RUÍDO · Alex Jr. Kich</p>
+  </div>
+  <script>
+    // Ajuste este alvo se a data de retomada mudar.
+    var alvo = new Date("2026-09-15T00:00:00-03:00").getTime();
+    var elD = document.getElementById("d");
+    var elH = document.getElementById("h");
+    var elM = document.getElementById("m");
+    var elS = document.getElementById("s");
+
+    function pad(n){ return String(n).padStart(2, "0"); }
+
+    function tick(){
+      var diff = alvo - Date.now();
+      if (diff < 0) diff = 0;
+      var dias = Math.floor(diff / 86400000);
+      var horas = Math.floor((diff % 86400000) / 3600000);
+      var min = Math.floor((diff % 3600000) / 60000);
+      var seg = Math.floor((diff % 60000) / 1000);
+      elD.textContent = pad(dias);
+      elH.textContent = pad(horas);
+      elM.textContent = pad(min);
+      elS.textContent = pad(seg);
+    }
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+</html>
