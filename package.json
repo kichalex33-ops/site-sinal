@@ -12,5 +12,10 @@
   "devDependencies": {
     "glob": "^13.0.6",
     "vite": "^8.2.2"
+  },
+  "dependencies": {
+    "@google/model-viewer": "^4.3.1",
+    "animejs": "^4.5.0",
+    "three": "^0.185.1"
   }
 }

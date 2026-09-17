@@ -18,7 +18,7 @@ function markAlienSeen() {
   try { localStorage.setItem(LAST_SEEN_KEY, String(Date.now())); } catch {}
 }
 
-if (!reduceMotion && alienIsDue()) {
+if (!reduceMotion) {
   const layer = document.createElement("div");
   layer.className = "ambience-layer";
   layer.setAttribute("aria-hidden", "true");
@@ -44,7 +44,20 @@ if (!reduceMotion && alienIsDue()) {
     starsWrap.appendChild(star);
   }
 
-  // ---- Rosto do Gray: canto aleatório, uma única aparição por carregamento de página ----
+  // ---- Overlay de glitch/estática, tela cheia — pisca rápido bem no instante em que ele "chega" ----
+  const glitch = document.createElement("div");
+  glitch.className = "ambience-glitch";
+
+  // ---- Pixels reativos ao mouse, em tela cheia ----
+  const pixelsCanvas = document.createElement("canvas");
+  pixelsCanvas.className = "ambience-pixels";
+  layer.append(nebula, pixelsCanvas, starsWrap, glitch);
+  document.body.prepend(layer);
+  document.body.classList.add("js-ambience");
+  setupPixelHover(pixelsCanvas);
+
+  // ---- Rosto do Gray: canto aleatório. Aparece sozinho (se o cooldown já passou) ou
+  // sob demanda, quando algo em outra parte do site "chama" ele (ver evento sr:uap-found). ----
   const alien = document.createElement("div");
   alien.className = "ambience-alien";
   const SPAWNS = [
@@ -61,18 +74,7 @@ if (!reduceMotion && alienIsDue()) {
   alien.style.left = corner.left || "auto";
   alien.style.right = corner.right || "auto";
   const { restX, restY, midX, midY } = corner;
-
-  // ---- Overlay de glitch/estática, tela cheia — pisca rápido bem no instante em que ele "chega" ----
-  const glitch = document.createElement("div");
-  glitch.className = "ambience-glitch";
-
-  // ---- Pixels reativos ao mouse, em tela cheia ----
-  const pixelsCanvas = document.createElement("canvas");
-  pixelsCanvas.className = "ambience-pixels";
-  layer.append(nebula, pixelsCanvas, alien, starsWrap, glitch);
-  document.body.prepend(layer);
-  document.body.classList.add("js-ambience");
-  setupPixelHover(pixelsCanvas);
+  layer.appendChild(alien);
 
   // rastreia o cursor pra ele "notar" a direção de quem olha, de leve, perto do pico
   let mouseNX = 0, mouseNY = 0;
@@ -81,8 +83,19 @@ if (!reduceMotion && alienIsDue()) {
     mouseNY = (e.clientY / window.innerHeight) * 2 - 1;
   });
 
-  // ---- Aparição: acontece sempre, 5s depois que a página abre. ----
-  setTimeout(() => runEncounter(alien, glitch, { restX, restY, midX, midY }, () => mouseNX, () => mouseNY), 5000);
+  let encounterRunning = false;
+  function trigger() {
+    if (encounterRunning) return;
+    encounterRunning = true;
+    runEncounter(alien, glitch, { restX, restY, midX, midY }, () => mouseNX, () => mouseNY, () => { encounterRunning = false; });
+  }
+
+  // ---- Aparição espontânea: só se o cooldown normal já passou, 5s depois que a página abre. ----
+  if (alienIsDue()) setTimeout(trigger, 5000);
+
+  // ---- Aparição sob demanda: qualquer script do site pode disparar isso (ex.: achar a UAP escondida
+  // no sistema solar), sem depender do cooldown — é uma recompensa por achar, não repetição chata. ----
+  window.addEventListener("sr:uap-found", trigger);
 }
 
 // Curva de "proximidade": 0 -> 1 (aproximando) -> platô -> 1 -> 0 (afastando).
@@ -106,7 +119,7 @@ function consoleEasterEgg() {
   );
 }
 
-function runEncounter(alien, glitch, path, getMouseNX, getMouseNY) {
+function runEncounter(alien, glitch, path, getMouseNX, getMouseNY, onDone) {
   const PREROLL_MS = 1200;
   // aproximação lenta (~7s) -> para um instante no pico (~3s) -> recua devagar, como andando de costas (~9s)
   const APPROACH_MS = 7000;
@@ -130,7 +143,10 @@ function runEncounter(alien, glitch, path, getMouseNX, getMouseNY) {
       const c = closenessAt(t, APPROACH_FRAC, HOLD_END_FRAC);
       applyTransform(alien, path, c, getMouseNX(), getMouseNY());
       if (t < 1) requestAnimationFrame(frame);
-      else alien.style.opacity = "0";
+      else {
+        alien.style.opacity = "0";
+        if (onDone) onDone();
+      }
     }
     requestAnimationFrame(frame);
   }, PREROLL_MS);

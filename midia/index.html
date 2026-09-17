@@ -4,18 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mídia · SINAL/RUÍDO</title>
-  <meta name="description" content="Biblioteca de imagens, documentos e vídeos do arquivo, com origem e licença de cada item." />
+  <meta name="description" content="Biblioteca audiovisual do SINAL/RUÍDO, com vídeos, imagens e documentos contextualizados por fonte e proveniência." />
+  <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0B0E14" />
   <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://sinalruido.com.br/midia/" />
   <meta property="og:title" content="Mídia · SINAL/RUÍDO" />
-  <meta property="og:description" content="Biblioteca de imagens, documentos e vídeos do arquivo, com origem e licença de cada item." />
+  <meta property="og:description" content="Biblioteca audiovisual do SINAL/RUÍDO, com vídeos, imagens e documentos contextualizados por fonte e proveniência." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sinalruido.com.br/midia/" />
   <meta property="og:site_name" content="SINAL/RUÍDO" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:image" content="https://sinalruido.com.br/livro/capa.jpg" />
+  <meta property="og:image" content="https://sinalruido.com.br/og/arquivo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://sinalruido.com.br/og/arquivo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" />
@@ -33,39 +37,63 @@
     <div class="container site-header__row">
       <a href="/" class="brand">
         <span class="brand__mark">SINAL<b>/</b>RUÍDO</span>
-        <span class="brand__sub">Arquivo instrumental brasileiro</span>
+        <span class="brand__sub">Romance de investigação · Alex Jr. Kich</span>
       </a>
       <nav class="main-nav" aria-label="Navegação principal">
-        <a href="/arquivo/">Arquivo</a><a href="/colecoes/">Coleções</a><a href="/midia/" aria-current="page">Mídia</a><a href="/noticias/">Notícias</a><a href="/livro/">Livro</a><a href="/leitores/">Leitores</a><a href="/contato/">Contato</a>
+        <a href="/livro/amostra/">Ler</a><a href="/livro/">Livro</a><a href="/arquivo/">Arquivo</a><a href="/midia/" aria-current="page">Mídia</a><a href="/explorar/">Explorar</a><a href="/midia/sistema-solar/">Sistema Solar</a><a href="/livros/">Livros</a><a href="/contato/">Contato</a>
       </nav>
       <div class="header-actions">
+        <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener" class="social-icon-link" aria-label="SINAL/RUÍDO no Instagram">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
+            <circle cx="12" cy="12" r="4.3" />
+            <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
         <button type="button" class="search-trigger" data-cmdk-open aria-haspopup="dialog">
-          Buscar caso, coleção, mídia…
+          Buscar no arquivo…
           <kbd>Ctrl K</kbd>
         </button>
         <button type="button" class="mobile-nav-toggle" data-mobile-nav-toggle aria-label="Abrir menu" aria-expanded="false">☰</button>
       </div>
     </div>
     <nav class="mobile-nav container" data-mobile-nav aria-label="Navegação (compacta)">
-      <a href="/arquivo/">Arquivo</a><a href="/colecoes/">Coleções</a><a href="/midia/" aria-current="page">Mídia</a><a href="/noticias/">Notícias</a><a href="/livro/">Livro</a><a href="/leitores/">Leitores</a><a href="/contato/">Contato</a>
+      <a href="/livro/amostra/">Ler</a><a href="/livro/">Livro</a><a href="/arquivo/">Arquivo</a><a href="/midia/" aria-current="page">Mídia</a><a href="/explorar/">Explorar</a><a href="/midia/sistema-solar/">Sistema Solar</a><a href="/livros/">Livros</a><a href="/contato/">Contato</a>
     </nav>
   </header>
 
   <main id="conteudo">
-    <section class="section">
+    <section class="section media-library">
       <div class="container">
-        <span class="kicker">Biblioteca</span>
+        <span class="kicker">Biblioteca audiovisual</span>
         <h1 style="margin-top:12px">Mídia.</h1>
-        <p style="margin-top:8px;color:var(--muted);max-width:640px">Toda imagem, documento e vídeo aqui tem origem, autoria e licença confirmadas. Nada é apresentado como registro original sem dizer claramente quando não é.</p>
+        <p style="margin-top:8px;color:var(--muted);max-width:760px">Vídeos, imagens, documentos e registros instrumentais com origem, autoria, contexto e versão identificados. A experiência lembra uma plataforma de vídeo; a lógica editorial não usa views, likes ou recomendação por engajamento.</p>
 
-        <div class="filter-row" style="margin-top:24px" data-filter-group="tipo" data-filter-target="[data-media-card]">
-          <button type="button" class="filter-btn" aria-pressed="true" data-filter-value="all">Todos</button>
-          <button type="button" class="filter-btn" data-filter-value="imagem">Imagens</button>
-          <button type="button" class="filter-btn" data-filter-value="documento">Documentos</button>
-          <button type="button" class="filter-btn" data-filter-value="video">Vídeos</button>
+        <div class="media-library__feature" style="margin-top:28px">
+          <a class="media-library__screen" href="/midia/flir1-tic-tac/">
+            <video src="https://upload.wikimedia.org/wikipedia/commons/7/70/FLIR1_Official_UAP_Footage_from_the_USG_for_Public_Release.webm" muted preload="metadata" playsinline></video><span class="media-library__play">▶</span>
+          </a>
+          <div class="media-library__queue">
+            <span class="mono media-library__queue-title">ARQUIVOS RELACIONADOS</span>
+            <a href="/midia/wow-signal/" class="media-queue-item"><span class="media-queue-item__type">documento</span><strong>Printout original do Big Ear com a sequência &quot;6EQUJ5&quot; e a anotação manuscrita &quot;Wow!&quot;</strong><small>Big Ear Radio Observatory / NAAPO</small></a><a href="/midia/wow-signal-profile/" class="media-queue-item"><span class="media-queue-item__type">imagem</span><strong>Gráfico de intensidade do sinal Wow! ao longo do tempo</strong><small>Wikimedia Commons</small></a><a href="/midia/northrop-f-5-forca-aerea-brasileira-seguran-a-rio-2016-3/" class="media-queue-item"><span class="media-queue-item__type">imagem</span><strong>Caça F-5 da Força Aérea Brasileira</strong><small>Agência Brasil</small></a><a href="/midia/memorial-do-et-de-varginha-19-de-fev-de-2025/" class="media-queue-item"><span class="media-queue-item__type">imagem</span><strong>Memorial do ET de Varginha, monumento em formato de nave espacial</strong><small>Wikimedia Commons</small></a><a href="/midia/roswelldailyrecordjuly8-1947/" class="media-queue-item"><span class="media-queue-item__type">documento</span><strong>Manchete do Roswell Daily Record de 8 de julho de 1947 anunciando a captura de um disco voador</strong><small>Roswell Daily Record</small></a>
+          </div>
         </div>
 
-        <div class="grid grid--3" style="margin-top:20px">
+        <div class="media-library__headline"><div><span class="badge badge--provenance">Departamento de Defesa dos EUA</span><h2>FLIR1 (&quot;Tic Tac&quot;) — vídeo oficial da Marinha dos EUA</h2><p>Vídeo em infravermelho gravado por sensores de um F/A-18 do USS Nimitz, oficialmente desclassificado e liberado pelo Departamento de Defesa em 2020.</p></div><a class="btn btn--primary" href="/midia/flir1-tic-tac/">Abrir no player</a></div>
+
+        <div class="filter-row" style="margin-top:36px" data-filter-group="tipo" data-filter-target="[data-media-card]">
+          <button type="button" class="filter-btn" aria-pressed="true" data-filter-value="all">Todos</button>
+          <button type="button" class="filter-btn" data-filter-value="video">Vídeos</button>
+          <button type="button" class="filter-btn" data-filter-value="imagem">Imagens</button>
+          <button type="button" class="filter-btn" data-filter-value="documento">Documentos / scans</button>
+        </div>
+        <p class="mono media-library__future">Estrutura preparada para áudio, radar e outros registros instrumentais quando houver itens auditados.</p>
+        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="/midia/mapa-estelar/" class="btn">Explorar mapa estelar 3D →</a>
+          <a href="/midia/sistema-solar/" class="btn">Explorar sistema solar 3D →</a>
+        </div>
+
+        <div class="media-masonry" style="margin-top:20px">
           <div data-media-card data-tipo="documento">
     <a class="card" style="padding:0;overflow:hidden" href="/midia/wow-signal/" data-tipo="documento">
       <img class="media-card__thumb" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Wow_signal.jpg" alt="Printout original do Big Ear com a sequência &quot;6EQUJ5&quot; e a anotação manuscrita &quot;Wow!&quot;" loading="lazy" />
@@ -210,8 +238,223 @@
         <h3 style="font-size:14px">Audiência completa da Câmara dos EUA sobre UAP (jul·2023)</h3>
         <p>Reconhecimento institucional dos EUA — ODNI e AARO</p>
       </div>
+    </a></div><div data-media-card data-tipo="video">
+    <a class="card" style="padding:0;overflow:hidden" href="/midia/flir1-nimitz/" data-tipo="video">
+      <div class="media-card__thumb media-card__thumb--video">Vídeo ▶</div>
+      <div style="padding:16px">
+        <span class="card__meta">video</span>
+        <h3 style="font-size:14px">FLIR1 (&quot;Tic Tac&quot;) — vídeo original do USS Nimitz</h3>
+        <p>Nimitz &quot;Tic Tac&quot; e vídeos Gimbal / GoFast</p>
+      </div>
+    </a></div><div data-media-card data-tipo="video">
+    <a class="card" style="padding:0;overflow:hidden" href="/midia/gimbal-nimitz/" data-tipo="video">
+      <div class="media-card__thumb media-card__thumb--video">Vídeo ▶</div>
+      <div style="padding:16px">
+        <span class="card__meta">video</span>
+        <h3 style="font-size:14px">Gimbal — vídeo original do USS Theodore Roosevelt</h3>
+        <p>Nimitz &quot;Tic Tac&quot; e vídeos Gimbal / GoFast</p>
+      </div>
+    </a></div><div data-media-card data-tipo="video">
+    <a class="card" style="padding:0;overflow:hidden" href="/midia/gofast-nimitz/" data-tipo="video">
+      <div class="media-card__thumb media-card__thumb--video">Vídeo ▶</div>
+      <div style="padding:16px">
+        <span class="card__meta">video</span>
+        <h3 style="font-size:14px">GoFast — vídeo original do USS Theodore Roosevelt</h3>
+        <p>Nimitz &quot;Tic Tac&quot; e vídeos Gimbal / GoFast</p>
+      </div>
     </a></div>
         </div>
+
+        
+        <section style="margin-top:48px">
+          <span class="kicker">Documentários e entrevistas</span>
+          <h2 style="margin-top:10px">Vídeos em destaque, por caso</h2>
+          <p style="margin-top:8px;color:var(--muted);max-width:760px">Documentários, entrevistas e cobertura de terceiros sobre casos do arquivo. Vídeo de terceiro não é evidência — é material de contexto, e cada card leva ao dossiê completo.</p>
+          <div class="grid grid--2" style="margin-top:20px">
+            <div>
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="x67K-Vq1KWk" data-yt-title="The Wow! Signal with Discoverer Dr. Jerry Ehman">
+        <img src="https://i.ytimg.com/vi/x67K-Vq1KWk/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">Event Horizon</span>
+        <h3>The Wow! Signal with Discoverer Dr. Jerry Ehman</h3>
+        <p class="yt-card__context">Entrevista com o astrônomo Jerry Ehman, que descobriu e anotou o sinal Wow! no printout original de 1977.</p>
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=x67K-Vq1KWk" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a>
+      </div>
+    </div><a href="/casos/sinal-wow/" class="mono" style="display:block;margin-top:8px;color:var(--muted)">Ver dossiê — Sinal Wow! — Big Ear, Ohio →</a></div><div>
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="kREa3qsoJZU" data-yt-title="O.V.N.I.S. (Disco Voador) — Operação Prato, Aparição/Colares Amazônia — Fantástico">
+        <img src="https://i.ytimg.com/vi/kREa3qsoJZU/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">Reprodução de reportagem do Fantástico (Rede Globo)</span>
+        <h3>O.V.N.I.S. (Disco Voador) — Operação Prato, Aparição/Colares Amazônia — Fantástico</h3>
+        <p class="yt-card__context">Reportagem jornalística do Fantástico sobre os relatos de luzes e a Operação Prato em Colares, Pará.</p>
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=kREa3qsoJZU" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a>
+      </div>
+    </div><a href="/casos/operacao-prato-colares/" class="mono" style="display:block;margin-top:8px;color:var(--muted)">Ver dossiê — Operação Prato / Colares →</a></div><div>
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="ze1mBPIHx-A" data-yt-title="Veja depoimentos de pilotos brasileiros durante a &quot;Noite dos OVNIs&quot; de 1986">
+        <img src="https://i.ytimg.com/vi/ze1mBPIHx-A/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">CNN Brasil</span>
+        <h3>Veja depoimentos de pilotos brasileiros durante a &quot;Noite dos OVNIs&quot; de 1986</h3>
+        <p class="yt-card__context">Depoimentos de pilotos da FAB envolvidos na perseguição aos contatos de radar da noite de 19 de maio de 1986.</p>
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=ze1mBPIHx-A" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a>
+      </div>
+    </div><a href="/casos/noite-oficial-dos-ovnis/" class="mono" style="display:block;margin-top:8px;color:var(--muted)">Ver dossiê — Noite Oficial dos OVNIs →</a></div><div>
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="ZFUXEy8zRAE" data-yt-title="CASO ET DE VARGINHA | DOCUMENTÁRIO ESPECIAL">
+        <img src="https://i.ytimg.com/vi/ZFUXEy8zRAE/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">Nerd POPCORN</span>
+        <h3>CASO ET DE VARGINHA | DOCUMENTÁRIO ESPECIAL</h3>
+        <p class="yt-card__context">Documentário especial revisitando o caso, com entrevistas a moradores e testemunhas de Varginha.</p>
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=ZFUXEy8zRAE" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a>
+      </div>
+    </div><a href="/casos/varginha/" class="mono" style="display:block;margin-top:8px;color:var(--muted)">Ver dossiê — Varginha — relatos e inquérito militar →</a></div><div>
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="MTgJb3c3rwM" data-yt-title="Caso Villas Boas – Ufologia Brasileira | MFC 230">
+        <img src="https://i.ytimg.com/vi/MTgJb3c3rwM/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">Mundo Freak</span>
+        <h3>Caso Villas Boas – Ufologia Brasileira | MFC 230</h3>
+        <p class="yt-card__context">Análise em podcast sobre o caso de 1957, discutindo versões e cronologia do relato de Villas-Boas — comentário posterior, não registro primário.</p>
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=MTgJb3c3rwM" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a>
+      </div>
+    </div><a href="/casos/antonio-villas-boas/" class="mono" style="display:block;margin-top:8px;color:var(--muted)">Ver dossiê — Antônio Villas-Boas →</a></div><div>
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="N4v2Mb47qwg" data-yt-title="O &quot;Disco-Voador&quot; da Ilha da Trindade (1958)">
+        <img src="https://i.ytimg.com/vi/N4v2Mb47qwg/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">Canal Memória</span>
+        <h3>O &quot;Disco-Voador&quot; da Ilha da Trindade (1958)</h3>
+        <p class="yt-card__context">Retrospectiva das fotografias tiradas por Almiro Baraúna a bordo do Almirante Saldanha em 1958 e da controvérsia sobre sua autenticidade.</p>
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=N4v2Mb47qwg" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a>
+      </div>
+    </div><a href="/casos/ilha-da-trindade/" class="mono" style="display:block;margin-top:8px;color:var(--muted)">Ver dossiê — Ilha da Trindade →</a></div><div>
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="BZpHEALNozw" data-yt-title="History&#39;s Greatest Mysteries: Roswell Secrets Revealed in Eyewitness Journal (Part 1)">
+        <img src="https://i.ytimg.com/vi/BZpHEALNozw/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">HISTORY</span>
+        <h3>History&#39;s Greatest Mysteries: Roswell Secrets Revealed in Eyewitness Journal (Part 1)</h3>
+        <p class="yt-card__context">Episódio do canal oficial HISTORY revisitando depoimentos de testemunhas do caso Roswell (1947).</p>
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=BZpHEALNozw" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a>
+      </div>
+    </div><a href="/casos/roswell/" class="mono" style="display:block;margin-top:8px;color:var(--muted)">Ver dossiê — Roswell →</a></div><div>
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="g2EVNW3NJr8" data-yt-title="Pilot Kenneth Arnold on seeing UFOs flying in formation near Mt. Rainier, Washington, June 24, 1947">
+        <img src="https://i.ytimg.com/vi/g2EVNW3NJr8/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">Eyes On Cinema</span>
+        <h3>Pilot Kenneth Arnold on seeing UFOs flying in formation near Mt. Rainier, Washington, June 24, 1947</h3>
+        <p class="yt-card__context">Filmagem de arquivo com Kenneth Arnold relatando seu avistamento perto do Monte Rainier.</p>
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=g2EVNW3NJr8" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a>
+      </div>
+    </div><a href="/casos/kenneth-arnold/" class="mono" style="display:block;margin-top:8px;color:var(--muted)">Ver dossiê — Kenneth Arnold — Mount Rainier →</a></div><div>
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="umcLuMrgQ9w" data-yt-title="UFO disclosure: Details emerge on &#39;Invasion of Washington&#39; tape">
+        <img src="https://i.ytimg.com/vi/umcLuMrgQ9w/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">NewsNation</span>
+        <h3>UFO disclosure: Details emerge on &#39;Invasion of Washington&#39; tape</h3>
+        <p class="yt-card__context">Reportagem sobre a fita reencontrada da reunião de 1952 entre a Força Aérea e cientistas.</p>
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=umcLuMrgQ9w" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a>
+      </div>
+    </div><a href="/casos/washington-dc-1952/" class="mono" style="display:block;margin-top:8px;color:var(--muted)">Ver dossiê — Washington D.C. UFO Flap →</a></div><div>
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="rCUikOrYZT4" data-yt-title="The McMinnville UFO Photographs Case (Oregon, USA · 1950)">
+        <img src="https://i.ytimg.com/vi/rCUikOrYZT4/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">The13thTransmission</span>
+        <h3>The McMinnville UFO Photographs Case (Oregon, USA · 1950)</h3>
+        <p class="yt-card__context">Retrospectiva documental sobre as fotos tiradas por Paul e Evelyn Trent em 1950.</p>
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=rCUikOrYZT4" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a>
+      </div>
+    </div><a href="/casos/mcminnville-trent/" class="mono" style="display:block;margin-top:8px;color:var(--muted)">Ver dossiê — McMinnville — fotos Trent →</a></div><div>
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="V3MjsfuLGYw" data-yt-title="The Abduction of Betty &amp; Barney Hill - The Full Story | Documentary">
+        <img src="https://i.ytimg.com/vi/V3MjsfuLGYw/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">Fire of Learning</span>
+        <h3>The Abduction of Betty &amp; Barney Hill - The Full Story | Documentary</h3>
+        <p class="yt-card__context">Documentário sobre o relato de abdução de Betty e Barney Hill em 1961.</p>
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=V3MjsfuLGYw" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a>
+      </div>
+    </div><a href="/casos/betty-barney-hill/" class="mono" style="display:block;margin-top:8px;color:var(--muted)">Ver dossiê — Betty e Barney Hill →</a></div><div>
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="WS5tEmfd28E" data-yt-title="The UFO That Shut Down US Nukes – 1967 Malmstrom AFB Incident">
+        <img src="https://i.ytimg.com/vi/WS5tEmfd28E/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">Past Rewritten</span>
+        <h3>The UFO That Shut Down US Nukes – 1967 Malmstrom AFB Incident</h3>
+        <p class="yt-card__context">Cobertura documental do incidente de março de 1967 na Echo Flight, Malmstrom AFB.</p>
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=WS5tEmfd28E" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a>
+      </div>
+    </div><a href="/casos/malmstrom-afb/" class="mono" style="display:block;margin-top:8px;color:var(--muted)">Ver dossiê — Malmstrom AFB — Echo Flight →</a></div>
+          </div>
+        </section>
+
+        <section style="margin-top:48px">
+          <span class="kicker">Canais e podcasts</span>
+          <h2 style="margin-top:10px">Para acompanhar fora do arquivo</h2>
+          <p style="margin-top:8px;color:var(--muted);max-width:760px">Canais e podcasts no YouTube que cobrem UAP com rigor variável. Listar aqui não é endosso do conteúdo — é apenas um ponto de partida para quem quer ouvir mais vozes sobre o tema.</p>
+          <div class="grid grid--2" style="margin-top:20px">
+            
+            <a class="card" href="https://www.youtube.com/@PodcastUFO" target="_blank" rel="noopener noreferrer">
+              <span class="card__meta">PODCAST · YOUTUBE</span>
+              <h3 style="margin-top:4px">Podcast UFO</h3>
+              <p class="mono" style="margin-top:2px;font-size:12px;color:var(--muted)">Martin Willis</p>
+              <p style="margin-top:6px;font-size:13px">Entrevistas com testemunhas, pesquisadores e militares sobre casos de UAP desde 2011.</p>
+              <span class="mono" style="font-size:11px;margin-top:8px;display:inline-block">Abrir canal ↗</span>
+            </a>
+            <a class="card" href="https://www.youtube.com/@micahhanks" target="_blank" rel="noopener noreferrer">
+              <span class="card__meta">PODCAST · YOUTUBE</span>
+              <h3 style="margin-top:4px">The Micah Hanks Program</h3>
+              <p class="mono" style="margin-top:2px;font-size:12px;color:var(--muted)">Micah Hanks</p>
+              <p style="margin-top:6px;font-size:13px">Abordagem cética e científica sobre UAP, SETI e mistérios correlatos.</p>
+              <span class="mono" style="font-size:11px;margin-top:8px;display:inline-block">Abrir canal ↗</span>
+            </a>
+            <a class="card" href="https://www.youtube.com/@ThatUFOPodcast" target="_blank" rel="noopener noreferrer">
+              <span class="card__meta">PODCAST · YOUTUBE</span>
+              <h3 style="margin-top:4px">That UFO Podcast</h3>
+              
+              <p style="margin-top:6px;font-size:13px">Discussão semanal de casos e notícias do campo ufológico em inglês.</p>
+              <span class="mono" style="font-size:11px;margin-top:8px;display:inline-block">Abrir canal ↗</span>
+            </a>
+            <a class="card" href="https://www.youtube.com/@revistaufo.oficial" target="_blank" rel="noopener noreferrer">
+              <span class="card__meta">PODCAST · YOUTUBE</span>
+              <h3 style="margin-top:4px">Revista UFO Oficial</h3>
+              
+              <p style="margin-top:6px;font-size:13px">Canal brasileiro dedicado à cobertura de casos e notícias de ufologia.</p>
+              <span class="mono" style="font-size:11px;margin-top:8px;display:inline-block">Abrir canal ↗</span>
+            </a>
+          </div>
+        </section>
       </div>
     </section></main>
 
@@ -219,18 +462,25 @@
     <div class="container site-footer__grid">
       <div>
         <span class="brand__mark">SINAL<b>/</b>RUÍDO</span>
-        <p class="mono" style="margin-top:8px">Arquivo instrumental brasileiro, de escopo internacional, dedicado a organizar evidências, testemunhos e hipóteses com proveniência, contradição e revisão explícitas.</p>
+        <p class="mono" style="margin-top:8px">SINAL/RUÍDO é o site oficial do romance de Alex Jr. Kich. Leia os primeiros capítulos, conheça a pesquisa que inspirou a história e decida se quer continuar.</p>
+        <p class="mono" style="margin-top:8px">Um sinal chega de onde não deveria vir.</p>
       </div>
-      <div class="mono" style="display:flex;flex-direction:column;gap:6px">
-        <a href="/contato/">Enviar relato, sugestão ou mensagem</a>
-        <span>Não identificado não significa extraterrestre.</span>
+      <div class="mono footer-links">
+        <a href="/livro/amostra/">Ler 3 capítulos</a>
+        <a href="/livro/">O livro</a>
+        <a href="/leitores/">Leitores</a>
+        <a href="/imprensa/">Imprensa</a>
+        <a href="/contato/">Contato</a>
+        <a href="/privacidade/">Privacidade</a>
+        <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>
+        <span>Ainda não leu? Comece agora.</span>
       </div>
     </div>
   </footer>
 
   <div class="cmdk-backdrop" data-cmdk-backdrop>
     <div class="cmdk" role="dialog" aria-modal="true" aria-label="Busca">
-      <input type="text" placeholder="Buscar caso, coleção, mídia, órgão, local…" data-cmdk-input autocomplete="off" />
+      <input type="text" placeholder="Buscar caso, documento, coleção, mídia, órgão, local…" data-cmdk-input autocomplete="off" />
       <ul data-cmdk-results></ul>
     </div>
   </div>

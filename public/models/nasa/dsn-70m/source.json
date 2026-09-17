@@ -1,0 +1,14 @@
+{
+  "title": "70 meter dish",
+  "sourcePage": "https://science.nasa.gov/3d-resources/70-meter-dish/",
+  "githubMirror": "https://github.com/nasa/NASA-3D-Resources/tree/master/3D%20Models/70-meter%20Dish",
+  "downloadUrl": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/model/70-meter-dish/70%20meter%20dish.glb",
+  "credit": "NASA/Ames Research Center",
+  "originalFilename": "70 meter dish.glb",
+  "originalSizeBytes": 2216584,
+  "format": "glb",
+  "sha256": "36ff56a7a2bfd1c278f6f4774d32128d5931f2c22fe58241d00ee7d1815634bb",
+  "downloadedAt": "2026-09-08",
+  "usage": "Sem restrição de licença explícita na página de origem; uso educacional/informativo conforme descrição geral do hub NASA 3D Resources.",
+  "notes": "Nenhuma alteração aplicada ao arquivo original. Poster gerado a partir de captura do próprio model-viewer renderizando o GLB local (não é imagem oficial da NASA), redimensionado para 1200x900 WebP."
+}

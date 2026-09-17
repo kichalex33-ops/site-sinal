@@ -1,0 +1,14 @@
+{
+  "title": "Kepler (A)",
+  "sourcePage": "https://science.nasa.gov/3d-resources/kepler-a/",
+  "githubMirror": "https://github.com/nasa/NASA-3D-Resources/tree/master/3D%20Models/Kepler%20(A)",
+  "downloadUrl": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/model/kepler-(a)/Kepler%20(A).glb",
+  "credit": "NASA/Brian E. Kumanchik; NASA/Christian A. Lopez",
+  "originalFilename": "Kepler (A).glb",
+  "originalSizeBytes": 2003276,
+  "format": "glb",
+  "sha256": "382014d90e2cf3e1f23e931d233547e652fe3629fddfb5acb8a99e2ceb72ff19",
+  "downloadedAt": "2026-09-08",
+  "usage": "Sem restrição de licença explícita na página de origem; uso educacional/informativo conforme descrição geral do hub NASA 3D Resources.",
+  "notes": "Nenhuma alteração aplicada ao arquivo original. Poster gerado a partir de captura do próprio model-viewer renderizando o GLB local (não é imagem oficial da NASA), redimensionado para 1200x900 WebP."
+}

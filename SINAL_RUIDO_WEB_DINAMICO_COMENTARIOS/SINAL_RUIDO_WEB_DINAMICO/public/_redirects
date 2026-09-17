@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects
+/r/livro            /leitores/?campanha=livro            301
+/r/bunkerx          /leitores/?campanha=bunkerx          301
+/r/cienciatododia   /leitores/?campanha=cienciatododia   301
+/r/spacetoday       /leitores/?campanha=spacetoday       301
+/contato             /imprensa/                           301
+/contato/            /imprensa/                           301

@@ -5,8 +5,39 @@ import "./media-player.js";
 import "./youtube-player.js";
 import "./arquivo-search.js";
 import "./reveal.js";
-import "./contact-form.js";
 import "./ambience.js";
+import "./intro.js";
+import "./home-motion.js";
+import "./home-comments.js";
+import "./reading.js";
+import "./comments.js";
+
+// Mapa estelar 3D: só carrega three.js se a página tiver o container (evita peso nas outras).
+const starmapRoot = document.querySelector("[data-starmap]");
+if (starmapRoot) {
+  const dataEl = document.getElementById("starmap-data");
+  const points = dataEl ? JSON.parse(dataEl.textContent) : [];
+  import("./starmap.js").then((m) => m.initStarmap(starmapRoot, points));
+}
+
+const solarRoot = document.querySelector("[data-solar-system]");
+if (solarRoot) {
+  import("./solarsystem.js").then((m) => m.initSolarSystem(solarRoot));
+}
+
+// Modelos 3D NASA (<model-viewer>): só carrega o custom element se a página tiver algum.
+// reveal="manual" exige chamar dismissPoster() explicitamente — o clique no botão
+// próprio (não o poster nativo) é o que efetivamente baixa o GLB.
+if (document.querySelector("model-viewer")) {
+  import("@google/model-viewer").then(() => {
+    document.querySelectorAll("[data-nasa-reveal]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const viewer = btn.closest("model-viewer");
+        viewer?.dismissPoster();
+      });
+    });
+  });
+}
 
 // Menu mobile
 const toggle = document.querySelector("[data-mobile-nav-toggle]");

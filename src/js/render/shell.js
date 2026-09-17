@@ -1,10 +1,11 @@
 const NAV = [
-  { href: "/arquivo/", label: "Arquivo" },
-  { href: "/colecoes/", label: "Coleções" },
-  { href: "/midia/", label: "Mídia" },
-  { href: "/noticias/", label: "Notícias" },
+  { href: "/livro/amostra/", label: "Ler" },
   { href: "/livro/", label: "Livro" },
-  { href: "/leitores/", label: "Leitores" },
+  { href: "/arquivo/", label: "Arquivo" },
+  { href: "/midia/", label: "Mídia" },
+  { href: "/explorar/", label: "Explorar" },
+  { href: "/midia/sistema-solar/", label: "Sistema Solar" },
+  { href: "/livros/", label: "Livros" },
   { href: "/contato/", label: "Contato" },
 ];
 
@@ -21,11 +22,20 @@ function escapeAttr(str) {
 
 const SITE_URL = "https://sinalruido.com.br";
 
-export function page({ title, description, path, bodyHtml, extraHead = "" }) {
+export function page({
+  title,
+  description,
+  path,
+  bodyHtml,
+  extraHead = "",
+  ogImage = "/og/arquivo.png",
+  robots = "index,follow",
+}) {
   const fullTitle = title === "SINAL/RUÍDO" ? title : `${title} · SINAL/RUÍDO`;
   const safeTitle = escapeAttr(fullTitle);
   const safeDescription = escapeAttr(description);
   const canonicalUrl = `${SITE_URL}${path}`;
+  const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${SITE_URL}${ogImage}`;
   return `<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -33,6 +43,7 @@ export function page({ title, description, path, bodyHtml, extraHead = "" }) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${safeTitle}</title>
   <meta name="description" content="${safeDescription}" />
+  <meta name="robots" content="${escapeAttr(robots)}" />
   <meta name="theme-color" content="#0B0E14" />
   <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="${escapeAttr(canonicalUrl)}" />
@@ -42,8 +53,11 @@ export function page({ title, description, path, bodyHtml, extraHead = "" }) {
   <meta property="og:url" content="${escapeAttr(canonicalUrl)}" />
   <meta property="og:site_name" content="SINAL/RUÍDO" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:image" content="${SITE_URL}/livro/capa.jpg" />
+  <meta property="og:image" content="${escapeAttr(ogImageUrl)}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="${escapeAttr(ogImageUrl)}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" />
@@ -61,14 +75,21 @@ export function page({ title, description, path, bodyHtml, extraHead = "" }) {
     <div class="container site-header__row">
       <a href="/" class="brand">
         <span class="brand__mark">SINAL<b>/</b>RUÍDO</span>
-        <span class="brand__sub">Arquivo instrumental brasileiro</span>
+        <span class="brand__sub">Romance de investigação · Alex Jr. Kich</span>
       </a>
       <nav class="main-nav" aria-label="Navegação principal">
         ${NAV.map((i) => navLink(i, path)).join("")}
       </nav>
       <div class="header-actions">
+        <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener" class="social-icon-link" aria-label="SINAL/RUÍDO no Instagram">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
+            <circle cx="12" cy="12" r="4.3" />
+            <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
         <button type="button" class="search-trigger" data-cmdk-open aria-haspopup="dialog">
-          Buscar caso, coleção, mídia…
+          Buscar no arquivo…
           <kbd>Ctrl K</kbd>
         </button>
         <button type="button" class="mobile-nav-toggle" data-mobile-nav-toggle aria-label="Abrir menu" aria-expanded="false">☰</button>
@@ -85,18 +106,25 @@ export function page({ title, description, path, bodyHtml, extraHead = "" }) {
     <div class="container site-footer__grid">
       <div>
         <span class="brand__mark">SINAL<b>/</b>RUÍDO</span>
-        <p class="mono" style="margin-top:8px">Arquivo instrumental brasileiro, de escopo internacional, dedicado a organizar evidências, testemunhos e hipóteses com proveniência, contradição e revisão explícitas.</p>
+        <p class="mono" style="margin-top:8px">SINAL/RUÍDO é o site oficial do romance de Alex Jr. Kich. Leia os primeiros capítulos, conheça a pesquisa que inspirou a história e decida se quer continuar.</p>
+        <p class="mono" style="margin-top:8px">Um sinal chega de onde não deveria vir.</p>
       </div>
-      <div class="mono" style="display:flex;flex-direction:column;gap:6px">
-        <a href="/contato/">Enviar relato, sugestão ou mensagem</a>
-        <span>Não identificado não significa extraterrestre.</span>
+      <div class="mono footer-links">
+        <a href="/livro/amostra/">Ler 3 capítulos</a>
+        <a href="/livro/">O livro</a>
+        <a href="/leitores/">Leitores</a>
+        <a href="/imprensa/">Imprensa</a>
+        <a href="/contato/">Contato</a>
+        <a href="/privacidade/">Privacidade</a>
+        <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>
+        <span>Ainda não leu? Comece agora.</span>
       </div>
     </div>
   </footer>
 
   <div class="cmdk-backdrop" data-cmdk-backdrop>
     <div class="cmdk" role="dialog" aria-modal="true" aria-label="Busca">
-      <input type="text" placeholder="Buscar caso, coleção, mídia, órgão, local…" data-cmdk-input autocomplete="off" />
+      <input type="text" placeholder="Buscar caso, documento, coleção, mídia, órgão, local…" data-cmdk-input autocomplete="off" />
       <ul data-cmdk-results></ul>
     </div>
   </div>

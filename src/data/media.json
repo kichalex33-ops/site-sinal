@@ -274,5 +274,50 @@
     "versao": "Cópia preservada",
     "license": "Domínio público (obra do governo federal dos EUA)",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_House_Oversight_and_Accountability_Hearing_on_UAP_%E2%80%93_Unidentified_Anomalous_Phenomena_%E2%80%93_Implications_on_National_Security,_Public_Safety,_and_Government_Transparency.webm"
+  },
+  {
+    "slug": "flir1-nimitz",
+    "tipo": "video",
+    "titulo": "FLIR1 (\"Tic Tac\") — vídeo original do USS Nimitz",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/7/70/FLIR1_Official_UAP_Footage_from_the_USG_for_Public_Release.webm",
+    "caseSlug": "nimitz-tic-tac-gimbal-gofast",
+    "caseTitle": "Nimitz \"Tic Tac\" e vídeos Gimbal / GoFast",
+    "data": "2004; liberado oficialmente em 27·04·2020",
+    "autoria": "Marinha dos Estados Unidos",
+    "origem": "Departamento de Defesa dos EUA / Marinha",
+    "contexto": "Gravação de infravermelho feita por F/A-18 do USS Nimitz ao largo de San Diego, sem rotores, esteira de rotor ou superfícies de controle visíveis.",
+    "versao": "Cópia preservada",
+    "license": "Domínio público (obra do governo federal dos EUA)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FLIR1_Official_UAP_Footage_from_the_USG_for_Public_Release.webm"
+  },
+  {
+    "slug": "gimbal-nimitz",
+    "tipo": "video",
+    "titulo": "Gimbal — vídeo original do USS Theodore Roosevelt",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/52/Gimbal_The_First_Official_UAP_Footage_from_the_USG_for_Public_Release.webm",
+    "caseSlug": "nimitz-tic-tac-gimbal-gofast",
+    "caseTitle": "Nimitz \"Tic Tac\" e vídeos Gimbal / GoFast",
+    "data": "jan·2015; liberado oficialmente em 27·04·2020",
+    "autoria": "Marinha dos Estados Unidos",
+    "origem": "Departamento de Defesa dos EUA / Marinha",
+    "contexto": "Gravação de pod de mira ATFLIR feita por tripulação de F/A-18 do grupo USS Theodore Roosevelt.",
+    "versao": "Cópia preservada",
+    "license": "Domínio público (obra do governo federal dos EUA)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gimbal_The_First_Official_UAP_Footage_from_the_USG_for_Public_Release.webm"
+  },
+  {
+    "slug": "gofast-nimitz",
+    "tipo": "video",
+    "titulo": "GoFast — vídeo original do USS Theodore Roosevelt",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/b/be/Go_Fast_Official_USG_Footage_of_UAP_for_Public_Release.webm",
+    "caseSlug": "nimitz-tic-tac-gimbal-gofast",
+    "caseTitle": "Nimitz \"Tic Tac\" e vídeos Gimbal / GoFast",
+    "data": "jan·2015; liberado oficialmente em 27·04·2020",
+    "autoria": "Marinha dos Estados Unidos",
+    "origem": "Departamento de Defesa dos EUA / Marinha",
+    "contexto": "Gravação de pod de mira ATFLIR feita por tripulação de F/A-18 do grupo USS Theodore Roosevelt. Análise cética de Mick West propõe efeito de paralaxe, com o objeto sendo um balão distante visto de perto pela câmera em movimento.",
+    "versao": "Cópia preservada",
+    "license": "Domínio público (obra do governo federal dos EUA)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Go_Fast_Official_USG_Footage_of_UAP_for_Public_Release.webm"
   }
 ]

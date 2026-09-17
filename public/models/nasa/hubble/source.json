@@ -1,0 +1,14 @@
+{
+  "title": "Hubble Space Telescope (A)",
+  "sourcePage": "https://science.nasa.gov/3d-resources/hubble-space-telescope-a/",
+  "githubMirror": "https://github.com/nasa/NASA-3D-Resources/tree/master/3D%20Models/Hubble%20Space%20Telescope%20(A)",
+  "downloadUrl": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/model/hubble-space-telescope-(a)/Hubble%20Space%20Telescope%20(A).glb",
+  "credit": "DigitalSpace Corporation",
+  "originalFilename": "Hubble Space Telescope (A).glb",
+  "originalSizeBytes": 1694988,
+  "format": "glb",
+  "sha256": "e5ba4de15c7d359ac8fa1ab7e286aff42dec09c0fadae3db99252587f39fa384",
+  "downloadedAt": "2026-09-08",
+  "usage": "Sem restrição de licença explícita na página de origem; uso educacional/informativo conforme descrição geral do hub NASA 3D Resources.",
+  "notes": "Nenhuma alteração aplicada ao arquivo original. Poster gerado a partir de captura do próprio model-viewer renderizando o GLB local (não é imagem oficial da NASA), redimensionado para 1200x900 WebP."
+}

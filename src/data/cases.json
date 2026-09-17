@@ -489,7 +489,14 @@
     ],
     "maturidade": "indexado",
     "auditoriaFactualWeb": false,
-    "videosYoutube": []
+    "videosYoutube": [
+      {
+        "titulo": "CASO ET DE VARGINHA | DOCUMENTÁRIO ESPECIAL",
+        "youtubeId": "ZFUXEy8zRAE",
+        "canal": "Nerd POPCORN",
+        "contexto": "Documentário especial revisitando o caso, com entrevistas a moradores e testemunhas de Varginha."
+      }
+    ]
   },
   {
     "slug": "antonio-villas-boas",
@@ -499,8 +506,16 @@
     "location": "São Francisco de Sales / MG",
     "status": "aberto",
     "statusLabel": "Relato único, sem corroboração externa",
-    "resumo": "Antônio Villas-Boas, um jovem agricultor, relatou publicamente uma experiência de proximidade e interação física ocorrida na noite de 16 de outubro de 1957, em São Francisco de Sales, Minas Gerais. O relato só circulou por meio de uma entrevista posterior ao evento alegado — não existe nenhum registro contemporâneo, seja documento oficial, matéria de jornal da época ou depoimento de terceiros, que confirme o episódio no momento em que teria ocorrido. Um suposto exame clínico com achados compatíveis com exposição à radiação é frequentemente citado por fontes ufológicas como corroboração, mas não há laudo institucional público confirmado de forma independente. É, estruturalmente, um relato único: não há segunda testemunha do episódio central, e toda a informação disponível sobre o caso deriva do próprio depoimento de Villas-Boas, dado depois do fato.",
-    "documentos": [],
+    "resumo": "Antônio Villas-Boas, um jovem agricultor de 23 anos que mais tarde se formaria advogado, relatou publicamente uma experiência de proximidade e interação física ocorrida na madrugada de 15 de outubro de 1957 (entre a noite de 14 e a manhã de 15), em São Francisco de Sales, Minas Gerais, com duração alegada de cerca de quatro horas. O relato só circulou por meio de uma entrevista posterior ao evento alegado — não existe nenhum registro contemporâneo, seja documento oficial, matéria de jornal da época ou depoimento de terceiros, que confirme o episódio no momento em que teria ocorrido. Em 22 de fevereiro de 1958, os médicos Olavo Fontes e Walter Buller o examinaram no Rio de Janeiro, na presença do jornalista João Martins, e associaram os sintomas relatados (náusea, dores pelo corpo, lesões cutâneas, perda de apetite) a uma possível exposição à radiação — uma consulta clínica privada, documentada por Fontes, mas sem laudo institucional público confirmado de forma independente. O pesquisador cético Peter Rogerson, na revista Magonia, notou semelhanças entre o relato e uma reportagem publicada na revista O Cruzeiro em novembro de 1957 e com motivos populares dos relatos contactistas de George Adamski, sugerindo possível influência narrativa. É, estruturalmente, um relato único: não há segunda testemunha do episódio central, e toda a informação disponível sobre o caso deriva do próprio depoimento de Villas-Boas, dado depois do fato.",
+    "documentos": [
+      {
+        "tipo": "Consulta médica",
+        "titulo": "Exame de Villas-Boas pelos médicos Olavo Fontes e Walter Buller",
+        "descricao": "Consulta clínica privada realizada no Rio de Janeiro, na presença do jornalista João Martins, na qual os médicos associaram os sintomas relatados por Villas-Boas (náusea, dores pelo corpo, lesões cutâneas, perda de apetite, lacrimejamento) a uma possível exposição à radiação. Não é um laudo institucional público nem um exame conduzido de forma independente do relato do próprio paciente.",
+        "data": "22-02-1958",
+        "origem": "Dr. Olavo Fontes (Escola Nacional de Medicina) e Dr. Walter Buller"
+      }
+    ],
     "testemunhos": [
       {
         "quem": "Antônio Villas-Boas",
@@ -508,17 +523,21 @@
         "tempoAposEvento": "Não contemporâneo — intervalo entre o evento e o registro público",
         "versoes": "Relato único; não há segunda testemunha do episódio central",
         "outrasTestemunhas": "Nenhuma identificada para o episódio em si",
-        "possivelContaminacao": "Detalhes que aparecem apenas em versões posteriores são tratados como parte dessas versões, não do relato original. Um suposto exame clínico compatível com radiação é citado por fontes ufológicas, sem laudo institucional público confirmado de forma independente."
+        "possivelContaminacao": "Detalhes que aparecem apenas em versões posteriores são tratados como parte dessas versões, não do relato original. O pesquisador cético Peter Rogerson (Magonia) apontou semelhanças com uma reportagem da revista O Cruzeiro publicada em novembro de 1957 e com motivos dos relatos contactistas de George Adamski, então já populares."
       }
     ],
     "cronologia": [
       {
-        "quando": "16·10·1957",
-        "evento": "Evento alegado pelo relato de Villas-Boas."
+        "quando": "14/15·10·1957, madrugada",
+        "evento": "Evento alegado pelo relato de Villas-Boas, com duração de cerca de quatro horas."
       },
       {
-        "quando": "Posteriormente",
-        "evento": "Entrevista e circulação pública do relato."
+        "quando": "nov-1957",
+        "evento": "A revista O Cruzeiro publica reportagem com elementos que o pesquisador Peter Rogerson depois apontaria como semelhantes ao relato de Villas-Boas."
+      },
+      {
+        "quando": "22·02·1958",
+        "evento": "Villas-Boas é examinado no Rio de Janeiro pelos médicos Olavo Fontes e Walter Buller, na presença do jornalista João Martins."
       }
     ],
     "hipoteses": [
@@ -527,34 +546,49 @@
         "avaliacao": "Considerada por parte da literatura sobre o caso, sem confirmação possível à distância de décadas."
       },
       {
+        "tipo": "Origem literária/contaminação narrativa",
+        "avaliacao": "Peter Rogerson (revista Magonia) argumenta que o relato pode ter incorporado elementos de uma reportagem da O Cruzeiro de novembro de 1957 e de motivos populares dos relatos contactistas de George Adamski — e contesta a premissa de que um agricultor rural não teria como inventar essa narrativa, notando que Villas-Boas era, nas palavras do pesquisador, \"determinadamente ambicioso\", tendo depois se formado advogado."
+      },
+      {
         "tipo": "Fraude",
         "avaliacao": "Não descartável nem confirmável — não há registro externo independente do episódio."
       },
       {
         "tipo": "Hipótese extraordinária",
-        "avaliacao": "Sustentada inteiramente pelo relato individual, sem corroboração."
+        "avaliacao": "Sustentada inteiramente pelo relato individual e pela consulta médica de 1958, que documentou sintomas compatíveis com exposição à radiação sem apurar a causa."
       }
     ],
     "contradicoes": [
       "Não existe nenhum registro contemporâneo ao evento — toda a informação disponível vem do próprio relato, posteriormente.",
-      "O suposto exame clínico associado ao caso circula em fontes ufológicas, não em laudo institucional público independente."
+      "O exame de Fontes e Buller documentou sintomas físicos reais, mas partiu do relato do próprio paciente sobre sua causa — não é um laudo institucional independente do que Villas-Boas afirmou ter vivido."
     ],
     "oQueSabemos": [
-      "Existe um relato público de Antônio Villas-Boas, associado à noite de 16/10/1957."
+      "Existe um relato público de Antônio Villas-Boas, associado à madrugada de 15/10/1957.",
+      "Em 22/02/1958, dois médicos o examinaram e documentaram sintomas físicos compatíveis com exposição à radiação, de causa não apurada de forma independente."
     ],
     "oQueNaoSabemos": [
       "Se o episódio relatado ocorreu como descrito.",
-      "A causa de qualquer elemento factual eventualmente por trás do relato."
+      "A causa de qualquer elemento factual eventualmente por trás do relato, incluindo os sintomas documentados pelos médicos em 1958."
     ],
     "paraSaberMais": [
       "Qualquer registro contemporâneo ao evento (não posterior) que ainda não tenha sido localizado.",
-      "Uma fonte jornalística ou acadêmica cética de qualidade equivalente às de outros casos deste arquivo — não localizada até esta revisão."
+      "O texto completo da análise de Peter Rogerson na revista Magonia, com a comparação linha a linha entre o relato e a reportagem da O Cruzeiro de 1957."
     ],
     "imagens": [],
     "fontes": [
       {
         "qualidade": "Fonte primária",
         "label": "Relato e entrevista original de Antônio Villas-Boas"
+      },
+      {
+        "qualidade": "Referência contextual",
+        "label": "Antônio Vilas-Boas — Wikipedia (EN)",
+        "url": "https://en.wikipedia.org/wiki/Ant%C3%B4nio_Vilas-Boas"
+      },
+      {
+        "qualidade": "Investigação cética",
+        "label": "Peter Rogerson — \"Fairyland's Hunters: Notes Towards a Revisionist History of Abductions, Part One\" (Magonia)",
+        "url": "http://magoniamagazine.blogspot.com/2013/11/notes-towards-revisionist-history-of.html"
       }
     ],
     "maturidade": "registro",
@@ -832,7 +866,7 @@
         "quandoDeclarou": "No mesmo dia, à imprensa; formalmente por carta 12 dias depois",
         "tempoAposEvento": "Relato imediato",
         "versoes": "Estimativa de velocidade (~1700 mph) e a comparação de movimento a \"disco pulando na água\" foram amplamente reproduzidas e reinterpretadas pela imprensa como descrição da forma dos objetos",
-        "outrasTestemunhas": "Nenhuma outra testemunha independente do avistamento específico de Arnold identificada nas fontes revisadas"
+        "outrasTestemunhas": "Fred Johnson, um garimpeiro no Monte Adams, relatou aos oficiais de inteligência da Army Air Force ter visto seis dos objetos com um telescópio, por volta do mesmo horário do avistamento de Arnold — os investigadores da época o descreveram como testemunha confiável"
       }
     ],
     "cronologia": [
@@ -845,6 +879,10 @@
         "evento": "Imprensa cunha o termo \"flying saucer\" a partir da descrição do movimento dos objetos."
       },
       {
+        "quando": "24·06·1947 (mesmo dia)",
+        "evento": "O garimpeiro Fred Johnson relata, de forma independente, ter visto seis objetos semelhantes do Monte Adams, com telescópio."
+      },
+      {
         "quando": "12·07·1947",
         "evento": "Arnold envia carta com esboços à AAF Intelligence em Wright Field."
       }
@@ -852,7 +890,7 @@
     "hipoteses": [
       {
         "tipo": "Fenômeno atmosférico",
-        "avaliacao": "Miragem ou reflexo atmosférico é uma hipótese considerada; nunca confirmada."
+        "avaliacao": "Investigadores da Army Air Force da época consideraram tanto Arnold quanto Fred Johnson testemunhas confiáveis, mas concluíram que ambos provavelmente viram uma miragem — não uma aeronave real."
       },
       {
         "tipo": "Aeronave",
@@ -868,7 +906,8 @@
     ],
     "oQueSabemos": [
       "Arnold relatou nove objetos em formação, com carta e esboços enviados formalmente à inteligência militar 12 dias depois.",
-      "O episódio deu origem ao vocabulário (\"disco voador\") que passou a nomear toda a categoria de relatos subsequentes."
+      "O episódio deu origem ao vocabulário (\"disco voador\") que passou a nomear toda a categoria de relatos subsequentes.",
+      "Fred Johnson relatou, de forma independente e no mesmo dia, ter visto objetos semelhantes a cerca de 60 km de distância — investigadores da época o consideraram testemunha confiável."
     ],
     "oQueNaoSabemos": [
       "A origem física do que Arnold avistou."
@@ -898,8 +937,18 @@
       },
       {
         "qualidade": "Referência contextual",
-        "label": "Wikipedia / History.com",
+        "label": "Kenneth Arnold UFO sighting — Wikipedia (EN)",
         "url": "https://en.wikipedia.org/wiki/Kenneth_Arnold_UFO_sighting"
+      },
+      {
+        "qualidade": "Referência contextual",
+        "label": "HISTORY — Kenneth Arnold: UFO, 1947 & Flying Saucer",
+        "url": "https://www.history.com/articles/kenneth-arnold"
+      },
+      {
+        "qualidade": "Acervo institucional",
+        "label": "Smithsonian National Air and Space Museum — 1947: The Year of the Flying Saucer",
+        "url": "https://airandspace.si.edu/stories/editorial/1947-year-flying-saucer"
       }
     ],
     "maturidade": "indexado",
@@ -1102,7 +1151,14 @@
     ],
     "maturidade": "indexado",
     "auditoriaFactualWeb": false,
-    "videosYoutube": []
+    "videosYoutube": [
+      {
+        "titulo": "The McMinnville UFO Photographs Case (Oregon, USA · 1950)",
+        "youtubeId": "rCUikOrYZT4",
+        "canal": "The13thTransmission",
+        "contexto": "Retrospectiva documental sobre as fotos tiradas por Paul e Evelyn Trent em 1950."
+      }
+    ]
   },
   {
     "slug": "betty-barney-hill",
@@ -1113,7 +1169,22 @@
     "status": "aberto",
     "statusLabel": "Caso fundador do arquétipo de abdução, sem corroboração externa",
     "resumo": "Na noite de 19 para 20 de setembro de 1961, o casal Betty e Barney Hill relatou ter visto luzes anômalas seguindo seu carro durante uma viagem noturna pelo interior de New Hampshire, e descreveu, já na chegada em casa, um intervalo de tempo que não conseguiam explicar. Esse relato inicial — modesto, sem menção a abdução — é a única parte do caso contemporânea ao evento. Meses depois, em sessões de hipnose regressiva conduzidas pelo psiquiatra Benjamim Simon, o casal produziu um relato muito mais detalhado, incluindo uma suposta abdução a bordo de uma nave; Betty também desenhou, sob hipnose, um \"mapa estelar\" depois associado ao sistema Zeta Reticuli — associação hoje geralmente rejeitada mesmo por parte dos simpatizantes do caso. A publicação do livro \"The Interrupted Journey\", de John G. Fuller, em 1966, tornou o episódio amplamente conhecido e o transformou no caso fundador do arquétipo moderno de abdução alienígena na cultura ocidental. A hipnose regressiva é hoje considerada, pela psicologia, um método propenso a gerar falsas memórias — fator central para avaliar a parte mais detalhada do relato.",
-    "documentos": [],
+    "documentos": [
+      {
+        "tipo": "Investigação civil",
+        "titulo": "Entrevista do investigador Walter N. Webb (NICAP)",
+        "descricao": "Walter N. Webb, astrônomo e investigador do National Investigations Committee on Aerial Phenomena (NICAP), viajou a Portsmouth e entrevistou o casal por cerca de seis horas em outubro de 1961, pouco depois do relato inicial de luzes anômalas — antes das sessões de hipnose que produziriam a versão detalhada de abdução.",
+        "data": "out-1961",
+        "origem": "NICAP"
+      },
+      {
+        "tipo": "Parecer oficial",
+        "titulo": "Conclusão do Project Blue Book sobre o caso",
+        "descricao": "A Força Aérea dos EUA avaliou inicialmente que o casal provavelmente confundiu o planeta Júpiter com o objeto relatado (parecer de 26/09/1961, depois alterado para \"condição óptica\"/\"inversão térmica\"). O caso foi formalmente encerrado em 27/09/1963 como \"dados insuficientes nos arquivos da Força Aérea\".",
+        "data": "26-09-1961 (parecer inicial); 27-09-1963 (encerramento)",
+        "origem": "Project Blue Book, USAF"
+      }
+    ],
     "testemunhos": [
       {
         "quem": "Betty e Barney Hill",
@@ -1130,6 +1201,18 @@
         "evento": "Casal relata luzes anômalas seguindo o carro numa viagem noturna."
       },
       {
+        "quando": "26·09·1961",
+        "evento": "Parecer inicial da USAF sugere confusão com o planeta Júpiter."
+      },
+      {
+        "quando": "out-1961",
+        "evento": "O investigador Walter N. Webb, do NICAP, entrevista o casal por cerca de seis horas."
+      },
+      {
+        "quando": "27·09·1963",
+        "evento": "Project Blue Book encerra o caso como \"dados insuficientes nos arquivos da Força Aérea\"."
+      },
+      {
         "quando": "Meses/anos depois",
         "evento": "Sessões de hipnose regressiva com o Dr. Benjamin Simon produzem o relato detalhado de abdução."
       },
@@ -1139,6 +1222,10 @@
       }
     ],
     "hipoteses": [
+      {
+        "tipo": "Explicação oficial (Project Blue Book)",
+        "avaliacao": "A USAF avaliou inicialmente que o casal confundiu o planeta Júpiter com o objeto avistado, depois revisado para \"condição óptica\"/\"inversão térmica\"; o caso foi encerrado como \"dados insuficientes\" em 1963 — não há refutação pontual e documentada dessa hipótese específica nas fontes consultadas."
+      },
       {
         "tipo": "Interpretação psicológica",
         "avaliacao": "A hipnose regressiva é hoje considerada, na psicologia, um método propenso a gerar falsas memórias — fator central para avaliar o relato detalhado."
@@ -1150,11 +1237,13 @@
     ],
     "contradicoes": [
       "O relato imediato ao evento (luzes anômalas) é bem mais modesto do que o relato de abdução que se consolidou depois, sob hipnose — mesmo padrão de detalhe tardio observado em outros casos deste arquivo.",
-      "A associação do \"mapa estelar\" ao sistema Zeta Reticuli é hoje geralmente rejeitada mesmo por parte dos simpatizantes do caso."
+      "A associação do \"mapa estelar\" ao sistema Zeta Reticuli é hoje geralmente rejeitada mesmo por parte dos simpatizantes do caso.",
+      "O Project Blue Book encerrou o caso como \"dados insuficientes\", sem propor a hipótese de abdução nem confirmá-la ou refutá-la — a USAF avaliou apenas o relato inicial de luzes, anterior às sessões de hipnose."
     ],
     "oQueSabemos": [
       "O casal relatou luzes anômalas na noite de 19/09/1961, de forma contemporânea ao evento.",
-      "O relato de abdução com detalhes específicos surgiu apenas em sessões de hipnose posteriores."
+      "O relato de abdução com detalhes específicos surgiu apenas em sessões de hipnose posteriores.",
+      "O Project Blue Book avaliou o relato inicial e o encerrou como \"dados insuficientes\", após cogitar confusão com o planeta Júpiter."
     ],
     "oQueNaoSabemos": [
       "A causa das luzes relatadas na noite do evento.",
@@ -1187,11 +1276,28 @@
       {
         "qualidade": "Investigação posterior",
         "label": "Sessões do Dr. Benjamin Simon (hipnose regressiva)"
+      },
+      {
+        "qualidade": "Referência contextual",
+        "label": "Barney and Betty Hill incident — Wikipedia (EN)",
+        "url": "https://en.wikipedia.org/wiki/Barney_and_Betty_Hill_incident"
+      },
+      {
+        "qualidade": "Acervo institucional",
+        "label": "Project Blue Book — arquivo de investigações da USAF, 1947–1969 (National Archives / Fold3)",
+        "url": "https://www.fold3.com/publication/461/us-project-blue-book-ufo-investigations-1947-1969"
       }
     ],
     "maturidade": "indexado",
     "auditoriaFactualWeb": false,
-    "videosYoutube": []
+    "videosYoutube": [
+      {
+        "titulo": "The Abduction of Betty & Barney Hill - The Full Story | Documentary",
+        "youtubeId": "V3MjsfuLGYw",
+        "canal": "Fire of Learning",
+        "contexto": "Documentário sobre o relato de abdução de Betty e Barney Hill em 1961."
+      }
+    ]
   },
   {
     "slug": "malmstrom-afb",
@@ -1306,7 +1412,14 @@
     ],
     "maturidade": "indexado",
     "auditoriaFactualWeb": false,
-    "videosYoutube": []
+    "videosYoutube": [
+      {
+        "titulo": "The UFO That Shut Down US Nukes – 1967 Malmstrom AFB Incident",
+        "youtubeId": "WS5tEmfd28E",
+        "canal": "Past Rewritten",
+        "contexto": "Cobertura documental do incidente de março de 1967 na Echo Flight, Malmstrom AFB."
+      }
+    ]
   },
   {
     "slug": "incidente-de-teera",
@@ -1343,6 +1456,10 @@
       {
         "quando": "Durante a interceptação",
         "evento": "Ambas as aeronaves relatam falhas simultâneas de sistemas eletrônicos ao se aproximar do alvo."
+      },
+      {
+        "quando": "24·09·1976",
+        "evento": "A DIA compila o relatório de quatro páginas a partir de depoimentos de militares da Força Aérea Iraniana e de operadores de radar do Aeroporto de Mehrabad."
       },
       {
         "quando": "31·08·1977",
@@ -1393,6 +1510,11 @@
         "qualidade": "Fonte primária",
         "label": "Relatório da Defense Intelligence Agency, desclassificado via FOIA em 31·08·1977",
         "url": "https://www.theblackvault.com/casefiles/the-1976-iran-incident/"
+      },
+      {
+        "qualidade": "Referência contextual",
+        "label": "1976 Tehran UFO incident — Wikipedia (EN)",
+        "url": "https://en.wikipedia.org/wiki/1976_Tehran_UFO_incident"
       }
     ],
     "maturidade": "indexado",
@@ -1606,7 +1728,14 @@
     ],
     "maturidade": "indexado",
     "auditoriaFactualWeb": false,
-    "videosYoutube": []
+    "videosYoutube": [
+      {
+        "titulo": "Belgium General says incredible UFO case is a mystery - Exclusive",
+        "youtubeId": "tdEALPvl_4Q",
+        "canal": "OpenMindsTV",
+        "contexto": "Entrevista exclusiva com o general reformado da Força Aérea Belga Wilfried De Brouwer sobre a onda de 1989-1990."
+      }
+    ]
   },
   {
     "slug": "phoenix-lights",
@@ -1708,15 +1837,24 @@
         "titulo": "FLIR1 (\"Tic Tac\")",
         "descricao": "Gravado por F/A-18 do USS Nimitz ao largo de San Diego; o tenente-comandante Chad Underwood, operador de sensores, cunhou o apelido \"Tic Tac\" pela forma do objeto no infravermelho — sem rotores, sem esteira de rotor, sem superfícies de controle visíveis.",
         "data": "2004; liberado oficialmente em 27·04·2020",
-        "origem": "Departamento de Defesa dos EUA / Marinha"
+        "origem": "Departamento de Defesa dos EUA / Marinha",
+        "linkExterno": "https://commons.wikimedia.org/wiki/File:FLIR1_Official_UAP_Footage_from_the_USG_for_Public_Release.webm"
       },
       {
-        "tipo": "Vídeo militar",
-        "titulo": "Gimbal e GoFast",
-        "descricao": "Gravados por tripulações de F/A-18 do grupo USS Theodore Roosevelt em janeiro de 2015, usando pod de mira ATFLIR. Não localizados no Wikimedia Commons nesta revisão — hospedados nos sites oficiais do DoD/NAVAIR.",
+        "tipo": "Vídeo militar oficial",
+        "titulo": "Gimbal",
+        "descricao": "Gravado por tripulação de F/A-18 do grupo USS Theodore Roosevelt em janeiro de 2015, usando pod de mira ATFLIR.",
         "data": "jan·2015; liberado oficialmente em 27·04·2020",
         "origem": "Departamento de Defesa dos EUA / Marinha",
-        "linkExterno": "https://www.defense.gov/News/Releases/Release/Article/2165713/"
+        "linkExterno": "https://commons.wikimedia.org/wiki/File:Gimbal_The_First_Official_UAP_Footage_from_the_USG_for_Public_Release.webm"
+      },
+      {
+        "tipo": "Vídeo militar oficial",
+        "titulo": "GoFast",
+        "descricao": "Gravado por tripulação de F/A-18 do grupo USS Theodore Roosevelt em janeiro de 2015, usando pod de mira ATFLIR.",
+        "data": "jan·2015; liberado oficialmente em 27·04·2020",
+        "origem": "Departamento de Defesa dos EUA / Marinha",
+        "linkExterno": "https://commons.wikimedia.org/wiki/File:Go_Fast_Official_USG_Footage_of_UAP_for_Public_Release.webm"
       }
     ],
     "testemunhos": [
@@ -1825,6 +1963,14 @@
         "data": "14·11·2024",
         "origem": "Departamento de Defesa dos EUA (AARO)",
         "linkExterno": "https://media.defense.gov/2024/Nov/14/2003583603/-1/-1/0/FY24-CONSOLIDATED-ANNUAL-REPORT-ON-UAP-508.PDF"
+      },
+      {
+        "tipo": "Relatório governamental",
+        "titulo": "AARO Historical Record Report, Volume I",
+        "descricao": "Revisão histórica de todo esforço investigativo oficial do governo dos EUA sobre UAP desde 1945, incluindo arquivos classificados e cerca de 30 entrevistas. Conclui não haver evidência verificável de que o governo ou empresas privadas tenham feito engenharia reversa de tecnologia extraterrestre, e rastreia alegações modernas de programa oculto a um grupo consistente de indivíduos ligados a um esforço cancelado da DIA e à proposta malsucedida KONA BLUE do DHS. Analisou uma amostra de material alegado como de origem não humana e concluiu se tratar de liga metálica terrestre comum.",
+        "data": "06-03-2024",
+        "origem": "Departamento de Defesa dos EUA (AARO)",
+        "linkExterno": "https://commons.wikimedia.org/wiki/File:AARO_Historical_Record_Report_Volume_1_2024.pdf"
       }
     ],
     "testemunhos": [],
@@ -1838,13 +1984,31 @@
         "evento": "Criação da All-domain Anomaly Resolution Office (AARO) no Departamento de Defesa."
       },
       {
+        "quando": "06·03·2024",
+        "evento": "AARO publica o Historical Record Report, Volume I, revisando o histórico de investigações do governo dos EUA desde 1945 e contestando diretamente alegações de programa oculto de engenharia reversa."
+      },
+      {
         "quando": "14·11·2024",
         "evento": "AARO publica relatório anual consolidado do ano fiscal 2024."
       }
     ],
-    "hipoteses": [],
+    "hipoteses": [
+      {
+        "tipo": "Pressão legislativa/política",
+        "avaliacao": "O reconhecimento institucional foi diretamente exigido pelo Senate Report 116-233 e por pressão de membros do Congresso — não decorreu de uma descoberta científica nova ou de um evento específico."
+      },
+      {
+        "tipo": "Gestão de risco institucional",
+        "avaliacao": "Parte dos pesquisadores interpreta a criação da AARO como resposta padrão do Departamento de Defesa a reportagens de imprensa (vídeos Nimitz/Gimbal/GoFast, divulgados a partir de 2017) e à pressão pública decorrente, sem que isso implique confirmação de fenômeno extraordinário."
+      },
+      {
+        "tipo": "Alegação de programa oculto (Grusch) vs. achado da AARO",
+        "avaliacao": "David Grusch testemunhou sob juramento, em 26/07/2023, sobre um programa de recuperação e análise de material de origem não humana, baseado em relatos de terceiros, não em observação direta própria. O AARO Historical Record Report (06/03/2024) afirma não ter encontrado evidência verificável para essa alegação, e rastreou relatos semelhantes a um grupo específico de fontes ligadas a um esforço cancelado da DIA."
+      }
+    ],
     "contradicoes": [
-      "O relatório da AARO resolve 49 de 757 casos do período — a grande maioria permanece formalmente \"em revisão\", o que é frequentemente simplificado na cobertura pública como \"o governo não encontrou nada\" ou \"o governo confirma alienígenas\", nenhuma das duas leituras corresponde ao texto do documento."
+      "O relatório da AARO resolve 49 de 757 casos do período — a grande maioria permanece formalmente \"em revisão\", o que é frequentemente simplificado na cobertura pública como \"o governo não encontrou nada\" ou \"o governo confirma alienígenas\", nenhuma das duas leituras corresponde ao texto do documento.",
+      "David Grusch testemunhou sob juramento perante o Congresso sobre um programa de recuperação de material não humano; o AARO Historical Record Report (2024) diz não ter encontrado evidência verificável para essa alegação, inclusive analisando uma amostra de material alegado como de origem não humana e classificando-a como liga terrestre comum."
     ],
     "oQueSabemos": [
       "O governo dos EUA reconheceu formalmente, em documentos oficiais e não classificados, a existência de uma categoria relevante de UAP para segurança nacional.",
@@ -1881,6 +2045,11 @@
         "qualidade": "Fonte primária",
         "label": "AARO — Relatório anual consolidado FY2024 (14·11·2024)",
         "url": "https://media.defense.gov/2024/Nov/14/2003583603/-1/-1/0/FY24-CONSOLIDATED-ANNUAL-REPORT-ON-UAP-508.PDF"
+      },
+      {
+        "qualidade": "Fonte primária",
+        "label": "AARO — Historical Record Report, Volume I (06·03·2024)",
+        "url": "https://commons.wikimedia.org/wiki/File:AARO_Historical_Record_Report_Volume_1_2024.pdf"
       }
     ],
     "maturidade": "indexado",
@@ -1891,6 +2060,431 @@
         "youtubeId": "OV-SQkEGIDw",
         "canal": "PBS NewsHour",
         "contexto": "Cobertura da audiência da Câmara dos EUA de 26 de julho de 2023, com o depoimento do denunciante David Grusch."
+      }
+    ]
+  },
+  {
+    "slug": "ariel-school-ruwa-zimbabwe",
+    "code": "SR-CASE-0019",
+    "date": "16-09-1994",
+    "title": "Ariel School — As Crianças de Ruwa",
+    "location": "Ruwa, Zimbábue (22 km a sudeste de Harare)",
+    "status": "controverso",
+    "statusLabel": "Testemunhas consistentes; explicações convencionais em disputa",
+    "resumo": "Por volta das 10h do dia 16 de setembro de 1994, durante o intervalo da manhã, 62 alunos da Ariel School, entre 6 e 12 anos, relataram ter visto um ou mais objetos discoidais prateados pousarem num campo ao lado da escola, enquanto os professores estavam reunidos dentro do prédio e não presenciaram o evento central. Parte das crianças descreveu a presença de um ou mais seres pequenos, vestidos de preto e com olhos grandes, que teriam se aproximado e comunicado uma mensagem — em várias versões, ligada a temas ambientais — de forma não falada. A pesquisadora local Cynthia Hind e o correspondente da BBC Tim Leach entrevistaram as crianças dias depois; em 30 de novembro de 1994, o psiquiatra John E. Mack, professor de Harvard e vencedor do Prêmio Pulitzer, viajou à Zimbábue e conduziu entrevistas individuais e em pequenos grupos, documentando um grau de consistência entre os relatos que o levou a declarar publicamente que considerava as crianças verossímeis. Não há fotografia do objeto ou dos seres, registro de radar, vestígio físico independente ou testemunho adulto do momento central do evento.",
+    "documentos": [
+      {
+        "tipo": "Entrevistas gravadas",
+        "titulo": "Entrevistas de John E. Mack com as crianças da Ariel School",
+        "descricao": "Gravações em vídeo e áudio de entrevistas individuais e em pequenos grupos conduzidas por John Mack e sua equipe em 30/11/1994, com metodologia de perguntas abertas. Parte do acervo hoje mantido pelo John Mack Institute.",
+        "data": "30-11-1994",
+        "origem": "John Mack Institute (acervo John E. Mack)",
+        "linkExterno": "https://johnemackinstitute.org/audiovideo/"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "62 alunos da Ariel School, entre 6 e 12 anos",
+        "quandoDeclarou": "Relatos iniciais no mesmo dia (16/09/1994); entrevistas sistemáticas nas semanas seguintes",
+        "tempoAposEvento": "Cynthia Hind e a BBC entrevistaram dias depois; John Mack entrevistou cerca de 2,5 meses depois, em 30/11/1994",
+        "versoes": "Desenhos e relatos colhidos separadamente por Hind, pela BBC e por Mack mostram convergência entre si nos elementos centrais (disco, seres, mensagem), segundo os próprios investigadores",
+        "outrasTestemunhas": "Nenhum professor presenciou o evento central; a equipe estava reunida dentro do prédio da escola",
+        "possivelContaminacao": "As crianças conversaram livremente entre si durante e após o recreio, antes de serem separadas para entrevistas individuais — fator citado por leituras céticas do caso"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "16-09-1994, ~10h",
+        "evento": "Durante o intervalo da manhã, dezenas de crianças relatam ver um ou mais discos prateados pousarem num campo ao lado da escola."
+      },
+      {
+        "quando": "19-09-1994",
+        "evento": "O correspondente da BBC Tim Leach visita a escola e entrevista crianças."
+      },
+      {
+        "quando": "set-1994",
+        "evento": "A pesquisadora local Cynthia Hind entrevista as crianças e coleta desenhos feitos por elas."
+      },
+      {
+        "quando": "30-11-1994",
+        "evento": "John E. Mack, psiquiatra de Harvard, visita a Ariel School e conduz entrevistas individuais e em pequenos grupos."
+      },
+      {
+        "quando": "2016",
+        "evento": "A ex-aluna Emily Trim, uma das testemunhas, produz pinturas revisitando o que relata ter visto."
+      },
+      {
+        "quando": "2022-2023",
+        "evento": "O caso é revisitado nos documentários \"Ariel Phenomenon\" (2022) e na série \"Encounters\" da Netflix (2023)."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Psicossocial",
+        "avaliacao": "Leituras céticas propõem histeria coletiva ou percepção compartilhada amplificada por conversa entre as crianças antes das entrevistas formais — não há, porém, estudo clínico contemporâneo ao evento que confirme esse mecanismo neste caso específico."
+      },
+      {
+        "tipo": "Explicação astronômica",
+        "avaliacao": "O cético Brian Dunning propôs a reentrada atmosférica do estágio Zenit-2 do lançamento do satélite Cosmos 2290 como possível gatilho visual; críticos do próprio meio ufológico contestam se a janela de horário reportada bate com a reentrada."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Sustentada principalmente pela consistência entre relatos individuais registrada por três investigadores independentes (Hind, BBC, Mack) — mas sem nenhum vestígio físico, fotográfico ou instrumental que a corrobore."
+      }
+    ],
+    "contradicoes": [
+      "Nenhum adulto presenciou o evento central, incluindo os professores que estavam no mesmo terreno da escola.",
+      "Não existe fotografia, registro de radar ou vestígio físico independente do que foi descrito.",
+      "A hipótese da reentrada do Zenit-2/Cosmos 2290 é disputada quanto à compatibilidade do horário com os relatos."
+    ],
+    "oQueSabemos": [
+      "62 crianças relataram um evento incomum no mesmo dia, e foram entrevistadas separadamente por ao menos três investigadores (Hind, BBC, Mack) em momentos diferentes.",
+      "John Mack, psiquiatra de Harvard com credenciais reconhecidas, documentou consistência entre os relatos individuais e concluiu publicamente que considerava as crianças verossímeis."
+    ],
+    "oQueNaoSabemos": [
+      "Se o que foi relatado corresponde a um evento físico externo real, a um fenômeno psicossocial compartilhado, ou a uma combinação dos dois.",
+      "A origem exata do estímulo visual, caso tenha havido um — nenhuma das explicações convencionais propostas é consenso."
+    ],
+    "paraSaberMais": [
+      "Acesso ao acervo completo de gravações de John Mack, hoje sob custódia do John Mack Institute.",
+      "Comparação cronológica detalhada entre os horários relatados pelas testemunhas e os dados públicos de reentrada do Zenit-2/Cosmos 2290."
+    ],
+    "imagens": [],
+    "fontes": [
+      {
+        "qualidade": "Referência contextual",
+        "label": "Ariel School UFO incident — Wikipedia (EN)",
+        "url": "https://en.wikipedia.org/wiki/Ariel_School_UFO_incident"
+      },
+      {
+        "qualidade": "Investigação cética",
+        "label": "Skeptoid — Brian Dunning sobre o caso Ariel School",
+        "url": "https://skeptoid.com/episodes/4760"
+      },
+      {
+        "qualidade": "Imprensa contemporânea",
+        "label": "Mail & Guardian — Remembering Zimbabwe's great alien invasion (2014)",
+        "url": "https://mg.co.za/article/2014-09-04-remembering-zimbabwes-great-alien-invasion/"
+      },
+      {
+        "qualidade": "Acervo do investigador",
+        "label": "John Mack Institute — Audio/Video Archive",
+        "url": "https://johnemackinstitute.org/audiovideo/"
+      },
+      {
+        "qualidade": "Imprensa contemporânea",
+        "label": "BBC News — cobertura do caso Ariel School",
+        "url": "https://www.bbc.com/news/av/stories-57749238"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "Ariel School in Ruwa, Zimbabwe - Alien Encounter with children - John E. Mack",
+        "youtubeId": "12QP_tDeyRM",
+        "canal": "cha otic",
+        "contexto": "Trecho de gravações de entrevistas conduzidas por John Mack com testemunhas do caso Ariel School."
+      }
+    ]
+  },
+  {
+    "slug": "caso-claudio-mg",
+    "code": "SR-CASE-0020",
+    "date": "19-20-11-2008",
+    "title": "Caso Cláudio — Policiais e Seres Luminosos",
+    "location": "Cláudio / MG",
+    "status": "aberto",
+    "statusLabel": "Relatório policial documentado; sem investigação institucional independente publicada",
+    "resumo": "Na noite de 19 de novembro de 2008, Renata Veloso avistou um objeto descendo rapidamente sobre Cláudio, interior de Minas Gerais, e chamou o marido, o então Capitão Eisenhower Guerck Austríaco, comandante do 3º Pelotão da Polícia Militar da cidade. Segundo o relato, ele e outros policiais viram um objeto luminoso de formato hexagonal, acompanhado de duas esferas menores girando ao seu redor. Na noite seguinte, 20 de novembro, policiais militares relataram perseguir dois seres luminosos de cerca de 90 cm de altura num canavial, descrevendo-os como capazes de se deslocar sem tocar o chão e sem aparecer nas fotografias tiradas no momento pelo Cabo Amilton José Rabelo. Mais de uma dezena de policiais foi envolvida nos episódios, que resultaram num relatório formal assinado pelo comandante em 8 de dezembro de 2008 — documento obtido pelo pesquisador Edison Boaventura Jr. via Lei de Acesso à Informação em 2015. Testemunhas relataram ainda efeitos físicos (cansaço extremo, sede, sensação de sonolência) e problemas elétricos nas viaturas durante os episódios, além de uma alegação, não confirmada institucionalmente, de que a Força Aérea Brasileira teria confiscado o cartão de memória da câmera do Cabo Rabelo.",
+    "documentos": [
+      {
+        "tipo": "Relatório policial militar",
+        "titulo": "Relatório do comandante do 3º Pelotão da PM de Cláudio sobre \"fenômeno observado no céu da cidade e perseguição a dois seres estranhos\"",
+        "descricao": "Relatório formal assinado pelo então Capitão Eisenhower Guerck Austríaco, descrevendo os avistamentos de 19 e 20/11/2008 e a perseguição aos dois seres no canavial. Obtido pelo pesquisador Edison Boaventura Jr. junto à Polícia Militar de Minas Gerais via Lei de Acesso à Informação, em 2015.",
+        "data": "08-12-2008",
+        "origem": "Polícia Militar de Minas Gerais — obtido via LAI em 2015",
+        "linkExterno": "https://vigilia.com.br/caso-claudio-quando-os-ovnis-tornaram-a-cidade-mineira-um-marco-da-ufologia/"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "Cap. Eisenhower Guerck Austríaco (comandante do 3º Pelotão) e mais de uma dezena de policiais militares",
+        "quandoDeclarou": "Relato formal registrado em 08/12/2008, cerca de três semanas após os episódios",
+        "tempoAposEvento": "Episódios em 19 e 20/11/2008; relatório assinado em 08/12/2008; documento tornado público apenas em 2015, via LAI",
+        "versoes": "Descrições físicas mais específicas do ser (cabeça sem cabelo, pescoço fino) só aparecem num relato de testemunha adicional de 2018, dez anos após o evento original",
+        "outrasTestemunhas": "Renata Veloso Guerck Austríaco (esposa do capitão, primeira a avistar o objeto), moradores do bairro Bela Vista, e testemunhas posteriores como Luís Eduardo de Abreu Silva (2018)",
+        "possivelContaminacao": "A cobertura pública do caso, incluindo reportagens, podcasts e a pesquisa de Edison Boaventura Jr., se intensificou anos depois dos episódios originais, o que pode ter influenciado o vocabulário e o detalhamento das versões mais recentes"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "19-11-2008, ~22h",
+        "evento": "Renata Veloso avista objeto luminoso hexagonal com duas esferas girando ao redor; aciona o Cap. Eisenhower, que confirma o avistamento com outros policiais."
+      },
+      {
+        "quando": "20-11-2008",
+        "evento": "Policiais militares relatam perseguir dois seres luminosos num canavial da cidade; Cabo Rabelo tira três fotos com câmera pessoal."
+      },
+      {
+        "quando": "08-12-2008",
+        "evento": "Comandante do 3º Pelotão assina relatório formal descrevendo os dois episódios."
+      },
+      {
+        "quando": "2015",
+        "evento": "Pesquisador Edison Boaventura Jr. obtém o relatório junto à PM-MG via Lei de Acesso à Informação."
+      },
+      {
+        "quando": "2018",
+        "evento": "Nova testemunha, Luís Eduardo de Abreu Silva, relata ter visto um ser humanoide na região."
+      },
+      {
+        "quando": "2024-2026",
+        "evento": "Novos relatos e pesquisa de campo (câmeras com sensor de movimento) reacendem o interesse público e ufológico pelo caso; comandante reafirma o relato original em entrevistas recentes."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Documento oficial vs. interpretação extraordinária",
+        "avaliacao": "O relatório da PM registra \"fenômeno aéreo não identificado\" e a perseguição relatada pelos policiais — o documento não confirma origem extraterrestre; essa leitura é interpretação de pesquisadores ufológicos sobre o conteúdo do relatório."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Sustentada pelos relatos de múltiplos policiais em serviço e pelo relatório formal assinado pelo comandante — mas sem análise técnica independente publicada das três fotografias tiradas."
+      },
+      {
+        "tipo": "Lacuna de explicação convencional",
+        "avaliacao": "Não foi localizada, nas fontes consultadas, investigação cética ou institucional (FAB, Aeronáutica) publicada de forma independente propondo explicação convencional para os episódios — a cobertura disponível é majoritariamente de fontes ufológicas."
+      }
+    ],
+    "contradicoes": [
+      "As três fotografias tiradas pelo Cabo Rabelo nunca foram publicadas em alta resolução nem submetidas a análise técnica independente; circulam como reproduções via um único pesquisador.",
+      "A alegação de que a Força Aérea Brasileira confiscou o cartão de memória da câmera não tem confirmação pública da própria FAB nas fontes consultadas.",
+      "Detalhes físicos mais específicos do ser relatado só surgem numa testemunha de 2018, dez anos depois do evento original — não constam no relatório de 2008."
+    ],
+    "oQueSabemos": [
+      "Existe um relatório policial militar formal, assinado pelo comandante do 3º Pelotão, descrevendo os episódios de 19 e 20/11/2008, obtido e tornado público via Lei de Acesso à Informação em 2015.",
+      "Mais de uma dezena de policiais em serviço relatou os episódios, incluindo efeitos físicos (cansaço, sede, sonolência) e problemas elétricos nas viaturas."
+    ],
+    "oQueNaoSabemos": [
+      "A origem real do que foi observado nos dois episódios.",
+      "Se a alegação de confisco do cartão de memória pela FAB é factual — não há confirmação institucional publicada.",
+      "O que as três fotografias tiradas pelo Cabo Rabelo mostram de fato, na ausência de análise técnica independente publicada."
+    ],
+    "paraSaberMais": [
+      "Publicação do relatório oficial na íntegra, com cadeia de custódia clara desde a obtenção via LAI em 2015.",
+      "Análise técnica independente das fotografias do Cabo Rabelo, caso os arquivos originais sejam localizados.",
+      "Confirmação ou desmentido oficial da FAB sobre a alegação de confisco do cartão de memória."
+    ],
+    "imagens": [],
+    "fontes": [
+      {
+        "qualidade": "Fonte primária (via LAI)",
+        "label": "Relatório do comandante do 3º Pelotão da PM de Cláudio (08/12/2008), reproduzido em Portal Vigília",
+        "url": "https://vigilia.com.br/caso-claudio-quando-os-ovnis-tornaram-a-cidade-mineira-um-marco-da-ufologia/"
+      },
+      {
+        "qualidade": "Entrevista recente com testemunha",
+        "label": "Portal Vigília — Comandante da PM confirma contatos com OVNIs e ETs no Caso Cláudio",
+        "url": "https://vigilia.com.br/comandante-da-pm-confirma-contatos-com-ovnis-e-ets-no-caso-claudio/"
+      },
+      {
+        "qualidade": "Imprensa/cobertura ufológica",
+        "label": "OVNI Hoje! — O OVNI que sobrevoou a cidade de Cláudio, MG",
+        "url": "https://www.ovnihoje.com/2022/01/16/o-ovni-que-sobrevoou-a-cidade-de-claudio-mg-brasil/"
+      },
+      {
+        "qualidade": "Imprensa/cobertura ufológica",
+        "label": "Rede 98 — Contatos imediatos em Cláudio-MG: policiais perseguem dois seres luminosos",
+        "url": "https://98live.com.br/entretenimento/entretenimento/contatos-imediatos-em-claudio-mg-policiais-perseguem-dois-seres-luminosos"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "CASO EM CLÁUDIO - MINAS GERAIS",
+        "youtubeId": "dbafFg66uis",
+        "canal": "Freak TV",
+        "contexto": "Cobertura em vídeo sobre os episódios relatados por policiais militares em Cláudio, MG, em 2008."
+      },
+      {
+        "titulo": "Militar que esteve no Caso Cláudio conta sobre marca",
+        "youtubeId": "yiFPyBuQT9Y",
+        "canal": "Lauro Miguel",
+        "contexto": "Depoimento de um militar envolvido no Caso Cláudio."
+      },
+      {
+        "titulo": "Edison Boaventura & Lauro Miguel apresentam novas evidências do Caso Cláudio",
+        "youtubeId": "6i8NVFGLLGI",
+        "canal": "TIKTAL Cortes",
+        "contexto": "Edison Boaventura Jr., pesquisador que obteve o relatório policial via Lei de Acesso à Informação, discute o caso com Lauro Miguel."
+      }
+    ]
+  },
+  {
+    "slug": "maria-cintra",
+    "code": "SR-CASE-0021",
+    "date": "25-08-1968",
+    "title": "Caso Maria Cintra — o \"Caso Lins\"",
+    "location": "Lins / SP",
+    "status": "aberto",
+    "statusLabel": "Investigado pela Aeronáutica na época; sem explicação convencional publicada",
+    "resumo": "Por volta das 5h de 25 de agosto de 1968, Maria José Cintra, funcionária do sanatório de Lins, interior de São Paulo, relatou ter ouvido estalos vindos do pátio e avistado a silhueta de uma mulher desconhecida na porta do prédio. Segundo seu relato, a visitante — cerca de 1,60m, pele clara, usando capa azul-clara sobre vestido de gola alta e uma touca — comunicou-se em língua não identificada e pediu água, que Maria serviu num frasco de cerca de 20 cm e num copo, num bebedouro automático do corredor. Ao se despedir, a visitante teria segurado a mão de Maria, dado tapinhas em suas costas e dito palavras registradas como \"embarúra, embaúra, embaúra\" — cujo significado nunca foi estabelecido. Em vez de sair pela via normal, ela caminhou até os canteiros externos, onde uma luz difusa haveria revelado um objeto em forma de pera flutuando a cerca de um metro do chão; Maria afirmou ter visto, por uma vigia, mãos operando dispositivos num painel antes de o objeto emitir os mesmos estalos e partir. No local foram registradas pegadas de sapato de bico fino dentro do prédio e uma depressão circular de cerca de 2 metros de diâmetro com grama chamuscada no gramado externo. O caso foi investigado pelo SIOANI (Sistema de Investigação de Objetos Aéreos Não Identificados, ligado à Aeronáutica), que teria enviado amostras de solo para análise no Instituto Tecnológico de Aeronáutica (ITA), em São José dos Campos; a Sociedade Brasileira de Estudos de Discos Voadores (SBEDV) entrevistou Maria cerca de quatro meses depois, na própria residência dela — período compatível com um esboço assinado por ela e datado de dezembro de 1968, feito para os pesquisadores. Não foi localizada, nas fontes consultadas, análise técnica independente das fotografias e do desenho, nem confirmação pública dos resultados da análise de solo pelo ITA.",
+    "documentos": [
+      {
+        "tipo": "Registro fotográfico de época",
+        "titulo": "Fotografias de Maria José Cintra no local, incluindo a marca circular no gramado",
+        "descricao": "Série de fotografias em preto e branco e coloridas de época, mostrando a testemunha junto a um investigador da Aeronáutica na entrada do sanatório e junto à área de grama chamuscada. Reprodução de acervo ufológico brasileiro; origem exata da digitalização e cadeia de custódia não confirmadas nas fontes consultadas.",
+        "data": "1968",
+        "origem": "Acervo ufológico brasileiro (reprodução) — atribuição e licença não confirmadas"
+      },
+      {
+        "tipo": "Desenho de testemunha",
+        "titulo": "Esboço do objeto avistado, assinado \"Maria José Cintra\" e datado",
+        "descricao": "Desenho feito pela testemunha a pedido de pesquisadores, mostrando o objeto em forma de pera/touca descrito no relato. A data manuscrita no desenho (dezembro de 1968) é compatível com a entrevista da SBEDV, realizada cerca de quatro meses após o evento de agosto — não indica uma data diferente para o próprio avistamento.",
+        "data": "dez·1968 (data do desenho, não do evento)",
+        "origem": "Acervo ufológico brasileiro (reprodução) — atribuição e licença não confirmadas"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "Maria José Cintra, funcionária do sanatório de Lins",
+        "quandoDeclarou": "Relato dado a investigadores da Aeronáutica (SIOANI) pouco depois do evento, e à SBEDV cerca de quatro meses depois",
+        "tempoAposEvento": "Investigação da Aeronáutica próxima ao evento; entrevista da SBEDV cerca de 4 meses depois; cobertura de imprensa e ufológica se estendeu por décadas",
+        "versoes": "O nome do hospital varia entre fontes secundárias — \"Sanatório Serafim Ferreira\" e \"Hospital Serafim Correa\" — sem uma fonte primária localizada que resolva a diferença",
+        "outrasTestemunhas": "Não foram localizadas, nas fontes consultadas, outras testemunhas presenciais diretas do encontro; o administrador do sanatório, segundo relatos, inicialmente não acreditou no relato de Maria e se disse ofendido por ele",
+        "possivelContaminacao": "Décadas de cobertura ufológica (livros, sites, vídeos) reprocessaram o caso; o significado da palavra \"embarúra\" segue sendo objeto de especulação etimológica não resolvida, o que pode ter influenciado versões mais recentes do relato"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "25-08-1968, ~5h",
+        "evento": "Maria José Cintra ouve estalos no pátio do sanatório e avista a visitante desconhecida, que pede água e depois se dirige aos canteiros externos, onde um objeto em forma de pera é avistado antes de partir."
+      },
+      {
+        "quando": "1968 (dias/semanas seguintes)",
+        "evento": "SIOANI, ligado à Aeronáutica, investiga o caso, recolhe amostras de solo da área de grama chamuscada e realiza entrevistas e reconstituição no local."
+      },
+      {
+        "quando": "dez·1968 (~4 meses depois)",
+        "evento": "SBEDV entrevista Maria José Cintra em sua residência; testemunha assina esboço do objeto avistado, datado do período da entrevista."
+      },
+      {
+        "quando": "Década de 1970 em diante",
+        "evento": "Caso passa a ser referenciado como um dos episódios centrais da ufologia brasileira em livros, reportagens e, mais tarde, vídeos e sites especializados."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Sustentada pelo relato consistente da única testemunha direta conhecida, por evidência física local (pegadas, marca circular de grama chamuscada) e pela investigação institucional da época (SIOANI/Aeronáutica) — mas sem confirmação pública independente do que a análise de solo do ITA, se de fato realizada, concluiu."
+      },
+      {
+        "tipo": "Lacuna de explicação convencional",
+        "avaliacao": "Não foi localizada, nas fontes consultadas, uma hipótese cética ou convencional publicada (fenômeno atmosférico, blague local, erro de percepção) que dê conta do conjunto do relato — a cobertura disponível é majoritariamente ufológica, sem contraponto técnico independente."
+      }
+    ],
+    "contradicoes": [
+      "O nome do hospital/sanatório varia entre fontes secundárias (\"Serafim Ferreira\" vs. \"Serafim Correa\"), sem uma fonte primária localizada que resolva a diferença.",
+      "A marca circular no gramado foi posteriormente coberta com cimento por decisão administrativa local, segundo uma das fontes consultadas — o que impede qualquer reexame físico do solo original.",
+      "O significado da palavra \"embarúra\"/\"embaúra\" nunca foi estabelecido; testemunha a interpretou por gesto (tapinhas nas costas), não por conteúdo linguístico, e pesquisadores posteriores especularam etimologias não confirmadas."
+    ],
+    "oQueSabemos": [
+      "Existe um relato consistente de uma única testemunha principal, Maria José Cintra, investigado pela Aeronáutica (SIOANI) na época dos fatos, incluindo evidência física local (pegadas e marca circular de grama chamuscada).",
+      "O caso foi documentado com fotografias de época e um desenho assinado pela testemunha, e é referenciado desde a década de 1970 como um dos episódios centrais da ufologia brasileira."
+    ],
+    "oQueNaoSabemos": [
+      "A origem real do que foi observado e do que causou a marca circular no gramado.",
+      "O resultado, se existente, da análise de solo atribuída ao ITA — não localizado nas fontes consultadas.",
+      "O significado da palavra \"embarúra\"/\"embaúra\" relatada pela testemunha.",
+      "A cadeia de custódia completa das fotografias e do desenho que circulam hoje como reprodução de acervo."
+    ],
+    "paraSaberMais": [
+      "Localização do relatório original do SIOANI/Aeronáutica sobre o caso, se preservado em arquivo público.",
+      "Confirmação ou desmentido dos resultados da análise de solo atribuída ao ITA.",
+      "Análise técnica independente das fotografias e do desenho de época, com cadeia de custódia documentada desde a origem."
+    ],
+    "imagens": [
+      {
+        "tipo": "imagem",
+        "src": "/casos/maria-cintra/testemunha-e-investigador.jpg",
+        "alt": "Maria José Cintra ao lado de investigador na entrada do sanatório de Lins",
+        "origem": "Acervo ufológico brasileiro (reprodução) — atribuição e licença não confirmadas",
+        "data": "1968",
+        "autoria": "Não identificada nas fontes consultadas",
+        "contexto": "Fotografia de época associada ao caso, mostrando a testemunha junto a um investigador no local do avistamento.",
+        "versao": "Reprodução — origem da digitalização não confirmada",
+        "ilustrativa": false,
+        "license": "Não determinada"
+      },
+      {
+        "tipo": "imagem",
+        "src": "/casos/maria-cintra/marca-de-pouso-no-gramado.jpg",
+        "alt": "Área de grama chamuscada no gramado externo do sanatório, com testemunha ao fundo",
+        "origem": "Acervo ufológico brasileiro (reprodução) — atribuição e licença não confirmadas",
+        "data": "1968",
+        "autoria": "Não identificada nas fontes consultadas",
+        "contexto": "Fotografia de época da depressão circular com grama chamuscada relatada no local — posteriormente coberta com cimento, segundo uma das fontes consultadas.",
+        "versao": "Reprodução — origem da digitalização não confirmada",
+        "ilustrativa": false,
+        "license": "Não determinada"
+      },
+      {
+        "tipo": "documento",
+        "src": "/casos/maria-cintra/contato-fotos-e-desenho-original.webp",
+        "alt": "Contato com fotografias de época e o esboço do objeto assinado por Maria José Cintra",
+        "origem": "Acervo ufológico brasileiro (reprodução) — atribuição e licença não confirmadas",
+        "data": "1968 (fotos); dez·1968 (desenho)",
+        "autoria": "Maria José Cintra (desenho); fotógrafo não identificado",
+        "contexto": "Composição com três fotografias do local e o desenho do objeto avistado, assinado e datado pela própria testemunha.",
+        "versao": "Reprodução — origem da digitalização não confirmada",
+        "ilustrativa": false,
+        "license": "Não determinada"
+      },
+      {
+        "tipo": "imagem",
+        "src": "/casos/maria-cintra/interior-do-sanatorio.webp",
+        "alt": "Corredor interno do sanatório de Lins, com funcionária junto a um bebedouro",
+        "origem": "Acervo ufológico brasileiro (reprodução) — atribuição e licença não confirmadas",
+        "data": "1968",
+        "autoria": "Não identificada nas fontes consultadas",
+        "contexto": "Fotografia de época do ambiente interno do sanatório, próximo ao bebedouro automático mencionado no relato.",
+        "versao": "Reprodução — origem da digitalização não confirmada",
+        "ilustrativa": false,
+        "license": "Não determinada"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Cobertura ufológica de referência",
+        "label": "Portal Vigília — Encontro noturno no hospital: o emblemático caso Maria Cintra",
+        "url": "https://vigilia.com.br/encontro-noturno-no-hospital-o-emblematico-caso-maria-cintra/"
+      },
+      {
+        "qualidade": "Cobertura ufológica de referência",
+        "label": "OVNI Hoje! — Revisitando o caso Lins: o relato de Maria Cintra e suas conexões com outras experiências",
+        "url": "https://www.ovnihoje.com/2021/08/15/revisitando-o-caso-lins-o-relato-de-maria-cintra-e-suas-conexoes-com-outras-experiencias/"
+      },
+      {
+        "qualidade": "Cobertura ufológica",
+        "label": "Portal Fenomenum — O Fantástico Caso Lins",
+        "url": "https://www.fenomenum.com.br/o-fantastico-caso-lins/"
+      },
+      {
+        "qualidade": "Cobertura ufológica (inglês)",
+        "label": "Strange Strange Strange — The Lins Incident: The Maria Cintra Close Encounter",
+        "url": "https://strangestrangestrange.com/paranormal/ufo/the-lins-incident-the-maria-cintra/"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "How the Mysterious Maria Cintra Case Happened in 1968",
+        "youtubeId": "5BzX-1_OJyo",
+        "canal": "Cases in Brazil",
+        "contexto": "Cobertura em vídeo, em inglês, sobre o Caso Maria Cintra / Caso Lins."
       }
     ]
   }

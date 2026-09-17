@@ -1,12 +1,18 @@
 import { editorialBadge, maturityBadge, escapeHtml } from "./badges.js";
 
 export function caseCard(c) {
+  const thumb = c.coverSrc
+    ? `<img class="card__thumb" src="${escapeHtml(c.coverSrc)}" alt="" loading="lazy" />`
+    : "";
   return `
-    <a class="card" href="/casos/${c.slug}/" data-search-item data-title="${escapeHtml(c.title)}">
-      <span class="card__meta">${escapeHtml(c.code)} · ${escapeHtml(c.date)}</span>
-      <h3>${escapeHtml(c.title)}</h3>
-      <p>${escapeHtml(c.resumo)}</p>
-      <div class="card__badges">${editorialBadge(c.status, c.statusLabel)}${maturityBadge(c.maturidade)}</div>
+    <a class="card${c.coverSrc ? " card--cover" : ""}" href="/casos/${c.slug}/" data-search-item data-title="${escapeHtml(c.title)}">
+      ${thumb}
+      <div class="card__body">
+        <span class="card__meta">${escapeHtml(c.code)} · ${escapeHtml(c.date)}</span>
+        <h3>${escapeHtml(c.title)}</h3>
+        <p>${escapeHtml(c.resumo)}</p>
+        <div class="card__badges">${editorialBadge(c.status, c.statusLabel)}${maturityBadge(c.maturidade)}</div>
+      </div>
     </a>`;
 }
 

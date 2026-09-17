@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explorar · SINAL/RUÍDO</title>
+  <meta name="description" content="Como ouvimos, transmitimos e observamos sinais — instrumentos reais da NASA, catalogados com fonte, crédito e proveniência." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0B0E14" />
+  <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://sinalruido.com.br/explorar/" />
+  <meta property="og:title" content="Explorar · SINAL/RUÍDO" />
+  <meta property="og:description" content="Como ouvimos, transmitimos e observamos sinais — instrumentos reais da NASA, catalogados com fonte, crédito e proveniência." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sinalruido.com.br/explorar/" />
+  <meta property="og:site_name" content="SINAL/RUÍDO" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://sinalruido.com.br/og/arquivo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://sinalruido.com.br/og/arquivo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" />
+  <link rel="stylesheet" href="/src/css/tokens.css" />
+  <link rel="stylesheet" href="/src/css/reset.css" />
+  <link rel="stylesheet" href="/src/css/base.css" />
+  <link rel="stylesheet" href="/src/css/layout.css" />
+  <link rel="stylesheet" href="/src/css/components.css" />
+  
+</head>
+<body>
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container site-header__row">
+      <a href="/" class="brand">
+        <span class="brand__mark">SINAL<b>/</b>RUÍDO</span>
+        <span class="brand__sub">Romance de investigação · Alex Jr. Kich</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="/livro/amostra/">Ler</a><a href="/livro/">Livro</a><a href="/arquivo/">Arquivo</a><a href="/midia/">Mídia</a><a href="/explorar/" aria-current="page">Explorar</a><a href="/midia/sistema-solar/">Sistema Solar</a><a href="/livros/">Livros</a><a href="/contato/">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener" class="social-icon-link" aria-label="SINAL/RUÍDO no Instagram">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
+            <circle cx="12" cy="12" r="4.3" />
+            <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <button type="button" class="search-trigger" data-cmdk-open aria-haspopup="dialog">
+          Buscar no arquivo…
+          <kbd>Ctrl K</kbd>
+        </button>
+        <button type="button" class="mobile-nav-toggle" data-mobile-nav-toggle aria-label="Abrir menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+    <nav class="mobile-nav container" data-mobile-nav aria-label="Navegação (compacta)">
+      <a href="/livro/amostra/">Ler</a><a href="/livro/">Livro</a><a href="/arquivo/">Arquivo</a><a href="/midia/">Mídia</a><a href="/explorar/" aria-current="page">Explorar</a><a href="/midia/sistema-solar/">Sistema Solar</a><a href="/livros/">Livros</a><a href="/contato/">Contato</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="section container--narrow">
+      <span class="kicker">Sinais, instrumentos e observação</span>
+      <h1 style="margin-top:12px">Explorar.</h1>
+      <p style="margin-top:8px;color:var(--muted)">Como detectamos, transmitimos e interpretamos sinais — através dos instrumentos reais que fazem esse trabalho, não de ilustração. Cada modelo abaixo é um arquivo 3D oficial da NASA, catalogado com a mesma disciplina de proveniência do resto do arquivo: fonte, crédito, hash e data de download. Esta página é educativa — ela não estabelece nenhuma ligação entre a NASA e os casos do arquivo factual do SINAL/RUÍDO.</p>
+    </section>
+
+    
+    <section class="explore-section container--medium">
+      
+    <div class="nasa-model" data-nasa-model>
+      <model-viewer
+        src="/models/nasa/dsn-70m/model.glb"
+        alt="Deep Space Network 70-meter — modelo 3D, fonte NASA/Ames Research Center"
+        poster="/models/nasa/dsn-70m/poster.webp"
+        loading="lazy"
+        reveal="manual"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate="false"
+        interaction-prompt="none"
+        class="nasa-model__viewer"
+        data-nasa-model-el
+      >
+        <div slot="poster" class="nasa-model__poster">
+          <img src="/models/nasa/dsn-70m/poster.webp" alt="" loading="lazy" class="nasa-model__poster-img" />
+          <button type="button" class="btn btn--primary nasa-model__reveal" data-nasa-reveal aria-label="Carregar modelo 3D de Deep Space Network 70-meter">Explorar em 3D →</button>
+        </div>
+        <div slot="progress-bar"></div>
+      </model-viewer>
+      <noscript>
+        <p class="nasa-model__noscript">
+          O visualizador 3D exige JavaScript. Consulte o modelo diretamente na
+          <a href="https://science.nasa.gov/3d-resources/70-meter-dish/" target="_blank" rel="noopener">página oficial da NASA</a>.
+        </p>
+      </noscript>
+      <div class="nasa-model__meta">
+        <span class="mono nasa-model__question">Como ouvimos?</span>
+        <h3>Deep Space Network 70-meter</h3>
+        <p>Cada estação da Deep Space Network tem uma antena de 70 metros de diâmetro, a mais sensível da rede, capaz de rastrear espaçonaves a dezenas de bilhões de quilômetros da Terra.</p>
+        <p class="mono nasa-model__credit">Fonte: NASA · Crédito: NASA/Ames Research Center
+          <a href="https://science.nasa.gov/3d-resources/70-meter-dish/" target="_blank" rel="noopener">Ver fonte oficial ↗</a>
+        </p>
+      </div>
+    </div>
+      <p style="margin-top:24px;color:var(--muted);max-width:640px">A detecção começa no instrumento. Antes de interpretar um sinal, é preciso compreender como ele foi recebido, com quais limites e sob quais condições — a mesma pergunta que o método do SINAL/RUÍDO faz sobre qualquer documento ou testemunho.</p>
+    </section>
+
+    
+    <section class="explore-section container--medium" style="border-top:1px solid var(--border);padding-top:32px">
+      
+    <div class="nasa-model" data-nasa-model>
+      <model-viewer
+        src="/models/nasa/voyager/model.glb"
+        alt="Voyager Probe (B) — modelo 3D, fonte NASA/Michael D. Carbajal"
+        poster="/models/nasa/voyager/poster.webp"
+        loading="lazy"
+        reveal="manual"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate="false"
+        interaction-prompt="none"
+        class="nasa-model__viewer"
+        data-nasa-model-el
+      >
+        <div slot="poster" class="nasa-model__poster">
+          <img src="/models/nasa/voyager/poster.webp" alt="" loading="lazy" class="nasa-model__poster-img" />
+          <button type="button" class="btn btn--primary nasa-model__reveal" data-nasa-reveal aria-label="Carregar modelo 3D de Voyager Probe (B)">Explorar em 3D →</button>
+        </div>
+        <div slot="progress-bar"></div>
+      </model-viewer>
+      <noscript>
+        <p class="nasa-model__noscript">
+          O visualizador 3D exige JavaScript. Consulte o modelo diretamente na
+          <a href="https://science.nasa.gov/3d-resources/voyager-probe-b/" target="_blank" rel="noopener">página oficial da NASA</a>.
+        </p>
+      </noscript>
+      <div class="nasa-model__meta">
+        <span class="mono nasa-model__question">Como enviamos e recebemos de longa distância?</span>
+        <h3>Voyager Probe (B)</h3>
+        <p>As sondas Voyager 1 e 2, lançadas em 1977, seguem transmitindo dados do espaço interestelar. O sinal viaja horas até chegar à Deep Space Network, e cada comando enviado à espaçonave leva o mesmo tempo para ser recebido de volta.</p>
+        <p class="mono nasa-model__credit">Fonte: NASA · Crédito: NASA/Michael D. Carbajal
+          <a href="https://science.nasa.gov/3d-resources/voyager-probe-b/" target="_blank" rel="noopener">Ver fonte oficial ↗</a>
+        </p>
+      </div>
+    </div>
+      <p style="margin-top:24px;color:var(--muted);max-width:640px">A Voyager 1 está a mais de 24 bilhões de quilômetros da Terra — um sinal de rádio leva cerca de 23 horas para chegar até ela e outro tanto para voltar. Cada comando enviado pela Deep Space Network e cada resposta de telemetria recebida da sonda carregam esse atraso: não existe "tempo real" nessa distância.</p>
+    </section>
+
+    
+    <section class="explore-section container--medium" style="border-top:1px solid var(--border);padding-top:32px">
+      
+    <div class="nasa-model" data-nasa-model>
+      <model-viewer
+        src="/models/nasa/pioneer-10/model.glb"
+        alt="Pioneer 10 — modelo 3D, fonte NASA/NASA 3D Resources"
+        poster="/models/nasa/pioneer-10/poster.webp"
+        loading="lazy"
+        reveal="manual"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate="false"
+        interaction-prompt="none"
+        class="nasa-model__viewer"
+        data-nasa-model-el
+      >
+        <div slot="poster" class="nasa-model__poster">
+          <img src="/models/nasa/pioneer-10/poster.webp" alt="" loading="lazy" class="nasa-model__poster-img" />
+          <button type="button" class="btn btn--primary nasa-model__reveal" data-nasa-reveal aria-label="Carregar modelo 3D de Pioneer 10">Explorar em 3D →</button>
+        </div>
+        <div slot="progress-bar"></div>
+      </model-viewer>
+      <noscript>
+        <p class="nasa-model__noscript">
+          O visualizador 3D exige JavaScript. Consulte o modelo diretamente na
+          <a href="https://github.com/nasa/NASA-3D-Resources/tree/master/3D%20Models/Pioneer%2010" target="_blank" rel="noopener">página oficial da NASA</a>.
+        </p>
+      </noscript>
+      <div class="nasa-model__meta">
+        <span class="mono nasa-model__question">Como deixamos uma mensagem?</span>
+        <h3>Pioneer 10</h3>
+        <p>Lançada em 1972, a Pioneer 10 foi a primeira espaçonave a atravessar o cinturão de asteroides e sobrevoar Júpiter. Carrega a placa Pioneer, uma mensagem gravada destinada a quem — ou o que — encontrá-la no espaço interestelar.</p>
+        <p class="mono nasa-model__credit">Fonte: NASA · Crédito: NASA/NASA 3D Resources
+          <a href="https://github.com/nasa/NASA-3D-Resources/tree/master/3D%20Models/Pioneer%2010" target="_blank" rel="noopener">Ver fonte oficial ↗</a>
+        </p>
+      </div>
+    </div>
+      <p style="margin-top:24px;color:var(--muted);max-width:640px">Além dos instrumentos científicos, a Pioneer 10 carrega a placa Pioneer: uma mensagem gravada em metal, com informações sobre a origem da espaçonave, destinada a quem — humano ou não — puder encontrá-la no espaço interestelar. Uma tentativa deliberada de comunicação, não um sinal captado por acaso.</p>
+    </section>
+
+    
+    <section class="section container--medium explore-observation" style="border-top:1px solid var(--border);padding-top:32px">
+      <span class="kicker">Como observamos</span>
+      <h2 style="margin-top:12px">Quatro formas diferentes de ver o que os olhos não alcançam.</h2>
+      <p style="margin-top:8px;color:var(--muted);max-width:640px">Nem todo instrumento "vê" do mesmo jeito. Alguns captam luz visível, outros infravermelho, e alguns nem fotografam — medem variações de brilho para inferir o que existe.</p>
+      <div class="explore-instrument-grid" style="margin-top:24px">
+        <div class="explore-instrument-card">
+    <div class="nasa-model" data-nasa-model>
+      <model-viewer
+        src="/models/nasa/hubble/model.glb"
+        alt="Hubble Space Telescope (A) — modelo 3D, fonte DigitalSpace Corporation"
+        poster="/models/nasa/hubble/poster.webp"
+        loading="lazy"
+        reveal="manual"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate="false"
+        interaction-prompt="none"
+        class="nasa-model__viewer"
+        data-nasa-model-el
+      >
+        <div slot="poster" class="nasa-model__poster">
+          <img src="/models/nasa/hubble/poster.webp" alt="" loading="lazy" class="nasa-model__poster-img" />
+          <button type="button" class="btn btn--primary nasa-model__reveal" data-nasa-reveal aria-label="Carregar modelo 3D de Hubble Space Telescope (A)">Explorar em 3D →</button>
+        </div>
+        <div slot="progress-bar"></div>
+      </model-viewer>
+      <noscript>
+        <p class="nasa-model__noscript">
+          O visualizador 3D exige JavaScript. Consulte o modelo diretamente na
+          <a href="https://science.nasa.gov/3d-resources/hubble-space-telescope-a/" target="_blank" rel="noopener">página oficial da NASA</a>.
+        </p>
+      </noscript>
+      <div class="nasa-model__meta">
+        <span class="mono nasa-model__question">Como observamos?</span>
+        <h3>Hubble Space Telescope (A)</h3>
+        <p>Em órbita desde 1990, o Hubble observa em luz visível, ultravioleta e infravermelho próximo, sem a distorção da atmosfera terrestre — o que ele vê já chega pronto para análise, sem passar pelo filtro do ar.</p>
+        <p class="mono nasa-model__credit">Fonte: NASA · Crédito: DigitalSpace Corporation
+          <a href="https://science.nasa.gov/3d-resources/hubble-space-telescope-a/" target="_blank" rel="noopener">Ver fonte oficial ↗</a>
+        </p>
+      </div>
+    </div></div><div class="explore-instrument-card">
+    <div class="nasa-model" data-nasa-model>
+      <model-viewer
+        src="/models/nasa/jwst/model.glb"
+        alt="James Webb Space Telescope (B) — modelo 3D, fonte NASA/Christopher R. Meaney"
+        poster="/models/nasa/jwst/poster.webp"
+        loading="lazy"
+        reveal="manual"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate="false"
+        interaction-prompt="none"
+        class="nasa-model__viewer"
+        data-nasa-model-el
+      >
+        <div slot="poster" class="nasa-model__poster">
+          <img src="/models/nasa/jwst/poster.webp" alt="" loading="lazy" class="nasa-model__poster-img" />
+          <button type="button" class="btn btn--primary nasa-model__reveal" data-nasa-reveal aria-label="Carregar modelo 3D de James Webb Space Telescope (B)">Explorar em 3D →</button>
+        </div>
+        <div slot="progress-bar"></div>
+      </model-viewer>
+      <noscript>
+        <p class="nasa-model__noscript">
+          O visualizador 3D exige JavaScript. Consulte o modelo diretamente na
+          <a href="https://science.nasa.gov/3d-resources/james-webb-space-telescope-b/" target="_blank" rel="noopener">página oficial da NASA</a>.
+        </p>
+      </noscript>
+      <div class="nasa-model__meta">
+        <span class="mono nasa-model__question">Como observamos em infravermelho?</span>
+        <h3>James Webb Space Telescope (B)</h3>
+        <p>O James Webb observa principalmente em infravermelho, o que permite enxergar através de nuvens de poeira e detectar luz de objetos extremamente distantes e antigos — um tipo de sinal que o olho humano nunca captaria diretamente.</p>
+        <p class="mono nasa-model__credit">Fonte: NASA · Crédito: NASA/Christopher R. Meaney
+          <a href="https://science.nasa.gov/3d-resources/james-webb-space-telescope-b/" target="_blank" rel="noopener">Ver fonte oficial ↗</a>
+        </p>
+      </div>
+    </div></div><div class="explore-instrument-card">
+    <div class="nasa-model" data-nasa-model>
+      <model-viewer
+        src="/models/nasa/kepler/model.glb"
+        alt="Kepler (A) — modelo 3D, fonte NASA/Brian E. Kumanchik; NASA/Christian A. Lopez"
+        poster="/models/nasa/kepler/poster.webp"
+        loading="lazy"
+        reveal="manual"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate="false"
+        interaction-prompt="none"
+        class="nasa-model__viewer"
+        data-nasa-model-el
+      >
+        <div slot="poster" class="nasa-model__poster">
+          <img src="/models/nasa/kepler/poster.webp" alt="" loading="lazy" class="nasa-model__poster-img" />
+          <button type="button" class="btn btn--primary nasa-model__reveal" data-nasa-reveal aria-label="Carregar modelo 3D de Kepler (A)">Explorar em 3D →</button>
+        </div>
+        <div slot="progress-bar"></div>
+      </model-viewer>
+      <noscript>
+        <p class="nasa-model__noscript">
+          O visualizador 3D exige JavaScript. Consulte o modelo diretamente na
+          <a href="https://science.nasa.gov/3d-resources/kepler-a/" target="_blank" rel="noopener">página oficial da NASA</a>.
+        </p>
+      </noscript>
+      <div class="nasa-model__meta">
+        <span class="mono nasa-model__question">Como detectamos planetas por variações de luz?</span>
+        <h3>Kepler (A)</h3>
+        <p>O Kepler não fotografa exoplanetas diretamente: ele mede, com extrema precisão, pequenas quedas no brilho de uma estrela quando um planeta passa na frente dela — o método de trânsito. A detecção é estatística antes de ser visual.</p>
+        <p class="mono nasa-model__credit">Fonte: NASA · Crédito: NASA/Brian E. Kumanchik; NASA/Christian A. Lopez
+          <a href="https://science.nasa.gov/3d-resources/kepler-a/" target="_blank" rel="noopener">Ver fonte oficial ↗</a>
+        </p>
+      </div>
+    </div></div><div class="explore-instrument-card">
+    <div class="nasa-model" data-nasa-model>
+      <model-viewer
+        src="/models/nasa/tess/model.glb"
+        alt="Transiting Exoplanet Survey Satellite (TESS) (A) — modelo 3D, fonte NASA/Christopher R. Meaney"
+        poster="/models/nasa/tess/poster.webp"
+        loading="lazy"
+        reveal="manual"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate="false"
+        interaction-prompt="none"
+        class="nasa-model__viewer"
+        data-nasa-model-el
+      >
+        <div slot="poster" class="nasa-model__poster">
+          <img src="/models/nasa/tess/poster.webp" alt="" loading="lazy" class="nasa-model__poster-img" />
+          <button type="button" class="btn btn--primary nasa-model__reveal" data-nasa-reveal aria-label="Carregar modelo 3D de Transiting Exoplanet Survey Satellite (TESS) (A)">Explorar em 3D →</button>
+        </div>
+        <div slot="progress-bar"></div>
+      </model-viewer>
+      <noscript>
+        <p class="nasa-model__noscript">
+          O visualizador 3D exige JavaScript. Consulte o modelo diretamente na
+          <a href="https://science.nasa.gov/3d-resources/transiting-exoplanet-survey-satellite-tess-a/" target="_blank" rel="noopener">página oficial da NASA</a>.
+        </p>
+      </noscript>
+      <div class="nasa-model__meta">
+        <span class="mono nasa-model__question">Como procuramos exoplanetas?</span>
+        <h3>Transiting Exoplanet Survey Satellite (TESS) (A)</h3>
+        <p>Sucessor do Kepler, o TESS varre quase todo o céu observando estrelas próximas e brilhantes, usando o mesmo método de trânsito — pequenas quedas periódicas de brilho — para sinalizar candidatos a exoplaneta que depois são confirmados por outros instrumentos.</p>
+        <p class="mono nasa-model__credit">Fonte: NASA · Crédito: NASA/Christopher R. Meaney
+          <a href="https://science.nasa.gov/3d-resources/transiting-exoplanet-survey-satellite-tess-a/" target="_blank" rel="noopener">Ver fonte oficial ↗</a>
+        </p>
+      </div>
+    </div></div>
+      </div>
+    </section>
+
+    <section class="section container--narrow" style="border-top:1px solid var(--border);padding-top:32px">
+      <span class="kicker">Em catalogação</span>
+      <h2 style="margin-top:12px">Próximos instrumentos</h2>
+      <p style="margin-top:8px;color:var(--muted)">Mars Reconnaissance Orbiter, Galileo e TDRS (relay de comunicação) estão em processo de download, verificação de crédito e catalogação — entram aqui um a um, com fonte e hash conferidos, não em lote.</p>
+    </section>
+
+    <section class="section container--narrow" style="border-top:1px solid var(--border);padding-top:32px">
+      <p class="mono" style="color:var(--muted)"><a href="/explorar/fontes/">Ver todas as fontes, créditos e hashes →</a></p>
+    </section></main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <span class="brand__mark">SINAL<b>/</b>RUÍDO</span>
+        <p class="mono" style="margin-top:8px">SINAL/RUÍDO é o site oficial do romance de Alex Jr. Kich. Leia os primeiros capítulos, conheça a pesquisa que inspirou a história e decida se quer continuar.</p>
+        <p class="mono" style="margin-top:8px">Um sinal chega de onde não deveria vir.</p>
+      </div>
+      <div class="mono footer-links">
+        <a href="/livro/amostra/">Ler 3 capítulos</a>
+        <a href="/livro/">O livro</a>
+        <a href="/leitores/">Leitores</a>
+        <a href="/imprensa/">Imprensa</a>
+        <a href="/contato/">Contato</a>
+        <a href="/privacidade/">Privacidade</a>
+        <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>
+        <span>Ainda não leu? Comece agora.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cmdk-backdrop" data-cmdk-backdrop>
+    <div class="cmdk" role="dialog" aria-modal="true" aria-label="Busca">
+      <input type="text" placeholder="Buscar caso, documento, coleção, mídia, órgão, local…" data-cmdk-input autocomplete="off" />
+      <ul data-cmdk-results></ul>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

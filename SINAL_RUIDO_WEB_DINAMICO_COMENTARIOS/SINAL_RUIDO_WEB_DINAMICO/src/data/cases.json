@@ -1,0 +1,1897 @@
+[
+  {
+    "slug": "sinal-wow",
+    "code": "SR-CASE-0001",
+    "date": "15·08·1977",
+    "title": "Sinal Wow! — Big Ear, Ohio",
+    "location": "Delaware, Ohio, EUA",
+    "status": "revisao-pendente",
+    "statusLabel": "Bem documentado; aguardando auditoria formal do arquivo",
+    "resumo": "Na madrugada de 15 de agosto de 1977, o radiotelescópio Big Ear, da Ohio State University, registrou um sinal de rádio estreito e muito mais intenso que o ruído de fundo do céu, numa frequência próxima à linha de 21 cm do hidrogênio neutro — historicamente uma das mais promissoras para buscas de sinais artificiais. O sinal durou 72 segundos, o tempo exato em que a rotação da Terra levou o feixe do instrumento a cruzar aquele ponto do céu, e apareceu em apenas um dos dois canais de recepção do telescópio, como se esperaria de uma fonte real e não de interferência terrestre. Dias depois, ao revisar o printout impresso, o astrônomo Jerry Ehman circulou a sequência \"6EQUJ5\" e escreveu \"Wow!\" na margem — origem do nome pelo qual o caso é conhecido. Nunca houve uma segunda detecção, apesar de décadas de buscas dirigidas à mesma região do céu com instrumentos mais sensíveis, e não existe dado bruto além desse único printout.",
+    "documentos": [
+      {
+        "tipo": "Registro instrumental",
+        "titulo": "Printout original do Big Ear com a anotação \"Wow!\"",
+        "descricao": "Saída impressa do computador do radiotelescópio, com a sequência de intensidade \"6EQUJ5\" e a anotação manuscrita do astrônomo Jerry Ehman, captada em apenas 1 dos 50 canais do receptor.",
+        "data": "15·08·1977",
+        "origem": "Ohio State University Radio Observatory / North American AstroPhysical Observatory (NAAPO)"
+      }
+    ],
+    "testemunhos": [],
+    "cronologia": [
+      {
+        "quando": "1963–1998",
+        "evento": "Período de operação do Big Ear, incluindo o programa SETI mais longevo da história (1973–1995)."
+      },
+      {
+        "quando": "15·08·1977, madrugada",
+        "evento": "O Big Ear registra o sinal durante uma varredura automática do céu."
+      },
+      {
+        "quando": "Dias depois",
+        "evento": "Jerry Ehman revisa o printout impresso e escreve \"Wow!\" na margem."
+      },
+      {
+        "quando": "1977–hoje",
+        "evento": "Buscas de repetição do sinal na mesma região do céu não encontram nada equivalente."
+      },
+      {
+        "quando": "1998",
+        "evento": "O Big Ear é desmontado após venda do terreno onde ficava."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Astro",
+        "avaliacao": "Estudos recentes (\"Arecibo Wow! I\" e \"Arecibo Wow! II\", 2024–2025) propõem uma nuvem fria de hidrogênio neutro amplificada por um evento transiente raro. Explicaria a frequência, mas nenhum dos dois trabalhos é consenso na comunidade."
+      },
+      {
+        "tipo": "Erro instrumental",
+        "avaliacao": "Interferência terrestre foi considerada e parcialmente descartada: o Big Ear tinha dois feixes de recepção, e o sinal apareceu em apenas um, como se esperaria de uma fonte celeste real, não de ruído local comum aos dois feixes."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Origem tecnológica não natural é frequentemente citada, mas não há nenhum dado adicional (repetição, estrutura de mensagem, segunda detecção) que a sustente além da anomalia do próprio sinal."
+      }
+    ],
+    "contradicoes": [
+      "O sinal nunca foi redetectado, apesar de dezenas de tentativas com instrumentos mais sensíveis nas décadas seguintes.",
+      "Não existe gravação de áudio nem dado bruto além do printout — a análise depende inteiramente desse registro único."
+    ],
+    "oQueSabemos": [
+      "Um sinal de rádio real foi registrado pelo instrumento em 15/08/1977, com perfil de intensidade compatível com uma fonte fixa no céu.",
+      "A frequência estava próxima da linha de 21 cm do hidrogênio neutro, de interesse histórico para buscas de SETI."
+    ],
+    "oQueNaoSabemos": [
+      "A origem física do sinal — natural, artificial ou instrumental.",
+      "Por que nunca se repetiu, mesmo com buscas direcionadas."
+    ],
+    "paraSaberMais": [
+      "Dados brutos adicionais do momento da detecção, se existirem em arquivo, ainda não publicados.",
+      "Uma segunda detecção, na mesma frequência e região do céu, seria o dado mais informativo possível."
+    ],
+    "imagens": [
+      {
+        "tipo": "documento",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Wow_signal.jpg",
+        "alt": "Printout original do Big Ear com a sequência \"6EQUJ5\" e a anotação manuscrita \"Wow!\"",
+        "origem": "Big Ear Radio Observatory / NAAPO",
+        "data": "15·08·1977",
+        "autoria": "Jerry R. Ehman (anotação); Big Ear Radio Observatory (registro)",
+        "contexto": "Documento primário do evento — o printout que dá nome ao caso.",
+        "versao": "Digitalização institucional",
+        "license": "Domínio público",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wow_signal.jpg"
+      },
+      {
+        "tipo": "imagem",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/9/93/Wow_signal_profile.png",
+        "alt": "Gráfico de intensidade do sinal Wow! ao longo do tempo",
+        "origem": "Wikimedia Commons",
+        "autoria": "Cmglee",
+        "contexto": "Gráfico ilustrativo do perfil de intensidade descrito no printout original — não é o documento primário.",
+        "versao": "Ilustração",
+        "ilustrativa": true,
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wow_signal_profile.png"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Fonte primária",
+        "label": "North American AstroPhysical Observatory (NAAPO) — arquivo do sinal Wow!"
+      },
+      {
+        "qualidade": "Referência contextual",
+        "label": "Wow! signal — Wikipedia (EN)",
+        "url": "https://en.wikipedia.org/wiki/Wow!_signal"
+      },
+      {
+        "qualidade": "Artigo acadêmico",
+        "label": "Arecibo Wow! I (arXiv, 2024)",
+        "url": "https://arxiv.org/pdf/2408.08513"
+      },
+      {
+        "qualidade": "Artigo acadêmico",
+        "label": "Arecibo Wow! II (arXiv, 2025)",
+        "url": "https://arxiv.org/pdf/2508.10657"
+      },
+      {
+        "qualidade": "Imprensa contemporânea",
+        "label": "Astronomy.com — Aug. 15, 1977: The Wow! Signal arrives",
+        "url": "https://www.astronomy.com/today-in-the-history-of-astronomy/aug-15-1977-the-wow-signal-arrives/"
+      },
+      {
+        "qualidade": "Investigação posterior",
+        "label": "Scientific American — The Wow! Signal SETI Mystery Might at Last Be Solved",
+        "url": "https://www.scientificamerican.com/article/the-wow-signal-seti-mystery-might-at-last-be-solved/"
+      }
+    ],
+    "bookNote": "Este caso é o ponto de partida do romance SINAL/RUÍDO. O que a trama imagina ter acontecido com o sinal a partir daí é inteiramente ficcional — consulte a página do livro para a relação entre pesquisa factual e ficção, sem spoiler aqui.",
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "The Wow! Signal with Discoverer Dr. Jerry Ehman",
+        "youtubeId": "x67K-Vq1KWk",
+        "canal": "Event Horizon",
+        "contexto": "Entrevista com o astrônomo Jerry Ehman, que descobriu e anotou o sinal Wow! no printout original de 1977."
+      }
+    ]
+  },
+  {
+    "slug": "operacao-prato-colares",
+    "code": "SR-CASE-0002",
+    "date": "set·1977",
+    "title": "Operação Prato / Colares",
+    "location": "Vigia, Colares e Santo Antônio do Tauá / PA",
+    "status": "revisao-pendente",
+    "statusLabel": "Acervo público confirmado; aguardando auditoria formal do arquivo",
+    "resumo": "Entre outubro e dezembro de 1977, moradores de Vigia, Colares e Santo Antônio do Tauá, na Baía do Marajó, relataram uma sequência incomum de luzes noturnas sobre a região. A Aeronáutica respondeu com uma operação formal em duas fases, comandada pelo Brigadeiro Protásio Lopes de Oliveira e coordenada no terreno pelo Capitão Uyrangê Hollanda, reunindo depoimentos civis, fotografias e formulários de ocorrência. Diferente da maioria dos casos deste arquivo, aqui a existência da investigação em si nunca foi contestada: o fundo documental completo — 758 itens entre relatórios, fotos, matérias de imprensa, vídeos e áudios produzidos pela Aeronáutica entre 1964 e 1985 — está hoje digitalizado e publicamente disponível no Arquivo Nacional. O que permanece em aberto é a origem física dos fenômenos relatados; boa parte da narrativa popular que circula sobre o caso foi construída décadas depois, sem se apoiar diretamente nesse acervo.",
+    "documentos": [
+      {
+        "tipo": "Fundo documental",
+        "titulo": "Fundo OVNI do Arquivo Nacional (sistema SIAN)",
+        "descricao": "758 documentos digitalizados — relatórios, depoimentos, fotos, formulários, matérias de imprensa, vídeos e áudios — produzidos pela Aeronáutica entre 1964 e 1985, incluindo o material da Operação Prato.",
+        "origem": "Arquivo Nacional",
+        "linkExterno": "https://querepublicaeessa.an.gov.br/index.php/que-republica-e-essa/assuntos/temas/302-os-ovnis-no-arquivo-nacional"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "Moradores de Vigia, Colares e Santo Antônio do Tauá",
+        "quandoDeclarou": "Durante as duas fases da operação (out–dez·1977)",
+        "tempoAposEvento": "Variável — parte dos relatos foi colhida durante a própria operação",
+        "versoes": "Relatos civis e registros da operação militar nem sempre coincidem em detalhes",
+        "outrasTestemunhas": "Múltiplas, coletadas ao longo dos meses de operação"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "20·out–11·nov·1977",
+        "evento": "Primeira fase da operação, sob comando do I COMAR."
+      },
+      {
+        "quando": "25·nov–5·dez·1977",
+        "evento": "Segunda fase da operação."
+      },
+      {
+        "quando": "2012",
+        "evento": "Comissão Mista de Reavaliação de Informações confirma a destinação do acervo ao Arquivo Nacional."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Ação militar convencional",
+        "avaliacao": "A operação em si é fato documentado, comandada pelo Brigadeiro Protásio Lopes de Oliveira, com o Capitão Uyrangê Hollanda na coordenação operacional."
+      },
+      {
+        "tipo": "Fenômeno atmosférico",
+        "avaliacao": "Parte dos relatos civis é compatível com fenômenos luminosos não identificados, sem análise instrumental de época que permita classificação segura hoje."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Frequentemente associada ao caso na cultura popular, mas os documentos disponíveis provam a investigação, não a origem dos fenômenos relatados."
+      }
+    ],
+    "contradicoes": [
+      "A existência da operação é fato; a interpretação popular do que ela investigava (e do que teria concluído) muitas vezes excede o que os documentos afirmam.",
+      "Parte da narrativa que circula publicamente sobre o caso foi construída décadas depois, sem se apoiar diretamente no fundo documental do Arquivo Nacional."
+    ],
+    "oQueSabemos": [
+      "A Aeronáutica conduziu uma operação formal em duas fases, entre outubro e dezembro de 1977.",
+      "758 documentos desse período estão preservados, digitalizados e publicamente acessíveis no Arquivo Nacional."
+    ],
+    "oQueNaoSabemos": [
+      "A origem física dos fenômenos que motivaram a operação.",
+      "O conteúdo integral de todos os documentos do fundo, que exige pesquisa direta no acervo."
+    ],
+    "paraSaberMais": [
+      "Consulta sistemática do fundo documental completo (SIAN, Arquivo Nacional).",
+      "Cruzamento entre os relatos civis coletados na época e os registros oficiais da operação."
+    ],
+    "imagens": [],
+    "fontes": [
+      {
+        "qualidade": "Fonte institucional",
+        "label": "Arquivo Nacional — Que República é Essa: os OVNIs no Arquivo Nacional",
+        "url": "https://querepublicaeessa.an.gov.br/index.php/que-republica-e-essa/assuntos/temas/302-os-ovnis-no-arquivo-nacional"
+      },
+      {
+        "qualidade": "Fonte institucional",
+        "label": "Ministério da Justiça — Acervo sobre OVNIs é um dos mais visitados no Arquivo Nacional",
+        "url": "https://www.justica.gov.br/news/acervo-sobre-ovnis-e-um-dos-mais-visitados-no-arquivo-nacional"
+      },
+      {
+        "qualidade": "Imprensa contemporânea",
+        "label": "Correio Braziliense — Arquivo Nacional divulga 900 registros de OVNIs",
+        "url": "https://www.correiobraziliense.com.br/cbradar/arquivo-nacional-do-brasil-divulga-900-registros-de-ovnis-no-pais-veja-como-acessar/"
+      },
+      {
+        "qualidade": "Referência contextual",
+        "label": "Wikipedia (EN) — Operação Prato",
+        "url": "https://en.wikipedia.org/wiki/Opera%C3%A7%C3%A3o_Prato"
+      }
+    ],
+    "bookNote": "O romance usa o cenário real da região e o fato da existência do acervo como ponto de partida para uma investigação inventada. O que a equipe fictícia encontra ali não corresponde a nenhum documento real — veja a página do livro.",
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "O.V.N.I.S. (Disco Voador) — Operação Prato, Aparição/Colares Amazônia — Fantástico",
+        "youtubeId": "kREa3qsoJZU",
+        "canal": "Reprodução de reportagem do Fantástico (Rede Globo)",
+        "contexto": "Reportagem jornalística do Fantástico sobre os relatos de luzes e a Operação Prato em Colares, Pará."
+      }
+    ]
+  },
+  {
+    "slug": "noite-oficial-dos-ovnis",
+    "code": "SR-CASE-0003",
+    "date": "19·05·1986",
+    "title": "Noite Oficial dos OVNIs",
+    "location": "SP, RJ, MG e GO",
+    "status": "controverso",
+    "statusLabel": "Documentado, sem consenso",
+    "resumo": "Na noite de 19 de maio de 1986, testemunhas civis e militares em São Paulo, Rio de Janeiro, Minas Gerais e Goiás relataram, quase simultaneamente, 21 objetos luminosos no céu. O episódio não ficou restrito a relato visual: radares do CINDACTA confirmaram contatos, e a Força Aérea Brasileira chegou a despachar cinco caças para tentar interceptação. Quatro dias depois, o próprio Ministro da Aeronáutica, Brigadeiro Octávio Júlio Moreira Lima, deu uma coletiva de imprensa ao lado dos pilotos envolvidos — um nível de confirmação oficial pública raro entre os casos deste arquivo. Um relatório confidencial consolidou os relatos em junho daquele ano, e dezesseis gravações de áudio do episódio só vieram a público em 2015, quase trinta anos depois. A hipótese de sprites — eventos luminosos de alta atmosfera associados a tempestades — explica parte plausível do componente visual, mas não dá conta, sozinha, dos contatos de radar registrados de forma independente.",
+    "documentos": [
+      {
+        "tipo": "Relatório oficial",
+        "titulo": "Relatório confidencial sobre ocorrências de 19/05/1986",
+        "descricao": "Documento produzido pelo Comando Aéreo de Defesa Aérea reunindo relatos de controladores, radaristas e pilotos.",
+        "data": "02·06·1986",
+        "origem": "Ministério da Aeronáutica"
+      },
+      {
+        "tipo": "Gravações de áudio",
+        "titulo": "16 gravações do Fundo OVNI, incluindo 8 diálogos da noite",
+        "descricao": "Diálogos entre pilotos, controladores e o sistema de defesa aérea durante o episódio, liberados décadas depois.",
+        "data": "Liberado em out·2015",
+        "origem": "Arquivo Nacional"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "Pilotos de caça e controladores de tráfego aéreo",
+        "quandoDeclarou": "Na noite do evento e em coletiva de imprensa quatro dias depois",
+        "tempoAposEvento": "Próximo ao evento (relato oficial contemporâneo)",
+        "versoes": "Convergem em quantidade incomum entre postos distintos na mesma noite",
+        "outrasTestemunhas": "Múltiplos postos de radar e cinco caças despachados"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "19·05·1986, período noturno",
+        "evento": "21 objetos relatados em SP, RJ, MG e GO; radares do CINDACTA detectam os alvos; 5 caças da FAB são despachados."
+      },
+      {
+        "quando": "23·05·1986",
+        "evento": "O Ministro da Aeronáutica, Brigadeiro Octávio Júlio Moreira Lima, dá coletiva de imprensa com os pilotos envolvidos."
+      },
+      {
+        "quando": "02·06·1986",
+        "evento": "Relatório confidencial consolidando os relatos é produzido pelo Comando Aéreo de Defesa Aérea."
+      },
+      {
+        "quando": "out·2015",
+        "evento": "Arquivo Nacional libera 16 gravações de áudio do episódio."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Fenômeno atmosférico",
+        "avaliacao": "Sprites — eventos luminosos transitórios de alta atmosfera associados a tempestades, hipótese discutida publicamente por pesquisadores como Sérgio Sacani — podem explicar parte do componente visual, se compatíveis com posição, duração e condições meteorológicas da noite."
+      },
+      {
+        "tipo": "Erro instrumental",
+        "avaliacao": "Não descartado para parte dos contatos de radar isolados, mas não explica a convergência entre múltiplos postos."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Não há dado que a confirme além da dificuldade em explicar o conjunto completo com hipóteses convencionais isoladas."
+      }
+    ],
+    "contradicoes": [
+      "Uma explicação óptica parcial (como sprites) não dá conta, sozinha, dos registros de radar, que são tecnicamente independentes do componente visual.",
+      "O relatório oficial e a coletiva de imprensa confirmam a existência da noite de ocorrências — não confirmam origem para nenhum dos fenômenos nela descritos."
+    ],
+    "oQueSabemos": [
+      "Houve relatos convergentes em múltiplos postos e estados na noite de 19/05/1986, documentados oficialmente e confirmados em coletiva de imprensa.",
+      "Existem relatório confidencial e gravações de áudio contemporâneas, com data e origem institucional definidas."
+    ],
+    "oQueNaoSabemos": [
+      "A causa física de cada componente do episódio (visual, radar, comunicação).",
+      "Se uma única explicação cobre todo o conjunto ou se há mais de um fenômeno distinto misturado na mesma noite."
+    ],
+    "paraSaberMais": [
+      "Dados meteorológicos horários da região na noite de 19/05/1986, para testar a hipótese de sprites com precisão.",
+      "Transcrição integral e análise técnica das 16 gravações liberadas em 2015."
+    ],
+    "imagens": [
+      {
+        "tipo": "imagem",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Northrop_F-5_%28Forca_Aerea_Brasileira%29_Seguran%C3%A7a_Rio_2016_%283%29.jpg",
+        "alt": "Caça F-5 da Força Aérea Brasileira",
+        "origem": "Agência Brasil",
+        "data": "2016",
+        "autoria": "Tomaz Silva/Agência Brasil",
+        "contexto": "Foto de 2016 de um F-5 da FAB, o mesmo modelo usado na interceptação de 1986 — não é registro do evento.",
+        "versao": "Ilustração",
+        "ilustrativa": true,
+        "license": "CC BY 3.0 BR",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Northrop_F-5_(Forca_Aerea_Brasileira)_Seguran%C3%A7a_Rio_2016_(3).jpg"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Fonte institucional",
+        "label": "Relatório confidencial, Comando Aéreo de Defesa Aérea, 02·06·1986"
+      },
+      {
+        "qualidade": "Imprensa contemporânea",
+        "label": "G1/Fantástico — Aeronáutica libera gravações de diálogos da \"noite oficial dos óvnis\"",
+        "url": "http://g1.globo.com/fantastico/noticia/2016/05/aeronautica-libera-gravacoes-de-dialogos-da-noite-oficial-dos-ovnis.html"
+      },
+      {
+        "qualidade": "Investigação posterior",
+        "label": "Comentário público de Sérgio Sacani sobre sprites como hipótese concorrente"
+      },
+      {
+        "qualidade": "Imprensa contemporânea",
+        "label": "CNN Brasil — Noite dos OVNIs: FAB perseguiu objetos voadores há 40 anos",
+        "url": "https://www.cnnbrasil.com.br/ciencia/noite-dos-ovnis-fab-perseguiu-objetos-voadores-ha-40-anos-no-brasil/"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "Veja depoimentos de pilotos brasileiros durante a \"Noite dos OVNIs\" de 1986",
+        "youtubeId": "ze1mBPIHx-A",
+        "canal": "CNN Brasil",
+        "contexto": "Depoimentos de pilotos da FAB envolvidos na perseguição aos contatos de radar da noite de 19 de maio de 1986."
+      }
+    ]
+  },
+  {
+    "slug": "varginha",
+    "code": "SR-CASE-0004",
+    "date": "20·01·1996",
+    "title": "Varginha — relatos e inquérito militar",
+    "location": "Varginha / MG",
+    "status": "revisao-pendente",
+    "statusLabel": "Inquérito concluído; aguardando auditoria formal do arquivo",
+    "resumo": "Na tarde de 20 de janeiro de 1996, três jovens relataram ter visto uma figura incomum agachada num terreno baldio em Varginha, Minas Gerais. O relato se espalhou rapidamente pela cidade e, no ano seguinte, um livro chegou a alegar participação do Exército numa suposta captura e transporte da criatura. Essa acusação específica foi formalmente apurada pelo Ministério do Exército através do Inquérito Policial Militar 18/1997, aberto na Escola de Sargentos das Armas de Três Corações. O inquérito, arquivado em agosto daquele ano sem encontrar irregularidade militar, apontou como explicação mais provável que as testemunhas tenham visto Luís Antônio de Paula, morador local com transtornos mentais conhecido por ficar agachado em locais públicos. É um dado do próprio inquérito, não uma hipótese externa — mas grande parte da cobertura popular do caso segue tratando o episódio como sem explicação, o que os autos contestam diretamente. Termos como \"extraterrestre\" e detalhes físicos específicos (pele oleosa, olhos vermelhos) não aparecem no relato bruto do primeiro dia; entraram na narrativa em versões publicadas depois.",
+    "documentos": [
+      {
+        "tipo": "Inquérito Policial Militar",
+        "titulo": "IPM 18/1997 (Autos Findos nº 908/1997)",
+        "descricao": "Inquérito aberto pelo Ministério do Exército, na Escola de Sargentos das Armas de Três Corações, para apurar acusação de participação militar em captura e transporte. Concluiu não haver provas materiais ou testemunhais de irregularidade, e apontou que as testemunhas provavelmente viram Luís Antônio de Paula (\"Mudinho\"), morador local com transtornos mentais que costumava ficar agachado em locais públicos.",
+        "data": "1997, arquivado em ago·1997",
+        "origem": "Superior Tribunal Militar (acervo de Autos Findos)",
+        "linkExterno": "https://arquimedes.stm.jus.br/index.php/inquerito-policial-militar-n-18-1997"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "Três jovens (relato original)",
+        "quandoDeclarou": "20·01·1996",
+        "tempoAposEvento": "Relato imediato, no mesmo dia",
+        "versoes": "Detalhes como pele oleosa e olhos vermelhos aparecem em versões publicadas depois do relato bruto",
+        "outrasTestemunhas": "Relato inicial dos três jovens; outros relatos da cidade surgiram posteriormente",
+        "possivelContaminacao": "A palavra \"extraterrestre\" e detalhes físicos específicos surgem em coberturas posteriores, não no relato original"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "20·01·1996, tarde",
+        "evento": "Três jovens relatam ter visto uma figura em terreno baldio."
+      },
+      {
+        "quando": "1996",
+        "evento": "Publicação de livro alegando participação do Exército na captura e transporte."
+      },
+      {
+        "quando": "1997",
+        "evento": "Abertura do IPM 18/1997 para apurar a acusação."
+      },
+      {
+        "quando": "ago·1997",
+        "evento": "IPM arquivado como Autos Findos, sem irregularidade encontrada, apontando identificação provável do que foi visto."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Interpretação psicológica",
+        "avaliacao": "O próprio IPM aponta que as testemunhas provavelmente viram um morador local com transtornos mentais — não uma hipótese externa, mas achado explícito do inquérito."
+      },
+      {
+        "tipo": "Fraude",
+        "avaliacao": "A acusação específica de participação militar em captura e transporte foi apurada e não sustentada pelo IPM."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Permanece sustentada apenas pelo relato testemunhal original e por versões posteriores mais elaboradas, sem documento independente que a corrobore."
+      }
+    ],
+    "contradicoes": [
+      "O termo \"extraterrestre\" e detalhes físicos precisos não estão no relato bruto do primeiro dia — aparecem em versões publicadas depois.",
+      "O IPM 18/1997 apurou a acusação de participação militar e apresentou uma identificação provável do que foi visto — muita cobertura popular do caso ainda trata o episódio como sem explicação, o que o próprio inquérito contesta."
+    ],
+    "oQueSabemos": [
+      "Três jovens relataram um episódio em 20/01/1996, no mesmo dia do evento.",
+      "Um IPM formal apurou a acusação de participação militar, arquivou-a por falta de provas e apontou identificação provável para o que foi avistado."
+    ],
+    "oQueNaoSabemos": [
+      "Se a identificação apontada pelo IPM explica a totalidade dos relatos da cidade naqueles dias, ou só o episódio pontual dos três jovens.",
+      "Se as versões posteriores mais detalhadas preservam ou distorcem o relato original."
+    ],
+    "paraSaberMais": [
+      "Leitura do texto integral do IPM 18/1997, hoje digitalizado e público no site do STM.",
+      "Comparação sistemática entre as versões do relato ao longo do tempo, com datas de publicação de cada uma."
+    ],
+    "imagens": [
+      {
+        "tipo": "imagem",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/2/28/Memorial_do_ET_de_Varginha._19_de_fev._de_2025.jpg",
+        "alt": "Memorial do ET de Varginha, monumento em formato de nave espacial",
+        "origem": "Wikimedia Commons",
+        "data": "fev·2025",
+        "autoria": "Então Vamo!",
+        "contexto": "Monumento erguido em 2001 na cidade, parte da memória popular do caso — não é registro do evento de 1996.",
+        "versao": "Ilustração",
+        "ilustrativa": true,
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Memorial_do_ET_de_Varginha._19_de_fev._de_2025.jpg"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Fonte primária",
+        "label": "STM/Arquimedes — Inquérito Policial Militar n. 18/1997",
+        "url": "https://arquimedes.stm.jus.br/index.php/inquerito-policial-militar-n-18-1997"
+      },
+      {
+        "qualidade": "Imprensa contemporânea",
+        "label": "Estado de Minas — Houve ET? O que dizem os documentos oficiais sobre o Caso Varginha (2026)",
+        "url": "https://www.em.com.br/gerais/2026/01/7329075-houve-et-o-que-dizem-os-documentos-oficiais-sobre-o-caso-varginha.html"
+      },
+      {
+        "qualidade": "Referência contextual",
+        "label": "Migalhas — ET de Varginha: relato foi apurado pelo Exército e virou caso judicial",
+        "url": "https://www.migalhas.com.br/quentes/447448/et-de-varginha-relato-foi-apurado-pelo-exercito-e-virou-caso-judicial"
+      },
+      {
+        "qualidade": "Referência contextual",
+        "label": "Wikipedia (EN) — Varginha UFO incident",
+        "url": "https://en.wikipedia.org/wiki/Varginha_UFO_incident"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": []
+  },
+  {
+    "slug": "antonio-villas-boas",
+    "code": "SR-CASE-0005",
+    "date": "16·10·1957",
+    "title": "Antônio Villas-Boas",
+    "location": "São Francisco de Sales / MG",
+    "status": "aberto",
+    "statusLabel": "Relato único, sem corroboração externa",
+    "resumo": "Antônio Villas-Boas, um jovem agricultor, relatou publicamente uma experiência de proximidade e interação física ocorrida na noite de 16 de outubro de 1957, em São Francisco de Sales, Minas Gerais. O relato só circulou por meio de uma entrevista posterior ao evento alegado — não existe nenhum registro contemporâneo, seja documento oficial, matéria de jornal da época ou depoimento de terceiros, que confirme o episódio no momento em que teria ocorrido. Um suposto exame clínico com achados compatíveis com exposição à radiação é frequentemente citado por fontes ufológicas como corroboração, mas não há laudo institucional público confirmado de forma independente. É, estruturalmente, um relato único: não há segunda testemunha do episódio central, e toda a informação disponível sobre o caso deriva do próprio depoimento de Villas-Boas, dado depois do fato.",
+    "documentos": [],
+    "testemunhos": [
+      {
+        "quem": "Antônio Villas-Boas",
+        "quandoDeclarou": "Entrevista pública posterior ao evento alegado de 16·10·1957",
+        "tempoAposEvento": "Não contemporâneo — intervalo entre o evento e o registro público",
+        "versoes": "Relato único; não há segunda testemunha do episódio central",
+        "outrasTestemunhas": "Nenhuma identificada para o episódio em si",
+        "possivelContaminacao": "Detalhes que aparecem apenas em versões posteriores são tratados como parte dessas versões, não do relato original. Um suposto exame clínico compatível com radiação é citado por fontes ufológicas, sem laudo institucional público confirmado de forma independente."
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "16·10·1957",
+        "evento": "Evento alegado pelo relato de Villas-Boas."
+      },
+      {
+        "quando": "Posteriormente",
+        "evento": "Entrevista e circulação pública do relato."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Interpretação psicológica",
+        "avaliacao": "Considerada por parte da literatura sobre o caso, sem confirmação possível à distância de décadas."
+      },
+      {
+        "tipo": "Fraude",
+        "avaliacao": "Não descartável nem confirmável — não há registro externo independente do episódio."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Sustentada inteiramente pelo relato individual, sem corroboração."
+      }
+    ],
+    "contradicoes": [
+      "Não existe nenhum registro contemporâneo ao evento — toda a informação disponível vem do próprio relato, posteriormente.",
+      "O suposto exame clínico associado ao caso circula em fontes ufológicas, não em laudo institucional público independente."
+    ],
+    "oQueSabemos": [
+      "Existe um relato público de Antônio Villas-Boas, associado à noite de 16/10/1957."
+    ],
+    "oQueNaoSabemos": [
+      "Se o episódio relatado ocorreu como descrito.",
+      "A causa de qualquer elemento factual eventualmente por trás do relato."
+    ],
+    "paraSaberMais": [
+      "Qualquer registro contemporâneo ao evento (não posterior) que ainda não tenha sido localizado.",
+      "Uma fonte jornalística ou acadêmica cética de qualidade equivalente às de outros casos deste arquivo — não localizada até esta revisão."
+    ],
+    "imagens": [],
+    "fontes": [
+      {
+        "qualidade": "Fonte primária",
+        "label": "Relato e entrevista original de Antônio Villas-Boas"
+      }
+    ],
+    "maturidade": "registro",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "Caso Villas Boas – Ufologia Brasileira | MFC 230",
+        "youtubeId": "MTgJb3c3rwM",
+        "canal": "Mundo Freak",
+        "contexto": "Análise em podcast sobre o caso de 1957, discutindo versões e cronologia do relato de Villas-Boas — comentário posterior, não registro primário."
+      }
+    ]
+  },
+  {
+    "slug": "ilha-da-trindade",
+    "code": "SR-CASE-0006",
+    "date": "16·01·1958",
+    "title": "Ilha da Trindade",
+    "location": "Ilha da Trindade / ES",
+    "status": "controverso",
+    "statusLabel": "Documentado institucionalmente, autenticidade disputada",
+    "resumo": "Por volta do meio-dia de 16 de janeiro de 1958, entre 47 e 50 tripulantes do navio-escola Almirante Saldanha, ancorado na Ilha da Trindade, relataram um objeto sobre a ilha. O fotógrafo civil a bordo, Almiro Baraúna, teria conseguido tirar seis fotografias em apenas 15 segundos, reveladas ainda no mesmo dia, na enfermaria do navio improvisada como laboratório. O episódio ganhou repercussão institucional incomum para a época: um deputado federal chegou a requerer informações oficiais ao Ministério da Marinha, e o presidente Juscelino Kubitschek liberou as fotos à imprensa e as endossou publicamente semanas depois. Apesar disso — ou por causa disso — a autenticidade do material segue disputada até hoje: críticos levantaram a hipótese de que Baraúna teria fabricado o objeto em laboratório fotográfico, produzindo os negativos por montagem, sem que a questão tenha sido resolvida de forma conclusiva pelas fontes revisadas. Entre os próprios oficiais a bordo, apenas um — o tenente Homero Ribeiro — confirmou o avistamento, segundo relato do comandante da expedição.",
+    "documentos": [
+      {
+        "tipo": "Relatório oficial",
+        "titulo": "Relatório de Fim de Comissão, Posto Oceanográfico da Ilha da Trindade",
+        "descricao": "Relatório de rotina da Marinha do Brasil cobrindo o período da comissão, que menciona possíveis relatos de OVNI.",
+        "data": "nov·1957–jan·1958",
+        "origem": "Marinha do Brasil"
+      },
+      {
+        "tipo": "Requerimento parlamentar",
+        "titulo": "Requerimento de informações ao Ministério da Marinha",
+        "descricao": "Pedido oficial de esclarecimentos sobre o episódio e as fotografias.",
+        "data": "27·02·1958",
+        "origem": "Câmara dos Deputados — dep. Sérgio Magalhães"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "Tripulação do navio-escola Almirante Saldanha (cerca de 47–50 pessoas)",
+        "quandoDeclarou": "No dia do evento, registrado no relatório de fim de comissão",
+        "tempoAposEvento": "Próximo ao evento (relato oficial de rotina)",
+        "versoes": "O capitão Paulo de Castro Moreira da Silva relatou que só o tenente Homero Ribeiro confirmou o avistamento entre os oficiais",
+        "outrasTestemunhas": "Comandante Carlos Alberto Ferreira Bacellar, Capitão José Viegas, tripulantes Amilar Vieira Filho, Aluízio e Mauro, entre outros"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "16·01·1958, ~11h–12h20",
+        "evento": "Objeto avistado sobre a ilha; Almiro Baraúna fotografa seis quadros em 15 segundos."
+      },
+      {
+        "quando": "16·01·1958",
+        "evento": "Filme revelado a bordo, na enfermaria improvisada como laboratório."
+      },
+      {
+        "quando": "27·02·1958",
+        "evento": "Requerimento oficial de informações ao Ministério da Marinha."
+      },
+      {
+        "quando": "fev·1958",
+        "evento": "Presidente Juscelino Kubitschek libera as fotos à imprensa e as endossa publicamente."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Fenômeno atmosférico",
+        "avaliacao": "Considerada pela literatura sobre o caso, sem análise instrumental de época disponível para confirmar."
+      },
+      {
+        "tipo": "Fraude",
+        "avaliacao": "Hipótese de que Baraúna teria fabricado o objeto em laboratório fotográfico, produzindo novos negativos por montagem — levantada por críticos, não confirmada nem descartada de forma conclusiva nas fontes revisadas."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Popularmente associada ao caso; não confirmada pelos documentos oficiais, que registram o relato, não a origem."
+      }
+    ],
+    "contradicoes": [
+      "A autenticidade do material fotográfico e a identidade do que ele mostra são duas perguntas distintas, frequentemente tratadas como uma só na divulgação popular do caso.",
+      "Um requerimento parlamentar e o endosso público do presidente da República provam repercussão institucional — não provam confirmação de origem para o objeto fotografado."
+    ],
+    "oQueSabemos": [
+      "Existe um relatório oficial da Marinha cobrindo o período e mencionando possíveis relatos de OVNI, com dezenas de testemunhas a bordo.",
+      "Houve repercussão institucional formal, incluindo requerimento parlamentar e endosso presidencial às fotografias."
+    ],
+    "oQueNaoSabemos": [
+      "A origem do que foi relatado e fotografado.",
+      "Se as fotografias são autênticas ou resultado de manipulação em laboratório, questão levantada por críticos e nunca resolvida de forma conclusiva."
+    ],
+    "paraSaberMais": [
+      "Acesso ao texto integral do Relatório de Fim de Comissão, além do resumo citado na literatura sobre o caso.",
+      "Análise técnica independente e atualizada do material fotográfico original, se ainda existir e for localizável."
+    ],
+    "imagens": [
+      {
+        "tipo": "documento",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/8/8f/OG%2C_33%C2%BA_ano%2C_n%C2%BA_9.758%2C_1%C2%BA_caderno%2C_quarta-feira%2C_26_fev._1958%2C_p._3_%28O_fot%C3%B3grafo_estava_s%C3%B3_quando_revelou_o_filme%29focadoerestau.jpg",
+        "alt": "Página do jornal O Globo de 26 de fevereiro de 1958 sobre o caso da Ilha da Trindade",
+        "origem": "O Globo",
+        "data": "26·02·1958",
+        "autoria": "O Globo",
+        "contexto": "Cobertura jornalística contemporânea ao caso, publicada seis semanas após o evento — não é a fotografia de Baraúna em si (não localizada com licença aberta), mas registro de época do episódio e da controvérsia sobre o fotógrafo ter revelado o filme sozinho.",
+        "versao": "Reprodução",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:OG,_33%C2%BA_ano,_n%C2%BA_9.758,_1%C2%BA_caderno,_quarta-feira,_26_fev._1958,_p._3_(O_fot%C3%B3grafo_estava_s%C3%B3_quando_revelou_o_filme)focadoerestau.jpg"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Fonte institucional",
+        "label": "Relatório de Fim de Comissão, Marinha do Brasil"
+      },
+      {
+        "qualidade": "Fonte institucional",
+        "label": "Requerimento do dep. Sérgio Magalhães, Câmara dos Deputados, 27·02·1958"
+      },
+      {
+        "qualidade": "Referência contextual",
+        "label": "Wikipédia (PT) — Caso da Ilha da Trindade",
+        "url": "https://pt.wikipedia.org/wiki/Caso_da_Ilha_da_Trindade"
+      },
+      {
+        "qualidade": "Investigação posterior",
+        "label": "Arquivo UFO Eurisko — OVNI da Ilha da Trindade: caso genuíno ou uma farsa?",
+        "url": "https://arquivoufo.eurisko.com.br/2013/05/03/ovni-da-ilha-da-trindade-caso-genuino-ou-uma-farsa/"
+      },
+      {
+        "qualidade": "Investigação posterior",
+        "label": "Arquivo UFO Eurisko — As fotografias do OVNI na Ilha de Trindade",
+        "url": "https://arquivoufo.eurisko.com.br/2017/08/31/as-fotografias-do-ovni-na-ilha-de-trindade/"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "O \"Disco-Voador\" da Ilha da Trindade (1958)",
+        "youtubeId": "N4v2Mb47qwg",
+        "canal": "Canal Memória",
+        "contexto": "Retrospectiva das fotografias tiradas por Almiro Baraúna a bordo do Almirante Saldanha em 1958 e da controvérsia sobre sua autenticidade."
+      }
+    ]
+  },
+  {
+    "slug": "roswell",
+    "code": "SR-CASE-0007",
+    "date": "jul·1947",
+    "title": "Roswell",
+    "location": "Novo México, EUA",
+    "status": "revisao-pendente",
+    "statusLabel": "Explicado por relatórios oficiais da USAF; aguardando auditoria formal do arquivo",
+    "resumo": "Em junho de 1947, destroços foram encontrados numa fazenda perto de Roswell, Novo México. No dia 8 de julho, o Roswell Army Air Field emitiu um comunicado anunciando a recuperação de um \"disco voador\" — manchete do Roswell Daily Record no mesmo dia — e, horas depois, desmentiu o próprio anúncio, atribuindo os destroços a um balão meteorológico comum. O caso permaneceria uma nota de rodapé da história até os anos 1980, quando livros começaram a associá-lo a uma suposta recuperação de nave e corpos extraterrestres — elemento ausente de qualquer relato contemporâneo a 1947. Relatórios oficiais da Força Aérea americana, publicados em 1994 e 1997, identificaram formalmente os destroços como material do Projeto Mogul, um programa classificado de balões de alta altitude destinado a detectar testes nucleares soviéticos, e atribuíram os relatos posteriores de \"corpos\" a bonecos de teste antropomórficos usados em programas militares de décadas seguintes, confundidos retroativamente por testemunhas muito tempo depois. O intervalo de décadas entre o evento original e os relatos mais elaborados é considerado o maior problema metodológico do caso.",
+    "documentos": [
+      {
+        "tipo": "Relatório oficial",
+        "titulo": "The Roswell Report: Fact vs. Fiction in the New Mexico Desert (1994) e Case Closed (1997)",
+        "descricao": "Relatórios da USAF identificando os destroços como material do Projeto Mogul (balões de alta altitude para detectar testes nucleares soviéticos) e os relatos de \"corpos\" como bonecos de teste antropomórficos de programas posteriores.",
+        "origem": "United States Air Force"
+      }
+    ],
+    "testemunhos": [],
+    "cronologia": [
+      {
+        "quando": "jun·1947",
+        "evento": "Destroços encontrados numa fazenda perto de Roswell."
+      },
+      {
+        "quando": "08·07·1947",
+        "evento": "Roswell Army Air Field emite comunicado anunciando a captura de um \"flying disc\" — manchete do Roswell Daily Record no mesmo dia."
+      },
+      {
+        "quando": "08·07·1947, mesmo dia",
+        "evento": "Comunicado é desmentido; versão oficial passa a ser balão meteorológico comum."
+      },
+      {
+        "quando": "1994 / 1997",
+        "evento": "USAF publica os dois relatórios que atribuem o caso ao Projeto Mogul e a bonecos de teste."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Balão / objeto convencional",
+        "avaliacao": "Posição oficial da USAF: destroços de balão do Projeto Mogul; relatos de \"corpos\" atribuídos a bonecos de teste antropomórficos usados em programas posteriores, confundidos retroativamente por testemunhas décadas depois."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Posição da subcultura ufológica de encobrimento de acidente com nave extraterrestre — sem documento primário que a sustente."
+      }
+    ],
+    "contradicoes": [
+      "Nenhuma testemunha contemporânea a 1947 relatou \"corpos\" — esse elemento entra na narrativa só nos anos 1980, em livros, décadas depois do evento.",
+      "O intervalo de décadas entre o evento e os relatos mais detalhados (corpos, autópsia) é o maior problema metodológico do caso."
+    ],
+    "oQueSabemos": [
+      "Destroços foram encontrados e um comunicado oficial anunciou e depois desmentiu a captura de um \"disco voador\", tudo no mesmo dia.",
+      "A USAF identificou formalmente o material como parte do Projeto Mogul em relatórios de 1994 e 1997."
+    ],
+    "oQueNaoSabemos": [
+      "Por que o comunicado inicial usou o termo \"flying disc\" antes de ser corrigido.",
+      "Se algum elemento do episódio original (1947) além dos destroços do balão permanece sem explicação convencional documentada."
+    ],
+    "paraSaberMais": [
+      "Comparação sistemática entre os relatos de 1947 e as versões publicadas a partir dos anos 1980."
+    ],
+    "imagens": [
+      {
+        "tipo": "documento",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/c/c4/RoswellDailyRecordJuly8%2C1947.jpg",
+        "alt": "Manchete do Roswell Daily Record de 8 de julho de 1947 anunciando a captura de um disco voador",
+        "origem": "Roswell Daily Record",
+        "data": "08·07·1947",
+        "autoria": "Roswell Daily Record",
+        "contexto": "Documento primário — a manchete do dia do comunicado (e do desmentido) oficial.",
+        "versao": "Reprodução",
+        "license": "Domínio público (publicado nos EUA 1931–1963, sem renovação de copyright)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:RoswellDailyRecordJuly8,1947.jpg"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Fonte institucional",
+        "label": "USAF — The Roswell Report: Fact vs. Fiction (1994)",
+        "url": "https://archive.org/details/DTIC_ADA326148"
+      },
+      {
+        "qualidade": "Fonte institucional",
+        "label": "USAF — The Roswell Report: Case Closed (1997)",
+        "url": "https://www.govinfo.gov/app/details/GOVPUB-D301-PURL-gpo92195"
+      },
+      {
+        "qualidade": "Imprensa contemporânea",
+        "label": "Roswell Daily Record, 08·07·1947",
+        "url": "https://commons.wikimedia.org/wiki/File:RoswellDailyRecordJuly8,1947.jpg"
+      },
+      {
+        "qualidade": "Referência contextual",
+        "label": "Smithsonian Magazine / Encyclopaedia Britannica",
+        "url": "https://www.smithsonianmag.com/smithsonian-institution/in-1947-high-altitude-balloon-crash-landed-roswell-aliens-never-left-180963917/"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "History's Greatest Mysteries: Roswell Secrets Revealed in Eyewitness Journal (Part 1)",
+        "youtubeId": "BZpHEALNozw",
+        "canal": "HISTORY",
+        "contexto": "Episódio do canal oficial HISTORY revisitando depoimentos de testemunhas do caso Roswell (1947)."
+      }
+    ]
+  },
+  {
+    "slug": "kenneth-arnold",
+    "code": "SR-CASE-0008",
+    "date": "24·06·1947",
+    "title": "Kenneth Arnold — Mount Rainier",
+    "location": "Washington, EUA",
+    "status": "revisao-pendente",
+    "statusLabel": "Origem documentada do termo \"disco voador\"; aguardando auditoria formal do arquivo",
+    "resumo": "Em 24 de junho de 1947, o piloto civil Kenneth Arnold relatou ter visto nove objetos brilhantes voando em formação perto do Monte Rainier, no estado de Washington, enquanto sobrevoava a região num voo particular. Ao descrever à imprensa o movimento dos objetos — que ele comparou a \"um disco pulando na água\" —, os jornais da época interpretaram a expressão como descrição da forma dos objetos, e não do seu movimento, cunhando o termo \"flying saucer\" (disco voador), que passaria a nomear toda uma categoria de relatos subsequentes em todo o mundo. Doze dias depois, Arnold formalizou o relato numa carta com esboços próprios enviada à inteligência da Army Air Force em Wright Field. O próprio Arnold, piloto experiente, nunca afirmou origem extraterrestre para o que viu — essa associação é posterior e cultural, construída em cima do vocabulário que o episódio ajudou a criar, não parte do relato original.",
+    "documentos": [
+      {
+        "tipo": "Carta manuscrita",
+        "titulo": "Carta de Kenneth Arnold à Army Air Force Intelligence",
+        "descricao": "Relato enviado por Arnold à inteligência da AAF em Wright Field, com esboços a próprio punho do que avistou, doze dias após o evento.",
+        "data": "12·07·1947",
+        "origem": "Army Air Force Intelligence, Wright Field"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "Kenneth Arnold",
+        "quandoDeclarou": "No mesmo dia, à imprensa; formalmente por carta 12 dias depois",
+        "tempoAposEvento": "Relato imediato",
+        "versoes": "Estimativa de velocidade (~1700 mph) e a comparação de movimento a \"disco pulando na água\" foram amplamente reproduzidas e reinterpretadas pela imprensa como descrição da forma dos objetos",
+        "outrasTestemunhas": "Nenhuma outra testemunha independente do avistamento específico de Arnold identificada nas fontes revisadas"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "24·06·1947",
+        "evento": "Arnold relata nove objetos em formação perto do Monte Rainier durante voo civil."
+      },
+      {
+        "quando": "Dias seguintes",
+        "evento": "Imprensa cunha o termo \"flying saucer\" a partir da descrição do movimento dos objetos."
+      },
+      {
+        "quando": "12·07·1947",
+        "evento": "Arnold envia carta com esboços à AAF Intelligence em Wright Field."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Fenômeno atmosférico",
+        "avaliacao": "Miragem ou reflexo atmosférico é uma hipótese considerada; nunca confirmada."
+      },
+      {
+        "tipo": "Aeronave",
+        "avaliacao": "Bandos de aves ou aeronaves distantes também foram propostos; Arnold, piloto experiente, contestou essas leituras à época."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "O próprio Arnold nunca afirmou origem extraterrestre — a associação é posterior, cultural, não parte do relato original."
+      }
+    ],
+    "contradicoes": [
+      "O termo \"flying saucer\", hoje sinônimo de nave, nasceu de uma descrição de movimento, não de forma — uma distorção de origem documentada."
+    ],
+    "oQueSabemos": [
+      "Arnold relatou nove objetos em formação, com carta e esboços enviados formalmente à inteligência militar 12 dias depois.",
+      "O episódio deu origem ao vocabulário (\"disco voador\") que passou a nomear toda a categoria de relatos subsequentes."
+    ],
+    "oQueNaoSabemos": [
+      "A origem física do que Arnold avistou."
+    ],
+    "paraSaberMais": [
+      "Análise de tráfego aéreo e condições atmosféricas da região na data e horário do relato."
+    ],
+    "imagens": [
+      {
+        "tipo": "documento",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Arnold_AAF_document.jpg",
+        "alt": "Página da carta manuscrita de Kenneth Arnold à AAF Intelligence, com esboços dos objetos avistados",
+        "origem": "Army Air Force Intelligence",
+        "data": "12·07·1947",
+        "autoria": "Kenneth Arnold",
+        "contexto": "Documento primário — página da carta original de Arnold com seus próprios esboços.",
+        "versao": "Digitalização institucional",
+        "license": "Domínio público (documento do governo federal dos EUA)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arnold_AAF_document.jpg"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Fonte primária",
+        "label": "Carta manuscrita de Kenneth Arnold à AAF Intelligence, 12·07·1947",
+        "url": "https://commons.wikimedia.org/wiki/File:Arnold_AAF_document.jpg"
+      },
+      {
+        "qualidade": "Referência contextual",
+        "label": "Wikipedia / History.com",
+        "url": "https://en.wikipedia.org/wiki/Kenneth_Arnold_UFO_sighting"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "Pilot Kenneth Arnold on seeing UFOs flying in formation near Mt. Rainier, Washington, June 24, 1947",
+        "youtubeId": "g2EVNW3NJr8",
+        "canal": "Eyes On Cinema",
+        "contexto": "Filmagem de arquivo com Kenneth Arnold relatando seu avistamento perto do Monte Rainier."
+      }
+    ]
+  },
+  {
+    "slug": "washington-dc-1952",
+    "code": "SR-CASE-0009",
+    "date": "jul·1952",
+    "title": "Washington D.C. UFO Flap",
+    "location": "Washington, D.C., EUA",
+    "status": "controverso",
+    "statusLabel": "Explicação oficial contestada por historiadores",
+    "resumo": "Ao longo de dois fins de semana consecutivos de julho de 1952 — 19–20 e 26–27 —, radares do Aeroporto Nacional de Washington e da Base Andrews detectaram dezenas de contatos não identificados sobre a capital dos Estados Unidos. Na primeira onda, o controlador Edward Nugent registrou sete objetos a quinze milhas da cidade, e seu supervisor, Harry Barnes, confirmou publicamente que o padrão de movimento era \"radicalmente\" distinto de qualquer aeronave convencional. Caças interceptores foram despachados nas duas ondas, sem conseguir contato visual conclusivo. A explicação oficial da força aérea americana — inversão de temperatura causando anomalia de propagação de radar — é tecnicamente plausível para parte dos contatos isolados, mas historiadores do Project Blue Book, como Curtis Peebles, consideram-na insuficiente para explicar a convergência entre múltiplos postos de radar e os relatos visuais simultâneos de controladores e pilotos experientes. O episódio é frequentemente citado como o ponto mais intenso da onda de avistamentos de 1952 nos Estados Unidos.",
+    "documentos": [
+      {
+        "tipo": "Registro de radar / relatório de defesa aérea",
+        "titulo": "Contatos de radar de 19–20 e 26–27 de julho de 1952",
+        "descricao": "Detecções em múltiplos radares da região de Washington, com caças interceptores despachados sem contato visual conclusivo.",
+        "data": "jul·1952",
+        "origem": "Project Blue Book / USAF"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "Edward Nugent (controlador) e Harry Barnes (supervisor), Aeroporto Nacional de Washington",
+        "quandoDeclarou": "Na noite do evento, 19–20·07·1952",
+        "tempoAposEvento": "Contemporâneo",
+        "versoes": "Barnes confirmou publicamente que os movimentos eram \"radicalmente\" distintos de aeronaves convencionais",
+        "outrasTestemunhas": "Pilotos de caças interceptores despachados nas duas ondas de contato"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "19–20·07·1952",
+        "evento": "Nugent detecta 7 objetos a 15 milhas da cidade; Barnes confirma o padrão de movimento anômalo."
+      },
+      {
+        "quando": "26–27·07·1952",
+        "evento": "Nova onda de contatos em radar; caças interceptores despachados sem contato visual conclusivo."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Erro instrumental",
+        "avaliacao": "Explicação oficial da USAF: inversão de temperatura causando anomalia de propagação de radar."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Não sustentada por documento oficial, mas o episódio é citado por historiadores como o \"clímax\" do Project Blue Book sem resolução plenamente satisfatória."
+      }
+    ],
+    "contradicoes": [
+      "A explicação de inversão térmica cobre parte dos contatos de radar, mas não explica de forma unânime os relatos visuais simultâneos de pilotos e controladores.",
+      "Historiadores do Project Blue Book, como Curtis Peebles, consideram a explicação oficial insuficiente para o padrão observado nos dois fins de semana."
+    ],
+    "oQueSabemos": [
+      "Radares de múltiplos postos detectaram contatos não identificados em dois fins de semana consecutivos de julho de 1952.",
+      "Controladores experientes confirmaram publicamente padrões de movimento incomuns."
+    ],
+    "oQueNaoSabemos": [
+      "Se a inversão térmica explica a totalidade dos contatos ou apenas parte deles.",
+      "A causa dos relatos visuais simultâneos às detecções de radar."
+    ],
+    "paraSaberMais": [
+      "Dados meteorológicos detalhados da região nas datas específicas, para testar a hipótese de inversão térmica contato a contato."
+    ],
+    "imagens": [
+      {
+        "tipo": "documento",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/1/13/1952_UFO_Flap_-_Air_Force_frequency_graph_of_UFO_reports.png",
+        "alt": "Gráfico da USAF (Project Blue Book) com a frequência diária de relatos de OVNI, jun–set 1952",
+        "origem": "United States Air Force / Project Blue Book",
+        "data": "set·1952",
+        "autoria": "United States Air Force",
+        "contexto": "Documento oficial de época mostrando o pico de relatos coincidente com o Washington flap — não é foto do evento, é registro estatístico institucional do próprio Blue Book.",
+        "versao": "Digitalização institucional",
+        "license": "Domínio público (obra do governo federal dos EUA)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1952_UFO_Flap_-_Air_Force_frequency_graph_of_UFO_reports.png"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Fonte institucional",
+        "label": "Project Blue Book / USAF",
+        "url": "https://www.archives.gov/research/military/air-force/ufos"
+      },
+      {
+        "qualidade": "Imprensa contemporânea",
+        "label": "Manchetes de jul·1952 (\"Saucers Swarm Over Capital\")"
+      },
+      {
+        "qualidade": "Investigação posterior",
+        "label": "Curtis Peebles, historiador do Project Blue Book",
+        "url": "https://archive.org/details/watchskieschroni0000peeb_k3q2"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "UFO disclosure: Details emerge on 'Invasion of Washington' tape",
+        "youtubeId": "umcLuMrgQ9w",
+        "canal": "NewsNation",
+        "contexto": "Reportagem sobre a fita reencontrada da reunião de 1952 entre a Força Aérea e cientistas."
+      }
+    ]
+  },
+  {
+    "slug": "mcminnville-trent",
+    "code": "SR-CASE-0010",
+    "date": "11·05·1950",
+    "title": "McMinnville — fotos Trent",
+    "location": "Oregon, EUA",
+    "status": "controverso",
+    "statusLabel": "Autenticidade disputada",
+    "resumo": "Em 11 de maio de 1950, o casal de fazendeiros Paul e Evelyn Trent, em McMinnville, Oregon, relatou ter avistado um objeto disco-metálico em movimento lento sobre sua propriedade. Evelyn viu o objeto primeiro; Paul, com a câmera já carregada, tirou duas fotografias em sequência rápida antes que o objeto se afastasse. As imagens foram publicadas no jornal local The Oregonian ainda em 1950 e depois reproduzidas pela revista Life, tornando-se uma das fotografias mais reproduzidas da história da ufologia. Quase vinte anos depois, o astrônomo William K. Hartmann conduziu uma análise fotogramétrica para o Condon Report, encomendado pela força aérea americana, e apontou inconsistências de sombra e perspectiva compatíveis com uma maquete pequena suspensa por fio perto da câmera — leitura contestada até hoje por quem defende a autenticidade das fotos. Sem os negativos originais disponíveis para reexame com técnicas atuais, as duas interpretações seguem irreconciliáveis a partir do mesmo material.",
+    "documentos": [],
+    "testemunhos": [
+      {
+        "quem": "Paul e Evelyn Trent",
+        "quandoDeclarou": "No dia do evento, à imprensa local",
+        "tempoAposEvento": "Contemporâneo — câmera já carregada, sequência rápida de fotos",
+        "versoes": "Fotos publicadas sem aviso de copyright no The Oregonian, depois na Life",
+        "outrasTestemunhas": "Nenhuma além do casal"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "11·05·1950",
+        "evento": "Evelyn Trent avista o objeto; Paul Trent fotografa duas vezes em sequência rápida."
+      },
+      {
+        "quando": "1950",
+        "evento": "Fotos publicadas no The Oregonian e depois na revista Life."
+      },
+      {
+        "quando": "1968–1969",
+        "evento": "Análise fotogramétrica do astrônomo William K. Hartmann para o Condon Report aponta inconsistências de sombra e perspectiva."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Fraude",
+        "avaliacao": "Análises fotogramétricas posteriores apontam inconsistências compatíveis com maquete suspensa por fio; defensores do caso contestam essas análises."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Sustentada pela ausência de prova conclusiva de fraude, não por confirmação positiva de origem."
+      }
+    ],
+    "contradicoes": [
+      "As análises céticas e as defesas da autenticidade chegam a conclusões opostas a partir das mesmas duas fotografias — não há um terceiro dado independente que resolva a disputa."
+    ],
+    "oQueSabemos": [
+      "Duas fotografias foram tiradas pelo casal Trent em 11/05/1950 e publicadas amplamente, incluindo pela revista Life."
+    ],
+    "oQueNaoSabemos": [
+      "Se as fotografias registram um objeto real a distância ou uma maquete próxima à câmera."
+    ],
+    "paraSaberMais": [
+      "Os negativos originais, se ainda existirem, para nova análise fotogramétrica com técnicas atuais."
+    ],
+    "imagens": [
+      {
+        "tipo": "imagem",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/5/50/UFO_picture_taken_by_Paul_Trent_in_McMinnville%2C_Oregon.jpg",
+        "alt": "Fotografia de Paul Trent do objeto avistado em McMinnville, Oregon, em 1950",
+        "origem": "The Oregonian / Life",
+        "data": "11·05·1950",
+        "autoria": "Paul Trent",
+        "contexto": "Uma das duas fotografias originais do caso — autenticidade disputada, ver seção de hipóteses.",
+        "versao": "Reprodução",
+        "license": "Domínio público (publicada nos EUA entre 1931–1977 sem aviso de copyright)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:UFO_picture_taken_by_Paul_Trent_in_McMinnville,_Oregon.jpg"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Artigo acadêmico",
+        "label": "Análise de William K. Hartmann — Condon Report (1968–1969)",
+        "url": "https://archive.org/details/scientificstudyo0000cond"
+      },
+      {
+        "qualidade": "Imprensa contemporânea",
+        "label": "Life; The Oregonian"
+      },
+      {
+        "qualidade": "Investigação posterior",
+        "label": "Análises fotogramétricas céticas posteriores"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": []
+  },
+  {
+    "slug": "betty-barney-hill",
+    "code": "SR-CASE-0011",
+    "date": "19·09·1961",
+    "title": "Betty e Barney Hill",
+    "location": "New Hampshire, EUA",
+    "status": "aberto",
+    "statusLabel": "Caso fundador do arquétipo de abdução, sem corroboração externa",
+    "resumo": "Na noite de 19 para 20 de setembro de 1961, o casal Betty e Barney Hill relatou ter visto luzes anômalas seguindo seu carro durante uma viagem noturna pelo interior de New Hampshire, e descreveu, já na chegada em casa, um intervalo de tempo que não conseguiam explicar. Esse relato inicial — modesto, sem menção a abdução — é a única parte do caso contemporânea ao evento. Meses depois, em sessões de hipnose regressiva conduzidas pelo psiquiatra Benjamim Simon, o casal produziu um relato muito mais detalhado, incluindo uma suposta abdução a bordo de uma nave; Betty também desenhou, sob hipnose, um \"mapa estelar\" depois associado ao sistema Zeta Reticuli — associação hoje geralmente rejeitada mesmo por parte dos simpatizantes do caso. A publicação do livro \"The Interrupted Journey\", de John G. Fuller, em 1966, tornou o episódio amplamente conhecido e o transformou no caso fundador do arquétipo moderno de abdução alienígena na cultura ocidental. A hipnose regressiva é hoje considerada, pela psicologia, um método propenso a gerar falsas memórias — fator central para avaliar a parte mais detalhada do relato.",
+    "documentos": [],
+    "testemunhos": [
+      {
+        "quem": "Betty e Barney Hill",
+        "quandoDeclarou": "Relato imediato de luzes anômalas na noite do evento; detalhes de abdução só sob hipnose regressiva, meses/anos depois",
+        "tempoAposEvento": "O núcleo do relato de abdução não é contemporâneo ao evento",
+        "versoes": "Betty desenhou um \"mapa estelar\" sob hipnose, depois associado — de forma contestada até por simpatizantes do caso — ao sistema Zeta Reticuli",
+        "outrasTestemunhas": "Nenhuma testemunha externa ao casal para o núcleo do relato",
+        "possivelContaminacao": "Os detalhes mais específicos do relato surgem apenas nas sessões de hipnose conduzidas pelo psiquiatra Benjamin Simon — mesma estrutura de risco metodológico do caso Villas-Boas: precisão que aparece só numa etapa posterior ao evento original"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "19–20·09·1961",
+        "evento": "Casal relata luzes anômalas seguindo o carro numa viagem noturna."
+      },
+      {
+        "quando": "Meses/anos depois",
+        "evento": "Sessões de hipnose regressiva com o Dr. Benjamin Simon produzem o relato detalhado de abdução."
+      },
+      {
+        "quando": "1966",
+        "evento": "Publicação do livro \"The Interrupted Journey\", de John G. Fuller, que torna o caso amplamente conhecido."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Interpretação psicológica",
+        "avaliacao": "A hipnose regressiva é hoje considerada, na psicologia, um método propenso a gerar falsas memórias — fator central para avaliar o relato detalhado."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Sustentada apenas pelo relato do casal sob hipnose, sem corroboração externa."
+      }
+    ],
+    "contradicoes": [
+      "O relato imediato ao evento (luzes anômalas) é bem mais modesto do que o relato de abdução que se consolidou depois, sob hipnose — mesmo padrão de detalhe tardio observado em outros casos deste arquivo.",
+      "A associação do \"mapa estelar\" ao sistema Zeta Reticuli é hoje geralmente rejeitada mesmo por parte dos simpatizantes do caso."
+    ],
+    "oQueSabemos": [
+      "O casal relatou luzes anômalas na noite de 19/09/1961, de forma contemporânea ao evento.",
+      "O relato de abdução com detalhes específicos surgiu apenas em sessões de hipnose posteriores."
+    ],
+    "oQueNaoSabemos": [
+      "A causa das luzes relatadas na noite do evento.",
+      "Se o conteúdo produzido sob hipnose reflete memória real ou reconstrução influenciada pelo método."
+    ],
+    "paraSaberMais": [
+      "Avaliação metodológica atualizada, com padrões atuais de psicologia da memória, do material produzido nas sessões de hipnose de Benjamin Simon."
+    ],
+    "imagens": [
+      {
+        "tipo": "imagem",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/6/69/BH_Star_map.png",
+        "alt": "Comparação entre o mapa estelar redesenhado de Betty Hill e o sistema Zeta Reticuli",
+        "origem": "Wikimedia Commons",
+        "data": "2013 (ilustração; mapa original de Betty Hill é de 1964)",
+        "autoria": "K.i.f (ilustração de 2013, não a autora original)",
+        "contexto": "ATENÇÃO: esta é uma reconstrução gráfica moderna (2013) comparando o mapa desenhado por Betty Hill sob hipnose em 1964 com o sistema Zeta Reticuli — não é o desenho original da própria Betty Hill, que não foi localizado com licença aberta.",
+        "versao": "Ilustração",
+        "ilustrativa": true,
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:BH_Star_map.png"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Entrevista/podcast",
+        "label": "\"The Interrupted Journey\", John G. Fuller (1966) — obra jornalística/best-seller, não acadêmica",
+        "url": "https://openlibrary.org/books/OL24950008M/The_interrupted_journey"
+      },
+      {
+        "qualidade": "Investigação posterior",
+        "label": "Sessões do Dr. Benjamin Simon (hipnose regressiva)"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": []
+  },
+  {
+    "slug": "malmstrom-afb",
+    "code": "SR-CASE-0012",
+    "date": "16·03·1967",
+    "title": "Malmstrom AFB — Echo Flight",
+    "location": "Montana, EUA",
+    "status": "controverso",
+    "statusLabel": "Explicação recente em disputa ativa",
+    "resumo": "Em 16 de março de 1967, os dez mísseis nucleares Minuteman do \"Echo Flight\", na base aérea de Malmstrom, em Montana, saíram simultaneamente de status de alerta, enquanto militares de plantão relatavam luzes anômalas na área da base. Um relatório do 341st Strategic Missile Wing, desclassificado décadas depois via FOIA, confirma o desligamento simultâneo por falha nos canais de guia e controle, atribuindo-o internamente, à época, a um possível \"pulso de ruído\" no acoplador lógico do sistema de guiagem — sem causa definitiva estabelecida na análise de campo original. O ex-capitão Robert Salas, oficial de plantão na noite do incidente, mantém há décadas, em entrevistas e audiências públicas, a versão de que as luzes estavam diretamente associadas ao desligamento. Uma alegação mais recente, de 2025, atribui o episódio a um teste classificado de pulso eletromagnético do Pentágono, mas enfrenta uma objeção cronológica não resolvida — o sistema citado só existiria a partir de 1973, seis anos depois do incidente — e não foi localizada em nenhum documento primário do Pentágono. O caso é citado com frequência em audiências no Congresso americano sobre segurança nuclear e UAP.",
+    "documentos": [
+      {
+        "tipo": "Relatório desclassificado",
+        "titulo": "Relatório do 341st Strategic Missile Wing sobre o desligamento do Echo Flight",
+        "descricao": "Confirma o desligamento simultâneo dos 10 mísseis por falha nos canais de guia e controle 9 e 12; a causa original apontada internamente foi possível \"pulso de ruído\" no acoplador lógico do sistema de guiagem, sem causa definitiva identificada na análise de campo da época.",
+        "data": "16·03·1967",
+        "origem": "341st Strategic Missile Wing, USAF (desclassificado via FOIA)"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "Robert Salas (ex-capitão, oficial de plantão)",
+        "quandoDeclarou": "Décadas depois, em entrevistas e audiências públicas",
+        "tempoAposEvento": "Não contemporâneo — relato de memória de longo prazo",
+        "versoes": "Salas mantém a versão de luzes anômalas associadas ao desligamento; contesta publicamente a explicação de teste de EMP proposta em 2025",
+        "outrasTestemunhas": "Outros militares de plantão na base, não detalhados nas fontes revisadas"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "16·03·1967",
+        "evento": "Os 10 mísseis do Echo Flight saem simultaneamente de status de alerta; militares relatam luzes anômalas na área."
+      },
+      {
+        "quando": "2025",
+        "evento": "Fontes secundárias atribuem o evento a um teste classificado de pulso eletromagnético (EMP) do Pentágono — versão contestada e não verificada em documento primário."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Erro instrumental",
+        "avaliacao": "Causa original apontada internamente em 1967: possível pulso de ruído no acoplador lógico do sistema de guiagem, sem identificação definitiva na época."
+      },
+      {
+        "tipo": "Ação militar convencional",
+        "avaliacao": "Alegação de 2025 propõe um teste classificado de EMP do Pentágono. Contestada pelo ex-capitão Robert Salas e por analistas que apontam que o sistema citado (TEMPS) só existia a partir de 1973 — seis anos depois do incidente. Tratar como alegação em disputa, não como fato consolidado; não localizada em documento primário do Pentágono."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Frequentemente citada em contexto de UAP e segurança nuclear, sem documento que a confirme."
+      }
+    ],
+    "contradicoes": [
+      "A explicação de EMP de 2025 tem uma incompatibilidade cronológica apontada por analistas (sistema citado só existiria a partir de 1973) que não foi resolvida publicamente até esta revisão.",
+      "Não há relatório primário de 2025 localizável publicamente que sustente diretamente a alegação de teste de EMP — ela circula via reportagens secundárias."
+    ],
+    "oQueSabemos": [
+      "Os 10 mísseis do Echo Flight saíram simultaneamente de alerta em 16/03/1967, com causa técnica não definitivamente identificada na análise de campo da época.",
+      "Há relatos contemporâneos de luzes anômalas associadas ao episódio, vindos de militares de plantão."
+    ],
+    "oQueNaoSabemos": [
+      "A causa real do desligamento simultâneo.",
+      "Se a explicação de EMP de 2025 é sustentável — carece de documento primário verificado e enfrenta objeção cronológica não resolvida."
+    ],
+    "paraSaberMais": [
+      "O documento primário de 2025 citado pelas reportagens sobre o teste de EMP, ainda não localizado de forma independente.",
+      "Relatórios técnicos completos e desclassificados do 341st Strategic Missile Wing sobre o incidente."
+    ],
+    "imagens": [
+      {
+        "tipo": "video",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/7/72/Interview_with_Robert_Salas_about_UFOs_shutting_down_nukes_at_Malmstrom_Air_Force_Base.webm",
+        "alt": "Entrevista com Robert Salas sobre o incidente de UFOs desligando mísseis nucleares em Malmstrom AFB",
+        "origem": "YouTube (Moszkowicz Show), via Wikimedia Commons",
+        "data": "02·04·2021",
+        "autoria": "Moszkowicz Show (entrevistador); Robert Salas (entrevistado)",
+        "contexto": "Depoimento em vídeo do ex-capitão Robert Salas, testemunha central do caso, gravado décadas após o evento — não é registro contemporâneo de 1967.",
+        "versao": "Cópia preservada",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Interview_with_Robert_Salas_about_UFOs_shutting_down_nukes_at_Malmstrom_Air_Force_Base.webm"
+      },
+      {
+        "tipo": "imagem",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Minuteman_II_in_silo_1980.jpg",
+        "alt": "Míssil Minuteman em silo, verificação de manutenção (Whiteman AFB, 1980)",
+        "origem": "USAF, via Wikimedia Commons",
+        "data": "01·01·1980",
+        "autoria": "TSGT Bob Wickley / USAF",
+        "contexto": "Foto de um silo Minuteman em outra base (Whiteman AFB, Missouri), mesma família de mísseis do Echo Flight — não é foto de Malmstrom nem do evento de 1967.",
+        "versao": "Ilustração",
+        "ilustrativa": true,
+        "license": "Domínio público (obra do governo federal dos EUA)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Minuteman_II_in_silo_1980.jpg"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Fonte institucional",
+        "label": "Relatório desclassificado via FOIA, 341st Strategic Missile Wing",
+        "url": "https://www.theblackvault.com/documentarchive/ufo-case-malmstrom-afb-ufomissile-incident-march-16-1967/"
+      },
+      {
+        "qualidade": "Entrevista/podcast",
+        "label": "Depoimentos públicos do ex-capitão Robert Salas",
+        "url": "https://abcnews.com/Technology/airmen-govt-clean-ufos/story?id=11738715"
+      },
+      {
+        "qualidade": "Imprensa contemporânea",
+        "label": "Cobertura jornalística da alegação de 2025 (EMP) — não confirmada em fonte primária",
+        "url": "https://thehill.com/opinion/national-security/5381851-did-the-pentagon-spread-false-ufo-stories-were-skeptical/"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": []
+  },
+  {
+    "slug": "incidente-de-teera",
+    "code": "SR-CASE-0013",
+    "date": "18·09·1976",
+    "title": "Incidente de Teerã",
+    "location": "Teerã, Irã",
+    "status": "aberto",
+    "statusLabel": "Documentado, nunca explicado",
+    "resumo": "Na noite de 18 para 19 de setembro de 1976, um objeto brilhante foi avistado sobre Teerã, levando a Força Aérea Iraniana a despachar dois caças F-4 Phantom para interceptação. Segundo o relatório da Defense Intelligence Agency americana sobre o episódio, um dos F-4 sofreu falha temporária do sistema de armas justamente ao se preparar para disparar contra o alvo; o segundo obteve travamento de radar a 27 milhas náuticas antes de perder o contato — ambas as aeronaves relataram falhas eletrônicas simultâneas ao se aproximar do objeto. O relatório de quatro páginas foi distribuído à Casa Branca, ao Secretário de Estado, ao Estado-Maior Conjunto, à NSA e à CIA, e um analista da própria DIA classificou o documento como \"excelente\" para fins de estudo de UAP — uma avaliação da qualidade da fonte, não uma confirmação da causa do fenômeno. Nenhum relatório de acompanhamento foi desclassificado desde então, apesar de indicação da própria DIA de que mais informação viria — uma lacuna documental que segue sem explicação pública.",
+    "documentos": [
+      {
+        "tipo": "Relatório de inteligência",
+        "titulo": "Relatório de quatro páginas da Defense Intelligence Agency (DIA)",
+        "descricao": "Distribuído à Casa Branca, ao Secretário de Estado, ao Estado-Maior Conjunto, à NSA e à CIA; um analista da DIA classificou o relatório como \"excelente\" (outstanding) para fins de estudo de UAP — avaliação da qualidade da fonte, não confirmação da causa.",
+        "data": "Evento em 18–19·09·1976; relatório desclassificado via FOIA em 31·08·1977",
+        "origem": "Defense Intelligence Agency (EUA)"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "Pilotos dos dois F-4 Phantom da Força Aérea Iraniana",
+        "quandoDeclarou": "Na noite do evento, em relatório militar contemporâneo",
+        "tempoAposEvento": "Contemporâneo",
+        "versoes": "Um dos F-4 sofreu falha temporária do sistema de armas ao se preparar para disparar; o segundo obteve travamento de radar a 27 milhas náuticas antes de perder o contato",
+        "outrasTestemunhas": "Controladores de solo envolvidos na interceptação"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "18–19·09·1976, noite",
+        "evento": "Objeto brilhante avistado sobre Teerã; dois F-4 Phantom acionados."
+      },
+      {
+        "quando": "Durante a interceptação",
+        "evento": "Ambas as aeronaves relatam falhas simultâneas de sistemas eletrônicos ao se aproximar do alvo."
+      },
+      {
+        "quando": "31·08·1977",
+        "evento": "Relatório da DIA desclassificado via FOIA."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Erro instrumental",
+        "avaliacao": "Falha eletrônica coincidente é considerada, mas a repetição em duas aeronaves distintas na mesma aproximação é um ponto difícil de explicar dessa forma sozinha."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Não confirmada por nenhum documento — o relatório da DIA descreve o evento e sua qualidade como fonte, sem propor origem."
+      }
+    ],
+    "contradicoes": [
+      "Nenhum relatório de acompanhamento foi desclassificado, apesar de a DIA ter indicado que viria mais informação — lacuna documental relevante que permanece sem explicação pública."
+    ],
+    "oQueSabemos": [
+      "O evento e a interceptação estão documentados num relatório primário da DIA, desclassificado via FOIA.",
+      "Duas aeronaves relataram falhas eletrônicas simultâneas durante a aproximação ao objeto."
+    ],
+    "oQueNaoSabemos": [
+      "A causa do objeto avistado.",
+      "A causa das falhas eletrônicas relatadas pelos pilotos."
+    ],
+    "paraSaberMais": [
+      "Qualquer relatório de acompanhamento da DIA sobre o caso, se existir e for desclassificado no futuro."
+    ],
+    "imagens": [
+      {
+        "tipo": "imagem",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Iranian_F-4_Phantom.jpg",
+        "alt": "F-4 Phantom da Força Aérea do Irã em show aéreo",
+        "origem": "Wikimedia Commons (Wikipédia em persa)",
+        "data": "21·03·2023",
+        "autoria": "Mahest",
+        "contexto": "Foto de 2023 de um F-4 Phantom iraniano, mesmo modelo dos dois caças envolvidos na interceptação de 1976 — não é registro do evento.",
+        "versao": "Ilustração",
+        "ilustrativa": true,
+        "license": "CC BY-SA 3.0 / GFDL 1.2+",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iranian_F-4_Phantom.jpg"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Fonte primária",
+        "label": "Relatório da Defense Intelligence Agency, desclassificado via FOIA em 31·08·1977",
+        "url": "https://www.theblackvault.com/casefiles/the-1976-iran-incident/"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "Iran Military Intercepts Alien UFO",
+        "youtubeId": "qbH9OZupWOg",
+        "canal": "The Infographics Show",
+        "contexto": "Vídeo explicativo sobre o encontro radar/visual de 1976 entre caças F-4 Phantom da Força Aérea Iraniana e o objeto não identificado."
+      }
+    ]
+  },
+  {
+    "slug": "rendlesham-forest",
+    "code": "SR-CASE-0014",
+    "date": "dez·1980",
+    "title": "Rendlesham Forest",
+    "location": "Suffolk, Reino Unido",
+    "status": "controverso",
+    "statusLabel": "Documentado, explicação convencional disputada",
+    "resumo": "Ao longo de várias noites de dezembro de 1980, militares dos Estados Unidos baseados na RAF Woodbridge, no Reino Unido, relataram luzes e um objeto metálico triangular na floresta de Rendlesham, adjacente à base — episódio que passou a ser chamado, informalmente, de \"o Roswell britânico\". O relato mais citado é o do próprio comandante-adjunto da base, Tenente-Coronel Charles Halt, que formalizou os avistamentos num memorando intitulado \"Unexplained Lights\" três semanas depois do episódio; o documento só foi liberado ao público cerca de três anos mais tarde, período em que versões não oficiais já circulavam livremente. Duas explicações convencionais concorrem entre si: a luz do farol de Orfordness, combinada a efeitos de percepção noturna dentro da floresta, e um meteoro cruzando o céu na mesma janela de tempo. Nenhuma das duas é aceita de forma unânime nem mesmo pelos próprios investigadores do caso, e o memorando oficial documenta o episódio sem resolver a questão de origem.",
+    "documentos": [
+      {
+        "tipo": "Memorando oficial",
+        "titulo": "\"Unexplained Lights\" — memorando do Tenente-Coronel Charles I. Halt",
+        "descricao": "Memorando assinado pelo comandante-adjunto da base relatando avistamento de objeto metálico com luzes coloridas e avistamentos subsequentes de múltiplos objetos. Só foi liberado ao público cerca de três anos depois.",
+        "data": "13·01·1981",
+        "origem": "USAF / Ministério da Defesa do Reino Unido"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "Militares dos EUA baseados na RAF Woodbridge, incluindo o Ten.-Cel. Charles Halt",
+        "quandoDeclarou": "Memorando formal semanas após o evento",
+        "tempoAposEvento": "Próximo ao evento, mas não no mesmo dia",
+        "versoes": "Relatos de mais de uma noite de avistamentos ao longo de dezembro de 1980",
+        "outrasTestemunhas": "Múltiplos militares em diferentes noites"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "dez·1980",
+        "evento": "Série de avistamentos de luzes e objeto metálico triangular na floresta."
+      },
+      {
+        "quando": "13·01·1981",
+        "evento": "Memorando \"Unexplained Lights\" é formalizado por Charles Halt."
+      },
+      {
+        "quando": "~1983–1984",
+        "evento": "Memorando liberado ao público."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Fenômeno atmosférico",
+        "avaliacao": "Luz do farol de Orfordness (Orford Ness Lighthouse), combinada com efeitos de percepção noturna na floresta, é uma hipótese concorrente frequentemente citada."
+      },
+      {
+        "tipo": "Astro",
+        "avaliacao": "Meteoro também foi proposto para parte dos avistamentos."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Sem consenso estabelecido entre as explicações convencionais e a leitura extraordinária do caso."
+      }
+    ],
+    "contradicoes": [
+      "As explicações convencionais (farol, meteoro) não são unanimemente aceitas nem pelos próprios investigadores do caso, e o memorando oficial não resolve a questão — apenas a documenta.",
+      "O memorando só foi liberado ao público cerca de três anos depois do evento, período em que versões não oficiais já circulavam."
+    ],
+    "oQueSabemos": [
+      "Existe um memorando militar oficial e contemporâneo relatando o episódio, assinado por um comandante-adjunto de base.",
+      "Houve mais de uma noite de avistamentos ao longo de dezembro de 1980."
+    ],
+    "oQueNaoSabemos": [
+      "A causa física exata de cada avistamento relatado.",
+      "Se uma única explicação (como o farol) cobre todas as noites, ou se houve mais de um fenômeno distinto."
+    ],
+    "paraSaberMais": [
+      "Reconstituição de posição e condições de visibilidade do farol de Orfordness para cada noite relatada."
+    ],
+    "imagens": [
+      {
+        "tipo": "documento",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Halt_Memorandum.jpg",
+        "alt": "Memorando \"Unexplained Lights\" do Tenente-Coronel Charles Halt",
+        "origem": "USAF / Ministério da Defesa do Reino Unido",
+        "data": "13·01·1981",
+        "autoria": "Ten.-Cel. Charles I. Halt, USAF",
+        "contexto": "Documento primário do caso — o memorando oficial que registra os avistamentos.",
+        "versao": "Digitalização institucional",
+        "license": "Domínio público (documento do governo federal dos EUA)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Halt_Memorandum.jpg"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Fonte primária",
+        "label": "Memorando \"Unexplained Lights\", Ten.-Cel. Charles Halt, 13·01·1981",
+        "url": "https://discovery.nationalarchives.gov.uk/details/r/C10342055"
+      },
+      {
+        "qualidade": "Fonte institucional",
+        "label": "Ministério da Defesa do Reino Unido (liberação do documento)",
+        "url": "https://discovery.nationalarchives.gov.uk/details/r/C10342055"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "UFOs, interrogations, cover-ups: The Rendlesham Forest incident | Reality Check",
+        "youtubeId": "MnYBNT1KwrY",
+        "canal": "NewsNation",
+        "contexto": "No segmento \"Reality Check\", o jornalista Ross Coulthart entrevista o investigador Gary Heseltine sobre o incidente de 1980 na base de Bentwaters/Woodbridge."
+      }
+    ]
+  },
+  {
+    "slug": "onda-belga-petit-rechain",
+    "code": "SR-CASE-0015",
+    "date": "1989–1990",
+    "title": "Onda belga de OVNIs / foto de Petit-Rechain",
+    "location": "Bélgica",
+    "status": "controverso",
+    "statusLabel": "Dados de radar reais; foto-ícone é fraude confessada",
+    "resumo": "Entre novembro de 1989 e abril de 1990, uma onda de avistamentos de objetos triangulares silenciosos foi relatada em vários pontos da Bélgica. O episódio culminou em 30 de março de 1990, quando o radar da Força Aérea Belga detectou um objeto e dois F-16 foram despachados para interceptação; os caças obtiveram travamento de radar nove vezes, registrando o alvo acelerar de cerca de 150 nós para mais de 1.100 nós em segundos e descer de 9.000 pés para próximo do solo antes de perder o contato — sem que nenhum piloto relatasse contato visual. Semanas depois, um fotógrafo anônimo divulgou a chamada \"foto de Petit-Rechain\", um objeto triangular com três luzes que se tornaria a imagem mais reproduzida do caso; em 2011, o próprio autor confessou publicamente que se tratava de uma fraude — um painel de isopor pintado, com três pontos de luz fixados, fotografado à noite. A confissão não invalida os dados independentes de radar e da interceptação dos F-16, cuja aceleração e mudança de altitude são descritas como incomuns para um artefato de radar comum; análises da própria Força Aérea Belga, do CNRS francês e da Academia Militar Real belga não haviam chegado a uma conclusão sobre a fotografia antes da confissão.",
+    "documentos": [
+      {
+        "tipo": "Registro de radar / relatório militar",
+        "titulo": "Rastreamento e interceptação de 30/03/1990",
+        "descricao": "Radar detectou um objeto; dois F-16 obtiveram travamento de radar nove vezes, com o alvo acelerando de ~150 nós para mais de 1.100 nós em segundos e descendo de 9.000 pés para próximo do solo antes de perder o contato. Nenhum piloto relatou contato visual.",
+        "data": "30·03·1990",
+        "origem": "Força Aérea Belga"
+      }
+    ],
+    "testemunhos": [],
+    "cronologia": [
+      {
+        "quando": "nov·1989–abr·1990",
+        "evento": "Onda de avistamentos de objetos triangulares silenciosos em vários pontos da Bélgica."
+      },
+      {
+        "quando": "30·03·1990",
+        "evento": "Radar detecta objeto; dois F-16 obtêm travamento de radar nove vezes antes de perder o contato."
+      },
+      {
+        "quando": "abr·1990",
+        "evento": "Fotógrafo anônimo divulga a \"foto de Petit-Rechain\" — objeto triangular com três luzes."
+      },
+      {
+        "quando": "2011",
+        "evento": "O autor da foto confessa publicamente que era uma fraude: um painel de isopor pintado com três pontos de luz fixados."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Fraude",
+        "avaliacao": "A fotografia de Petit-Rechain foi confirmada como fabricada pelo próprio autor em 2011 — não invalida os dados de radar e F-16, que são registro independente."
+      },
+      {
+        "tipo": "Erro instrumental",
+        "avaliacao": "Considerada para os dados de radar, mas a aceleração e mudança de altitude relatadas são descritas como incomuns para artefato de radar comum."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Não confirmada pelos dados de radar, que documentam um evento, não uma origem."
+      }
+    ],
+    "contradicoes": [
+      "A fotografia mais reproduzida do caso é uma fraude confessada — mas os dados independentes de radar e da interceptação de caças permanecem sem explicação convencional definitiva.",
+      "Análises da própria Força Aérea Belga, do CNRS francês e da Academia Militar Real belga não chegaram a uma conclusão sobre a foto antes da confissão de 2011."
+    ],
+    "oQueSabemos": [
+      "Houve rastreamento de radar e interceptação por dois F-16 em 30/03/1990, com dados registrados oficialmente pela Força Aérea Belga.",
+      "A fotografia icônica do caso é uma fraude, confirmada pelo próprio autor em 2011."
+    ],
+    "oQueNaoSabemos": [
+      "A causa do objeto detectado pelo radar e perseguido pelos F-16, independentemente da fraude fotográfica."
+    ],
+    "paraSaberMais": [
+      "Reanálise técnica atualizada dos dados brutos de radar de 30/03/1990, se disponíveis."
+    ],
+    "imagens": [
+      {
+        "tipo": "imagem",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/7/75/TriangleBelgium1990.jpg",
+        "alt": "Fotografia de Petit-Rechain de um suposto objeto triangular — confirmada como fraude",
+        "origem": "Wikimedia Commons",
+        "data": "abr·1990",
+        "autoria": "J.S. Henrardi (autor confesso da fraude)",
+        "contexto": "ATENÇÃO: esta fotografia é uma fraude confessada pelo próprio autor em 2011 (painel de isopor com luzes fixadas). Não é evidência do fenômeno — mantida aqui só como documento histórico da desinformação em torno do caso.",
+        "versao": "Origem incerta",
+        "ilustrativa": true,
+        "license": "Domínio público (liberada pelo detentor dos direitos)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:TriangleBelgium1990.jpg"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Fonte institucional",
+        "label": "Força Aérea Belga — dados de radar e interceptação, 30·03·1990"
+      },
+      {
+        "qualidade": "Investigação posterior",
+        "label": "Confissão pública do autor da foto de Petit-Rechain (2011)",
+        "url": "https://badufos.blogspot.com/2011/07/classic-ufo-photo-from-belgian-wave.html"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": []
+  },
+  {
+    "slug": "phoenix-lights",
+    "code": "SR-CASE-0016",
+    "date": "13·03·1997",
+    "title": "Phoenix Lights",
+    "location": "Arizona, EUA",
+    "status": "controverso",
+    "statusLabel": "Explicação oficial cobre parte, não todo o relato",
+    "resumo": "Na noite de 13 de março de 1997, duas formações de luzes distintas foram relatadas por centenas de testemunhas em diferentes pontos do Arizona: uma formação em \"V\" cruzando o céu no início da noite, e uma segunda série de esferas luminosas estacionárias perto da Sierra Estrella, por volta das 22h — este último momento captado no vídeo de Michael Krzyston, a referência mais citada do caso. É um dos episódios de UAP com mais testemunhas simultâneas da história recente dos Estados Unidos. A explicação oficial cobre cada formação separadamente: a formação em \"V\" é atribuída a um esquadrão de aviões em voo formal, e as esferas estacionárias, a bengalas de iluminação lançadas por A-10 de esquadrões visitantes da Guarda Nacional Aérea de Maryland, em exercício confirmado no Barry Goldwater Range naquela mesma noite. O que essas duas explicações não cobrem é a parcela relevante de testemunhas que descreve, em vez de luzes pontuais, um único objeto sólido e silencioso — relato incompatível com aviões em formação ou bengalas caindo, e que mantém o caso controverso mesmo entre investigadores céticos.",
+    "documentos": [],
+    "testemunhos": [
+      {
+        "quem": "Centenas de testemunhas civis no Arizona",
+        "quandoDeclarou": "Na noite do evento",
+        "tempoAposEvento": "Contemporâneo; vídeo de Michael Krzyston às 22h é a referência mais citada",
+        "versoes": "Alguns relatos descrevem luzes pontuais em formação; outros descrevem um objeto sólido único e silencioso",
+        "outrasTestemunhas": "Múltiplas, em diferentes pontos do estado"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "13·03·1997, início da noite",
+        "evento": "Formação \"V\" de luzes relatada cruzando o céu do Arizona."
+      },
+      {
+        "quando": "13·03·1997, ~22h",
+        "evento": "Esferas luminosas estacionárias relatadas perto da Sierra Estrella; vídeo de Michael Krzyston capta o momento."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Aeronave",
+        "avaliacao": "Explicação oficial predominante para a formação \"V\": esquadrão de aviões em voo formal."
+      },
+      {
+        "tipo": "Erro instrumental",
+        "avaliacao": "Explicação oficial para as esferas estacionárias: bengalas de iluminação (illumination flares) lançadas por A-10 de esquadrões visitantes da Guarda Nacional Aérea de Maryland, em exercício no Barry Goldwater Range naquela noite — não da Guarda Nacional Aérea do Arizona, como versões anteriores deste dossiê afirmavam."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Mantida por parte das testemunhas que descrevem um objeto sólido único, não luzes pontuais — não coberta pelas duas explicações oficiais acima."
+      }
+    ],
+    "contradicoes": [
+      "As explicações oficiais resolvem parte do episódio (aviões em formação, bengalas de iluminação), mas não a totalidade — parte relevante dos relatos descreve um objeto sólido único e silencioso, incompatível com luzes pontuais.",
+      "O caso remanesce controverso mesmo entre céticos, pela disparidade entre os dois fenômenos distintos relatados na mesma noite."
+    ],
+    "oQueSabemos": [
+      "Duas formações de luzes distintas foram relatadas por centenas de testemunhas na mesma noite.",
+      "A Guarda Nacional Aérea de Maryland confirmou exercício com lançamento de bengalas de iluminação na mesma noite, no Barry Goldwater Range."
+    ],
+    "oQueNaoSabemos": [
+      "A causa dos relatos de objeto sólido único, não cobertos pelas explicações de aviões e bengalas."
+    ],
+    "paraSaberMais": [
+      "Registro de radar da região na noite de 13/03/1997, se preservado, para cruzar com os relatos visuais."
+    ],
+    "imagens": [],
+    "fontes": [
+      {
+        "qualidade": "Imprensa contemporânea",
+        "label": "Cobertura da noite de 13·03·1997"
+      },
+      {
+        "qualidade": "Fonte institucional",
+        "label": "Guarda Nacional Aérea de Maryland — explicação das bengalas de iluminação",
+        "url": "https://lasvegassun.com/news/1997/jul/25/military-now-says-flares-may-be-cause-of-mysteriou/"
+      },
+      {
+        "qualidade": "Investigação posterior",
+        "label": "Phoenix New Times — cobertura cética extensa do caso",
+        "url": "https://www.phoenixnewtimes.com/arts-culture/the-phoenix-lights-are-no-mystery-6661825/"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "The Phoenix Lights Documentary Trailer",
+        "youtubeId": "VhAQrR8Jhkk",
+        "canal": "ThePhoenixLights",
+        "contexto": "Trailer do documentário da médica e testemunha Dra. Lynne Kitei sobre o avistamento em massa de 13 de março de 1997."
+      }
+    ]
+  },
+  {
+    "slug": "nimitz-tic-tac-gimbal-gofast",
+    "code": "SR-CASE-0017",
+    "date": "2004 / 2015",
+    "title": "Nimitz \"Tic Tac\" e vídeos Gimbal / GoFast",
+    "location": "Costa da Califórnia e Atlântico, EUA",
+    "status": "aberto",
+    "statusLabel": "Oficialmente \"não identificado\" pelo Departamento de Defesa",
+    "resumo": "Três vídeos captados por sensores de caças da Marinha dos Estados Unidos formam o núcleo documental deste caso: o FLIR1, apelidado \"Tic Tac\" pelo operador de sensores Chad Underwood, gravado em 2004 por um F/A-18 do USS Nimitz ao largo de San Diego; e Gimbal e GoFast, gravados em janeiro de 2015 por tripulações do USS Theodore Roosevelt usando pod de mira ATFLIR. Os três circularam de forma não oficial entre 2007 e 2018 antes de o Departamento de Defesa americano os desclassificar e liberar formalmente em 27 de abril de 2020 — um marco raro de reconhecimento institucional para material audiovisual desse tipo. Para o vídeo GoFast, o analista cético Mick West propôs que a aparente alta velocidade do objeto é um efeito de paralaxe: a câmera está em movimento, e o objeto seria, na verdade, um balão distante visto de perto — hipótese tecnicamente plausível, mas não adotada como posição oficial. O FLIR1 (\"Tic Tac\"), que não mostra rotores, esteira de rotor nem superfícies de controle visíveis no infravermelho, carece de uma explicação convencional equivalente. Ao liberar os três vídeos, o próprio Departamento de Defesa declarou que os fenômenos neles registrados \"permanecem caracterizados como não identificados\" — sem afirmar nave, e sem confirmar origem convencional para todos os casos.",
+    "documentos": [
+      {
+        "tipo": "Vídeo militar oficial",
+        "titulo": "FLIR1 (\"Tic Tac\")",
+        "descricao": "Gravado por F/A-18 do USS Nimitz ao largo de San Diego; o tenente-comandante Chad Underwood, operador de sensores, cunhou o apelido \"Tic Tac\" pela forma do objeto no infravermelho — sem rotores, sem esteira de rotor, sem superfícies de controle visíveis.",
+        "data": "2004; liberado oficialmente em 27·04·2020",
+        "origem": "Departamento de Defesa dos EUA / Marinha"
+      },
+      {
+        "tipo": "Vídeo militar",
+        "titulo": "Gimbal e GoFast",
+        "descricao": "Gravados por tripulações de F/A-18 do grupo USS Theodore Roosevelt em janeiro de 2015, usando pod de mira ATFLIR. Não localizados no Wikimedia Commons nesta revisão — hospedados nos sites oficiais do DoD/NAVAIR.",
+        "data": "jan·2015; liberado oficialmente em 27·04·2020",
+        "origem": "Departamento de Defesa dos EUA / Marinha",
+        "linkExterno": "https://www.defense.gov/News/Releases/Release/Article/2165713/"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "Tripulações de F/A-18 do USS Nimitz (2004) e USS Theodore Roosevelt (2015)",
+        "quandoDeclarou": "Contemporâneo, em relatórios militares; depoimentos públicos posteriores de alguns tripulantes",
+        "tempoAposEvento": "Vídeo é contemporâneo; entrevistas públicas de tripulantes vieram depois",
+        "versoes": "Análises céticas (Mick West) argumentam que o GoFast é consistente com um balão visto de longe, com a velocidade aparente sendo efeito de paralaxe da câmera em movimento",
+        "outrasTestemunhas": "Múltiplos operadores de sensores e pilotos em dois grupos de porta-aviões distintos"
+      }
+    ],
+    "cronologia": [
+      {
+        "quando": "2004",
+        "evento": "Gravação do vídeo FLIR1 (\"Tic Tac\") pelo USS Nimitz."
+      },
+      {
+        "quando": "jan·2015",
+        "evento": "Gravação dos vídeos Gimbal e GoFast pelo USS Theodore Roosevelt."
+      },
+      {
+        "quando": "2007–2018",
+        "evento": "Os três vídeos vazam publicamente por diferentes canais antes da liberação oficial."
+      },
+      {
+        "quando": "27·04·2020",
+        "evento": "Departamento de Defesa libera oficialmente os três vídeos."
+      }
+    ],
+    "hipoteses": [
+      {
+        "tipo": "Erro instrumental",
+        "avaliacao": "Para o GoFast: análise cética de Mick West propõe que a aparente alta velocidade é efeito de paralaxe, sendo o objeto um balão distante visto de perto pela câmera em movimento — hipótese relevante, não descartada nem confirmada oficialmente."
+      },
+      {
+        "tipo": "Hipótese extraordinária",
+        "avaliacao": "Não afirmada pelo próprio DoD: ao liberar os vídeos em 2020, o Departamento afirmou explicitamente que os fenômenos neles \"permanecem caracterizados como não identificados\" — sem afirmar nave, nem confirmar origem convencional para todos os casos."
+      }
+    ],
+    "contradicoes": [
+      "A análise de paralaxe para o GoFast é tecnicamente plausível, mas não é a posição oficial do DoD, que mantém a classificação de \"não identificado\" mesmo após a liberação formal dos vídeos.",
+      "O FLIR1 (\"Tic Tac\") carece de uma explicação convencional amplamente aceita equivalente à hipótese de balão proposta para o GoFast."
+    ],
+    "oQueSabemos": [
+      "Os três vídeos são registros militares autênticos, oficialmente desclassificados e liberados pelo DoD em 27/04/2020.",
+      "O próprio Departamento de Defesa classifica os fenômenos registrados como não identificados, sem afirmar origem extraordinária nem convencional definitiva."
+    ],
+    "oQueNaoSabemos": [
+      "A causa física de cada um dos três eventos.",
+      "Se a hipótese de paralaxe proposta para o GoFast se aplica igualmente ao FLIR1 e ao Gimbal."
+    ],
+    "paraSaberMais": [
+      "Dados brutos adicionais de radar e telemetria dos três eventos, além do vídeo em infravermelho já público."
+    ],
+    "imagens": [],
+    "fontes": [
+      {
+        "qualidade": "Fonte institucional",
+        "label": "Departamento de Defesa dos EUA — liberação oficial dos vídeos, 27·04·2020",
+        "url": "https://www.defense.gov/News/Releases/Release/Article/2165713/"
+      },
+      {
+        "qualidade": "Investigação posterior",
+        "label": "Análise cética de Mick West sobre o vídeo GoFast",
+        "url": "https://www.metabunk.org/threads/go-fast-footage-from-tom-delonges-to-the-stars-academy-bird-balloon.9569/"
+      },
+      {
+        "qualidade": "Imprensa contemporânea",
+        "label": "The New York Times, dez·2017 — primeira publicação ampla",
+        "url": "https://www.nytimes.com/2017/12/16/us/politics/pentagon-program-ufo-harry-reid.html"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "Pentagon UFOs - FLIR, GIMBAL, GOFAST",
+        "youtubeId": "CrhhDmK2tfA",
+        "canal": "EncountersArchive",
+        "contexto": "Compilação dos três vídeos oficiais desclassificados pelo Departamento de Defesa dos EUA em 2020."
+      }
+    ]
+  },
+  {
+    "slug": "odni-aaro-uap",
+    "code": "SR-CASE-0018",
+    "date": "2021–2024",
+    "title": "Reconhecimento institucional dos EUA — ODNI e AARO",
+    "location": "Estados Unidos (âmbito federal)",
+    "status": "revisao-pendente",
+    "statusLabel": "Marco institucional; aguardando auditoria formal do arquivo",
+    "resumo": "Entre 2021 e 2024, o governo dos Estados Unidos reconheceu formalmente, em documentos oficiais e não classificados, a existência de uma categoria de fenômenos aéreos não identificados relevante para segurança nacional — não é um avistamento específico, mas uma mudança de enquadramento institucional que afeta a leitura de todos os outros casos deste arquivo. O marco inicial foi o \"Preliminary Assessment\", publicado pelo Office of the Director of National Intelligence em 25 de junho de 2021, exigido pelo Senate Report 116-233. Em 2022, o Departamento de Defesa criou a All-domain Anomaly Resolution Office (AARO), estrutura permanente dedicada à coleta e análise desses casos, com relatórios públicos periódicos — incluindo audiências no Congresso, como a de 26 de julho de 2023, em que o ex-oficial de inteligência David Grusch depôs publicamente. O relatório anual mais recente da AARO, de novembro de 2024, registrou 757 relatos no período coberto, dos quais 49 foram resolvidos — todos atribuídos a balões, aves ou drones comuns —, com mais de 1.600 casos acumulados ainda em revisão total. O documento não encontrou evidência de tecnologia extraterrestre, mas também não confirma que os casos restantes sejam atribuíveis a adversários estrangeiros, nem efeitos adversos de saúde em observadores — resolvendo uma fração pequena do total relatado, o que a cobertura pública frequentemente simplifica como \"nada encontrado\" ou \"o governo confirma\", nenhuma das duas leituras correspondendo ao texto do documento.",
+    "documentos": [
+      {
+        "tipo": "Relatório governamental",
+        "titulo": "Preliminary Assessment: Unidentified Aerial Phenomena",
+        "descricao": "Documento de 9 páginas, não classificado, exigido pelo Senate Report 116-233.",
+        "data": "25·06·2021",
+        "origem": "Office of the Director of National Intelligence (ODNI)",
+        "linkExterno": "https://www.dni.gov/files/ODNI/documents/assessments/Prelimary-Assessment-UAP-20210625.pdf"
+      },
+      {
+        "tipo": "Relatório governamental",
+        "titulo": "Relatório anual consolidado da All-domain Anomaly Resolution Office (AARO), ano fiscal 2024",
+        "descricao": "757 relatos recebidos no período coberto; 49 casos resolvidos (todos atribuídos a balões, aves ou drones/UAS comuns); mais de 1.600 casos acumulados em revisão total. Conclui não haver evidência de tecnologia extraterrestre, nem confirmação de que os casos restantes sejam atribuíveis a adversários estrangeiros, nem efeitos adversos de saúde confirmados em observadores.",
+        "data": "14·11·2024",
+        "origem": "Departamento de Defesa dos EUA (AARO)",
+        "linkExterno": "https://media.defense.gov/2024/Nov/14/2003583603/-1/-1/0/FY24-CONSOLIDATED-ANNUAL-REPORT-ON-UAP-508.PDF"
+      }
+    ],
+    "testemunhos": [],
+    "cronologia": [
+      {
+        "quando": "25·06·2021",
+        "evento": "ODNI publica o Preliminary Assessment sobre UAP."
+      },
+      {
+        "quando": "2022",
+        "evento": "Criação da All-domain Anomaly Resolution Office (AARO) no Departamento de Defesa."
+      },
+      {
+        "quando": "14·11·2024",
+        "evento": "AARO publica relatório anual consolidado do ano fiscal 2024."
+      }
+    ],
+    "hipoteses": [],
+    "contradicoes": [
+      "O relatório da AARO resolve 49 de 757 casos do período — a grande maioria permanece formalmente \"em revisão\", o que é frequentemente simplificado na cobertura pública como \"o governo não encontrou nada\" ou \"o governo confirma alienígenas\", nenhuma das duas leituras corresponde ao texto do documento."
+    ],
+    "oQueSabemos": [
+      "O governo dos EUA reconheceu formalmente, em documentos oficiais e não classificados, a existência de uma categoria relevante de UAP para segurança nacional.",
+      "Existe uma estrutura institucional permanente (AARO) dedicada à coleta e análise desses casos, com relatórios públicos periódicos."
+    ],
+    "oQueNaoSabemos": [
+      "A causa da maioria dos casos ainda em revisão pela AARO.",
+      "Se o padrão de resolução (majoritariamente balões, aves e drones nos casos já fechados) se manterá para os casos mais complexos, como os vídeos Nimitz/Gimbal/GoFast."
+    ],
+    "paraSaberMais": [
+      "Próximos relatórios anuais da AARO, para acompanhar a taxa de resolução ao longo do tempo."
+    ],
+    "imagens": [
+      {
+        "tipo": "imagem",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/4/44/David_Grusch_giving_testimony_on_26_July_2023_before_the_US_House_Subcommittee_on_National_Security_the_Border_and_Foreign_Affairs.png",
+        "alt": "David Grusch depõe na Câmara dos EUA sobre UAP, 26 de julho de 2023",
+        "origem": "US House Subcommittee on National Security, the Border, and Foreign Affairs",
+        "data": "26·07·2023",
+        "autoria": "Transmissão oficial do Congresso dos EUA (captura de tela)",
+        "contexto": "Depoimento público de David Grusch, ex-oficial de inteligência, em audiência do Congresso sobre UAP — parte do mesmo período institucional coberto pelo caso.",
+        "versao": "Reprodução",
+        "license": "Domínio público (obra do governo federal dos EUA)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_Grusch_giving_testimony_on_26_July_2023_before_the_US_House_Subcommittee_on_National_Security_the_Border_and_Foreign_Affairs.png"
+      }
+    ],
+    "fontes": [
+      {
+        "qualidade": "Fonte primária",
+        "label": "ODNI — Preliminary Assessment: Unidentified Aerial Phenomena (25·06·2021)",
+        "url": "https://www.dni.gov/files/ODNI/documents/assessments/Prelimary-Assessment-UAP-20210625.pdf"
+      },
+      {
+        "qualidade": "Fonte primária",
+        "label": "AARO — Relatório anual consolidado FY2024 (14·11·2024)",
+        "url": "https://media.defense.gov/2024/Nov/14/2003583603/-1/-1/0/FY24-CONSOLIDATED-ANNUAL-REPORT-ON-UAP-508.PDF"
+      }
+    ],
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      {
+        "titulo": "WATCH: Whistleblower testifies on claims that US has concealed programs related to UFOs",
+        "youtubeId": "OV-SQkEGIDw",
+        "canal": "PBS NewsHour",
+        "contexto": "Cobertura da audiência da Câmara dos EUA de 26 de julho de 2023, com o depoimento do denunciante David Grusch."
+      }
+    ]
+  }
+]
