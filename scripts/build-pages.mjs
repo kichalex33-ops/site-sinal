@@ -35,6 +35,7 @@ const documents = cases.flatMap((c) =>
   }))
 );
 
+const bookSheets = JSON.parse(readFileSync(join(dataDir, "book-sheets.json"), "utf-8"));
 const sampleChaptersData = JSON.parse(readFileSync(join(dataDir, "sample-chapters.json"), "utf-8"));
 const SAMPLE_CHAPTERS = sampleChaptersData.map((c) => ({
   id: `chapter-${c.n}`,
@@ -75,10 +76,30 @@ function clean(routePath) {
 // ---------------------------------------------------------------------
 // HOME
 // ---------------------------------------------------------------------
+// Painel "onde comprar": agrupa lojas por edição (PT / EN) com formato + loja + seta.
+function buyPanel(book) {
+  const link = (url, format, store) => url ? `<a class="buy-link" href="${escapeHtml(url)}" target="_blank" rel="noopener"><span class="buy-link__format">${format}</span><span class="buy-link__store">${store}</span><span class="buy-link__arrow" aria-hidden="true">↗</span></a>` : "";
+  const pt = [
+    link(book.purchaseUrl, "Ebook", "Amazon Kindle"),
+    link(book.purchaseUrlUiclap, "Impresso", "UICLAP"),
+  ].join("");
+  const en = [
+    link(book.purchaseUrlEn, "Ebook", "Amazon US"),
+    link(book.purchaseUrlEnBr, "Ebook", "Amazon BR"),
+    link(book.purchaseUrlEnUk, "Ebook", "Amazon UK"),
+  ].join("");
+  return `<div class="buy-panel">
+    ${pt ? `<div class="buy-group"><span class="buy-group__title">Português</span><div class="buy-group__links">${pt}</div></div>` : `<span class="btn btn--disabled" aria-disabled="true">Comprar · EM BREVE</span>`}
+    ${en ? `<div class="buy-group"><span class="buy-group__title">English edition</span><div class="buy-group__links">${en}<a class="buy-link buy-link--sample" href="/livro/sample/"><span class="buy-link__format">Free</span><span class="buy-link__store">Read sample</span><span class="buy-link__arrow" aria-hidden="true">→</span></a></div></div>` : ""}
+  </div>`;
+}
+
 function homePage() {
   const featuredBook = books.find((b) => b.featured) || books[0];
+  const purchaseUrlUiclap = featuredBook.purchaseUrlUiclap;
   const purchaseUrl = featuredBook.purchaseUrl; // não inventar — undefined até existir link real
   const purchaseUrlEn = featuredBook.purchaseUrlEn; // edição em inglês, opcional
+  const purchaseUrlEnBr = featuredBook.purchaseUrlEnBr;
   const purchaseUrlEnUk = featuredBook.purchaseUrlEnUk; // edição em inglês, Amazon UK, opcional
 
   const body = `
@@ -86,17 +107,14 @@ function homePage() {
       <div class="container home-hero-book__grid">
         <div class="home-hero-book__copy" data-book-hero-copy>
           <span class="kicker">Romance · Ficção científica de investigação</span>
-          <h1 class="home-hero-book__title">${escapeHtml(featuredBook.title)}</h1>
+          <h1 class="home-hero-book__title">${escapeHtml(featuredBook.title).replace("/", `<span class="title-slash">/</span>`)}</h1>
           <p class="mono home-hero-book__author">${escapeHtml(featuredBook.author)}</p>
           <p class="home-hero-book__pitch">Um sinal chega de onde não deveria vir — e alguém decide que é mais seguro chamá-lo de ruído.</p>
           <div class="home-hero-book__actions">
             <a class="btn btn--primary" href="/livro/amostra/">Ler 3 capítulos</a>
             <a class="btn" href="/livro/">Conhecer o livro</a>
-            ${purchaseUrl ? `<a class="btn" href="${escapeHtml(purchaseUrl)}">Comprar</a>` : `<span class="btn btn--disabled" aria-disabled="true">Comprar · EM BREVE</span>`}
-            ${purchaseUrlEn ? `<a class="btn" href="${escapeHtml(purchaseUrlEn)}">Buy (Amazon US)</a>` : ""}
-            ${purchaseUrlEnUk ? `<a class="btn" href="${escapeHtml(purchaseUrlEnUk)}">Buy (Amazon UK)</a>` : ""}
-            ${purchaseUrlEn ? `<a class="btn" href="/livro/sample/">Read sample (EN)</a>` : ""}
           </div>
+          ${buyPanel(featuredBook)}
         </div>
         <div class="home-hero-book__cover" data-book-hero-cover>
           <img src="${escapeHtml(featuredBook.cover)}" alt="Capa de ${escapeHtml(featuredBook.title)}" width="400" height="600" />
@@ -182,7 +200,6 @@ function arquivoPage() {
           <button type="button" class="filter-btn" data-filter-value="caso">Casos</button>
           <button type="button" class="filter-btn" data-filter-value="documento">Documentos</button>
           <button type="button" class="filter-btn" data-filter-value="coleção">Coleções</button>
-          <button type="button" class="filter-btn" data-filter-value="mídia">Mídia</button>
         </div>
 
         <ul class="arquivo-results" style="margin-top:20px" data-arquivo-results></ul>
@@ -191,7 +208,7 @@ function arquivoPage() {
           <a class="card" href="/casos/"><span class="card__meta">${cases.length} casos</span><h3>Casos</h3><p>Dossiês e registros com cronologia, documentos, testemunhos e hipóteses.</p></a>
           <a class="card" href="/documentos/"><span class="card__meta">${documents.length} documentos</span><h3>Documentos</h3><p>Registros documentais relacionados aos casos, com origem e vínculo explícitos.</p></a>
           <a class="card" href="/colecoes/"><span class="card__meta">${collections.length} coleções</span><h3>Coleções</h3><p>Acervos institucionais de origem, nacionais e internacionais.</p></a>
-          <a class="card" href="/midia/"><span class="card__meta">${media.length} itens</span><h3>Mídia</h3><p>Imagens, documentos e vídeos com origem, autoria e licença registradas.</p></a>
+          <a class="card" href="/midia/"><span class="card__meta">${media.length} itens</span><h3>Vídeos e imagens</h3><p>Imagens, documentos e vídeos com origem, autoria e licença registradas.</p></a>
         </div>
 
         <div class="section-heading" style="margin-top:44px"><div><span class="kicker">Todos os casos</span><h2 style="margin-top:8px">Abra qualquer caso direto daqui.</h2></div></div>
@@ -345,6 +362,7 @@ function caseCoverHero(item) {
 
 function caseDossierPage(item) {
   const relatedCorrections = corrections.filter((c) => c.caseSlug === item.slug);
+  const caseMedia = media.filter((m) => m.caseSlug === item.slug);
   const body = `
     ${caseCoverHero(item)}
     <article class="section container--medium">
@@ -426,6 +444,12 @@ function caseDossierPage(item) {
       <section style="margin-top:36px">
         <span class="kicker">Imagens e documentos</span>
         <div class="grid grid--2" style="margin-top:16px">${item.imagens.map(caseImageBlock).join("")}</div>
+      </section>` : ""}
+
+      ${caseMedia.length ? `
+      <section style="margin-top:36px">
+        <span class="kicker">Mídia do caso</span>
+        <div class="media-masonry" style="margin-top:16px">${caseMedia.map((m) => `<div data-media-card data-tipo="${m.tipo}">${mediaCard(m)}</div>`).join("")}</div>
       </section>` : ""}
 
       ${(item.videosYoutube || []).length ? `
@@ -542,7 +566,7 @@ function midiaPage() {
     <section class="section media-library">
       <div class="container">
         <span class="kicker">Biblioteca audiovisual</span>
-        <h1 style="margin-top:12px">Mídia.</h1>
+        <h1 style="margin-top:12px">Vídeos e imagens.</h1>
         <p style="margin-top:8px;color:var(--muted);max-width:760px">Vídeos, imagens, documentos e registros instrumentais com origem, autoria, contexto e versão identificados. A experiência lembra uma plataforma de vídeo; a lógica editorial não usa views, likes ou recomendação por engajamento.</p>
 
         <div class="media-library__feature" style="margin-top:28px">
@@ -564,17 +588,13 @@ function midiaPage() {
           <button type="button" class="filter-btn" data-filter-value="documento">Documentos / scans</button>
         </div>
         <p class="mono media-library__future">Estrutura preparada para áudio, radar e outros registros instrumentais quando houver itens auditados.</p>
-        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
-          <a href="/midia/mapa-estelar/" class="btn">Explorar mapa estelar 3D →</a>
-          <a href="/midia/sistema-solar/" class="btn">Explorar sistema solar 3D →</a>
-        </div>
-
-        <div class="media-masonry" style="margin-top:20px">
+        
+        <div class="media-masonry" id="imagens" style="margin-top:20px">
           ${media.map((m) => `<div data-media-card data-tipo="${m.tipo}">${mediaCard(m)}</div>`).join("")}
         </div>
 
         ${caseVideos.length ? `
-        <section style="margin-top:48px">
+        <section id="videos" style="margin-top:48px">
           <span class="kicker">Documentários e entrevistas</span>
           <h2 style="margin-top:10px">Vídeos em destaque, por caso</h2>
           <p style="margin-top:8px;color:var(--muted);max-width:760px">Documentários, entrevistas e cobertura de terceiros sobre casos do arquivo. Vídeo de terceiro não é evidência — é material de contexto, e cada card leva ao dossiê completo.</p>
@@ -600,7 +620,7 @@ function midiaPage() {
         </section>
       </div>
     </section>`;
-  write("/midia", page({ title: "Mídia", description: "Biblioteca audiovisual do SINAL/RUÍDO, com vídeos, imagens e documentos contextualizados por fonte e proveniência.", path: "/midia/", bodyHtml: body }));
+  write("/midia", page({ title: "Vídeos e imagens", description: "Biblioteca audiovisual do SINAL/RUÍDO, com vídeos, imagens e documentos contextualizados por fonte e proveniência.", path: "/midia/", bodyHtml: body }));
 }
 
 function mapaEstelarPage() {
@@ -743,7 +763,7 @@ function explorarFontesPage() {
 function midiaDetailPage(m) {
   const body = `
     <article class="section container--medium">
-      <a href="/midia/" class="mono" style="color:var(--muted)">← Voltar à mídia</a>
+      <a href="/casos/${m.caseSlug}/" class="mono" style="color:var(--muted)">← Voltar ao caso</a>
 
       ${m.tipo === "video" ? `
       <div class="media-player" style="margin-top:20px" data-media-player>
@@ -826,7 +846,9 @@ function livroPage() {
   const bookCases = cases.filter((c) => c.bookNote);
   const bookData = books.find((b) => b.slug === "sinal-ruido") || books[0];
   const purchaseUrl = bookData.purchaseUrl;
+  const purchaseUrlUiclap = bookData.purchaseUrlUiclap;
   const purchaseUrlEn = bookData.purchaseUrlEn;
+  const purchaseUrlEnBr = bookData.purchaseUrlEnBr;
   const purchaseUrlEnUk = bookData.purchaseUrlEnUk;
   const body = `
     <section class="section container--narrow">
@@ -835,10 +857,12 @@ function livroPage() {
         <div class="book-hero__text">
           <span class="badge" style="border-color:var(--signal);color:var(--signal)">FICÇÃO</span>
           <p class="mono" style="margin-top:14px;color:var(--muted)">NEM TODO SINAL QUER SER OUVIDO.</p>
-          <h1 style="margin-top:10px">SINAL/RUÍDO — o romance.</h1>
+          <h1 style="margin-top:10px">SINAL<span class="title-slash">/</span>RUÍDO — o romance.</h1>
           <p class="mono" style="margin-top:8px;color:var(--signal)">Alex Jr. Kich</p>
+          ${bookData.synopsis ? `<p class="book-synopsis" style="margin-top:14px;font-size:17px;line-height:1.6">${escapeHtml(bookData.synopsis)}</p>` : ""}
           <p style="margin-top:12px;font-size:17px;color:var(--muted)">Personagens, organizações, eventos e diálogos pertencem ao romance. O livro utiliza pesquisa real e método de investigação como matéria narrativa, mas sua trama e seus desfechos não integram o arquivo factual.</p>
-          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--primary" href="/livro/amostra/">Ler até 3 capítulos</a>${purchaseUrl ? `<a class="btn" href="${escapeHtml(purchaseUrl)}">Comprar</a>` : `<span class="btn btn--disabled" aria-disabled="true">Comprar · EM BREVE</span>`}${purchaseUrlEn ? `<a class="btn" href="${escapeHtml(purchaseUrlEn)}">Buy (Amazon US)</a>` : ""}${purchaseUrlEnUk ? `<a class="btn" href="${escapeHtml(purchaseUrlEnUk)}">Buy (Amazon UK)</a>` : ""}${purchaseUrlEn ? `<a class="btn" href="/livro/sample/">Read sample (EN)</a>` : ""}<a class="btn" href="/livros/">Ver coleção de livros</a></div>
+          <div style="margin-top:20px"><a class="btn btn--primary" href="/livro/amostra/">Ler até 3 capítulos</a></div>
+          ${buyPanel(bookData)}
         </div>
       </div>
 
@@ -863,7 +887,7 @@ function livroAmostraPage() {
         <div class="reading-tools" aria-label="Opções de leitura"><button type="button" data-reading-size="down" aria-label="Diminuir fonte">A−</button><button type="button" data-reading-size="up" aria-label="Aumentar fonte">A+</button><button type="button" data-reading-theme aria-label="Alternar modo de leitura">◐</button></div>
       </header>
 
-      <nav class="chapter-nav" aria-label="Capítulos da amostra">
+      <nav class="chapter-nav" id="capitulos" aria-label="Capítulos da amostra">
         ${chapters.map((c, i) => `<button type="button" data-chapter-tab="${c.id}" aria-selected="${i === 0 ? "true" : "false"}"><span>${c.n}</span>${escapeHtml(c.title)}</button>`).join("")}
       </nav>
 
@@ -875,7 +899,7 @@ function livroAmostraPage() {
         </div>
         <div class="chapter-end"><span>Fim do capítulo ${c.n}</span>${i < chapters.length - 1 ? `<button class="btn btn--primary" type="button" data-next-chapter="${chapters[i+1].id}">Capítulo seguinte →</button>` : `<a class="btn btn--primary" href="/livro/">Conhecer o livro →</a>`}</div>
 
-        <section class="reader-comments" data-comments-root data-chapter-id="${c.id}">
+        <section class="reader-comments"${i === 0 ? ' id="comentarios"' : ""} data-comments-root data-chapter-id="${c.id}">
           <div class="reader-comments__heading"><div><span class="kicker">Comentários dos leitores</span><h2>O que ficou na sua cabeça?</h2></div><span class="mono">MODERAÇÃO PRÉVIA</span></div>
           <form class="comment-form" data-comment-form>
             <label>Nome ou apelido<input name="display_name" autocomplete="nickname" minlength="2" maxlength="40" required /></label>
@@ -940,9 +964,10 @@ function livroSampleEnPage() {
 // ---------------------------------------------------------------------
 function livrosPage() {
   const featured = books.find((b) => b.featured) || books[0];
-  const future = books.filter((b) => !b.featured);
+  const chronicles = books.filter((b) => b.kind === "Crônicas Cosmológicas");
+  const others = books.filter((b) => !b.featured && b.kind !== "Crônicas Cosmológicas");
   const body = `
-    <section class="section books-page">
+    <section class="section books-page" style="--books-art:url(/livros/ambiente.jpg)">
       <div class="container">
         <span class="kicker">Projeto literário</span>
         <h1 style="margin-top:12px">SINAL/RUÍDO · Livros</h1>
@@ -953,7 +978,8 @@ function livrosPage() {
             <div class="support-home__qr"><img src="/apoio/pix-qr.jpg" alt="QR Code Pix para apoiar SINAL/RUÍDO" loading="lazy" /><div><span class="mono">PIX · APOIO À OBRA</span><button type="button" class="btn btn--primary" data-copy-pix>Copiar código Pix</button><span class="visually-hidden" data-pix-code>00020126330014br.gov.bcb.pix0111026387420665204000053039865802BR5916Alex Junior Kich6009Sao Paulo62290525REC6A982558C600D1848319096304DD3C</span></div></div>
           </div>
         </div>
-        <section class="books-future"><span class="kicker">Crônicas Cosmológicas</span><h2>Obras em desenvolvimento</h2><div class="books-grid">${future.map((b) => `<article class="book-card"><span class="mono">${escapeHtml(b.status)}</span><h3>${escapeHtml(b.title)}</h3><p>${escapeHtml(b.description)}</p><small>${escapeHtml(b.kind)}</small></article>`).join("")}</div></section>
+        <section class="books-future" id="cronicas"><span class="kicker">Crônicas Cosmológicas · I–X</span><h2>Obras em desenvolvimento</h2><div class="books-grid books-grid--covers">${chronicles.map((b) => ((bookSheets[b.slug] || {}).synopsis ? `<a class="book-card book-card--cover" href="/livros/${b.slug}/"><img src="${escapeHtml(b.cover)}" alt="Capa de ${escapeHtml(b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(b.status)}</span><h3>${escapeHtml(b.title)}</h3>${b.description ? `<p>${escapeHtml(b.description)}</p>` : ""}<span class="book-card__more mono">Sinopse e ficha →</span></a>` : `<article class="book-card book-card--cover"><img src="${escapeHtml(b.cover)}" alt="Capa de ${escapeHtml(b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(b.status)}</span><h3>${escapeHtml(b.title)}</h3>${b.description ? `<p>${escapeHtml(b.description)}</p>` : ""}</article>`)).join("")}<article class="book-card book-card--soon"><span class="mono">VIII · IX</span><h3>A anunciar</h3><p>Os próximos volumes das Crônicas Cosmológicas.</p></article></div></section>
+        ${others.length ? `<section class="books-future"><span class="kicker">Outro projeto literário</span><div class="books-grid">${others.map((b) => `<article class="book-card"><span class="mono">${escapeHtml(b.status)}</span><h3>${escapeHtml(b.title)}</h3><p>${escapeHtml(b.description)}</p><small>${escapeHtml(b.kind)}</small></article>`).join("")}</div></section>` : ""}
       </div>
     </section>`;
   write("/livros", page({ title: "Livros", description: "Livros e projetos literários de SINAL/RUÍDO, claramente separados do arquivo factual.", path: "/livros/", bodyHtml: body, ogImage: "/livro/capa.jpg" }));
@@ -962,18 +988,123 @@ function livrosPage() {
 // ---------------------------------------------------------------------
 // /privacidade
 // ---------------------------------------------------------------------
+// /livros/<slug> — pagina de cada livro das Cronicas: sinopse + ficha (dados em src/data/book-sheets.json)
+function livroDetailPage(b, list) {
+  const sh = bookSheets[b.slug] || {};
+  const amb = sh.ambientacao || {};
+  const paras = (t) => String(t || "").split(/\n\s*\n/).filter(Boolean).map((x) => `<p>${escapeHtml(x)}</p>`).join("");
+  const synopsis = sh.synopsis || b.synopsis || "";
+  const rows = [
+    ["Série", "Crônicas Cosmológicas"],
+    ["Volume", b.numeral],
+    ["Autor", b.author],
+    ["Status", b.status],
+    ...(amb.epoca ? [["Época", amb.epoca]] : []),
+    ...(amb.local ? [["Local", amb.local]] : []),
+    ...(sh.ficha || []).map((f) => [f.label, f.value]),
+  ].filter((r) => r[1]);
+  const idx = list.findIndex((x) => x.slug === b.slug);
+  const prev = list[idx - 1], next = list[idx + 1];
+  const body = `
+    <section class="section book-sheet">
+      <div class="container">
+        <a href="/livros/#cronicas" class="mono" style="color:var(--muted)">← Crônicas Cosmológicas</a>
+        <div class="book-sheet__hero">
+          <img class="book-sheet__cover" src="${escapeHtml(b.cover)}" alt="Capa de ${escapeHtml(b.title)}" width="450" height="720" />
+          <div>
+            <span class="badge" style="border-color:var(--signal);color:var(--signal)">${escapeHtml(b.numeral)} · ${escapeHtml(b.status)}</span>
+            <h1 style="margin-top:12px">${escapeHtml(b.title)}</h1>
+            <p class="mono" style="margin-top:8px;color:var(--signal)">${escapeHtml(b.author)}</p>
+            <div class="book-sheet__synopsis">${synopsis ? paras(synopsis) : `<p class="book-sheet__pending">Sinopse em breve.</p>`}</div>
+          </div>
+        </div>
+
+        <div class="book-sheet__grid">
+          <section class="paper book-sheet__box">
+            <span class="kicker">Ficha</span>
+            <dl class="book-sheet__dl">${rows.map((r) => `<div><dt>${escapeHtml(r[0])}</dt><dd>${escapeHtml(r[1])}</dd></div>`).join("")}</dl>
+          </section>
+          <section class="paper book-sheet__box">
+            <span class="kicker">Onde se ambienta</span>
+            ${amb.texto ? paras(amb.texto) : `<p class="book-sheet__pending">Em breve.</p>`}
+          </section>
+        </div>
+
+        <section style="margin-top:32px">
+          <span class="kicker">Personagens</span>
+          ${(sh.personagens || []).length ? `<div class="grid grid--3" style="margin-top:14px">${sh.personagens.map((c) => `<div class="card" style="cursor:default"><h3>${escapeHtml(c.nome)}</h3>${c.papel ? `<span class="mono" style="color:var(--signal);font-size:11px">${escapeHtml(c.papel)}</span>` : ""}${c.descricao ? `<p>${escapeHtml(c.descricao)}</p>` : ""}</div>`).join("")}</div>` : `<p class="book-sheet__pending" style="margin-top:10px">Em breve.</p>`}
+        </section>
+
+        ${(sh.temas || []).length ? `<section style="margin-top:32px"><span class="kicker">Temas</span><div class="book-sheet__tags">${sh.temas.map((t) => `<span class="badge">${escapeHtml(t)}</span>`).join("")}</div></section>` : ""}
+
+        <nav class="book-sheet__nav" aria-label="Outros volumes">
+          ${prev ? `<a href="/livros/${prev.slug}/"><span class="mono">← ${escapeHtml(prev.numeral)}</span><strong>${escapeHtml(prev.title)}</strong></a>` : "<span></span>"}
+          ${next ? `<a href="/livros/${next.slug}/" style="text-align:right"><span class="mono">${escapeHtml(next.numeral)} →</span><strong>${escapeHtml(next.title)}</strong></a>` : "<span></span>"}
+        </nav>
+      </div>
+    </section>`;
+  write(`/livros/${b.slug}`, page({ title: `${b.title} · Crônicas Cosmológicas`, description: synopsis ? synopsis.slice(0, 200) : `${b.title}, volume ${b.numeral} das Crônicas Cosmológicas, de ${b.author}.`, path: `/livros/${b.slug}/`, bodyHtml: body, ogImage: b.cover }));
+}
+
+
+// /cortesia/<token> — pagina nao listada: so acessa quem tem o link (noindex, fora do menu, do sitemap e da busca)
+const CORTESIA_TOKEN = "55okhxeexdf9m1";
+function cortesiaPage() {
+  const epubHref = `/cortesia/${CORTESIA_TOKEN}/SINAL_RUIDO_cortesia.epub`;
+  const body = `
+    <section class="section container--narrow courtesy">
+      <span class="kicker">Cortesia do SINAL/RUÍDO</span>
+      <h1 style="margin-top:12px">Este exemplar é seu.</h1>
+      <p style="margin-top:8px;color:var(--muted);max-width:60ch">Você recebeu este link porque alguém quis que você lesse <strong>SINAL/RUÍDO</strong>. Baixe o ebook abaixo, sem custo. Esta página não é pública: ela não aparece no menu nem nas buscas.</p>
+
+      <div class="courtesy__card">
+        <img src="/livro/capa.jpg" alt="Capa de SINAL/RUÍDO" width="300" height="432" />
+        <div>
+          <span class="mono">EBOOK · EPUB · 494 KB</span>
+          <h2>SINAL/RUÍDO</h2>
+          <p class="mono" style="color:var(--signal)">Alex Jr. Kich</p>
+          <a class="btn btn--primary" href="${epubHref}" download="SINAL_RUIDO_cortesia.epub" rel="noopener">Baixar EPUB</a>
+        </div>
+      </div>
+
+      <section class="courtesy__help">
+        <span class="kicker">Como ler</span>
+        <ul>
+          <li><strong>Celular ou tablet:</strong> abra o arquivo no Apple Livros (iPhone e iPad), Google Play Livros ou em outro leitor de EPUB.</li>
+          <li><strong>Kindle:</strong> envie o arquivo pelo serviço Send to Kindle da Amazon.</li>
+          <li><strong>Computador:</strong> use um leitor como o Calibre ou o próprio navegador, com uma extensão de EPUB.</li>
+        </ul>
+      </section>
+
+      <p class="mono" style="margin-top:28px;color:var(--muted)">Gostou? Conheça <a href="/livro/">a página do livro</a>. Por favor, não divulgue este link publicamente.</p>
+    </section>`;
+  write(`/cortesia/${CORTESIA_TOKEN}`, page({ title: "Cortesia", description: "Página privada de cortesia do SINAL/RUÍDO.", path: `/cortesia/${CORTESIA_TOKEN}/`, bodyHtml: body, robots: "noindex,nofollow,noarchive", ogImage: "/livro/capa.jpg" }));
+}
+
+
 function privacidadePage() {
   const body = `
     <section class="section container--narrow">
       <span class="kicker">Privacidade</span>
       <h1 style="margin-top:12px">Poucos dados. Finalidade explícita.</h1>
-      <p style="margin-top:10px;color:var(--muted)">O arquivo factual pode ser consultado sem conta. Há duas coletas públicas opcionais nesta fase: os comentários da amostra literária e o formulário de contato.</p>
+      <p style="margin-top:10px;color:var(--muted)">O arquivo factual pode ser consultado sem conta. Há três tratamentos de dados nesta fase: os comentários da amostra literária, o formulário de contato e a resposta automática no Instagram do perfil @sinal_ruido. Responsável pelo site e pelo perfil: Alex Jr. Kich.</p>
       <div class="paper method-block" style="margin-top:28px"><h2>Comentários da amostra</h2><p>Ao comentar, o visitante informa um nome ou apelido e o texto do comentário. O sistema também registra o capítulo, o estado de moderação e datas técnicas. Não é solicitado e-mail.</p><p>Comentários são enviados para moderação antes da publicação. Conteúdo rejeitado pode permanecer no banco pelo tempo necessário à moderação e limpeza operacional.</p></div>
       <div class="paper method-block" style="margin-top:16px"><h2>Proteção contra spam</h2><p>A área de comentários foi preparada para Cloudflare Turnstile e Cloudflare D1. A infraestrutura de entrega e segurança pode processar dados técnicos de conexão conforme sua própria operação. O SINAL/RUÍDO não grava endereço IP na tabela pública de comentários.</p></div>
       <div class="paper method-block" style="margin-top:16px"><h2>Formulário de contato</h2><p>Ao enviar uma mensagem em <a href="/contato/">/contato</a>, o nome, e-mail, assunto e texto informados são entregues por e-mail através do serviço terceiro Web3Forms, que processa o envio e não é operado pelo SINAL/RUÍDO. Nenhum dado do formulário é armazenado neste site.</p></div>
-      <p class="mono" style="margin-top:20px;color:var(--muted)">Antes do lançamento, este texto deve ser confrontado com a configuração real de produção e ajustado se novos serviços de dados forem adicionados.</p>
+      <div class="paper method-block" id="instagram" style="margin-top:16px"><h2>Resposta automática no Instagram (@sinal_ruido)</h2>
+        <p>Quando alguém comenta a palavra &ldquo;Sinal&rdquo; em uma publicação do perfil <a href="https://www.instagram.com/sinal_ruido/" rel="noopener">@sinal_ruido</a>, ou envia uma mensagem direta ao perfil, o SINAL/RUÍDO usa a API do Instagram (Meta) para receber esse evento. Se a pessoa segue o perfil, o sistema envia uma única mensagem privada com o link <a href="/brinde/">sinalruido.com.br/brinde</a>. A mensagem só é enviada como resposta a uma interação iniciada pela própria pessoa.</p>
+        <p><strong>Dados tratados:</strong> o texto do comentário ou da mensagem, o identificador da conta do Instagram de quem interagiu (fornecido pela Meta), o identificador do comentário e a informação de sim ou não sobre a pessoa seguir o perfil.</p>
+        <p><strong>Dados que não são acessados:</strong> senha, e-mail, telefone, lista de seguidores, conversas anteriores e qualquer dado fora da interação que disparou a resposta.</p>
+        <p><strong>Armazenamento:</strong> esses dados são usados apenas no momento do evento, para decidir se a mensagem é enviada e enviá-la. O SINAL/RUÍDO não os grava em banco de dados e não monta perfis. Registros técnicos de erro podem guardar temporariamente identificadores técnicos nos logs da Cloudflare. O acesso ao perfil usa um token da conta profissional autorizada pelo titular, guardado em banco Cloudflare D1 e nunca exposto publicamente.</p>
+        <p><strong>Compartilhamento:</strong> os dados não são vendidos, não são usados para publicidade e não são repassados a terceiros. O processamento passa pela Meta (Instagram) e pela Cloudflare, que operam a infraestrutura.</p>
+      </div>
+      <div class="paper method-block" id="exclusao-de-dados" style="margin-top:16px"><h2>Exclusão de dados e contato</h2>
+        <p>Para pedir informações ou a exclusão de qualquer dado ligado a você, envie uma mensagem em <a href="/contato/">/contato</a> ou uma mensagem direta para <a href="https://www.instagram.com/sinal_ruido/" rel="noopener">@sinal_ruido</a>, informando o seu nome de usuário no Instagram e o que deseja apagar. Como a resposta automática não guarda os dados da interação, a exclusão consiste em remover qualquer registro técnico associado ao seu identificador e confirmar o resultado a você.</p>
+        <p>Você também pode apagar o seu próprio comentário ou a sua conversa diretamente no Instagram, e deixar de seguir o perfil a qualquer momento.</p>
+      </div>
+      <p class="mono" style="margin-top:20px;color:var(--muted)">Última atualização: 18 de setembro de 2026.</p>
     </section>`;
-  write("/privacidade", page({ title: "Privacidade", description: "Política de privacidade do SINAL/RUÍDO para a fase pública inicial.", path: "/privacidade/", bodyHtml: body }));
+  write("/privacidade", page({ title: "Privacidade", description: "Política de privacidade do SINAL/RUÍDO: comentários, formulário de contato e resposta automática no Instagram.", path: "/privacidade/", bodyHtml: body }));
 }
 
 // ---------------------------------------------------------------------
@@ -982,7 +1113,13 @@ function privacidadePage() {
 function contatoPage() {
   const web3formsKey = "4c4ea232-63aa-44ca-9f76-9a2533f9d63f";
   const body = `
-    <section class="section container--narrow">
+    <section class="section container--narrow" id="autor">
+      <span class="kicker">Autor</span>
+      <h2 style="margin-top:10px">Alex Jr. Kich</h2>
+      <p style="margin-top:8px;color:var(--muted);max-width:60ch">Autor de SINAL/RUÍDO. Acompanhe o livro e o arquivo no <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram @sinal_ruido</a>. Imprensa e materiais de divulgação estão em <a href="/imprensa/">Imprensa</a>.</p>
+    </section>
+
+    <section class="section container--narrow" id="profissional">
       <span class="kicker">Fale com o arquivo</span>
       <h1 style="margin-top:12px">Mensagem, relato ou sugestão de caso.</h1>
       <p style="margin-top:8px;color:var(--muted);max-width:60ch">Viu um caso que devia estar aqui? Foi testemunha de algo? Achou um erro ou quer só mandar uma mensagem? Escreva abaixo. Toda mensagem é lida — nem toda mensagem vira resposta individual.</p>
@@ -1009,6 +1146,7 @@ function contatoPage() {
             <option value="Relato / testemunho pessoal">Relato / testemunho pessoal</option>
             <option value="Sugestão de caso para o arquivo">Sugestão de caso para o arquivo</option>
             <option value="Correção ou erro encontrado">Correção ou erro encontrado</option>
+            <option value="Contato profissional (imprensa, parcerias, eventos)">Contato profissional (imprensa, parcerias, eventos)</option>
           </select>
         </label>
 
@@ -1025,30 +1163,6 @@ function contatoPage() {
 }
 
 // ---------------------------------------------------------------------
-// /brinde — brinde de campanha social (epub gratuito)
-// ---------------------------------------------------------------------
-function brindePage() {
-  const epubReady = true;
-  const epubHref = "/livro/a-ultima-testemunha.epub";
-  const capaHref = "/livro/capa-a-ultima-testemunha.jpg";
-  const body = `
-    <section class="section container--narrow">
-      <span class="kicker">Brinde · Caso Maria Cintra</span>
-      <h1 style="margin-top:12px">Um capítulo a mais, de graça.</h1>
-      <p style="margin-top:8px;color:var(--muted);max-width:60ch">Para comemorar o Caso Maria Cintra no arquivo, estamos liberando um brinde: um trecho exclusivo de <strong>A Última Testemunha</strong>, novela inédita ainda em produção.</p>
-
-      <img src="${capaHref}" alt="Capa de A Última Testemunha" style="margin-top:24px;max-width:280px;width:100%;border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,0.25)" loading="lazy" />
-
-      <div style="margin-top:28px">
-        ${epubReady
-          ? `<a class="btn btn--primary" href="${epubHref}" download>Baixar epub grátis</a>`
-          : `<span class="btn btn--disabled" aria-disabled="true">Baixar epub grátis · EM BREVE</span><p style="margin-top:10px;color:var(--muted);font-size:13px">A novela ainda está em produção — o link de download é ativado assim que o primeiro trecho estiver pronto.</p>`}
-      </div>
-
-      <p style="margin-top:32px;color:var(--muted);font-size:13px"><a href="/casos/maria-cintra/">Ver o dossiê completo do Caso Maria Cintra →</a></p>
-    </section>`;
-  write("/brinde", page({ title: "Brinde — Caso Maria Cintra", description: "Baixe um trecho exclusivo da novela A Última Testemunha seguindo e comentando o post do Caso Maria Cintra.", path: "/brinde/", bodyHtml: body }));
-}
 
 // ---------------------------------------------------------------------
 // /leitores
@@ -1240,7 +1354,7 @@ function buildSearchIndex() {
     ...documents.map((d) => ({ type: "documento", title: d.titulo, url: `/documentos/${d.slug}/`, tags: [d.origem, d.caseTitle, d.tipo] })),
     ...collections.map((c) => ({ type: "coleção", title: c.name, url: `/colecoes/${c.slug}/`, tags: [c.institution, c.country] })),
     ...media.map((m) => ({ type: "mídia", title: m.titulo, url: `/midia/${m.slug}/`, tags: [m.caseTitle, m.tipo] })),
-    ...books.map((b) => ({ type: "livro", title: b.title, url: b.featured ? "/livro/" : "/livros/", tags: [b.kind, b.status] })),
+    ...books.filter((b) => b.featured).map((b) => ({ type: "livro", title: b.title, url: "/livro/", tags: [b.kind, b.status] })),
   ];
   mkdirSync(join(root, "public"), { recursive: true });
   writeFileSync(join(root, "public/search-index.json"), JSON.stringify(items));
@@ -1252,7 +1366,7 @@ function buildSearchIndex() {
 function buildSeoFiles() {
   // Rotas de campanha são redirects. A amostra literária permanece fora do sitemap
   // enquanto o texto final não tiver sido inserido e homologado.
-  const canonicalRoutes = routes.filter((r) => !r.startsWith("/r/") && r !== "/livro/amostra/");
+  const canonicalRoutes = routes.filter((r) => !r.startsWith("/r/") && !r.startsWith("/cortesia/") && r !== "/livro/amostra/");
   const urlset = canonicalRoutes
     .map((r) => `  <url><loc>${SITE_URL}${r}</loc></url>`)
     .join("\n");
@@ -1260,7 +1374,7 @@ function buildSeoFiles() {
 
   writeStatic("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 
-  writeStatic("_headers", `/*\n  X-Content-Type-Options: nosniff\n  X-Frame-Options: DENY\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: geolocation=(), microphone=(), camera=()\n`);
+  writeStatic("_headers", `/*\n  X-Content-Type-Options: nosniff\n  X-Frame-Options: DENY\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: geolocation=(), microphone=(), camera=()\n\n/cortesia/*\n  X-Robots-Tag: noindex, nofollow, noarchive\n  Cache-Control: private, no-store\n`);
 
   // Regras para Cloudflare Pages. As campanhas mantêm os links permanentes
   // impressos/divulgados.
@@ -1273,8 +1387,8 @@ function buildSeoFiles() {
 ["arquivo", "casos", "documentos", "colecoes", "midia", "noticias", "metodo", "correcoes", "livro", "livros", "leitores", "imprensa", "privacidade", "r", "explorar"].forEach(clean);
 
 homePage();
-explorarPage();
-explorarFontesPage();
+// explorarPage(); removido
+// explorarFontesPage(); removido
 arquivoPage();
 casosPage();
 cases.forEach(caseDossierPage);
@@ -1283,8 +1397,8 @@ documents.forEach(documentoDetailPage);
 colecoesPage();
 collections.forEach(colecaoDetailPage);
 midiaPage();
-mapaEstelarPage();
-sistemaSolarPage();
+// mapaEstelarPage(); removido
+// sistemaSolarPage(); removido
 media.forEach(midiaDetailPage);
 noticiasPage();
 metodoPage();
@@ -1293,11 +1407,13 @@ livroPage();
 livroAmostraPage();
 livroSampleEnPage();
 livrosPage();
+cortesiaPage();
+const sheetReady = (b) => Boolean((bookSheets[b.slug] || {}).synopsis);
+books.filter((b) => b.kind === "Crônicas Cosmológicas" && sheetReady(b)).forEach((b, _i, arr) => livroDetailPage(b, arr));
 leitoresPage();
 imprensaPage();
 privacidadePage();
 contatoPage();
-brindePage();
 ["livro", "bunkerx", "cienciatododia", "spacetoday"].forEach(campanhaRedirect);
 buildSearchIndex();
 buildSeoFiles();

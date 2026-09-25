@@ -8,7 +8,7 @@ const root = dirname(fileURLToPath(import.meta.url));
 function htmlInputs() {
   const files = globSync("**/index.html", {
     cwd: root,
-    ignore: ["node_modules/**", "dist/**"],
+    ignore: ["node_modules/**", "dist/**", ".claude/**", "SINAL_RUIDO_WEB_DINAMICO_COMENTARIOS/**"],
   });
   const entries = {};
   for (const f of files) {

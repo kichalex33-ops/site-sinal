@@ -1,17 +1,52 @@
 const NAV = [
-  { href: "/livro/amostra/", label: "Ler" },
-  { href: "/livro/", label: "Livro" },
-  { href: "/arquivo/", label: "Arquivo" },
-  { href: "/midia/", label: "Mídia" },
-  { href: "/explorar/", label: "Explorar" },
-  { href: "/midia/sistema-solar/", label: "Sistema Solar" },
-  { href: "/livros/", label: "Livros" },
-  { href: "/contato/", label: "Contato" },
+  {
+    href: "/livro/amostra/", label: "Ler", match: ["/livro/amostra/", "/livro/sample/"],
+    children: [
+      { href: "/livro/amostra/", label: "Amostra de SINAL/RUÍDO" },
+      { href: "/livro/amostra/#capitulos", label: "Capítulos" },
+      { href: "/livro/amostra/#comentarios", label: "Comentários" },
+    ],
+  },
+  {
+    href: "/livros/", label: "Livros", match: ["/livros/", "/livro/"],
+    children: [
+      { href: "/livro/", label: "SINAL/RUÍDO — Origem" },
+      { href: "/livros/#cronicas", label: "Crônicas Cosmológicas I–X" },
+    ],
+  },
+  {
+    href: "/arquivo/", label: "Arquivo", match: ["/arquivo/", "/casos/", "/documentos/", "/colecoes/", "/midia/", "/metodo/"],
+    children: [
+      { href: "/casos/", label: "Casos reais" },
+      { href: "/documentos/", label: "Documentos" },
+      { href: "/midia/#videos", label: "Vídeos" },
+      { href: "/midia/#imagens", label: "Imagens" },
+      { href: "/colecoes/", label: "Coleções" },
+      { href: "/metodo/", label: "Pesquisa" },
+    ],
+  },
+  {
+    href: "/contato/", label: "Contato", match: ["/contato/", "/imprensa/"],
+    children: [
+      { href: "/contato/#autor", label: "Autor" },
+      { href: "/imprensa/", label: "Imprensa" },
+      { href: "/contato/#profissional", label: "Contato profissional" },
+    ],
+  },
 ];
 
-function navLink(item, currentPath) {
-  const current = currentPath === item.href ? ' aria-current="page"' : "";
-  return `<a href="${item.href}"${current}>${item.label}</a>`;
+function isCurrent(item, currentPath) {
+  return (item.match || [item.href]).some((m) => (m === "/livro/" ? currentPath === m : currentPath.startsWith(m)));
+}
+
+function navLink(item, currentPath, mobile = false) {
+  const current = isCurrent(item, currentPath) ? ' aria-current="page"' : "";
+  const parent = `<a href="${item.href}"${current}>${item.label}</a>`;
+  if (!item.children) return parent;
+  const subs = item.children.map((c) => `<a href="${c.href}">${c.label}</a>`).join("");
+  return mobile
+    ? `${parent}<div class="mobile-sub">${subs}</div>`
+    : `<div class="nav-group">${parent}<div class="nav-sub">${subs}</div></div>`;
 }
 
 function escapeAttr(str) {
@@ -96,7 +131,7 @@ export function page({
       </div>
     </div>
     <nav class="mobile-nav container" data-mobile-nav aria-label="Navegação (compacta)">
-      ${NAV.map((i) => navLink(i, path)).join("")}
+      ${NAV.map((i) => navLink(i, path, true)).join("")}
     </nav>
   </header>
 

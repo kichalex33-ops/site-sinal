@@ -1,0 +1,119 @@
+{
+  "os-deuses-nao-tem-filhos": {
+    "synopsis": "",
+    "ambientacao": {
+      "epoca": "",
+      "local": "",
+      "texto": ""
+    },
+    "personagens": [],
+    "temas": [],
+    "ficha": []
+  },
+  "a-ultima-testemunha": {
+    "synopsis": "",
+    "ambientacao": {
+      "epoca": "",
+      "local": "",
+      "texto": ""
+    },
+    "personagens": [],
+    "temas": [],
+    "ficha": []
+  },
+  "amanha-nao-existe": {
+    "synopsis": "",
+    "ambientacao": {
+      "epoca": "",
+      "local": "",
+      "texto": ""
+    },
+    "personagens": [],
+    "temas": [],
+    "ficha": []
+  },
+  "o-universo-nao-responde": {
+    "synopsis": "",
+    "ambientacao": {
+      "epoca": "",
+      "local": "",
+      "texto": ""
+    },
+    "personagens": [],
+    "temas": [],
+    "ficha": []
+  },
+  "o-arquivo-dos-mortos": {
+    "synopsis": "",
+    "ambientacao": {
+      "epoca": "",
+      "local": "",
+      "texto": ""
+    },
+    "personagens": [],
+    "temas": [],
+    "ficha": []
+  },
+  "antes-de-nascermos": {
+    "synopsis": "",
+    "ambientacao": {
+      "epoca": "",
+      "local": "",
+      "texto": ""
+    },
+    "personagens": [],
+    "temas": [],
+    "ficha": []
+  },
+  "o-ceu-esta-errado": {
+    "synopsis": "",
+    "ambientacao": {
+      "epoca": "",
+      "local": "",
+      "texto": ""
+    },
+    "personagens": [],
+    "temas": [],
+    "ficha": []
+  },
+  "o-ultimo-sinal": {
+    "synopsis": "",
+    "ambientacao": {
+      "epoca": "",
+      "local": "",
+      "texto": ""
+    },
+    "personagens": [],
+    "temas": [],
+    "ficha": []
+  },
+  "_exemplo": {
+    "synopsis": "Texto da sinopse. Parágrafos separados por linha em branco.",
+    "ambientacao": {
+      "epoca": "ex.: 1977 e 2026",
+      "local": "ex.: Santa Maria, RS",
+      "texto": "Descrição livre do lugar e do tempo."
+    },
+    "personagens": [
+      {
+        "nome": "Nome",
+        "papel": "Função na história",
+        "descricao": "Quem é, em uma ou duas frases."
+      }
+    ],
+    "temas": [
+      "tema 1",
+      "tema 2"
+    ],
+    "ficha": [
+      {
+        "label": "Páginas",
+        "value": "000"
+      },
+      {
+        "label": "Lançamento",
+        "value": "2027"
+      }
+    ]
+  }
+}

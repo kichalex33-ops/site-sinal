@@ -6,11 +6,13 @@
     "kind": "Romance",
     "status": "Edição editorial",
     "description": "Ficção científica de investigação sobre sinais, memória, evidência e primeiro contato. A pesquisa factual usada na obra permanece separada do arquivo público.",
-    "synopsis": "Um sinal chega de onde não deveria vir — e alguém decide que é mais seguro chamá-lo de ruído. Uma investigadora encontra o registro por acidente, num arquivo que ninguém devia estar lendo, e a partir daí cada pergunta que ela faz aproxima mais o leitor da resposta que a instituição não quer confirmar. Quanto do que chamamos de erro é, na verdade, a primeira evidência de algo real?",
+    "synopsis": "Em 1977, um radiotelescópio registrou um sinal vindo da direção de Sagitário. Durou pouco mais de um minuto. Nunca se repetiu. Quarenta e nove anos depois, em Santa Maria, no Rio Grande do Sul, Henrique decide usar aquele velho registro como teste para ARGOS, um sistema criado para reconstruir, comparar e encontrar estruturas em dados imperfeitos. Ele espera encontrar erro. Encontra um padrão. Quanto mais Henrique tenta destruí-lo, mais o padrão resiste. E, quando a equipe começa a compará-lo com registros produzidos em outros tempos e lugares, nomes conhecidos da história brasileira surgem onde não deveriam estar: Colares, Varginha, a Noite Oficial dos OVNIs. Mas correlação não é prova. Testemunho não é medição. E um padrão não se torna verdade apenas porque queremos que seja. A investigação deixa as telas, atravessa o Brasil e começa a cobrar um preço real. Porque talvez a pergunta nunca tenha sido se existe alguém lá fora. Talvez seja outra: o que acontece quando percebemos que alguma coisa também está olhando para nós?",
     "cover": "/livro/capa.jpg",
     "url": "/livro/",
     "sampleUrl": "/livro/amostra/",
-    "purchaseUrl": "https://www.amazon.com.br/dp/6502345379",
+    "purchaseUrl": "https://www.amazon.com.br/dp/B0HKTBMSJ9",
+    "purchaseUrlUiclap": "https://loja.uiclap.com/titulo/ua205823",
+    "purchaseUrlEnBr": "https://www.amazon.com.br/dp/B0HJP3HM7J",
     "purchaseUrlEn": "https://www.amazon.com/dp/B0HJP3HM7J",
     "purchaseUrlEnUk": "https://www.amazon.co.uk/dp/B0HJQQBS8Q",
     "featured": true
@@ -25,31 +27,15 @@
     "featured": false
   },
   {
-    "slug": "o-ceu-esta-errado",
-    "title": "O CÉU ESTÁ ERRADO",
+    "slug": "os-deuses-nao-tem-filhos",
     "author": "Alex Jr. Kich",
     "kind": "Crônicas Cosmológicas",
     "status": "Em desenvolvimento",
-    "description": "Realidade, memória e cosmologia.",
-    "featured": false
-  },
-  {
-    "slug": "o-arquivo-dos-mortos",
-    "title": "O ARQUIVO DOS MORTOS",
-    "author": "Alex Jr. Kich",
-    "kind": "Crônicas Cosmológicas",
-    "status": "Em desenvolvimento",
-    "description": "Identidade, extinção, consciência digital e sobrevivência.",
-    "featured": false
-  },
-  {
-    "slug": "antes-de-nascermos",
-    "title": "ANTES DE NASCERMOS",
-    "author": "Alex Jr. Kich",
-    "kind": "Crônicas Cosmológicas",
-    "status": "Em desenvolvimento",
-    "description": "Memória, infância, consciência e cosmologia.",
-    "featured": false
+    "featured": false,
+    "title": "OS DEUSES NÃO TÊM FILHOS",
+    "numeral": "I",
+    "cover": "/livros/os-deuses-nao-tem-filhos.jpg",
+    "description": ""
   },
   {
     "slug": "a-ultima-testemunha",
@@ -58,16 +44,20 @@
     "kind": "Crônicas Cosmológicas",
     "status": "Em desenvolvimento",
     "description": "Observação, futuro e determinismo.",
-    "featured": false
+    "featured": false,
+    "numeral": "II",
+    "cover": "/livros/a-ultima-testemunha.jpg"
   },
   {
-    "slug": "o-ultimo-sinal",
-    "title": "O ÚLTIMO SINAL",
+    "slug": "amanha-nao-existe",
     "author": "Alex Jr. Kich",
     "kind": "Crônicas Cosmológicas",
     "status": "Em desenvolvimento",
-    "description": "Civilizações, morte cósmica e legado.",
-    "featured": false
+    "featured": false,
+    "title": "AMANHÃ NÃO EXISTE",
+    "numeral": "III",
+    "cover": "/livros/amanha-nao-existe.jpg",
+    "description": ""
   },
   {
     "slug": "o-universo-nao-responde",
@@ -76,6 +66,52 @@
     "kind": "Crônicas Cosmológicas",
     "status": "Em desenvolvimento",
     "description": "Paradoxo de Fermi, Grande Filtro e extinção.",
-    "featured": false
+    "featured": false,
+    "numeral": "IV",
+    "cover": "/livros/o-universo-nao-responde.jpg"
+  },
+  {
+    "slug": "o-arquivo-dos-mortos",
+    "title": "O ARQUIVO DOS MORTOS",
+    "author": "Alex Jr. Kich",
+    "kind": "Crônicas Cosmológicas",
+    "status": "Em desenvolvimento",
+    "description": "Identidade, extinção, consciência digital e sobrevivência.",
+    "featured": false,
+    "numeral": "V",
+    "cover": "/livros/o-arquivo-dos-mortos.jpg"
+  },
+  {
+    "slug": "antes-de-nascermos",
+    "title": "ANTES DE NASCERMOS",
+    "author": "Alex Jr. Kich",
+    "kind": "Crônicas Cosmológicas",
+    "status": "Em desenvolvimento",
+    "description": "Memória, infância, consciência e cosmologia.",
+    "featured": false,
+    "numeral": "VI",
+    "cover": "/livros/antes-de-nascermos.jpg"
+  },
+  {
+    "slug": "o-ceu-esta-errado",
+    "title": "O CÉU ESTÁ ERRADO",
+    "author": "Alex Jr. Kich",
+    "kind": "Crônicas Cosmológicas",
+    "status": "Em desenvolvimento",
+    "description": "Realidade, memória e cosmologia.",
+    "featured": false,
+    "numeral": "VII",
+    "cover": "/livros/o-ceu-esta-errado.jpg"
+  },
+  {
+    "slug": "o-ultimo-sinal",
+    "title": "O ÚLTIMO SINAL",
+    "author": "Alex Jr. Kich",
+    "kind": "Crônicas Cosmológicas",
+    "status": "Em desenvolvimento",
+    "description": "Civilizações, morte cósmica e legado.",
+    "featured": false,
+    "numeral": "X",
+    "cover": "/livros/o-ultimo-sinal.jpg"
   }
 ]

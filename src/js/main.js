@@ -8,6 +8,7 @@ import "./reveal.js";
 import "./ambience.js";
 import "./intro.js";
 import "./home-motion.js";
+import "./hero-signal-line.js";
 import "./home-comments.js";
 import "./reading.js";
 import "./comments.js";
