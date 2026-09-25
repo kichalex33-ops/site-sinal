@@ -1455,6 +1455,267 @@ function correcoesPage() {
 // ---------------------------------------------------------------------
 // /imprensa
 // ---------------------------------------------------------------------
+// /autor — página do autor (segunda versão do texto). Só PT. Sem formulário e sem newsletter (regra do MVP).
+// Sem material ainda: rascunhos a lápis, capa e mapas de VALANDOR e página/link de VALANDOR (por isso não há botão para ele).
+const AMAZON_DUAS_IRMAS = "https://www.amazon.com.br/dp/B0HGMMSBSX";
+const CRONICAS_LINHAS = {
+  "os-deuses-nao-tem-filhos": "Se alguém criou você, isso lhe dá o direito de decidir quem você deve ser?",
+  "a-ultima-testemunha": "Algumas coisas só acontecem se alguém estiver olhando.",
+  "amanha-nao-existe": "O que sobra do livre-arbítrio quando uma máquina entrega as respostas antes das perguntas?",
+  "o-universo-nao-responde": "Um sinal vindo de além de Netuno traz uma única frase: “Não respondam à luz.”",
+  "o-arquivo-dos-mortos": "Se tudo sobre uma pessoa puder ser guardado, ela continua existindo?",
+  "antes-de-nascermos": "Crianças desenham o mesmo lugar e dizem que estiveram lá antes de nascer.",
+  "o-ceu-esta-errado": "As estrelas começam a desaparecer. Depois, os próprios registros passam a afirmar que elas nunca estiveram ali.",
+  "o-retangulo-negro": "Ilse Moura continua lembrando dos filhos enquanto o resto do mundo esquece que eles existiram.",
+  "nao-tem-a-palavra": "A última falante de uma língua conhece uma palavra que abre uma porta para outro lugar por 1,7 segundo.",
+  "o-ultimo-sinal": "Tudo converge para uma frase que atravessou as histórias desde o começo, quase escondida.",
+};
+
+function autorPage() {
+  const cronicas = books.filter((b) => b.kind === "Crônicas Cosmológicas");
+  const cards = cronicas.map((b) => `
+        <a class="autor-cron" href="/livros/${b.slug}/">
+          <span class="autor-cron__num">${escapeHtml(b.numeral)}</span>
+          <strong>${escapeHtml(b.title)}</strong>
+          <span>${escapeHtml(CRONICAS_LINHAS[b.slug] || b.description || "")}</span>
+        </a>`).join("");
+  const amazon = buyLinkHtml(AMAZON_DUAS_IRMAS, "Livro 1 · O Mapa Debaixo da Cama", "Amazon BR");
+  const ficha = (img, nome, alt) => `<figure class="autor-ficha"><img src="/autor/${img}.jpg" alt="${alt}" loading="lazy" /><figcaption>${nome}</figcaption></figure>`;
+  const lines = (arr) => arr.map((t) => `<p class="autor-line">${t}</p>`).join("");
+
+  const body = `
+    <section class="autor-hero">
+      <div class="autor-hero__text">
+        <h1>Alex Jr. Kich</h1>
+        <p class="autor-hero__lead">Escritor, artista e criador de mundos.</p>
+        <p>Vivo no Rio Grande do Sul. Desenho, componho e escrevo histórias em escalas muito diferentes: algumas olham para o céu, outras constroem mundos inteiros, outras cabem debaixo de uma cama.</p>
+        <p>Mas a regra é sempre a mesma:</p>
+        <p class="autor-cite">O conceito pode ser enorme, mas o conflito precisa continuar humano.</p>
+        <p><a class="btn btn--primary" href="/#livros">Conhecer os livros</a></p>
+      </div>
+      <div class="autor-hero__photo"><img src="/autor/hero-bandeira.jpg" alt="Alex Jr. Kich sentado, sorrindo, com a bandeira do Rio Grande do Sul ao fundo" width="900" height="900" /></div>
+    </section>
+
+    <section class="autor-sec autor-sobre">
+      <div class="autor-narrow">
+        <span class="kicker">Sobre mim</span>
+        <h2>Gosto de histórias que começam pequenas.</h2>
+        ${lines(["Uma fotografia.", "Uma ausência.", "Uma criança que sabe alguma coisa que não deveria saber.", "Um sinal.", "Um rio.", "Um mapa esquecido debaixo da cama."])}
+        <p>A partir daí, a história pode crescer o quanto precisar. Pode chegar a Netuno, atravessar o tempo ou inventar um mundo inteiro.</p>
+        <p>Mas alguém precisa continuar no centro, tentando entender o que está acontecendo.</p>
+        <p>Uma estrela que desaparece é um fenômeno.</p>
+        <p class="autor-cite">Uma mãe que percebe que o mundo inteiro esqueceu que o filho dela existiu, isso é uma história.</p>
+        <p class="autor-cite autor-cite--accent">É essa diferença que eu procuro.</p>
+      </div>
+    </section>
+
+    <section class="autor-sec autor-sec--alt" id="por-onde-comecar">
+      <div class="autor-wrap">
+        <div class="autor-center"><span class="kicker">Por onde começar</span><h2>Não precisa conhecer tudo para entrar.</h2></div>
+        <div class="autor-start">
+          <article>
+            <a class="autor-start__cover" href="/livros/sinal-ruido/"><img src="/livro/capa.jpg" alt="Capa de SINAL/RUÍDO" width="400" height="600" loading="lazy" /></a>
+            <span class="mono autor-start__kicker">Ficção científica</span><h3>SINAL/RUÍDO</h3>
+            <p>Um sinal real captado em 1977. Uma pergunta que nunca foi embora.</p>
+            <a class="btn" href="/livros/sinal-ruido/">Conhecer SINAL/RUÍDO</a>
+          </article>
+          <article>
+            <a class="autor-start__typo" href="/#cronicas"><span>I–X</span><em>Crônicas Cosmológicas</em></a>
+            <span class="mono autor-start__kicker">Mistério cosmológico</span><h3>Crônicas Cosmológicas</h3>
+            <p>Dez histórias independentes ligadas por algo que registra pessoas, acontecimentos e até versões da realidade que talvez nunca tenham existido.</p>
+            <a class="btn" href="/#cronicas">Explorar as Crônicas</a>
+          </article>
+          <article>
+            <a class="autor-start__typo" href="#valandor"><span>V</span><em>VALANDOR</em></a>
+            <span class="mono autor-start__kicker">Fantasia</span><h3>VALANDOR</h3>
+            <p>Um mundo onde os rios lembram e onde possuir um poder nunca resolve a pergunta mais importante: usá-lo para quê?</p>
+            <a class="btn" href="#valandor">Entrar em VALANDOR</a>
+          </article>
+          <article>
+            <a class="autor-start__cover" href="#duas-irmas"><img src="/autor/duas-irmas-capa.jpg" alt="Capa de Duas Irmãs e Oito Patas" width="636" height="900" loading="lazy" /></a>
+            <span class="mono autor-start__kicker">Literatura infantil</span><h3>Duas Irmãs e Oito Patas</h3>
+            <p>Duas meninas, dois cães e a suspeita de que uma casa comum pode esconder muito mais do que parece.</p>
+            <a class="btn" href="#duas-irmas">Conhecer a série</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="autor-sec autor-sr">
+      <div class="autor-wrap autor-split autor-split--cover">
+        <div>
+          <span class="kicker">Romance · Obra de origem</span>
+          <h2>SINAL/RUÍDO</h2>
+          <p class="autor-cite">E se o sinal mais importante já tivesse chegado?</p>
+          <p>Em 15 de agosto de 1977, o radiotelescópio Big Ear, em Ohio, captou durante 72 segundos um sinal forte demais para ser ruído.</p>
+          <p>Um astrônomo circulou o registro e escreveu ao lado:</p>
+          <p class="autor-cite autor-cite--accent">Wow!</p>
+          <p>O sinal nunca mais se repetiu.</p>
+          <p>SINAL/RUÍDO começa nesse episódio real.</p>
+          <p>Henrique, Marina e Lara seguem vestígios que ligam aquele sinal a coisas próximas demais: registros incompletos, coincidências que insistem em voltar, uma porteira, um desaparecimento.</p>
+          <p>O problema começa científico.</p>
+          <p>Depois deixa de ser.</p>
+          <p>A pergunta já não é apenas quem enviou o sinal.</p>
+          <p>É outra:</p>
+          <p class="autor-cite">como a gente sabe que alguma coisa é, de fato, uma mensagem?</p>
+          <p>Talvez tenhamos passado tempo demais procurando respostas parecidas conosco.</p>
+          <p class="mono autor-note">Romance independente e obra de origem do universo das Crônicas Cosmológicas.</p>
+          <p><a class="btn btn--primary" href="/livros/sinal-ruido/">Conhecer SINAL/RUÍDO</a></p>
+        </div>
+        <div class="autor-cover"><img src="/livro/capa.jpg" alt="Capa de SINAL/RUÍDO" width="400" height="600" loading="lazy" /></div>
+      </div>
+    </section>
+
+    <section class="autor-sec autor-cron-sec" id="cronicas-autor">
+      <div class="autor-wrap">
+        <div class="autor-center">
+          <span class="kicker">Crônicas Cosmológicas</span>
+          <h2>Dez histórias. Um Arquivo. Nenhuma resposta completa.</h2>
+          <p>Depois de SINAL/RUÍDO, o universo se abre.</p>
+          <p>São dez romances com protagonistas, épocas e conflitos próprios. É possível entrar por qualquer um deles.</p>
+          <p>Por baixo de todos, porém, existe alguma coisa.</p>
+          <p>O Arquivo.</p>
+          <p>Ele registra pessoas, acontecimentos e versões do que poderia ter sido.</p>
+          <p>Às vezes sabe demais. Às vezes esquece.</p>
+          <p>E, de vez em quando, guarda coisas que ainda não deveriam existir.</p>
+        </div>
+        <div class="autor-cron-grid">${cards}
+        </div>
+        <p class="autor-center autor-note">Nenhum volume explica o Arquivo inteiro. De propósito.</p>
+        <p class="autor-center"><a class="btn btn--primary" href="/#cronicas">Explorar as Crônicas Cosmológicas</a></p>
+      </div>
+    </section>
+
+    <section class="autor-sec" id="valandor">
+      <div class="autor-wrap">
+        <div class="autor-narrow" style="margin:0">
+          <span class="kicker">Fantasia</span>
+          <h2>VALANDOR</h2>
+          <p class="autor-cite">Um mundo onde os rios lembram.</p>
+          <p>Valandor começou como uma história e cresceu até ganhar povos, mapas, passado, mitologia e regras próprias.</p>
+          <p>No centro está Kayla, que carrega o Dom.</p>
+          <p>Mas possuir um poder não responde à pergunta mais difícil:</p>
+          <p class="autor-cite">mesmo podendo, deveria?</p>
+          <p>Um rio capaz de guardar memórias é uma ideia.</p>
+          <p>Vira história quando uma menina descobre que esse rio guarda alguma coisa sobre a própria família.</p>
+        </div>
+        <div class="autor-vol-grid">
+          <article class="autor-vol autor-vol--main"><span class="mono">Livro I</span><h3>O Que o Rio Esqueceu</h3><p>Na família de Kayla, todos confundem proteção com silêncio.</p><p>O que ninguém contou a ela ficou guardado em algum lugar.</p><p>E o rio Orasûn lembra.</p><p>Ao lado de Aelora, Kayla segue o curso do rio até onde histórias familiares sobrevivem justamente porque ninguém pensou em procurá-las ali.</p><p>Só que memória não é a mesma coisa que verdade inteira.</p><p>E o Dom não decide por ela o que fazer com aquilo que encontrar.</p></article>
+          <article class="autor-vol"><span class="mono">Livro II</span><h3>O Que a Água Carrega</h3><p>A água não apenas guarda.</p><p>Ela leva.</p><p>Memórias, escolhas e consequências seguem o curso até lugares que ninguém previa.</p></article>
+          <article class="autor-vol"><span class="mono">Livro III</span><h3>O Que o Nome Preserva</h3><p>Se memórias podem falhar e histórias podem ser reescritas, o que ainda mantém alguém sendo quem é?</p><p>Talvez o nome.</p></article>
+        </div>
+        <p class="autor-note">Livro I disponível em inglês como <em>What the River Forgot</em>.</p>
+      </div>
+    </section>
+
+    <section class="autor-creme" id="duas-irmas">
+      <div class="autor-wrap">
+        <div class="autor-creme__top">
+          <img class="autor-creme__capa" src="/autor/duas-irmas-capa.jpg" alt="Capa de Duas Irmãs e Oito Patas: Kayla, Kamila, Max e Pandora" width="636" height="900" loading="lazy" />
+          <img class="autor-creme__ombros" src="/autor/ombros.jpg" alt="Kayla gargalhando nos ombros do pai" width="677" height="900" loading="lazy" />
+        </div>
+        <div class="autor-narrow">
+          <span class="kicker">Literatura infantil</span>
+          <h2>Duas Irmãs e Oito Patas</h2>
+          <p class="autor-cite">Algumas aventuras começam debaixo da cama.</p>
+          <p>Esta nasceu em casa.</p>
+          <p>É uma série infantil escrita para minhas filhas, Kayla e Kamila, protagonizada por elas e pelos nossos cães, Max e Pandora.</p>
+          <p>Duas irmãs.</p><p>Dois cães.</p><p>Oito patas.</p>
+          <p>Aqui não existe Arquivo, sinal vindo do espaço ou rio de mil anos.</p>
+          <p>Existe uma casa.</p><p>Um quintal.</p><p>Objetos esquecidos.</p>
+          <p>E aquela certeza que as crianças têm de que qualquer coisa pode esconder uma aventura.</p>
+          <h3>Livro 1 · O Mapa Debaixo da Cama</h3>
+          <p>Um mapa aparece debaixo da cama.</p>
+          <p>Para Kayla, isso basta.</p>
+          <p>Não é papel velho.</p>
+          <p>É uma pista.</p>
+          <p>A casa muda de tamanho. O quintal ganha territórios. Max e Pandora entram na investigação. Kamila, ainda bebê, participa do jeito dela.</p>
+          <p>No fim da trilha, o tesouro não é ouro.</p>
+          <p>É uma lembrança da infância do pai, guardada durante anos esperando alguém encontrá-la.</p>
+          <p>A série cresce junto com as meninas.</p>
+          <p>Cada livro acompanha uma nova fase.</p>
+          <p><strong>Livro 1 disponível na Amazon.</strong></p>
+          <div class="autor-buy">${amazon}<span class="autor-buy__label">Conhecer Duas Irmãs e Oito Patas</span></div>
+        </div>
+        <div class="autor-faixa">
+          <img src="/autor/ilustracao-cama.jpg" alt="Ilustração: Kayla na cama com o mapa, a bebê e o cachorro" width="625" height="1000" loading="lazy" />
+          <img src="/autor/ilustracao-quintal.jpg" alt="Ilustração: Kayla no quintal segurando o mapa" width="625" height="1000" loading="lazy" />
+        </div>
+        <div class="autor-fichas">
+          ${ficha("ficha-kayla", "Kayla", "Ficha de personagem: Kayla em pé")}
+          ${ficha("ficha-kamila", "Kamila", "Ficha de personagem: Kamila na almofada")}
+          ${ficha("ficha-pandora", "Pandora", "Ficha de personagem: Pandora")}
+          ${ficha("ficha-max", "Max", "Ficha de personagem: Max")}
+        </div>
+      </div>
+    </section>
+
+    <section class="autor-sec autor-sec--alt">
+      <div class="autor-narrow">
+        <span class="kicker">Antes das palavras, o lápis</span>
+        <p>Desenho desde muito antes de escrever meu primeiro livro.</p>
+        <p>Retratos. Animais. Personagens. Lugares.</p>
+        <p>Uma árvore agarrada a uma ilha flutuante.</p>
+        <p>Um rosto que ainda não tinha nome.</p>
+        <p>A cara de uma cocker que eu conhecia de cor.</p>
+        <p>Às vezes o desenho vira história.</p>
+        <p>Outras vezes, é a história que precisa do desenho para eu descobrir como ela é.</p>
+        <p>Também componho.</p>
+        <p>Talvez seja tudo parte da mesma coisa: encontrar uma forma de transformar algo que existe na cabeça em alguma coisa que outra pessoa possa ver, ouvir ou imaginar.</p>
+      </div>
+    </section>
+
+    <section class="autor-sec">
+      <div class="autor-wrap autor-split autor-split--retrato">
+        <div class="autor-fotos">
+          <figure class="autor-photo"><img src="/autor/dragon.jpg" alt="Alex Jr. Kich e a filha diante da cápsula Dragon da SpaceX" width="450" height="1000" loading="lazy" /></figure>
+          <figure class="autor-retrato"><img src="/autor/retrato-pb.jpg" alt="Retrato em preto e branco de Alex Jr. Kich, de óculos" width="619" height="619" loading="lazy" /></figure>
+        </div>
+        <div>
+          <span class="kicker">Como eu escrevo</span>
+          <p>Sempre me interessei por sistemas.</p>
+          <p>Regras, padrões, estruturas que deveriam funcionar de determinado modo.</p>
+          <p>Principalmente quando funcionam exatamente como deveriam e, ainda assim, alguma coisa dá errado.</p>
+          <p>Essa pergunta aparece de formas diferentes no que escrevo:</p>
+          <p class="autor-cite">o que acontece quando o sistema funciona perfeitamente, mas o resultado está errado?</p>
+          <p>Em SINAL/RUÍDO, existe informação de sobra e nenhuma garantia de significado.</p>
+          <p>Nas Crônicas Cosmológicas, os registros podem estar corretos e ainda assim descrever uma realidade impossível.</p>
+          <p>Em VALANDOR, conhecer as regras de um poder não diz quando ele deve ser usado.</p>
+          <p>Mas não começo pelas regras.</p>
+          <p>Começo procurando alguém que será atingido por elas.</p>
+          <p>O mistério precisa ser compreensível, mas não precisa desaparecer.</p>
+          <p>Uma resposta pode esclarecer alguma coisa sem transformar o desconhecido num manual de instruções.</p>
+          <p>E personagem não existe para explicar o mundo ao leitor.</p>
+          <p>Precisa querer alguma coisa. Errar. Ter medo. Proteger alguém. Fazer perguntas inconvenientes. Rir na hora errada.</p>
+          <p>É por isso que consigo escrever sobre um sinal vindo do espaço, um mundo de fantasia e duas meninas seguindo um mapa pelo quintal sem considerar essas histórias incompatíveis.</p>
+          <p>A escala muda.</p>
+          <p class="autor-cite autor-cite--accent">A pessoa no centro, não.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="autor-sec autor-sec--alt">
+      <div class="autor-narrow">
+        <span class="kicker">Livros</span>
+        <ul class="autor-status">
+          <li><strong>SINAL/RUÍDO:</strong> publicado. <a href="/livros/sinal-ruido/">Ver o livro</a></li>
+          <li><strong>VALANDOR · O Que o Rio Esqueceu:</strong> edição em inglês disponível como <em>What the River Forgot</em>. Nova edição em português em desenvolvimento.</li>
+          <li><strong>Duas Irmãs e Oito Patas · O Mapa Debaixo da Cama:</strong> publicado. <a href="${AMAZON_DUAS_IRMAS}" target="_blank" rel="noopener">Comprar na Amazon</a></li>
+          <li><strong>Crônicas Cosmológicas:</strong> coleção em desenvolvimento. O Livro I, <a href="/livros/os-deuses-nao-tem-filhos/">Os Deuses Não Têm Filhos</a>, já está à venda.</li>
+        </ul>
+        <p><a class="btn btn--primary" href="/#livros">Ver todos os livros</a> <a class="btn" href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a> <a class="btn" href="/imprensa/">Imprensa</a></p>
+      </div>
+    </section>`;
+  write("/autor", page({
+    title: "Alex Jr. Kich",
+    description: "Alex Jr. Kich, escritor, artista e criador de mundos. Autor de SINAL/RUÍDO, das Crônicas Cosmológicas, de VALANDOR e de Duas Irmãs e Oito Patas.",
+    path: "/autor/",
+    bodyHtml: body,
+    ogImage: "/autor/hero-bandeira.jpg",
+    extraHead: `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" />`,
+  }));
+}
+
 function imprensaPage() {
   const body = `
     <section class="section container--narrow">
@@ -1467,7 +1728,32 @@ function imprensaPage() {
         <div class="paper" style="padding:24px"><span class="kicker">Livro</span><h2 style="margin-top:10px">SINAL/RUÍDO</h2><p style="margin-top:8px">Romance adulto de ficção científica e investigação. Autor exibido editorialmente: Alex Jr. Kich.</p></div>
       </div>
 
-      <div class="paper" style="margin-top:24px;padding:24px"><h2>Materiais</h2><p style="margin-top:8px">A capa pública atual permanece disponível na área do livro. Bio final, ficha bibliográfica, ISBN, imagens autorizadas para imprensa e contato profissional devem ser homologados antes do lançamento.</p><p class="mono" style="margin-top:12px;color:var(--paper-muted)">SEM FORMULÁRIO · SEM CAPTAÇÃO DE DADOS PESSOAIS NESTA FASE</p></div>
+      <div class="paper" style="margin-top:24px;padding:24px">
+        <h2>Sobre o autor</h2>
+        <h3 style="margin-top:14px">Bio curta</h3>
+        <p style="margin-top:6px">Alex Jr. Kich é escritor e artista no Rio Grande do Sul. Desenha, compõe e escreve ficção científica, fantasia e literatura infantil. É autor de SINAL/RUÍDO, do universo VALANDOR e de Duas Irmãs e Oito Patas, série escrita para as filhas.</p>
+        <h3 style="margin-top:14px">Bio longa</h3>
+        <p style="margin-top:6px">Alex Jr. Kich é escritor, artista e criador de mundos. É autor de SINAL/RUÍDO, romance que parte do sinal Wow!, de 1977, e origem das Crônicas Cosmológicas, coleção de dez romances ligados pelo mistério do Arquivo. Criou VALANDOR, trilogia de fantasia cujo primeiro volume, O Que o Rio Esqueceu, já tem edição em inglês. Na literatura infantil, escreve Duas Irmãs e Oito Patas, protagonizada pelas filhas e pelos cães da família, cujo Livro 1, O Mapa Debaixo da Cama, já está à venda na Amazon. Também desenha e compõe. Sua regra de trabalho cabe numa frase: o conceito pode ser enorme, mas o conflito precisa continuar humano.</p>
+        <h3 style="margin-top:14px">Publicações</h3>
+        <ul style="margin-top:6px;padding-left:18px">
+          <li><a href="/livros/sinal-ruido/">SINAL/RUÍDO</a>: publicado.</li>
+          <li><a href="/livros/os-deuses-nao-tem-filhos/">Crônicas Cosmológicas I · Os Deuses Não Têm Filhos</a>: à venda na Amazon.</li>
+          <li>Duas Irmãs e Oito Patas, Livro 1 · O Mapa Debaixo da Cama: <a href="https://www.amazon.com.br/dp/B0HGMMSBSX" target="_blank" rel="noopener">à venda na Amazon</a>.</li>
+          <li>VALANDOR I · O Que o Rio Esqueceu: edição em inglês na Amazon; nova edição em português em breve.</li>
+        </ul>
+      </div>
+
+      <div class="paper" style="margin-top:24px;padding:24px">
+        <h2>Imagens para imprensa</h2>
+        <p style="margin-top:8px">Uso editorial com crédito ao autor. <a href="/autor/">Página do autor</a> para o contexto completo.</p>
+        <p style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="/autor/retrato-pb.jpg" download>Retrato P&amp;B</a>
+          <a class="btn" href="/autor/hero-bandeira.jpg" download>Foto com a bandeira</a>
+          <a class="btn" href="/livro/capa.jpg" download>Capa · SINAL/RUÍDO</a>
+          <a class="btn" href="/autor/duas-irmas-capa.jpg" download>Capa · Duas Irmãs e Oito Patas</a>
+        </p>
+        <p class="mono" style="margin-top:12px;color:var(--paper-muted)">SEM FORMULÁRIO · SEM CAPTAÇÃO DE DADOS</p>
+      </div>
     </section>`;
   write("/imprensa", page({
     title: "Imprensa",
@@ -1516,7 +1802,7 @@ function buildSeoFiles() {
 // ---------------------------------------------------------------------
 // run
 // ---------------------------------------------------------------------
-["arquivo", "casos", "documentos", "colecoes", "midia", "noticias", "metodo", "correcoes", "livro", "livros", "leitores", "imprensa", "privacidade", "r", "explorar", "brinde", "buy", "en"].forEach(clean);
+["arquivo", "casos", "documentos", "colecoes", "midia", "noticias", "metodo", "correcoes", "livro", "livros", "leitores", "imprensa", "privacidade", "r", "explorar", "brinde", "buy", "en", "autor"].forEach(clean);
 
 validateI18n();
 homePage();
@@ -1547,6 +1833,7 @@ if ((bookSheetsEn["sinal-ruido"] || {}).synopsis) bookSheetPage(SINAL_RUIDO_ORIG
 bookSheetPage(books.find((b) => b.slug === "sinal-ruido"), chroniclesPt, "pt");
 leitoresPage();
 imprensaPage();
+autorPage();
 privacidadePage();
 contatoPage();
 buyPage();

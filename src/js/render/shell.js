@@ -13,6 +13,7 @@ const NAV = [
       { href: "/#cronicas", label: "Crônicas Cosmológicas I–X" },
     ],
   },
+  { href: "/autor/", label: "Autor", match: ["/autor/"] },
   {
     href: "/arquivo/", label: "Arquivo", match: ["/arquivo/", "/casos/", "/documentos/", "/colecoes/", "/midia/", "/metodo/"],
     children: [

@@ -928,3 +928,93 @@ a.book-card--cover:hover, a.book-card--cover:focus-visible { border-color: var(-
 .book-dialog__more { margin-top: 24px; }
 body:has(dialog.book-dialog[open]) { overflow: hidden; }
 .book-dialog .card p { display: block; -webkit-line-clamp: unset; overflow: visible; }
+
+/* ===== Página do autor (/autor/) ===== */
+.autor-wrap { max-width: 1100px; margin: 0 auto; }
+.autor-narrow { max-width: 640px; margin: 0 auto; }
+.autor-center { text-align: center; max-width: 760px; margin: 0 auto 28px; }
+.autor-sec { padding: clamp(56px, 9vw, 110px) 24px; }
+.autor-sec--alt { background: rgba(255,255,255,.025); }
+.autor-sec h2, .autor-creme h2 { font-family: var(--display); font-size: clamp(30px, 4.4vw, 52px); line-height: 1.05; margin: 10px 0 14px; }
+.autor-sec p, .autor-creme p { line-height: 1.7; margin-top: 14px; }
+.autor-sec .autor-narrow p, .autor-sec .autor-wrap p { color: var(--muted); }
+.autor-cite { font-size: clamp(20px, 2.6vw, 28px); line-height: 1.3 !important; color: var(--text) !important; font-family: Georgia, "Times New Roman", serif; font-style: italic; margin-top: 22px !important; }
+.autor-cite--accent { color: var(--signal) !important; }
+.autor-note { font-size: 14px; color: var(--muted); }
+.autor-hero { display: grid; grid-template-columns: 45% 55%; min-height: calc(100svh - 72px); background: var(--bg); }
+.autor-hero__text { padding: clamp(32px, 6vw, 88px); align-self: center; }
+.autor-hero__text h1 { font-family: var(--display); font-size: clamp(44px, 7vw, 92px); line-height: .98; }
+.autor-hero__lead { font-size: clamp(18px, 2vw, 24px); color: var(--signal); margin-top: 12px !important; }
+.autor-hero__text p { line-height: 1.65; margin-top: 16px; color: var(--muted); }
+.autor-hero__text .autor-cite { color: var(--text); }
+.autor-hero__photo { position: relative; overflow: hidden; }
+.autor-hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.autor-hero__photo::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, var(--bg) 0%, transparent 28%); pointer-events: none; }
+@media (max-width: 800px) {
+  .autor-hero { grid-template-columns: 1fr; min-height: 0; }
+  .autor-hero__photo { order: -1; height: 62vh; }
+  .autor-hero__photo img { object-position: 50% 12%; }
+  .autor-hero__photo::before { background: linear-gradient(0deg, var(--bg) 0%, transparent 32%); }
+}
+.autor-split { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 820px) { .autor-split { grid-template-columns: 340px 1fr; gap: 56px; } .autor-split--cover { grid-template-columns: 1fr 340px; } .autor-split--retrato { grid-template-columns: 260px 1fr; } }
+.autor-photo img, .autor-retrato img { width: 100%; height: auto; display: block; border-radius: 14px; }
+.autor-retrato img { border-radius: 10px; filter: grayscale(1); }
+.autor-cover img { width: 100%; max-width: 340px; height: auto; display: block; margin: 0 auto; border-radius: 6px; box-shadow: 0 24px 60px rgba(0,0,0,.6); }
+.autor-sr { background: linear-gradient(rgba(8,10,16,.9), rgba(8,10,16,.9)), url(/autor/exposicao-azul.jpg) center / cover no-repeat; }
+.autor-cron-sec { background: radial-gradient(1px 1px at 12% 20%, rgba(255,255,255,.7), transparent), radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,.5), transparent), radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,.5), transparent), #0a1226; background-size: 320px 320px, 320px 320px, 320px 320px, auto; }
+.autor-cron-grid { display: grid; gap: 14px; margin-top: 28px; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .autor-cron-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .autor-cron-grid { grid-template-columns: repeat(5, 1fr); } }
+.autor-cron { display: grid; gap: 8px; align-content: start; padding: 18px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: rgba(255,255,255,.03); color: inherit; }
+.autor-cron:hover { border-color: #d4a84b; }
+.autor-cron__num { font-family: var(--display); font-size: 44px; line-height: 1; color: #d4a84b; }
+.autor-cron strong { font-size: 15px; line-height: 1.2; }
+.autor-cron > span:last-child { font-size: 13px; line-height: 1.5; color: var(--muted); }
+.autor-vol-grid { display: grid; gap: 16px; margin-top: 28px; }
+@media (min-width: 900px) { .autor-vol-grid { grid-template-columns: 1.6fr 1fr 1fr; } }
+.autor-vol { padding: 20px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; }
+.autor-vol--main { border-color: var(--signal); }
+.autor-vol h3 { font-family: var(--display); font-size: 24px; margin-top: 6px; }
+.autor-vol--main h3 { font-size: 30px; }
+.autor-creme { background: #f4ecd8; color: #3b2a1e; padding: clamp(56px, 9vw, 110px) 24px; }
+.autor-creme .kicker { color: #8a5a2b; }
+.autor-creme h3 { font-family: var(--display); font-size: 26px; margin-top: 26px; }
+.autor-creme .autor-cite { color: #3b2a1e !important; }
+.autor-creme__top { display: flex; gap: 28px; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 40px; }
+.autor-creme__capa { width: min(300px, 44%); height: auto; border-radius: 6px; box-shadow: 0 14px 34px rgba(59,42,30,.35); }
+.autor-creme__ombros { width: min(260px, 40%); height: auto; padding: 10px 10px 34px; background: #fffdf6; box-shadow: 0 12px 28px rgba(59,42,30,.3); transform: rotate(3deg); }
+.autor-creme .buy-link { background: #fffaf0; border-color: #c9b48a; color: #3b2a1e; }
+.autor-creme .buy-link__format, .autor-creme .buy-link:hover .buy-link__arrow { color: #b4501c; }
+.autor-creme .buy-link__arrow, .autor-creme .buy-link__icon { color: #8a5a2b; }
+.autor-buy { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-top: 18px; }
+.autor-buy .buy-link { min-width: 220px; }
+.autor-buy__label { font-size: 14px; color: #5a4230; }
+.autor-faixa { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 44px auto 0; max-width: 900px; }
+.autor-faixa img { width: 100%; height: 100%; max-height: 520px; object-fit: cover; border-radius: 10px; box-shadow: 0 10px 26px rgba(59,42,30,.28); }
+.autor-fichas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 36px; }
+@media (min-width: 820px) { .autor-fichas { grid-template-columns: repeat(4, 1fr); } }
+.autor-ficha { margin: 0; text-align: center; }
+.autor-ficha img { width: 100%; height: auto; border-radius: 8px; display: block; }
+.autor-ficha figcaption { font-family: "Caveat", "Segoe Script", "Bradley Hand", cursive; font-size: 30px; margin-top: 6px; color: #5a3a1e; }
+.autor-start { display: grid; gap: 18px; margin-top: 22px; }
+@media (min-width: 720px) { .autor-start { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .autor-start { grid-template-columns: repeat(4, 1fr); } }
+.autor-start article { display: grid; gap: 12px; align-content: start; padding: 16px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; }
+.autor-start p { margin: 0 !important; font-size: 15px; }
+.autor-start .btn { justify-self: start; }
+.autor-start__cover img { width: 100%; max-width: 200px; height: auto; display: block; margin: 0 auto; border-radius: 6px; }
+.autor-start__typo { display: grid; place-content: center; text-align: center; aspect-ratio: 2 / 3; max-width: 200px; margin: 0 auto; width: 100%; border: 1px solid #d4a84b; border-radius: 6px; background: #0a1226; color: inherit; }
+.autor-start__typo span { font-family: var(--display); font-size: 48px; color: #d4a84b; }
+.autor-start__typo em { font-style: normal; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.autor-status { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; }
+.autor-status li { line-height: 1.6; color: var(--muted); }
+.autor-status strong { color: var(--text); }
+.autor-fecho { min-height: 70vh; display: grid; place-content: center; padding: 60px 24px; text-align: center; background-size: cover; background-position: center 30%; position: relative; }
+.autor-fecho::before { content: ""; position: absolute; inset: 0; background: rgba(11,14,20,.82); }
+.autor-fecho p { position: relative; margin: 0; max-width: 18ch; font-family: Georgia, "Times New Roman", serif; font-size: clamp(30px, 5.4vw, 64px); line-height: 1.15; color: #fff2e0; }
+.autor-line { margin-top: 4px !important; }
+.autor-fotos { display: grid; gap: 22px; align-content: start; }
+.autor-fotos .autor-retrato img { max-width: 220px; }
+.autor-start__kicker { color: var(--signal); }
+.autor-start h3 { font-family: var(--display); font-size: 24px; line-height: 1.1; }
