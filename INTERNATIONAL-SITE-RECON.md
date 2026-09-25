@@ -665,3 +665,7 @@ O autor declarou que a amostra em inglês do site está correta e pode ser publi
 | GitHub Pages do `site-sinal` | Não estava ativo (`kichalex33-ops.github.io/site-sinal/` responde 404) |
 | EPUB de cortesia desatualizado | Regenerado a partir de `SINAL_RUIDO_1EDICAO_FINAL.docx` (38 capítulos, 237 parágrafos atualizados, 505.795 bytes). Reaproveita capa, CSS, sumário e páginas iniciais do EPUB anterior. Cópia em `sinal final/SINAL_RUIDO_cortesia_1edicao_final.epub` e no endereço secreto da cortesia. Sem validador epubcheck disponível: verificados XML bem formado, `mimetype` sem compressão, mesmas 53 entradas e `testzip` limpo. Recomenda-se abrir em um leitor antes de divulgar |
 | Repo do worker | Commit `d7872ff` enviado ao `SINAL-RUIDO` (main); dispara o build automático do Cloudflare com o mesmo código já publicado |
+
+## S. Capa do volume VI (2026-09-25)
+
+A capa de "Antes de Nascermos" parecia apagada: o preto estava levantado (mediana de luminosidade 18, contra 0 nas capas V, VII e outras) e os brancos eram mais fracos (95º percentil 138, contra 155 a 175). A cópia do site era idêntica ao original (`sinal final/todas as capas e contracapas/13.png`), então o efeito vem da própria arte. Aplicada correção de níveis (ponto preto 17, ponto branco 200) só em `public/livros/antes-de-nascermos.jpg`; o desenho não mudou. O original permanece intacto. O título continua mais fino e espaçado que nos outros volumes, o que só se corrige na arte. A mesma correção vale para a versão de impressão/KDP, se usarem o mesmo arquivo.
