@@ -10,9 +10,8 @@
 - nova página `/livros/` para o projeto literário;
 - QR Pix de apoio integrado à Home e ao livro sem bloquear conteúdo;
 - `/livro/amostra/` preparado para até 3 capítulos consecutivos, com navegação, tamanho de fonte, modo de leitura e retomada via `localStorage`;
-- comentários por capítulo com moderação prévia;
-- Cloudflare Pages Function `/api/comments`, D1 e Turnstile preparados;
-- página `/privacidade/` criada para a nova coleta opcional da área literária.
+- (removido em 25/09/2026) comentários, Function `/api/comments`, D1 e Turnstile: ver README e CLAUDE-HANDOFF;
+- página `/privacidade/` criada e mantida.
 
 ## Regra editorial preservada
 

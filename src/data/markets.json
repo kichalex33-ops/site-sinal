@@ -1,0 +1,17 @@
+{
+  "_nota": "Mercado (loja) e idioma sao coisas diferentes: um mercado tem um idioma padrao, mas o visitante pode trocar. 'editions' lista SOMENTE edicoes com link conhecido; nunca exibir uma edicao que nao esteja aqui. 'localeFallback: true' = nao existe locale dedicado ao mercado; o idioma padrao e uma proposta a confirmar pelo autor.",
+  "markets": {
+    "US": { "name": "United States", "amazonDomain": "amazon.com", "defaultLocale": "en-US", "editions": ["kindle", "paperback", "hardcover"] },
+    "UK": { "name": "United Kingdom", "amazonDomain": "amazon.co.uk", "defaultLocale": "en-GB", "editions": ["kindle", "paperback", "hardcover"] },
+    "DE": { "name": "Deutschland", "amazonDomain": "amazon.de", "defaultLocale": "de", "editions": ["kindle", "paperback", "hardcover"] },
+    "FR": { "name": "France", "amazonDomain": "amazon.fr", "defaultLocale": "fr", "editions": ["kindle", "paperback", "hardcover"] },
+    "ES": { "name": "España", "amazonDomain": "amazon.es", "defaultLocale": "es", "editions": ["kindle", "paperback", "hardcover"] },
+    "IT": { "name": "Italia", "amazonDomain": "amazon.it", "defaultLocale": "it", "editions": ["kindle", "paperback", "hardcover"] },
+    "NL": { "name": "Nederland", "amazonDomain": "amazon.nl", "defaultLocale": "en-GB", "localeFallback": true, "editions": ["kindle", "paperback", "hardcover"] },
+    "JP": { "name": "日本 (Japan)", "amazonDomain": "amazon.co.jp", "defaultLocale": "en-US", "localeFallback": true, "editions": ["kindle", "paperback"] },
+    "CA": { "name": "Canada", "amazonDomain": "amazon.ca", "defaultLocale": "en-US", "localeFallback": true, "editions": ["kindle", "paperback"] },
+    "MX": { "name": "México", "amazonDomain": "amazon.com.mx", "defaultLocale": "es", "editions": ["kindle"] },
+    "AU": { "name": "Australia", "amazonDomain": "amazon.com.au", "defaultLocale": "en-GB", "localeFallback": true, "editions": ["kindle", "paperback"] },
+    "IN": { "name": "India", "amazonDomain": "amazon.in", "defaultLocale": "en-GB", "localeFallback": true, "editions": ["kindle"] }
+  }
+}

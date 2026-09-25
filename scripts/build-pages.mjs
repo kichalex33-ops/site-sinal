@@ -4,6 +4,7 @@ import { dirname, join } from "node:path";
 import { page } from "../src/js/render/shell.js";
 import { caseCard, collectionCard, mediaCard } from "../src/js/render/cards.js";
 import { editorialBadge, maturityBadge, provenanceBadge, integrityBadge, escapeHtml } from "../src/js/render/badges.js";
+import { marketList, buyLinks, buyData, validateI18n } from "./i18n.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -83,7 +84,7 @@ function buyPanel(book) {
   const en = [
     link(book.purchaseUrlEn, "Ebook", "Amazon US"),
     link(book.purchaseUrlEnBr, "Ebook", "Amazon BR"),
-    link(book.purchaseUrlEnUk, "Ebook", "Amazon UK"),
+    link(book.purchaseUrlEnUk, "Paperback", "Amazon UK"),
   ].join("");
   return `<div class="buy-panel">
     ${pt ? `<div class="buy-group"><span class="buy-group__title">Português</span><div class="buy-group__links">${pt}</div></div>` : `<span class="btn btn--disabled" aria-disabled="true">Comprar · EM BREVE</span>`}
@@ -965,6 +966,97 @@ function contatoPage() {
 }
 
 // ---------------------------------------------------------------------
+// /brinde — porta de entrada pública para quem vem do Instagram (o bot do
+// @sinal_ruido envia este link). Não é a /cortesia/, que é privada e noindex.
+// Sem formulário e sem download de EPUB.
+// ---------------------------------------------------------------------
+function brindePage() {
+  const book = books.find((b) => b.slug === "sinal-ruido") || books[0];
+  const body = `
+    <section class="section container--narrow">
+      <span class="kicker">Bem-vindo ao sinal</span>
+      <h1 style="margin-top:12px">Obrigado por participar.</h1>
+      <p style="margin-top:8px;color:var(--muted);max-width:60ch">Você chegou pelo Instagram do <strong>SINAL/RUÍDO</strong>, o romance de ${escapeHtml(book.author)}. Esta página é a porta de entrada: comece pela amostra gratuita ou conheça o livro e as Crônicas Cosmológicas.</p>
+
+      <div class="grid grid--2" style="margin-top:28px">
+        <div class="paper" style="padding:24px"><span class="kicker">Comece por aqui</span><h2 style="margin-top:10px">Leia a amostra</h2><p style="margin-top:8px">Os três primeiros capítulos, gratuitos, direto no navegador.</p><p style="margin-top:12px"><a class="btn btn--primary" href="/livro/amostra/">Ler a amostra</a></p></div>
+        <div class="paper" style="padding:24px"><span class="kicker">O livro</span><h2 style="margin-top:10px">Conheça SINAL/RUÍDO</h2><p style="margin-top:8px">Sinopse e informações do romance.</p><p style="margin-top:12px"><a class="btn" href="/livro/">Conhecer o livro</a></p></div>
+        <div class="paper" style="padding:24px"><span class="kicker">O universo</span><h2 style="margin-top:10px">Crônicas Cosmológicas</h2><p style="margin-top:8px">Os livros que compõem as Crônicas Cosmológicas.</p><p style="margin-top:12px"><a class="btn" href="/livros/#cronicas">Ver as Crônicas</a></p></div>
+        <div class="paper" style="padding:24px"><span class="kicker">Instagram</span><h2 style="margin-top:10px">@sinal_ruido</h2><p style="margin-top:8px">Acompanhe o projeto e as novas publicações.</p><p style="margin-top:12px"><a class="btn" href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Abrir o Instagram</a></p></div>
+      </div>
+    </section>
+
+    <section class="section section--divider container--narrow">
+      <span class="kicker">Onde comprar</span>
+      <div style="margin-top:16px">${buyPanel(book)}</div>
+    </section>`;
+  write("/brinde", page({
+    title: "Brinde",
+    description: "Porta de entrada do SINAL/RUÍDO: leia a amostra gratuita, conheça o livro e as Crônicas Cosmológicas.",
+    path: "/brinde/",
+    bodyHtml: body,
+    ogImage: "/livro/capa.jpg",
+  }));
+}
+
+// ---------------------------------------------------------------------
+// 404.html — sem ela o Cloudflare Pages trata o site como SPA e devolve a home com
+// status 200 para qualquer endereço inexistente. Fica fora das rotas e do sitemap.
+// ---------------------------------------------------------------------
+function notFoundPage() {
+  const body = `
+    <section class="section container--narrow">
+      <span class="kicker">Erro 404</span>
+      <h1 style="margin-top:12px">Página não encontrada.</h1>
+      <p style="margin-top:8px;color:var(--muted);max-width:60ch">O endereço não existe ou mudou de lugar. Comece por aqui:</p>
+      <p style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--primary" href="/">Início</a><a class="btn" href="/livro/amostra/">Ler a amostra</a><a class="btn" href="/arquivo/">Arquivo</a></p>
+    </section>`;
+  writeFileSync(join(root, "404.html"), page({
+    title: "Página não encontrada",
+    description: "A página procurada não existe ou mudou de lugar.",
+    path: "/404.html",
+    bodyHtml: body,
+    robots: "noindex,follow",
+  }));
+}
+
+// ---------------------------------------------------------------------
+// /buy — roteador de compra por mercado (dados em src/data/markets.json e buy.json).
+// Só exibe edições com link conhecido. Fica noindex e fora do sitemap até a versão
+// global ser validada. Sem capa: a capa internacional ainda não foi homologada.
+// ---------------------------------------------------------------------
+function buyPage() {
+  const markets = marketList();
+  const chips = markets.map((m) => `<a class="buy-chip" href="#${m.code.toLowerCase()}" data-market-chip="${m.code}">${escapeHtml(m.name)}</a>`).join("");
+  const sections = markets.map((m) => {
+    const links = buyLinks(m.code).map((l) => `<a class="buy-link" href="${escapeHtml(l.url)}" target="_blank" rel="noopener"><span class="buy-link__format">${escapeHtml(l.label)}</span><span class="buy-link__store">Amazon ${escapeHtml(m.code)}</span><span class="buy-link__arrow" aria-hidden="true">↗</span></a>`).join("");
+    return `<section class="buy-market" id="${m.code.toLowerCase()}" data-market="${m.code}">
+        <h2>${escapeHtml(m.name)} <span class="mono buy-market__flag" data-suggested-label hidden>Suggested for you</span></h2>
+        <div class="buy-group__links">${links}</div>
+      </section>`;
+  }).join("");
+  const body = `
+    <section class="section container--narrow" data-buy-router>
+      <span class="kicker">Get the book</span>
+      <h1 style="margin-top:12px">${escapeHtml(buyData.title)}</h1>
+      <p style="margin-top:8px;color:var(--muted);max-width:60ch">Choose your region, then your edition. Links open Amazon in a new tab.</p>
+      <nav class="buy-chips" aria-label="Choose your region">${chips}</nav>
+      ${sections}
+      <p class="mono" style="margin-top:28px;color:var(--muted)">Reading in Portuguese? See the <a href="/livro/">Portuguese edition</a>.</p>
+    </section>`;
+  write("/buy", page({
+    title: "Get SIGNAL/NOISE",
+    description: "Choose your region and edition of SIGNAL/NOISE by Alex Jr. Kich.",
+    path: "/buy/",
+    bodyHtml: body,
+    robots: "noindex,follow",
+    lang: "en",
+    ogLocale: "en_US",
+    minimal: true,
+  }));
+}
+
+// ---------------------------------------------------------------------
 
 // ---------------------------------------------------------------------
 // /leitores
@@ -1168,7 +1260,7 @@ function buildSearchIndex() {
 function buildSeoFiles() {
   // Rotas de campanha são redirects. A amostra literária permanece fora do sitemap
   // enquanto o texto final não tiver sido inserido e homologado.
-  const canonicalRoutes = routes.filter((r) => !r.startsWith("/r/") && !r.startsWith("/cortesia/") && r !== "/livro/amostra/");
+  const canonicalRoutes = routes.filter((r) => !r.startsWith("/r/") && !r.startsWith("/cortesia/") && r !== "/livro/amostra/" && r !== "/buy/");
   const urlset = canonicalRoutes
     .map((r) => `  <url><loc>${SITE_URL}${r}</loc></url>`)
     .join("\n");
@@ -1186,8 +1278,9 @@ function buildSeoFiles() {
 // ---------------------------------------------------------------------
 // run
 // ---------------------------------------------------------------------
-["arquivo", "casos", "documentos", "colecoes", "midia", "noticias", "metodo", "correcoes", "livro", "livros", "leitores", "imprensa", "privacidade", "r", "explorar"].forEach(clean);
+["arquivo", "casos", "documentos", "colecoes", "midia", "noticias", "metodo", "correcoes", "livro", "livros", "leitores", "imprensa", "privacidade", "r", "explorar", "brinde", "buy"].forEach(clean);
 
+validateI18n();
 homePage();
 arquivoPage();
 casosPage();
@@ -1212,6 +1305,9 @@ leitoresPage();
 imprensaPage();
 privacidadePage();
 contatoPage();
+brindePage();
+buyPage();
+notFoundPage();
 ["livro", "bunkerx", "cienciatododia", "spacetoday"].forEach(campanhaRedirect);
 buildSearchIndex();
 buildSeoFiles();

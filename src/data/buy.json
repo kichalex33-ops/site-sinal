@@ -1,0 +1,14 @@
+{
+  "title": "SIGNAL/NOISE",
+  "asins": {
+    "kindle": "B0HJP3HM7J",
+    "paperback": "B0HJQQBS8Q",
+    "hardcover": "B0HJTSWF6J"
+  },
+  "editions": {
+    "kindle": "Kindle",
+    "paperback": "Paperback",
+    "hardcover": "Hardcover"
+  },
+  "editionOrder": ["kindle", "paperback", "hardcover"]
+}

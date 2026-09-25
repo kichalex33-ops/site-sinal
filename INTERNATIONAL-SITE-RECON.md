@@ -471,3 +471,86 @@ Pendências criadas por essa limpeza:
 1. **Instagram bot aponta para `/brinde/`** (`SINALRUIDOsocial/cf-worker/src/index.ts:143`: "Seu brinde está aqui: https://sinalruido.com.br/brinde/"). A página `/brinde/` foi removida do site (checkpoint 2). Se o site for publicado assim, quem comentar "Sinal" recebe um link 404.
 2. O backend de comentários continua no repositório e seria publicado: `functions/api/comments.js`, `comments-config.js`, `schema/comments.sql`, `COMMENTS-CLOUDFLARE.md`. Só a interface foi removida.
 3. Sem e-mail público de contato: `/contato/` usa Instagram e Imprensa. Quando o autor definir um e-mail, entra como link `mailto:`.
+
+## L. Execução 2026-09-25: /brinde/, legado de comentários, fundação de idiomas e /buy/
+
+Nada foi publicado e nada foi enviado ao GitHub. O commit `7562d9d` foi preservado; a faxina está em `62ca177` (tag `pre-faxina` = `7562d9d`). Os quatro arquivos de "A Última Testemunha" (`SINAL_RUIDO_A_ULTIMA_TESTEMUNHA_.epub`, `capa_epub_a_ultima_testemunha.jpg`, `public/livro/a-ultima-testemunha.epub`, `public/livro/capa-a-ultima-testemunha.jpg`) continuam fora dos commits e não foram tocados. Eram quatro, não dois.
+
+### L.1 /brinde/ (recriada)
+| Item | Situação |
+|---|---|
+| Rota | `/brinde/`, gerada por `brindePage()` em `scripts/build-pages.mjs`; volta ao sitemap |
+| Bot do Instagram | `SINALRUIDOsocial/cf-worker/src/index.ts:143` continua apontando para `https://sinalruido.com.br/brinde/`; o link volta a resolver quando o site for publicado |
+| Conteúdo | Boas-vindas curtas, amostra (`/livro/amostra/`), livro (`/livro/`), Crônicas (`/livros/#cronicas`), Instagram e "Onde comprar" (reusa `buyPanel`, mesma fonte de links do resto do site) |
+| Não tem | Formulário, EPUB, benefício inventado. Não redireciona para `/cortesia/` |
+| Diferença para a cortesia | `/brinde/` é público e indexável; `/cortesia/` segue noindex, fora do sitemap, sem link público |
+
+### L.2 Legado de comentários
+Auditoria (fontes, exceto `node_modules`, `dist`, histórico do git):
+| Item | Resultado |
+|---|---|
+| `functions/api/comments.js`, `schema/comments.sql`, `public/comments-config.js`, `COMMENTS-CLOUDFLARE.md`, `src/js/comments.js`, `src/js/home-comments.js` | Sem imports nem referências ativas; **removidos** no commit `62ca177` |
+| `functions/` hoje | Só `_middleware.js` (troca de capa por país) e `oauth/callback.js` (repassa o `code` do OAuth do Instagram para `localhost:8787`). Nenhum tem relação com comentários; **preservados** |
+| CSS órfão (`.reader-comment*`, `.comment-form*`, `.comment-honeypot`, `.comment-muted`, `.home-comments__list`) | **Removido** (20 linhas). As classes `.home-comments-support*` ficam: pertencem ao bloco do Pix |
+| Documentos históricos que ainda citam comentários (`AUDITORIA-PUBLICACAO-DIGITAL`, `HOME-PUBLICACAO-RELATORIO`, `HOME-REDESIGN-PLANO`, `PLANO-IMPLEMENTACAO-PUBLICACAO`, `PRE-PRODUCAO-RELATORIO`) | Mantidos como registro histórico. `IMPLEMENTADO-DINAMICO.md` foi corrigido |
+| Web3Forms, Turnstile, formulários antigos | Nenhuma referência no `dist/` (todas as páginas e assets) |
+| Pasta local `SINAL_RUIDO_WEB_DINAMICO_COMENTARIOS/` | O git já a removeu (139 arquivos); ficou a pasta no disco com resíduos não rastreados. A inspeção foi bloqueada pelo sistema; não foi lida nem removida. Decisão do autor |
+| D1 e cron | Nenhum binding, cron, migration ou `wrangler.toml` neste projeto referencia a tabela de comentários. Se existir tabela no D1 remoto do Cloudflare, ela não é gerida por este repositório |
+
+### L.3 /contato/ e privacidade
+- `/contato/`: sem formulário; só Instagram `@sinal_ruido` e Imprensa. Nenhum e-mail inventado.
+- Privacidade: sem mudança além da rodada anterior. Nenhum resíduo de Web3Forms, comentários ou Turnstile no HTML gerado.
+
+### L.4 Fundação de idiomas (locale != mercado)
+Nenhuma tradução, nenhuma página vazia. Locale com status `planned` não gera rota.
+
+| Arquivo (novo) | Função |
+|---|---|
+| `src/data/locales.json` | pt-BR (live), en-US, en-GB, es, fr, it, de (planned), cada um com `htmlLang`, `ogLocale`, `path`, `status` |
+| `src/data/markets.json` | 12 mercados (US, UK, DE, FR, ES, IT, NL, JP, CA, MX, AU, IN) com domínio Amazon, locale padrão e edições com link conhecido |
+| `src/data/buy.json` | ASINs e rótulos das edições: Kindle `B0HJP3HM7J`, Paperback `B0HJQQBS8Q`, Hardcover `B0HJTSWF6J` |
+| `scripts/i18n.mjs` | `buyLinks()`, `hreflangAlternates()`, `localeForMarket()`, `validateI18n()`; o build falha se houver ASIN inválido, edição sem ASIN ou locale inexistente |
+
+Alteração em `src/js/render/shell.js`: `page()` ganhou `lang`, `ogLocale`, `alternates` (hreflang) e `minimal`. Com os valores padrão, **as 96 páginas atuais saem idênticas byte a byte** (confirmado: só mudaram `index.html` e `livro/index.html`, pela correção L.6).
+
+Escolhas que dependem do autor (marcadas com `localeFallback: true` em `markets.json`): NL, JP, CA, AU e IN não têm locale dedicado; o padrão proposto é en-GB (NL, AU, IN) e en-US (JP, CA). O path de en-GB (`/en-gb/`) também é proposta; o brief só definia `/en/`.
+
+### L.5 /buy/
+| Item | Situação |
+|---|---|
+| Rota | `/buy/`, `buyPage()`; dados de `markets.json` e `buy.json` |
+| Estrutura | Chips de região (âncoras) + uma seção por mercado com as edições disponíveis; funciona sem JavaScript |
+| JS | `src/js/buy-router.js` (~20 linhas): destaca o mercado sugerido por `?market=xx` ou pela região do idioma do navegador. Não grava nem envia nada |
+| Links | 29 links; o HTML gerado bate exatamente com a lista fornecida pelo autor. Edição sem link conhecido não aparece (JP/CA/AU sem Hardcover; MX/IN só Kindle) |
+| Indexação | `noindex,follow` e fora do sitemap até a versão global ser validada |
+| Casca | `minimal: true` (cabeçalho e rodapé enxutos, `lang="en"`), sem capa: a capa internacional ainda não foi homologada |
+| Brasil | Não há mercado BR aqui (a lista do autor não tem); há um link para a edição em português (`/livro/`) |
+
+### L.6 Correção encontrada: rótulo do link da Amazon UK
+O link `amazon.co.uk/dp/B0HJQQBS8Q` aparecia como "Ebook". Pelo mapa do autor, `B0HJQQBS8Q` é Paperback. Rótulo corrigido em `buyPanel()`; afeta `index.html` e `livro/index.html`. O link em si não mudou.
+
+### L.7 Achado extra: o site não tinha página 404
+No Cloudflare Pages, sem `404.html` o projeto é tratado como SPA e todo endereço inexistente devolve a home com status 200. Isso escondia links quebrados (por exemplo o `/brinde/` removido) e é ruim para SEO. Foi criada `404.html` (gerada por `notFoundPage()`, `noindex`, fora do sitemap) e o `vite.config.js` passou a incluí-la no build. Reversível: apagar a função e a linha do glob.
+
+### L.8 Build e verificações (`npm run build`, saída 0, sem erros)
+| Verificação | Resultado |
+|---|---|
+| Páginas em `dist/` | 98 (`index.html`) + `404.html` |
+| 404 | `dist/404.html` existe, `noindex`, conteúdo correto |
+| /brinde/ | Existe; título "Brinde · SINAL/RUÍDO"; link para a amostra; sem formulário, sem EPUB, sem `/cortesia`; no sitemap |
+| /buy/ | Existe; `lang="en"`; `noindex`; 29 links Amazon únicos; fora do sitemap |
+| Comentários | 0 ocorrências de `comment-form`, `data-comments`, `/api/comments`, `comments-config` no `dist/` |
+| Web3Forms / Turnstile | 0 ocorrências |
+| Backend de comentários exposto | Não: `dist/` sem `api/comments`; `functions/` só tem `_middleware.js` e `oauth/callback.js` |
+| Regressão nas páginas PT | Só `index.html` e `livro/index.html` mudaram (rótulo Paperback) |
+
+Limite desta verificação: foi feita sobre o `dist/` local. Não foi testado o comportamento real do Cloudflare Pages (status HTTP do 404 e o `_middleware` em produção), porque nada foi publicado.
+
+### L.9 Pendências
+1. Decidir o destino da pasta residual `SINAL_RUIDO_WEB_DINAMICO_COMENTARIOS/` no disco.
+2. Confirmar locales padrão de NL, JP, CA, AU, IN e o path de en-GB.
+3. Aguardar a pasta do autor com o manuscrito de 38 capítulos, a capa e a amostra em inglês (seção K): a análise F.1 a F.3 continua a refazer.
+4. Foto do autor: apenas espaço/estrutura, ainda não criado (a página do autor faz parte da arquitetura global, próxima etapa).
+5. `/brinde/` promete "os três primeiros capítulos": vale conferir se a amostra PT alterada (`sample-chapters.json`) é a homologada v4.0.1.
+6. Os quatro arquivos de "A Última Testemunha" seguem fora dos commits.
+7. Publicação: nada foi deployado; o bot do Instagram só volta a funcionar quando o site for publicado.

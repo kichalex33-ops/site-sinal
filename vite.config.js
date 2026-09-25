@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 const root = dirname(fileURLToPath(import.meta.url));
 
 function htmlInputs() {
-  const files = globSync("**/index.html", {
+  const files = globSync(["**/index.html", "404.html"], {
     cwd: root,
     ignore: ["node_modules/**", "dist/**", ".claude/**", "SINAL_RUIDO_WEB_DINAMICO_COMENTARIOS/**"],
   });

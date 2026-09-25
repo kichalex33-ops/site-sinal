@@ -1,0 +1,12 @@
+{
+  "default": "pt-BR",
+  "locales": {
+    "pt-BR": { "label": "Português (Brasil)", "htmlLang": "pt-BR", "ogLocale": "pt_BR", "path": "/", "status": "live" },
+    "en-US": { "label": "English (US)", "htmlLang": "en-US", "ogLocale": "en_US", "path": "/en/", "status": "planned" },
+    "en-GB": { "label": "English (UK)", "htmlLang": "en-GB", "ogLocale": "en_GB", "path": "/en-gb/", "status": "planned" },
+    "es": { "label": "Español", "htmlLang": "es", "ogLocale": "es_ES", "path": "/es/", "status": "planned" },
+    "fr": { "label": "Français", "htmlLang": "fr", "ogLocale": "fr_FR", "path": "/fr/", "status": "planned" },
+    "it": { "label": "Italiano", "htmlLang": "it", "ogLocale": "it_IT", "path": "/it/", "status": "planned" },
+    "de": { "label": "Deutsch", "htmlLang": "de", "ogLocale": "de_DE", "path": "/de/", "status": "planned" }
+  }
+}
