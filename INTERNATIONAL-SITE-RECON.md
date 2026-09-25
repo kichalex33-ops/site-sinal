@@ -720,3 +720,5 @@ Arte nova em PT (`sinal final/LIVROS/1/pt.png`, "Algumas coisas não deveriam na
 - **`/imprensa/`:** bio curta, bio longa, lista de publicações (com os links) e download de imagens (retrato P&B, foto da bandeira, capas de SINAL/RUÍDO e Duas Irmãs). Sem formulário.
 - **Não implementado por falta de material ou regra:** rascunhos a lápis (a série de três desenhos não veio no zip), capa e mapas de VALANDOR, página ou link de VALANDOR (os botões "Conhecer/Entrar em VALANDOR" ficaram sem destino e foram omitidos; o cartão rola até a seção), link para ouvir músicas, campo de e-mail "Receber novidades" (contra a regra de MVP sem formulário/newsletter), seção de fecho com a frase final (não consta na segunda versão do texto).
 - **Resolução:** o retrato P&B tem 619 px e a foto da bandeira 900 px; para download em alta resolução são necessários os originais.
+
+Ajuste (2026-09-25): a pedido do autor, ficam apenas fotos em que ele aparece sozinho. Removidas as fotos com a filha (Dragon/SpaceX, filha nos ombros) e o fecho com a família. Entrou a foto dele sentado (`public/autor/sentado.jpg`) em "Como eu escrevo". Ilustrações e fichas de personagem (arte) foram mantidas.

@@ -1612,7 +1612,6 @@ function autorPage() {
       <div class="autor-wrap">
         <div class="autor-creme__top">
           <img class="autor-creme__capa" src="/autor/duas-irmas-capa.jpg" alt="Capa de Duas Irmãs e Oito Patas: Kayla, Kamila, Max e Pandora" width="636" height="900" loading="lazy" />
-          <img class="autor-creme__ombros" src="/autor/ombros.jpg" alt="Kayla gargalhando nos ombros do pai" width="677" height="900" loading="lazy" />
         </div>
         <div class="autor-narrow">
           <span class="kicker">Literatura infantil</span>
@@ -1668,7 +1667,7 @@ function autorPage() {
     <section class="autor-sec">
       <div class="autor-wrap autor-split autor-split--retrato">
         <div class="autor-fotos">
-          <figure class="autor-photo"><img src="/autor/dragon.jpg" alt="Alex Jr. Kich e a filha diante da cápsula Dragon da SpaceX" width="450" height="1000" loading="lazy" /></figure>
+          <figure class="autor-photo"><img src="/autor/sentado.jpg" alt="Alex Jr. Kich sentado, de mãos juntas, olhando para o lado" width="563" height="1000" loading="lazy" /></figure>
           <figure class="autor-retrato"><img src="/autor/retrato-pb.jpg" alt="Retrato em preto e branco de Alex Jr. Kich, de óculos" width="619" height="619" loading="lazy" /></figure>
         </div>
         <div>
