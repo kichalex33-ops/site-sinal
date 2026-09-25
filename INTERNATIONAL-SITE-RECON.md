@@ -703,3 +703,11 @@ Arte nova em PT (`sinal final/LIVROS/1/pt.png`, "Algumas coisas não deveriam na
 - **Novo efeito:** o mesmo glitch de emergir de um canto da tela, agora com a **contracapa do próprio livro**, só nas 21 páginas de livro (PT e EN), no máximo uma vez a cada 6 h por página. Nas demais páginas o efeito não roda. Respeita `prefers-reduced-motion`.
 - **Fundo sutil:** a contracapa de cada livro também aparece bem suave (opacidade 16%, esmaecendo para baixo) atrás do topo da ficha.
 - Contracapas usadas (`sinal final/LIVROS/...`): Origem `S-N/2`; I `1/4`; II `2/6`; III `3/8`; IV `4/10`; V `5/12`; VI `6/VI C`; VII `7/16`; VIII `8/19`; IX `9/21`; X `10/X1`. Convertidas em `public/livros/<slug>-verso.jpg` (800 px, ~600 KB no total).
+
+## Y. Home como vitrine e janela de sinopse (2026-09-25)
+
+- **Home = vitrine:** nova seção "Já à venda" com SINAL/RUÍDO e Os Deuses Não Têm Filhos em destaque (capa, frase, sinopse, botões de compra) e catálogo "Toda a coleção" com Origem + Crônicas I–X (e "A Primeira Morte" como outro projeto). Âncoras `#livros` e `#cronicas`. O menu "Livros" aponta para a home.
+- **`/livros/`** virou redirecionamento (meta refresh, `noindex`, canonical na home, fora do sitemap). As fichas `/livros/<slug>/` continuam.
+- **Ficha do SINAL/RUÍDO em PT:** `/livros/sinal-ruido/`, igual às dos outros livros, com o texto final enviado pelo autor (inclui "A face do Arquivo" e "Lugar dentro do universo", ocultas por padrão). `/livro/` segue como página comercial (amostra, compra, casos reais, apoio) com link para a ficha. hreflang: ficha PT ↔ `/en/signal-noise/`.
+- **Janela ao clicar no livro:** cada livro da home abre um `<dialog>` com capa, sinopse, dados (ficha, ambientação), personagens e compra, com link para a página completa. Endereço compartilhável `/#livro-<slug>`; Esc, botão × e clique no fundo fecham. Sem JavaScript, o clique segue para a ficha. Sem as seções ocultas (sem spoilers). Testado no navegador (abrir, rolar, fechar).
+- Detalhe técnico: o reset do site zera `margin`, o que descentraliza o `<dialog>`; corrigido com `margin: auto`.

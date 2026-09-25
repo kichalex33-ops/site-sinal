@@ -11,6 +11,7 @@ import "./home-motion.js";
 import "./hero-signal-line.js";
 import "./reading.js";
 import "./buy-router.js";
+import "./book-dialog.js";
 
 // Menu mobile
 const toggle = document.querySelector("[data-mobile-nav-toggle]");
