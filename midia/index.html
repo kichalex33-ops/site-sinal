@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mídia · SINAL/RUÍDO</title>
+  <title>Vídeos e imagens · SINAL/RUÍDO</title>
   <meta name="description" content="Biblioteca audiovisual do SINAL/RUÍDO, com vídeos, imagens e documentos contextualizados por fonte e proveniência." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0B0E14" />
   <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://sinalruido.com.br/midia/" />
-  <meta property="og:title" content="Mídia · SINAL/RUÍDO" />
+  <meta property="og:title" content="Vídeos e imagens · SINAL/RUÍDO" />
   <meta property="og:description" content="Biblioteca audiovisual do SINAL/RUÍDO, com vídeos, imagens e documentos contextualizados por fonte e proveniência." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sinalruido.com.br/midia/" />
@@ -40,7 +40,7 @@
         <span class="brand__sub">Romance de investigação · Alex Jr. Kich</span>
       </a>
       <nav class="main-nav" aria-label="Navegação principal">
-        <a href="/livro/amostra/">Ler</a><a href="/livro/">Livro</a><a href="/arquivo/">Arquivo</a><a href="/midia/" aria-current="page">Mídia</a><a href="/explorar/">Explorar</a><a href="/midia/sistema-solar/">Sistema Solar</a><a href="/livros/">Livros</a><a href="/contato/">Contato</a>
+        <div class="nav-group"><a href="/livro/amostra/">Ler</a><div class="nav-sub"><a href="/livro/amostra/">Amostra de SINAL/RUÍDO</a><a href="/livro/amostra/#capitulos">Capítulos</a><a href="/livro/amostra/#comentarios">Comentários</a></div></div><div class="nav-group"><a href="/livros/">Livros</a><div class="nav-sub"><a href="/livro/">SINAL/RUÍDO — Origem</a><a href="/livros/#cronicas">Crônicas Cosmológicas I–X</a></div></div><div class="nav-group"><a href="/arquivo/" aria-current="page">Arquivo</a><div class="nav-sub"><a href="/casos/">Casos reais</a><a href="/documentos/">Documentos</a><a href="/midia/#videos">Vídeos</a><a href="/midia/#imagens">Imagens</a><a href="/colecoes/">Coleções</a><a href="/metodo/">Pesquisa</a></div></div><div class="nav-group"><a href="/contato/">Contato</a><div class="nav-sub"><a href="/contato/#autor">Autor</a><a href="/imprensa/">Imprensa</a><a href="/contato/#profissional">Contato profissional</a></div></div>
       </nav>
       <div class="header-actions">
         <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener" class="social-icon-link" aria-label="SINAL/RUÍDO no Instagram">
@@ -58,7 +58,7 @@
       </div>
     </div>
     <nav class="mobile-nav container" data-mobile-nav aria-label="Navegação (compacta)">
-      <a href="/livro/amostra/">Ler</a><a href="/livro/">Livro</a><a href="/arquivo/">Arquivo</a><a href="/midia/" aria-current="page">Mídia</a><a href="/explorar/">Explorar</a><a href="/midia/sistema-solar/">Sistema Solar</a><a href="/livros/">Livros</a><a href="/contato/">Contato</a>
+      <a href="/livro/amostra/">Ler</a><div class="mobile-sub"><a href="/livro/amostra/">Amostra de SINAL/RUÍDO</a><a href="/livro/amostra/#capitulos">Capítulos</a><a href="/livro/amostra/#comentarios">Comentários</a></div><a href="/livros/">Livros</a><div class="mobile-sub"><a href="/livro/">SINAL/RUÍDO — Origem</a><a href="/livros/#cronicas">Crônicas Cosmológicas I–X</a></div><a href="/arquivo/" aria-current="page">Arquivo</a><div class="mobile-sub"><a href="/casos/">Casos reais</a><a href="/documentos/">Documentos</a><a href="/midia/#videos">Vídeos</a><a href="/midia/#imagens">Imagens</a><a href="/colecoes/">Coleções</a><a href="/metodo/">Pesquisa</a></div><a href="/contato/">Contato</a><div class="mobile-sub"><a href="/contato/#autor">Autor</a><a href="/imprensa/">Imprensa</a><a href="/contato/#profissional">Contato profissional</a></div>
     </nav>
   </header>
 
@@ -66,7 +66,7 @@
     <section class="section media-library">
       <div class="container">
         <span class="kicker">Biblioteca audiovisual</span>
-        <h1 style="margin-top:12px">Mídia.</h1>
+        <h1 style="margin-top:12px">Vídeos e imagens.</h1>
         <p style="margin-top:8px;color:var(--muted);max-width:760px">Vídeos, imagens, documentos e registros instrumentais com origem, autoria, contexto e versão identificados. A experiência lembra uma plataforma de vídeo; a lógica editorial não usa views, likes ou recomendação por engajamento.</p>
 
         <div class="media-library__feature" style="margin-top:28px">
@@ -88,12 +88,8 @@
           <button type="button" class="filter-btn" data-filter-value="documento">Documentos / scans</button>
         </div>
         <p class="mono media-library__future">Estrutura preparada para áudio, radar e outros registros instrumentais quando houver itens auditados.</p>
-        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
-          <a href="/midia/mapa-estelar/" class="btn">Explorar mapa estelar 3D →</a>
-          <a href="/midia/sistema-solar/" class="btn">Explorar sistema solar 3D →</a>
-        </div>
-
-        <div class="media-masonry" style="margin-top:20px">
+        
+        <div class="media-masonry" id="imagens" style="margin-top:20px">
           <div data-media-card data-tipo="documento">
     <a class="card" style="padding:0;overflow:hidden" href="/midia/wow-signal/" data-tipo="documento">
       <img class="media-card__thumb" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Wow_signal.jpg" alt="Printout original do Big Ear com a sequência &quot;6EQUJ5&quot; e a anotação manuscrita &quot;Wow!&quot;" loading="lazy" />
@@ -266,7 +262,7 @@
         </div>
 
         
-        <section style="margin-top:48px">
+        <section id="videos" style="margin-top:48px">
           <span class="kicker">Documentários e entrevistas</span>
           <h2 style="margin-top:10px">Vídeos em destaque, por caso</h2>
           <p style="margin-top:8px;color:var(--muted);max-width:760px">Documentários, entrevistas e cobertura de terceiros sobre casos do arquivo. Vídeo de terceiro não é evidência — é material de contexto, e cada card leva ao dossiê completo.</p>

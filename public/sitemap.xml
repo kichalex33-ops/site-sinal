@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://sinalruido.com.br/</loc></url>
-  <url><loc>https://sinalruido.com.br/explorar/</loc></url>
-  <url><loc>https://sinalruido.com.br/explorar/fontes/</loc></url>
   <url><loc>https://sinalruido.com.br/arquivo/</loc></url>
   <url><loc>https://sinalruido.com.br/casos/</loc></url>
   <url><loc>https://sinalruido.com.br/casos/sinal-wow/</loc></url>
@@ -61,8 +59,6 @@
   <url><loc>https://sinalruido.com.br/colecoes/arquivo-nacional-fundo-ovni/</loc></url>
   <url><loc>https://sinalruido.com.br/colecoes/pursue/</loc></url>
   <url><loc>https://sinalruido.com.br/midia/</loc></url>
-  <url><loc>https://sinalruido.com.br/midia/mapa-estelar/</loc></url>
-  <url><loc>https://sinalruido.com.br/midia/sistema-solar/</loc></url>
   <url><loc>https://sinalruido.com.br/midia/wow-signal/</loc></url>
   <url><loc>https://sinalruido.com.br/midia/wow-signal-profile/</loc></url>
   <url><loc>https://sinalruido.com.br/midia/northrop-f-5-forca-aerea-brasileira-seguran-a-rio-2016-3/</loc></url>
@@ -94,5 +90,4 @@
   <url><loc>https://sinalruido.com.br/imprensa/</loc></url>
   <url><loc>https://sinalruido.com.br/privacidade/</loc></url>
   <url><loc>https://sinalruido.com.br/contato/</loc></url>
-  <url><loc>https://sinalruido.com.br/brinde/</loc></url>
 </urlset>
