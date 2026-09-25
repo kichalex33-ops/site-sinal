@@ -639,3 +639,11 @@ O autor declarou que a amostra em inglês do site está correta e pode ser publi
 | Não mudou | Texto dos capítulos, botão "Buy the book" (Amazon US) e o link "Read in Portuguese" |
 | Ressalva registrada | Os capítulos 2 e 3 ("Known Error", "The Machine Against Itself") não correspondem aos capítulos 2 e 3 da edição PT de 38 capítulos ("Sinal", "O estatuto"). Por decisão do autor a amostra é tratada como aprovada; se a tradução final alterar esses capítulos, a página precisa ser atualizada |
 | Publicação | Só local (commit). Nenhum deploy: o diretório não tem remote e o Cloudflare Pages deste projeto não foi acionado |
+
+## P. Páginas de livros e remoção do bot (2026-09-25)
+
+- **Bot do Instagram:** removido do worker `sinal-ruido-social-api` (webhook e resposta automática) e republicado no Cloudflare (versão f87d3972). Agendamento de posts, cron e renovação de token continuam. Pendente do autor: remover a assinatura de webhook no painel da Meta. A página `/privacidade/` foi reescrita (sem resposta automática; publicação pela API da Meta).
+- **Páginas de livro:** cada card de `/livros/` abre `/livros/<slug>/` com sinopse, ambientação, personagens, conflito humano, filosofia, símbolos e tom, a partir dos 11 textos (`Cronicas_Cosmologicas_Textos_Site_DOCX`). Entraram os volumes VIII (O Retângulo Negro) e IX (Não Tem a Palavra), com capas de `sinal final/todas as capas e contracapas` (17 e 20). O card "A anunciar" saiu.
+- **Sem spoilers (decisão do autor):** "A face do Arquivo" e "Lugar dentro da coleção" ficam nos dados mas não aparecem, nem em português nem em inglês. Para exibir, editar `HIDDEN_SECTIONS` em `scripts/build-pages.mjs`.
+- **Inglês:** `/en/chronicles/`, `/en/chronicles/<slug>/` (10 livros) e `/en/signal-noise/`, a partir de `src/data/book-sheets-en.json` (tradução minha das seções visíveis). Títulos no original até o autor definir os títulos em inglês das capas. Páginas `noindex` e fora do sitemap até revisão. Capas ainda em português. Textos para revisão em `F:\SINAL_RUIDO\traducao-en\`.
+- **Verificação:** build com saída 0 e 120 páginas. Conferida no navegador apenas `/livros/o-retangulo-negro/`. Nada disso foi publicado no Cloudflare.

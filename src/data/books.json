@@ -104,6 +104,28 @@
     "cover": "/livros/o-ceu-esta-errado.jpg"
   },
   {
+    "slug": "o-retangulo-negro",
+    "title": "O RETÂNGULO NEGRO",
+    "author": "Alex Jr. Kich",
+    "kind": "Crônicas Cosmológicas",
+    "status": "Em desenvolvimento",
+    "description": "Nem tudo que some foi perdido.",
+    "featured": false,
+    "numeral": "VIII",
+    "cover": "/livros/o-retangulo-negro.jpg"
+  },
+  {
+    "slug": "nao-tem-a-palavra",
+    "title": "NÃO TEM A PALAVRA",
+    "author": "Alex Jr. Kich",
+    "kind": "Crônicas Cosmológicas",
+    "status": "Em desenvolvimento",
+    "description": "Algumas coisas desaparecem quando deixam de ter nome.",
+    "featured": false,
+    "numeral": "IX",
+    "cover": "/livros/nao-tem-a-palavra.jpg"
+  },
+  {
     "slug": "o-ultimo-sinal",
     "title": "O ÚLTIMO SINAL",
     "author": "Alex Jr. Kich",

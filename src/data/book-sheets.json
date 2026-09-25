@@ -1,92 +1,4 @@
 {
-  "os-deuses-nao-tem-filhos": {
-    "synopsis": "",
-    "ambientacao": {
-      "epoca": "",
-      "local": "",
-      "texto": ""
-    },
-    "personagens": [],
-    "temas": [],
-    "ficha": []
-  },
-  "a-ultima-testemunha": {
-    "synopsis": "",
-    "ambientacao": {
-      "epoca": "",
-      "local": "",
-      "texto": ""
-    },
-    "personagens": [],
-    "temas": [],
-    "ficha": []
-  },
-  "amanha-nao-existe": {
-    "synopsis": "",
-    "ambientacao": {
-      "epoca": "",
-      "local": "",
-      "texto": ""
-    },
-    "personagens": [],
-    "temas": [],
-    "ficha": []
-  },
-  "o-universo-nao-responde": {
-    "synopsis": "",
-    "ambientacao": {
-      "epoca": "",
-      "local": "",
-      "texto": ""
-    },
-    "personagens": [],
-    "temas": [],
-    "ficha": []
-  },
-  "o-arquivo-dos-mortos": {
-    "synopsis": "",
-    "ambientacao": {
-      "epoca": "",
-      "local": "",
-      "texto": ""
-    },
-    "personagens": [],
-    "temas": [],
-    "ficha": []
-  },
-  "antes-de-nascermos": {
-    "synopsis": "",
-    "ambientacao": {
-      "epoca": "",
-      "local": "",
-      "texto": ""
-    },
-    "personagens": [],
-    "temas": [],
-    "ficha": []
-  },
-  "o-ceu-esta-errado": {
-    "synopsis": "",
-    "ambientacao": {
-      "epoca": "",
-      "local": "",
-      "texto": ""
-    },
-    "personagens": [],
-    "temas": [],
-    "ficha": []
-  },
-  "o-ultimo-sinal": {
-    "synopsis": "",
-    "ambientacao": {
-      "epoca": "",
-      "local": "",
-      "texto": ""
-    },
-    "personagens": [],
-    "temas": [],
-    "ficha": []
-  },
   "_exemplo": {
     "synopsis": "Texto da sinopse. Parágrafos separados por linha em branco.",
     "ambientacao": {
@@ -115,5 +27,596 @@
         "value": "2027"
       }
     ]
+  },
+  "sinal-ruido": {
+    "tagline": "E se o sinal mais importante da história já tivesse chegado, mas ninguém soubesse o que ele queria dizer?",
+    "synopsis": "Em 15 de agosto de 1977, o radiotelescópio Big Ear registrou um sinal de rádio tão incomum que o astrônomo Jerry Ehman circulou a sequência impressa e escreveu ao lado uma única palavra: “Wow!”. Décadas depois, o episódio continua sendo um dos grandes enigmas da radioastronomia.\n\nSINAL/RUÍDO parte desse fato real e o desloca para uma história íntima de investigação, perda e obsessão. Henrique, Marina e Lara seguem vestígios que parecem ligar o antigo sinal a acontecimentos muito mais próximos do que deveriam. O que começa como uma tentativa de separar coincidência de evidência passa a tocar lembranças, ausências e lugares em que a realidade parece ter guardado marcas de algo que ninguém conseguiu registrar por inteiro.\n\nQuanto mais o grupo avança, menos a pergunta parece ser “quem enviou o Wow!”. O problema passa a ser outro: e se a humanidade recebeu alguma coisa verdadeira, mas interpretou tudo com as ferramentas erradas? E se a diferença entre sinal e ruído depender também de quem está escutando?\n\nA investigação conduz os personagens a uma porteira, a um desaparecimento e a uma ausência que não se comporta como uma ausência comum. Rafael some, mas o vazio que deixa atrás de si não termina com ele. O livro encerra sua própria história, porém deixa uma fissura aberta: talvez o universo não esteja silencioso. Talvez nós apenas não saibamos reconhecer a forma de uma resposta.",
+    "ambientacao": {
+      "texto": "O romance se move entre o mundo concreto da pesquisa, dos registros históricos e da vida cotidiana no Brasil e uma segunda camada que nunca abandona completamente o real. O ponto de partida histórico é o sinal Wow! de 1977, mas a narrativa não depende de laboratórios futuristas ou grandes naves. O estranho surge em lugares comuns: uma estrada, uma casa, documentos, fotografias, equipamentos, uma porteira.\n\nEssa escala é importante. O cosmos não aparece como espetáculo distante, mas como algo capaz de tocar a vida doméstica. A sensação central é a de que uma pergunta gigantesca entrou por uma fresta pequena."
+    },
+    "personagens": [
+      {
+        "nome": "Henrique",
+        "descricao": "Um dos eixos da investigação. É movido pela necessidade de entender o que os registros não explicam, mas precisa lidar com o fato de que compreender um fenômeno e sobreviver a ele podem ser coisas diferentes."
+      },
+      {
+        "nome": "Marina",
+        "descricao": "Integra o núcleo humano da investigação e impede que o mistério se transforme apenas em quebra-cabeça intelectual. Sua presença mantém o custo emocional das descobertas sempre visível."
+      },
+      {
+        "nome": "Lara",
+        "descricao": "Participa da busca pelas conexões entre o caso histórico e os acontecimentos presentes. Ajuda a tensionar a fronteira entre hipótese, evidência e aquilo que simplesmente não cabe no modelo disponível."
+      },
+      {
+        "nome": "Rafael",
+        "descricao": "Sua ausência se torna uma presença estrutural no romance. O desaparecimento junto à porteira não funciona apenas como mistério, mas como ferida que continua reverberando em outros pontos do universo narrativo."
+      },
+      {
+        "nome": "Argos",
+        "descricao": "Nome que reaparece na arquitetura maior do projeto. Em SINAL/RUÍDO, sua função pertence ao primeiro contato do leitor com padrões que só ganham outra leitura quando vistos de longe."
+      }
+    ],
+    "secoes": [
+      {
+        "titulo": "O conflito humano",
+        "texto": "No centro de SINAL/RUÍDO não está a pergunta sobre extraterrestres, mas a experiência humana de perseguir uma resposta que talvez nunca se deixe traduzir por completo. Os personagens precisam decidir até onde continuar quando a investigação deixa de ser apenas curiosidade e começa a cobrar pessoas, relações e certezas."
+      },
+      {
+        "titulo": "A filosofia por trás do livro",
+        "texto": "A filosofia do livro nasce da diferença entre informação e significado. Um sinal pode existir sem que saibamos o que ele significa. Uma evidência pode ser verdadeira e ainda assim sustentar interpretações erradas. O romance trabalha a necessidade humana de transformar silêncio em mensagem e coincidência em narrativa.\n\nA pergunta central é simples e incômoda: se algo nos chama, isso significa que foi feito para nós?\n\nSINAL/RUÍDO também questiona o antropocentrismo escondido na busca por inteligência fora da Terra. Esperamos palavras, matemática, repetição, intenção reconhecível. Mas uma inteligência realmente diferente talvez não responda dentro das categorias que usamos para definir “resposta”.\n\nPor isso o livro não trata a incerteza como defeito. Ela é parte da experiência. O conhecimento avança, mas não conquista tudo. O mistério permanece justo: existem fatos, consequências e rastros, porém nenhum deles concede aos personagens uma explicação confortável.\n\nComo obra de origem, SINAL/RUÍDO estabelece a pergunta que acompanhará as Crônicas Cosmológicas: quanto da realidade existe fora daquilo que somos capazes de registrar?"
+      },
+      {
+        "titulo": "A face do Arquivo",
+        "texto": "SINAL/RUÍDO não precisa nomear ou explicar o Arquivo para cumprir sua função. Ele é a primeira rachadura. O leitor encontra registros, falhas, ausências e correspondências antes de saber que esses elementos pertencem a algo maior. O livro funciona sozinho; para quem segue adiante, torna-se a origem de uma gramática que os outros volumes irão deformar e ampliar."
+      },
+      {
+        "titulo": "Símbolos e motivos",
+        "texto": "O sinal Wow!, a sequência 6EQUJ5, a porteira, registros incompletos, ruído, ausência, fotografias e a ideia de espera."
+      },
+      {
+        "titulo": "Lugar dentro da coleção",
+        "texto": "Como obra de origem, não recebe numeral romano. As Crônicas Cosmológicas começam depois dele. A porteira e o desaparecimento de Rafael deixam ecos que reaparecem em outras histórias, especialmente quando memória, testemunho e espera passam a ocupar o centro da coleção."
+      },
+      {
+        "titulo": "Tom da narrativa",
+        "texto": "Ficção científica de mistério, investigação e estranhamento gradual. O extraordinário entra por detalhes concretos e permanece próximo do cotidiano."
+      }
+    ],
+    "temas": [],
+    "ficha": []
+  },
+  "os-deuses-nao-tem-filhos": {
+    "tagline": "Criar uma vida não dá a ninguém o direito de possuí-la.",
+    "synopsis": "Há um ponto em que a pergunta sobre a origem deixa de ser científica e se torna pessoal.\n\nEm Os Deuses Não Têm Filhos, Enki, Ninhursag e uma criança que não deveria nascer colocam em choque criação, herança e obediência. O nascimento não representa apenas a chegada de alguém ao mundo. Ele ameaça uma ordem construída sobre a ideia de que criar é também determinar.\n\nCaio surge no centro dessa ruptura. Ele recebe uma herança que não pediu e descobre que carregar algo de quem veio antes não significa repetir seus desejos. Ao redor dele, forças e personagens tentam compreender se a criança é erro, continuidade, ameaça ou possibilidade.\n\nA história se move num território em que nomes antigos convivem com decisões profundamente humanas. O romance evita tratar seus “deuses” como figuras onipotentes. Eles erram, calculam, protegem, temem e tentam controlar as consequências do que fizeram. A pergunta deixa de ser “quem nos criou?” e passa a ser mais perigosa: “o que devemos a quem nos criou?”\n\nQuando a existência da criança rompe uma regra que parecia absoluta, cada personagem precisa escolher entre preservar o sistema ou admitir que a vida pode produzir algo que nenhuma arquitetura previa.",
+    "ambientacao": {
+      "texto": "A ambientação combina espaços humanos reconhecíveis com uma camada de origem e intervenção que sugere uma história mais antiga do que a humanidade conhece. O contraste é deliberado: questões de escala quase mitológica são experimentadas por pessoas em ambientes físicos, familiares e vulneráveis.\n\nA narrativa não depende de um mundo distante. O estranho se manifesta por heranças, corpos, decisões, documentos e presenças que parecem carregar uma memória anterior à própria vida dos personagens."
+    },
+    "personagens": [
+      {
+        "nome": "Caio",
+        "descricao": "O herdeiro que se recusa a ser continuação automática. Seu arco coloca a autonomia no centro do livro: receber uma origem, um legado ou uma função não significa consentir com ela."
+      },
+      {
+        "nome": "Enki",
+        "descricao": "Figura ligada à criação e à intervenção. Não é tratado como divindade abstrata, mas como agente cujas decisões têm consequências. Sua relação com aquilo que ajudou a produzir é atravessada por responsabilidade e limite."
+      },
+      {
+        "nome": "Ninhursag",
+        "descricao": "Um dos centros simbólicos do volume. Sua presença liga nascimento, criação e corpo. A palavra “espera” encontra nela uma das costuras importantes da coleção."
+      },
+      {
+        "nome": "A criança que não deveria nascer",
+        "descricao": "Mais do que um enigma biológico, representa a possibilidade de algo novo escapar à intenção de seus criadores. Sua existência põe em crise a ideia de projeto perfeito."
+      },
+      {
+        "nome": "Elisa",
+        "descricao": "Uma versão recorrente que aparece em outro estágio de sua trajetória em diferentes livros. Aqui sua presença participa das conexões discretas que unem histórias independentes."
+      }
+    ],
+    "secoes": [
+      {
+        "titulo": "O conflito humano",
+        "texto": "O conflito humano é o da herança. Filhos recebem nomes, histórias, dívidas, expectativas e medos de pessoas que existiam antes deles. O livro amplia essa experiência até o limite cósmico: se a própria espécie tiver criadores, ainda assim poderá dizer não."
+      },
+      {
+        "titulo": "A filosofia por trás do livro",
+        "texto": "O livro gira em torno de uma ideia: criação não é propriedade.\n\nPais criam filhos, sociedades criam instituições, cientistas criam sistemas e civilizações podem criar outras formas de vida. Em todos esses casos existe uma tentação semelhante: confundir origem com autoridade permanente.\n\nA pergunta central é: se fomos feitos por alguém, isso nos torna obrigados a cumprir a intenção de quem nos fez?\n\nOs Deuses Não Têm Filhos responde por meio das escolhas dos personagens, não por uma tese. Caio pode herdar sem obedecer. A criança pode existir sem justificar sua existência ao projeto que a produziu. E os criadores precisam enfrentar a possibilidade de que o ato mais verdadeiro de criação seja permitir que aquilo que nasceu deixe de pertencer a eles.\n\nO título contém a provocação filosófica do romance. Um deus que exige descendentes como extensões de si não tem filhos, tem cópias. A filiação só começa quando existe separação."
+      },
+      {
+        "titulo": "A face do Arquivo",
+        "texto": "Aqui o Arquivo aparece por meio do problema da origem: registrar uma linhagem não é o mesmo que determinar seu futuro. O livro mostra uma face do Arquivo ligada ao que foi criado e ao que deveria ter seguido determinada sequência, até que algo não segue."
+      },
+      {
+        "titulo": "Símbolos e motivos",
+        "texto": "Nascimento, árvore e galho vivo, herança, marca, corpo, linhagem, recusa e a presença de Ninhursag."
+      },
+      {
+        "titulo": "Lugar dentro da coleção",
+        "texto": "O volume conversa de forma especialmente forte com Antes de Nascermos e O Arquivo dos Mortos. A origem da vida, aquilo que existe antes dela e aquilo que permanece depois dela formam três lados do mesmo problema."
+      },
+      {
+        "titulo": "Tom da narrativa",
+        "texto": "Ficção científica com ressonância mitológica, mas sustentada por relações humanas, escolhas e consequências concretas."
+      }
+    ],
+    "temas": [],
+    "ficha": []
+  },
+  "a-ultima-testemunha": {
+    "tagline": "Algumas coisas só acontecem quando alguém está olhando.",
+    "synopsis": "Lívia Saldanha trabalha com imagens que parecem registrar acontecimentos impossíveis. No início, o problema pode ser técnico: compressão, falha de arquivo, interferência, edição. Depois, as imagens começam a demonstrar outra coisa. Elas não apenas mostram os eventos. A presença de quem observa parece participar deles.\n\nPessoas desaparecem. Retângulos negros surgem onde deveria haver informação. Objetos mudam de posição ou significado quando o registro é revisto. Uma xícara, uma caneca azul, uma peça pequena: detalhes banais se tornam instrumentos de teste porque Lívia se recusa a aceitar respostas fáceis.\n\nQuanto mais rigor ela aplica, mais inquietante fica a hipótese. Talvez observar não seja apenas receber informação. Talvez certas coisas precisem de uma testemunha para se completar.\n\nO problema deixa de ser acadêmico quando a consequência da observação atinge pessoas reais. Fechar os olhos, assistir, registrar, interromper: escolhas simples passam a carregar peso moral. Lívia precisa decidir se conhecer é sempre melhor do que não conhecer.\n\nA Última Testemunha é uma história sobre imagens, desaparecimentos e responsabilidade. Também é sobre o momento em que alguém percebe que olhar pode ser uma forma de agir.",
+    "ambientacao": {
+      "texto": "A ambientação é contemporânea e construída ao redor de imagens, arquivos, telas, salas de análise e lugares comuns registrados por câmeras. O espaço físico importa, mas o verdadeiro território do romance está na passagem entre acontecimento e registro.\n\nA Terra é vista repetidamente por meios técnicos. Isso cria uma sensação específica: o familiar passa a parecer remoto quando transformado em quadro, arquivo ou sequência. O horror nasce quando esse distanciamento deixa de proteger quem observa."
+    },
+    "personagens": [
+      {
+        "nome": "Lívia Saldanha",
+        "descricao": "Protagonista e eixo racional da história. Sua força está na recusa de conclusões fáceis. Ela testa hipóteses, procura contradições e aceita mudar de ideia quando a evidência exige. O preço dessa honestidade é descobrir que o próprio ato de observar pode ter consequências."
+      },
+      {
+        "nome": "Bruno",
+        "descricao": "Participa das experiências e verificações que transformam fenômenos estranhos em problemas testáveis. Sua interação com objetos e imagens ajuda a tornar concreta uma regra que parecia impossível."
+      },
+      {
+        "nome": "Davi",
+        "descricao": "Sua presença liga o drama do livro a ausências que atravessam outras histórias. O que acontece com ele amplia a dimensão humana do fenômeno."
+      },
+      {
+        "nome": "As pessoas apagadas",
+        "descricao": "Não formam apenas um conjunto de vítimas. Cada ausência força a pergunta sobre o que resta de uma pessoa quando o registro que deveria prová-la começa a falhar."
+      }
+    ],
+    "secoes": [
+      {
+        "titulo": "O conflito humano",
+        "texto": "O conflito central é o peso de testemunhar. Há momentos em que não olhar parece covardia; em outros, olhar pode causar dano. Lívia precisa lidar com uma responsabilidade impossível: como agir quando conhecer um acontecimento pode ajudar a produzi-lo?"
+      },
+      {
+        "titulo": "A filosofia por trás do livro",
+        "texto": "A Última Testemunha trabalha a ideia de que observação não é necessariamente neutra.\n\nNa vida comum, acreditamos que olhar para uma fotografia ou assistir a uma gravação não muda o que já aconteceu. O romance quebra essa segurança. A partir daí, nasce uma pergunta mais ampla: existe realidade completamente separada de quem a percebe?\n\nO livro não tenta transformar física em magia. Seu interesse é moral. Se o observador participa do acontecimento, ele também participa da responsabilidade.\n\nIsso altera o sentido de testemunho. Testemunhar costuma ser entendido como um dever: ver, lembrar, contar. Aqui, porém, a testemunha pode ser justamente aquilo de que o fenômeno precisa.\n\nO dilema de Lívia chega ao ponto máximo quando fechar os olhos deixa de significar ignorância e passa a ser uma escolha ética. Nem todo conhecimento é inocente. Nem toda imagem é passiva."
+      },
+      {
+        "titulo": "A face do Arquivo",
+        "texto": "Esta face do Arquivo depende do observador. O registro não existe como coisa morta esperando consulta; ele reage à presença de quem o abre. O Arquivo deixa de parecer biblioteca e começa a parecer relação."
+      },
+      {
+        "titulo": "Símbolos e motivos",
+        "texto": "Quadros de imagem, retângulos negros, peça de Lego, xícara, caneca azul, câmeras, arquivos incompletos e o ato de fechar os olhos."
+      },
+      {
+        "titulo": "Lugar dentro da coleção",
+        "texto": "Abre uma ligação direta com o problema do apagamento que ganhará outra escala em O Céu Está Errado e chegará ao espaço doméstico em O Retângulo Negro. Davi também liga a história às ausências iniciadas em SINAL/RUÍDO."
+      },
+      {
+        "titulo": "Tom da narrativa",
+        "texto": "Suspense científico e psicológico, com experimentos simples, consequências crescentes e uma ameaça que se manifesta por imagens."
+      }
+    ],
+    "temas": [],
+    "ficha": []
+  },
+  "amanha-nao-existe": {
+    "tagline": "Receber a resposta antes da pergunta não torna a escolha mais fácil.",
+    "synopsis": "O Janus começa a produzir resultados que não deveria possuir.\n\nNão são previsões no sentido comum. Os dados chegam antes das perguntas capazes de gerá-los. Para uma equipe acostumada a trabalhar com causa, hipótese e teste, o problema é devastador: como interpretar uma resposta cuja pergunta ainda não existe?\n\nLia e Tomás se veem presos entre a possibilidade científica e a consequência humana. Em determinado momento, o sistema apresenta uma decisão que parece objetiva: doze pessoas podem ser salvas, mas quatro morrerão. O futuro deixa de ser abstração. Tem nomes, corpos e responsáveis.\n\nTentar impedir o resultado pode ser justamente o mecanismo que o produz. Aceitá-lo pode transformar previsão em sentença. E ignorá-lo não devolve aos personagens a inocência de antes, porque agora eles sabem.\n\nAmanhã Não Existe transforma viagem no tempo em algo mais íntimo e cruel. Não é uma história sobre visitar o futuro. É sobre receber dele informação suficiente para perder a segurança do presente.",
+    "ambientacao": {
+      "texto": "A história se concentra em ambientes de pesquisa e decisão, onde telas, relatórios e resultados têm consequências fora das salas em que são produzidos. O Janus é menos uma máquina espetacular do que uma ruptura na ordem do conhecimento.\n\nO futuro não aparece como cidade distante ou cenário visual. Ele invade o presente na forma de dados. Essa escolha mantém o livro próximo das pessoas: o impossível chega como uma informação que alguém precisa decidir se usa."
+    },
+    "personagens": [
+      {
+        "nome": "Lia",
+        "descricao": "Uma das versões recorrentes mais importantes da coleção. Aqui está diante de um problema que exige escolher sem a proteção de não saber. Sua relação com responsabilidade prepara ecos que retornarão mais tarde."
+      },
+      {
+        "nome": "Tomás",
+        "descricao": "Participa do núcleo que precisa transformar resultados impossíveis em decisões concretas. Sua presença ajuda a manter o conflito no terreno humano, onde cálculo e culpa não são equivalentes."
+      },
+      {
+        "nome": "A equipe do Janus",
+        "descricao": "Representa diferentes respostas ao mesmo problema: confiar no sistema, testar, resistir, usar a informação ou negar que ela possa ser tratada como futuro."
+      },
+      {
+        "nome": "As dezesseis vidas envolvidas no dilema",
+        "descricao": "Mesmo quando não ocupam igualmente o centro narrativo, impedem que o problema se reduza a matemática. O livro insiste que números representam pessoas."
+      }
+    ],
+    "secoes": [
+      {
+        "titulo": "O conflito humano",
+        "texto": "Saber mais não significa poder agir melhor. Lia e Tomás enfrentam a forma mais dura dessa ideia: ter informação sobre o futuro e continuar sem uma escolha limpa."
+      },
+      {
+        "titulo": "A filosofia por trás do livro",
+        "texto": "O romance pergunta o que acontece com a liberdade quando o futuro se torna informação.\n\nSe um resultado é conhecido antes de acontecer, ele é destino? Se tentamos evitá-lo e fracassamos, fomos livres? Se obedecemos à previsão, ainda escolhemos?\n\nAmanhã Não Existe evita resolver o paradoxo com uma regra simples. Seu interesse está na culpa. Uma pessoa que conhece uma consequência futura não consegue voltar ao estado moral de quem nada sabia.\n\nO dilema dos doze e dos quatro torna isso concreto. A matemática pode oferecer um saldo, mas não pode absolver quem decide. Salvar mais pessoas não transforma automaticamente as mortes restantes em abstrações.\n\nO título também funciona como provocação. Talvez “amanhã” seja apenas o nome que damos ao que ainda não entrou no presente. Quando uma informação futura chega antes da hora, essa fronteira desmorona."
+      },
+      {
+        "titulo": "A face do Arquivo",
+        "texto": "Esta é a face temporal do Arquivo. Ele parece conter registros que não respeitam a sequência humana de antes e depois. A pergunta não é apenas como o Arquivo conhece o futuro, mas se chamar aquilo de “futuro” ainda faz sentido."
+      },
+      {
+        "titulo": "Símbolos e motivos",
+        "texto": "Janus, resultados sem perguntas, relógios, listas, números, decisões antecipadas e a aritmética moral de doze e quatro."
+      },
+      {
+        "titulo": "Lugar dentro da coleção",
+        "texto": "Tomás e Lia reaparecem em outros pontos da arquitetura da coleção. O problema temporal também conversa com O Arquivo dos Mortos: ambos confrontam a ideia de que registro e existência obedecem a uma ordem simples."
+      },
+      {
+        "titulo": "Tom da narrativa",
+        "texto": "Ficção científica de tensão decisória, com ritmo crescente e dilemas em que nenhuma alternativa devolve aos personagens a posição inicial."
+      }
+    ],
+    "temas": [],
+    "ficha": []
+  },
+  "o-universo-nao-responde": {
+    "tagline": "Talvez o silêncio seja apenas uma resposta que ainda não aprendemos a ouvir.",
+    "synopsis": "Elisa Valente segue um sinal que parece vir de além de Netuno.\n\nA princípio, a situação oferece tudo o que uma busca científica poderia desejar: direção, repetição, instrumentos capazes de medir e uma anomalia persistente. Mas o problema cresce à medida que o sinal parece atravessar não apenas distância, mas interpretação.\n\nUma frase emerge no centro da investigação: “Não respondam à luz.”\n\nNinguém sabe com segurança quem enviou a advertência, o que exatamente é “a luz” ou se a frase é realmente uma advertência. Pode ser tradução, erro, contaminação humana ou algo que ainda não possui equivalente em nossa linguagem.\n\nElisa precisa continuar investigando sem transformar hipótese em certeza. Cada instrumento traduz o universo para uma forma humana: número, imagem, frequência, linguagem. Quanto mais precisa é a medição, mais evidente fica uma limitação desconfortável. Talvez não estejamos recebendo o fenômeno. Talvez estejamos recebendo apenas aquilo que nossos instrumentos conseguem transformar em algo reconhecível.\n\nO Universo Não Responde é uma história de exploração sem a segurança de que perguntar e receber são partes do mesmo processo.",
+    "ambientacao": {
+      "texto": "A narrativa se expande em direção ao Sistema Solar exterior. Netuno e a região além dele oferecem distância, silêncio e isolamento, mas a história permanece ancorada em instrumentos e pessoas.\n\nO espaço não é cenário decorativo. Sua escala altera a experiência dos personagens. Uma mensagem pode levar horas, uma decisão pode atravessar milhões de quilômetros e aquilo que parece vazio pode conter informação demais para ser percebida diretamente."
+    },
+    "personagens": [
+      {
+        "nome": "Elisa Valente",
+        "descricao": "Protagonista movida pelo rigor e pela curiosidade. Seu desafio não é acreditar no impossível, mas resistir à vontade de nomeá-lo cedo demais."
+      },
+      {
+        "nome": "Tomás",
+        "descricao": "Versão recorrente que conecta esta investigação a outros problemas da coleção. Sua presença ajuda a mostrar como perguntas semelhantes mudam quando aparecem em contextos diferentes."
+      },
+      {
+        "nome": "A equipe de instrumentos e análise",
+        "descricao": "Funciona como contraponto às interpretações individuais. Cada especialidade traduz o fenômeno de um modo, expondo a distância entre dado e significado."
+      },
+      {
+        "nome": "A origem desconhecida do sinal",
+        "descricao": "Não é tratada como personagem no sentido comum, mas ocupa uma posição dramática semelhante: age sobre as decisões sem oferecer uma identidade estável."
+      }
+    ],
+    "secoes": [
+      {
+        "titulo": "O conflito humano",
+        "texto": "O livro coloca Elisa diante de uma tentação comum a qualquer investigação: ouvir aquilo que deseja encontrar. Para continuar, ela precisa conviver com uma resposta que talvez não seja resposta e com uma advertência que talvez nem sequer tenha sido dirigida à humanidade."
+      },
+      {
+        "titulo": "A filosofia por trás do livro",
+        "texto": "O Universo Não Responde questiona a expectativa de reciprocidade.\n\nQuando falamos com alguém, esperamos uma resposta em linguagem reconhecível. Projetamos essa lógica sobre o cosmos. Enviamos sinais, escutamos frequências e imaginamos que outra inteligência também distinguirá pergunta, destinatário e resposta.\n\nMas uma inteligência realmente diferente pode não compartilhar nenhuma dessas categorias.\n\nO livro pergunta: quando procuramos o outro, estamos preparados para encontrá-lo ou procuramos apenas uma versão ampliada de nós mesmos?\n\nOs instrumentos aprofundam esse problema. Todo telescópio, antena e algoritmo transforma fenômenos em dados que humanos podem compreender. Ver melhor também significa filtrar melhor. E todo filtro perde alguma coisa.\n\n“Não respondam à luz” permanece poderosa justamente porque não é fechada por uma tradução definitiva. O desconhecido não deve ser domesticado apenas para aliviar a ansiedade do leitor ou dos personagens."
+      },
+      {
+        "titulo": "A face do Arquivo",
+        "texto": "Esta face do Arquivo responde através de instrumentos humanos, mas nunca de maneira limpa. O Arquivo parece existir na distância entre o fenômeno e aquilo que o aparelho consegue registrar."
+      },
+      {
+        "titulo": "Símbolos e motivos",
+        "texto": "Netuno, transmissões, luz, ondas, instrumentos, silêncio, atraso de comunicação e a frase “Não respondam à luz”."
+      },
+      {
+        "titulo": "Lugar dentro da coleção",
+        "texto": "Prepara diretamente O Arquivo dos Mortos, que também se aproxima de Netuno, mas encontra outra face do mesmo problema. Elisa reaparece em diferentes versões ao longo da coleção."
+      },
+      {
+        "titulo": "Tom da narrativa",
+        "texto": "Ficção científica de exploração, comunicação e suspense, com o espaço profundo usado como extensão do problema da linguagem."
+      }
+    ],
+    "temas": [],
+    "ficha": []
+  },
+  "o-arquivo-dos-mortos": {
+    "tagline": "Guardar tudo sobre alguém não significa trazê-lo de volta.",
+    "synopsis": "Perto de Netuno, Lívia Sato encontra registros de pessoas mortas.\n\nNão são simples prontuários, imagens ou bancos de dados. Há detalhes demais. Voz, memória, resposta, traços que sugerem continuidade. O sistema parece conservar os mortos de uma forma que desafia a diferença entre arquivo e presença.\n\nEntão surge Clara.\n\nO problema é que Clara ainda não nasceu.\n\nA descoberta quebra qualquer explicação simples. Se o Arquivo guarda apenas quem morreu, como pode conter alguém que ainda não começou a viver? Se ele registra pessoas, o que exatamente está registrando: corpos, identidades, possibilidades ou algo que atravessa o tempo?\n\nLívia precisa investigar sem ceder à resposta mais desejável. Para quem perdeu alguém, qualquer mecanismo capaz de preservar uma pessoa oferece uma tentação imediata: chamar memória de sobrevivência.\n\nO Arquivo dos Mortos coloca seus personagens diante dessa esperança e exige uma distinção dolorosa. Uma cópia perfeita de alguém pode saber tudo o que aquela pessoa sabia. Pode falar do mesmo jeito. Pode lembrar. Mas isso basta para dizer que ela continuou viva?",
+    "ambientacao": {
+      "texto": "A história ocorre no Sistema Solar exterior, próxima de Netuno, em ambientes onde isolamento e tecnologia tornam qualquer presença humana mais intensa. O espaço amplia a sensação de distância dos vivos e proximidade dos registros.\n\nO cenário é frio, técnico e remoto, mas o conflito é doméstico em sua essência: perder alguém, lembrar de alguém, desejar mais uma conversa."
+    },
+    "personagens": [
+      {
+        "nome": "Lívia Sato",
+        "descricao": "Protagonista encarregada de lidar com uma descoberta que atinge ciência e luto ao mesmo tempo. Precisa distinguir evidência de desejo, especialmente quando a hipótese mais sedutora é também a mais emocional."
+      },
+      {
+        "nome": "Clara",
+        "descricao": "Uma presença impossível: aparece no Arquivo antes do próprio nascimento. Sua existência desorganiza a explicação de que o sistema simplesmente preserva mortos."
+      },
+      {
+        "nome": "Beatriz",
+        "descricao": "Versão recorrente cuja trajetória conecta este volume a Antes de Nascermos. Sua presença ajuda a ligar as duas margens da existência: o que vem antes e o que parece permanecer depois."
+      },
+      {
+        "nome": "Caio",
+        "descricao": "Reaparece em outra tentativa do Arquivo. Sua presença reforça que os nomes recorrentes não devem ser lidos como coincidências simples nem como continuidade linear obrigatória."
+      }
+    ],
+    "secoes": [
+      {
+        "titulo": "O conflito humano",
+        "texto": "O verdadeiro conflito é o luto. O Arquivo oferece exatamente aquilo que pessoas enlutadas desejariam que fosse possível: continuidade. O problema é que desejar que uma presença seja a pessoa perdida não prova que seja."
+      },
+      {
+        "titulo": "A filosofia por trás do livro",
+        "texto": "O livro investiga a diferença entre memória e identidade.\n\nSe todas as lembranças de uma pessoa forem preservadas, ela foi preservada? Se uma versão digital reage como ela reagiria, essa continuidade é suficiente? Existe um ponto em que quantidade de informação se transforma em pessoa?\n\nO Arquivo dos Mortos evita uma resposta confortável. Seu interesse está no impulso humano de resistir ao fim.\n\nA aparição de Clara antes do nascimento desloca ainda mais o problema. Talvez o Arquivo não guarde “mortos”. Talvez morte seja apenas a interpretação humana de uma estrutura muito maior.\n\nA pergunta central pode ser formulada assim: somos aquilo que pode ser registrado sobre nós ou existe alguma coisa que o registro nunca alcança?\n\nO romance também sugere que lembrar não é o mesmo que conservar intacto. A memória humana muda, perde, reorganiza. Um arquivo perfeito pode ser mais completo do que uma lembrança e ainda assim ser menos vivo."
+      },
+      {
+        "titulo": "A face do Arquivo",
+        "texto": "Aqui o Arquivo parece um depósito de pessoas, mas essa leitura se torna insuficiente quando Clara aparece antes de nascer. O volume amplia a ontologia do Arquivo sem explicá-la por completo."
+      },
+      {
+        "titulo": "Símbolos e motivos",
+        "texto": "Netuno, nomes de mortos, vozes preservadas, Clara, arquivos impossíveis, memória, cópia e ausência."
+      },
+      {
+        "titulo": "Lugar dentro da coleção",
+        "texto": "Forma um eixo com Os Deuses Não Têm Filhos e Antes de Nascermos: criação, existência anterior e persistência posterior. Também conversa com Amanhã Não Existe por romper a ordem comum do tempo."
+      },
+      {
+        "titulo": "Tom da narrativa",
+        "texto": "Ficção científica existencial com suspense, isolamento espacial e um núcleo emocional ligado ao luto."
+      }
+    ],
+    "temas": [],
+    "ficha": []
+  },
+  "antes-de-nascermos": {
+    "tagline": "Algumas crianças lembram de um lugar onde nunca estiveram.",
+    "synopsis": "Crianças começam a desenhar o mesmo lugar.\n\nElas vivem em contextos diferentes, não deveriam se conhecer e descrevem imagens com pequenas variações: formas, caminhos, espaços e presenças que parecem pertencer a uma memória anterior às suas próprias vidas.\n\nNo começo, adultos procuram explicações conhecidas. Influência, coincidência, repetição cultural, perguntas conduzidas. Mas os desenhos acumulam detalhes que tornam cada explicação isolada menos suficiente.\n\nBeatriz entra no centro dessa investigação quando percebe que o problema não está apenas no que as crianças desenham, mas na naturalidade com que falam sobre aquilo. Para elas, não é exatamente uma descoberta. É lembrança.\n\nO livro acompanha a tentativa de investigar o fenômeno sem transformar crianças em instrumentos. Quanto mais os adultos pressionam por respostas, maior o risco de fabricar justamente aquilo que querem provar.\n\nAntes de Nascermos se aproxima de uma pergunta antiga sem transformá-la em doutrina. Não pretende provar reencarnação, vida anterior ou religião. Seu terreno é mais estranho: e se parte da identidade humana carregar informação que não começou no nascimento?",
+    "ambientacao": {
+      "texto": "A ambientação é deliberadamente cotidiana: casas, escolas, desenhos infantis, entrevistas, corredores e famílias. O contraste entre o comum e o impossível sustenta o livro.\n\nO fenômeno não chega do céu. Surge em folhas de papel, falas espontâneas e brincadeiras. A escala humana protege a história de se tornar abstrata: o mistério passa primeiro pelas mãos de uma criança segurando um lápis."
+    },
+    "personagens": [
+      {
+        "nome": "Beatriz",
+        "descricao": "Figura central na investigação e uma ponte importante com O Arquivo dos Mortos. Precisa proteger as crianças ao mesmo tempo que tenta compreender o que elas parecem saber."
+      },
+      {
+        "nome": "As crianças",
+        "descricao": "Não funcionam como um coro sobrenatural. Cada uma deve conservar voz, medo, distração e personalidade próprias. O fenômeno é mais inquietante porque aparece misturado à normalidade infantil."
+      },
+      {
+        "nome": "Lia",
+        "descricao": "Versão recorrente que participa de diferentes faces do Arquivo. Sua presença aqui liga origem, tempo e a questão da continuidade."
+      },
+      {
+        "nome": "Helena Saldanha",
+        "descricao": "Uma das versões de Helena na coleção. Sua função deve preservar a regra das versões recorrentes: a repetição do nome aponta para tentativas diferentes, não para uma simples cronologia de uma única biografia."
+      }
+    ],
+    "secoes": [
+      {
+        "titulo": "O conflito humano",
+        "texto": "O conflito humano está entre proteger e investigar. Adultos querem respostas, mas crianças não devem se tornar material de laboratório. O livro pergunta quanto de nossa curiosidade continua legítimo quando o objeto do estudo é uma pessoa vulnerável."
+      },
+      {
+        "titulo": "A filosofia por trás do livro",
+        "texto": "Antes de Nascermos mexe com a ideia de começo.\n\nA biografia costuma ter um marco claro: nascemos, vivemos, morremos. O romance introduz memórias que parecem chegar antes do primeiro capítulo.\n\nA pergunta não precisa ser “existe vida antes da vida?”. Uma formulação mais fértil é: quanto de nós realmente começa conosco?\n\nFamílias entregam linguagem, hábitos, medos e histórias às crianças. A genética entrega outras heranças. O livro amplia essa lógica até um território em que a memória também pode anteceder o indivíduo.\n\nMas existe um cuidado essencial: o mistério não pode apagar a infância. As crianças continuam sendo crianças. Elas não existem para pronunciar enigmas solenes o tempo inteiro.\n\nFilosoficamente, o volume também confronta a ideia de identidade fechada. Talvez ser alguém não seja possuir uma origem única, mas atravessar continuidades que não conseguimos mapear."
+      },
+      {
+        "titulo": "A face do Arquivo",
+        "texto": "Esta é a face anterior ao nascimento. O Arquivo parece conter registros sem respeitar o limite que usamos para definir quando uma pessoa começa."
+      },
+      {
+        "titulo": "Símbolos e motivos",
+        "texto": "Desenhos infantis, giz, casa, figuras de palito, lembranças impossíveis, repetição e a palavra “espera”."
+      },
+      {
+        "titulo": "Lugar dentro da coleção",
+        "texto": "Conversa diretamente com Os Deuses Não Têm Filhos e O Arquivo dos Mortos. Um pergunta quem cria; outro pergunta o que existe antes; o terceiro pergunta o que permanece depois."
+      },
+      {
+        "titulo": "Tom da narrativa",
+        "texto": "Mistério íntimo, emocional e crescente, com o extraordinário surgindo dentro de situações familiares e infantis."
+      }
+    ],
+    "temas": [],
+    "ficha": []
+  },
+  "o-ceu-esta-errado": {
+    "tagline": "Primeiro desaparecem as estrelas. Depois, as pessoas. O pior é quando ninguém percebe que faltam.",
+    "synopsis": "Helena Vilar percebe que o céu mudou.\n\nNão é uma estrela cadente, uma falha de previsão ou uma noite ruim de observação. Certos pontos simplesmente deixaram de estar onde deveriam. O problema seria extraordinário por si só, mas logo ganha uma camada mais perturbadora: registros, lembranças e explicações parecem se reorganizar ao redor das ausências.\n\nEm outra frente da história, Ilse Moura começa a experimentar um desaparecimento muito mais próximo. Coisas familiares deixam de encaixar. Há três pratos na mesa, mas a lógica da casa insiste que talvez devesse haver apenas dois. Uma ausência doméstica começa a adquirir o mesmo formato impossível das ausências no céu.\n\nO fenômeno não parece destruir. Ele apaga relações.\n\nHelena tenta demonstrar que algo sumiu quando cada novo registro torna mais difícil provar que aquilo esteve ali. Ilse enfrenta uma versão ainda mais cruel do mesmo problema: lembrar de alguém que o mundo começa a tratar como se nunca tivesse existido.\n\nO Céu Está Errado acompanha o momento em que a ausência deixa de ser falta de informação e se torna uma força capaz de reescrever o contexto ao redor do que desapareceu.",
+    "ambientacao": {
+      "texto": "O romance trabalha duas escalas em paralelo. Uma olha para o céu e para registros astronômicos. A outra permanece dentro de casa, entre objetos, lugares à mesa e hábitos familiares.\n\nEssa montagem é essencial. O desaparecimento de uma estrela e o desaparecimento de uma pessoa são incomparáveis em tamanho, mas emocionalmente o segundo é muito maior. O cosmos só ganha peso quando encontra uma cozinha."
+    },
+    "personagens": [
+      {
+        "nome": "Helena Vilar",
+        "descricao": "Percebe inconsistências no céu e precisa provar uma ausência num sistema que começa a se corrigir contra a própria prova. É uma personagem de persistência e método."
+      },
+      {
+        "nome": "Ilse Moura",
+        "descricao": "Mãe de Rafael e Davi. Sua ligação com os desaparecimentos transforma o fenômeno em experiência familiar. Ela começa a ocupar a posição de quem se lembra quando os outros deixam de lembrar."
+      },
+      {
+        "nome": "Rafael",
+        "descricao": "A ausência iniciada em SINAL/RUÍDO ganha novo peso quando o apagamento deixa de afetar apenas presença física e passa a atingir memória e contexto."
+      },
+      {
+        "nome": "Davi",
+        "descricao": "Sua ausência conecta A Última Testemunha a esta etapa do fenômeno. Para Ilse, os desaparecidos não são casos. São filhos."
+      }
+    ],
+    "secoes": [
+      {
+        "titulo": "O conflito humano",
+        "texto": "O conflito é o isolamento de quem lembra. Perder alguém já é doloroso; ser a única pessoa que acredita que alguém existiu corrói também a confiança na própria memória."
+      },
+      {
+        "titulo": "A filosofia por trás do livro",
+        "texto": "O Céu Está Errado pergunta se destruir é realmente a forma mais completa de apagar alguma coisa.\n\nUma estrela pode desaparecer, mas deixar registros. Uma pessoa pode morrer, mas permanecer em fotografias e lembranças. O fenômeno deste livro vai além: remove as relações que sustentavam a existência daquilo que sumiu.\n\nA pergunta central é: se ninguém consegue lembrar de algo, ele continua tendo sido real?\n\nO romance trabalha memória coletiva como parte da realidade humana. Existimos não apenas dentro de nós mesmos, mas na lembrança de outras pessoas, em documentos, hábitos, lugares, objetos e expectativas.\n\nPor isso os três pratos na mesa importam tanto quanto o céu. O terceiro prato é uma pequena rebelião contra a nova versão do mundo.\n\nO livro também prepara uma distinção importante: esquecer não é o mesmo que perder. Algo pode permanecer fora da memória dominante."
+      },
+      {
+        "titulo": "A face do Arquivo",
+        "texto": "Esta face do Arquivo está ligada ao esquecimento. O sistema não apenas registra presenças; parece também produzir ou acompanhar lacunas. Quando o céu muda, o registro do mundo tenta mudar junto."
+      },
+      {
+        "titulo": "Símbolos e motivos",
+        "texto": "Estrelas ausentes, mapas do céu, três pratos, fotografias, lugares vazios e pequenas incoerências domésticas."
+      },
+      {
+        "titulo": "Lugar dentro da coleção",
+        "texto": "É a ponte direta para O Retângulo Negro. Aqui o apagamento é percebido em escala celeste e familiar; no volume seguinte, ele entra definitivamente na casa de Ilse."
+      },
+      {
+        "titulo": "Tom da narrativa",
+        "texto": "Suspense cósmico e doméstico em paralelo, com uma sensação crescente de que a realidade está corrigindo suas próprias ausências."
+      }
+    ],
+    "temas": [],
+    "ficha": []
+  },
+  "o-retangulo-negro": {
+    "tagline": "Nem tudo que some foi perdido.",
+    "synopsis": "Ilse Moura se lembra de dois filhos que o mundo não reconhece.\n\nRafael desapareceu junto a uma porteira. Davi desapareceu depois. Agora o fenômeno que antes podia ser tratado como tragédia, coincidência ou impossibilidade muda de natureza. Fotografias apresentam áreas negras. Objetos perdem contexto. Registros deixam de provar aquilo que Ilse sabe ter vivido.\n\nOs retângulos negros crescem.\n\nEles não parecem simples falhas de imagem. Onde aparecem, relações começam a desaparecer. Pessoas esquecem nomes. Histórias familiares se reorganizam. A realidade encontra maneiras de explicar o espaço vazio.\n\nIlse é a exceção.\n\nO esquecimento não a alcança da mesma forma. Essa resistência a transforma na última guardiã de duas vidas que o mundo está abandonando. A busca já não é apenas para descobrir onde Rafael e Davi estão. É para impedir que a própria ideia de que eles existiram seja apagada.\n\nO Retângulo Negro traz para dentro de uma casa o terror que outros volumes observaram em telas e no céu. O extraordinário não precisa mais ser procurado. Ele está na fotografia da família, no quarto, na fronha, no objeto que alguém insiste em guardar mesmo quando ninguém entende por quê.",
+    "ambientacao": {
+      "texto": "Este é um dos livros mais domésticos da coleção. A casa de Ilse, seus objetos, fotografias, quartos e lembranças formam o campo principal de batalha.\n\nO efeito é deliberado: depois de fenômenos cósmicos, o horror cabe numa gaveta. Uma fronha bordada, uma fotografia e um prato podem carregar mais tensão do que qualquer imagem do espaço porque possuem história afetiva."
+    },
+    "personagens": [
+      {
+        "nome": "Ilse Moura",
+        "descricao": "Protagonista e centro emocional. Mãe de Rafael e Davi, é a pessoa em quem o esquecimento não funciona como deveria. Sua memória deixa de ser apenas lembrança e se torna resistência."
+      },
+      {
+        "nome": "Rafael",
+        "descricao": "Filho cuja ausência remonta a SINAL/RUÍDO. No livro, ele existe principalmente pelo espaço que deveria ocupar e pelo esforço de Ilse para impedir que esse espaço seja normalizado."
+      },
+      {
+        "nome": "Davi",
+        "descricao": "Segundo filho perdido. Sua ligação com A Última Testemunha faz do apagamento um padrão que Ilse percebe antes de qualquer explicação completa."
+      },
+      {
+        "nome": "As pessoas ao redor de Ilse",
+        "descricao": "São fundamentais porque demonstram o mecanismo do fenômeno. Elas não fingem esquecer; o mundo realmente parece oferecer a elas uma versão na qual Rafael e Davi nunca tiveram lugar."
+      }
+    ],
+    "secoes": [
+      {
+        "titulo": "O conflito humano",
+        "texto": "O livro é sobre uma mãe lutando contra a normalização da ausência. A ameaça não é apenas perder os filhos, mas ser convencida pelo mundo inteiro de que nunca houve filhos para perder."
+      },
+      {
+        "titulo": "A filosofia por trás do livro",
+        "texto": "O Retângulo Negro transforma memória em ato de resistência.\n\nIdentidade não vive apenas dentro do indivíduo. Ela se distribui entre outras pessoas, objetos, fotografias, histórias, documentos e hábitos. Quando essas ligações desaparecem, uma pessoa pode ser apagada sem que seu corpo precise ser destruído diante de nós.\n\nA pergunta central é brutal: se apenas uma pessoa se lembra de você, você ainda existe?\n\nIlse oferece uma resposta prática. Enquanto ela se lembra, o apagamento não está completo.\n\nO livro também trabalha a diferença entre verdade e consenso. Se todas as evidências dizem que Rafael nunca existiu, mas Ilse guarda uma memória verdadeira dele, a realidade pertence à maioria ou ao acontecimento?\n\n“Nem tudo que some foi perdido” resume a filosofia do volume. Há coisas fora do registro que continuam reais. Há vínculos que sobrevivem mesmo quando o mundo deixa de confirmá-los."
+      },
+      {
+        "titulo": "A face do Arquivo",
+        "texto": "Aqui o Arquivo mostra sua face mais íntima e ameaçadora: o registro pode apagar. O retângulo negro é menos um objeto do que uma fronteira entre aquilo que ainda participa do mundo e aquilo que está sendo retirado de suas relações."
+      },
+      {
+        "titulo": "Símbolos e motivos",
+        "texto": "Retângulos negros, fotografias, fronha bordada com o nome Rafael, fio, objetos sem dono, quartos, nomes esquecidos e memória materna."
+      },
+      {
+        "titulo": "Lugar dentro da coleção",
+        "texto": "Continua o problema introduzido em A Última Testemunha e ampliado em O Céu Está Errado. Também fecha um longo eco iniciado pelo desaparecimento de Rafael em SINAL/RUÍDO."
+      },
+      {
+        "titulo": "Tom da narrativa",
+        "texto": "Horror existencial e doméstico com mais movimento e ação, mantendo o mistério ligado a objetos e relações concretas."
+      }
+    ],
+    "temas": [],
+    "ficha": []
+  },
+  "nao-tem-a-palavra": {
+    "tagline": "Algumas coisas desaparecem quando deixam de ter nome.",
+    "synopsis": "Nara Guedes encontra uma palavra que não existe mais.\n\nA última pessoa capaz de pronunciá-la pertence a uma língua à beira do desaparecimento. Para a linguística, já seria uma urgência: quando morre o último falante, não se perde apenas um conjunto de sons, mas uma forma específica de organizar o mundo.\n\nEntão a palavra produz um efeito impossível.\n\nPor 1,7 segundo, algo chamado Valandor se abre.\n\nNinguém sabe se a palavra nomeia o lugar, cria o acesso, descreve uma condição ou apenas coincide com o fenômeno. Nara precisa trabalhar num terreno perigoso porque qualquer tentativa de tradução pode destruir exatamente aquilo que pretende compreender.\n\nO problema cresce quando fica claro que certas realidades talvez dependam de distinções que outras línguas não possuem. Uma palavra perdida pode carregar uma diferença perceptiva que desaparece com ela.\n\nNão Tem a Palavra transforma linguagem em fronteira física e filosófica. O desconhecido não está apenas além dos instrumentos. Pode estar além do vocabulário.",
+    "ambientacao": {
+      "texto": "A ambientação nasce do encontro entre pesquisa linguística, memória oral e registros. O livro deve preservar a presença concreta da última falante: voz, respiração, hesitação, contexto e relação com a própria língua.\n\nValandor aparece em contraste com essa intimidade. Durante apenas 1,7 segundo, uma palavra pequena toca uma estrutura muito maior."
+    },
+    "personagens": [
+      {
+        "nome": "Nara Guedes",
+        "descricao": "Protagonista. Sua tarefa exige rigor e humildade porque traduzir não é substituir uma palavra por outra. Ela precisa reconhecer quando uma língua contém uma distinção que a sua não consegue reproduzir."
+      },
+      {
+        "nome": "A última falante",
+        "descricao": "Não deve funcionar como simples chave de enigma. É uma pessoa carregando uma língua inteira em situação extrema. Sua história, memória e vontade importam tanto quanto a palavra que os outros desejam registrar."
+      },
+      {
+        "nome": "Valandor",
+        "descricao": "Mais do que um local, funciona como uma abertura conceitual. O breve acesso demonstra que linguagem e realidade possuem uma relação que os personagens ainda não compreendem."
+      }
+    ],
+    "secoes": [
+      {
+        "titulo": "O conflito humano",
+        "texto": "No centro do livro está a perda cultural. Uma língua pode desaparecer sem explosão, sem ruína e sem manchete mundial. Quando a última pessoa deixa de falar, uma maneira inteira de distinguir o real pode desaparecer com ela."
+      },
+      {
+        "titulo": "A filosofia por trás do livro",
+        "texto": "Não Tem a Palavra trabalha uma ideia simples: nomear não é apenas colocar etiquetas nas coisas.\n\nLínguas dividem cores, tempos, relações e experiências de maneiras diferentes. Algumas distinções existem claramente em uma língua e exigem frases inteiras em outra.\n\nO romance amplia isso: e se houver aspectos da realidade que só podem ser percebidos ou acessados quando uma determinada distinção linguística existe?\n\nA pergunta central é: algo deixa de existir quando perdemos a palavra para reconhecê-lo?\n\nO livro não precisa responder literalmente que palavras criam o mundo. A proposta é mais interessante se permanecer ambígua. Talvez a palavra seja chave. Talvez seja instrução. Talvez seja apenas o último instrumento humano capaz de apontar corretamente para uma coisa que sempre esteve ali.\n\nA perda de uma língua, portanto, deixa de ser apenas perda de vocabulário. Torna-se perda de acesso."
+      },
+      {
+        "titulo": "A face do Arquivo",
+        "texto": "Esta é a face linguística do Arquivo. Há informação que aparentemente não pode ser recuperada apenas por quantidade de dados. A forma de nomear também importa."
+      },
+      {
+        "titulo": "Símbolos e motivos",
+        "texto": "Verbete sem palavra, linha em branco, última falante, gravação de voz, 1,7 segundo, Valandor, tradução e silêncio."
+      },
+      {
+        "titulo": "Lugar dentro da coleção",
+        "texto": "Valandor já havia sido insinuado em A Última Testemunha. Aqui deixa de ser apenas referência e se torna uma abertura breve. O livro prepara O Último Sinal ao transformar linguagem em problema de comunicação final."
+      },
+      {
+        "titulo": "Tom da narrativa",
+        "texto": "Ficção científica linguística e existencial, com tensão construída por perda, tradução e acesso extremamente breve ao desconhecido."
+      }
+    ],
+    "temas": [],
+    "ficha": []
+  },
+  "o-ultimo-sinal": {
+    "tagline": "Se um de nós chegar primeiro, espera o outro.",
+    "synopsis": "Lia Navarro recebe uma custódia que não deveria pertencer a uma única pessoa.\n\nDepois de histórias sobre origem, observação, tempo, silêncio, morte, nascimento, esquecimento e linguagem, diferentes rastros começam a convergir. Não como peças de um quebra-cabeça que finalmente explicará tudo, mas como registros de tentativas.\n\nHá quarenta e quatro. Faltam três. Restam quarenta e um.\n\nO conselho das Helenas coloca lado a lado versões que não deveriam compartilhar uma mesma sala sob uma lógica comum de identidade. Clara, Tomás, Lia e outras presenças retornam sob novas relações. O Arquivo deixa de parecer um objeto distante e se aproxima de uma decisão.\n\nA Terra precisa responder.\n\nMas a resposta final não é conquista, rendição nem revelação absoluta. É uma escolha sobre tempo, encontro e reciprocidade.\n\nA mensagem que atravessou a coleção ganha sua forma completa: “Se um de nós chegar primeiro, espera o outro.”\n\nE então a história retorna a 15 de agosto de 1977.\n\nAo ponto em que tudo parecia ter começado.",
+    "ambientacao": {
+      "texto": "O último volume possui a maior escala da coleção, mas deve conservar o Princípio da Escala Humana. Mesmo quando decisões envolvem a Terra, versões e o Arquivo, a narrativa continua ancorada em pessoas concretas, salas, objetos, mensagens e escolhas.\n\nA estrutura fecha um anel temporal ao tocar novamente 15 de agosto de 1977, data do sinal Wow!. Isso conecta o fim das Crônicas Cosmológicas à obra de origem sem transformar SINAL/RUÍDO em leitura obrigatória."
+    },
+    "personagens": [
+      {
+        "nome": "Lia Navarro",
+        "descricao": "Centro do volume e responsável por uma custódia que envolve mais do que posse. Sua trajetória leva a pergunta da responsabilidade individual para uma escala coletiva."
+      },
+      {
+        "nome": "As Helenas",
+        "descricao": "O conselho torna explícita a lógica das versões recorrentes. Helena não é apenas um nome repetido: são tentativas diferentes do Arquivo, colocadas em relação sem apagar suas vidas particulares."
+      },
+      {
+        "nome": "Tomás",
+        "descricao": "Retorna num ponto em que decisões anteriores sobre tempo e consequência ganham nova leitura."
+      },
+      {
+        "nome": "Clara",
+        "descricao": "Sua presença liga o futuro impossível de O Arquivo dos Mortos ao fechamento da coleção."
+      },
+      {
+        "nome": "A Terra",
+        "descricao": "Sem personificação simplista, torna-se parte da decisão. O final depende de a humanidade responder não como dona do processo, mas como participante."
+      }
+    ],
+    "secoes": [
+      {
+        "titulo": "O conflito humano",
+        "texto": "O conflito final não é derrotar o Arquivo. É decidir que tipo de relação pode existir com algo que registra mais do que qualquer pessoa pode compreender. O fechamento precisa conservar escolha, espera e vínculo."
+      },
+      {
+        "titulo": "A filosofia por trás do livro",
+        "texto": "O Último Sinal reúne as perguntas anteriores sem reduzi-las a uma resposta única.\n\nA coleção começou perguntando o que é um sinal. Depois perguntou quem cria, quem observa, quando algo acontece, como o universo responde, o que permanece depois da morte, o que existe antes do nascimento, o que acontece quando esquecemos e o que se perde quando falta uma palavra.\n\nO último livro pergunta o que fazemos com tudo isso.\n\nA resposta filosófica não é domínio. É espera.\n\nEsperar costuma parecer passividade, mas aqui se torna uma forma de reconhecimento. Significa aceitar que duas inteligências, duas pessoas ou duas versões podem não chegar ao mesmo ponto ao mesmo tempo.\n\n“Se um de nós chegar primeiro, espera o outro” transforma comunicação em ética. Não basta enviar. Não basta receber. É preciso deixar espaço para o outro chegar.\n\nEssa ideia também redefine o Arquivo. Algo capaz de registrar tudo ainda pode não compreender vínculo. O registro conhece estados; a espera reconhece distância.\n\nA pergunta secreta da coleção se torna então: por que algo capaz de registrar tudo ainda precisava de nós?"
+      },
+      {
+        "titulo": "A face do Arquivo",
+        "texto": "O volume mostra a face de convergência do Arquivo sem explicar seu todo. A custódia, as versões e os 41 fragmentos revelam estrutura suficiente para mudar a leitura dos livros anteriores, mas não para encerrar o mistério."
+      },
+      {
+        "titulo": "Símbolos e motivos",
+        "texto": "Dois fios que se encontram, porteira, 44 menos 3 igual a 41, conselho das Helenas, custódia, 15 de agosto de 1977, sinal e espera."
+      },
+      {
+        "titulo": "Lugar dentro da coleção",
+        "texto": "Fecha o anel retornando à data do Wow! e à imagem da porteira. Também aponta para o epílogo secreto, Ninguém Estava Ouvindo, destravado pela reunião dos 41 fragmentos."
+      },
+      {
+        "titulo": "Tom da narrativa",
+        "texto": "Convergência emocional e cósmica. O livro amplia a escala sem abandonar pessoas concretas e evita transformar o final em aula de cosmologia."
+      }
+    ],
+    "temas": [],
+    "ficha": []
   }
 }

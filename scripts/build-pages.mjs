@@ -34,6 +34,7 @@ const documents = cases.flatMap((c) =>
 );
 
 const bookSheets = JSON.parse(readFileSync(join(dataDir, "book-sheets.json"), "utf-8"));
+const bookSheetsEn = JSON.parse(readFileSync(join(dataDir, "book-sheets-en.json"), "utf-8"));
 const sampleChaptersData = JSON.parse(readFileSync(join(dataDir, "sample-chapters.json"), "utf-8"));
 const SAMPLE_CHAPTERS = sampleChaptersData.map((c) => ({
   id: `chapter-${c.n}`,
@@ -812,13 +813,14 @@ function livrosPage() {
         <span class="kicker">Projeto literário</span>
         <h1 style="margin-top:12px">SINAL/RUÍDO · Livros</h1>
         <p style="margin-top:8px;color:var(--muted);max-width:760px">A área literária reúne o romance principal e projetos narrativos associados. Tudo aqui é ficção e permanece separado do arquivo factual.</p>
+        <p class="mono" style="margin-top:8px"><a href="/en/chronicles/" hreflang="en" style="color:var(--muted)">English version →</a></p>
         <div class="books-featured" style="margin-top:32px">
           <img src="${escapeHtml(featured.cover)}" alt="Capa de ${escapeHtml(featured.title)}" />
           <div><span class="badge" style="border-color:var(--signal);color:var(--signal)">${escapeHtml(featured.status)}</span><h2>${escapeHtml(featured.title)}</h2><p class="mono">${escapeHtml(featured.author)} · ${escapeHtml(featured.kind)}</p><p>${escapeHtml(featured.synopsis || featured.description)}</p><div class="books-actions"><a class="btn btn--primary" href="${escapeHtml(featured.sampleUrl)}">Ler os primeiros capítulos</a><a class="btn" href="${escapeHtml(featured.url)}">Conhecer o livro</a></div>
             <div class="support-home__qr"><img src="/apoio/pix-qr.jpg" alt="QR Code Pix para apoiar SINAL/RUÍDO" loading="lazy" /><div><span class="mono">PIX · APOIO À OBRA</span><button type="button" class="btn btn--primary" data-copy-pix>Copiar código Pix</button><span class="visually-hidden" data-pix-code>00020126330014br.gov.bcb.pix0111026387420665204000053039865802BR5916Alex Junior Kich6009Sao Paulo62290525REC6A982558C600D1848319096304DD3C</span></div></div>
           </div>
         </div>
-        <section class="books-future" id="cronicas"><span class="kicker">Crônicas Cosmológicas · I–X</span><h2>Obras em desenvolvimento</h2><div class="books-grid books-grid--covers">${chronicles.map((b) => ((bookSheets[b.slug] || {}).synopsis ? `<a class="book-card book-card--cover" href="/livros/${b.slug}/"><img src="${escapeHtml(b.cover)}" alt="Capa de ${escapeHtml(b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(b.status)}</span><h3>${escapeHtml(b.title)}</h3>${b.description ? `<p>${escapeHtml(b.description)}</p>` : ""}<span class="book-card__more mono">Sinopse e ficha →</span></a>` : `<article class="book-card book-card--cover"><img src="${escapeHtml(b.cover)}" alt="Capa de ${escapeHtml(b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(b.status)}</span><h3>${escapeHtml(b.title)}</h3>${b.description ? `<p>${escapeHtml(b.description)}</p>` : ""}</article>`)).join("")}<article class="book-card book-card--soon"><span class="mono">VIII · IX</span><h3>A anunciar</h3><p>Os próximos volumes das Crônicas Cosmológicas.</p></article></div></section>
+        <section class="books-future" id="cronicas"><span class="kicker">Crônicas Cosmológicas · I–X</span><h2>Obras em desenvolvimento</h2><div class="books-grid books-grid--covers">${chronicles.map((b) => ((bookSheets[b.slug] || {}).synopsis ? `<a class="book-card book-card--cover" href="/livros/${b.slug}/"><img src="${escapeHtml(b.cover)}" alt="Capa de ${escapeHtml(b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(b.status)}</span><h3>${escapeHtml(b.title)}</h3>${b.description ? `<p>${escapeHtml(b.description)}</p>` : ""}<span class="book-card__more mono">Sinopse e ficha →</span></a>` : `<article class="book-card book-card--cover"><img src="${escapeHtml(b.cover)}" alt="Capa de ${escapeHtml(b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(b.status)}</span><h3>${escapeHtml(b.title)}</h3>${b.description ? `<p>${escapeHtml(b.description)}</p>` : ""}</article>`)).join("")}</div></section>
         ${others.length ? `<section class="books-future"><span class="kicker">Outro projeto literário</span><div class="books-grid">${others.map((b) => `<article class="book-card"><span class="mono">${escapeHtml(b.status)}</span><h3>${escapeHtml(b.title)}</h3><p>${escapeHtml(b.description)}</p><small>${escapeHtml(b.kind)}</small></article>`).join("")}</div></section>` : ""}
       </div>
     </section>`;
@@ -829,62 +831,160 @@ function livrosPage() {
 // /privacidade
 // ---------------------------------------------------------------------
 // /livros/<slug> — pagina de cada livro das Cronicas: sinopse + ficha (dados em src/data/book-sheets.json)
-function livroDetailPage(b, list) {
-  const sh = bookSheets[b.slug] || {};
+// Seções da ficha que ficam nos dados mas não são exibidas: revelam ligações entre os livros
+// (spoiler). Para exibir, remova o título da lista.
+const HIDDEN_SECTIONS = new Set(["A face do Arquivo", "Lugar dentro da coleção"]);
+
+// Textos de interface das fichas de livro, por idioma.
+const SHEET_UI = {
+  pt: {
+    lang: "pt-BR", ogLocale: "pt_BR", back: "← Crônicas Cosmológicas", series: "Crônicas Cosmológicas", seriesLabel: "Série",
+    volume: "Volume", author: "Autor", status: "Status", epoch: "Época", place: "Local",
+    sheet: "Ficha", where: "Onde se ambienta", characters: "Personagens", themes: "Temas",
+    soon: "Em breve.", synopsisSoon: "Sinopse em breve.", other: "Outros volumes",
+    switchLabel: "English version →", chapterTitle: "Crônicas Cosmológicas", statusMap: {},
+  },
+  en: {
+    lang: "en", ogLocale: "en_US", back: "← The Cosmological Chronicles", series: "Cosmological Chronicles", seriesLabel: "Series",
+    volume: "Volume", author: "Author", status: "Status", epoch: "Period", place: "Place",
+    sheet: "Details", where: "Where the story is set", characters: "Main characters", themes: "Themes",
+    soon: "Coming soon.", synopsisSoon: "Synopsis coming soon.", other: "Other volumes",
+    switchLabel: "← Versão em português", chapterTitle: "Cosmological Chronicles",
+    statusMap: { "Em desenvolvimento": "In development", "Edição editorial": "Editorial edition" },
+  },
+};
+
+const SINAL_RUIDO_ORIGIN = { slug: "sinal-ruido", title: "SIGNAL/NOISE", author: "Alex Jr. Kich", numeral: "Origin", status: "Origin work", cover: "/livro/capa-en.jpg" };
+
+// /livros/<slug> (pt) e /en/chronicles/<slug> (en): ficha do livro com sinopse, personagens e seções.
+// Dados em src/data/book-sheets.json (pt) e book-sheets-en.json (en). Páginas em inglês ficam noindex
+// e fora do sitemap até o autor revisar a tradução.
+function bookSheetPage(b, list, lang) {
+  const ui = SHEET_UI[lang];
+  const en = lang === "en";
+  const isOrigin = b.slug === "sinal-ruido";
+  const sh = (en ? bookSheetsEn : bookSheets)[b.slug] || {};
+  const otherSheet = (en ? bookSheets : bookSheetsEn)[b.slug];
   const amb = sh.ambientacao || {};
   const paras = (t) => String(t || "").split(/\n\s*\n/).filter(Boolean).map((x) => `<p>${escapeHtml(x)}</p>`).join("");
   const synopsis = sh.synopsis || b.synopsis || "";
+  const status = ui.statusMap[b.status] || b.status;
   const rows = [
-    ["Série", "Crônicas Cosmológicas"],
-    ["Volume", b.numeral],
-    ["Autor", b.author],
-    ["Status", b.status],
-    ...(amb.epoca ? [["Época", amb.epoca]] : []),
-    ...(amb.local ? [["Local", amb.local]] : []),
+    ...(isOrigin ? [["Type", "Origin work, outside the numbering of the Cosmological Chronicles"]] : [[ui.seriesLabel, ui.series], [ui.volume, b.numeral]]),
+    [ui.author, b.author],
+    [ui.status, status],
+    ...(amb.epoca ? [[ui.epoch, amb.epoca]] : []),
+    ...(amb.local ? [[ui.place, amb.local]] : []),
     ...(sh.ficha || []).map((f) => [f.label, f.value]),
   ].filter((r) => r[1]);
   const idx = list.findIndex((x) => x.slug === b.slug);
-  const prev = list[idx - 1], next = list[idx + 1];
+  const prev = list[idx - 1], next = isOrigin ? list[0] : list[idx + 1];
+  const base = en ? "/en/chronicles/" : "/livros/";
+  const path = isOrigin ? "/en/signal-noise/" : `${base}${b.slug}/`;
+  const ptPath = isOrigin ? "/livro/" : `/livros/${b.slug}/`;
+  const enPath = isOrigin ? "/en/signal-noise/" : `/en/chronicles/${b.slug}/`;
+  const backHref = en ? "/en/chronicles/" : "/livros/#cronicas";
+  const sections = (sh.secoes || []).filter((s) => !HIDDEN_SECTIONS.has(s.titulo));
+  const badge = isOrigin ? "ORIGIN" : `${b.numeral} · ${status}`;
+  const switchHref = en ? ptPath : enPath;
+  const showSwitch = en || Boolean(otherSheet && (otherSheet.synopsis));
+  const navLabel = (x) => (en && x.slug === "sinal-ruido" ? "SIGNAL/NOISE" : x.title);
   const body = `
     <section class="section book-sheet">
       <div class="container">
-        <a href="/livros/#cronicas" class="mono" style="color:var(--muted)">← Crônicas Cosmológicas</a>
+        <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+          <a href="${backHref}" class="mono" style="color:var(--muted)">${ui.back}</a>
+          ${showSwitch ? `<a href="${switchHref}" class="mono" style="color:var(--muted)" hreflang="${en ? "pt-BR" : "en"}">${ui.switchLabel}</a>` : ""}
+        </div>
         <div class="book-sheet__hero">
-          <img class="book-sheet__cover" src="${escapeHtml(b.cover)}" alt="Capa de ${escapeHtml(b.title)}" width="450" height="720" />
+          <img class="book-sheet__cover" src="${escapeHtml(b.cover)}" alt="${en ? "Cover of" : "Capa de"} ${escapeHtml(b.title)}" width="450" height="720" />
           <div>
-            <span class="badge" style="border-color:var(--signal);color:var(--signal)">${escapeHtml(b.numeral)} · ${escapeHtml(b.status)}</span>
+            <span class="badge" style="border-color:var(--signal);color:var(--signal)">${escapeHtml(badge)}</span>
             <h1 style="margin-top:12px">${escapeHtml(b.title)}</h1>
             <p class="mono" style="margin-top:8px;color:var(--signal)">${escapeHtml(b.author)}</p>
-            <div class="book-sheet__synopsis">${synopsis ? paras(synopsis) : `<p class="book-sheet__pending">Sinopse em breve.</p>`}</div>
+            ${sh.tagline ? `<p class="book-sheet__tagline" style="margin-top:14px;font-style:italic;color:var(--muted)">${escapeHtml(sh.tagline)}</p>` : ""}
+            <div class="book-sheet__synopsis">${synopsis ? paras(synopsis) : `<p class="book-sheet__pending">${ui.synopsisSoon}</p>`}</div>
+            ${isOrigin ? `<p style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--primary" href="/livro/sample/">Read the sample</a><a class="btn" href="/buy/">Get the book</a></p>` : ""}
           </div>
         </div>
 
         <div class="book-sheet__grid">
           <section class="paper book-sheet__box">
-            <span class="kicker">Ficha</span>
+            <span class="kicker">${ui.sheet}</span>
             <dl class="book-sheet__dl">${rows.map((r) => `<div><dt>${escapeHtml(r[0])}</dt><dd>${escapeHtml(r[1])}</dd></div>`).join("")}</dl>
           </section>
           <section class="paper book-sheet__box">
-            <span class="kicker">Onde se ambienta</span>
-            ${amb.texto ? paras(amb.texto) : `<p class="book-sheet__pending">Em breve.</p>`}
+            <span class="kicker">${ui.where}</span>
+            ${amb.texto ? paras(amb.texto) : `<p class="book-sheet__pending">${ui.soon}</p>`}
           </section>
         </div>
 
         <section style="margin-top:32px">
-          <span class="kicker">Personagens</span>
-          ${(sh.personagens || []).length ? `<div class="grid grid--3" style="margin-top:14px">${sh.personagens.map((c) => `<div class="card" style="cursor:default"><h3>${escapeHtml(c.nome)}</h3>${c.papel ? `<span class="mono" style="color:var(--signal);font-size:11px">${escapeHtml(c.papel)}</span>` : ""}${c.descricao ? `<p>${escapeHtml(c.descricao)}</p>` : ""}</div>`).join("")}</div>` : `<p class="book-sheet__pending" style="margin-top:10px">Em breve.</p>`}
+          <span class="kicker">${ui.characters}</span>
+          ${(sh.personagens || []).length ? `<div class="grid grid--3" style="margin-top:14px">${sh.personagens.map((c) => `<div class="card" style="cursor:default"><h3>${escapeHtml(c.nome)}</h3>${c.papel ? `<span class="mono" style="color:var(--signal)">${escapeHtml(c.papel)}</span>` : ""}<p style="margin-top:8px">${escapeHtml(c.descricao || "")}</p></div>`).join("")}</div>` : `<p class="book-sheet__pending" style="margin-top:14px">${ui.soon}</p>`}
         </section>
 
-        ${(sh.temas || []).length ? `<section style="margin-top:32px"><span class="kicker">Temas</span><div class="book-sheet__tags">${sh.temas.map((t) => `<span class="badge">${escapeHtml(t)}</span>`).join("")}</div></section>` : ""}
+        ${sections.map((s) => `<section style="margin-top:32px"><span class="kicker">${escapeHtml(s.titulo)}</span><div class="book-sheet__synopsis">${paras(s.texto)}</div></section>`).join("")}
 
-        <nav class="book-sheet__nav" aria-label="Outros volumes">
-          ${prev ? `<a href="/livros/${prev.slug}/"><span class="mono">← ${escapeHtml(prev.numeral)}</span><strong>${escapeHtml(prev.title)}</strong></a>` : "<span></span>"}
-          ${next ? `<a href="/livros/${next.slug}/" style="text-align:right"><span class="mono">${escapeHtml(next.numeral)} →</span><strong>${escapeHtml(next.title)}</strong></a>` : "<span></span>"}
+        ${(sh.temas || []).length ? `<section style="margin-top:32px"><span class="kicker">${ui.themes}</span><div class="book-sheet__tags">${sh.temas.map((t) => `<span class="badge">${escapeHtml(t)}</span>`).join("")}</div></section>` : ""}
+
+        <nav class="book-sheet__nav" aria-label="${ui.other}">
+          ${prev ? `<a href="${base}${prev.slug}/"><span class="mono">← ${escapeHtml(prev.numeral)}</span><strong>${escapeHtml(prev.title)}</strong></a>` : "<span></span>"}
+          ${next ? `<a href="${base}${next.slug}/" style="text-align:right"><span class="mono">${escapeHtml(next.numeral)} →</span><strong>${escapeHtml(navLabel(next))}</strong></a>` : "<span></span>"}
         </nav>
       </div>
     </section>`;
-  write(`/livros/${b.slug}`, page({ title: `${b.title} · Crônicas Cosmológicas`, description: synopsis ? synopsis.slice(0, 200) : `${b.title}, volume ${b.numeral} das Crônicas Cosmológicas, de ${b.author}.`, path: `/livros/${b.slug}/`, bodyHtml: body, ogImage: b.cover }));
+  const descr = synopsis ? synopsis.slice(0, 200) : en ? `${b.title}, volume ${b.numeral} of the Cosmological Chronicles, by ${b.author}.` : `${b.title}, volume ${b.numeral} das Crônicas Cosmológicas, de ${b.author}.`;
+  const title = isOrigin ? "SIGNAL/NOISE · Origin" : `${b.title} · ${ui.chapterTitle}`;
+  write(path.replace(/\/$/, ""), page({
+    title, description: descr, path, bodyHtml: body, ogImage: b.cover,
+    ...(en ? { lang: ui.lang, ogLocale: ui.ogLocale, minimal: true, robots: "noindex,follow" } : {}),
+  }));
 }
+
+// /en/chronicles — índice em inglês: obra de origem + Crônicas I–X (noindex até revisão da tradução)
+function chroniclesEnPage(list) {
+  const withEn = list.filter((b) => (bookSheetsEn[b.slug] || {}).synopsis);
+  const origin = bookSheetsEn["sinal-ruido"] || {};
+  const status = (s) => SHEET_UI.en.statusMap[s] || s;
+  const body = `
+    <section class="section books-page">
+      <div class="container">
+        <span class="kicker">Book series</span>
+        <h1 style="margin-top:12px">The Cosmological Chronicles</h1>
+        <p style="margin-top:8px;color:var(--muted);max-width:760px">Ten stories. Different people. Different places. Different times. One universe that never reveals itself completely.</p>
+        <p class="mono" style="margin-top:8px"><a href="/livros/#cronicas" hreflang="pt-BR" style="color:var(--muted)">← Versão em português</a></p>
+
+        <section class="books-future" style="margin-top:32px">
+          <span class="kicker">Origin</span>
+          <div class="books-featured" style="margin-top:16px">
+            <img src="/livro/capa-en.jpg" alt="Cover of SIGNAL/NOISE" />
+            <div>
+              <span class="badge" style="border-color:var(--signal);color:var(--signal)">ORIGIN</span>
+              <h2>SIGNAL/NOISE</h2>
+              <p class="mono">Alex Jr. Kich · Not numbered as part of the Cosmological Chronicles</p>
+              ${origin.tagline ? `<p style="margin-top:10px;font-style:italic;color:var(--muted)">${escapeHtml(origin.tagline)}</p>` : ""}
+              <p style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--primary" href="/en/signal-noise/">Discover SIGNAL/NOISE</a><a class="btn" href="/livro/sample/">Read the sample</a></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="books-future" id="chronicles">
+          <span class="kicker">Cosmological Chronicles · I–X</span>
+          <div class="books-grid books-grid--covers" style="margin-top:16px">${withEn.map((b) => `<a class="book-card book-card--cover" href="/en/chronicles/${b.slug}/"><img src="${escapeHtml(b.cover)}" alt="Cover of ${escapeHtml(b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(status(b.status))}</span><h3>${escapeHtml(b.title)}</h3>${(bookSheetsEn[b.slug] || {}).tagline ? `<p>${escapeHtml(bookSheetsEn[b.slug].tagline)}</p>` : ""}<span class="book-card__more mono">Synopsis and details →</span></a>`).join("")}</div>
+        </section>
+      </div>
+    </section>`;
+  write("/en/chronicles", page({
+    title: "The Cosmological Chronicles",
+    description: "Ten stories, different people, different places, different times. One universe that never reveals itself completely.",
+    path: "/en/chronicles/",
+    bodyHtml: body,
+    ogImage: "/livro/capa-en.jpg",
+    lang: "en", ogLocale: "en_US", minimal: true, robots: "noindex,follow",
+  }));
+}
+
 
 
 // /cortesia/<token> — pagina nao listada: so acessa quem tem o link (noindex, fora do menu, do sitemap e da busca)
@@ -927,21 +1027,18 @@ function privacidadePage() {
     <section class="section container--narrow">
       <span class="kicker">Privacidade</span>
       <h1 style="margin-top:12px">Poucos dados. Finalidade explícita.</h1>
-      <p style="margin-top:10px;color:var(--muted)">O arquivo factual pode ser consultado sem conta. O site não tem formulários, contas nem comentários. O único tratamento de dados nesta fase é a resposta automática no Instagram do perfil @sinal_ruido. A infraestrutura de entrega e segurança (Cloudflare) pode processar dados técnicos de conexão conforme sua própria operação. Responsável pelo site e pelo perfil: Alex Jr. Kich.</p>
-      <div class="paper method-block" id="instagram" style="margin-top:28px"><h2>Resposta automática no Instagram (@sinal_ruido)</h2>
-        <p>Quando alguém comenta a palavra &ldquo;Sinal&rdquo; em uma publicação do perfil <a href="https://www.instagram.com/sinal_ruido/" rel="noopener">@sinal_ruido</a>, ou envia uma mensagem direta ao perfil, o SINAL/RUÍDO usa a API do Instagram (Meta) para receber esse evento. Se a pessoa segue o perfil, o sistema envia uma única mensagem privada com o link <a href="/brinde/">sinalruido.com.br/brinde</a>. A mensagem só é enviada como resposta a uma interação iniciada pela própria pessoa.</p>
-        <p><strong>Dados tratados:</strong> o texto do comentário ou da mensagem, o identificador da conta do Instagram de quem interagiu (fornecido pela Meta), o identificador do comentário e a informação de sim ou não sobre a pessoa seguir o perfil.</p>
-        <p><strong>Dados que não são acessados:</strong> senha, e-mail, telefone, lista de seguidores, conversas anteriores e qualquer dado fora da interação que disparou a resposta.</p>
-        <p><strong>Armazenamento:</strong> esses dados são usados apenas no momento do evento, para decidir se a mensagem é enviada e enviá-la. O SINAL/RUÍDO não os grava em banco de dados e não monta perfis. Registros técnicos de erro podem guardar temporariamente identificadores técnicos nos logs da Cloudflare. O acesso ao perfil usa um token da conta profissional autorizada pelo titular, guardado em banco Cloudflare D1 e nunca exposto publicamente.</p>
+      <p style="margin-top:10px;color:var(--muted)">O arquivo factual pode ser consultado sem conta. O site não tem formulários, contas nem comentários. O site não coleta dados pessoais de visitantes. O perfil @sinal_ruido no Instagram é publicado por meio da API oficial da Meta. A infraestrutura de entrega e segurança (Cloudflare) pode processar dados técnicos de conexão conforme sua própria operação. Responsável pelo site e pelo perfil: Alex Jr. Kich.</p>
+      <div class="paper method-block" id="instagram" style="margin-top:28px"><h2>Publicação no Instagram (@sinal_ruido)</h2>
+        <p>O SINAL/RUÍDO usa a API do Instagram (Meta) apenas para publicar conteúdo no perfil <a href="https://www.instagram.com/sinal_ruido/" rel="noopener">@sinal_ruido</a>. O acesso usa um token da conta profissional autorizada pelo titular, guardado em banco Cloudflare D1 e nunca exposto publicamente.</p>
+        <p><strong>Dados de terceiros:</strong> o site não recebe, lê nem armazena comentários, mensagens, identificadores ou listas de seguidores de outras pessoas. Não há resposta automática.</p>
         <p><strong>Compartilhamento:</strong> os dados não são vendidos, não são usados para publicidade e não são repassados a terceiros. O processamento passa pela Meta (Instagram) e pela Cloudflare, que operam a infraestrutura.</p>
       </div>
       <div class="paper method-block" id="exclusao-de-dados" style="margin-top:16px"><h2>Exclusão de dados e contato</h2>
-        <p>Para pedir informações ou a exclusão de qualquer dado ligado a você, envie uma mensagem direta para <a href="https://www.instagram.com/sinal_ruido/" rel="noopener">@sinal_ruido</a> (mais detalhes em <a href="/contato/">/contato</a>), informando o seu nome de usuário no Instagram e o que deseja apagar. Como a resposta automática não guarda os dados da interação, a exclusão consiste em remover qualquer registro técnico associado ao seu identificador e confirmar o resultado a você.</p>
-        <p>Você também pode apagar o seu próprio comentário ou a sua conversa diretamente no Instagram, e deixar de seguir o perfil a qualquer momento.</p>
+        <p>Como o site não guarda dados de visitantes nem de quem interage no Instagram, não há dados a excluir. Se você acredita que exista algum registro ligado a você, envie uma mensagem direta para <a href="https://www.instagram.com/sinal_ruido/" rel="noopener">@sinal_ruido</a> (mais detalhes em <a href="/contato/">/contato</a>), informando o seu nome de usuário no Instagram e o que deseja verificar. O resultado será confirmado a você.</p>
       </div>
       <p class="mono" style="margin-top:20px;color:var(--muted)">Última atualização: 25 de setembro de 2026.</p>
     </section>`;
-  write("/privacidade", page({ title: "Privacidade", description: "Política de privacidade do SINAL/RUÍDO: sem formulários nem comentários; resposta automática no Instagram.", path: "/privacidade/", bodyHtml: body }));
+  write("/privacidade", page({ title: "Privacidade", description: "Política de privacidade do SINAL/RUÍDO: o site não coleta dados pessoais; publicação no Instagram pela API da Meta.", path: "/privacidade/", bodyHtml: body }));
 }
 
 // ---------------------------------------------------------------------
@@ -1262,7 +1359,7 @@ function buildSearchIndex() {
 function buildSeoFiles() {
   // Rotas de campanha são redirects. A amostra literária permanece fora do sitemap
   // enquanto o texto final não tiver sido inserido e homologado.
-  const canonicalRoutes = routes.filter((r) => !r.startsWith("/r/") && !r.startsWith("/cortesia/") && r !== "/livro/amostra/" && r !== "/buy/");
+  const canonicalRoutes = routes.filter((r) => !r.startsWith("/r/") && !r.startsWith("/cortesia/") && r !== "/livro/amostra/" && r !== "/buy/" && !r.startsWith("/en/"));
   const urlset = canonicalRoutes
     .map((r) => `  <url><loc>${SITE_URL}${r}</loc></url>`)
     .join("\n");
@@ -1280,7 +1377,7 @@ function buildSeoFiles() {
 // ---------------------------------------------------------------------
 // run
 // ---------------------------------------------------------------------
-["arquivo", "casos", "documentos", "colecoes", "midia", "noticias", "metodo", "correcoes", "livro", "livros", "leitores", "imprensa", "privacidade", "r", "explorar", "brinde", "buy"].forEach(clean);
+["arquivo", "casos", "documentos", "colecoes", "midia", "noticias", "metodo", "correcoes", "livro", "livros", "leitores", "imprensa", "privacidade", "r", "explorar", "brinde", "buy", "en"].forEach(clean);
 
 validateI18n();
 homePage();
@@ -1302,7 +1399,12 @@ livroSampleEnPage();
 livrosPage();
 cortesiaPage();
 const sheetReady = (b) => Boolean((bookSheets[b.slug] || {}).synopsis);
-books.filter((b) => b.kind === "Crônicas Cosmológicas" && sheetReady(b)).forEach((b, _i, arr) => livroDetailPage(b, arr));
+const chroniclesPt = books.filter((b) => b.kind === "Crônicas Cosmológicas" && sheetReady(b));
+chroniclesPt.forEach((b, _i, arr) => bookSheetPage(b, arr, "pt"));
+const chroniclesEn = chroniclesPt.filter((b) => (bookSheetsEn[b.slug] || {}).synopsis);
+chroniclesEn.forEach((b, _i, arr) => bookSheetPage(b, arr, "en"));
+chroniclesEnPage(chroniclesPt);
+if ((bookSheetsEn["sinal-ruido"] || {}).synopsis) bookSheetPage(SINAL_RUIDO_ORIGIN, chroniclesEn, "en");
 leitoresPage();
 imprensaPage();
 privacidadePage();
