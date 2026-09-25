@@ -908,7 +908,7 @@ function bookSheetPage(b, list, lang) {
   const showSwitch = en || Boolean(otherSheet && (otherSheet.synopsis));
   const navLabel = (x) => (en && x.slug === "sinal-ruido" ? "SIGNAL/NOISE" : tt(x));
   const body = `
-    <section class="section book-sheet">
+    <section class="section book-sheet" data-verso="/livros/${b.slug}-verso.jpg" style="--book-art:url(/livros/${b.slug}-verso.jpg)">
       <div class="container">
         <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
           <a href="${backHref}" class="mono" style="color:var(--muted)">${ui.back}</a>

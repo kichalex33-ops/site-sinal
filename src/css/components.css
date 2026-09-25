@@ -311,18 +311,17 @@ body.intro-active { overflow: hidden; }
 }
 @keyframes ambience-spin { to { transform: rotate(360deg); } }
 
-/* Rosto do Gray (recorte da capa): posição de canto vem de variáveis CSS (ver ambience.js).
+/* Contracapa do livro (data-verso, só nas páginas de livro): posição de canto vem de variáveis CSS (ver ambience.js).
    Opacidade e transform são controlados quadro a quadro via JS, em sincronia com o som. */
 .ambience-alien {
-  position: absolute; width: 52vmin; height: 52vmin;
+  position: absolute; width: 46vmin; height: 66vmin;
   top: var(--a-top, 2%); bottom: var(--a-bottom, auto);
   left: var(--a-left, auto); right: var(--a-right, 2%);
-  background-image: url('/livro/capa.jpg');
-  background-size: 260% auto;
-  background-position: 78% 34%;
-  -webkit-mask-image: radial-gradient(circle at 58% 46%, black 0%, black 26%, transparent 68%);
-  mask-image: radial-gradient(circle at 58% 46%, black 0%, black 26%, transparent 68%);
-  filter: grayscale(0.1) brightness(1) contrast(1.05);
+  background-size: cover; background-position: center;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 46%, black 0%, black 38%, transparent 76%);
+  mask-image: radial-gradient(ellipse at 50% 46%, black 0%, black 38%, transparent 76%);
+  mix-blend-mode: screen;
+  filter: brightness(1.3) contrast(1.1);
   opacity: 0;
   will-change: transform, opacity;
 }
@@ -887,3 +886,13 @@ a.book-card--cover:hover, a.book-card--cover:focus-visible { border-color: var(-
 .buy-market.is-suggested { border-top-color:var(--signal); }
 .buy-market__flag { margin-left:8px; font-size:10px; color:var(--signal); }
 .buy-market .buy-group__links { margin-top:12px; }
+
+/* Fundo sutil das páginas de livro: a contracapa daquele livro, bem suave, esmaecendo para baixo. */
+.book-sheet { position: relative; isolation: isolate; }
+.book-sheet::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: var(--book-art) right top / min(780px, 100%) auto no-repeat;
+  opacity: .16;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 82%);
+  mask-image: linear-gradient(180deg, #000 0%, transparent 82%);
+}

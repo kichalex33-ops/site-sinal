@@ -696,3 +696,10 @@ Arte nova em PT (`sinal final/LIVROS/1/pt.png`, "Algumas coisas não deveriam na
 - **Capas do livro II** (`sinal final/LIVROS/2/pt.png` e `eng.png`): PT "A Última Testemunha" ("Se ninguém viu, talvez nunca tenha acontecido.") e EN "THE LAST WITNESS" ("If no one saw it, maybe it never happened."), com "COSMOLOGICAL CHRONICLES". Livros com capa em inglês: I, II e VI.
 - **Cortesia em português** (`/cortesia/55okhxeexdf9m1/`): os quatro ajustes aplicados (texto de divulgação "Ajude a divulgar"; prévia do link "Uma cópia de cortesia de SINAL/RUÍDO... oferecida pelo autor"; aviso de direitos "todos os direitos reservados: o arquivo não deve ser republicado nem redistribuído"; frase "não divulgue" reescrita em tom cordial, restrita ao link e ao arquivo). Continua `noindex,nofollow,noarchive`, `no-store`, fora do sitemap e da busca. EPUB regenerado do texto final de 25/09.
 - **Cortesia em inglês:** código pronto (`CORTESIA.en`), token próprio `hfrrz5lid8ketj`. A página só é gerada quando existir `public/cortesia/hfrrz5lid8ketj/SIGNAL_NOISE_courtesy.epub` (aguardando a tradução do autor). Textos em inglês de minha autoria, a revisar.
+
+## X. Contracapas nas páginas de livro e fim do recorte da capa (2026-09-25)
+
+- **"Sinal ruído" que aparecia:** o efeito de ambiência (`ambience.js`) fazia emergir um recorte ampliado (260%) de `capa.jpg`; com a capa nova (desenho com o título), o recorte mostrava trechos de "SINAL RUÍDO" flutuando. Removido.
+- **Novo efeito:** o mesmo glitch de emergir de um canto da tela, agora com a **contracapa do próprio livro**, só nas 21 páginas de livro (PT e EN), no máximo uma vez a cada 6 h por página. Nas demais páginas o efeito não roda. Respeita `prefers-reduced-motion`.
+- **Fundo sutil:** a contracapa de cada livro também aparece bem suave (opacidade 16%, esmaecendo para baixo) atrás do topo da ficha.
+- Contracapas usadas (`sinal final/LIVROS/...`): Origem `S-N/2`; I `1/4`; II `2/6`; III `3/8`; IV `4/10`; V `5/12`; VI `6/VI C`; VII `7/16`; VIII `8/19`; IX `9/21`; X `10/X1`. Convertidas em `public/livros/<slug>-verso.jpg` (800 px, ~600 KB no total).

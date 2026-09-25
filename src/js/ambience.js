@@ -1,10 +1,10 @@
 // Ambiência de fundo inspirada na capa: estrelas cintilando, pixels acendendo perto do
-// cursor em qualquer lugar do site, névoa girando devagar, e o rosto do Gray emergindo
-// de um canto aleatório da tela pra "espiar" e depois voltar pra sombra. Sem áudio.
+// cursor em qualquer lugar do site, névoa girando devagar, e, nas páginas de livro, a
+// contracapa daquele livro emergindo de um canto da tela com um glitch rápido, depois voltando pra sombra. Sem áudio.
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // Não repetir toda hora: só deixa aparecer de novo depois de um tempo desde a última vez.
-const LAST_SEEN_KEY = "sr_alien_last_seen";
+const LAST_SEEN_KEY = "sr_verso_last_seen:" + location.pathname;
 const COOLDOWN_MS = 6 * 60 * 60 * 1000; // 6h
 function alienIsDue() {
   try {
@@ -56,10 +56,14 @@ if (!reduceMotion) {
   document.body.classList.add("js-ambience");
   setupPixelHover(pixelsCanvas);
 
-  // ---- Rosto do Gray: canto aleatório. Aparece sozinho (se o cooldown já passou) ou
+  // Só nas páginas de livro: o elemento com data-verso traz a contracapa daquele livro.
+  const versoHolder = document.querySelector("[data-verso]");
+  if (versoHolder) {
+  // ---- Contracapa do livro: canto aleatório. Aparece sozinho (se o cooldown já passou) ou
   // sob demanda, quando algo em outra parte do site "chama" ele (ver evento sr:uap-found). ----
   const alien = document.createElement("div");
   alien.className = "ambience-alien";
+  alien.style.backgroundImage = `url("${versoHolder.dataset.verso}")`;
   const SPAWNS = [
     { top: "2%", right: "2%", restX: "20vw", restY: "-20vh", midX: "-30vw", midY: "28vh" },   // topo-direita
     { top: "2%", left: "2%", restX: "-20vw", restY: "-20vh", midX: "30vw", midY: "28vh" },    // topo-esquerda
@@ -95,7 +99,7 @@ if (!reduceMotion) {
 
   // ---- Aparição sob demanda: qualquer script do site pode disparar isso (ex.: achar a UAP escondida
   // no sistema solar), sem depender do cooldown — é uma recompensa por achar, não repetição chata. ----
-  window.addEventListener("sr:uap-found", trigger);
+  }
 }
 
 // Curva de "proximidade": 0 -> 1 (aproximando) -> platô -> 1 -> 0 (afastando).
