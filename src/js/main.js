@@ -9,9 +9,7 @@ import "./ambience.js";
 import "./intro.js";
 import "./home-motion.js";
 import "./hero-signal-line.js";
-import "./home-comments.js";
 import "./reading.js";
-import "./comments.js";
 
 // Mapa estelar 3D: só carrega three.js se a página tiver o container (evita peso nas outras).
 const starmapRoot = document.querySelector("[data-starmap]");

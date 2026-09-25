@@ -153,16 +153,6 @@ function homePage() {
       </div>
     </section>
 
-    <section class="section section--divider home-comments-section">
-      <div class="container" data-home-comments-root>
-        <div class="section-heading"><div><span class="kicker">Leitores</span><h2>O que os leitores estão achando</h2></div></div>
-        <div class="home-comments__list" data-home-comments-list>
-          <p class="comment-muted" data-home-comments-empty>Leia os capítulos e conte o que achou.</p>
-        </div>
-        <div style="margin-top:16px"><a class="btn" href="/livro/amostra/">Ler e comentar</a></div>
-      </div>
-    </section>
-
     <section class="section section--divider home-comments-support">
       <div class="container home-comments-support__inner">
         <p>Se o romance valeu a leitura, considere apoiar o projeto — isso ajuda a manter a pesquisa, o arquivo público e a publicação independentes.</p>
@@ -898,30 +888,17 @@ function livroAmostraPage() {
           ${c.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join("\n          ")}
         </div>
         <div class="chapter-end"><span>Fim do capítulo ${c.n}</span>${i < chapters.length - 1 ? `<button class="btn btn--primary" type="button" data-next-chapter="${chapters[i+1].id}">Capítulo seguinte →</button>` : `<a class="btn btn--primary" href="/livro/">Conhecer o livro →</a>`}</div>
-
-        <section class="reader-comments"${i === 0 ? ' id="comentarios"' : ""} data-comments-root data-chapter-id="${c.id}">
-          <div class="reader-comments__heading"><div><span class="kicker">Comentários dos leitores</span><h2>O que ficou na sua cabeça?</h2></div><span class="mono">MODERAÇÃO PRÉVIA</span></div>
-          <form class="comment-form" data-comment-form>
-            <label>Nome ou apelido<input name="display_name" autocomplete="nickname" minlength="2" maxlength="40" required /></label>
-            <label>Comentário<textarea name="comment_text" rows="5" minlength="8" maxlength="1200" required placeholder="Conte o que achou deste capítulo..."></textarea></label>
-            <label class="comment-honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label>
-            <div data-turnstile></div>
-            <div class="comment-form__footer"><button class="btn btn--primary" type="submit">Enviar comentário</button><p class="mono" data-comment-status>Os comentários passam por moderação antes de aparecer.</p></div>
-          </form>
-          <div class="reader-comments__list" data-comments-list></div>
-        </section>
       </section>`).join("")}
 
       <div class="reading-actions"><a class="btn" href="/livro/">← Voltar ao livro</a><a class="btn" href="/casos/">Explorar os casos reais →</a></div>
     </article>`;
   write("/livro/amostra", page({
     title: "Amostra do romance",
-    description: "Leia uma amostra de até três capítulos do romance SINAL/RUÍDO e envie um comentário para moderação.",
+    description: "Leia uma amostra de até três capítulos do romance SINAL/RUÍDO.",
     path: "/livro/amostra/",
     bodyHtml: body,
     ogImage: "/livro/capa.jpg",
     robots: "noindex,follow",
-    extraHead: `<script src="/comments-config.js"></script><script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>`,
   }));
 }
 
@@ -1087,11 +1064,8 @@ function privacidadePage() {
     <section class="section container--narrow">
       <span class="kicker">Privacidade</span>
       <h1 style="margin-top:12px">Poucos dados. Finalidade explícita.</h1>
-      <p style="margin-top:10px;color:var(--muted)">O arquivo factual pode ser consultado sem conta. Há três tratamentos de dados nesta fase: os comentários da amostra literária, o formulário de contato e a resposta automática no Instagram do perfil @sinal_ruido. Responsável pelo site e pelo perfil: Alex Jr. Kich.</p>
-      <div class="paper method-block" style="margin-top:28px"><h2>Comentários da amostra</h2><p>Ao comentar, o visitante informa um nome ou apelido e o texto do comentário. O sistema também registra o capítulo, o estado de moderação e datas técnicas. Não é solicitado e-mail.</p><p>Comentários são enviados para moderação antes da publicação. Conteúdo rejeitado pode permanecer no banco pelo tempo necessário à moderação e limpeza operacional.</p></div>
-      <div class="paper method-block" style="margin-top:16px"><h2>Proteção contra spam</h2><p>A área de comentários foi preparada para Cloudflare Turnstile e Cloudflare D1. A infraestrutura de entrega e segurança pode processar dados técnicos de conexão conforme sua própria operação. O SINAL/RUÍDO não grava endereço IP na tabela pública de comentários.</p></div>
-      <div class="paper method-block" style="margin-top:16px"><h2>Formulário de contato</h2><p>Ao enviar uma mensagem em <a href="/contato/">/contato</a>, o nome, e-mail, assunto e texto informados são entregues por e-mail através do serviço terceiro Web3Forms, que processa o envio e não é operado pelo SINAL/RUÍDO. Nenhum dado do formulário é armazenado neste site.</p></div>
-      <div class="paper method-block" id="instagram" style="margin-top:16px"><h2>Resposta automática no Instagram (@sinal_ruido)</h2>
+      <p style="margin-top:10px;color:var(--muted)">O arquivo factual pode ser consultado sem conta. O site não tem formulários, contas nem comentários. O único tratamento de dados nesta fase é a resposta automática no Instagram do perfil @sinal_ruido. A infraestrutura de entrega e segurança (Cloudflare) pode processar dados técnicos de conexão conforme sua própria operação. Responsável pelo site e pelo perfil: Alex Jr. Kich.</p>
+      <div class="paper method-block" id="instagram" style="margin-top:28px"><h2>Resposta automática no Instagram (@sinal_ruido)</h2>
         <p>Quando alguém comenta a palavra &ldquo;Sinal&rdquo; em uma publicação do perfil <a href="https://www.instagram.com/sinal_ruido/" rel="noopener">@sinal_ruido</a>, ou envia uma mensagem direta ao perfil, o SINAL/RUÍDO usa a API do Instagram (Meta) para receber esse evento. Se a pessoa segue o perfil, o sistema envia uma única mensagem privada com o link <a href="/brinde/">sinalruido.com.br/brinde</a>. A mensagem só é enviada como resposta a uma interação iniciada pela própria pessoa.</p>
         <p><strong>Dados tratados:</strong> o texto do comentário ou da mensagem, o identificador da conta do Instagram de quem interagiu (fornecido pela Meta), o identificador do comentário e a informação de sim ou não sobre a pessoa seguir o perfil.</p>
         <p><strong>Dados que não são acessados:</strong> senha, e-mail, telefone, lista de seguidores, conversas anteriores e qualquer dado fora da interação que disparou a resposta.</p>
@@ -1099,19 +1073,18 @@ function privacidadePage() {
         <p><strong>Compartilhamento:</strong> os dados não são vendidos, não são usados para publicidade e não são repassados a terceiros. O processamento passa pela Meta (Instagram) e pela Cloudflare, que operam a infraestrutura.</p>
       </div>
       <div class="paper method-block" id="exclusao-de-dados" style="margin-top:16px"><h2>Exclusão de dados e contato</h2>
-        <p>Para pedir informações ou a exclusão de qualquer dado ligado a você, envie uma mensagem em <a href="/contato/">/contato</a> ou uma mensagem direta para <a href="https://www.instagram.com/sinal_ruido/" rel="noopener">@sinal_ruido</a>, informando o seu nome de usuário no Instagram e o que deseja apagar. Como a resposta automática não guarda os dados da interação, a exclusão consiste em remover qualquer registro técnico associado ao seu identificador e confirmar o resultado a você.</p>
+        <p>Para pedir informações ou a exclusão de qualquer dado ligado a você, envie uma mensagem direta para <a href="https://www.instagram.com/sinal_ruido/" rel="noopener">@sinal_ruido</a> (mais detalhes em <a href="/contato/">/contato</a>), informando o seu nome de usuário no Instagram e o que deseja apagar. Como a resposta automática não guarda os dados da interação, a exclusão consiste em remover qualquer registro técnico associado ao seu identificador e confirmar o resultado a você.</p>
         <p>Você também pode apagar o seu próprio comentário ou a sua conversa diretamente no Instagram, e deixar de seguir o perfil a qualquer momento.</p>
       </div>
-      <p class="mono" style="margin-top:20px;color:var(--muted)">Última atualização: 18 de setembro de 2026.</p>
+      <p class="mono" style="margin-top:20px;color:var(--muted)">Última atualização: 25 de setembro de 2026.</p>
     </section>`;
-  write("/privacidade", page({ title: "Privacidade", description: "Política de privacidade do SINAL/RUÍDO: comentários, formulário de contato e resposta automática no Instagram.", path: "/privacidade/", bodyHtml: body }));
+  write("/privacidade", page({ title: "Privacidade", description: "Política de privacidade do SINAL/RUÍDO: sem formulários nem comentários; resposta automática no Instagram.", path: "/privacidade/", bodyHtml: body }));
 }
 
 // ---------------------------------------------------------------------
 // /contato
 // ---------------------------------------------------------------------
 function contatoPage() {
-  const web3formsKey = "4c4ea232-63aa-44ca-9f76-9a2533f9d63f";
   const body = `
     <section class="section container--narrow" id="autor">
       <span class="kicker">Autor</span>
@@ -1120,46 +1093,15 @@ function contatoPage() {
     </section>
 
     <section class="section container--narrow" id="profissional">
-      <span class="kicker">Fale com o arquivo</span>
-      <h1 style="margin-top:12px">Mensagem, relato ou sugestão de caso.</h1>
-      <p style="margin-top:8px;color:var(--muted);max-width:60ch">Viu um caso que devia estar aqui? Foi testemunha de algo? Achou um erro ou quer só mandar uma mensagem? Escreva abaixo. Toda mensagem é lida — nem toda mensagem vira resposta individual.</p>
-
-      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="${web3formsKey}" />
-        <input type="hidden" name="subject" value="Nova mensagem via SINAL/RUÍDO" />
-        <input type="checkbox" name="botcheck" class="contact-honeypot" tabindex="-1" autocomplete="off" />
-
-        <label>
-          <span>Nome</span>
-          <input type="text" name="name" required autocomplete="name" />
-        </label>
-
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" required autocomplete="email" />
-        </label>
-
-        <label>
-          <span>Assunto</span>
-          <select name="assunto" required>
-            <option value="Mensagem geral">Mensagem geral</option>
-            <option value="Relato / testemunho pessoal">Relato / testemunho pessoal</option>
-            <option value="Sugestão de caso para o arquivo">Sugestão de caso para o arquivo</option>
-            <option value="Correção ou erro encontrado">Correção ou erro encontrado</option>
-            <option value="Contato profissional (imprensa, parcerias, eventos)">Contato profissional (imprensa, parcerias, eventos)</option>
-          </select>
-        </label>
-
-        <label>
-          <span>Mensagem</span>
-          <textarea name="message" rows="7" required placeholder="Se for relato ou sugestão de caso, inclua data, local e, se possível, uma fonte."></textarea>
-        </label>
-
-        <button type="submit" class="btn btn--primary">Enviar</button>
-        <p class="contact-form__status">Enviado através do Web3Forms. Nenhum dado é armazenado neste site.</p>
-      </form>
+      <span class="kicker">Contato</span>
+      <h1 style="margin-top:12px">Fale com o projeto.</h1>
+      <p style="margin-top:8px;color:var(--muted);max-width:60ch">Este site não coleta mensagens. Para falar com o autor, envie uma mensagem direta pelo Instagram. Para imprensa, podcasts e parcerias editoriais, veja a página de Imprensa.</p>
+      <div class="grid grid--2" style="margin-top:24px">
+        <div class="paper" style="padding:24px"><span class="kicker">Instagram</span><h2 style="margin-top:10px">@sinal_ruido</h2><p style="margin-top:8px">Mensagens diretas, relatos e sugestões de caso.</p><p style="margin-top:12px"><a class="btn btn--primary" href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Abrir o Instagram</a></p></div>
+        <div class="paper" style="padding:24px"><span class="kicker">Imprensa</span><h2 style="margin-top:10px">Press kit e parcerias</h2><p style="margin-top:8px">Materiais públicos do projeto, para imprensa, podcasts e parceiros editoriais.</p><p style="margin-top:12px"><a class="btn" href="/imprensa/">Ir para Imprensa</a></p></div>
+      </div>
     </section>`;
-  write("/contato", page({ title: "Contato", description: "Envie uma mensagem, um relato ou sugira um caso para o arquivo SINAL/RUÍDO.", path: "/contato/", bodyHtml: body }));
+  write("/contato", page({ title: "Contato", description: "Como falar com o autor e o projeto SINAL/RUÍDO: Instagram e página de imprensa.", path: "/contato/", bodyHtml: body }));
 }
 
 // ---------------------------------------------------------------------

@@ -456,3 +456,18 @@ Nota: a cortesia é a edição PT. Para o público internacional do e-mail, deci
 6. A remoção do epub de A Última Testemunha em `public/livro/` é intencional?
 7. Autoriza o checkpoint local em dois commits, sem push?
 8. Vai haver EPUB de cortesia em inglês?
+
+## K. Atualização (respostas do autor, 2026-09-25)
+
+| Tema | Resposta | Consequência |
+|---|---|---|
+| Foto do autor | Será disponibilizada futuramente | Página do autor só com estrutura |
+| Manuscrito EN | O correto tem **38 capítulos**; o autor deixará a versão certa numa pasta e avisará | **A análise F.1/F.2 usou um manuscrito de 45 capítulos (KDP 14/09) e deve ser refeita** quando a pasta chegar. A conclusão de que a amostra de 3 capítulos "confere com o manuscrito" vale só para aquele arquivo |
+| Capa vigente e amostra EN | Ficarão na mesma pasta do manuscrito | Tabela F.3 será substituída pela capa apontada pelo autor |
+| Cortesia | Versão PT agora; as outras línguas quando houver tradução | Sem EPUB EN de cortesia por enquanto |
+| Comentários e formulário | "Deixe só contatos" | **Executado** no site PT: menu sem "Comentários", amostra e home sem seção de comentários, `/contato/` sem formulário (só Instagram e Imprensa), privacidade ajustada. Nenhum e-mail foi inventado; não há e-mail cadastrado no projeto |
+
+Pendências criadas por essa limpeza:
+1. **Instagram bot aponta para `/brinde/`** (`SINALRUIDOsocial/cf-worker/src/index.ts:143`: "Seu brinde está aqui: https://sinalruido.com.br/brinde/"). A página `/brinde/` foi removida do site (checkpoint 2). Se o site for publicado assim, quem comentar "Sinal" recebe um link 404.
+2. O backend de comentários continua no repositório e seria publicado: `functions/api/comments.js`, `comments-config.js`, `schema/comments.sql`, `COMMENTS-CLOUDFLARE.md`. Só a interface foi removida.
+3. Sem e-mail público de contato: `/contato/` usa Instagram e Imprensa. Quando o autor definir um e-mail, entra como link `mailto:`.

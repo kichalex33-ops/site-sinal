@@ -4,7 +4,6 @@ const NAV = [
     children: [
       { href: "/livro/amostra/", label: "Amostra de SINAL/RUÍDO" },
       { href: "/livro/amostra/#capitulos", label: "Capítulos" },
-      { href: "/livro/amostra/#comentarios", label: "Comentários" },
     ],
   },
   {
