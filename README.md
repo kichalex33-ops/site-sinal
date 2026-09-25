@@ -13,16 +13,15 @@ Saída: `dist/`.
 
 ## Rodada atual
 
-A Home dinâmica, biblioteca audiovisual, coleção PURSUE, página de livros, apoio Pix, amostra literária e comentários moderados estão descritos em:
+A Home dinâmica, biblioteca audiovisual, coleção PURSUE, página de livros, apoio Pix e amostra literária estão descritos em:
 
 - `IMPLEMENTADO-DINAMICO.md`
 - `AMOSTRA-IMPORTAR.md`
-- `COMMENTS-CLOUDFLARE.md`
 - `CLAUDE-HANDOFF.md`
 
-## Comentários
+## Comentários e formulários
 
-A infraestrutura usa Cloudflare Pages Functions + D1 + Turnstile e existe apenas na área literária. Execute `schema/comments.sql` no D1 e configure os bindings descritos em `COMMENTS-CLOUDFLARE.md`.
+Removidos em 25/09/2026. O site não tem comentários, formulários, cadastro nem newsletter; `/contato/` lista apenas Instagram e Imprensa. O código antigo está no histórico do git (tag `pre-faxina`).
 
 ## Importante
 

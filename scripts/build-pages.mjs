@@ -4,7 +4,6 @@ import { dirname, join } from "node:path";
 import { page } from "../src/js/render/shell.js";
 import { caseCard, collectionCard, mediaCard } from "../src/js/render/cards.js";
 import { editorialBadge, maturityBadge, provenanceBadge, integrityBadge, escapeHtml } from "../src/js/render/badges.js";
-import { nasaModelViewer } from "../src/js/render/nasa-model.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -20,10 +19,8 @@ const collections = JSON.parse(readFileSync(join(dataDir, "collections.json"), "
 const media = JSON.parse(readFileSync(join(dataDir, "media.json"), "utf-8"));
 const corrections = JSON.parse(readFileSync(join(dataDir, "corrections.json"), "utf-8"));
 const updates = JSON.parse(readFileSync(join(dataDir, "updates.json"), "utf-8"));
-const starmap = JSON.parse(readFileSync(join(dataDir, "starmap.json"), "utf-8"));
 const noticias = JSON.parse(readFileSync(join(dataDir, "noticias.json"), "utf-8"));
 const books = JSON.parse(readFileSync(join(dataDir, "books.json"), "utf-8"));
-const nasaModels = JSON.parse(readFileSync(join(dataDir, "nasa-models.json"), "utf-8"));
 
 const documents = cases.flatMap((c) =>
   (c.documentos || []).map((d, index) => ({
@@ -613,143 +610,6 @@ function midiaPage() {
   write("/midia", page({ title: "Vídeos e imagens", description: "Biblioteca audiovisual do SINAL/RUÍDO, com vídeos, imagens e documentos contextualizados por fonte e proveniência.", path: "/midia/", bodyHtml: body }));
 }
 
-function mapaEstelarPage() {
-  const body = `
-    <section class="section container">
-      <span class="kicker">Direções documentadas</span>
-      <h1 style="margin-top:12px">Mapa estelar.</h1>
-      <p style="margin-top:8px;color:var(--muted);max-width:760px">Coordenadas reais (ascensão reta / declinação) citadas em casos do arquivo — a direção de recepção de um sinal, ou a interpretação de terceiro sobre uma origem alegada. Posição de estrela não é confirmação de origem. Arraste para girar, role para aproximar, clique num ponto para ver a fonte.</p>
-      <div class="starmap" data-starmap style="margin-top:24px"></div>
-      <script type="application/json" id="starmap-data">${JSON.stringify(starmap)}</script>
-      <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:16px;font-size:12px;color:var(--muted)">
-        <span><span class="starmap__legend-dot" style="background:#e8541d"></span> Direção instrumental (medida)</span>
-        <span><span class="starmap__legend-dot" style="background:#8b7fc7"></span> Interpretação contestada de terceiro</span>
-      </div>
-    </section>`;
-  write("/midia/mapa-estelar", page({ title: "Mapa estelar", description: "Coordenadas reais de direções e interpretações citadas em casos do arquivo, exploráveis em 3D.", path: "/midia/mapa-estelar/", bodyHtml: body }));
-}
-
-function sistemaSolarPage() {
-  const body = `
-    <section class="section container">
-      <span class="kicker">Contexto astronômico</span>
-      <h1 style="margin-top:12px">Sistema solar.</h1>
-      <p style="margin-top:8px;color:var(--muted);max-width:760px">Clique num corpo pra ver um fato verificável, incluindo o que já sabemos e o que ainda é pergunta em aberto.</p>
-      <div class="starmap" data-solar-system style="margin-top:24px"></div>
-      <p class="mono" style="margin-top:14px;font-size:11px;color:var(--muted)">Texturas: NASA Visible Earth / JPL, via Solar System Scope (CC BY 4.0). Esta página é contexto científico geral — não faz parte de nenhum dossiê de caso.</p>
-    </section>`;
-  write("/midia/sistema-solar", page({ title: "Sistema solar", description: "Modelo 3D do sistema solar com texturas reais da NASA e fatos verificáveis sobre cada planeta.", path: "/midia/sistema-solar/", bodyHtml: body }));
-}
-
-// ---------------------------------------------------------------------
-// /explorar — instrumentos reais (modelos 3D oficiais NASA), camada educativa
-// sobre como sinais são recebidos, transmitidos, observados e medidos.
-// Cada modelo entra só depois de baixado, hasheado e catalogado em
-// src/data/nasa-models.json — nada aqui é decorativo ou especulativo.
-// ---------------------------------------------------------------------
-function nasaModelBySlug(slug) {
-  return nasaModels.find((m) => m.slug === slug);
-}
-
-function explorarPage() {
-  const dsn = nasaModelBySlug("deep-space-network-70m");
-  const voyager = nasaModelBySlug("voyager");
-  const pioneer = nasaModelBySlug("pioneer-10");
-  const observationModels = ["hubble", "jwst", "kepler", "tess"].map(nasaModelBySlug).filter(Boolean);
-
-  const body = `
-    <section class="section container--narrow">
-      <span class="kicker">Sinais, instrumentos e observação</span>
-      <h1 style="margin-top:12px">Explorar.</h1>
-      <p style="margin-top:8px;color:var(--muted)">Como detectamos, transmitimos e interpretamos sinais — através dos instrumentos reais que fazem esse trabalho, não de ilustração. Cada modelo abaixo é um arquivo 3D oficial da NASA, catalogado com a mesma disciplina de proveniência do resto do arquivo: fonte, crédito, hash e data de download. Esta página é educativa — ela não estabelece nenhuma ligação entre a NASA e os casos do arquivo factual do SINAL/RUÍDO.</p>
-    </section>
-
-    ${dsn ? `
-    <section class="explore-section container--medium">
-      ${nasaModelViewer(dsn)}
-      <p style="margin-top:24px;color:var(--muted);max-width:640px">A detecção começa no instrumento. Antes de interpretar um sinal, é preciso compreender como ele foi recebido, com quais limites e sob quais condições — a mesma pergunta que o método do SINAL/RUÍDO faz sobre qualquer documento ou testemunho.</p>
-    </section>` : ""}
-
-    ${voyager ? `
-    <section class="explore-section container--medium" style="border-top:1px solid var(--border);padding-top:32px">
-      ${nasaModelViewer(voyager)}
-      <p style="margin-top:24px;color:var(--muted);max-width:640px">A Voyager 1 está a mais de 24 bilhões de quilômetros da Terra — um sinal de rádio leva cerca de 23 horas para chegar até ela e outro tanto para voltar. Cada comando enviado pela Deep Space Network e cada resposta de telemetria recebida da sonda carregam esse atraso: não existe "tempo real" nessa distância.</p>
-    </section>` : ""}
-
-    ${pioneer ? `
-    <section class="explore-section container--medium" style="border-top:1px solid var(--border);padding-top:32px">
-      ${nasaModelViewer(pioneer)}
-      <p style="margin-top:24px;color:var(--muted);max-width:640px">Além dos instrumentos científicos, a Pioneer 10 carrega a placa Pioneer: uma mensagem gravada em metal, com informações sobre a origem da espaçonave, destinada a quem — humano ou não — puder encontrá-la no espaço interestelar. Uma tentativa deliberada de comunicação, não um sinal captado por acaso.</p>
-    </section>` : ""}
-
-    ${observationModels.length ? `
-    <section class="section container--medium explore-observation" style="border-top:1px solid var(--border);padding-top:32px">
-      <span class="kicker">Como observamos</span>
-      <h2 style="margin-top:12px">Quatro formas diferentes de ver o que os olhos não alcançam.</h2>
-      <p style="margin-top:8px;color:var(--muted);max-width:640px">Nem todo instrumento "vê" do mesmo jeito. Alguns captam luz visível, outros infravermelho, e alguns nem fotografam — medem variações de brilho para inferir o que existe.</p>
-      <div class="explore-instrument-grid" style="margin-top:24px">
-        ${observationModels.map((m) => `<div class="explore-instrument-card">${nasaModelViewer(m)}</div>`).join("")}
-      </div>
-    </section>` : ""}
-
-    <section class="section container--narrow" style="border-top:1px solid var(--border);padding-top:32px">
-      <span class="kicker">Em catalogação</span>
-      <h2 style="margin-top:12px">Próximos instrumentos</h2>
-      <p style="margin-top:8px;color:var(--muted)">Mars Reconnaissance Orbiter, Galileo e TDRS (relay de comunicação) estão em processo de download, verificação de crédito e catalogação — entram aqui um a um, com fonte e hash conferidos, não em lote.</p>
-    </section>
-
-    <section class="section container--narrow" style="border-top:1px solid var(--border);padding-top:32px">
-      <p class="mono" style="color:var(--muted)"><a href="/explorar/fontes/">Ver todas as fontes, créditos e hashes →</a></p>
-    </section>`;
-
-  write("/explorar", page({
-    title: "Explorar",
-    description: "Como ouvimos, transmitimos e observamos sinais — instrumentos reais da NASA, catalogados com fonte, crédito e proveniência.",
-    path: "/explorar/",
-    bodyHtml: body,
-  }));
-}
-
-// ---------------------------------------------------------------------
-// /explorar/fontes — página de fontes, créditos e hashes dos modelos NASA
-// ---------------------------------------------------------------------
-function explorarFontesPage() {
-  const body = `
-    <section class="section container--narrow">
-      <span class="kicker">Explorar · Proveniência</span>
-      <h1 style="margin-top:12px">Fontes dos modelos 3D.</h1>
-      <p style="margin-top:8px;color:var(--muted)">Todo modelo 3D usado em <a href="/explorar/">/explorar</a> vem de uma fonte oficial da NASA (science.nasa.gov/3d-resources ou github.com/nasa). Nenhum modelo foi baixado de Sketchfab, TurboSquid, CGTrader ou qualquer repositório não oficial. Esta tabela registra a mesma disciplina de proveniência usada nos documentos do arquivo factual.</p>
-
-      <div style="margin-top:28px;display:grid;gap:16px">
-        ${nasaModels.map((m) => `
-          <article class="paper method-block">
-            <h2 style="font-size:16px">${escapeHtml(m.title)}</h2>
-            <p style="margin-top:6px;color:var(--paper-muted)">${escapeHtml(m.question)}</p>
-            <dl class="mono" style="margin-top:12px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:12px">
-              <dt>Agência</dt><dd>${escapeHtml(m.agency)}</dd>
-              <dt>Missão/sistema</dt><dd>${escapeHtml(m.mission)}</dd>
-              <dt>Crédito</dt><dd>${escapeHtml(m.credit)}</dd>
-              <dt>Arquivo original</dt><dd>${escapeHtml(m.originalFilename)}</dd>
-              <dt>Formato</dt><dd>${escapeHtml(m.format.toUpperCase())}</dd>
-              <dt>Tamanho</dt><dd>${(m.sizeBytes / 1024 / 1024).toFixed(2)} MB</dd>
-              <dt>SHA-256</dt><dd style="word-break:break-all">${escapeHtml(m.sha256)}</dd>
-              <dt>Baixado em</dt><dd>${escapeHtml(m.downloadedAt)}</dd>
-              <dt>Uso</dt><dd>${escapeHtml(m.usage)}</dd>
-              <dt>Fonte oficial</dt><dd><a href="${escapeHtml(m.sourcePage)}" target="_blank" rel="noopener">${escapeHtml(m.sourcePage)} ↗</a></dd>
-            </dl>
-          </article>`).join("")}
-      </div>
-
-      <p class="mono" style="margin-top:28px;color:var(--muted)">A NASA não é parceira do SINAL/RUÍDO. O uso destes modelos é educacional e informativo, conforme a política geral do hub NASA 3D Resources.</p>
-    </section>`;
-  write("/explorar/fontes", page({
-    title: "Fontes dos modelos 3D",
-    description: "Fonte, crédito, hash e data de download de cada modelo 3D oficial da NASA usado em /explorar.",
-    path: "/explorar/fontes/",
-    bodyHtml: body,
-  }));
-}
-
 function midiaDetailPage(m) {
   const body = `
     <article class="section container--medium">
@@ -1329,8 +1189,6 @@ function buildSeoFiles() {
 ["arquivo", "casos", "documentos", "colecoes", "midia", "noticias", "metodo", "correcoes", "livro", "livros", "leitores", "imprensa", "privacidade", "r", "explorar"].forEach(clean);
 
 homePage();
-// explorarPage(); removido
-// explorarFontesPage(); removido
 arquivoPage();
 casosPage();
 cases.forEach(caseDossierPage);
@@ -1339,8 +1197,6 @@ documents.forEach(documentoDetailPage);
 colecoesPage();
 collections.forEach(colecaoDetailPage);
 midiaPage();
-// mapaEstelarPage(); removido
-// sistemaSolarPage(); removido
 media.forEach(midiaDetailPage);
 noticiasPage();
 metodoPage();

@@ -99,15 +99,13 @@ Este pacote recebeu nova Home, biblioteca audiovisual ampliada, destaque PURSUE,
 Leia antes de alterar:
 - `IMPLEMENTADO-DINAMICO.md`
 - `AMOSTRA-IMPORTAR.md`
-- `COMMENTS-CLOUDFLARE.md`
-- `schema/comments.sql`
+
+> Atualização 25/09/2026: comentários, formulário de contato, mapa estelar, sistema solar e modelos 3D NASA foram removidos (código no histórico, tag `pre-faxina`). Não reintroduzir sem decisão explícita do autor.
 
 ### Não regredir
 - a frase principal da Home é **“O que sabemos. O que não sabemos. O que ainda falta encontrar.”**;
 - não reintroduzir Gray, glitch, nave, estrelas ou efeitos de “site alien” no arquivo factual;
-- comentários ficam somente na área literária;
-- comentários são moderados antes de aparecer;
-- não exigir e-mail para comentar;
+- nenhum comentário público, formulário ou cadastro (regra vigente);
 - não criar likes, ranking, views ou recomendação por engajamento;
 - não inventar texto para preencher os capítulos: importar da fonte literária homologada;
 - PURSUE/AARO/NARA/SIAN devem manter proveniência e limitações explícitas.
