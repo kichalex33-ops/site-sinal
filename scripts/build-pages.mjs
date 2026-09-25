@@ -788,12 +788,14 @@ function livroSampleEnPage() {
       <div class="reading-actions"><a class="btn" href="/livro/">Read in Portuguese →</a><a class="btn" href="/casos/">Explore the real cases →</a></div>
     </article>`;
   write("/livro/sample", page({
-    title: "Sample chapters (English)",
-    description: "Read a free sample of the first three chapters of SIGNAL/NOISE, the English edition of the novel.",
+    title: "SIGNAL/NOISE: free sample chapters",
+    description: "Read a free sample of the first three chapters of SIGNAL/NOISE, a novel by Alex Jr. Kich.",
     path: "/livro/sample/",
     bodyHtml: body,
-    ogImage: "/livro/capa.jpg",
-    robots: "noindex,follow",
+    ogImage: "/livro/capa-en.jpg",
+    lang: "en",
+    ogLocale: "en_US",
+    minimal: true,
   }));
 }
 

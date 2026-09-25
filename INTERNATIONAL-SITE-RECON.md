@@ -628,3 +628,14 @@ Arquivo único, 1149x1368, exportado do WhatsApp (compressão do aplicativo). Se
 Substitui a lista da seção F.3: a capa internacional vigente é esta.
 
 Manuscrito em inglês: ainda em tradução pelo autor (edição de 38 capítulos). Continuam sem uso o manuscrito KDP de 45 capítulos e a amostra em inglês antiga (`/livro/sample/`, `noindex`), que segue publicada e desatualizada até decisão do autor.
+
+## O. Amostra em inglês liberada (2026-09-25)
+
+O autor declarou que a amostra em inglês do site está correta e pode ser publicada.
+| Item | Situação |
+|---|---|
+| Página | `/livro/sample/` (URL preservada), 3 capítulos de `sample-chapters-en.json` |
+| Mudanças | Sai `noindex` (agora `index,follow`); entra no sitemap; `lang="en"`, `og:locale en_US`; título "SIGNAL/NOISE: free sample chapters"; imagem de compartilhamento passa a ser a nova capa internacional (`capa-en.jpg`); casca mínima em inglês (sem o menu em português) |
+| Não mudou | Texto dos capítulos, botão "Buy the book" (Amazon US) e o link "Read in Portuguese" |
+| Ressalva registrada | Os capítulos 2 e 3 ("Known Error", "The Machine Against Itself") não correspondem aos capítulos 2 e 3 da edição PT de 38 capítulos ("Sinal", "O estatuto"). Por decisão do autor a amostra é tratada como aprovada; se a tradução final alterar esses capítulos, a página precisa ser atualizada |
+| Publicação | Só local (commit). Nenhum deploy: o diretório não tem remote e o Cloudflare Pages deste projeto não foi acionado |
