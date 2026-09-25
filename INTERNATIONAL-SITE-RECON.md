@@ -614,3 +614,17 @@ Arquivo único, 1149x1368, exportado do WhatsApp (compressão do aplicativo). Se
 4. Confirmar a foto do autor (definitiva? original em alta? crédito?).
 5. Apagar a pasta residual `SINAL_RUIDO_WEB_DINAMICO_COMENTARIOS/` (autor).
 6. Os quatro arquivos de "A Última Testemunha" seguem fora dos commits.
+
+## N. Capa internacional recebida (2026-09-25)
+
+| Item | Situação |
+|---|---|
+| Arquivo | `F:\SINAL_RUIDO\sinal final\DIGITAL_BOOK_COVER.jpg`, 1600x2560, 696 KB, 09-25 11:53 |
+| Conteúdo | "SIGNAL NOISE", lema "Not every signal wants to be heard", "Alex Jr. Kich", radiotelescópio e feixe laranja |
+| Diferença para a anterior | Arte nova (hash distinto de `capa-en.jpg` de 09-14 e de `capa sinal.jpeg` de 09-23) |
+| Uso no site | Reduzida para 1000x1600 (191 KB, mesma proporção 0,625) e gravada em `public/livro/capa-en.jpg`, o caminho que o `_middleware.js` já usa para visitantes de fora do Brasil. Nenhuma página HTML mudou |
+| Master | Permanece em `sinal final/`; não foi copiada para o projeto |
+
+Substitui a lista da seção F.3: a capa internacional vigente é esta.
+
+Manuscrito em inglês: ainda em tradução pelo autor (edição de 38 capítulos). Continuam sem uso o manuscrito KDP de 45 capítulos e a amostra em inglês antiga (`/livro/sample/`, `noindex`), que segue publicada e desatualizada até decisão do autor.
