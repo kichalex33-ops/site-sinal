@@ -690,3 +690,9 @@ A capa de "Antes de Nascermos" parecia apagada: o preto estava levantado (median
 ## V. Capas do livro I (2026-09-25)
 
 Arte nova em PT (`sinal final/LIVROS/1/pt.png`, "Algumas coisas não deveriam nascer.") e EN (`eg.png`, "THE GODS HAVE NO CHILDREN · Some things should never be born.", com "COSMOLOGICAL CHRONICLES"), cortadas 30 px de cada lado como as demais. A EN vai em `public/livros/os-deuses-nao-tem-filhos-en.jpg` (`coverEn`). Livros com capa em inglês no site: I e VI.
+
+## W. Cortesia PT/EN e capas do livro II (2026-09-25)
+
+- **Capas do livro II** (`sinal final/LIVROS/2/pt.png` e `eng.png`): PT "A Última Testemunha" ("Se ninguém viu, talvez nunca tenha acontecido.") e EN "THE LAST WITNESS" ("If no one saw it, maybe it never happened."), com "COSMOLOGICAL CHRONICLES". Livros com capa em inglês: I, II e VI.
+- **Cortesia em português** (`/cortesia/55okhxeexdf9m1/`): os quatro ajustes aplicados (texto de divulgação "Ajude a divulgar"; prévia do link "Uma cópia de cortesia de SINAL/RUÍDO... oferecida pelo autor"; aviso de direitos "todos os direitos reservados: o arquivo não deve ser republicado nem redistribuído"; frase "não divulgue" reescrita em tom cordial, restrita ao link e ao arquivo). Continua `noindex,nofollow,noarchive`, `no-store`, fora do sitemap e da busca. EPUB regenerado do texto final de 25/09.
+- **Cortesia em inglês:** código pronto (`CORTESIA.en`), token próprio `hfrrz5lid8ketj`. A página só é gerada quando existir `public/cortesia/hfrrz5lid8ketj/SIGNAL_NOISE_courtesy.epub` (aguardando a tradução do autor). Textos em inglês de minha autoria, a revisar.

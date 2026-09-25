@@ -50,7 +50,8 @@
     "featured": false,
     "numeral": "II",
     "cover": "/livros/a-ultima-testemunha.jpg",
-    "titleEn": "THE LAST WITNESS"
+    "titleEn": "THE LAST WITNESS",
+    "coverEn": "/livros/a-ultima-testemunha-en.jpg"
   },
   {
     "slug": "amanha-nao-existe",

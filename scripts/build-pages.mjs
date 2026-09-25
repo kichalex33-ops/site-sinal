@@ -1007,39 +1007,96 @@ function chroniclesEnPage(list) {
 
 
 
-// /cortesia/<token> — pagina nao listada: so acessa quem tem o link (noindex, fora do menu, do sitemap e da busca)
-const CORTESIA_TOKEN = "55okhxeexdf9m1";
+// /cortesia/<token> — páginas não listadas de cortesia (uma em português, outra em inglês): só acessa quem tem o
+// link (noindex, fora do menu, do sitemap e da busca). O EPUB fica sob o mesmo endereço secreto.
+// A página em inglês só é gerada quando o EPUB em inglês existir em public/cortesia/<token>/.
+const CORTESIA = {
+  pt: {
+    token: "55okhxeexdf9m1",
+    file: "SINAL_RUIDO_cortesia.epub",
+    lang: "pt-BR", ogLocale: "pt_BR",
+    title: "Cortesia",
+    description: "Uma cópia de cortesia de SINAL/RUÍDO, de Alex Jr. Kich, oferecida pelo autor.",
+    cover: "/livro/capa.jpg", coverAlt: "Capa de SINAL/RUÍDO",
+    kicker: "Cortesia do SINAL/RUÍDO",
+    h1: "Este exemplar é seu.",
+    lead: "Você recebeu este link porque alguém quis que você conhecesse <strong>SINAL/RUÍDO</strong>. Esta é uma cópia de cortesia, oferecida para você ler e avaliar o projeto. Baixe o ebook abaixo, sem custo. Esta página não é pública: ela não aparece no menu nem nas buscas.",
+    fileLabel: "EBOOK · EPUB", btn: "Baixar EPUB",
+    notice: "Cópia de cortesia para leitura e avaliação. Todos os direitos reservados: o arquivo não deve ser republicado nem redistribuído.",
+    helpKicker: "Como ler",
+    help: [
+      "<strong>Celular ou tablet:</strong> abra o arquivo no Apple Livros (iPhone e iPad), Google Play Livros ou em outro leitor de EPUB.",
+      "<strong>Kindle:</strong> envie o arquivo pelo serviço Send to Kindle da Amazon.",
+      "<strong>Computador:</strong> use um leitor como o Calibre ou o próprio navegador, com uma extensão de EPUB.",
+    ],
+    shareKicker: "Ajude a divulgar",
+    share: "Se a leitura valer a pena, você pode ajudar de outras formas: comente ou resenhe o livro, indique <a href=\"/livro/\">a página do livro</a> e siga <a href=\"https://www.instagram.com/sinal_ruido/\" target=\"_blank\" rel=\"noopener\">@sinal_ruido</a> no Instagram. Para proteger os direitos do autor, pedimos apenas que este link e o arquivo não sejam divulgados publicamente.",
+    shell: {},
+  },
+  en: {
+    token: "hfrrz5lid8ketj",
+    file: "SIGNAL_NOISE_courtesy.epub",
+    lang: "en", ogLocale: "en_US",
+    title: "Courtesy copy",
+    description: "A courtesy copy of SIGNAL/NOISE by Alex Jr. Kich, offered by the author.",
+    cover: "/livro/capa-en.jpg", coverAlt: "Cover of SIGNAL/NOISE",
+    kicker: "Courtesy copy of SIGNAL/NOISE",
+    h1: "This copy is yours.",
+    lead: "You received this link because someone wanted you to discover <strong>SIGNAL/NOISE</strong>. This is a courtesy copy, offered so you can read and evaluate the project. Download the ebook below, free of charge. This page is not public: it does not appear in menus or search results.",
+    fileLabel: "EBOOK · EPUB", btn: "Download EPUB",
+    notice: "Courtesy copy for reading and evaluation. All rights reserved: the file must not be republished or redistributed.",
+    helpKicker: "How to read",
+    help: [
+      "<strong>Phone or tablet:</strong> open the file in Apple Books (iPhone and iPad), Google Play Books or any other EPUB reader.",
+      "<strong>Kindle:</strong> send the file with Amazon’s Send to Kindle service.",
+      "<strong>Computer:</strong> use a reader such as Calibre, or your browser with an EPUB extension.",
+    ],
+    shareKicker: "Help spread the word",
+    share: "If the reading is worth it, you can help in other ways: review or comment on the book, point people to <a href=\"/en/signal-noise/\">the book page</a> and follow <a href=\"https://www.instagram.com/sinal_ruido/\" target=\"_blank\" rel=\"noopener\">@sinal_ruido</a> on Instagram. To protect the author’s rights, we only ask that this link and the file are not shared publicly.",
+    shell: { lang: "en", ogLocale: "en_US", minimal: true },
+  },
+};
+
 function cortesiaPage() {
-  const epubHref = `/cortesia/${CORTESIA_TOKEN}/SINAL_RUIDO_cortesia.epub`;
-  const epubKb = Math.round(readFileSync(join(root, `public/cortesia/${CORTESIA_TOKEN}/SINAL_RUIDO_cortesia.epub`)).length / 1024);
-  const body = `
+  for (const c of Object.values(CORTESIA)) {
+    const filePath = join(root, `public/cortesia/${c.token}/${c.file}`);
+    if (!existsSync(filePath)) {
+      console.log(`Cortesia (${c.lang}): EPUB ausente em public/cortesia/${c.token}/${c.file}; página não gerada.`);
+      continue;
+    }
+    const epubHref = `/cortesia/${c.token}/${c.file}`;
+    const epubKb = Math.round(readFileSync(filePath).length / 1024);
+    const body = `
     <section class="section container--narrow courtesy">
-      <span class="kicker">Cortesia do SINAL/RUÍDO</span>
-      <h1 style="margin-top:12px">Este exemplar é seu.</h1>
-      <p style="margin-top:8px;color:var(--muted);max-width:60ch">Você recebeu este link porque alguém quis que você lesse <strong>SINAL/RUÍDO</strong>. Baixe o ebook abaixo, sem custo. Esta página não é pública: ela não aparece no menu nem nas buscas.</p>
+      <span class="kicker">${c.kicker}</span>
+      <h1 style="margin-top:12px">${c.h1}</h1>
+      <p style="margin-top:8px;color:var(--muted);max-width:60ch">${c.lead}</p>
 
       <div class="courtesy__card">
-        <img src="/livro/capa.jpg" alt="Capa de SINAL/RUÍDO" width="300" height="432" />
+        <img src="${c.cover}" alt="${c.coverAlt}" width="300" height="432" />
         <div>
-          <span class="mono">EBOOK · EPUB · ${epubKb} KB</span>
-          <h2>SINAL/RUÍDO</h2>
+          <span class="mono">${c.fileLabel} · ${epubKb} KB</span>
+          <h2>${c.lang === "en" ? "SIGNAL/NOISE" : "SINAL/RUÍDO"}</h2>
           <p class="mono" style="color:var(--signal)">Alex Jr. Kich</p>
-          <a class="btn btn--primary" href="${epubHref}" download="SINAL_RUIDO_cortesia.epub" rel="noopener">Baixar EPUB</a>
+          <a class="btn btn--primary" href="${epubHref}" download="${c.file}" rel="noopener">${c.btn}</a>
+          <p class="mono" style="margin-top:14px;color:var(--muted);max-width:44ch">${c.notice}</p>
         </div>
       </div>
 
       <section class="courtesy__help">
-        <span class="kicker">Como ler</span>
+        <span class="kicker">${c.helpKicker}</span>
         <ul>
-          <li><strong>Celular ou tablet:</strong> abra o arquivo no Apple Livros (iPhone e iPad), Google Play Livros ou em outro leitor de EPUB.</li>
-          <li><strong>Kindle:</strong> envie o arquivo pelo serviço Send to Kindle da Amazon.</li>
-          <li><strong>Computador:</strong> use um leitor como o Calibre ou o próprio navegador, com uma extensão de EPUB.</li>
+          ${c.help.map((h) => `<li>${h}</li>`).join("\n          ")}
         </ul>
       </section>
 
-      <p class="mono" style="margin-top:28px;color:var(--muted)">Gostou? Conheça <a href="/livro/">a página do livro</a>. Por favor, não divulgue este link publicamente.</p>
+      <section class="courtesy__help">
+        <span class="kicker">${c.shareKicker}</span>
+        <p style="margin-top:8px;color:var(--muted);max-width:60ch">${c.share}</p>
+      </section>
     </section>`;
-  write(`/cortesia/${CORTESIA_TOKEN}`, page({ title: "Cortesia", description: "Página privada de cortesia do SINAL/RUÍDO.", path: `/cortesia/${CORTESIA_TOKEN}/`, bodyHtml: body, robots: "noindex,nofollow,noarchive", ogImage: "/livro/capa.jpg" }));
+    write(`/cortesia/${c.token}`, page({ title: c.title, description: c.description, path: `/cortesia/${c.token}/`, bodyHtml: body, robots: "noindex,nofollow,noarchive", ogImage: c.cover, ...c.shell }));
+  }
 }
 
 
