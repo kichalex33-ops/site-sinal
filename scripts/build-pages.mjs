@@ -904,7 +904,7 @@ function bookSheetPage(b, list, lang) {
             <p class="mono" style="margin-top:8px;color:var(--signal)">${escapeHtml(b.author)}</p>
             ${sh.tagline ? `<p class="book-sheet__tagline" style="margin-top:14px;font-style:italic;color:var(--muted)">${escapeHtml(sh.tagline)}</p>` : ""}
             <div class="book-sheet__synopsis">${synopsis ? paras(synopsis) : `<p class="book-sheet__pending">${ui.synopsisSoon}</p>`}</div>
-            ${isOrigin ? `<p style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--primary" href="/livro/sample/">Read the sample</a><a class="btn" href="/buy/">Get the book</a></p>` : ""}
+            ${isOrigin ? `<p style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--primary" href="/livro/sample/">Read the sample</a><a class="btn" href="/buy/">Get the book</a></p>` : ""}${!en && b.purchaseUrl ? `<div class="buy-panel" style="margin-top:18px"><div class="buy-group"><span class="buy-group__title">Onde comprar</span><div class="buy-group__links"><a class="buy-link" href="${escapeHtml(b.purchaseUrl)}" target="_blank" rel="noopener"><span class="buy-link__format">Comprar</span><span class="buy-link__store">Amazon BR</span><span class="buy-link__arrow" aria-hidden="true">↗</span></a></div></div></div>` : ""}
           </div>
         </div>
 
