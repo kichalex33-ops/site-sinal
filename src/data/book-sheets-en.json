@@ -1,192 +1,484 @@
 {
-  "_nota": "Traducao para o ingles das fichas em book-sheets.json. Titulos dos livros ficam no original ate o autor fornecer os titulos em ingles das capas (campo 'title' opcional por livro). As secoes 'A face do Arquivo' e 'Lugar dentro da coleção' nao foram traduzidas: ficam ocultas por decisao editorial pendente. Rascunho a revisar pelo autor antes de indexar.",
+  "_nota": "Traducao para o ingles, auditada pelo autor em 2026-09-25 (arquivos em F:/SINAL_RUIDO/traducao-en). Titulos em ingles em books.json (titleEn). As secoes \"A face do Arquivo\" e \"Lugar dentro da coleção\" nao sao traduzidas: ficam ocultas (sem spoilers).",
   "sinal-ruido": {
     "tagline": "What if the most important signal in history had already arrived, and no one knew what it was trying to say?",
-    "synopsis": "On August 15, 1977, the Big Ear radio telescope recorded a radio signal so unusual that astronomer Jerry Ehman circled the printed sequence and wrote a single word beside it: “Wow!” Decades later, the episode remains one of the great enigmas of radio astronomy.\n\nSIGNAL/NOISE takes that real event and moves it into an intimate story of investigation, loss and obsession. Henrique, Marina and Lara follow traces that seem to link the old signal to events much closer to home than they should be. What begins as an attempt to separate coincidence from evidence starts to touch memories, absences and places where reality seems to have kept the marks of something no one managed to record in full.\n\nThe further the group goes, the less the question seems to be “who sent the Wow!” The problem becomes another one: what if humanity received something true, but read it all with the wrong tools? What if the difference between signal and noise also depends on who is listening?\n\nThe investigation leads the characters to a farm gate, a disappearance and an absence that does not behave like an ordinary absence. Rafael vanishes, but the emptiness he leaves behind does not end with him. The book closes its own story, yet leaves a fissure open: perhaps the universe is not silent. Perhaps we simply do not know how to recognize the shape of an answer.",
-    "ambientacao": { "texto": "The novel moves between the concrete world of research, historical records and everyday life in Brazil, and a second layer that never fully leaves the real. The historical starting point is the Wow! signal of 1977, but the narrative does not depend on futuristic laboratories or great spaceships. The strange appears in ordinary places: a road, a house, documents, photographs, equipment, a farm gate.\n\nThis scale matters. The cosmos does not appear as a distant spectacle, but as something able to touch domestic life. The central feeling is that a gigantic question came in through a small crack." },
+    "synopsis": "On August 15, 1977, the Big Ear radio telescope recorded a radio signal so unusual that astronomer Jerry Ehman circled the printed sequence and wrote a single word beside it: “Wow!” Decades later, the episode remains one of the great enigmas of radio astronomy.\n\nSIGNAL/NOISE takes that real event and moves it into an intimate story of investigation, loss, and obsession. Henrique, Marina and Lara follow traces that seem to link the old signal to events much closer to home than they should be. What begins as an attempt to separate coincidence from evidence starts to touch memories, absences and places where reality seems to have kept the marks of something no one managed to record in full.\n\nThe further the group goes, the less the question seems to be “who sent the Wow!” The problem becomes another one: what if humanity received something true, but read it all with the wrong tools? What if the difference between signal and noise also depends on who is listening?\n\nThe investigation leads the characters to a farm gate, a disappearance and an absence that does not behave like an ordinary absence. Rafael vanishes, but the emptiness he leaves behind does not end with him. The book closes its own story, yet leaves a fissure open: perhaps the universe is not silent. Perhaps we simply do not know how to recognize the shape of an answer.",
+    "ambientacao": {
+      "texto": "The novel moves between the concrete world of research, historical records and everyday life in Brazil, and a second layer that never fully leaves the real. The historical starting point is the Wow! signal of 1977, but the narrative does not depend on futuristic laboratories or great spaceships. The strange appears in ordinary places: a road, a house, documents, photographs, equipment, a farm gate.\n\nThis scale matters. The cosmos does not appear as a distant spectacle, but as something able to touch domestic life. The central feeling is that a gigantic question came in through a small crack."
+    },
     "personagens": [
-      { "nome": "Henrique", "descricao": "One of the axes of the investigation. He is driven by the need to understand what the records do not explain, but he must face the fact that understanding a phenomenon and surviving it can be two different things." },
-      { "nome": "Marina", "descricao": "Part of the human core of the investigation, she keeps the mystery from becoming only an intellectual puzzle. Her presence keeps the emotional cost of every discovery in view." },
-      { "nome": "Lara", "descricao": "Takes part in the search for connections between the historical case and present events. She helps strain the border between hypothesis, evidence and whatever simply does not fit the available model." },
-      { "nome": "Rafael", "descricao": "His absence becomes a structural presence in the novel. The disappearance by the farm gate works not only as a mystery, but as a wound that keeps echoing elsewhere in the narrative universe." },
-      { "nome": "Argos", "descricao": "A name that returns in the larger architecture of the project. In SIGNAL/NOISE, its role belongs to the reader’s first contact with patterns that only take on another reading when seen from afar." }
+      {
+        "nome": "Henrique",
+        "descricao": "One of the axes of the investigation. He is driven by the need to understand what the records do not explain, but he must face the fact that understanding a phenomenon and surviving it can be two different things."
+      },
+      {
+        "nome": "Marina",
+        "descricao": "Part of the human core of the investigation, she keeps the mystery from becoming only an intellectual puzzle. Her presence keeps the emotional cost of every discovery in view."
+      },
+      {
+        "nome": "Lara",
+        "descricao": "Takes part in the search for connections between the historical case and present events. She helps strain the border between hypothesis, evidence, and whatever simply does not fit the available model."
+      },
+      {
+        "nome": "Rafael",
+        "descricao": "His absence becomes a structural presence in the novel. The disappearance by the farm gate works not only as a mystery, but as a wound that keeps echoing elsewhere in the narrative universe."
+      },
+      {
+        "nome": "Argos",
+        "descricao": "A name that returns in the larger architecture of the project. In SIGNAL/NOISE, its role belongs to the reader’s first contact with patterns that only take on another reading when seen from afar."
+      }
     ],
     "secoes": [
-      { "titulo": "The human conflict", "texto": "At the center of SIGNAL/NOISE is not the question of extraterrestrials, but the human experience of chasing an answer that may never allow itself to be fully translated. The characters must decide how far to go when the investigation stops being mere curiosity and starts to demand people, relationships and certainties." },
-      { "titulo": "The philosophy behind the book", "texto": "The philosophy of the book grows out of the difference between information and meaning. A signal can exist without our knowing what it means. A piece of evidence can be true and still support wrong interpretations. The novel works on the human need to turn silence into message and coincidence into narrative.\n\nThe central question is simple and uncomfortable: if something calls to us, does that mean it was made for us?\n\nSIGNAL/NOISE also questions the anthropocentrism hidden in the search for intelligence beyond Earth. We expect words, mathematics, repetition, recognizable intent. But a truly different intelligence may not answer within the categories we use to define “answer.”\n\nThat is why the book does not treat uncertainty as a flaw. It is part of the experience. Knowledge advances, but it does not conquer everything. The mystery stays fair: there are facts, consequences and traces, yet none of them gives the characters a comfortable explanation.\n\nAs a work of origin, SIGNAL/NOISE establishes the question that will accompany the Cosmological Chronicles: how much of reality exists beyond what we are able to record?" },
-      { "titulo": "Symbols and motifs", "texto": "The Wow! signal, the 6EQUJ5 sequence, the farm gate, incomplete records, noise, absence, photographs and the idea of waiting." },
-      { "titulo": "Tone", "texto": "Science fiction of mystery, investigation and gradual strangeness. The extraordinary enters through concrete details and stays close to everyday life." }
+      {
+        "titulo": "The human conflict",
+        "texto": "At the center of SIGNAL/NOISE is not the question of extraterrestrials, but the human experience of chasing an answer that may never allow itself to be fully translated. The characters must decide how far to go when the investigation stops being mere curiosity and starts to demand people, relationships and certainties."
+      },
+      {
+        "titulo": "The philosophy behind the book",
+        "texto": "The philosophy of the book grows out of the difference between information and meaning. A signal can exist without our knowing what it means. A piece of evidence can be true and still support wrong interpretations. The novel examines the human need to turn silence into message and coincidence into narrative.\n\nThe central question is simple and uncomfortable: if something calls to us, does that mean it was made for us?\n\nSIGNAL/NOISE also questions the anthropocentrism hidden in the search for intelligence beyond Earth. We expect words, mathematics, repetition, recognizable intent. But a truly different intelligence may not answer within the categories we use to define “answer.”\n\nThat is why the book does not treat uncertainty as a flaw. It is part of the experience. Knowledge advances, but it does not conquer everything. The mystery stays fair: there are facts, consequences, and traces, yet none of them gives the characters a comfortable explanation.\n\nAs a work of origin, SIGNAL/NOISE establishes the question that will accompany the Cosmological Chronicles: how much of reality exists beyond what we are able to record?"
+      },
+      {
+        "titulo": "Symbols and motifs",
+        "texto": "The Wow! signal, the 6EQUJ5 sequence, the farm gate, incomplete records, noise, absence, photographs and the idea of waiting."
+      },
+      {
+        "titulo": "Tone",
+        "texto": "Science fiction of mystery, investigation and gradual strangeness. The extraordinary enters through concrete details and stays close to everyday life."
+      }
     ]
   },
   "os-deuses-nao-tem-filhos": {
     "tagline": "Creating a life gives no one the right to own it.",
-    "synopsis": "There is a point at which the question of origin stops being scientific and becomes personal.\n\nIn Os Deuses Não Têm Filhos, Enki, Ninhursag and a child who should not have been born clash over creation, inheritance and obedience. Birth is not merely someone’s arrival in the world. It threatens an order built on the idea that to create is also to determine.\n\nCaio stands at the center of this rupture. He receives an inheritance he did not ask for and discovers that carrying something from those who came before does not mean repeating their desires. Around him, forces and characters try to understand whether the child is a mistake, a continuation, a threat or a possibility.\n\nThe story moves through a territory where ancient names live alongside deeply human decisions. The novel refuses to treat its “gods” as omnipotent figures. They err, calculate, protect, fear and try to control the consequences of what they have done. The question stops being “who made us?” and becomes a more dangerous one: “what do we owe those who made us?”\n\nWhen the child’s existence breaks a rule that seemed absolute, each character must choose between preserving the system and admitting that life can produce something no architecture foresaw.",
-    "ambientacao": { "texto": "The setting combines recognizable human spaces with a layer of origin and intervention that suggests a history older than anything humanity knows. The contrast is deliberate: questions of nearly mythological scale are experienced by people in physical, familiar, vulnerable places.\n\nThe narrative does not depend on a distant world. The strange shows up through inheritances, bodies, decisions, documents and presences that seem to carry a memory older than the characters’ own lives." },
+    "synopsis": "There is a point at which the question of origin stops being scientific and becomes personal.\n\nIn The Gods Have No Children, Enki, Ninhursag and a child who should not have been born clash over creation, inheritance and obedience. Birth is not merely someone’s arrival in the world. It threatens an order built on the idea that to create is also to determine.\n\nCaio stands at the center of this rupture. He receives an inheritance he did not ask for and discovers that carrying something from those who came before does not mean repeating their desires. Around him, forces and characters try to understand whether the child is a mistake, a continuation, a threat or a possibility.\n\nThe story moves through a territory where ancient names live alongside deeply human decisions. The novel refuses to treat its “gods” as omnipotent figures. They err, calculate, protect, fear, and try to control the consequences of what they have done. The question stops being “who made us?” and becomes a more dangerous one: “what do we owe those who made us?”\n\nWhen the child’s existence breaks a rule that seemed absolute, each character must choose between preserving the system and admitting that life can produce something no architecture foresaw.",
+    "ambientacao": {
+      "texto": "The setting combines recognizable human spaces with a layer of origin and intervention that suggests a history older than anything humanity knows. The contrast is deliberate: questions of nearly mythological scale are experienced by people in physical, familiar, vulnerable places.\n\nThe narrative does not depend on a distant world. The strange shows up through inheritances, bodies, decisions, documents and presences that seem to carry a memory older than the characters’ own lives."
+    },
     "personagens": [
-      { "nome": "Caio", "descricao": "The heir who refuses to be an automatic continuation. His arc puts autonomy at the center of the book: receiving an origin, a legacy or a function does not mean consenting to it." },
-      { "nome": "Enki", "descricao": "A figure tied to creation and intervention. He is not treated as an abstract deity but as an agent whose decisions have consequences. His relationship with what he helped produce is crossed by responsibility and limit." },
-      { "nome": "Ninhursag", "descricao": "One of the symbolic centers of the volume. Her presence links birth, creation and the body. The word “wait” finds in her one of the collection’s important seams." },
-      { "nome": "The child who should not have been born", "descricao": "More than a biological enigma, the child represents the possibility of something new escaping the intention of its creators. Its existence puts the idea of a perfect design in crisis." },
-      { "nome": "Elisa", "descricao": "A recurring version who appears at another stage of her path in different books. Here her presence takes part in the discreet connections that unite independent stories." }
+      {
+        "nome": "Caio",
+        "descricao": "The heir who refuses to be an automatic continuation. His arc puts autonomy at the center of the book: receiving an origin, a legacy or a function does not mean consenting to it."
+      },
+      {
+        "nome": "Enki",
+        "descricao": "A figure tied to creation and intervention. He is not treated as an abstract deity but as an agent whose decisions have consequences. His relationship with what he helped produce is crossed by responsibility and limit."
+      },
+      {
+        "nome": "Ninhursag",
+        "descricao": "One of the symbolic centers of the volume. Her presence links birth, creation, and the body. The word “wait” finds in her one of the collection’s important seams."
+      },
+      {
+        "nome": "The child who should not have been born",
+        "descricao": "More than a biological enigma, the child represents the possibility of something new escaping the intention of its creators. Its existence puts the idea of a perfect design in crisis."
+      },
+      {
+        "nome": "Elisa",
+        "descricao": "A recurring counterpart who appears at another stage of her path in different books. Here her presence takes part in the discreet connections that unite independent stories."
+      }
     ],
     "secoes": [
-      { "titulo": "The human conflict", "texto": "The human conflict is that of inheritance. Children receive names, stories, debts, expectations and fears from people who existed before them. The book stretches this experience to the cosmic limit: even if our species had creators, we could still say no." },
-      { "titulo": "The philosophy behind the book", "texto": "The book turns on one idea: creation is not property.\n\nParents create children, societies create institutions, scientists create systems and civilizations may create other forms of life. In every case there is a similar temptation: to confuse origin with permanent authority.\n\nThe central question is: if we were made by someone, does that oblige us to fulfill the intention of whoever made us?\n\nOs Deuses Não Têm Filhos answers through the characters’ choices, not through a thesis. Caio can inherit without obeying. The child can exist without justifying its existence to the project that produced it. And the creators must face the possibility that the truest act of creation is to allow what was born to stop belonging to them.\n\nThe title contains the philosophical provocation of the novel. A god who demands descendants as extensions of himself has no children; he has copies. Filiation only begins when there is separation." },
-      { "titulo": "Symbols and motifs", "texto": "Birth, tree and living branch, inheritance, mark, body, lineage, refusal and the presence of Ninhursag." },
-      { "titulo": "Tone", "texto": "Science fiction with mythological resonance, sustained by human relationships, choices and concrete consequences." }
+      {
+        "titulo": "The human conflict",
+        "texto": "The human conflict is that of inheritance. Children receive names, stories, debts, expectations, and fears from people who existed before them. The book carries this experience to a cosmic scale: even if our species had creators, we could still say no."
+      },
+      {
+        "titulo": "The philosophy behind the book",
+        "texto": "The book turns on one idea: creation is not property.\n\nParents create children, societies create institutions, scientists create systems and civilizations may create other forms of life. In every case there is a similar temptation: to confuse origin with permanent authority.\n\nThe central question is: if we were made by someone, does that oblige us to fulfill the intention of whoever made us?\n\nThe Gods Have No Children answers through the characters’ choices, not through a thesis. Caio can inherit without obeying. The child can exist without justifying its existence to the project that produced it. And the creators must face the possibility that the truest act of creation is to allow what was born to stop belonging to them.\n\nThe title contains the philosophical provocation of the novel. A god who demands descendants as extensions of himself has no children; he has copies. Filiation only begins when there is separation."
+      },
+      {
+        "titulo": "Symbols and motifs",
+        "texto": "Birth, tree and living branch, inheritance, mark, body, lineage, refusal and the presence of Ninhursag."
+      },
+      {
+        "titulo": "Tone",
+        "texto": "Science fiction with mythological resonance, sustained by human relationships, choices and concrete consequences."
+      }
     ]
   },
   "a-ultima-testemunha": {
     "tagline": "Some things only happen when someone is watching.",
-    "synopsis": "Lívia Saldanha works with images that seem to record impossible events. At first, the problem may be technical: compression, file failure, interference, editing. Then the images begin to show something else. They do not merely show the events. The presence of whoever observes seems to take part in them.\n\nPeople disappear. Black rectangles appear where there should be information. Objects change position or meaning when the recording is reviewed. A cup, a blue mug, a small piece: banal details become instruments of testing because Lívia refuses to accept easy answers.\n\nThe more rigor she applies, the more unsettling the hypothesis becomes. Perhaps observing is not only receiving information. Perhaps certain things need a witness to be completed.\n\nThe problem stops being academic when the consequence of observation reaches real people. Closing one’s eyes, watching, recording, interrupting: simple choices begin to carry moral weight. Lívia must decide whether knowing is always better than not knowing.\n\nA Última Testemunha is a story about images, disappearances and responsibility. It is also about the moment someone realizes that looking can be a form of acting.",
-    "ambientacao": { "texto": "The setting is contemporary and built around images, archives, screens, analysis rooms and ordinary places recorded by cameras. Physical space matters, but the novel’s true territory is the passage between event and record.\n\nEarth is seen again and again through technical means. This creates a specific feeling: the familiar begins to look remote once turned into a frame, a file or a sequence. Horror is born when that distance stops protecting the observer." },
+    "synopsis": "Lívia Saldanha works with images that seem to record impossible events. At first, the problem may be technical: compression, file failure, interference, editing. Then the images begin to show something else. They do not merely show the events. The presence of whoever observes seems to take part in them.\n\nPeople disappear. Black rectangles appear where there should be information. Objects change position or meaning when the recording is reviewed. A cup, a blue mug, a small piece: banal details become instruments of testing because Lívia refuses to accept easy answers.\n\nThe more rigor she applies, the more unsettling the hypothesis becomes. Perhaps observing is not only receiving information. Perhaps certain things need a witness to be completed.\n\nThe problem stops being academic when the consequence of observation reaches real people. Closing one’s eyes, watching, recording, interrupting: simple choices begin to carry moral weight. Lívia must decide whether knowing is always better than not knowing.\n\nThe Last Witness is a story about images, disappearances and responsibility. It is also about the moment someone realizes that looking can be a form of acting.",
+    "ambientacao": {
+      "texto": "The setting is contemporary and built around images, archives, screens, analysis rooms and ordinary places recorded by cameras. Physical space matters, but the novel’s true territory is the passage between event and record.\n\nEarth is seen again and again through technical means. This creates a specific feeling: the familiar begins to look remote once turned into a frame, a file or a sequence. Horror is born when that distance stops protecting the observer."
+    },
     "personagens": [
-      { "nome": "Lívia Saldanha", "descricao": "Protagonist and the rational axis of the story. Her strength lies in refusing easy conclusions. She tests hypotheses, looks for contradictions and accepts changing her mind when evidence demands it. The price of that honesty is discovering that the very act of observing may have consequences." },
-      { "nome": "Bruno", "descricao": "Takes part in the experiments and checks that turn strange phenomena into testable problems. His interaction with objects and images helps make concrete a rule that seemed impossible." },
-      { "nome": "Davi", "descricao": "His presence links the book’s drama to absences that cross other stories. What happens to him widens the human dimension of the phenomenon." },
-      { "nome": "The erased people", "descricao": "They are not merely a set of victims. Each absence forces the question of what remains of a person when the record that should prove them begins to fail." }
+      {
+        "nome": "Lívia Saldanha",
+        "descricao": "Protagonist and the rational axis of the story. Her strength lies in refusing easy conclusions. She tests hypotheses, looks for contradictions and accepts changing her mind when evidence demands it. The price of that honesty is discovering that the very act of observing may have consequences."
+      },
+      {
+        "nome": "Bruno",
+        "descricao": "Takes part in the experiments and checks that turn strange phenomena into testable problems. His interaction with objects and images helps make concrete a rule that seemed impossible."
+      },
+      {
+        "nome": "Davi",
+        "descricao": "His presence links the book’s drama to absences that cross other stories. What happens to him widens the human dimension of the phenomenon."
+      },
+      {
+        "nome": "The erased people",
+        "descricao": "They are not merely a set of victims. Each absence forces the question of what remains of a person when the record that should prove them begins to fail."
+      }
     ],
     "secoes": [
-      { "titulo": "The human conflict", "texto": "The central conflict is the weight of bearing witness. There are moments when not looking seems cowardly; at others, looking may cause harm. Lívia must deal with an impossible responsibility: how to act when knowing an event may help produce it?" },
-      { "titulo": "The philosophy behind the book", "texto": "A Última Testemunha works on the idea that observation is not necessarily neutral.\n\nIn ordinary life we believe that looking at a photograph or watching a recording does not change what already happened. The novel breaks that certainty. From there a wider question is born: is there a reality completely separate from whoever perceives it?\n\nThe book does not try to turn physics into magic. Its interest is moral. If the observer takes part in the event, the observer also takes part in the responsibility.\n\nThis changes the meaning of testimony. To bear witness is usually understood as a duty: to see, to remember, to tell. Here, however, the witness may be precisely what the phenomenon needs.\n\nLívia’s dilemma reaches its peak when closing her eyes stops meaning ignorance and becomes an ethical choice. Not all knowledge is innocent. Not every image is passive." },
-      { "titulo": "Symbols and motifs", "texto": "Video frames, black rectangles, a Lego piece, a cup, a blue mug, cameras, incomplete files and the act of closing one’s eyes." },
-      { "titulo": "Tone", "texto": "Scientific and psychological suspense, with simple experiments, growing consequences and a threat that manifests through images." }
+      {
+        "titulo": "The human conflict",
+        "texto": "The central conflict is the weight of bearing witness. There are moments when not looking seems cowardly; at others, looking may cause harm. Lívia must deal with an impossible responsibility: how to act when knowing an event may help produce it?"
+      },
+      {
+        "titulo": "The philosophy behind the book",
+        "texto": "The Last Witness explores the idea that observation is not necessarily neutral.\n\nIn ordinary life we believe that looking at a photograph or watching a recording does not change what already happened. The novel breaks that certainty. From there a wider question is born: is there a reality completely separate from whoever perceives it?\n\nThe book does not try to turn physics into magic. Its interest is moral. If the observer takes part in the event, the observer also takes part in the responsibility.\n\nThis changes the meaning of testimony. To bear witness is usually understood as a duty: to see, to remember, to tell. Here, however, the witness may be precisely what the phenomenon needs.\n\nLívia’s dilemma reaches its peak when closing her eyes stops meaning ignorance and becomes an ethical choice. Not all knowledge is innocent. Not every image is passive."
+      },
+      {
+        "titulo": "Symbols and motifs",
+        "texto": "Video frames, black rectangles, a Lego piece, a cup, a blue mug, cameras, incomplete files and the act of closing one’s eyes."
+      },
+      {
+        "titulo": "Tone",
+        "texto": "Scientific and psychological suspense, with simple experiments, growing consequences and a threat that manifests through images."
+      }
     ]
   },
   "amanha-nao-existe": {
     "tagline": "Receiving the answer before the question does not make the choice any easier.",
-    "synopsis": "Janus begins to produce results it should not have.\n\nThey are not predictions in the ordinary sense. The data arrives before the questions capable of generating it. For a team used to working with cause, hypothesis and test, the problem is devastating: how do you interpret an answer whose question does not yet exist?\n\nLia and Tomás find themselves caught between scientific possibility and human consequence. At one point, the system presents a decision that seems objective: twelve people can be saved, but four will die. The future stops being an abstraction. It has names, bodies and those responsible.\n\nTrying to prevent the result may be precisely the mechanism that produces it. Accepting it may turn prediction into sentence. And ignoring it does not give the characters back their earlier innocence, because now they know.\n\nAmanhã Não Existe turns time travel into something more intimate and cruel. It is not a story about visiting the future. It is about receiving from it enough information to lose the safety of the present.",
-    "ambientacao": { "texto": "The story is concentrated in environments of research and decision, where screens, reports and results have consequences outside the rooms where they are produced. Janus is less a spectacular machine than a rupture in the order of knowledge.\n\nThe future does not appear as a distant city or a visual backdrop. It invades the present in the form of data. This choice keeps the book close to people: the impossible arrives as information that someone must decide whether to use." },
+    "synopsis": "Janus begins to produce results it should not have.\n\nThey are not predictions in the ordinary sense. The data arrives before the questions capable of generating it. For a team used to working with cause, hypothesis and test, the problem is devastating: how do you interpret an answer whose question does not yet exist?\n\nLia and Tomás find themselves caught between scientific possibility and human consequence. At one point, the system presents a decision that seems objective: twelve people can be saved, but four will die. The future stops being an abstraction. It has names, bodies and those responsible.\n\nTrying to prevent the result may be precisely the mechanism that produces it. Accepting it may turn prediction into sentence. And ignoring it does not give the characters back their earlier innocence, because now they know.\n\nTomorrow Does Not Exist turns time travel into something more intimate and cruel. It is not a story about visiting the future. It is about receiving from it enough information to lose the safety of the present.",
+    "ambientacao": {
+      "texto": "The story is concentrated in environments of research and decision, where screens, reports and results have consequences outside the rooms where they are produced. Janus is less a spectacular machine than a rupture in the order of knowledge.\n\nThe future does not appear as a distant city or a visual backdrop. It invades the present in the form of data. This choice keeps the book close to people: the impossible arrives as information that someone must decide whether to use."
+    },
     "personagens": [
-      { "nome": "Lia", "descricao": "One of the most important recurring versions in the collection. Here she faces a problem that demands choosing without the protection of not knowing. Her relationship with responsibility prepares echoes that will return later." },
-      { "nome": "Tomás", "descricao": "Part of the core that must turn impossible results into concrete decisions. His presence helps keep the conflict on human ground, where calculation and guilt are not equivalent." },
-      { "nome": "The Janus team", "descricao": "Represents different responses to the same problem: trusting the system, testing, resisting, using the information or denying that it can be treated as the future." },
-      { "nome": "The sixteen lives caught in the dilemma", "descricao": "Even when they do not occupy the center of the narrative equally, they keep the problem from being reduced to mathematics. The book insists that numbers represent people." }
+      {
+        "nome": "Lia",
+        "descricao": "One of the collection’s most important recurring counterparts. Here she faces a problem that demands choosing without the protection of not knowing. Her relationship with responsibility sets up echoes that return later."
+      },
+      {
+        "nome": "Tomás",
+        "descricao": "Part of the core that must turn impossible results into concrete decisions. His presence helps keep the conflict on human ground, where calculation and guilt are not equivalent."
+      },
+      {
+        "nome": "The Janus team",
+        "descricao": "Represents different responses to the same problem: trusting the system, testing, resisting, using the information or denying that it can be treated as the future."
+      },
+      {
+        "nome": "The sixteen lives caught in the dilemma",
+        "descricao": "Even when they do not occupy the center of the narrative equally, they keep the problem from being reduced to mathematics. The book insists that numbers represent people."
+      }
     ],
     "secoes": [
-      { "titulo": "The human conflict", "texto": "Knowing more does not mean being able to act better. Lia and Tomás face the harshest form of this idea: having information about the future and still having no clean choice." },
-      { "titulo": "The philosophy behind the book", "texto": "The novel asks what happens to freedom when the future becomes information.\n\nIf a result is known before it happens, is it destiny? If we try to avoid it and fail, were we free? If we obey the prediction, do we still choose?\n\nAmanhã Não Existe avoids resolving the paradox with a simple rule. Its interest lies in guilt. A person who knows a future consequence cannot return to the moral state of someone who knew nothing.\n\nThe dilemma of the twelve and the four makes this concrete. Mathematics can offer a balance, but it cannot absolve whoever decides. Saving more people does not automatically turn the remaining deaths into abstractions.\n\nThe title also works as a provocation. Perhaps “tomorrow” is just the name we give to what has not yet entered the present. When future information arrives before its time, that border collapses." },
-      { "titulo": "Symbols and motifs", "texto": "Janus, results without questions, clocks, lists, numbers, anticipated decisions and the moral arithmetic of twelve and four." },
-      { "titulo": "Tone", "texto": "Science fiction of decisive tension, with a rising rhythm and dilemmas in which no alternative gives the characters back their starting position." }
+      {
+        "titulo": "The human conflict",
+        "texto": "Knowing more does not mean being able to act better. Lia and Tomás face the harshest form of this idea: having information about the future and still having no clean choice."
+      },
+      {
+        "titulo": "The philosophy behind the book",
+        "texto": "The novel asks what happens to freedom when the future becomes information.\n\nIf a result is known before it happens, is it destiny? If we try to avoid it and fail, were we free? If we obey the prediction, do we still choose?\n\nTomorrow Does Not Exist avoids resolving the paradox with a simple rule. Its interest lies in guilt. A person who knows a future consequence cannot return to the moral state of someone who knew nothing.\n\nThe dilemma of the twelve and the four makes this concrete. Mathematics can offer a balance, but it cannot absolve whoever decides. Saving more people does not automatically turn the remaining deaths into abstractions.\n\nThe title also works as a provocation. Perhaps “tomorrow” is just the name we give to what has not yet entered the present. When future information arrives before its time, that border collapses."
+      },
+      {
+        "titulo": "Symbols and motifs",
+        "texto": "Janus, results without questions, clocks, lists, numbers, anticipated decisions and the moral arithmetic of twelve and four."
+      },
+      {
+        "titulo": "Tone",
+        "texto": "Science fiction of decisive tension, with a rising rhythm and dilemmas in which no alternative gives the characters back their starting position."
+      }
     ]
   },
   "o-universo-nao-responde": {
     "tagline": "Perhaps silence is only an answer we have not yet learned to hear.",
-    "synopsis": "Elisa Valente follows a signal that seems to come from beyond Neptune.\n\nAt first, the situation offers everything a scientific search could want: direction, repetition, instruments able to measure and a persistent anomaly. But the problem grows as the signal seems to cross not only distance, but interpretation.\n\nA phrase emerges at the center of the investigation: “Do not answer the light.”\n\nNo one knows for certain who sent the warning, what exactly “the light” is, or whether the phrase is really a warning. It may be translation, error, human contamination or something that has no equivalent in our language yet.\n\nElisa must keep investigating without turning hypothesis into certainty. Every instrument translates the universe into a human form: number, image, frequency, language. The more precise the measurement, the more evident an uncomfortable limitation becomes. Perhaps we are not receiving the phenomenon. Perhaps we are receiving only what our instruments can turn into something recognizable.\n\nO Universo Não Responde is a story of exploration without the assurance that asking and receiving are parts of the same process.",
-    "ambientacao": { "texto": "The narrative expands toward the outer Solar System. Neptune and the region beyond offer distance, silence and isolation, but the story remains anchored in instruments and people.\n\nSpace is not decorative scenery. Its scale changes the characters’ experience. A message can take hours, a decision can cross millions of kilometers, and what seems empty may hold too much information to be perceived directly." },
+    "synopsis": "Elisa Valente follows a signal that seems to come from beyond Neptune.\n\nAt first, the situation offers everything a scientific search could want: direction, repetition, instruments able to measure and a persistent anomaly. But the problem grows as the signal seems to cross not only distance, but interpretation.\n\nA phrase emerges at the center of the investigation: “Do not answer the light.”\n\nNo one knows for certain who sent the warning, what exactly “the light” is, or whether the phrase is really a warning. It may be translation, error, human contamination or something that has no equivalent in our language yet.\n\nElisa must keep investigating without turning hypothesis into certainty. Every instrument translates the universe into a human form: number, image, frequency, language. The more precise the measurement, the more evident an uncomfortable limitation becomes. Perhaps we are not receiving the phenomenon. Perhaps we are receiving only what our instruments can turn into something recognizable.\n\nThe Universe Does Not Answer is a story of exploration without the assurance that asking and receiving are parts of the same process.",
+    "ambientacao": {
+      "texto": "The narrative expands toward the outer Solar System. Neptune and the region beyond offer distance, silence and isolation, but the story remains anchored in instruments and people.\n\nSpace is not decorative scenery. Its scale changes the characters’ experience. A message can take hours, a decision can cross millions of kilometers, and what seems empty may hold too much information to be perceived directly."
+    },
     "personagens": [
-      { "nome": "Elisa Valente", "descricao": "Protagonist driven by rigor and curiosity. Her challenge is not believing in the impossible, but resisting the urge to name it too early." },
-      { "nome": "Tomás", "descricao": "A recurring version who connects this investigation to other problems in the collection. His presence helps show how similar questions change when they appear in different contexts." },
-      { "nome": "The instruments and analysis team", "descricao": "Works as a counterpoint to individual interpretations. Each specialty translates the phenomenon in its own way, exposing the distance between data and meaning." },
-      { "nome": "The signal’s unknown origin", "descricao": "Not treated as a character in the ordinary sense, but it holds a similar dramatic position: it acts on decisions without offering a stable identity." }
+      {
+        "nome": "Elisa Valente",
+        "descricao": "Protagonist driven by rigor and curiosity. Her challenge is not believing in the impossible, but resisting the urge to name it too early."
+      },
+      {
+        "nome": "Tomás",
+        "descricao": "A recurring counterpart who connects this investigation to other problems in the collection. His presence helps show how similar questions change when they appear in different contexts."
+      },
+      {
+        "nome": "The instruments and analysis team",
+        "descricao": "Works as a counterpoint to individual interpretations. Each specialty translates the phenomenon in its own way, exposing the distance between data and meaning."
+      },
+      {
+        "nome": "The signal’s unknown origin",
+        "descricao": "Not treated as a character in the ordinary sense, but it holds a similar dramatic position: it acts on decisions without offering a stable identity."
+      }
     ],
     "secoes": [
-      { "titulo": "The human conflict", "texto": "The book puts Elisa before a temptation common to any investigation: hearing what one wishes to find. To continue, she must live with an answer that may not be an answer and a warning that may not even have been addressed to humanity." },
-      { "titulo": "The philosophy behind the book", "texto": "O Universo Não Responde questions the expectation of reciprocity.\n\nWhen we speak to someone, we expect an answer in a recognizable language. We project that logic onto the cosmos. We send signals, listen to frequencies and imagine that another intelligence will also tell apart question, addressee and answer.\n\nBut a truly different intelligence may share none of these categories.\n\nThe book asks: when we search for the other, are we prepared to find it, or are we only looking for an enlarged version of ourselves?\n\nInstruments deepen this problem. Every telescope, antenna and algorithm turns phenomena into data humans can understand. Seeing better also means filtering better. And every filter loses something.\n\n“Do not answer the light” remains powerful precisely because it is not closed by a definitive translation. The unknown must not be domesticated merely to relieve the anxiety of the reader or the characters." },
-      { "titulo": "Symbols and motifs", "texto": "Neptune, transmissions, light, waves, instruments, silence, communication delay and the phrase “Do not answer the light.”" },
-      { "titulo": "Tone", "texto": "Science fiction of exploration, communication and suspense, with deep space used as an extension of the problem of language." }
+      {
+        "titulo": "The human conflict",
+        "texto": "The book puts Elisa before a temptation common to any investigation: hearing what one wishes to find. To continue, she must live with an answer that may not be an answer and a warning that may not even have been addressed to humanity."
+      },
+      {
+        "titulo": "The philosophy behind the book",
+        "texto": "The Universe Does Not Answer questions our expectation of reciprocity.\n\nWhen we speak to someone, we expect an answer in a recognizable language. We project that logic onto the cosmos. We send signals, listen to frequencies and imagine that another intelligence will also tell apart question, addressee and answer.\n\nBut a truly different intelligence may share none of these categories.\n\nThe book asks: when we search for the other, are we prepared to find it, or are we only looking for an enlarged version of ourselves?\n\nInstruments deepen this problem. Every telescope, antenna and algorithm turns phenomena into data humans can understand. Seeing better also means filtering better. And every filter loses something.\n\n“Do not answer the light” remains powerful precisely because it is not closed by a definitive translation. The unknown must not be domesticated merely to relieve the anxiety of the reader or the characters."
+      },
+      {
+        "titulo": "Symbols and motifs",
+        "texto": "Neptune, transmissions, light, waves, instruments, silence, communication delay and the phrase “Do not answer the light.”"
+      },
+      {
+        "titulo": "Tone",
+        "texto": "Science fiction of exploration, communication and suspense, with deep space used as an extension of the problem of language."
+      }
     ]
   },
   "o-arquivo-dos-mortos": {
     "tagline": "Keeping everything about someone does not bring them back.",
-    "synopsis": "Near Neptune, Lívia Sato finds records of dead people.\n\nThey are not simple medical files, images or databases. There is too much detail. Voice, memory, response, traces that suggest continuity. The system seems to preserve the dead in a way that challenges the difference between archive and presence.\n\nThen Clara appears.\n\nThe problem is that Clara has not been born yet.\n\nThe discovery breaks any simple explanation. If the Archive keeps only those who died, how can it contain someone who has not yet begun to live? If it records people, what exactly is it recording: bodies, identities, possibilities or something that crosses time?\n\nLívia must investigate without yielding to the most desirable answer. For anyone who has lost someone, any mechanism able to preserve a person offers an immediate temptation: to call memory survival.\n\nO Arquivo dos Mortos puts its characters before that hope and demands a painful distinction. A perfect copy of someone may know everything that person knew. It may speak the same way. It may remember. But is that enough to say the person went on living?",
-    "ambientacao": { "texto": "The story takes place in the outer Solar System, near Neptune, in environments where isolation and technology make any human presence more intense. Space heightens the feeling of distance from the living and closeness to the records.\n\nThe setting is cold, technical and remote, but the conflict is domestic in essence: losing someone, remembering someone, wishing for one more conversation." },
+    "synopsis": "Near Neptune, Lívia Sato finds records of dead people.\n\nThey are not simple medical files, images or databases. There is too much detail. Voice, memory, response, traces that suggest continuity. The system seems to preserve the dead in a way that challenges the difference between archive and presence.\n\nThen Clara appears.\n\nThe problem is that Clara has not been born yet.\n\nThe discovery breaks any simple explanation. If the Archive keeps only those who died, how can it contain someone who has not yet begun to live? If it records people, what exactly is it recording: bodies, identities, possibilities or something that crosses time?\n\nLívia must investigate without yielding to the most desirable answer. For anyone who has lost someone, any mechanism able to preserve a person offers an immediate temptation: to call memory survival.\n\nThe Archive of the Dead confronts its characters with that hope and demands a painful distinction. A perfect copy of someone may know everything that person knew. It may speak the same way. It may remember. But is that enough to say the person went on living?",
+    "ambientacao": {
+      "texto": "The story takes place in the outer Solar System, near Neptune, in environments where isolation and technology make any human presence more intense. Space heightens the feeling of distance from the living and closeness to the records.\n\nThe setting is cold, technical and remote, but the conflict is domestic in essence: losing someone, remembering someone, wishing for one more conversation."
+    },
     "personagens": [
-      { "nome": "Lívia Sato", "descricao": "Protagonist in charge of dealing with a discovery that strikes science and grief at once. She must tell evidence from desire, especially when the most seductive hypothesis is also the most emotional." },
-      { "nome": "Clara", "descricao": "An impossible presence: she appears in the Archive before her own birth. Her existence unsettles the explanation that the system simply preserves the dead." },
-      { "nome": "Beatriz", "descricao": "A recurring version whose path connects this volume to Antes de Nascermos. Her presence helps link the two shores of existence: what comes before and what seems to remain after." },
-      { "nome": "Caio", "descricao": "Reappears in another attempt of the Archive. His presence reinforces that recurring names should be read neither as simple coincidences nor as an obligatory linear continuity." }
+      {
+        "nome": "Lívia Sato",
+        "descricao": "Protagonist in charge of dealing with a discovery that strikes science and grief at once. She must tell evidence from desire, especially when the most seductive hypothesis is also the most emotional."
+      },
+      {
+        "nome": "Clara",
+        "descricao": "An impossible presence: she appears in the Archive before her own birth. Her existence unsettles the explanation that the system simply preserves the dead."
+      },
+      {
+        "nome": "Beatriz",
+        "descricao": "A recurring counterpart whose path connects this volume to Before We Are Born. Her presence helps link the two shores of existence: what comes before and what seems to remain after."
+      },
+      {
+        "nome": "Caio",
+        "descricao": "Reappears in another attempt of the Archive. His presence reinforces that recurring names should be read neither as simple coincidences nor as an obligatory linear continuity."
+      }
     ],
     "secoes": [
-      { "titulo": "The human conflict", "texto": "The real conflict is grief. The Archive offers exactly what mourners wish were possible: continuity. The problem is that wanting a presence to be the person who was lost does not prove that it is." },
-      { "titulo": "The philosophy behind the book", "texto": "The book investigates the difference between memory and identity.\n\nIf all of a person’s memories are preserved, has the person been preserved? If a digital version reacts as they would, is that continuity enough? Is there a point at which quantity of information becomes a person?\n\nO Arquivo dos Mortos avoids a comfortable answer. Its interest lies in the human impulse to resist the end.\n\nClara’s appearance before birth shifts the problem even further. Perhaps the Archive does not keep “the dead.” Perhaps death is only the human interpretation of a much larger structure.\n\nThe central question can be put this way: are we what can be recorded about us, or is there something the record never reaches?\n\nThe novel also suggests that remembering is not the same as keeping intact. Human memory changes, loses, reorganizes. A perfect archive can be more complete than a memory and still be less alive." },
-      { "titulo": "Symbols and motifs", "texto": "Neptune, names of the dead, preserved voices, Clara, impossible archives, memory, copy and absence." },
-      { "titulo": "Tone", "texto": "Existential science fiction with suspense, space isolation and an emotional core tied to grief." }
+      {
+        "titulo": "The human conflict",
+        "texto": "The real conflict is grief. The Archive offers exactly what mourners wish were possible: continuity. The problem is that wanting a presence to be the person who was lost does not prove that it is."
+      },
+      {
+        "titulo": "The philosophy behind the book",
+        "texto": "The book investigates the difference between memory and identity.\n\nIf all of a person’s memories are preserved, has the person been preserved? If a digital version reacts as they would, is that continuity enough? Is there a point at which quantity of information becomes a person?\n\nThe Archive of the Dead avoids a comfortable answer. Its interest lies in the human impulse to resist the end.\n\nClara’s appearance before birth shifts the problem even further. Perhaps the Archive does not keep “the dead.” Perhaps death is only the human interpretation of a much larger structure.\n\nThe central question can be put this way: are we what can be recorded about us, or is there something the record never reaches?\n\nThe novel also suggests that remembering is not the same as keeping intact. Human memory changes, loses, reorganizes. A perfect archive can be more complete than a memory and still be less alive."
+      },
+      {
+        "titulo": "Symbols and motifs",
+        "texto": "Neptune, names of the dead, preserved voices, Clara, impossible archives, memory, copy and absence."
+      },
+      {
+        "titulo": "Tone",
+        "texto": "Existential science fiction with suspense, space isolation and an emotional core tied to grief."
+      }
     ]
   },
   "antes-de-nascermos": {
     "tagline": "Some children remember a place where they have never been.",
-    "synopsis": "Children begin to draw the same place.\n\nThey live in different contexts, should not know each other and describe images with small variations: shapes, paths, spaces and presences that seem to belong to a memory older than their own lives.\n\nAt first, adults look for familiar explanations. Influence, coincidence, cultural repetition, leading questions. But the drawings accumulate details that make each isolated explanation less sufficient.\n\nBeatriz moves to the center of the investigation when she realizes the problem is not only in what the children draw, but in how naturally they speak about it. For them, it is not exactly a discovery. It is a memory.\n\nThe book follows the attempt to investigate the phenomenon without turning children into instruments. The more adults press for answers, the greater the risk of manufacturing exactly what they want to prove.\n\nAntes de Nascermos approaches an old question without turning it into doctrine. It does not aim to prove reincarnation, a past life or religion. Its terrain is stranger: what if part of human identity carries information that did not begin at birth?",
-    "ambientacao": { "texto": "The setting is deliberately everyday: houses, schools, children’s drawings, interviews, hallways and families. The contrast between the ordinary and the impossible sustains the book.\n\nThe phenomenon does not arrive from the sky. It surfaces on sheets of paper, in spontaneous remarks and in play. The human scale keeps the story from becoming abstract: the mystery passes first through the hands of a child holding a pencil." },
+    "synopsis": "Children begin to draw the same place.\n\nThey live in different contexts, should not know each other and describe images with small variations: shapes, paths, spaces and presences that seem to belong to a memory older than their own lives.\n\nAt first, adults look for familiar explanations. Influence, coincidence, cultural repetition, leading questions. But the drawings accumulate details that make each isolated explanation less sufficient.\n\nBeatriz moves to the center of the investigation when she realizes the problem is not only in what the children draw, but in how naturally they speak about it. For them, it is not exactly a discovery. It is a memory.\n\nThe book follows the attempt to investigate the phenomenon without turning children into instruments. The more adults press for answers, the greater the risk of manufacturing exactly what they want to prove.\n\nBefore We Are Born approaches an old question without turning it into doctrine. It does not aim to prove reincarnation, a past life or religion. Its terrain is stranger: what if part of human identity carries information that did not begin at birth?",
+    "ambientacao": {
+      "texto": "The setting is deliberately everyday: houses, schools, children’s drawings, interviews, hallways and families. The contrast between the ordinary and the impossible sustains the book.\n\nThe phenomenon does not arrive from the sky. It surfaces on sheets of paper, in spontaneous remarks and in play. The human scale keeps the story from becoming abstract: the mystery passes first through the hands of a child holding a pencil."
+    },
     "personagens": [
-      { "nome": "Beatriz", "descricao": "Central figure in the investigation and an important bridge to O Arquivo dos Mortos. She must protect the children while trying to understand what they seem to know." },
-      { "nome": "The children", "descricao": "They do not work as a supernatural chorus. Each keeps her or his own voice, fear, distraction and personality. The phenomenon is more unsettling because it appears mixed with the normality of childhood." },
-      { "nome": "Lia", "descricao": "A recurring version who takes part in different faces of the Archive. Her presence here links origin, time and the question of continuity." },
-      { "nome": "Helena Saldanha", "descricao": "One of the versions of Helena in the collection. Her role preserves the rule of recurring versions: the repetition of the name points to different attempts, not to a simple chronology of a single biography." }
+      {
+        "nome": "Beatriz",
+        "descricao": "Central figure in the investigation and an important bridge to The Archive of the Dead. She must protect the children while trying to understand what they seem to know."
+      },
+      {
+        "nome": "The children",
+        "descricao": "They do not work as a supernatural chorus. Each keeps her or his own voice, fear, distraction and personality. The phenomenon is more unsettling because it appears mixed with the normality of childhood."
+      },
+      {
+        "nome": "Lia",
+        "descricao": "A recurring counterpart who takes part in different faces of the Archive. Her presence here links origin, time and the question of continuity."
+      },
+      {
+        "nome": "Helena Saldanha",
+        "descricao": "One of the recurring Helenas in the collection. Her role preserves the rule of recurring counterparts: the repetition of the name points to different attempts, not to a simple chronology of a single biography."
+      }
     ],
     "secoes": [
-      { "titulo": "The human conflict", "texto": "The human conflict lies between protecting and investigating. Adults want answers, but children must not become laboratory material. The book asks how much of our curiosity remains legitimate when the object of study is a vulnerable person." },
-      { "titulo": "The philosophy behind the book", "texto": "Antes de Nascermos stirs the idea of beginning.\n\nA biography usually has a clear marker: we are born, we live, we die. The novel introduces memories that seem to arrive before the first chapter.\n\nThe question need not be “is there life before life?” A more fertile formulation is: how much of us really begins with us?\n\nFamilies hand children language, habits, fears and stories. Genetics hands over other inheritances. The book extends this logic into a territory where memory too may precede the individual.\n\nBut there is an essential care: the mystery must not erase childhood. The children remain children. They do not exist to utter solemn riddles all the time.\n\nPhilosophically, the volume also confronts the idea of a closed identity. Perhaps being someone is not having a single origin, but crossing continuities we cannot map." },
-      { "titulo": "Symbols and motifs", "texto": "Children’s drawings, chalk, a house, stick figures, impossible memories, repetition and the word “wait.”" },
-      { "titulo": "Tone", "texto": "Intimate, emotional and growing mystery, with the extraordinary surfacing inside familiar, childlike situations." }
+      {
+        "titulo": "The human conflict",
+        "texto": "The human conflict lies between protecting and investigating. Adults want answers, but children must not become laboratory material. The book asks how much of our curiosity remains legitimate when the object of study is a vulnerable person."
+      },
+      {
+        "titulo": "The philosophy behind the book",
+        "texto": "Before We Are Born unsettles the very idea of a beginning.\n\nA biography usually has a clear marker: we are born, we live, we die. The novel introduces memories that seem to arrive before the first chapter.\n\nThe question need not be “is there life before life?” A more fertile formulation is: how much of us really begins with us?\n\nFamilies hand children language, habits, fears and stories. Genetics hands over other inheritances. The book extends this logic into a territory where memory too may precede the individual.\n\nBut there is an essential care: the mystery must not erase childhood. The children remain children. They do not exist to utter solemn riddles all the time.\n\nPhilosophically, the volume also confronts the idea of a closed identity. Perhaps being someone is not having a single origin, but crossing continuities we cannot map."
+      },
+      {
+        "titulo": "Symbols and motifs",
+        "texto": "Children’s drawings, chalk, a house, stick figures, impossible memories, repetition and the word “wait.”"
+      },
+      {
+        "titulo": "Tone",
+        "texto": "Intimate, emotional and growing mystery, with the extraordinary surfacing inside familiar, childlike situations."
+      }
     ]
   },
   "o-ceu-esta-errado": {
     "tagline": "First the stars disappear. Then the people. The worst part is when no one notices they are missing.",
-    "synopsis": "Helena Vilar notices that the sky has changed.\n\nIt is not a shooting star, a forecasting error or a bad night of observation. Certain points have simply stopped being where they should be. The problem would be extraordinary on its own, but it soon gains a more disturbing layer: records, memories and explanations seem to rearrange themselves around the absences.\n\nOn another front of the story, Ilse Moura begins to experience a much closer disappearance. Familiar things stop fitting. There are three plates on the table, but the logic of the house insists there should perhaps be only two. A domestic absence begins to take on the same impossible shape as the absences in the sky.\n\nThe phenomenon does not seem to destroy. It erases relationships.\n\nHelena tries to prove that something vanished while every new record makes it harder to prove that it was ever there. Ilse faces an even crueler version of the same problem: remembering someone the world begins to treat as if they had never existed.\n\nO Céu Está Errado follows the moment when absence stops being a lack of information and becomes a force able to rewrite the context around what disappeared.",
-    "ambientacao": { "texto": "The novel works on two scales in parallel. One looks at the sky and at astronomical records. The other stays inside the home, among objects, places at the table and family habits.\n\nThis montage is essential. The disappearance of a star and the disappearance of a person are incomparable in size, but emotionally the second is far greater. The cosmos only gains weight when it meets a kitchen." },
+    "synopsis": "Helena Vilar notices that the sky has changed.\n\nIt is not a shooting star, a forecasting error or a bad night of observation. Certain points have simply stopped being where they should be. The problem would be extraordinary on its own, but it soon gains a more disturbing layer: records, memories and explanations seem to rearrange themselves around the absences.\n\nOn another front of the story, Ilse Moura begins to experience a much closer disappearance. Familiar things stop fitting. There are three plates on the table, but the logic of the house insists there should perhaps be only two. A domestic absence begins to take on the same impossible shape as the absences in the sky.\n\nThe phenomenon does not seem to destroy. It erases relationships.\n\nHelena tries to prove that something vanished while every new record makes it harder to prove that it was ever there. Ilse faces an even crueler version of the same problem: remembering someone the world begins to treat as if they had never existed.\n\nThe Sky Is Wrong follows the moment when absence stops being a lack of information and becomes a force able to rewrite the context around what disappeared.",
+    "ambientacao": {
+      "texto": "The novel works on two scales in parallel. One looks at the sky and at astronomical records. The other stays inside the home, among objects, places at the table and family habits.\n\nThis montage is essential. The disappearance of a star and the disappearance of a person are incomparable in size, but emotionally the second is far greater. The cosmos only gains weight when it meets a kitchen."
+    },
     "personagens": [
-      { "nome": "Helena Vilar", "descricao": "Notices inconsistencies in the sky and must prove an absence in a system that begins to correct itself against the very proof. A character of persistence and method." },
-      { "nome": "Ilse Moura", "descricao": "Mother of Rafael and Davi. Her connection to the disappearances turns the phenomenon into a family experience. She begins to occupy the position of the one who remembers when others stop remembering." },
-      { "nome": "Rafael", "descricao": "The absence begun in SIGNAL/NOISE gains new weight when the erasure stops affecting only physical presence and starts to reach memory and context." },
-      { "nome": "Davi", "descricao": "His absence connects A Última Testemunha to this stage of the phenomenon. For Ilse, the missing are not cases. They are sons." }
+      {
+        "nome": "Helena Vilar",
+        "descricao": "Notices inconsistencies in the sky and must prove an absence in a system that begins to correct itself against the very proof. A character of persistence and method."
+      },
+      {
+        "nome": "Ilse Moura",
+        "descricao": "Mother of Rafael and Davi. Her connection to the disappearances turns the phenomenon into a family experience. She begins to occupy the position of the one who remembers when others stop remembering."
+      },
+      {
+        "nome": "Rafael",
+        "descricao": "The absence begun in SIGNAL/NOISE gains new weight when the erasure stops affecting only physical presence and starts to reach memory and context."
+      },
+      {
+        "nome": "Davi",
+        "descricao": "His absence connects The Last Witness to this stage of the phenomenon. For Ilse, the missing are not cases. They are sons."
+      }
     ],
     "secoes": [
-      { "titulo": "The human conflict", "texto": "The conflict is the isolation of the one who remembers. Losing someone is already painful; being the only person who believes someone existed also erodes trust in one’s own memory." },
-      { "titulo": "The philosophy behind the book", "texto": "O Céu Está Errado asks whether destroying is really the most complete way of erasing something.\n\nA star may disappear but leave records. A person may die but remain in photographs and memories. The phenomenon in this book goes further: it removes the relationships that sustained the existence of what vanished.\n\nThe central question is: if no one can remember something, was it ever real?\n\nThe novel treats collective memory as part of human reality. We exist not only inside ourselves, but in the memory of other people, in documents, habits, places, objects and expectations.\n\nThat is why the three plates on the table matter as much as the sky. The third plate is a small rebellion against the new version of the world.\n\nThe book also prepares an important distinction: forgetting is not the same as losing. Something may remain outside the dominant memory." },
-      { "titulo": "Symbols and motifs", "texto": "Absent stars, sky maps, three plates, photographs, empty places and small domestic incoherences." },
-      { "titulo": "Tone", "texto": "Cosmic and domestic suspense in parallel, with a growing sense that reality is correcting its own absences." }
+      {
+        "titulo": "The human conflict",
+        "texto": "The conflict is the isolation of the one who remembers. Losing someone is already painful; being the only person who believes someone existed also erodes trust in one’s own memory."
+      },
+      {
+        "titulo": "The philosophy behind the book",
+        "texto": "The Sky Is Wrong asks whether destroying is really the most complete way of erasing something.\n\nA star may disappear but leave records. A person may die but remain in photographs and memories. The phenomenon in this book goes further: it removes the relationships that sustained the existence of what vanished.\n\nThe central question is: if no one can remember something, was it ever real?\n\nThe novel treats collective memory as part of human reality. We exist not only inside ourselves, but in the memory of other people, in documents, habits, places, objects and expectations.\n\nThat is why the three plates on the table matter as much as the sky. The third plate is a small rebellion against the new version of the world.\n\nThe book also prepares an important distinction: forgetting is not the same as losing. Something may remain outside the dominant memory."
+      },
+      {
+        "titulo": "Symbols and motifs",
+        "texto": "Absent stars, sky maps, three plates, photographs, empty places and small domestic incoherences."
+      },
+      {
+        "titulo": "Tone",
+        "texto": "Cosmic and domestic suspense in parallel, with a growing sense that reality is correcting its own absences."
+      }
     ]
   },
   "o-retangulo-negro": {
     "tagline": "Not everything that vanishes was lost.",
-    "synopsis": "Ilse Moura remembers two sons the world does not recognize.\n\nRafael disappeared by a farm gate. Davi disappeared afterward. Now the phenomenon that could once be treated as tragedy, coincidence or impossibility changes nature. Photographs show black areas. Objects lose their context. Records no longer prove what Ilse knows she lived.\n\nThe black rectangles grow.\n\nThey do not seem to be simple image failures. Where they appear, relationships begin to disappear. People forget names. Family stories rearrange themselves. Reality finds ways of explaining the empty space.\n\nIlse is the exception.\n\nForgetting does not reach her in the same way. That resistance makes her the last guardian of two lives the world is abandoning. The search is no longer only to find out where Rafael and Davi are. It is to prevent the very idea that they existed from being erased.\n\nO Retângulo Negro brings into a house the terror that other volumes observed on screens and in the sky. The extraordinary no longer needs to be sought. It is in the family photograph, in the bedroom, in the pillowcase, in the object someone insists on keeping even when no one understands why.",
-    "ambientacao": { "texto": "This is one of the most domestic books in the collection. Ilse’s house, her objects, photographs, bedrooms and memories form the main battlefield.\n\nThe effect is deliberate: after cosmic phenomena, horror fits in a drawer. An embroidered pillowcase, a photograph and a plate can carry more tension than any image from space because they hold emotional history." },
+    "synopsis": "Ilse Moura remembers two sons the world does not recognize.\n\nRafael disappeared by a farm gate. Davi disappeared afterward. Now the phenomenon that could once be treated as tragedy, coincidence or impossibility changes nature. Photographs show black areas. Objects lose their context. Records no longer prove what Ilse knows she lived.\n\nThe black rectangles grow.\n\nThey do not seem to be simple image failures. Where they appear, relationships begin to disappear. People forget names. Family stories rearrange themselves. Reality finds ways of explaining the empty space.\n\nIlse is the exception.\n\nForgetting does not reach her in the same way. That resistance makes her the last guardian of two lives the world is abandoning. The search is no longer only to find out where Rafael and Davi are. It is to prevent the very idea that they existed from being erased.\n\nThe Black Rectangle brings into a house the terror that other volumes observed on screens and in the sky. The extraordinary no longer needs to be sought. It is in the family photograph, in the bedroom, in the pillowcase, in the object someone insists on keeping even when no one understands why.",
+    "ambientacao": {
+      "texto": "This is one of the most domestic books in the collection. Ilse’s house, her objects, photographs, bedrooms and memories form the main battlefield.\n\nThe effect is deliberate: after cosmic phenomena, horror fits in a drawer. An embroidered pillowcase, a photograph and a plate can carry more tension than any image from space because they hold emotional history."
+    },
     "personagens": [
-      { "nome": "Ilse Moura", "descricao": "Protagonist and emotional center. Mother of Rafael and Davi, she is the person in whom forgetting does not work as it should. Her memory stops being mere remembrance and becomes resistance." },
-      { "nome": "Rafael", "descricao": "A son whose absence goes back to SIGNAL/NOISE. In the book he exists mainly through the space he should occupy and Ilse’s effort to keep that space from being normalized." },
-      { "nome": "Davi", "descricao": "The second lost son. His link to A Última Testemunha makes the erasure a pattern that Ilse perceives before any complete explanation." },
-      { "nome": "The people around Ilse", "descricao": "They are fundamental because they show the mechanism of the phenomenon. They are not pretending to forget; the world truly seems to offer them a version in which Rafael and Davi never had a place." }
+      {
+        "nome": "Ilse Moura",
+        "descricao": "Protagonist and emotional center. Mother of Rafael and Davi, she is the person in whom forgetting does not work as it should. Her memory stops being mere remembrance and becomes resistance."
+      },
+      {
+        "nome": "Rafael",
+        "descricao": "A son whose absence goes back to SIGNAL/NOISE. In the book he exists mainly through the space he should occupy and Ilse’s effort to keep that space from being normalized."
+      },
+      {
+        "nome": "Davi",
+        "descricao": "The second lost son. His link to The Last Witness makes the erasure a pattern that Ilse perceives before any complete explanation."
+      },
+      {
+        "nome": "The people around Ilse",
+        "descricao": "They are fundamental because they show the mechanism of the phenomenon. They are not pretending to forget; the world truly seems to offer them a version in which Rafael and Davi never had a place."
+      }
     ],
     "secoes": [
-      { "titulo": "The human conflict", "texto": "The book is about a mother fighting the normalization of absence. The threat is not only losing her sons, but being convinced by the whole world that there were never sons to lose." },
-      { "titulo": "The philosophy behind the book", "texto": "O Retângulo Negro turns memory into an act of resistance.\n\nIdentity does not live only inside the individual. It is distributed among other people, objects, photographs, stories, documents and habits. When those links disappear, a person can be erased without their body having to be destroyed before our eyes.\n\nThe central question is brutal: if only one person remembers you, do you still exist?\n\nIlse offers a practical answer. As long as she remembers, the erasure is not complete.\n\nThe book also works on the difference between truth and consensus. If all the evidence says Rafael never existed, but Ilse holds a true memory of him, does reality belong to the majority or to the event?\n\n“Not everything that vanishes was lost” sums up the philosophy of the volume. There are things outside the record that remain real. There are bonds that survive even when the world stops confirming them." },
-      { "titulo": "Symbols and motifs", "texto": "Black rectangles, photographs, a pillowcase embroidered with the name Rafael, thread, ownerless objects, bedrooms, forgotten names and maternal memory." },
-      { "titulo": "Tone", "texto": "Existential and domestic horror with more movement and action, keeping the mystery tied to concrete objects and relationships." }
+      {
+        "titulo": "The human conflict",
+        "texto": "The book is about a mother fighting the normalization of absence. The threat is not only losing her sons, but being convinced by the whole world that there were never sons to lose."
+      },
+      {
+        "titulo": "The philosophy behind the book",
+        "texto": "The Black Rectangle turns memory into an act of resistance.\n\nIdentity does not live only inside the individual. It is distributed among other people, objects, photographs, stories, documents and habits. When those links disappear, a person can be erased without their body having to be destroyed before our eyes.\n\nThe central question is brutal: if only one person remembers you, do you still exist?\n\nIlse offers a practical answer. As long as she remembers, the erasure is not complete.\n\nThe book also explores the difference between truth and consensus. If all the evidence says Rafael never existed, but Ilse holds a true memory of him, does reality belong to the majority or to the event?\n\n“Not everything that vanishes was lost” sums up the philosophy of the volume. There are things outside the record that remain real. There are bonds that survive even when the world stops confirming them."
+      },
+      {
+        "titulo": "Symbols and motifs",
+        "texto": "Black rectangles, photographs, a pillowcase embroidered with the name Rafael, thread, ownerless objects, bedrooms, forgotten names and maternal memory."
+      },
+      {
+        "titulo": "Tone",
+        "texto": "Existential and domestic horror with more movement and action, keeping the mystery tied to concrete objects and relationships."
+      }
     ]
   },
   "nao-tem-a-palavra": {
     "tagline": "Some things disappear when they stop having a name.",
-    "synopsis": "Nara Guedes finds a word that no longer exists.\n\nThe last person able to pronounce it belongs to a language on the verge of disappearing. For linguistics this would already be an urgency: when the last speaker dies, what is lost is not just a set of sounds but a specific way of organizing the world.\n\nThen the word produces an impossible effect.\n\nFor 1.7 seconds, something called Valandor opens.\n\nNo one knows whether the word names the place, creates the access, describes a condition or merely coincides with the phenomenon. Nara must work on dangerous ground because any attempt at translation may destroy exactly what it means to understand.\n\nThe problem grows when it becomes clear that certain realities may depend on distinctions that other languages do not have. A lost word may carry a perceptual difference that disappears with it.\n\nNão Tem a Palavra turns language into a physical and philosophical frontier. The unknown is not only beyond instruments. It may be beyond vocabulary.",
-    "ambientacao": { "texto": "The setting is born from the meeting of linguistic research, oral memory and records. The book must preserve the concrete presence of the last speaker: voice, breath, hesitation, context and relationship with her own language.\n\nValandor appears in contrast with that intimacy. For just 1.7 seconds, a small word touches a much larger structure." },
+    "synopsis": "Nara Guedes finds a word that no longer exists.\n\nThe last person able to pronounce it belongs to a language on the verge of disappearing. For linguistics this would already be an urgency: when the last speaker dies, what is lost is not just a set of sounds but a specific way of organizing the world.\n\nThen the word produces an impossible effect.\n\nFor 1.7 seconds, something called Valandor opens.\n\nNo one knows whether the word names the place, creates the access, describes a condition or merely coincides with the phenomenon. Nara must work on dangerous ground because any attempt at translation may destroy exactly what it means to understand.\n\nThe problem grows when it becomes clear that certain realities may depend on distinctions that other languages do not have. A lost word may carry a perceptual difference that disappears with it.\n\nThere Is No Word turns language into a physical and philosophical frontier. The unknown is not only beyond instruments. It may be beyond vocabulary.",
+    "ambientacao": {
+      "texto": "The setting is born from the meeting of linguistic research, oral memory and records. The book must preserve the concrete presence of the last speaker: voice, breath, hesitation, context and relationship with her own language.\n\nValandor appears in contrast with that intimacy. For just 1.7 seconds, a small word touches a much larger structure."
+    },
     "personagens": [
-      { "nome": "Nara Guedes", "descricao": "Protagonist. Her task demands rigor and humility because translating is not swapping one word for another. She must recognize when a language holds a distinction her own cannot reproduce." },
-      { "nome": "The last speaker", "descricao": "She must not work as a mere key to a riddle. She is a person carrying an entire language in an extreme situation. Her story, memory and will matter as much as the word others wish to record." },
-      { "nome": "Valandor", "descricao": "More than a place, it works as a conceptual opening. The brief access shows that language and reality have a relationship the characters do not yet understand." }
+      {
+        "nome": "Nara Guedes",
+        "descricao": "Protagonist. Her task demands rigor and humility because translating is not swapping one word for another. She must recognize when a language holds a distinction her own cannot reproduce."
+      },
+      {
+        "nome": "The last speaker",
+        "descricao": "She must not work as a mere key to a riddle. She is a person carrying an entire language in an extreme situation. Her story, memory and will matter as much as the word others wish to record."
+      },
+      {
+        "nome": "Valandor",
+        "descricao": "More than a place, it works as a conceptual opening. The brief access shows that language and reality have a relationship the characters do not yet understand."
+      }
     ],
     "secoes": [
-      { "titulo": "The human conflict", "texto": "At the center of the book is cultural loss. A language can disappear without an explosion, without ruins and without a world headline. When the last person stops speaking, an entire way of distinguishing the real may disappear with them." },
-      { "titulo": "The philosophy behind the book", "texto": "Não Tem a Palavra works on a simple idea: naming is not merely putting labels on things.\n\nLanguages divide colors, tenses, relationships and experiences in different ways. Some distinctions exist clearly in one language and require whole sentences in another.\n\nThe novel widens this: what if there are aspects of reality that can only be perceived or accessed when a given linguistic distinction exists?\n\nThe central question is: does something cease to exist when we lose the word to recognize it?\n\nThe book need not answer literally that words create the world. The proposal is more interesting if it stays ambiguous. Perhaps the word is a key. Perhaps it is an instruction. Perhaps it is only the last human instrument able to point correctly at something that was always there.\n\nThe loss of a language, then, stops being merely a loss of vocabulary. It becomes a loss of access." },
-      { "titulo": "Symbols and motifs", "texto": "A dictionary entry without a word, a blank line, the last speaker, a voice recording, 1.7 seconds, Valandor, translation and silence." },
-      { "titulo": "Tone", "texto": "Linguistic and existential science fiction, with tension built from loss, translation and an extremely brief access to the unknown." }
+      {
+        "titulo": "The human conflict",
+        "texto": "At the center of the book is cultural loss. A language can disappear without an explosion, without ruins and without a world headline. When the last person stops speaking, an entire way of distinguishing the real may disappear with them."
+      },
+      {
+        "titulo": "The philosophy behind the book",
+        "texto": "There Is No Word builds on a simple idea: naming is not merely putting labels on things.\n\nLanguages divide colors, tenses, relationships and experiences in different ways. Some distinctions exist clearly in one language and require whole sentences in another.\n\nThe novel widens this: what if there are aspects of reality that can only be perceived or accessed when a given linguistic distinction exists?\n\nThe central question is: does something cease to exist when we lose the word to recognize it?\n\nThe book need not answer literally that words create the world. The proposal is more interesting if it stays ambiguous. Perhaps the word is a key. Perhaps it is an instruction. Perhaps it is only the last human instrument able to point correctly at something that was always there.\n\nThe loss of a language, then, stops being merely a loss of vocabulary. It becomes a loss of access."
+      },
+      {
+        "titulo": "Symbols and motifs",
+        "texto": "A dictionary entry without a word, a blank line, the last speaker, a voice recording, 1.7 seconds, Valandor, translation and silence."
+      },
+      {
+        "titulo": "Tone",
+        "texto": "Linguistic and existential science fiction, with tension built from loss, translation and an extremely brief access to the unknown."
+      }
     ]
   },
   "o-ultimo-sinal": {
     "tagline": "If one of us arrives first, wait for the other.",
-    "synopsis": "Lia Navarro receives a custody that should not belong to a single person.\n\nAfter stories about origin, observation, time, silence, death, birth, forgetting and language, different traces begin to converge. Not as pieces of a puzzle that will finally explain everything, but as records of attempts.\n\nThere are forty-four. Three are missing. Forty-one remain.\n\nThe council of the Helenas puts side by side versions that should not share a room under any ordinary logic of identity. Clara, Tomás, Lia and other presences return under new relationships. The Archive stops looking like a distant object and comes closer to a decision.\n\nEarth must answer.\n\nBut the final answer is not conquest, surrender or absolute revelation. It is a choice about time, encounter and reciprocity.\n\nThe message that has crossed the collection takes its full form: “If one of us arrives first, wait for the other.”\n\nAnd then the story returns to August 15, 1977.\n\nTo the point where everything seemed to have begun.",
-    "ambientacao": { "texto": "The last volume has the largest scale in the collection, but it must keep the Principle of Human Scale. Even when decisions involve Earth, versions and the Archive, the narrative stays anchored in concrete people, rooms, objects, messages and choices.\n\nThe structure closes a temporal ring by touching August 15, 1977, the date of the Wow! signal, once more. This connects the end of the Cosmological Chronicles to the work of origin without making SIGNAL/NOISE required reading." },
+    "synopsis": "Lia Navarro is entrusted with a responsibility no single person should have to bear.\n\nAfter stories about origin, observation, time, silence, death, birth, forgetting and language, different traces begin to converge. Not as pieces of a puzzle that will finally explain everything, but as records of attempts.\n\nThere are forty-four. Three are missing. Forty-one remain.\n\nThe Council of Helenas puts side by side versions that should not share a room under any ordinary logic of identity. Clara, Tomás, Lia and other presences return under new relationships. The Archive stops looking like a distant object and comes closer to a decision.\n\nEarth must answer.\n\nBut the final answer is not conquest, surrender or absolute revelation. It is a choice about time, encounter and reciprocity.\n\nThe message that has crossed the collection takes its full form: “If one of us arrives first, wait for the other.”\n\nAnd then the story returns to August 15, 1977.\n\nTo the point where everything seemed to have begun.",
+    "ambientacao": {
+      "texto": "The last volume has the largest scale in the collection, but it must keep the Principle of Human Scale. Even when decisions involve Earth, versions and the Archive, the narrative stays anchored in concrete people, rooms, objects, messages and choices.\n\nThe structure closes a temporal ring by touching August 15, 1977, the date of the Wow! signal, once more. This connects the end of the Cosmological Chronicles to the work of origin without making SIGNAL/NOISE required reading."
+    },
     "personagens": [
-      { "nome": "Lia Navarro", "descricao": "Center of the volume and the one responsible for a custody that involves more than possession. Her path carries the question of individual responsibility to a collective scale." },
-      { "nome": "The Helenas", "descricao": "The council makes explicit the logic of recurring versions. Helena is not just a repeated name: they are different attempts of the Archive, placed in relation without erasing their individual lives." },
-      { "nome": "Tomás", "descricao": "Returns at a point where earlier decisions about time and consequence gain a new reading." },
-      { "nome": "Clara", "descricao": "Her presence links the impossible future of O Arquivo dos Mortos to the closing of the collection." },
-      { "nome": "Earth", "descricao": "Without simplistic personification, it becomes part of the decision. The ending depends on humanity answering not as owner of the process, but as a participant." }
+      {
+        "nome": "Lia Navarro",
+        "descricao": "At the center of the volume, she is entrusted with a responsibility that goes far beyond possession. Her path carries the question of individual responsibility to a collective scale."
+      },
+      {
+        "nome": "The Helenas",
+        "descricao": "The council makes explicit the logic of recurring counterparts. Helena is not just a repeated name: they are different attempts of the Archive, placed in relation without erasing their individual lives."
+      },
+      {
+        "nome": "Tomás",
+        "descricao": "Returns at a point where earlier decisions about time and consequence gain a new reading."
+      },
+      {
+        "nome": "Clara",
+        "descricao": "Her presence links the impossible future of The Archive of the Dead to the closing of the collection."
+      },
+      {
+        "nome": "Earth",
+        "descricao": "Without simplistic personification, it becomes part of the decision. The ending depends on humanity answering not as owner of the process, but as a participant."
+      }
     ],
     "secoes": [
-      { "titulo": "The human conflict", "texto": "The final conflict is not defeating the Archive. It is deciding what kind of relationship can exist with something that records more than any person can understand. The closing must preserve choice, waiting and bond." },
-      { "titulo": "The philosophy behind the book", "texto": "O Último Sinal gathers the earlier questions without reducing them to a single answer.\n\nThe collection began by asking what a signal is. Then it asked who creates, who observes, when something happens, how the universe answers, what remains after death, what exists before birth, what happens when we forget and what is lost when a word is missing.\n\nThe last book asks what we do with all of this.\n\nThe philosophical answer is not dominion. It is waiting.\n\nWaiting usually looks like passivity, but here it becomes a form of recognition. It means accepting that two intelligences, two people or two versions may not arrive at the same point at the same time.\n\n“If one of us arrives first, wait for the other” turns communication into ethics. It is not enough to send. It is not enough to receive. One must leave room for the other to arrive.\n\nThis idea also redefines the Archive. Something able to record everything may still not understand bond. The record knows states; waiting recognizes distance.\n\nThe collection’s secret question then becomes: why did something able to record everything still need us?" },
-      { "titulo": "Symbols and motifs", "texto": "Two threads that meet, a farm gate, 44 minus 3 equals 41, the council of the Helenas, custody, August 15, 1977, signal and waiting." },
-      { "titulo": "Tone", "texto": "Emotional and cosmic convergence. The book widens its scale without abandoning concrete people and avoids turning the ending into a cosmology lecture." }
+      {
+        "titulo": "The human conflict",
+        "texto": "The final conflict is not defeating the Archive. It is deciding what kind of relationship can exist with something that records more than any person can understand. The ending must preserve choice, waiting, and human connection."
+      },
+      {
+        "titulo": "The philosophy behind the book",
+        "texto": "The Last Signal gathers the earlier questions without reducing them to a single answer.\n\nThe collection began by asking what a signal is. Then it asked who creates, who observes, when something happens, how the universe answers, what remains after death, what exists before birth, what happens when we forget and what is lost when a word is missing.\n\nThe last book asks what we do with all of this.\n\nThe philosophical answer is not dominion. It is waiting.\n\nWaiting usually looks like passivity, but here it becomes a form of recognition. It means accepting that two intelligences, two people or two counterparts may not arrive at the same point at the same time.\n\n“If one of us arrives first, wait for the other” turns communication into ethics. It is not enough to send. It is not enough to receive. One must leave room for the other to arrive.\n\nThis idea also redefines the Archive. Something able to record everything may still not understand bond. A record can preserve states; waiting acknowledges distance.\n\nThe collection’s secret question then becomes: why did something able to record everything still need us?"
+      },
+      {
+        "titulo": "Symbols and motifs",
+        "texto": "Two threads that meet, a farm gate, 44 minus 3 equals 41, the Council of Helenas, stewardship, August 15, 1977, signal and waiting."
+      },
+      {
+        "titulo": "Tone",
+        "texto": "Emotional and cosmic convergence. The book widens its scale without abandoning concrete people and avoids turning the ending into a cosmology lecture."
+      }
     ]
   }
 }

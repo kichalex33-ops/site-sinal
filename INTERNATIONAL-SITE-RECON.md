@@ -669,3 +669,12 @@ O autor declarou que a amostra em inglês do site está correta e pode ser publi
 ## S. Capa do volume VI (2026-09-25)
 
 A capa de "Antes de Nascermos" parecia apagada: o preto estava levantado (mediana de luminosidade 18, contra 0 nas capas V, VII e outras) e os brancos eram mais fracos (95º percentil 138, contra 155 a 175). A cópia do site era idêntica ao original (`sinal final/todas as capas e contracapas/13.png`), então o efeito vem da própria arte. Aplicada correção de níveis (ponto preto 17, ponto branco 200) só em `public/livros/antes-de-nascermos.jpg`; o desenho não mudou. O original permanece intacto. O título continua mais fino e espaçado que nos outros volumes, o que só se corrige na arte. A mesma correção vale para a versão de impressão/KDP, se usarem o mesmo arquivo.
+
+## T. Capas, botões de compra e traduções auditadas (2026-09-25)
+
+- **Capa do VI:** substituída pela arte nova em PT (`sinal final/LIVROS/6/VI.png`) e EN (`VI E.png`), cortadas 30 px de cada lado (2:3 para 0,627, como as demais). Substitui a correção de níveis anterior. A contracapa (`VI C.png`) não foi usada no site.
+- **Botões de compra:** helper único `buyLinkHtml()` (home, `/livro/`, livro I e `/buy/`): ícone da Amazon e campo de preço opcional. Preço só aparece se informado (`prices` por campo de link ou `purchasePrice` em `books.json`); nenhum foi informado ainda. Conferido no navegador (Edge sem interface).
+- **Amazon BR do livro I:** `B0HKZY434C`, botão "Comprar · Amazon BR". Status da página ainda "Em desenvolvimento" (decisão pendente do autor).
+- **Traduções auditadas:** `traducao-en/CRONICAS_COSMOLOGICAS_EN_REVISADO.zip` aplicado em `src/data/book-sheets-en.json`. Títulos em inglês (`titleEn` em `books.json`): I The Gods Have No Children; II The Last Witness; III Tomorrow Does Not Exist; IV The Universe Does Not Answer; V The Archive of the Dead; VI Before We Are Born; VII The Sky Is Wrong; VIII The Black Rectangle; IX There Is No Word; X The Last Signal. Páginas em inglês passam a usar título e capa em inglês quando existem (`coverEn`; só o VI tem).
+- **Inconsistência a decidir:** a capa em inglês do VI diz "COSMIC CHRONICLES", mas as páginas e os textos revisados dizem "Cosmological Chronicles".
+- Páginas em inglês continuam `noindex` e fora do sitemap.

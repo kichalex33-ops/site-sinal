@@ -76,16 +76,26 @@ function clean(routePath) {
 // HOME
 // ---------------------------------------------------------------------
 // Painel "onde comprar": agrupa lojas por edição (PT / EN) com formato + loja + seta.
+// Botão de compra: ícone da loja (Amazon) e preço opcional. Preço só aparece se informado nos dados
+// (books.json: `prices` por campo de link, ou `purchasePrice`); nunca é inventado.
+const AMAZON_ICON = `<svg class="buy-link__icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M.045 18.02c.072-.116.187-.124.348-.022 3.636 2.11 7.594 3.166 11.87 3.166 2.852 0 5.668-.533 8.447-1.595l.315-.14c.138-.06.234-.1.293-.13.226-.088.39-.046.525.13.12.174.09.336-.12.48-.256.19-.6.41-1.006.654-1.244.743-2.64 1.316-4.185 1.726a17.617 17.617 0 01-10.951-.577 17.88 17.88 0 01-5.43-3.35c-.1-.074-.151-.15-.151-.22 0-.047.021-.09.051-.13zm6.565-6.218c0-1.005.247-1.863.743-2.577.495-.71 1.17-1.25 2.04-1.615.796-.335 1.756-.575 2.912-.72.39-.046 1.033-.103 1.92-.174v-.37c0-.93-.105-1.558-.3-1.875-.302-.43-.78-.65-1.44-.65h-.182c-.48.046-.896.196-1.246.46-.35.27-.575.63-.675 1.096-.06.3-.206.465-.435.51l-2.52-.315c-.248-.06-.372-.18-.372-.39 0-.046.007-.09.022-.15.247-1.29.855-2.25 1.82-2.88.976-.616 2.1-.975 3.39-1.05h.54c1.65 0 2.957.434 3.888 1.29.135.15.27.3.405.48.12.165.224.314.283.45.075.134.15.33.195.57.06.254.105.42.135.51.03.104.062.3.076.615.01.313.02.493.02.553v5.28c0 .376.06.72.165 1.036.105.313.21.54.315.674l.51.674c.09.136.136.256.136.36 0 .12-.06.226-.18.314-1.2 1.05-1.86 1.62-1.963 1.71-.165.135-.375.15-.63.045a6.062 6.062 0 01-.526-.496l-.31-.347a9.391 9.391 0 01-.317-.42l-.3-.435c-.81.886-1.603 1.44-2.4 1.665-.494.15-1.093.227-1.83.227-1.11 0-2.04-.343-2.76-1.034-.72-.69-1.08-1.665-1.08-2.94l-.05-.076zm3.753-.438c0 .566.14 1.02.425 1.364.285.34.675.512 1.155.512.045 0 .106-.007.195-.02.09-.016.134-.023.166-.023.614-.16 1.08-.553 1.424-1.178.165-.28.285-.58.36-.91.09-.32.12-.59.135-.8.015-.195.015-.54.015-1.005v-.54c-.84 0-1.484.06-1.92.18-1.275.36-1.92 1.17-1.92 2.43l-.035-.02zm9.162 7.027c.03-.06.075-.11.132-.17.362-.243.714-.41 1.05-.5a8.094 8.094 0 011.612-.24c.14-.012.28 0 .41.03.65.06 1.05.168 1.172.33.063.09.099.228.099.39v.15c0 .51-.149 1.11-.424 1.8-.278.69-.664 1.248-1.156 1.68-.073.06-.14.09-.197.09-.03 0-.06 0-.09-.012-.09-.044-.107-.12-.064-.24.54-1.26.806-2.143.806-2.64 0-.15-.03-.27-.087-.344-.145-.166-.55-.257-1.224-.257-.243 0-.533.016-.87.046-.363.045-.7.09-1 .135-.09 0-.148-.014-.18-.044-.03-.03-.036-.047-.02-.077 0-.017.006-.03.02-.063v-.06z"/></svg>`;
+function buyLinkHtml(url, format, store, price) {
+  if (!url) return "";
+  const icon = /^Amazon/.test(store) ? AMAZON_ICON : "";
+  return `<a class="buy-link" href="${escapeHtml(url)}" target="_blank" rel="noopener"><span class="buy-link__format">${format}</span><span class="buy-link__store">${icon}<span>${store}</span>${price ? `<em class="buy-link__price">${escapeHtml(price)}</em>` : ""}</span><span class="buy-link__arrow" aria-hidden="true">↗</span></a>`;
+}
+
 function buyPanel(book) {
-  const link = (url, format, store) => url ? `<a class="buy-link" href="${escapeHtml(url)}" target="_blank" rel="noopener"><span class="buy-link__format">${format}</span><span class="buy-link__store">${store}</span><span class="buy-link__arrow" aria-hidden="true">↗</span></a>` : "";
+  const link = buyLinkHtml;
+  const pr = (k) => (book.prices || {})[k];
   const pt = [
-    link(book.purchaseUrl, "Ebook", "Amazon Kindle"),
-    link(book.purchaseUrlUiclap, "Impresso", "UICLAP"),
+    link(book.purchaseUrl, "Ebook", "Amazon Kindle", pr("purchaseUrl")),
+    link(book.purchaseUrlUiclap, "Impresso", "UICLAP", pr("purchaseUrlUiclap")),
   ].join("");
   const en = [
-    link(book.purchaseUrlEn, "Ebook", "Amazon US"),
-    link(book.purchaseUrlEnBr, "Ebook", "Amazon BR"),
-    link(book.purchaseUrlEnUk, "Paperback", "Amazon UK"),
+    link(book.purchaseUrlEn, "Ebook", "Amazon US", pr("purchaseUrlEn")),
+    link(book.purchaseUrlEnBr, "Ebook", "Amazon BR", pr("purchaseUrlEnBr")),
+    link(book.purchaseUrlEnUk, "Paperback", "Amazon UK", pr("purchaseUrlEnUk")),
   ].join("");
   return `<div class="buy-panel">
     ${pt ? `<div class="buy-group"><span class="buy-group__title">Português</span><div class="buy-group__links">${pt}</div></div>` : `<span class="btn btn--disabled" aria-disabled="true">Comprar · EM BREVE</span>`}
@@ -862,6 +872,8 @@ const SINAL_RUIDO_ORIGIN = { slug: "sinal-ruido", title: "SIGNAL/NOISE", author:
 function bookSheetPage(b, list, lang) {
   const ui = SHEET_UI[lang];
   const en = lang === "en";
+  const tt = (x) => (en && x.titleEn) || x.title;
+  const cv = (x) => (en && x.coverEn) || x.cover;
   const isOrigin = b.slug === "sinal-ruido";
   const sh = (en ? bookSheetsEn : bookSheets)[b.slug] || {};
   const otherSheet = (en ? bookSheets : bookSheetsEn)[b.slug];
@@ -871,6 +883,7 @@ function bookSheetPage(b, list, lang) {
   const status = ui.statusMap[b.status] || b.status;
   const rows = [
     ...(isOrigin ? [["Type", "Origin work, outside the numbering of the Cosmological Chronicles"]] : [[ui.seriesLabel, ui.series], [ui.volume, b.numeral]]),
+    ...(en && b.titleEn ? [["Original title", b.title]] : []),
     [ui.author, b.author],
     [ui.status, status],
     ...(amb.epoca ? [[ui.epoch, amb.epoca]] : []),
@@ -888,7 +901,7 @@ function bookSheetPage(b, list, lang) {
   const badge = isOrigin ? "ORIGIN" : `${b.numeral} · ${status}`;
   const switchHref = en ? ptPath : enPath;
   const showSwitch = en || Boolean(otherSheet && (otherSheet.synopsis));
-  const navLabel = (x) => (en && x.slug === "sinal-ruido" ? "SIGNAL/NOISE" : x.title);
+  const navLabel = (x) => (en && x.slug === "sinal-ruido" ? "SIGNAL/NOISE" : tt(x));
   const body = `
     <section class="section book-sheet">
       <div class="container">
@@ -897,14 +910,14 @@ function bookSheetPage(b, list, lang) {
           ${showSwitch ? `<a href="${switchHref}" class="mono" style="color:var(--muted)" hreflang="${en ? "pt-BR" : "en"}">${ui.switchLabel}</a>` : ""}
         </div>
         <div class="book-sheet__hero">
-          <img class="book-sheet__cover" src="${escapeHtml(b.cover)}" alt="${en ? "Cover of" : "Capa de"} ${escapeHtml(b.title)}" width="450" height="720" />
+          <img class="book-sheet__cover" src="${escapeHtml(cv(b))}" alt="${en ? "Cover of" : "Capa de"} ${escapeHtml(tt(b))}" width="450" height="720" />
           <div>
             <span class="badge" style="border-color:var(--signal);color:var(--signal)">${escapeHtml(badge)}</span>
-            <h1 style="margin-top:12px">${escapeHtml(b.title)}</h1>
+            <h1 style="margin-top:12px">${escapeHtml(tt(b))}</h1>
             <p class="mono" style="margin-top:8px;color:var(--signal)">${escapeHtml(b.author)}</p>
             ${sh.tagline ? `<p class="book-sheet__tagline" style="margin-top:14px;font-style:italic;color:var(--muted)">${escapeHtml(sh.tagline)}</p>` : ""}
             <div class="book-sheet__synopsis">${synopsis ? paras(synopsis) : `<p class="book-sheet__pending">${ui.synopsisSoon}</p>`}</div>
-            ${isOrigin ? `<p style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--primary" href="/livro/sample/">Read the sample</a><a class="btn" href="/buy/">Get the book</a></p>` : ""}${!en && b.purchaseUrl ? `<div class="buy-panel" style="margin-top:18px"><div class="buy-group"><span class="buy-group__title">Onde comprar</span><div class="buy-group__links"><a class="buy-link" href="${escapeHtml(b.purchaseUrl)}" target="_blank" rel="noopener"><span class="buy-link__format">Comprar</span><span class="buy-link__store">Amazon BR</span><span class="buy-link__arrow" aria-hidden="true">↗</span></a></div></div></div>` : ""}
+            ${isOrigin ? `<p style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--primary" href="/livro/sample/">Read the sample</a><a class="btn" href="/buy/">Get the book</a></p>` : ""}${!en && b.purchaseUrl ? `<div class="buy-panel" style="margin-top:18px"><div class="buy-group"><span class="buy-group__title">Onde comprar</span><div class="buy-group__links">${buyLinkHtml(b.purchaseUrl, "Comprar", "Amazon BR", b.purchasePrice)}</div></div></div>` : ""}
           </div>
         </div>
 
@@ -929,15 +942,15 @@ function bookSheetPage(b, list, lang) {
         ${(sh.temas || []).length ? `<section style="margin-top:32px"><span class="kicker">${ui.themes}</span><div class="book-sheet__tags">${sh.temas.map((t) => `<span class="badge">${escapeHtml(t)}</span>`).join("")}</div></section>` : ""}
 
         <nav class="book-sheet__nav" aria-label="${ui.other}">
-          ${prev ? `<a href="${base}${prev.slug}/"><span class="mono">← ${escapeHtml(prev.numeral)}</span><strong>${escapeHtml(prev.title)}</strong></a>` : "<span></span>"}
+          ${prev ? `<a href="${base}${prev.slug}/"><span class="mono">← ${escapeHtml(prev.numeral)}</span><strong>${escapeHtml(tt(prev))}</strong></a>` : "<span></span>"}
           ${next ? `<a href="${base}${next.slug}/" style="text-align:right"><span class="mono">${escapeHtml(next.numeral)} →</span><strong>${escapeHtml(navLabel(next))}</strong></a>` : "<span></span>"}
         </nav>
       </div>
     </section>`;
-  const descr = synopsis ? synopsis.slice(0, 200) : en ? `${b.title}, volume ${b.numeral} of the Cosmological Chronicles, by ${b.author}.` : `${b.title}, volume ${b.numeral} das Crônicas Cosmológicas, de ${b.author}.`;
-  const title = isOrigin ? "SIGNAL/NOISE · Origin" : `${b.title} · ${ui.chapterTitle}`;
+  const descr = synopsis ? synopsis.slice(0, 200) : en ? `${tt(b)}, volume ${b.numeral} of the Cosmological Chronicles, by ${b.author}.` : `${b.title}, volume ${b.numeral} das Crônicas Cosmológicas, de ${b.author}.`;
+  const title = isOrigin ? "SIGNAL/NOISE · Origin" : `${tt(b)} · ${ui.chapterTitle}`;
   write(path.replace(/\/$/, ""), page({
-    title, description: descr, path, bodyHtml: body, ogImage: b.cover,
+    title, description: descr, path, bodyHtml: body, ogImage: cv(b),
     ...(en ? { lang: ui.lang, ogLocale: ui.ogLocale, minimal: true, robots: "noindex,follow" } : {}),
   }));
 }
@@ -971,7 +984,7 @@ function chroniclesEnPage(list) {
 
         <section class="books-future" id="chronicles">
           <span class="kicker">Cosmological Chronicles · I–X</span>
-          <div class="books-grid books-grid--covers" style="margin-top:16px">${withEn.map((b) => `<a class="book-card book-card--cover" href="/en/chronicles/${b.slug}/"><img src="${escapeHtml(b.cover)}" alt="Cover of ${escapeHtml(b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(status(b.status))}</span><h3>${escapeHtml(b.title)}</h3>${(bookSheetsEn[b.slug] || {}).tagline ? `<p>${escapeHtml(bookSheetsEn[b.slug].tagline)}</p>` : ""}<span class="book-card__more mono">Synopsis and details →</span></a>`).join("")}</div>
+          <div class="books-grid books-grid--covers" style="margin-top:16px">${withEn.map((b) => `<a class="book-card book-card--cover" href="/en/chronicles/${b.slug}/"><img src="${escapeHtml(b.coverEn || b.cover)}" alt="Cover of ${escapeHtml(b.titleEn || b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(status(b.status))}</span><h3>${escapeHtml(b.titleEn || b.title)}</h3>${(bookSheetsEn[b.slug] || {}).tagline ? `<p>${escapeHtml(bookSheetsEn[b.slug].tagline)}</p>` : ""}<span class="book-card__more mono">Synopsis and details →</span></a>`).join("")}</div>
         </section>
       </div>
     </section>`;
@@ -1095,7 +1108,7 @@ function buyPage() {
   const markets = marketList();
   const chips = markets.map((m) => `<a class="buy-chip" href="#${m.code.toLowerCase()}" data-market-chip="${m.code}">${escapeHtml(m.name)}</a>`).join("");
   const sections = markets.map((m) => {
-    const links = buyLinks(m.code).map((l) => `<a class="buy-link" href="${escapeHtml(l.url)}" target="_blank" rel="noopener"><span class="buy-link__format">${escapeHtml(l.label)}</span><span class="buy-link__store">Amazon ${escapeHtml(m.code)}</span><span class="buy-link__arrow" aria-hidden="true">↗</span></a>`).join("");
+    const links = buyLinks(m.code).map((l) => `${buyLinkHtml(l.url, escapeHtml(l.label), "Amazon " + m.code)}`).join("");
     return `<section class="buy-market" id="${m.code.toLowerCase()}" data-market="${m.code}">
         <h2>${escapeHtml(m.name)} <span class="mono buy-market__flag" data-suggested-label hidden>Suggested for you</span></h2>
         <div class="buy-group__links">${links}</div>

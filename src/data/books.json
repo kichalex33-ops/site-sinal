@@ -36,7 +36,8 @@
     "numeral": "I",
     "cover": "/livros/os-deuses-nao-tem-filhos.jpg",
     "description": "",
-    "purchaseUrl": "https://www.amazon.com.br/dp/B0HKZY434C"
+    "purchaseUrl": "https://www.amazon.com.br/dp/B0HKZY434C",
+    "titleEn": "THE GODS HAVE NO CHILDREN"
   },
   {
     "slug": "a-ultima-testemunha",
@@ -47,7 +48,8 @@
     "description": "Observação, futuro e determinismo.",
     "featured": false,
     "numeral": "II",
-    "cover": "/livros/a-ultima-testemunha.jpg"
+    "cover": "/livros/a-ultima-testemunha.jpg",
+    "titleEn": "THE LAST WITNESS"
   },
   {
     "slug": "amanha-nao-existe",
@@ -58,7 +60,8 @@
     "title": "AMANHÃ NÃO EXISTE",
     "numeral": "III",
     "cover": "/livros/amanha-nao-existe.jpg",
-    "description": ""
+    "description": "",
+    "titleEn": "TOMORROW DOES NOT EXIST"
   },
   {
     "slug": "o-universo-nao-responde",
@@ -69,7 +72,8 @@
     "description": "Paradoxo de Fermi, Grande Filtro e extinção.",
     "featured": false,
     "numeral": "IV",
-    "cover": "/livros/o-universo-nao-responde.jpg"
+    "cover": "/livros/o-universo-nao-responde.jpg",
+    "titleEn": "THE UNIVERSE DOES NOT ANSWER"
   },
   {
     "slug": "o-arquivo-dos-mortos",
@@ -80,7 +84,8 @@
     "description": "Identidade, extinção, consciência digital e sobrevivência.",
     "featured": false,
     "numeral": "V",
-    "cover": "/livros/o-arquivo-dos-mortos.jpg"
+    "cover": "/livros/o-arquivo-dos-mortos.jpg",
+    "titleEn": "THE ARCHIVE OF THE DEAD"
   },
   {
     "slug": "antes-de-nascermos",
@@ -91,7 +96,9 @@
     "description": "Memória, infância, consciência e cosmologia.",
     "featured": false,
     "numeral": "VI",
-    "cover": "/livros/antes-de-nascermos.jpg"
+    "cover": "/livros/antes-de-nascermos.jpg",
+    "titleEn": "BEFORE WE ARE BORN",
+    "coverEn": "/livros/antes-de-nascermos-en.jpg"
   },
   {
     "slug": "o-ceu-esta-errado",
@@ -102,7 +109,8 @@
     "description": "Realidade, memória e cosmologia.",
     "featured": false,
     "numeral": "VII",
-    "cover": "/livros/o-ceu-esta-errado.jpg"
+    "cover": "/livros/o-ceu-esta-errado.jpg",
+    "titleEn": "THE SKY IS WRONG"
   },
   {
     "slug": "o-retangulo-negro",
@@ -113,7 +121,8 @@
     "description": "Nem tudo que some foi perdido.",
     "featured": false,
     "numeral": "VIII",
-    "cover": "/livros/o-retangulo-negro.jpg"
+    "cover": "/livros/o-retangulo-negro.jpg",
+    "titleEn": "THE BLACK RECTANGLE"
   },
   {
     "slug": "nao-tem-a-palavra",
@@ -124,7 +133,8 @@
     "description": "Algumas coisas desaparecem quando deixam de ter nome.",
     "featured": false,
     "numeral": "IX",
-    "cover": "/livros/nao-tem-a-palavra.jpg"
+    "cover": "/livros/nao-tem-a-palavra.jpg",
+    "titleEn": "THERE IS NO WORD"
   },
   {
     "slug": "o-ultimo-sinal",
@@ -135,6 +145,7 @@
     "description": "Civilizações, morte cósmica e legado.",
     "featured": false,
     "numeral": "X",
-    "cover": "/livros/o-ultimo-sinal.jpg"
+    "cover": "/livros/o-ultimo-sinal.jpg",
+    "titleEn": "THE LAST SIGNAL"
   }
 ]

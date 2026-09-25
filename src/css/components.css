@@ -824,7 +824,10 @@ html:not(.reduced-motion) [data-hero-line] { opacity: 0; transform: translateY(2
 .buy-link { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "format arrow" "store arrow"; align-items: center; column-gap: 10px; padding: 11px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: rgba(255,255,255,.02); text-decoration: none; color: var(--text, inherit); transition: border-color .2s, background .2s, transform .2s; }
 .buy-link:hover, .buy-link:focus-visible { border-color: var(--signal); background: rgba(232,84,29,.08); transform: translateY(-1px); }
 .buy-link__format { grid-area: format; font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--signal); }
-.buy-link__store { grid-area: store; font-size: 15px; font-weight: 600; }
+.buy-link__store { grid-area: store; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.buy-link__icon { flex: none; width: 16px; height: 16px; color: var(--muted); }
+.buy-link:hover .buy-link__icon { color: var(--signal); }
+.buy-link__price { margin-left: auto; font-style: normal; font-weight: 700; font-size: 14px; color: var(--signal); white-space: nowrap; }
 .buy-link__arrow { grid-area: arrow; color: var(--muted); font-size: 16px; }
 .buy-link:hover .buy-link__arrow { color: var(--signal); }
 .buy-link--sample .buy-link__format { color: var(--muted); }
