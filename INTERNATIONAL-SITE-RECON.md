@@ -686,3 +686,7 @@ A capa de "Antes de Nascermos" parecia apagada: o preto estava levantado (median
 - `hreflang` recíproco (pt-BR, en, x-default) entre cada página em português e a sua versão em inglês: 10 livros, `/livros/` e `/en/chronicles/`, `/livro/` e `/en/signal-noise/` (24 páginas).
 - Continuam `noindex` e fora do sitemap: `/buy/`, `/livro/amostra/`, `/cortesia/`, `404.html`. `/livro/sample/` já era indexável.
 - Só passa a valer quando o site for publicado.
+
+## V. Capas do livro I (2026-09-25)
+
+Arte nova em PT (`sinal final/LIVROS/1/pt.png`, "Algumas coisas não deveriam nascer.") e EN (`eg.png`, "THE GODS HAVE NO CHILDREN · Some things should never be born.", com "COSMOLOGICAL CHRONICLES"), cortadas 30 px de cada lado como as demais. A EN vai em `public/livros/os-deuses-nao-tem-filhos-en.jpg` (`coverEn`). Livros com capa em inglês no site: I e VI.

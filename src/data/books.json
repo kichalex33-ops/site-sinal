@@ -37,7 +37,8 @@
     "cover": "/livros/os-deuses-nao-tem-filhos.jpg",
     "description": "",
     "purchaseUrl": "https://www.amazon.com.br/dp/B0HKZY434C",
-    "titleEn": "THE GODS HAVE NO CHILDREN"
+    "titleEn": "THE GODS HAVE NO CHILDREN",
+    "coverEn": "/livros/os-deuses-nao-tem-filhos-en.jpg"
   },
   {
     "slug": "a-ultima-testemunha",
