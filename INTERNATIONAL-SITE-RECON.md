@@ -647,3 +647,11 @@ O autor declarou que a amostra em inglês do site está correta e pode ser publi
 - **Sem spoilers (decisão do autor):** "A face do Arquivo" e "Lugar dentro da coleção" ficam nos dados mas não aparecem, nem em português nem em inglês. Para exibir, editar `HIDDEN_SECTIONS` em `scripts/build-pages.mjs`.
 - **Inglês:** `/en/chronicles/`, `/en/chronicles/<slug>/` (10 livros) e `/en/signal-noise/`, a partir de `src/data/book-sheets-en.json` (tradução minha das seções visíveis). Títulos no original até o autor definir os títulos em inglês das capas. Páginas `noindex` e fora do sitemap até revisão. Capas ainda em português. Textos para revisão em `F:\SINAL_RUIDO\traducao-en\`.
 - **Verificação:** build com saída 0 e 120 páginas. Conferida no navegador apenas `/livros/o-retangulo-negro/`. Nada disso foi publicado no Cloudflare.
+
+## Q. Cortesia do Instagram descartada (2026-09-25)
+
+- O autor descartou a ideia de cortesia pelo Instagram. A página `/brinde/` (criada para o link do bot) foi **removida** do código e do site local; o bot já tinha sido removido do worker. O caminho `brinde/` continua na lista `clean()` do build apenas para apagar restos.
+- O EPUB de cortesia em português fica **somente** no endereço secreto `/cortesia/<token>/` (noindex, `no-store`, fora do sitemap). Uma cópia pública em `/brinde/` chegou a ser criada e foi apagada antes de qualquer commit ou deploy.
+- Aviso registrado: o EPUB de cortesia é de 2026-09-23 15:54, anterior ao texto final (`SINAL_RUIDO_1EDICAO_FINAL.docx`, 09-25 10:38). Vale regenerar o EPUB a partir do texto final.
+- **Atenção no ar:** a versão publicada em 25/09 ainda contém `/brinde/` (é a que o bot antigo usava). A remoção só entra no ar em um próximo deploy.
+- Repositório do site: `https://github.com/kichalex33-ops/site-sinal` (privado). Já continha a página antiga "em preparação" (3 arquivos, 5 commits de 08/09); o histórico foi preservado por merge, com o site atual como conteúdo.

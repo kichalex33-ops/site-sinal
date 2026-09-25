@@ -1065,40 +1065,6 @@ function contatoPage() {
 }
 
 // ---------------------------------------------------------------------
-// /brinde — porta de entrada pública para quem vem do Instagram (o bot do
-// @sinal_ruido envia este link). Não é a /cortesia/, que é privada e noindex.
-// Sem formulário e sem download de EPUB.
-// ---------------------------------------------------------------------
-function brindePage() {
-  const book = books.find((b) => b.slug === "sinal-ruido") || books[0];
-  const body = `
-    <section class="section container--narrow">
-      <span class="kicker">Bem-vindo ao sinal</span>
-      <h1 style="margin-top:12px">Obrigado por participar.</h1>
-      <p style="margin-top:8px;color:var(--muted);max-width:60ch">Você chegou pelo Instagram do <strong>SINAL/RUÍDO</strong>, o romance de ${escapeHtml(book.author)}. Esta página é a porta de entrada: comece pela amostra gratuita ou conheça o livro e as Crônicas Cosmológicas.</p>
-
-      <div class="grid grid--2" style="margin-top:28px">
-        <div class="paper" style="padding:24px"><span class="kicker">Comece por aqui</span><h2 style="margin-top:10px">Leia a amostra</h2><p style="margin-top:8px">Os três primeiros capítulos, gratuitos, direto no navegador.</p><p style="margin-top:12px"><a class="btn btn--primary" href="/livro/amostra/">Ler a amostra</a></p></div>
-        <div class="paper" style="padding:24px"><span class="kicker">O livro</span><h2 style="margin-top:10px">Conheça SINAL/RUÍDO</h2><p style="margin-top:8px">Sinopse e informações do romance.</p><p style="margin-top:12px"><a class="btn" href="/livro/">Conhecer o livro</a></p></div>
-        <div class="paper" style="padding:24px"><span class="kicker">O universo</span><h2 style="margin-top:10px">Crônicas Cosmológicas</h2><p style="margin-top:8px">Os livros que compõem as Crônicas Cosmológicas.</p><p style="margin-top:12px"><a class="btn" href="/livros/#cronicas">Ver as Crônicas</a></p></div>
-        <div class="paper" style="padding:24px"><span class="kicker">Instagram</span><h2 style="margin-top:10px">@sinal_ruido</h2><p style="margin-top:8px">Acompanhe o projeto e as novas publicações.</p><p style="margin-top:12px"><a class="btn" href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Abrir o Instagram</a></p></div>
-      </div>
-    </section>
-
-    <section class="section section--divider container--narrow">
-      <span class="kicker">Onde comprar</span>
-      <div style="margin-top:16px">${buyPanel(book)}</div>
-    </section>`;
-  write("/brinde", page({
-    title: "Brinde",
-    description: "Porta de entrada do SINAL/RUÍDO: leia a amostra gratuita, conheça o livro e as Crônicas Cosmológicas.",
-    path: "/brinde/",
-    bodyHtml: body,
-    ogImage: "/livro/capa.jpg",
-  }));
-}
-
-// ---------------------------------------------------------------------
 // 404.html — sem ela o Cloudflare Pages trata o site como SPA e devolve a home com
 // status 200 para qualquer endereço inexistente. Fica fora das rotas e do sitemap.
 // ---------------------------------------------------------------------
@@ -1409,7 +1375,6 @@ leitoresPage();
 imprensaPage();
 privacidadePage();
 contatoPage();
-brindePage();
 buyPage();
 notFoundPage();
 ["livro", "bunkerx", "cienciatododia", "spacetoday"].forEach(campanhaRedirect);
