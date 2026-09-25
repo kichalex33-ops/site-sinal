@@ -1,5 +1,5 @@
 {
-  "_nota": "Mercado (loja) e idioma sao coisas diferentes: um mercado tem um idioma padrao, mas o visitante pode trocar. 'editions' lista SOMENTE edicoes com link conhecido; nunca exibir uma edicao que nao esteja aqui. 'localeFallback: true' = nao existe locale dedicado ao mercado; o idioma padrao e uma proposta a confirmar pelo autor.",
+  "_nota": "Mercado (loja) e idioma sao coisas diferentes: um mercado tem um idioma padrao, mas o visitante pode trocar. 'editions' lista SOMENTE edicoes com link conhecido; nunca exibir uma edicao que nao esteja aqui. 'localeFallback: true' = nao existe locale dedicado ao mercado; o idioma padrao foi confirmado pelo autor em 2026-09-25 (NL, AU, IN = en-GB; JP, CA = en-US; en-GB em /en-gb/).",
   "markets": {
     "US": { "name": "United States", "amazonDomain": "amazon.com", "defaultLocale": "en-US", "editions": ["kindle", "paperback", "hardcover"] },
     "UK": { "name": "United Kingdom", "amazonDomain": "amazon.co.uk", "defaultLocale": "en-GB", "editions": ["kindle", "paperback", "hardcover"] },

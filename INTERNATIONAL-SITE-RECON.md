@@ -554,3 +554,63 @@ Limite desta verificação: foi feita sobre o `dist/` local. Não foi testado o 
 5. `/brinde/` promete "os três primeiros capítulos": vale conferir se a amostra PT alterada (`sample-chapters.json`) é a homologada v4.0.1.
 6. Os quatro arquivos de "A Última Testemunha" seguem fora dos commits.
 7. Publicação: nada foi deployado; o bot do Instagram só volta a funcionar quando o site for publicado.
+
+## M. Pasta `F:\SINAL_RUIDO\sinal final` (2026-09-25) e decisões confirmadas
+
+Somente análise; nada da pasta foi copiado para o projeto.
+
+### M.1 Decisões confirmadas pelo autor
+| Tema | Decisão |
+|---|---|
+| Pasta `SINAL_RUIDO_WEB_DINAMICO_COMENTARIOS/` (resíduo no disco) | O autor a apaga |
+| Idioma padrão dos mercados sem locale próprio | Confirmado: NL, AU, IN = en-GB; JP, CA = en-US; en-GB em `/en-gb/` (`markets.json` atualizado) |
+
+### M.2 Conteúdo da pasta
+| Arquivo | O que é |
+|---|---|
+| `SINAL_RUIDO_1EDICAO_FINAL.docx` (507 KB, 09-25 10:38) | **Edição em português, "1ª edição · 2026"**, ~140.900 palavras, ISBN 978-65-02-34537-5, **38 capítulos** (sumário 1 a 38: de "O arquivo ruim" a "Detecção confirmada") |
+| `WhatsApp Image 2026-09-22 at 16.54.55.jpeg` (1149x1368) | Retrato em preto e branco com detalhe laranja. Tratado como a foto do autor, conforme informado por ele |
+| `todas as capas e contracapas/1.png ... 23.png` (1410x2250 cada) | 11 capas frontais e 12 contracapas, todas em português |
+
+Não há nessa pasta: manuscrito em inglês, amostra em inglês nem capa internacional (SIGNAL/NOISE).
+
+### M.3 Manuscrito de 38 capítulos = a edição em português
+- O manuscrito "correto" de 38 capítulos é esta edição PT. O KDP em inglês analisado antes (45 capítulos, 14/09) é uma estrutura anterior.
+- Prova: os capítulos 1 a 3 da edição PT são "O arquivo ruim", "Sinal", "O estatuto". Os capítulos 2 e 3 da amostra em inglês publicada (`/livro/sample/`) são "Known Error" e "The Machine Against Itself", que não existem na edição de 38 capítulos. O "The Charter" do sumário EN antigo (posição 8) corresponde a "O estatuto" (posição 3).
+- **A amostra em inglês do site está desatualizada em relação à edição final.** Ela continua publicada como `noindex`. Recomendação: retirar `/livro/sample/` e o link "Read sample" do painel em inglês até existir a tradução da edição de 38 capítulos.
+- Consequência: as seções F.1, F.2 e F.3 acima ficam **substituídas**. A edição em inglês correta ainda não foi entregue.
+- Existe outra cópia do docx final em `livro/sinal ruido capa nova/SINAL_RUIDO final.docx` (09-23), **diferente** (hash distinto, 197 linhas a menos na nova, muitos parágrafos alterados). A de 09-25 é a mais recente; a de 09-23 é versão antiga.
+
+### M.4 Amostra em português (pergunta 5 respondida)
+Comparei parágrafo a parágrafo `src/data/sample-chapters.json` com o docx final de 09-25:
+| Capítulo | Parágrafos idênticos |
+|---|---|
+| 1. O arquivo ruim | 302 de 302 |
+| 2. Sinal | 269 de 269 |
+| 3. O estatuto | 225 de 225 |
+
+A amostra publicada é literalmente o texto da edição final de 09-25. O `/brinde/` pode prometer "os três primeiros capítulos". A amostra continua `noindex,follow` (regra do HANDOFF); liberar indexação é decisão do autor.
+
+### M.5 Capas
+| Arquivos | Conteúdo |
+|---|---|
+| 1 | Origem: SINAL/RUÍDO (frente) |
+| 3, 5, 7, 9, 11, 13, 15, 17 | Crônicas I a VIII (frentes) |
+| 20, 22 | Crônicas IX e X (frentes) |
+| 2, 4, 6, 8, 10, 12, 14, 16, 18, 19, 21, 23 | Contracapas. O pareamento de 18, 19 e 21 com as frentes VIII, IX e X não é óbvio: a ordem numérica muda a partir da VIII |
+
+Pontos de atenção:
+1. **Capa II (`5.png`): faixa branca de ~40 px na borda inferior** (linhas y=2210 a 2249, RGB 255,255,255; o resto é preto). Defeito visível, corrigir antes de usar.
+2. Todas as capas têm título em português. A capa da Origem mostra "SINAL RUÍDO" e o lema "Nem todo sinal quer ser ruído". Não é a capa internacional SIGNAL/NOISE.
+3. As frentes de VIII, IX e X trazem elementos que o autor deve validar quanto a spoiler (ex.: texto bordado no travesseiro da VIII).
+
+### M.6 Foto do autor
+Arquivo único, 1149x1368, exportado do WhatsApp (compressão do aplicativo). Serve para a página do autor; para o press kit convém o arquivo original de maior resolução. Não foi copiada para o projeto nem usada em nenhuma página. Falta o autor confirmar que esta é a foto definitiva e a atribuição/crédito.
+
+### M.7 Pendências atualizadas
+1. Entregar o manuscrito, a amostra e a capa **em inglês** da edição de 38 capítulos.
+2. Decidir sobre retirar a amostra em inglês antiga (`/livro/sample/`).
+3. Corrigir a faixa branca da capa II.
+4. Confirmar a foto do autor (definitiva? original em alta? crédito?).
+5. Apagar a pasta residual `SINAL_RUIDO_WEB_DINAMICO_COMENTARIOS/` (autor).
+6. Os quatro arquivos de "A Última Testemunha" seguem fora dos commits.
