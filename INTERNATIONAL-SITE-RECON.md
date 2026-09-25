@@ -678,3 +678,11 @@ A capa de "Antes de Nascermos" parecia apagada: o preto estava levantado (median
 - **Traduções auditadas:** `traducao-en/CRONICAS_COSMOLOGICAS_EN_REVISADO.zip` aplicado em `src/data/book-sheets-en.json`. Títulos em inglês (`titleEn` em `books.json`): I The Gods Have No Children; II The Last Witness; III Tomorrow Does Not Exist; IV The Universe Does Not Answer; V The Archive of the Dead; VI Before We Are Born; VII The Sky Is Wrong; VIII The Black Rectangle; IX There Is No Word; X The Last Signal. Páginas em inglês passam a usar título e capa em inglês quando existem (`coverEn`; só o VI tem).
 - **Inconsistência a decidir:** a capa em inglês do VI diz "COSMIC CHRONICLES", mas as páginas e os textos revisados dizem "Cosmological Chronicles".
 - Páginas em inglês continuam `noindex` e fora do sitemap.
+
+## U. Indexação das páginas em inglês (2026-09-25)
+
+- Decisão do autor: o nome da série em inglês é **Cosmological Chronicles**. A capa em inglês do VI (arte) ainda diz "COSMIC CHRONICLES" e precisa ser corrigida pelo autor.
+- Traduções auditadas: as páginas em inglês (`/en/chronicles/`, 10 livros e `/en/signal-noise/`) saem de `noindex` e entram no sitemap (12 URLs; 112 no total).
+- `hreflang` recíproco (pt-BR, en, x-default) entre cada página em português e a sua versão em inglês: 10 livros, `/livros/` e `/en/chronicles/`, `/livro/` e `/en/signal-noise/` (24 páginas).
+- Continuam `noindex` e fora do sitemap: `/buy/`, `/livro/amostra/`, `/cortesia/`, `404.html`. `/livro/sample/` já era indexável.
+- Só passa a valer quando o site for publicado.

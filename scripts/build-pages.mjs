@@ -737,7 +737,7 @@ function livroPage() {
 
       <div style="margin-top:36px;padding-top:20px;border-top:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap"><a href="/leitores/" class="btn">Área de leitores</a><button type="button" class="btn" data-share data-share-title="SINAL/RUÍDO — o romance" data-share-text="Um romance de investigação. Ficção apoiada por pesquisa factual separada.">Compartilhar</button></div>
     </section>`;
-  write("/livro", page({ title: "O livro", description: "SINAL/RUÍDO, o romance — ficção científica de investigação com pesquisa factual separada do arquivo público.", path: "/livro/", bodyHtml: body, ogImage: "/livro/capa.jpg" }));
+  write("/livro", page({ title: "O livro", description: "SINAL/RUÍDO, o romance — ficção científica de investigação com pesquisa factual separada do arquivo público.", path: "/livro/", bodyHtml: body, ogImage: "/livro/capa.jpg", alternates: ptEnAlternates("/livro/", "/en/signal-noise/") }));
 }
 
 function livroAmostraPage() {
@@ -834,7 +834,7 @@ function livrosPage() {
         ${others.length ? `<section class="books-future"><span class="kicker">Outro projeto literário</span><div class="books-grid">${others.map((b) => `<article class="book-card"><span class="mono">${escapeHtml(b.status)}</span><h3>${escapeHtml(b.title)}</h3><p>${escapeHtml(b.description)}</p><small>${escapeHtml(b.kind)}</small></article>`).join("")}</div></section>` : ""}
       </div>
     </section>`;
-  write("/livros", page({ title: "Livros", description: "Livros e projetos literários de SINAL/RUÍDO, claramente separados do arquivo factual.", path: "/livros/", bodyHtml: body, ogImage: "/livro/capa.jpg" }));
+  write("/livros", page({ title: "Livros", description: "Livros e projetos literários de SINAL/RUÍDO, claramente separados do arquivo factual.", path: "/livros/", bodyHtml: body, ogImage: "/livro/capa.jpg", alternates: ptEnAlternates("/livros/", "/en/chronicles/") }));
 }
 
 // ---------------------------------------------------------------------
@@ -869,6 +869,11 @@ const SINAL_RUIDO_ORIGIN = { slug: "sinal-ruido", title: "SIGNAL/NOISE", author:
 // /livros/<slug> (pt) e /en/chronicles/<slug> (en): ficha do livro com sinopse, personagens e seções.
 // Dados em src/data/book-sheets.json (pt) e book-sheets-en.json (en). Páginas em inglês ficam noindex
 // e fora do sitemap até o autor revisar a tradução.
+// Alternativas de idioma (hreflang) entre a página em português e a sua versão em inglês.
+function ptEnAlternates(ptPath, enPath) {
+  return [{ hreflang: "pt-BR", href: `${SITE_URL}${ptPath}` }, { hreflang: "en", href: `${SITE_URL}${enPath}` }, { hreflang: "x-default", href: `${SITE_URL}${ptPath}` }];
+}
+
 function bookSheetPage(b, list, lang) {
   const ui = SHEET_UI[lang];
   const en = lang === "en";
@@ -951,7 +956,8 @@ function bookSheetPage(b, list, lang) {
   const title = isOrigin ? "SIGNAL/NOISE · Origin" : `${tt(b)} · ${ui.chapterTitle}`;
   write(path.replace(/\/$/, ""), page({
     title, description: descr, path, bodyHtml: body, ogImage: cv(b),
-    ...(en ? { lang: ui.lang, ogLocale: ui.ogLocale, minimal: true, robots: "noindex,follow" } : {}),
+    ...(en ? { lang: ui.lang, ogLocale: ui.ogLocale, minimal: true } : {}),
+    ...(showSwitch ? { alternates: ptEnAlternates(ptPath, enPath) } : {}),
   }));
 }
 
@@ -994,7 +1000,8 @@ function chroniclesEnPage(list) {
     path: "/en/chronicles/",
     bodyHtml: body,
     ogImage: "/livro/capa-en.jpg",
-    lang: "en", ogLocale: "en_US", minimal: true, robots: "noindex,follow",
+    lang: "en", ogLocale: "en_US", minimal: true,
+    alternates: ptEnAlternates("/livros/", "/en/chronicles/"),
   }));
 }
 
@@ -1339,7 +1346,7 @@ function buildSearchIndex() {
 function buildSeoFiles() {
   // Rotas de campanha são redirects. A amostra literária permanece fora do sitemap
   // enquanto o texto final não tiver sido inserido e homologado.
-  const canonicalRoutes = routes.filter((r) => !r.startsWith("/r/") && !r.startsWith("/cortesia/") && r !== "/livro/amostra/" && r !== "/buy/" && !r.startsWith("/en/"));
+  const canonicalRoutes = routes.filter((r) => !r.startsWith("/r/") && !r.startsWith("/cortesia/") && r !== "/livro/amostra/" && r !== "/buy/");
   const urlset = canonicalRoutes
     .map((r) => `  <url><loc>${SITE_URL}${r}</loc></url>`)
     .join("\n");
