@@ -1475,6 +1475,7 @@ function autorPage() {
   const cronicas = books.filter((b) => b.kind === "Crônicas Cosmológicas");
   const cards = cronicas.map((b) => `
         <a class="autor-cron" href="/livros/${b.slug}/">
+          <img src="/livros/thumbs/${b.slug}.jpg" alt="Capa de ${escapeHtml(b.title)}" width="360" height="575" loading="lazy" />
           <span class="autor-cron__num">${escapeHtml(b.numeral)}</span>
           <strong>${escapeHtml(b.title)}</strong>
           <span>${escapeHtml(CRONICAS_LINHAS[b.slug] || b.description || "")}</span>
@@ -1493,7 +1494,6 @@ function autorPage() {
         <p class="autor-cite">O conceito pode ser enorme, mas o conflito precisa continuar humano.</p>
         <p><a class="btn btn--primary" href="/#livros">Conhecer os livros</a></p>
       </div>
-      <div class="autor-hero__photo"><img src="/autor/hero-bandeira.jpg" alt="Alex Jr. Kich sentado, sorrindo, com a bandeira do Rio Grande do Sul ao fundo" width="900" height="900" /></div>
     </section>
 
     <section class="autor-sec autor-sobre">
@@ -1709,7 +1709,7 @@ function autorPage() {
     description: "Alex Jr. Kich, escritor, artista e criador de mundos. Autor de SINAL/RUÍDO, das Crônicas Cosmológicas, de VALANDOR e de Duas Irmãs e Oito Patas.",
     path: "/autor/",
     bodyHtml: body,
-    ogImage: "/autor/hero-bandeira.jpg",
+    ogImage: "/autor/sentado.jpg",
     extraHead: `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" />`,
   }));
 }
@@ -1746,7 +1746,7 @@ function imprensaPage() {
         <p style="margin-top:8px">Uso editorial com crédito ao autor. <a href="/autor/">Página do autor</a> para o contexto completo.</p>
         <p style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
           <a class="btn" href="/autor/retrato-pb.jpg" download>Retrato P&amp;B</a>
-          <a class="btn" href="/autor/hero-bandeira.jpg" download>Foto com a bandeira</a>
+          <a class="btn" href="/autor/sentado.jpg" download>Foto sentado</a>
           <a class="btn" href="/livro/capa.jpg" download>Capa · SINAL/RUÍDO</a>
           <a class="btn" href="/autor/duas-irmas-capa.jpg" download>Capa · Duas Irmãs e Oito Patas</a>
         </p>

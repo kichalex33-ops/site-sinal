@@ -724,3 +724,10 @@ Arte nova em PT (`sinal final/LIVROS/1/pt.png`, "Algumas coisas não deveriam na
 Ajuste (2026-09-25): a pedido do autor, ficam apenas fotos em que ele aparece sozinho. Removidas as fotos com a filha (Dragon/SpaceX, filha nos ombros) e o fecho com a família. Entrou a foto dele sentado (`public/autor/sentado.jpg`) em "Como eu escrevo". Ilustrações e fichas de personagem (arte) foram mantidas.
 
 Ajuste (2026-09-25): hero da página do autor reduzido (foto com a bandeira em 40% da largura, altura máx. 640 px; no celular 44% da altura da tela) e retrato P&B de óculos removido da página do autor. O arquivo e o download do retrato continuam em `/imprensa/` (`public/autor/retrato-pb.jpg`), aguardando decisão do autor.
+
+## AA. Página do autor sem foto no topo, capas nos cartões e capas III e IV (2026-09-25)
+
+- **Topo do `/autor/`:** só texto; a foto com a bandeira foi removida da página, da imprensa e do projeto (`hero-bandeira.jpg` apagado). Única foto do autor restante: a sentado, em "Como eu escrevo" (também no download da imprensa). Imagem de compartilhamento da página: `sentado.jpg`.
+- **Cartões das Crônicas** no `/autor/`: passam a mostrar a capa de cada livro (miniaturas de 360 px em `public/livros/thumbs/`, ~400 KB no total), com numeral dourado menor, título e frase.
+- **Capas novas III e IV** (`sinal final/LIVROS/3/pt.png`, `3/ing.png` e `4/ChatGPT ... (2)` = PT, `(1)` = EN): PT "Amanhã Não Existe" e "O Universo Não Responde"; EN "Tomorrow Does Not Exist" e "The Universe Does Not Respond". Livros com capa em inglês: I, II, III, IV e VI.
+- **Pendente de confirmação:** as pastas 5 e 6 têm imagens novas (V EN/PT às 15:08; VI EN/PT às 15:12, com arte diferente da já aplicada). As pastas 7 a 10 têm rascunhos das 14:12 e 14:19. Como o autor disse "até a IV", V, VI e os demais não foram aplicados.
