@@ -722,3 +722,5 @@ Arte nova em PT (`sinal final/LIVROS/1/pt.png`, "Algumas coisas não deveriam na
 - **Resolução:** o retrato P&B tem 619 px e a foto da bandeira 900 px; para download em alta resolução são necessários os originais.
 
 Ajuste (2026-09-25): a pedido do autor, ficam apenas fotos em que ele aparece sozinho. Removidas as fotos com a filha (Dragon/SpaceX, filha nos ombros) e o fecho com a família. Entrou a foto dele sentado (`public/autor/sentado.jpg`) em "Como eu escrevo". Ilustrações e fichas de personagem (arte) foram mantidas.
+
+Ajuste (2026-09-25): hero da página do autor reduzido (foto com a bandeira em 40% da largura, altura máx. 640 px; no celular 44% da altura da tela) e retrato P&B de óculos removido da página do autor. O arquivo e o download do retrato continuam em `/imprensa/` (`public/autor/retrato-pb.jpg`), aguardando decisão do autor.
