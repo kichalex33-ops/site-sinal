@@ -655,3 +655,13 @@ O autor declarou que a amostra em inglês do site está correta e pode ser publi
 - Aviso registrado: o EPUB de cortesia é de 2026-09-23 15:54, anterior ao texto final (`SINAL_RUIDO_1EDICAO_FINAL.docx`, 09-25 10:38). Vale regenerar o EPUB a partir do texto final.
 - **Atenção no ar:** a versão publicada em 25/09 ainda contém `/brinde/` (é a que o bot antigo usava). A remoção só entra no ar em um próximo deploy.
 - Repositório do site: `https://github.com/kichalex33-ops/site-sinal` (privado). Já continha a página antiga "em preparação" (3 arquivos, 5 commits de 08/09); o histórico foi preservado por merge, com o site atual como conteúdo.
+
+## R. Pendências resolvidas (2026-09-25)
+
+| Item | Resolução |
+|---|---|
+| `/brinde/` no ar | Removido do código e do build; sai do ar no deploy desta rodada |
+| `capa.jpg` na raiz do repo `site-sinal` | Removido (commit `c2b0911`) |
+| GitHub Pages do `site-sinal` | Não estava ativo (`kichalex33-ops.github.io/site-sinal/` responde 404) |
+| EPUB de cortesia desatualizado | Regenerado a partir de `SINAL_RUIDO_1EDICAO_FINAL.docx` (38 capítulos, 237 parágrafos atualizados, 505.795 bytes). Reaproveita capa, CSS, sumário e páginas iniciais do EPUB anterior. Cópia em `sinal final/SINAL_RUIDO_cortesia_1edicao_final.epub` e no endereço secreto da cortesia. Sem validador epubcheck disponível: verificados XML bem formado, `mimetype` sem compressão, mesmas 53 entradas e `testzip` limpo. Recomenda-se abrir em um leitor antes de divulgar |
+| Repo do worker | Commit `d7872ff` enviado ao `SINAL-RUIDO` (main); dispara o build automático do Cloudflare com o mesmo código já publicado |

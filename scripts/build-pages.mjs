@@ -991,6 +991,7 @@ function chroniclesEnPage(list) {
 const CORTESIA_TOKEN = "55okhxeexdf9m1";
 function cortesiaPage() {
   const epubHref = `/cortesia/${CORTESIA_TOKEN}/SINAL_RUIDO_cortesia.epub`;
+  const epubKb = Math.round(readFileSync(join(root, `public/cortesia/${CORTESIA_TOKEN}/SINAL_RUIDO_cortesia.epub`)).length / 1024);
   const body = `
     <section class="section container--narrow courtesy">
       <span class="kicker">Cortesia do SINAL/RUÍDO</span>
@@ -1000,7 +1001,7 @@ function cortesiaPage() {
       <div class="courtesy__card">
         <img src="/livro/capa.jpg" alt="Capa de SINAL/RUÍDO" width="300" height="432" />
         <div>
-          <span class="mono">EBOOK · EPUB · 494 KB</span>
+          <span class="mono">EBOOK · EPUB · ${epubKb} KB</span>
           <h2>SINAL/RUÍDO</h2>
           <p class="mono" style="color:var(--signal)">Alex Jr. Kich</p>
           <a class="btn btn--primary" href="${epubHref}" download="SINAL_RUIDO_cortesia.epub" rel="noopener">Baixar EPUB</a>
