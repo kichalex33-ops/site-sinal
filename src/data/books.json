@@ -89,7 +89,8 @@
     "featured": false,
     "numeral": "V",
     "cover": "/livros/o-arquivo-dos-mortos.jpg",
-    "titleEn": "THE ARCHIVE OF THE DEAD"
+    "titleEn": "THE ARCHIVE OF THE DEAD",
+    "coverEn": "/livros/o-arquivo-dos-mortos-en.jpg"
   },
   {
     "slug": "antes-de-nascermos",
@@ -114,7 +115,8 @@
     "featured": false,
     "numeral": "VII",
     "cover": "/livros/o-ceu-esta-errado.jpg",
-    "titleEn": "THE SKY IS WRONG"
+    "titleEn": "THE SKY IS WRONG",
+    "coverEn": "/livros/o-ceu-esta-errado-en.jpg"
   },
   {
     "slug": "o-retangulo-negro",
@@ -126,7 +128,8 @@
     "featured": false,
     "numeral": "VIII",
     "cover": "/livros/o-retangulo-negro.jpg",
-    "titleEn": "THE BLACK RECTANGLE"
+    "titleEn": "THE BLACK RECTANGLE",
+    "coverEn": "/livros/o-retangulo-negro-en.jpg"
   },
   {
     "slug": "nao-tem-a-palavra",
@@ -138,7 +141,8 @@
     "featured": false,
     "numeral": "IX",
     "cover": "/livros/nao-tem-a-palavra.jpg",
-    "titleEn": "THERE IS NO WORD"
+    "titleEn": "NO WORD FOR IT",
+    "coverEn": "/livros/nao-tem-a-palavra-en.jpg"
   },
   {
     "slug": "o-ultimo-sinal",
@@ -150,6 +154,7 @@
     "featured": false,
     "numeral": "X",
     "cover": "/livros/o-ultimo-sinal.jpg",
-    "titleEn": "THE LAST SIGNAL"
+    "titleEn": "THE LAST SIGNAL",
+    "coverEn": "/livros/o-ultimo-sinal-en.jpg"
   }
 ]
