@@ -961,7 +961,7 @@ body:has(dialog.book-dialog[open]) { overflow: hidden; }
 .autor-photo img, .autor-retrato img { width: 100%; height: auto; display: block; border-radius: 14px; }
 .autor-retrato img { border-radius: 10px; filter: grayscale(1); }
 .autor-cover img { width: 100%; max-width: 340px; height: auto; display: block; margin: 0 auto; border-radius: 6px; box-shadow: 0 24px 60px rgba(0,0,0,.6); }
-.autor-sr { background: linear-gradient(rgba(8,10,16,.9), rgba(8,10,16,.9)), url(/autor/exposicao-azul.jpg) center / cover no-repeat; }
+.autor-sr { background: linear-gradient(rgba(8,10,16,.9), rgba(8,10,16,.9)), url(/autor/retrato.jpg) center / cover no-repeat; }
 .autor-cron-sec { background: radial-gradient(1px 1px at 12% 20%, rgba(255,255,255,.7), transparent), radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,.5), transparent), radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,.5), transparent), #0a1226; background-size: 320px 320px, 320px 320px, 320px 320px, auto; }
 .autor-cron-grid { display: grid; gap: 14px; margin-top: 28px; grid-template-columns: 1fr; }
 @media (min-width: 720px) { .autor-cron-grid { grid-template-columns: repeat(2, 1fr); } }
