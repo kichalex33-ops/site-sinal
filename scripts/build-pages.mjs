@@ -16,6 +16,12 @@ const cases = JSON.parse(readFileSync(join(dataDir, "cases.json"), "utf-8")).map
   ...c,
   coverSrc: existsSync(join(capasDir, `${c.slug}.png`)) ? `/capas/${c.slug}.png` : null,
 }));
+// Casos com traducao para o ingles (so os ligados ao romance por enquanto; ver /en/archive/).
+// Traducao com fidelidade as fontes, feita a mao — nao e geracao mecanica.
+const casesEn = JSON.parse(readFileSync(join(dataDir, "cases-en.json"), "utf-8")).map((c) => ({
+  ...c,
+  coverSrc: existsSync(join(capasDir, `${c.slug}.png`)) ? `/capas/${c.slug}.png` : null,
+}));
 const collections = JSON.parse(readFileSync(join(dataDir, "collections.json"), "utf-8"));
 const media = JSON.parse(readFileSync(join(dataDir, "media.json"), "utf-8"));
 const corrections = JSON.parse(readFileSync(join(dataDir, "corrections.json"), "utf-8"));
@@ -361,6 +367,13 @@ function enArquivoPage() {
           <a class="card" href="/midia/" hreflang="pt-BR"><span class="card__meta">${media.length} items · PT</span><h3>Videos and images</h3><p>Images, documents and videos with recorded origin, authorship and license.</p></a>
         </div>
 
+        ${casesEn.length ? `
+        <section style="margin-top:44px">
+          <span class="kicker">Translated so far</span>
+          <h2 style="margin-top:8px">Cases tied directly to the novel.</h2>
+          <div class="grid grid--3" style="margin-top:16px">${casesEn.map(enCaseCard).join("")}</div>
+        </section>` : ""}
+
         <p class="mono" style="margin-top:32px;color:var(--muted)">Reading in Portuguese already? See the <a href="/arquivo/" hreflang="pt-BR">full archive</a>.</p>
       </div>
     </section>`;
@@ -649,11 +662,285 @@ function caseDossierPage(item) {
       </div>
     </article>`;
 
+  const enTwin = casesEn.find((e) => e.slug === item.slug);
   write(`/casos/${item.slug}`, page({
     title: item.title,
     description: item.resumo,
     path: `/casos/${item.slug}/`,
     bodyHtml: body,
+    ...(enTwin ? { alternates: ptEnAlternates(`/casos/${item.slug}/`, `/en/archive/cases/${item.slug}/`), langSwitch: `/en/archive/cases/${item.slug}/` } : {}),
+  }));
+}
+
+// ---------------------------------------------------------------------
+// /en/archive/cases/[slug] — English case dossier. Only for cases translated in
+// cases-en.json (see casesEn above). Reuses the same CSS classes as the PT dossier.
+// ---------------------------------------------------------------------
+function enMaturityBadge(maturidade) {
+  const LABEL = { registro: "Level 1 · Record", indexado: "Level 2 · Indexed case", dossie: "Level 3 · Reviewed dossier" };
+  const TITLE = {
+    registro: "Minimal entry: little to no traceable source yet.",
+    indexado: "Documented with traceable sources, but not yet through a formal web factual audit.",
+    dossie: "Went through a documented web factual audit — not assigned automatically by record completeness.",
+  };
+  return `<span class="badge badge--maturity--${maturidade}" title="${escapeHtml(TITLE[maturidade] ?? "")}">${escapeHtml(LABEL[maturidade] ?? maturidade)}</span>`;
+}
+
+function enIntegrityBadge(versaoPt) {
+  const CLASS = { "Original digital": "original-digital", "Digitalização institucional": "digitalizacao-institucional", "Cópia preservada": "copia-preservada", "Reprodução": "reproducao", "Derivado de análise": "derivado-de-analise", "Ilustração": "ilustracao", "Origem incerta": "origem-incerta" };
+  const LABEL = { "Original digital": "Digital original", "Digitalização institucional": "Institutional digitization", "Cópia preservada": "Preserved copy", "Reprodução": "Reproduction", "Derivado de análise": "Derived from analysis", "Ilustração": "Illustration", "Origem incerta": "Uncertain origin" };
+  const cls = CLASS[versaoPt] ?? "origem-incerta";
+  return `<span class="badge badge--integrity--${cls}">${escapeHtml(LABEL[versaoPt] ?? versaoPt)}</span>`;
+}
+
+function enCaseCard(c) {
+  const thumb = c.coverSrc ? `<img class="card__thumb" src="${escapeHtml(c.coverSrc)}" alt="" loading="lazy" />` : "";
+  return `
+    <a class="card${c.coverSrc ? " card--cover" : ""}" href="/en/archive/cases/${c.slug}/">
+      ${thumb}
+      <div class="card__body">
+        <span class="card__meta">${escapeHtml(c.code)} · ${escapeHtml(c.date)}</span>
+        <h3>${escapeHtml(c.title)}</h3>
+        <p>${escapeHtml(c.resumo)}</p>
+        <div class="card__badges">${editorialBadge(c.status, c.statusLabel)}${enMaturityBadge(c.maturidade)}</div>
+      </div>
+    </a>`;
+}
+
+function enDocumentoItem(doc) {
+  return `
+    <div class="card" style="cursor:default">
+      <span class="card__meta">${escapeHtml(doc.tipo)}</span>
+      <h3>${escapeHtml(doc.titulo)}</h3>
+      <p>${escapeHtml(doc.descricao)}</p>
+      <p class="mono" style="margin-top:8px;font-size:11px;color:var(--muted)">
+        ${doc.data ? `Date: ${escapeHtml(doc.data)} · ` : ""}Origin: ${escapeHtml(doc.origem)}
+      </p>
+      ${doc.linkExterno ? `<a class="mono" style="font-size:11px" href="${escapeHtml(doc.linkExterno)}" target="_blank" rel="noopener noreferrer">Not hosted here due to copyright — see original source →</a>` : ""}
+    </div>`;
+}
+
+function enTestemunhoItem(t) {
+  return `
+    <div class="card" style="cursor:default">
+      <h3>${escapeHtml(t.quem)}</h3>
+      <dl style="margin-top:8px;font-size:13px;display:grid;gap:6px">
+        <div><dt class="mono" style="font-size:10px;color:var(--muted)">WHEN STATED</dt><dd>${escapeHtml(t.quandoDeclarou)}</dd></div>
+        <div><dt class="mono" style="font-size:10px;color:var(--muted)">TIME AFTER THE EVENT</dt><dd>${escapeHtml(t.tempoAposEvento)}</dd></div>
+        <div><dt class="mono" style="font-size:10px;color:var(--muted)">EXISTING VERSIONS</dt><dd>${escapeHtml(t.versoes)}</dd></div>
+        <div><dt class="mono" style="font-size:10px;color:var(--muted)">OTHER WITNESSES</dt><dd>${escapeHtml(t.outrasTestemunhas)}</dd></div>
+        ${t.possivelContaminacao ? `<div><dt class="mono" style="font-size:10px;color:var(--muted)">POSSIBLE LATER CONTAMINATION</dt><dd>${escapeHtml(t.possivelContaminacao)}</dd></div>` : ""}
+      </dl>
+    </div>`;
+}
+
+function enCaseImageBlock(img) {
+  return `
+    <figure class="card" style="padding:0;overflow:hidden;cursor:default">
+      <div style="position:relative">
+        <img src="${escapeHtml(img.src)}" alt="${escapeHtml(img.alt)}" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover" />
+        ${img.ilustrativa ? `<span class="illustration-flag" style="position:absolute;left:10px;top:10px">Illustration — not an original record</span>` : ""}
+      </div>
+      <figcaption style="padding:14px;font-size:12px;color:var(--muted)">
+        <div style="color:var(--text)">${escapeHtml(img.contexto)}</div>
+        <div style="margin-top:6px">Origin: ${escapeHtml(img.origem)}${img.data ? " · " + escapeHtml(img.data) : ""}</div>
+        <div>Credit: ${escapeHtml(img.autoria)} · ${enIntegrityBadge(img.versao)}</div>
+        <div>License: ${escapeHtml(img.license)} — <a href="${escapeHtml(img.sourceUrl)}" target="_blank" rel="noopener noreferrer">source page</a></div>
+      </figcaption>
+    </figure>`;
+}
+
+function enYoutubeCard(v) {
+  return `
+    <div class="yt-card">
+      <div class="yt-card__frame" data-yt-frame="${escapeHtml(v.youtubeId)}" data-yt-title="${escapeHtml(v.titulo)}">
+        <img src="https://i.ytimg.com/vi/${escapeHtml(v.youtubeId)}/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="yt-card__play">▶</span>
+      </div>
+      <div class="yt-card__body">
+        <span class="yt-card__meta">${escapeHtml(v.canal)}</span>
+        <h3>${escapeHtml(v.titulo)}</h3>
+        ${v.contexto ? `<p class="yt-card__context">${escapeHtml(v.contexto)}</p>` : ""}
+        <a class="yt-card__source" href="https://www.youtube.com/watch?v=${escapeHtml(v.youtubeId)}" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+      </div>
+    </div>`;
+}
+
+function enCaseCoverHero(item) {
+  if (item.coverSrc) {
+    return `
+      <header class="case-cover case-cover--art">
+        <img src="${item.coverSrc}" alt="Cover — ${escapeHtml(item.title)}" loading="eager" />
+      </header>`;
+  }
+  const img = (item.imagens || [])[0];
+  const bg = img && img.src ? `<img class="case-cover__bg" src="${escapeHtml(img.src)}" alt="" loading="eager" />` : "";
+  return `
+    <header class="case-cover grid-texture${img ? "" : " case-cover--noimage"}">
+      ${bg}
+      <div class="case-cover__scrim"></div>
+      <div class="container case-cover__inner">
+        <div class="case-cover__top">
+          <span class="kicker case-cover__kicker">SIGNAL/NOISE — Dossier</span>
+          <div class="case-cover__tag mono">
+            <div>${escapeHtml(item.location)}</div>
+            <div>${escapeHtml(item.date)}</div>
+            <div>${escapeHtml(item.code)}</div>
+            <div class="case-cover__redacted"></div>
+          </div>
+        </div>
+        <div class="case-cover__bottom">
+          <h1 class="case-cover__title">${escapeHtml(item.title)}</h1>
+          <div class="case-cover__rule"></div>
+          <div class="case-cover__meta mono">
+            <span>${escapeHtml(item.date)}</span><span class="case-cover__dot">•</span><span>${escapeHtml(item.location)}</span>
+          </div>
+          <div class="case-cover__badges">
+            ${editorialBadge(item.status, item.statusLabel)}
+            ${enMaturityBadge(item.maturidade)}
+          </div>
+        </div>
+      </div>
+    </header>`;
+}
+
+function enCaseDossierPage(item) {
+  const relatedCorrections = corrections.filter((c) => c.caseSlug === item.slug);
+  const caseMedia = media.filter((m) => m.caseSlug === item.slug);
+  const body = `
+    ${enCaseCoverHero(item)}
+    <article class="section container--medium">
+      <a href="/en/archive/" class="mono" style="color:var(--muted)">← Back to the archive</a>
+
+      <section style="margin-top:32px">
+        <span class="kicker">Summary</span>
+        <p style="margin-top:10px;font-size:18px;color:var(--muted);max-width:640px">${escapeHtml(item.resumo)}</p>
+        <p class="mono" style="margin-top:6px;font-size:11px;color:var(--muted)">What happened, in a few lines, with no interpretation built in.</p>
+      </section>
+
+      ${item.documentos.length ? `
+      <section style="margin-top:36px">
+        <span class="kicker">Document</span>
+        <div class="grid" style="margin-top:16px">${item.documentos.map(enDocumentoItem).join("")}</div>
+      </section>` : ""}
+
+      ${item.testemunhos.length ? `
+      <section style="margin-top:36px">
+        <span class="kicker">Testimony</span>
+        <div class="grid" style="margin-top:16px">${item.testemunhos.map(enTestemunhoItem).join("")}</div>
+      </section>` : ""}
+
+      ${item.cronologia.length ? `
+      <section style="margin-top:36px">
+        <span class="kicker">Timeline</span>
+        <div class="paper" style="margin-top:16px;padding:24px">
+          <ol class="timeline">
+            ${item.cronologia.map((e) => `
+              <li class="timeline__item">
+                <span class="timeline__when">${escapeHtml(e.quando)}</span>
+                <p>${escapeHtml(e.evento)}</p>
+              </li>`).join("")}
+          </ol>
+        </div>
+      </section>` : ""}
+
+      ${item.hipoteses.length ? `
+      <section style="margin-top:36px">
+        <span class="kicker">Hypotheses</span>
+        <p class="mono" style="margin-top:6px;font-size:11px;color:var(--muted)">All in the same field of evaluation. None wins by default.</p>
+        <div class="grid" style="margin-top:16px">
+          ${item.hipoteses.map((h) => `
+            <div class="card" style="cursor:default">
+              <span class="mono" style="font-size:10px;text-transform:uppercase;color:var(--especulacao)">${escapeHtml(h.tipo)}</span>
+              <p style="margin-top:6px">${escapeHtml(h.avaliacao)}</p>
+            </div>`).join("")}
+        </div>
+      </section>` : ""}
+
+      ${item.contradicoes.length ? `
+      <section style="margin-top:36px">
+        <div class="contradiction">
+          <span class="contradiction__label">Contradictions</span>
+          <ul style="margin-top:10px;padding-left:18px;list-style:disc;display:grid;gap:8px;font-size:14px">
+            ${item.contradicoes.map((c) => `<li>${escapeHtml(c)}</li>`).join("")}
+          </ul>
+        </div>
+      </section>` : ""}
+
+      <section style="margin-top:36px">
+        <div class="paper knowns" style="padding:20px">
+          <div class="knowns__panel knowns__panel--know">
+            <span class="knowns__title">What we know</span>
+            <ul>${item.oQueSabemos.map((s) => `<li>${escapeHtml(s)}</li>`).join("")}</ul>
+          </div>
+          <div class="knowns__panel knowns__panel--unknown">
+            <span class="knowns__title" style="color:var(--paper-muted)">What we don't know</span>
+            <ul>${item.oQueNaoSabemos.map((s) => `<li>${escapeHtml(s)}</li>`).join("")}</ul>
+          </div>
+          <div class="knowns__panel knowns__panel--need">
+            <span class="knowns__title">What we'd need to know</span>
+            <ul>${item.paraSaberMais.map((s) => `<li>${escapeHtml(s)}</li>`).join("")}</ul>
+          </div>
+        </div>
+      </section>
+
+      ${item.imagens.length ? `
+      <section style="margin-top:36px">
+        <span class="kicker">Images and documents</span>
+        <div class="grid grid--2" style="margin-top:16px">${item.imagens.map(enCaseImageBlock).join("")}</div>
+      </section>` : ""}
+
+      ${caseMedia.length ? `
+      <section style="margin-top:36px">
+        <span class="kicker">Case media</span>
+        <p class="mono" style="margin-top:6px;font-size:11px;color:var(--muted)">This section is currently listed in Portuguese only.</p>
+        <div class="media-masonry" style="margin-top:16px">${caseMedia.map((m) => `<div data-media-card data-tipo="${m.tipo}">${mediaCard(m)}</div>`).join("")}</div>
+      </section>` : ""}
+
+      ${(item.videosYoutube || []).length ? `
+      <section style="margin-top:36px">
+        <span class="kicker">Videos</span>
+        <p class="mono" style="margin-top:6px;font-size:11px;color:var(--muted)">Documentaries, interviews and coverage about the case. A third-party video is not evidence of the case — it's context material.</p>
+        <div class="grid grid--2" style="margin-top:16px">${item.videosYoutube.map(enYoutubeCard).join("")}</div>
+      </section>` : ""}
+
+      ${item.fontes.length ? `
+      <section style="margin-top:36px">
+        <span class="kicker">Sources</span>
+        <ul style="margin-top:14px;display:grid;gap:10px">
+          ${item.fontes.map((f) => `
+            <li style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;font-size:14px">
+              ${provenanceBadge(f.qualidade)}
+              ${f.url ? `<a href="${escapeHtml(f.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(f.label)}</a>` : `<span>${escapeHtml(f.label)}</span>`}
+            </li>`).join("")}
+        </ul>
+        <p class="mono" style="margin-top:10px;font-size:11px;color:var(--muted)">An interview or podcast is listed here as a path to a claim, never as proof of the claim.</p>
+      </section>` : ""}
+
+      ${relatedCorrections.length ? `
+      <section style="margin-top:36px">
+        <span class="kicker">Review history</span>
+        <p class="mono" style="margin-top:6px;font-size:11px;color:var(--muted)">Listed in Portuguese only. See <a href="/correcoes/" hreflang="pt-BR">/correcoes</a>.</p>
+      </section>` : ""}
+
+      ${item.bookNote ? `
+      <section style="margin-top:36px">
+        <div class="card" style="cursor:default;border-color:color-mix(in srgb, var(--signal) 45%, transparent)">
+          <span class="mono" style="font-size:11px;text-transform:uppercase;color:var(--signal)">SIGNAL/NOISE — the novel</span>
+          <p style="margin-top:8px">${escapeHtml(item.bookNote)}</p>
+          <a href="/en/signal-noise/" class="mono" style="display:inline-block;margin-top:8px">See the book page →</a>
+        </div>
+      </section>` : ""}
+    </article>`;
+
+  write(`/en/archive/cases/${item.slug}`, page({
+    title: item.title,
+    description: item.resumo,
+    path: `/en/archive/cases/${item.slug}/`,
+    bodyHtml: body,
+    lang: "en", ogLocale: "en_US", minimal: true,
+    alternates: ptEnAlternates(`/casos/${item.slug}/`, `/en/archive/cases/${item.slug}/`),
+    langSwitch: `/casos/${item.slug}/`,
   }));
 }
 
@@ -1528,7 +1815,6 @@ function leitoresPage() {
 }
 
 function enLeitoresPage() {
-  const bookCases = cases.filter((c) => c.bookNote);
   const body = `
     <section class="section container--narrow">
       <span class="kicker">For readers of the book</span>
@@ -1542,9 +1828,8 @@ function enLeitoresPage() {
 
       <section style="margin-top:32px">
         <h2 style="font-size:16px">Real cases that inspired the novel</h2>
-        <p class="mono" style="margin-top:8px;color:var(--muted)">The case dossiers below are currently published in Portuguese only.</p>
-        <div class="grid" style="margin-top:16px">${bookCases.map(caseCard).join("")}</div>
-        <a href="/casos/" class="mono" style="display:inline-block;margin-top:12px" hreflang="pt-BR">See the full archive →</a>
+        <div class="grid" style="margin-top:16px">${casesEn.map(enCaseCard).join("")}</div>
+        <a href="/en/archive/" class="mono" style="display:inline-block;margin-top:12px">See the full archive →</a>
       </section>
 
       <div style="margin-top:36px;padding-top:20px;border-top:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap">
@@ -2396,6 +2681,7 @@ arquivoPage();
 enArquivoPage();
 casosPage();
 cases.forEach(caseDossierPage);
+casesEn.forEach(enCaseDossierPage);
 documentosPage();
 documents.forEach(documentoDetailPage);
 colecoesPage();

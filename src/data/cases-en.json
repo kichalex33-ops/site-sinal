@@ -1,0 +1,157 @@
+[
+  {
+    "slug": "sinal-wow",
+    "code": "SR-CASE-0001",
+    "date": "Aug 15, 1977",
+    "title": "The Wow! Signal — Big Ear, Ohio",
+    "location": "Delaware, Ohio, USA",
+    "status": "revisao-pendente",
+    "statusLabel": "Well documented; awaiting formal archive audit",
+    "resumo": "In the early hours of August 15, 1977, the Big Ear radio telescope at Ohio State University recorded a narrowband radio signal far stronger than the background noise of the sky, at a frequency close to the 21 cm line of neutral hydrogen — historically one of the most promising bands for searches of artificial signals. The signal lasted 72 seconds, the exact time it took Earth's rotation to carry the instrument's beam across that point in the sky, and it appeared in only one of the telescope's two receiving channels, as would be expected from a real source rather than terrestrial interference. Days later, while reviewing the printed computer printout, astronomer Jerry Ehman circled the sequence \"6EQUJ5\" and wrote \"Wow!\" in the margin — the origin of the name by which the case is known. There has never been a second detection, despite decades of searches aimed at the same region of the sky with more sensitive instruments, and no raw data exists beyond that single printout.",
+    "documentos": [
+      {
+        "tipo": "Instrumental record",
+        "titulo": "Original Big Ear printout with the \"Wow!\" annotation",
+        "descricao": "Printed output from the radio telescope's computer, showing the intensity sequence \"6EQUJ5\" and astronomer Jerry Ehman's handwritten note, captured in just 1 of the receiver's 50 channels.",
+        "data": "Aug 15, 1977",
+        "origem": "Ohio State University Radio Observatory / North American AstroPhysical Observatory (NAAPO)"
+      }
+    ],
+    "testemunhos": [],
+    "cronologia": [
+      { "quando": "1963–1998", "evento": "Big Ear's period of operation, including the longest-running SETI program in history (1973–1995)." },
+      { "quando": "Aug 15, 1977, early morning", "evento": "Big Ear records the signal during an automated sky survey." },
+      { "quando": "A few days later", "evento": "Jerry Ehman reviews the printed printout and writes \"Wow!\" in the margin." },
+      { "quando": "1977–today", "evento": "Searches for a repeat of the signal in the same region of the sky find nothing equivalent." },
+      { "quando": "1998", "evento": "Big Ear is dismantled after the land it stood on is sold." }
+    ],
+    "hipoteses": [
+      { "tipo": "Astrophysical", "avaliacao": "Recent studies (\"Arecibo Wow! I\" and \"Arecibo Wow! II\", 2024–2025) propose a cold neutral-hydrogen cloud amplified by a rare transient event. This would explain the frequency, but neither paper has reached consensus in the scientific community." },
+      { "tipo": "Instrumental error", "avaliacao": "Terrestrial interference was considered and partly ruled out: Big Ear had two receiving beams, and the signal appeared in only one, as would be expected from a real celestial source rather than local noise common to both beams." },
+      { "tipo": "Extraordinary hypothesis", "avaliacao": "A non-natural, technological origin is often cited, but no additional data (repetition, message structure, a second detection) supports it beyond the anomaly of the signal itself." }
+    ],
+    "contradicoes": [
+      "The signal was never redetected, despite dozens of attempts with more sensitive instruments in the following decades.",
+      "No audio recording or raw data exists beyond the printout — the analysis depends entirely on that single record."
+    ],
+    "oQueSabemos": [
+      "A real radio signal was recorded by the instrument on 08/15/1977, with an intensity profile consistent with a fixed source in the sky.",
+      "The frequency was close to the 21 cm line of neutral hydrogen, of historical interest to SETI searches."
+    ],
+    "oQueNaoSabemos": [
+      "The physical origin of the signal — natural, artificial or instrumental.",
+      "Why it was never repeated, even with targeted searches."
+    ],
+    "paraSaberMais": [
+      "Additional raw data from the moment of detection, if it exists in any archive, has not yet been published.",
+      "A second detection, at the same frequency and region of the sky, would be the single most informative piece of data possible."
+    ],
+    "imagens": [
+      {
+        "tipo": "documento",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Wow_signal.jpg",
+        "alt": "Original Big Ear printout with the \"6EQUJ5\" sequence and the handwritten \"Wow!\" annotation",
+        "origem": "Big Ear Radio Observatory / NAAPO",
+        "data": "Aug 15, 1977",
+        "autoria": "Jerry R. Ehman (annotation); Big Ear Radio Observatory (record)",
+        "contexto": "Primary document of the event — the printout that gives the case its name.",
+        "versao": "Digitalização institucional",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wow_signal.jpg"
+      },
+      {
+        "tipo": "imagem",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/9/93/Wow_signal_profile.png",
+        "alt": "Intensity graph of the Wow! signal over time",
+        "origem": "Wikimedia Commons",
+        "autoria": "Cmglee",
+        "contexto": "Illustrative graph of the intensity profile described in the original printout — not the primary document.",
+        "versao": "Ilustração",
+        "ilustrativa": true,
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wow_signal_profile.png"
+      }
+    ],
+    "fontes": [
+      { "qualidade": "Primary source", "label": "North American AstroPhysical Observatory (NAAPO) — Wow! signal archive" },
+      { "qualidade": "Background reference", "label": "Wow! signal — Wikipedia (EN)", "url": "https://en.wikipedia.org/wiki/Wow!_signal" },
+      { "qualidade": "Academic paper", "label": "Arecibo Wow! I (arXiv, 2024)", "url": "https://arxiv.org/pdf/2408.08513" },
+      { "qualidade": "Academic paper", "label": "Arecibo Wow! II (arXiv, 2025)", "url": "https://arxiv.org/pdf/2508.10657" },
+      { "qualidade": "Contemporary press", "label": "Astronomy.com — Aug. 15, 1977: The Wow! Signal arrives", "url": "https://www.astronomy.com/today-in-the-history-of-astronomy/aug-15-1977-the-wow-signal-arrives/" },
+      { "qualidade": "Later investigation", "label": "Scientific American — The Wow! Signal SETI Mystery Might at Last Be Solved", "url": "https://www.scientificamerican.com/article/the-wow-signal-seti-mystery-might-at-last-be-solved/" }
+    ],
+    "bookNote": "This case is the starting point of the novel SIGNAL/NOISE. What the plot imagines happened with the signal from there on is entirely fictional — see the book page for how the factual research relates to the fiction, with no spoilers here.",
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      { "titulo": "The Wow! Signal with Discoverer Dr. Jerry Ehman", "youtubeId": "x67K-Vq1KWk", "canal": "Event Horizon", "contexto": "Interview with astronomer Jerry Ehman, who discovered and annotated the Wow! signal on the original 1977 printout." }
+    ]
+  },
+  {
+    "slug": "operacao-prato-colares",
+    "code": "SR-CASE-0002",
+    "date": "Sep 1977",
+    "title": "Operation Saucer / Colares",
+    "location": "Vigia, Colares and Santo Antônio do Tauá / Pará, Brazil",
+    "status": "revisao-pendente",
+    "statusLabel": "Public archive confirmed; awaiting formal archive audit",
+    "resumo": "Between October and December 1977, residents of Vigia, Colares and Santo Antônio do Tauá, on Marajó Bay in northern Brazil, reported an unusual sequence of nighttime lights over the region. The Brazilian Air Force responded with a formal two-phase operation, commanded by Brigadier Protásio Lopes de Oliveira and coordinated on the ground by Captain Uyrangê Hollanda, gathering civilian statements, photographs and occurrence forms. Unlike most cases in this archive, here the existence of the investigation itself has never been disputed: the complete documentary fund — 758 items including reports, photos, press clippings, videos and audio produced by the Air Force between 1964 and 1985 — is today digitized and publicly available at Brazil's National Archive. What remains open is the physical origin of the reported phenomena; much of the popular narrative that circulates about the case was built decades later, without relying directly on that archive.",
+    "documentos": [
+      {
+        "tipo": "Documentary fund",
+        "titulo": "UFO fund at Brazil's National Archive (SIAN system)",
+        "descricao": "758 digitized documents — reports, statements, photos, forms, press clippings, videos and audio — produced by the Brazilian Air Force between 1964 and 1985, including material from Operation Saucer.",
+        "origem": "Arquivo Nacional (Brazil's National Archive)",
+        "linkExterno": "https://querepublicaeessa.an.gov.br/index.php/que-republica-e-essa/assuntos/temas/302-os-ovnis-no-arquivo-nacional"
+      }
+    ],
+    "testemunhos": [
+      {
+        "quem": "Residents of Vigia, Colares and Santo Antônio do Tauá",
+        "quandoDeclarou": "During the operation's two phases (Oct–Dec 1977)",
+        "tempoAposEvento": "Variable — some accounts were collected during the operation itself",
+        "versoes": "Civilian accounts and the military operation's own records do not always agree in detail",
+        "outrasTestemunhas": "Multiple, collected over the months of the operation"
+      }
+    ],
+    "cronologia": [
+      { "quando": "Oct 20–Nov 11, 1977", "evento": "First phase of the operation, under I COMAR command." },
+      { "quando": "Nov 25–Dec 5, 1977", "evento": "Second phase of the operation." },
+      { "quando": "2012", "evento": "A joint review commission confirms the archive's transfer to Brazil's National Archive." }
+    ],
+    "hipoteses": [
+      { "tipo": "Conventional military action", "avaliacao": "The operation itself is a documented fact, commanded by Brigadier Protásio Lopes de Oliveira, with Captain Uyrangê Hollanda coordinating on the ground." },
+      { "tipo": "Atmospheric phenomenon", "avaliacao": "Some civilian accounts are consistent with unidentified luminous phenomena, with no period instrumental analysis available to allow a confident classification today." },
+      { "tipo": "Extraordinary hypothesis", "avaliacao": "Often associated with the case in popular culture, but the available documents prove the investigation took place, not the origin of the phenomena reported." }
+    ],
+    "contradicoes": [
+      "The existence of the operation is a fact; the popular interpretation of what it investigated (and what it supposedly concluded) often goes beyond what the documents state.",
+      "Much of the narrative that circulates publicly about the case was built decades later, without relying directly on the National Archive's documentary fund."
+    ],
+    "oQueSabemos": [
+      "The Brazilian Air Force conducted a formal two-phase operation between October and December 1977.",
+      "758 documents from that period are preserved, digitized and publicly accessible at Brazil's National Archive."
+    ],
+    "oQueNaoSabemos": [
+      "The physical origin of the phenomena that prompted the operation.",
+      "The full content of every document in the fund, which requires direct research in the archive."
+    ],
+    "paraSaberMais": [
+      "A systematic review of the complete documentary fund (SIAN, National Archive).",
+      "Cross-referencing the civilian accounts collected at the time against the operation's official records."
+    ],
+    "imagens": [],
+    "fontes": [
+      { "qualidade": "Institutional source", "label": "Arquivo Nacional — Que República é Essa: os OVNIs no Arquivo Nacional", "url": "https://querepublicaeessa.an.gov.br/index.php/que-republica-e-essa/assuntos/temas/302-os-ovnis-no-arquivo-nacional" },
+      { "qualidade": "Institutional source", "label": "Brazilian Ministry of Justice — UFO archive is among the most visited at the National Archive", "url": "https://www.justica.gov.br/news/acervo-sobre-ovnis-e-um-dos-mais-visitados-no-arquivo-nacional" },
+      { "qualidade": "Contemporary press", "label": "Correio Braziliense — National Archive releases 900 UFO records", "url": "https://www.correiobraziliense.com.br/cbradar/arquivo-nacional-do-brasil-divulga-900-registros-de-ovnis-no-pais-veja-como-acessar/" },
+      { "qualidade": "Background reference", "label": "Wikipedia (EN) — Operação Prato", "url": "https://en.wikipedia.org/wiki/Opera%C3%A7%C3%A3o_Prato" }
+    ],
+    "bookNote": "The novel uses the real setting of the region and the fact that this archive exists as the starting point for an invented investigation. What the fictional team finds there does not correspond to any real document — see the book page.",
+    "maturidade": "indexado",
+    "auditoriaFactualWeb": false,
+    "videosYoutube": [
+      { "titulo": "O.V.N.I.S. (Disco Voador) — Operação Prato, Aparição/Colares Amazônia — Fantástico", "youtubeId": "kREa3qsoJZU", "canal": "Rebroadcast of a Fantástico (Rede Globo) news report", "contexto": "Brazilian TV news report (Fantástico) on the light sightings and Operation Saucer in Colares, Pará." }
+    ]
+  }
+]
