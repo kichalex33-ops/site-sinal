@@ -15,6 +15,7 @@
     "purchaseUrlEnBr": "https://www.amazon.com.br/dp/B0HJP3HM7J",
     "purchaseUrlEn": "https://www.amazon.com/dp/B0HJP3HM7J",
     "purchaseUrlEnUk": "https://www.amazon.co.uk/dp/B0HJQQBS8Q",
+    "purchaseUrlEs": "https://www.amazon.es/dp/B0HLD9PZ9W",
     "featured": true
   },
   {
@@ -35,7 +36,7 @@
     "title": "OS DEUSES NÃO TÊM FILHOS",
     "numeral": "I",
     "cover": "/livros/os-deuses-nao-tem-filhos.jpg",
-    "description": "",
+    "description": "Criação, posse e livre-arbítrio.",
     "purchaseUrl": "https://www.amazon.com.br/dp/B0HKZY434C",
     "titleEn": "THE GODS HAVE NO CHILDREN",
     "coverEn": "/livros/os-deuses-nao-tem-filhos-en.jpg"
@@ -62,7 +63,7 @@
     "title": "AMANHÃ NÃO EXISTE",
     "numeral": "III",
     "cover": "/livros/amanha-nao-existe.jpg",
-    "description": "",
+    "description": "Determinismo, precognição e livre-arbítrio.",
     "titleEn": "TOMORROW DOES NOT EXIST",
     "coverEn": "/livros/amanha-nao-existe-en.jpg"
   },

@@ -97,9 +97,13 @@ function buyPanel(book) {
     link(book.purchaseUrlEnBr, "Ebook", "Amazon BR", pr("purchaseUrlEnBr")),
     link(book.purchaseUrlEnUk, "Paperback", "Amazon UK", pr("purchaseUrlEnUk")),
   ].join("");
+  const es = [
+    link(book.purchaseUrlEs, "Ebook", "Amazon ES", pr("purchaseUrlEs")),
+  ].join("");
   return `<div class="buy-panel">
     ${pt ? `<div class="buy-group"><span class="buy-group__title">Português</span><div class="buy-group__links">${pt}</div></div>` : `<span class="btn btn--disabled" aria-disabled="true">Comprar · EM BREVE</span>`}
     ${en ? `<div class="buy-group"><span class="buy-group__title">English edition</span><div class="buy-group__links">${en}<a class="buy-link buy-link--sample" href="/livro/sample/"><span class="buy-link__format">Free</span><span class="buy-link__store">Read sample</span><span class="buy-link__arrow" aria-hidden="true">→</span></a></div></div>` : ""}
+    ${es ? `<div class="buy-group"><span class="buy-group__title">Edición en español</span><div class="buy-group__links">${es}</div></div>` : ""}
   </div>`;
 }
 
@@ -1139,7 +1143,7 @@ function enHomePage(list) {
     <section class="section section--divider" id="chronicles">
       <div class="container">
         <div class="section-heading"><div><span class="kicker">Cosmological Chronicles · I–X</span><h2>Ten stories. One Archive. No complete answer.</h2></div></div>
-        <div class="books-grid books-grid--covers" style="margin-top:16px">${withEn.map((b) => `<a class="book-card book-card--cover" href="/en/chronicles/${b.slug}/"><img src="${escapeHtml(b.coverEn || b.cover)}" alt="Cover of ${escapeHtml(b.titleEn || b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(status(b.status))}</span><h3>${escapeHtml(b.titleEn || b.title)}</h3></a>`).join("")}</div>
+        <div class="books-grid books-grid--covers" style="margin-top:16px">${withEn.map((b) => `<a class="book-card book-card--cover" href="/en/chronicles/${b.slug}/"><img src="${escapeHtml(b.coverEn || b.cover)}" alt="Cover of ${escapeHtml(b.titleEn || b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(status(b.status))}</span><h3>${escapeHtml(b.titleEn || b.title)}</h3>${(bookSheetsEn[b.slug] || {}).tagline ? `<p>${escapeHtml(bookSheetsEn[b.slug].tagline)}</p>` : ""}</a>`).join("")}</div>
         <div style="margin-top:20px"><a class="btn btn--primary" href="/en/chronicles/">Explore the Chronicles</a></div>
       </div>
     </section>
