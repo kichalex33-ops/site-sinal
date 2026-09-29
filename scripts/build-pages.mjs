@@ -338,6 +338,40 @@ function arquivoPage() {
     description: "Busca geral no acervo do SINAL/RUÍDO.",
     path: "/arquivo/",
     bodyHtml: body,
+    alternates: ptEnAlternates("/arquivo/", "/en/archive/"),
+    langSwitch: "/en/archive/",
+  }));
+}
+
+// /en/archive — English shell for the factual archive. The case/document/collection/media
+// items themselves are still Portuguese-only (they need source-faithful translation, not
+// mechanical translation), so this links out to the Portuguese catalogs with a clear note.
+function enArquivoPage() {
+  const body = `
+    <section class="section">
+      <div class="container">
+        <span class="kicker">Archive</span>
+        <h1 style="margin-top:12px">The factual archive.</h1>
+        <p style="margin-top:8px;color:var(--muted);max-width:640px">The archive brings together real, documented cases, source documents, institutional collections and a media library related to the Wow! signal and UAP history. The catalogs below are currently published in Portuguese only; an English translation is in progress.</p>
+
+        <div class="grid grid--4" style="margin-top:36px">
+          <a class="card" href="/casos/" hreflang="pt-BR"><span class="card__meta">${cases.length} cases · PT</span><h3>Cases</h3><p>Dossiers with chronology, documents, testimony and competing hypotheses.</p></a>
+          <a class="card" href="/documentos/" hreflang="pt-BR"><span class="card__meta">${documents.length} documents · PT</span><h3>Documents</h3><p>Documentary records tied to the cases, with explicit origin and provenance.</p></a>
+          <a class="card" href="/colecoes/" hreflang="pt-BR"><span class="card__meta">${collections.length} collections · PT</span><h3>Collections</h3><p>National and international institutional archives.</p></a>
+          <a class="card" href="/midia/" hreflang="pt-BR"><span class="card__meta">${media.length} items · PT</span><h3>Videos and images</h3><p>Images, documents and videos with recorded origin, authorship and license.</p></a>
+        </div>
+
+        <p class="mono" style="margin-top:32px;color:var(--muted)">Reading in Portuguese already? See the <a href="/arquivo/" hreflang="pt-BR">full archive</a>.</p>
+      </div>
+    </section>`;
+  write("/en/archive", page({
+    title: "Archive",
+    description: "The SINAL/RUÍDO factual archive: real documented cases, source documents, institutional collections and media, related to the Wow! signal and UAP history.",
+    path: "/en/archive/",
+    bodyHtml: body,
+    lang: "en", ogLocale: "en_US", minimal: true,
+    alternates: ptEnAlternates("/arquivo/", "/en/archive/"),
+    langSwitch: "/arquivo/",
   }));
 }
 
@@ -815,6 +849,28 @@ function noticiasPage() {
     description: "Atualizações institucionais sobre acervos, relatórios e liberações documentais relacionadas a UAP.",
     path: "/noticias/",
     bodyHtml: body,
+    alternates: ptEnAlternates("/noticias/", "/en/news/"),
+    langSwitch: "/en/news/",
+  }));
+}
+
+// /en/news — English shell. The news items themselves are still Portuguese-only.
+function enNoticiasPage() {
+  const body = `
+    <section class="section container--narrow">
+      <span class="kicker">Documentary radar</span>
+      <h1 style="margin-top:12px">Institutional updates.</h1>
+      <p style="margin-top:8px;color:var(--muted)">Changes in archives, reports, regulations and documentary releases. This section records that something happened and points to the source; it does not turn an institutional announcement, news coverage or outside analysis into evidence of extraordinary origin.</p>
+      <p class="mono" style="margin-top:20px;color:var(--muted)">This section is currently published in Portuguese only. See the <a href="/noticias/" hreflang="pt-BR">Portuguese updates</a>.</p>
+    </section>`;
+  write("/en/news", page({
+    title: "Institutional updates",
+    description: "Institutional updates on archives, reports and documentary releases related to UAP.",
+    path: "/en/news/",
+    bodyHtml: body,
+    lang: "en", ogLocale: "en_US", minimal: true,
+    alternates: ptEnAlternates("/noticias/", "/en/news/"),
+    langSwitch: "/noticias/",
   }));
 }
 
@@ -1280,7 +1336,41 @@ function privacidadePage() {
       </div>
       <p class="mono" style="margin-top:20px;color:var(--muted)">Última atualização: 25 de setembro de 2026.</p>
     </section>`;
-  write("/privacidade", page({ title: "Privacidade", description: "Política de privacidade do SINAL/RUÍDO: o site não coleta dados pessoais; publicação no Instagram pela API da Meta.", path: "/privacidade/", bodyHtml: body }));
+  write("/privacidade", page({
+    title: "Privacidade",
+    description: "Política de privacidade do SINAL/RUÍDO: o site não coleta dados pessoais; publicação no Instagram pela API da Meta.",
+    path: "/privacidade/",
+    bodyHtml: body,
+    alternates: ptEnAlternates("/privacidade/", "/en/privacy/"),
+    langSwitch: "/en/privacy/",
+  }));
+}
+
+function enPrivacidadePage() {
+  const body = `
+    <section class="section container--narrow">
+      <span class="kicker">Privacy</span>
+      <h1 style="margin-top:12px">Little data. Explicit purpose.</h1>
+      <p style="margin-top:10px;color:var(--muted)">The factual archive can be browsed without an account. The site has no forms, accounts or comments. The site does not collect visitors' personal data. The @sinal_ruido Instagram profile is published through Meta's official API. Delivery and security infrastructure (Cloudflare) may process technical connection data as part of its own operation. Responsible for the site and the profile: Alex Jr. Kich.</p>
+      <div class="paper method-block" id="instagram" style="margin-top:28px"><h2>Publishing on Instagram (@sinal_ruido)</h2>
+        <p>SINAL/RUÍDO uses the Instagram API (Meta) only to publish content on the <a href="https://www.instagram.com/sinal_ruido/" rel="noopener">@sinal_ruido</a> profile. Access uses a token from the professional account authorized by its owner, stored in a Cloudflare D1 database and never exposed publicly.</p>
+        <p><strong>Third-party data:</strong> the site does not receive, read or store comments, messages, identifiers or follower lists from other people. There is no automatic reply.</p>
+        <p><strong>Sharing:</strong> data is not sold, not used for advertising and not passed on to third parties. Processing runs through Meta (Instagram) and Cloudflare, which operate the infrastructure.</p>
+      </div>
+      <div class="paper method-block" id="exclusao-de-dados" style="margin-top:16px"><h2>Data deletion and contact</h2>
+        <p>Since the site does not keep data on visitors or on anyone who interacts on Instagram, there is no data to delete. If you believe a record exists that is linked to you, send a direct message to <a href="https://www.instagram.com/sinal_ruido/" rel="noopener">@sinal_ruido</a> (more details at <a href="/en/contact/">/en/contact</a>), stating your Instagram username and what you want verified. The result will be confirmed to you.</p>
+      </div>
+      <p class="mono" style="margin-top:20px;color:var(--muted)">Last updated: September 25, 2026.</p>
+    </section>`;
+  write("/en/privacy", page({
+    title: "Privacy",
+    description: "SINAL/RUÍDO privacy policy: the site does not collect personal data; Instagram publishing through the Meta API.",
+    path: "/en/privacy/",
+    bodyHtml: body,
+    lang: "en", ogLocale: "en_US", minimal: true,
+    alternates: ptEnAlternates("/privacidade/", "/en/privacy/"),
+    langSwitch: "/privacidade/",
+  }));
 }
 
 // ---------------------------------------------------------------------
@@ -1303,7 +1393,42 @@ function contatoPage() {
         <div class="paper" style="padding:24px"><span class="kicker">Imprensa</span><h2 style="margin-top:10px">Press kit e parcerias</h2><p style="margin-top:8px">Materiais públicos do projeto, para imprensa, podcasts e parceiros editoriais.</p><p style="margin-top:12px"><a class="btn" href="/imprensa/">Ir para Imprensa</a></p></div>
       </div>
     </section>`;
-  write("/contato", page({ title: "Contato", description: "Como falar com o autor e o projeto SINAL/RUÍDO: Instagram e página de imprensa.", path: "/contato/", bodyHtml: body }));
+  write("/contato", page({
+    title: "Contato",
+    description: "Como falar com o autor e o projeto SINAL/RUÍDO: Instagram e página de imprensa.",
+    path: "/contato/",
+    bodyHtml: body,
+    alternates: ptEnAlternates("/contato/", "/en/contact/"),
+    langSwitch: "/en/contact/",
+  }));
+}
+
+function enContatoPage() {
+  const body = `
+    <section class="section container--narrow" id="autor">
+      <span class="kicker">Author</span>
+      <h2 style="margin-top:10px">Alex Jr. Kich</h2>
+      <p style="margin-top:8px;color:var(--muted);max-width:60ch">Author of SIGNAL/NOISE. Follow the book and the archive on <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram @sinal_ruido</a>. Press and media materials are at <a href="/en/press/">Press</a>.</p>
+    </section>
+
+    <section class="section container--narrow" id="profissional">
+      <span class="kicker">Contact</span>
+      <h1 style="margin-top:12px">Get in touch with the project.</h1>
+      <p style="margin-top:8px;color:var(--muted);max-width:60ch">This site does not collect messages. To reach the author, send a direct message on Instagram. For press, podcasts and editorial partnerships, see the Press page.</p>
+      <div class="grid grid--2" style="margin-top:24px">
+        <div class="paper" style="padding:24px"><span class="kicker">Instagram</span><h2 style="margin-top:10px">@sinal_ruido</h2><p style="margin-top:8px">Direct messages, reports and case suggestions.</p><p style="margin-top:12px"><a class="btn btn--primary" href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Open Instagram</a></p></div>
+        <div class="paper" style="padding:24px"><span class="kicker">Press</span><h2 style="margin-top:10px">Press kit and partnerships</h2><p style="margin-top:8px">Public project materials, for press, podcasts and editorial partners.</p><p style="margin-top:12px"><a class="btn" href="/en/press/">Go to Press</a></p></div>
+      </div>
+    </section>`;
+  write("/en/contact", page({
+    title: "Contact",
+    description: "How to reach the author and the SIGNAL/NOISE project: Instagram and the press page.",
+    path: "/en/contact/",
+    bodyHtml: body,
+    lang: "en", ogLocale: "en_US", minimal: true,
+    alternates: ptEnAlternates("/contato/", "/en/contact/"),
+    langSwitch: "/contato/",
+  }));
 }
 
 // ---------------------------------------------------------------------
@@ -1392,7 +1517,49 @@ function leitoresPage() {
         <button type="button" class="btn btn--primary" data-share data-share-title="SINAL/RUÍDO — Leitores" data-share-text="A investigação não termina aqui.">Compartilhar</button>
       </div>
     </section>`;
-  write("/leitores", page({ title: "Leitores", description: "Página complementar para leitores do romance SINAL/RUÍDO.", path: "/leitores/", bodyHtml: body }));
+  write("/leitores", page({
+    title: "Leitores",
+    description: "Página complementar para leitores do romance SINAL/RUÍDO.",
+    path: "/leitores/",
+    bodyHtml: body,
+    alternates: ptEnAlternates("/leitores/", "/en/readers/"),
+    langSwitch: "/en/readers/",
+  }));
+}
+
+function enLeitoresPage() {
+  const bookCases = cases.filter((c) => c.bookNote);
+  const body = `
+    <section class="section container--narrow">
+      <span class="kicker">For readers of the book</span>
+      <h1 style="margin-top:12px">The investigation doesn't end here.</h1>
+      <p style="margin-top:8px;color:var(--muted)">The novel is fiction. The themes it touches — and the cases that inspired it — are real and remain documented in this public archive.</p>
+
+      <section style="margin-top:32px">
+        <h2 style="font-size:16px">Fact, testimony, hypothesis and fiction</h2>
+        <p style="margin-top:8px;color:var(--muted)">This site keeps four things separate that tend to blur together: the documentary record, the account of someone who lived through the episode (testimony), the interpretation of what happened (hypothesis), and the invented story of the novel (fiction). A document records a claim or an occurrence; it does not automatically become fact just by existing.</p>
+      </section>
+
+      <section style="margin-top:32px">
+        <h2 style="font-size:16px">Real cases that inspired the novel</h2>
+        <p class="mono" style="margin-top:8px;color:var(--muted)">The case dossiers below are currently published in Portuguese only.</p>
+        <div class="grid" style="margin-top:16px">${bookCases.map(caseCard).join("")}</div>
+        <a href="/casos/" class="mono" style="display:inline-block;margin-top:12px" hreflang="pt-BR">See the full archive →</a>
+      </section>
+
+      <div style="margin-top:36px;padding-top:20px;border-top:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap">
+        <a href="/en/signal-noise/" class="btn">Back to the book page</a>
+      </div>
+    </section>`;
+  write("/en/readers", page({
+    title: "Readers",
+    description: "Companion page for readers of the novel SIGNAL/NOISE.",
+    path: "/en/readers/",
+    bodyHtml: body,
+    lang: "en", ogLocale: "en_US", minimal: true,
+    alternates: ptEnAlternates("/leitores/", "/en/readers/"),
+    langSwitch: "/leitores/",
+  }));
 }
 
 // ---------------------------------------------------------------------
@@ -1498,6 +1665,46 @@ function metodoPage() {
     description: "Método editorial do SINAL/RUÍDO: documento, testemunho, hipótese, proveniência e revisão explícita.",
     path: "/metodo/",
     bodyHtml: body,
+    alternates: ptEnAlternates("/metodo/", "/en/method/"),
+    langSwitch: "/en/method/",
+  }));
+}
+
+function enMetodoPage() {
+  const body = `
+    <section class="section container--narrow">
+      <span class="kicker">Editorial policy</span>
+      <h1 style="margin-top:12px">Neither mockery, nor faith. Method.</h1>
+      <p style="margin-top:12px;font-size:18px;color:var(--muted)">SINAL/RUÍDO does not start from the conclusion. It organizes the available material, records provenance, separates testimony from document, spells out competing hypotheses, and preserves the right to end in "we don't know."</p>
+
+      <div class="grid" style="margin-top:28px">
+        <div class="paper method-block"><span class="kicker">01 · Document</span><h2>The record exists.</h2><p>We identify origin, date, chain of copies, context, alterations and access to the original when possible. An official document does not mean confirmation of an extraordinary interpretation.</p></div>
+        <div class="paper method-block"><span class="kicker">02 · Testimony</span><h2>Someone stated something.</h2><p>We record who spoke, when, how much time had passed, existing versions and possible later contamination. Testimony is testimonial evidence, not automatic physical proof.</p></div>
+        <div class="paper method-block"><span class="kicker">03 · Hypothesis</span><h2>One explanation competes with others.</h2><p>Conventional, instrumental, atmospheric and extraordinary hypotheses must be judged by what they explain and what they fail to explain, with no bonus for being more interesting.</p></div>
+      </div>
+
+      <section style="margin-top:36px">
+        <h2>Maturity levels</h2>
+        <div class="grid grid--3" style="margin-top:16px">
+          <div class="card"><strong>Level 1 · Record</strong><p>Basic entry and initial sources. Does not represent a complete investigation.</p></div>
+          <div class="card"><strong>Level 2 · Indexed case</strong><p>Organized, traceable material, still subject to formal factual audit.</p></div>
+          <div class="card"><strong>Level 3 · Reviewed dossier</strong><p>Approved WEB factual audit, source genealogy and limitations spelled out.</p></div>
+        </div>
+      </section>
+
+      <section style="margin-top:36px" class="paper method-block">
+        <h2>What the archive never does</h2>
+        <ul class="method-list"><li>Does not calculate an "extraterrestrial probability."</li><li>Does not use popularity as evidence.</li><li>Does not turn absence of an explanation into confirmation.</li><li>Does not present the novel's fiction as fact.</li><li>Does not hide known corrections or limitations.</li></ul>
+      </section>
+    </section>`;
+  write("/en/method", page({
+    title: "Method",
+    description: "SINAL/RUÍDO editorial method: document, testimony, hypothesis, provenance and explicit review.",
+    path: "/en/method/",
+    bodyHtml: body,
+    lang: "en", ogLocale: "en_US", minimal: true,
+    alternates: ptEnAlternates("/metodo/", "/en/method/"),
+    langSwitch: "/metodo/",
   }));
 }
 
@@ -1518,6 +1725,28 @@ function correcoesPage() {
     description: "Histórico público de correções factuais do SINAL/RUÍDO.",
     path: "/correcoes/",
     bodyHtml: body,
+    alternates: ptEnAlternates("/correcoes/", "/en/corrections/"),
+    langSwitch: "/en/corrections/",
+  }));
+}
+
+function enCorrecoesPage() {
+  const published = corrections.filter((c) => c.public === true);
+  const body = `
+    <section class="section container--narrow">
+      <span class="kicker">Editorial transparency</span>
+      <h1 style="margin-top:12px">Corrections.</h1>
+      <p style="margin-top:8px;color:var(--muted)">When a published factual claim is corrected, the record stays visible with date, change, reason and a reference to the affected dossier. Internal corrections or demonstration data do not enter this public history.</p>
+      ${published.length ? `<div class="grid" style="margin-top:24px">${published.map((c) => `<div class="card"><span class="card__meta">${escapeHtml(c.date)}</span><h3>${escapeHtml(c.change)}</h3><p>${escapeHtml(c.reason)}</p><a class="mono" href="/casos/${c.caseSlug}/" hreflang="pt-BR">${escapeHtml(c.caseTitle)} →</a></div>`).join("")}</div>` : `<div class="paper" style="margin-top:24px;padding:24px"><strong>No public factual correction approved in this version.</strong><p style="margin-top:8px;color:var(--paper-muted)">This empty state is intentional. The history will only be filled in when there is an actual factual correction to record.</p></div>`}
+    </section>`;
+  write("/en/corrections", page({
+    title: "Corrections",
+    description: "Public history of factual corrections for SINAL/RUÍDO.",
+    path: "/en/corrections/",
+    bodyHtml: body,
+    lang: "en", ogLocale: "en_US", minimal: true,
+    alternates: ptEnAlternates("/correcoes/", "/en/corrections/"),
+    langSwitch: "/correcoes/",
   }));
 }
 
@@ -2054,7 +2283,7 @@ function imprensaPage() {
         <h2>Imagens para imprensa</h2>
         <p style="margin-top:8px">Uso editorial com crédito ao autor. <a href="/autor/">Página do autor</a> para o contexto completo.</p>
         <p style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn" href="/autor/sentado.jpg" download>Foto sentado</a>
+          <a class="btn" href="/autor/retrato.jpg" download>Retrato do autor</a>
           <a class="btn" href="/livro/capa.jpg" download>Capa · SINAL/RUÍDO</a>
           <a class="btn" href="/autor/duas-irmas-capa.jpg" download>Capa · Duas Irmãs e Oito Patas</a>
         </p>
@@ -2066,6 +2295,57 @@ function imprensaPage() {
     description: "Press kit público do projeto SINAL/RUÍDO e do romance relacionado.",
     path: "/imprensa/",
     bodyHtml: body,
+    alternates: ptEnAlternates("/imprensa/", "/en/press/"),
+    langSwitch: "/en/press/",
+  }));
+}
+
+function enImprensaPage() {
+  const body = `
+    <section class="section container--narrow">
+      <span class="kicker">Press kit</span>
+      <h1 style="margin-top:12px">SIGNAL/NOISE for press, podcasts and editorial partners.</h1>
+      <p style="margin-top:8px;color:var(--muted)">Public project materials. The factual archive and the novel are presented separately so narrative elements are never mistaken for documentation.</p>
+
+      <div class="grid grid--2" style="margin-top:28px">
+        <div class="paper" style="padding:24px"><span class="kicker">WEB project</span><h2 style="margin-top:10px">Brazilian instrumental archive</h2><p style="margin-top:8px">A public archive of Brazilian origin and international scope, organizing cases, documents, media and hypotheses with explicit provenance and review.</p></div>
+        <div class="paper" style="padding:24px"><span class="kicker">Book</span><h2 style="margin-top:10px">SIGNAL/NOISE</h2><p style="margin-top:8px">Adult science fiction and investigation novel. Author credited editorially: Alex Jr. Kich.</p></div>
+      </div>
+
+      <div class="paper" style="margin-top:24px;padding:24px">
+        <h2>About the author</h2>
+        <h3 style="margin-top:14px">Short bio</h3>
+        <p style="margin-top:6px">Alex Jr. Kich is a writer and artist based in Rio Grande do Sul, Brazil. He draws, composes and writes science fiction, fantasy and children's literature. He is the author of SIGNAL/NOISE, of the VALANDOR universe, and of Two Sisters and Eight Paws, a series written for his daughters.</p>
+        <h3 style="margin-top:14px">Long bio</h3>
+        <p style="margin-top:6px">Alex Jr. Kich is a writer, artist and worldbuilder. He is the author of SIGNAL/NOISE, a novel that starts from the 1977 Wow! signal and is the origin work of the Cosmological Chronicles, a collection of ten novels linked by the mystery of the Archive. He created VALANDOR, a fantasy trilogy whose first volume, What the River Forgot, already has an English edition. In children's literature, he writes Two Sisters and Eight Paws, starring his daughters and the family's dogs, whose Book 1, The Map Under the Bed, is already for sale on Amazon. He also draws and composes music. His working rule fits in one sentence: the concept can be enormous, but the conflict has to stay human.</p>
+        <h3 style="margin-top:14px">Publications</h3>
+        <ul style="margin-top:6px;padding-left:18px">
+          <li><a href="/en/signal-noise/">SIGNAL/NOISE</a>: published.</li>
+          <li><a href="/en/chronicles/os-deuses-nao-tem-filhos/">Cosmological Chronicles I · The Gods Have No Children</a>: for sale on Amazon.</li>
+          <li>Two Sisters and Eight Paws, Book 1 · The Map Under the Bed: <a href="https://www.amazon.com.br/dp/B0HGMMSBSX" target="_blank" rel="noopener">for sale on Amazon</a> (Portuguese edition; English edition planned).</li>
+          <li>VALANDOR I · What the River Forgot: English edition on Amazon; new Portuguese edition coming soon.</li>
+        </ul>
+      </div>
+
+      <div class="paper" style="margin-top:24px;padding:24px">
+        <h2>Images for press</h2>
+        <p style="margin-top:8px">Editorial use with credit to the author. <a href="/en/author/">Author page</a> for full context.</p>
+        <p style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="/autor/retrato.jpg" download>Author portrait</a>
+          <a class="btn" href="/livro/capa-en.jpg" download>Cover · SIGNAL/NOISE</a>
+          <a class="btn" href="/autor/duas-irmas-capa.jpg" download>Cover · Two Sisters and Eight Paws</a>
+        </p>
+        <p class="mono" style="margin-top:12px;color:var(--paper-muted)">NO FORM · NO DATA COLLECTION</p>
+      </div>
+    </section>`;
+  write("/en/press", page({
+    title: "Press",
+    description: "Public press kit for the SIGNAL/NOISE project and the related novel.",
+    path: "/en/press/",
+    bodyHtml: body,
+    lang: "en", ogLocale: "en_US", minimal: true,
+    alternates: ptEnAlternates("/imprensa/", "/en/press/"),
+    langSwitch: "/imprensa/",
   }));
 }
 
@@ -2113,6 +2393,7 @@ function buildSeoFiles() {
 validateI18n();
 homePage();
 arquivoPage();
+enArquivoPage();
 casosPage();
 cases.forEach(caseDossierPage);
 documentosPage();
@@ -2122,8 +2403,11 @@ collections.forEach(colecaoDetailPage);
 midiaPage();
 media.forEach(midiaDetailPage);
 noticiasPage();
+enNoticiasPage();
 metodoPage();
+enMetodoPage();
 correcoesPage();
+enCorrecoesPage();
 livroPage();
 livroAmostraPage();
 livroSampleEnPage();
@@ -2139,11 +2423,15 @@ enHomePage(chroniclesPt);
 if ((bookSheetsEn["sinal-ruido"] || {}).synopsis) bookSheetPage(SINAL_RUIDO_ORIGIN, chroniclesEn, "en");
 bookSheetPage(books.find((b) => b.slug === "sinal-ruido"), chroniclesPt, "pt");
 leitoresPage();
+enLeitoresPage();
 imprensaPage();
+enImprensaPage();
 autorPage();
 enAuthorPage();
 privacidadePage();
+enPrivacidadePage();
 contatoPage();
+enContatoPage();
 buyPage();
 notFoundPage();
 ["livro", "bunkerx", "cienciatododia", "spacetoday"].forEach(campanhaRedirect);

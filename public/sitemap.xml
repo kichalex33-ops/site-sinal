@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://sinalruido.com.br/</loc></url>
   <url><loc>https://sinalruido.com.br/arquivo/</loc></url>
+  <url><loc>https://sinalruido.com.br/en/archive/</loc></url>
   <url><loc>https://sinalruido.com.br/casos/</loc></url>
   <url><loc>https://sinalruido.com.br/casos/sinal-wow/</loc></url>
   <url><loc>https://sinalruido.com.br/casos/operacao-prato-colares/</loc></url>
@@ -81,8 +82,11 @@
   <url><loc>https://sinalruido.com.br/midia/gimbal-nimitz/</loc></url>
   <url><loc>https://sinalruido.com.br/midia/gofast-nimitz/</loc></url>
   <url><loc>https://sinalruido.com.br/noticias/</loc></url>
+  <url><loc>https://sinalruido.com.br/en/news/</loc></url>
   <url><loc>https://sinalruido.com.br/metodo/</loc></url>
+  <url><loc>https://sinalruido.com.br/en/method/</loc></url>
   <url><loc>https://sinalruido.com.br/correcoes/</loc></url>
+  <url><loc>https://sinalruido.com.br/en/corrections/</loc></url>
   <url><loc>https://sinalruido.com.br/livro/</loc></url>
   <url><loc>https://sinalruido.com.br/livro/sample/</loc></url>
   <url><loc>https://sinalruido.com.br/livros/os-deuses-nao-tem-filhos/</loc></url>
@@ -110,9 +114,13 @@
   <url><loc>https://sinalruido.com.br/en/signal-noise/</loc></url>
   <url><loc>https://sinalruido.com.br/livros/sinal-ruido/</loc></url>
   <url><loc>https://sinalruido.com.br/leitores/</loc></url>
+  <url><loc>https://sinalruido.com.br/en/readers/</loc></url>
   <url><loc>https://sinalruido.com.br/imprensa/</loc></url>
+  <url><loc>https://sinalruido.com.br/en/press/</loc></url>
   <url><loc>https://sinalruido.com.br/autor/</loc></url>
   <url><loc>https://sinalruido.com.br/en/author/</loc></url>
   <url><loc>https://sinalruido.com.br/privacidade/</loc></url>
+  <url><loc>https://sinalruido.com.br/en/privacy/</loc></url>
   <url><loc>https://sinalruido.com.br/contato/</loc></url>
+  <url><loc>https://sinalruido.com.br/en/contact/</loc></url>
 </urlset>
