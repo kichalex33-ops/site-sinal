@@ -1520,7 +1520,7 @@ function autorPage() {
             <a class="btn" href="/livros/sinal-ruido/">Conhecer SINAL/RUÍDO</a>
           </article>
           <article>
-            <a class="autor-start__typo" href="/#cronicas"><span>I–X</span><em>Crônicas Cosmológicas</em></a>
+            <a class="autor-start__cover" href="/#cronicas"><img src="/autor/cronicas-cosmologicas-capa.png" alt="Capa da coleção Crônicas Cosmológicas" width="1024" height="1536" loading="lazy" /></a>
             <span class="mono autor-start__kicker">Mistério cosmológico</span><h3>Crônicas Cosmológicas</h3>
             <p>Dez histórias independentes ligadas por algo que registra pessoas, acontecimentos e até versões da realidade que talvez nunca tenham existido.</p>
             <a class="btn" href="/#cronicas">Explorar as Crônicas</a>
@@ -1667,7 +1667,7 @@ function autorPage() {
     <section class="autor-sec">
       <div class="autor-wrap autor-split autor-split--retrato">
         <div class="autor-fotos">
-          <figure class="autor-photo"><img src="/autor/sentado.jpg" alt="Alex Jr. Kich sentado, de mãos juntas, olhando para o lado" width="563" height="1000" loading="lazy" /></figure>
+          <figure class="autor-photo"><img src="/autor/retrato.jpg" alt="Retrato de Alex Jr. Kich, de mãos juntas, olhando para o lado" width="1149" height="1368" loading="lazy" /></figure>
         </div>
         <div>
           <span class="kicker">Como eu escrevo</span>
@@ -1709,7 +1709,7 @@ function autorPage() {
     description: "Alex Jr. Kich, escritor, artista e criador de mundos. Autor de SINAL/RUÍDO, das Crônicas Cosmológicas, de VALANDOR e de Duas Irmãs e Oito Patas.",
     path: "/autor/",
     bodyHtml: body,
-    ogImage: "/autor/sentado.jpg",
+    ogImage: "/autor/retrato.jpg",
     extraHead: `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" />`,
   }));
 }
