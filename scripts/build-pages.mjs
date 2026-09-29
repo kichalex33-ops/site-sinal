@@ -286,6 +286,8 @@ function homePage() {
     path: "/",
     bodyHtml: body,
     ogImage: featuredBook.cover,
+    alternates: ptEnAlternates("/", "/en/"),
+    langSwitch: "/en/",
   }));
 }
 
@@ -1053,7 +1055,7 @@ function bookSheetPage(b, list, lang) {
   write(path.replace(/\/$/, ""), page({
     title, description: descr, path, bodyHtml: body, ogImage: cv(b),
     ...(en ? { lang: ui.lang, ogLocale: ui.ogLocale, minimal: true } : {}),
-    ...(showSwitch ? { alternates: ptEnAlternates(ptPath, enPath) } : {}),
+    ...(showSwitch ? { alternates: ptEnAlternates(ptPath, enPath), langSwitch: switchHref } : {}),
   }));
 }
 
@@ -1096,10 +1098,73 @@ function chroniclesEnPage(list) {
     path: "/en/chronicles/",
     bodyHtml: body,
     ogImage: "/livro/capa-en.jpg",
-    lang: "en", ogLocale: "en_US", minimal: true,
+    lang: "en", ogLocale: "en_US", minimal: true, langSwitch: "/#cronicas",
   }));
 }
 
+// /en — English home. Hub for the global site: SIGNAL/NOISE, the Cosmological Chronicles and the author.
+function enHomePage(list) {
+  const featuredBook = books.find((b) => b.slug === "sinal-ruido");
+  const origin = bookSheetsEn["sinal-ruido"] || {};
+  const withEn = list.filter((b) => (bookSheetsEn[b.slug] || {}).synopsis);
+  const status = (s) => SHEET_UI.en.statusMap[s] || s;
+
+  const body = `
+    <section class="home-hero-book grid-texture" data-book-hero>
+      <div class="container home-hero-book__grid">
+        <div class="home-hero-book__copy" data-book-hero-copy>
+          <span class="kicker">Novel · Science fiction investigation</span>
+          <h1 class="home-hero-book__title">SIGNAL<span class="title-slash">/</span>NOISE</h1>
+          <p class="mono home-hero-book__author">${escapeHtml(featuredBook.author)}</p>
+          <p class="home-hero-book__pitch">A signal arrives from where it shouldn't — and someone decides it's safer to call it noise.</p>
+          <div class="home-hero-book__actions">
+            <a class="btn btn--primary" href="/livro/sample/">Read the sample</a>
+            <a class="btn" href="/en/signal-noise/">Discover SIGNAL/NOISE</a>
+          </div>
+          ${buyPanel(featuredBook)}
+        </div>
+        <div class="home-hero-book__cover" data-book-hero-cover>
+          <img src="/livro/capa-en.jpg" alt="Cover of SIGNAL/NOISE" width="400" height="600" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section container--narrow home-about-book">
+      <span class="kicker">About the novel</span>
+      <h2 style="margin-top:10px">SIGNAL/NOISE</h2>
+      ${origin.tagline ? `<p class="home-about-book__lead" style="margin-top:14px;font-style:italic">${escapeHtml(origin.tagline)}</p>` : ""}
+      <p class="home-about-book__lead" style="margin-top:14px">On August 15, 1977, the Big Ear radio telescope picked up, for 72 seconds, a signal too strong to be noise. It never repeated. SIGNAL/NOISE begins with that real event and follows three people whose lives it never should have touched.</p>
+    </section>
+
+    <section class="section section--divider" id="chronicles">
+      <div class="container">
+        <div class="section-heading"><div><span class="kicker">Cosmological Chronicles · I–X</span><h2>Ten stories. One Archive. No complete answer.</h2></div></div>
+        <div class="books-grid books-grid--covers" style="margin-top:16px">${withEn.map((b) => `<a class="book-card book-card--cover" href="/en/chronicles/${b.slug}/"><img src="${escapeHtml(b.coverEn || b.cover)}" alt="Cover of ${escapeHtml(b.titleEn || b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(status(b.status))}</span><h3>${escapeHtml(b.titleEn || b.title)}</h3></a>`).join("")}</div>
+        <div style="margin-top:20px"><a class="btn btn--primary" href="/en/chronicles/">Explore the Chronicles</a></div>
+      </div>
+    </section>
+
+    <section class="section section--divider">
+      <div class="container" style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+        <div>
+          <span class="kicker">The author</span>
+          <h2 style="margin-top:10px">Alex Jr. Kich</h2>
+          <p style="margin-top:8px;color:var(--muted);max-width:56ch">Writer, artist and worldbuilder, based in Rio Grande do Sul, Brazil. Author of SIGNAL/NOISE, the Cosmological Chronicles and VALANDOR.</p>
+        </div>
+        <a class="btn" href="/en/author/">Meet the author</a>
+      </div>
+    </section>`;
+
+  write("/en", page({
+    title: "SIGNAL/NOISE",
+    description: "SIGNAL/NOISE, a novel by Alex Jr. Kich. A real signal captured in 1977, and a question that never went away. Read the first chapters for free.",
+    path: "/en/",
+    bodyHtml: body,
+    ogImage: "/livro/capa-en.jpg",
+    lang: "en", ogLocale: "en_US", minimal: true, langSwitch: "/",
+    alternates: ptEnAlternates("/", "/en/"),
+  }));
+}
 
 
 // /cortesia/<token> — páginas não listadas de cortesia (uma em português, outra em inglês): só acessa quem tem o
@@ -1706,6 +1771,249 @@ function autorPage() {
     path: "/autor/",
     bodyHtml: body,
     ogImage: "/autor/retrato.jpg",
+    alternates: ptEnAlternates("/autor/", "/en/author/"),
+    langSwitch: "/en/author/",
+    extraHead: `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" />`,
+  }));
+}
+
+// /en/author — English translation of /autor/. Same images and structure; links point to /en/*
+// where an English page exists, otherwise fall back to in-page anchors (VALANDOR, Duas Irmãs).
+function enAuthorPage() {
+  const cronicas = books.filter((b) => b.kind === "Crônicas Cosmológicas");
+  const cards = cronicas.map((b) => `
+        <a class="autor-cron" href="/en/chronicles/${b.slug}/">
+          <img src="/livros/thumbs/${b.slug}.jpg" alt="Cover of ${escapeHtml(b.titleEn || b.title)}" width="360" height="575" loading="lazy" />
+          <span class="autor-cron__num">${escapeHtml(b.numeral)}</span>
+          <strong>${escapeHtml(b.titleEn || b.title)}</strong>
+        </a>`).join("");
+  const ficha = (img, nome, alt) => `<figure class="autor-ficha"><img src="/autor/${img}.jpg" alt="${alt}" loading="lazy" /><figcaption>${nome}</figcaption></figure>`;
+  const lines = (arr) => arr.map((t) => `<p class="autor-line">${t}</p>`).join("");
+
+  const body = `
+    <section class="autor-hero">
+      <div class="autor-hero__text">
+        <h1>Alex Jr. Kich</h1>
+        <p class="autor-hero__lead">Writer, artist and worldbuilder.</p>
+        <p>I live in Rio Grande do Sul, Brazil. I draw, compose and write stories on very different scales: some look up at the sky, others build entire worlds, others fit under a bed.</p>
+        <p>But the rule is always the same:</p>
+        <p class="autor-cite">The concept can be enormous, but the conflict has to stay human.</p>
+        <p><a class="btn btn--primary" href="/en/#books">Explore the books</a></p>
+      </div>
+      <div class="autor-hero__photo"><img src="/autor/retrato.jpg" alt="Portrait of Alex Jr. Kich, hands clasped, looking to the side" width="1149" height="1368" loading="lazy" /></div>
+    </section>
+
+    <section class="autor-sec autor-sobre">
+      <div class="autor-narrow">
+        <span class="kicker">About me</span>
+        <h2>I like stories that start small.</h2>
+        ${lines(["A photograph.", "An absence.", "A child who knows something she shouldn't.", "A signal.", "A river.", "A map forgotten under a bed."])}
+        <p>From there, the story can grow as much as it needs to. It can reach Neptune, travel through time, or invent an entire world.</p>
+        <p>But someone has to stay at the center, trying to understand what's happening.</p>
+        <p>A star that disappears is a phenomenon.</p>
+        <p class="autor-cite">A mother who realizes the whole world forgot her son ever existed — that's a story.</p>
+        <p class="autor-cite autor-cite--accent">That's the difference I look for.</p>
+      </div>
+    </section>
+
+    <section class="autor-sec autor-sec--alt" id="por-onde-comecar">
+      <div class="autor-wrap">
+        <div class="autor-center"><span class="kicker">Where to start</span><h2>You don't need to know everything to step in.</h2></div>
+        <div class="autor-start">
+          <article>
+            <a class="autor-start__cover" href="/en/signal-noise/"><img src="/livro/capa-en.jpg" alt="Cover of SIGNAL/NOISE" width="400" height="600" loading="lazy" /></a>
+            <span class="mono autor-start__kicker">Science fiction</span><h3>SIGNAL/NOISE</h3>
+            <p>A real signal captured in 1977. A question that never went away.</p>
+            <a class="btn" href="/en/signal-noise/">Discover SIGNAL/NOISE</a>
+          </article>
+          <article>
+            <a class="autor-start__cover" href="/en/chronicles/"><img src="/autor/cronicas-cosmologicas-capa.png" alt="Cover of the Cosmological Chronicles collection" width="1024" height="1536" loading="lazy" /></a>
+            <span class="mono autor-start__kicker">Cosmological mystery</span><h3>Cosmological Chronicles</h3>
+            <p>Ten independent stories linked by something that records people, events, and even versions of reality that may never have existed.</p>
+            <a class="btn" href="/en/chronicles/">Explore the Chronicles</a>
+          </article>
+          <article>
+            <a class="autor-start__typo" href="#valandor"><span>V</span><em>VALANDOR</em></a>
+            <span class="mono autor-start__kicker">Fantasy</span><h3>VALANDOR</h3>
+            <p>A world where rivers remember, and where having power never answers the harder question: what for?</p>
+            <a class="btn" href="#valandor">Enter VALANDOR</a>
+          </article>
+          <article>
+            <a class="autor-start__cover" href="#duas-irmas"><img src="/autor/duas-irmas-capa.jpg" alt="Cover of Two Sisters and Eight Paws" width="636" height="900" loading="lazy" /></a>
+            <span class="mono autor-start__kicker">Children's literature</span><h3>Two Sisters and Eight Paws</h3>
+            <p>Two girls, two dogs, and the suspicion that an ordinary house might hide far more than it seems.</p>
+            <a class="btn" href="#duas-irmas">Meet the series</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="autor-sec autor-sr">
+      <div class="autor-wrap autor-split autor-split--cover">
+        <div>
+          <span class="kicker">Novel · Origin work</span>
+          <h2>SIGNAL/NOISE</h2>
+          <p class="autor-cite">What if the most important signal had already arrived?</p>
+          <p>On August 15, 1977, the Big Ear radio telescope in Ohio picked up, for 72 seconds, a signal too strong to be noise.</p>
+          <p>An astronomer circled the printout and wrote next to it:</p>
+          <p class="autor-cite autor-cite--accent">Wow!</p>
+          <p>The signal never repeated.</p>
+          <p>SIGNAL/NOISE begins with that real event.</p>
+          <p>Henrique, Marina and Lara follow traces that tie that signal to things too close to home: incomplete records, coincidences that keep coming back, a gate, a disappearance.</p>
+          <p>The problem starts scientific.</p>
+          <p>Then it stops being one.</p>
+          <p>The question is no longer just who sent the signal.</p>
+          <p>It's another one:</p>
+          <p class="autor-cite">how do we know something is, in fact, a message?</p>
+          <p>Maybe we've spent too much time looking for answers that resemble us.</p>
+          <p class="mono autor-note">Standalone novel and origin work of the Cosmological Chronicles universe.</p>
+          <p><a class="btn btn--primary" href="/en/signal-noise/">Discover SIGNAL/NOISE</a></p>
+        </div>
+        <div class="autor-cover"><img src="/livro/capa-en.jpg" alt="Cover of SIGNAL/NOISE" width="400" height="600" loading="lazy" /></div>
+      </div>
+    </section>
+
+    <section class="autor-sec autor-cron-sec" id="cronicas-autor">
+      <div class="autor-wrap">
+        <div class="autor-center">
+          <span class="kicker">Cosmological Chronicles</span>
+          <h2>Ten stories. One Archive. No complete answer.</h2>
+          <p>After SIGNAL/NOISE, the universe opens up.</p>
+          <p>Ten novels, each with its own protagonists, eras and conflicts. You can start with any of them.</p>
+          <p>Underneath all of them, though, there's something.</p>
+          <p>The Archive.</p>
+          <p>It records people, events, and versions of what could have been.</p>
+          <p>Sometimes it knows too much. Sometimes it forgets.</p>
+          <p>And every so often, it holds things that shouldn't exist yet.</p>
+        </div>
+        <div class="autor-cron-grid">${cards}
+        </div>
+        <p class="autor-center autor-note">No single volume explains the whole Archive. On purpose.</p>
+        <p class="autor-center"><a class="btn btn--primary" href="/en/chronicles/">Explore the Cosmological Chronicles</a></p>
+      </div>
+    </section>
+
+    <section class="autor-sec" id="valandor">
+      <div class="autor-wrap">
+        <div class="autor-narrow" style="margin:0">
+          <span class="kicker">Fantasy</span>
+          <h2>VALANDOR</h2>
+          <p class="autor-cite">A world where rivers remember.</p>
+          <p>VALANDOR started as one story and grew into peoples, maps, a past, a mythology and rules of its own.</p>
+          <p>At its center is Kayla, who carries the Gift.</p>
+          <p>But having power doesn't answer the harder question:</p>
+          <p class="autor-cite">even if you can, should you?</p>
+          <p>A river able to hold memories is an idea.</p>
+          <p>It becomes a story when a girl discovers that river is holding something about her own family.</p>
+        </div>
+        <div class="autor-vol-grid">
+          <article class="autor-vol autor-vol--main"><span class="mono">Book I</span><h3>What the River Forgot</h3><p>In Kayla's family, everyone confuses protection with silence.</p><p>What no one told her stayed buried somewhere.</p><p>And the Orasûn river remembers.</p><p>Alongside Aelora, Kayla follows the river's course to where family stories survive precisely because no one thought to look for them there.</p><p>Except memory isn't the same thing as the whole truth.</p><p>And the Gift doesn't decide for her what to do with what she finds.</p></article>
+          <article class="autor-vol"><span class="mono">Book II</span><h3>What the Water Carries</h3><p>Water doesn't just hold.</p><p>It carries.</p><p>Memories, choices and consequences follow its course to places no one expected.</p></article>
+          <article class="autor-vol"><span class="mono">Book III</span><h3>What the Name Preserves</h3><p>If memories can fail and stories can be rewritten, what still keeps someone who they are?</p><p>Maybe the name.</p></article>
+        </div>
+        <p class="autor-note">Book I is available in English as <em>What the River Forgot</em>.</p>
+      </div>
+    </section>
+
+    <section class="autor-creme" id="duas-irmas">
+      <div class="autor-wrap">
+        <div class="autor-creme__top">
+          <img class="autor-creme__capa" src="/autor/duas-irmas-capa.jpg" alt="Cover of Two Sisters and Eight Paws: Kayla, Kamila, Max and Pandora" width="636" height="900" loading="lazy" />
+        </div>
+        <div class="autor-narrow">
+          <span class="kicker">Children's literature</span>
+          <h2>Two Sisters and Eight Paws</h2>
+          <p class="autor-cite">Some adventures start under the bed.</p>
+          <p>This one was born at home.</p>
+          <p>It's a children's series written for my daughters, Kayla and Kamila, starring them and our dogs, Max and Pandora.</p>
+          <p>Two sisters.</p><p>Two dogs.</p><p>Eight paws.</p>
+          <p>There's no Archive here, no signal from space, no thousand-year-old river.</p>
+          <p>There's a house.</p><p>A backyard.</p><p>Forgotten objects.</p>
+          <p>And that certainty children have that anything might be hiding an adventure.</p>
+          <h3>Book 1 · The Map Under the Bed</h3>
+          <p>A map turns up under the bed.</p>
+          <p>For Kayla, that's enough.</p>
+          <p>It isn't old paper.</p>
+          <p>It's a clue.</p>
+          <p>The house changes size. The backyard gains territories. Max and Pandora join the investigation. Kamila, still a baby, takes part in her own way.</p>
+          <p>At the end of the trail, the treasure isn't gold.</p>
+          <p>It's a memory from their father's childhood, kept for years, waiting for someone to find it.</p>
+          <p>The series grows along with the girls.</p>
+          <p>Each book follows a new stage.</p>
+          <p><strong>Book 1 is currently available in Portuguese, with an English edition planned.</strong></p>
+        </div>
+        <div class="autor-faixa">
+          <img src="/autor/ilustracao-cama.jpg" alt="Illustration: Kayla in bed with the map, the baby and the dog" width="625" height="1000" loading="lazy" />
+          <img src="/autor/ilustracao-quintal.jpg" alt="Illustration: Kayla in the backyard holding the map" width="625" height="1000" loading="lazy" />
+        </div>
+        <div class="autor-fichas">
+          ${ficha("ficha-kayla", "Kayla", "Character sheet: Kayla standing")}
+          ${ficha("ficha-kamila", "Kamila", "Character sheet: Kamila on a pillow")}
+          ${ficha("ficha-pandora", "Pandora", "Character sheet: Pandora")}
+          ${ficha("ficha-max", "Max", "Character sheet: Max")}
+        </div>
+      </div>
+    </section>
+
+    <section class="autor-sec autor-sec--alt">
+      <div class="autor-narrow">
+        <span class="kicker">Before the words, the pencil</span>
+        <p>I've been drawing since long before I wrote my first book.</p>
+        <p>Portraits. Animals. Characters. Places.</p>
+        <p>A tree clinging to a floating island.</p>
+        <p>A face that didn't have a name yet.</p>
+        <p>The face of a cocker spaniel I knew by heart.</p>
+        <p>Sometimes the drawing becomes a story.</p>
+        <p>Other times, it's the story that needs the drawing for me to figure out what it looks like.</p>
+        <p>I also compose music.</p>
+        <p>Maybe it's all part of the same thing: finding a way to turn something that exists in my head into something someone else can see, hear or imagine.</p>
+      </div>
+    </section>
+
+    <section class="autor-sec">
+      <div class="autor-narrow">
+        <span class="kicker">How I write</span>
+          <p>I've always been interested in systems.</p>
+          <p>Rules, patterns, structures that should work a certain way.</p>
+          <p>Especially when they work exactly as they should, and something still goes wrong.</p>
+          <p>That question shows up in different forms in what I write:</p>
+          <p class="autor-cite">what happens when the system works perfectly and the result is still wrong?</p>
+          <p>In SIGNAL/NOISE, there's information to spare and no guarantee of meaning.</p>
+          <p>In the Cosmological Chronicles, the records can be correct and still describe an impossible reality.</p>
+          <p>In VALANDOR, knowing the rules of a power doesn't tell you when it should be used.</p>
+          <p>But I don't start with the rules.</p>
+          <p>I start by looking for someone who will be hit by them.</p>
+          <p>The mystery needs to be understandable, but it doesn't need to disappear.</p>
+          <p>An answer can clarify something without turning the unknown into an instruction manual.</p>
+          <p>And a character doesn't exist to explain the world to the reader.</p>
+          <p>They need to want something. Make mistakes. Be afraid. Protect someone. Ask inconvenient questions. Laugh at the wrong moment.</p>
+          <p>That's why I can write about a signal from space, a fantasy world, and two girls following a map through the backyard without considering these stories incompatible.</p>
+          <p>The scale changes.</p>
+          <p class="autor-cite autor-cite--accent">The person at the center doesn't.</p>
+      </div>
+    </section>
+
+    <section class="autor-sec autor-sec--alt">
+      <div class="autor-narrow">
+        <span class="kicker">Books</span>
+        <ul class="autor-status">
+          <li><strong>SIGNAL/NOISE:</strong> published. <a href="/en/signal-noise/">See the book</a></li>
+          <li><strong>VALANDOR · What the River Forgot:</strong> Book I available in English. New Portuguese edition in progress.</li>
+          <li><strong>Two Sisters and Eight Paws · The Map Under the Bed:</strong> published in Portuguese; English edition planned.</li>
+          <li><strong>Cosmological Chronicles:</strong> collection in progress. Book I, <a href="/en/chronicles/os-deuses-nao-tem-filhos/">The Gods Have No Children</a>, is already available.</li>
+        </ul>
+        <p><a class="btn btn--primary" href="/en/chronicles/">See all the books</a> <a class="btn" href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a> <a class="btn" href="/buy/">Get the book</a></p>
+      </div>
+    </section>`;
+  write("/en/author", page({
+    title: "Alex Jr. Kich",
+    description: "Alex Jr. Kich, writer, artist and worldbuilder. Author of SIGNAL/NOISE, the Cosmological Chronicles, VALANDOR and Two Sisters and Eight Paws.",
+    path: "/en/author/",
+    bodyHtml: body,
+    ogImage: "/autor/retrato.jpg",
+    lang: "en", ogLocale: "en_US", minimal: true,
+    alternates: ptEnAlternates("/autor/", "/en/author/"),
+    langSwitch: "/autor/",
     extraHead: `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" />`,
   }));
 }
@@ -1822,11 +2130,13 @@ chroniclesPt.forEach((b, _i, arr) => bookSheetPage(b, arr, "pt"));
 const chroniclesEn = chroniclesPt.filter((b) => (bookSheetsEn[b.slug] || {}).synopsis);
 chroniclesEn.forEach((b, _i, arr) => bookSheetPage(b, arr, "en"));
 chroniclesEnPage(chroniclesPt);
+enHomePage(chroniclesPt);
 if ((bookSheetsEn["sinal-ruido"] || {}).synopsis) bookSheetPage(SINAL_RUIDO_ORIGIN, chroniclesEn, "en");
 bookSheetPage(books.find((b) => b.slug === "sinal-ruido"), chroniclesPt, "pt");
 leitoresPage();
 imprensaPage();
 autorPage();
+enAuthorPage();
 privacidadePage();
 contatoPage();
 buyPage();

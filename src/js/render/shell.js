@@ -69,7 +69,12 @@ export function page({
   ogLocale = "pt_BR",
   alternates = [],
   minimal = false,
+  langSwitch,
 }) {
+  const isEn = lang.startsWith("en");
+  const switchHref = langSwitch || (isEn ? "/" : "/en/");
+  const switchLabel = isEn ? "Português" : "English";
+  const langSwitchHtml = `<a href="${escapeAttr(switchHref)}" class="lang-switch" hreflang="${isEn ? "pt-BR" : "en"}">${switchLabel}</a>`;
   const fullTitle = title === "SINAL/RUÍDO" ? title : `${title} · SINAL/RUÍDO`;
   const safeTitle = escapeAttr(fullTitle);
   const safeDescription = escapeAttr(description);
@@ -87,6 +92,7 @@ export function page({
         ${NAV.map((i) => navLink(i, path)).join("")}
       </nav>
       <div class="header-actions">
+        ${langSwitchHtml}
         <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener" class="social-icon-link" aria-label="SINAL/RUÍDO no Instagram">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
@@ -103,6 +109,7 @@ export function page({
     </div>
     <nav class="mobile-nav container" data-mobile-nav aria-label="Navegação (compacta)">
       ${NAV.map((i) => navLink(i, path, true)).join("")}
+      ${langSwitchHtml}
     </nav>
   </header>`;
   const fullFooter = `  <footer class="site-footer">
@@ -137,6 +144,7 @@ export function page({
         <span class="brand__sub">SIGNAL/NOISE · Alex Jr. Kich</span>
       </a>
       <div class="header-actions">
+        ${langSwitchHtml}
         <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram @sinal_ruido">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
