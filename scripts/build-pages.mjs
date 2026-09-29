@@ -85,7 +85,7 @@ function buyLinkHtml(url, format, store, price) {
   return `<a class="buy-link" href="${escapeHtml(url)}" target="_blank" rel="noopener"><span class="buy-link__format">${format}</span><span class="buy-link__store">${icon}<span>${store}</span>${price ? `<em class="buy-link__price">${escapeHtml(price)}</em>` : ""}</span><span class="buy-link__arrow" aria-hidden="true">↗</span></a>`;
 }
 
-function buyPanel(book) {
+function buyPanel(book, { hideEnBr = false, hidePt = false } = {}) {
   const link = buyLinkHtml;
   const pr = (k) => (book.prices || {})[k];
   const pt = [
@@ -94,15 +94,15 @@ function buyPanel(book) {
   ].join("");
   const en = [
     link(book.purchaseUrlEn, "Ebook", "Amazon US", pr("purchaseUrlEn")),
-    link(book.purchaseUrlEnBr, "Ebook", "Amazon BR", pr("purchaseUrlEnBr")),
+    hideEnBr ? "" : link(book.purchaseUrlEnBr, "Ebook", "Amazon BR", pr("purchaseUrlEnBr")),
     link(book.purchaseUrlEnUk, "Paperback", "Amazon UK", pr("purchaseUrlEnUk")),
   ].join("");
   const es = [
     link(book.purchaseUrlEs, "Ebook", "Amazon ES", pr("purchaseUrlEs")),
   ].join("");
   return `<div class="buy-panel">
-    ${pt ? `<div class="buy-group"><span class="buy-group__title">Português</span><div class="buy-group__links">${pt}</div></div>` : `<span class="btn btn--disabled" aria-disabled="true">Comprar · EM BREVE</span>`}
-    ${en ? `<div class="buy-group"><span class="buy-group__title">English edition</span><div class="buy-group__links">${en}<a class="buy-link buy-link--sample" href="/livro/sample/"><span class="buy-link__format">Free</span><span class="buy-link__store">Read sample</span><span class="buy-link__arrow" aria-hidden="true">→</span></a></div></div>` : ""}
+    ${hidePt ? "" : pt ? `<div class="buy-group"><span class="buy-group__title">Português</span><div class="buy-group__links">${pt}</div></div>` : `<span class="btn btn--disabled" aria-disabled="true">Comprar · EM BREVE</span>`}
+    ${en ? `<div class="buy-group"><span class="buy-group__title">English edition</span><div class="buy-group__links">${en}<a class="buy-link buy-link--sample" href="/livro/sample/"><span class="buy-link__format">Free</span><span class="buy-link__store">Read sample</span><span class="buy-link__arrow" aria-hidden="true">→</span></a><a class="buy-link" href="/buy/"><span class="buy-link__format">More</span><span class="buy-link__store">Other countries</span><span class="buy-link__arrow" aria-hidden="true">→</span></a></div></div>` : ""}
     ${es ? `<div class="buy-group"><span class="buy-group__title">Edición en español</span><div class="buy-group__links">${es}</div></div>` : ""}
   </div>`;
 }
@@ -1125,7 +1125,7 @@ function enHomePage(list) {
             <a class="btn btn--primary" href="/livro/sample/">Read the sample</a>
             <a class="btn" href="/en/signal-noise/">Discover SIGNAL/NOISE</a>
           </div>
-          ${buyPanel(featuredBook)}
+          ${buyPanel(featuredBook, { hideEnBr: true, hidePt: true })}
         </div>
         <div class="home-hero-book__cover" data-book-hero-cover>
           <img src="/livro/capa-en.jpg" alt="Cover of SIGNAL/NOISE" width="400" height="600" />
@@ -1527,6 +1527,7 @@ function correcoesPage() {
 // /autor — página do autor (segunda versão do texto). Só PT. Sem formulário e sem newsletter (regra do MVP).
 // Sem material ainda: rascunhos a lápis, capa e mapas de VALANDOR e página/link de VALANDOR (por isso não há botão para ele).
 const AMAZON_DUAS_IRMAS = "https://www.amazon.com.br/dp/B0HGMMSBSX";
+const AMAZON_AUTHOR_PAGE = "https://www.amazon.ca/stores/ALEX-JR.-KICH/author/B0HH718W4M";
 const CRONICAS_LINHAS = {
   "os-deuses-nao-tem-filhos": "Se alguém criou você, isso lhe dá o direito de decidir quem você deve ser?",
   "a-ultima-testemunha": "Algumas coisas só acontecem se alguém estiver olhando.",
@@ -1766,7 +1767,7 @@ function autorPage() {
           <li><strong>Duas Irmãs e Oito Patas · O Mapa Debaixo da Cama:</strong> publicado. <a href="${AMAZON_DUAS_IRMAS}" target="_blank" rel="noopener">Comprar na Amazon</a></li>
           <li><strong>Crônicas Cosmológicas:</strong> coleção em desenvolvimento. O Livro I, <a href="/livros/os-deuses-nao-tem-filhos/">Os Deuses Não Têm Filhos</a>, já está à venda.</li>
         </ul>
-        <p><a class="btn btn--primary" href="/#livros">Ver todos os livros</a> <a class="btn" href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a> <a class="btn" href="/imprensa/">Imprensa</a></p>
+        <p><a class="btn btn--primary" href="/#livros">Ver todos os livros</a> <a class="btn" href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a> <a class="btn" href="${AMAZON_AUTHOR_PAGE}" target="_blank" rel="noopener">Página do autor na Amazon</a> <a class="btn" href="/imprensa/">Imprensa</a></p>
       </div>
     </section>`;
   write("/autor", page({
@@ -2006,7 +2007,7 @@ function enAuthorPage() {
           <li><strong>Two Sisters and Eight Paws · The Map Under the Bed:</strong> published in Portuguese; English edition planned.</li>
           <li><strong>Cosmological Chronicles:</strong> collection in progress. Book I, <a href="/en/chronicles/os-deuses-nao-tem-filhos/">The Gods Have No Children</a>, is already available.</li>
         </ul>
-        <p><a class="btn btn--primary" href="/en/chronicles/">See all the books</a> <a class="btn" href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a> <a class="btn" href="/buy/">Get the book</a></p>
+        <p><a class="btn btn--primary" href="/en/chronicles/">See all the books</a> <a class="btn" href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a> <a class="btn" href="${AMAZON_AUTHOR_PAGE}" target="_blank" rel="noopener">Amazon author page</a> <a class="btn" href="/buy/">Get the book</a></p>
       </div>
     </section>`;
   write("/en/author", page({

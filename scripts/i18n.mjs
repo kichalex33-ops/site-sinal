@@ -25,16 +25,16 @@ export function localeForMarket(code) {
 }
 
 // Links de compra de um mercado: so edicoes listadas em markets.json (link conhecido).
+// Cada mercado pode ter ASIN proprio por edicao em "asins" (ex.: capa comum e capa dura
+// costumam ter ASIN diferente por regiao); sem override, cai no ASIN global de buy.json.
 export function buyLinks(code) {
   const m = marketsData.markets[code];
   return buyData.editionOrder
     .filter((ed) => m.editions.includes(ed))
-    .map((ed) => ({
-      edition: ed,
-      label: buyData.editions[ed],
-      asin: buyData.asins[ed],
-      url: `https://www.${m.amazonDomain}/dp/${buyData.asins[ed]}`,
-    }));
+    .map((ed) => {
+      const asin = (m.asins || {})[ed] || buyData.asins[ed];
+      return { edition: ed, label: buyData.editions[ed], asin, url: `https://www.${m.amazonDomain}/dp/${asin}` };
+    });
 }
 
 // <link rel="alternate" hreflang>. Considera apenas locales "live"; sem alternativas, devolve [].
@@ -64,7 +64,8 @@ export function validateI18n() {
     if (!m.amazonDomain) errors.push(`mercado ${code} sem amazonDomain`);
     if (!locales[m.defaultLocale]) errors.push(`mercado ${code}: locale padrao inexistente (${m.defaultLocale})`);
     if (!m.editions.length) errors.push(`mercado ${code} sem edicoes`);
-    for (const ed of m.editions) if (!buyData.asins[ed]) errors.push(`mercado ${code}: edicao sem ASIN (${ed})`);
+    for (const ed of m.editions) if (!(m.asins || {})[ed] && !buyData.asins[ed]) errors.push(`mercado ${code}: edicao sem ASIN (${ed})`);
+    for (const [ed, asin] of Object.entries(m.asins || {})) if (!/^B0[A-Z0-9]{8}$/.test(asin)) errors.push(`mercado ${code}: ASIN invalido em ${ed}: ${asin}`);
   }
   if (errors.length) throw new Error("i18n/buy invalido:\n- " + errors.join("\n- "));
 }
