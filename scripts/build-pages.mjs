@@ -5,6 +5,7 @@ import { page } from "../src/js/render/shell.js";
 import { caseCard, collectionCard, mediaCard } from "../src/js/render/cards.js";
 import { editorialBadge, maturityBadge, provenanceBadge, integrityBadge, escapeHtml } from "../src/js/render/badges.js";
 import { marketList, buyLinks, buyData, validateI18n } from "./i18n.mjs";
+import { mapaBody, escolhaBody, MAPA_SEO, ESCOLHA_SEO, homeCallout, writePublicSignals } from "./mapa.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -282,6 +283,8 @@ function homePage() {
         <div style="margin-top:20px"><a class="btn btn--primary" href="/livro/amostra/">Começar a leitura</a></div>
       </div>
     </section>
+
+    ${homeCallout("pt")}
 
     <section class="section section--divider home-comments-support">
       <div class="container home-comments-support__inner">
@@ -1483,6 +1486,8 @@ function enHomePage(list) {
       <p class="home-about-book__lead" style="margin-top:14px">On August 15, 1977, the Big Ear radio telescope picked up, for 72 seconds, a signal too strong to be noise. It never repeated. SIGNAL/NOISE begins with that real event and follows three people whose lives it never should have touched.</p>
     </section>
 
+    ${homeCallout("en")}
+
     <section class="section section--divider" id="chronicles">
       <div class="container">
         <div class="section-heading"><div><span class="kicker">Cosmological Chronicles · I–X</span><h2>Ten stories. One Archive. No complete answer.</h2></div></div>
@@ -1715,6 +1720,35 @@ function enContatoPage() {
     lang: "en", ogLocale: "en_US", minimal: true,
     alternates: ptEnAlternates("/contato/", "/en/contact/"),
     langSwitch: "/contato/",
+  }));
+}
+
+// ---------------------------------------------------------------------
+// Mapa dos Sinais (PT) e World Map of Signals (EN). Dados em src/data/signals.json e posters.json; HTML em scripts/mapa.mjs.
+function mapaPages() {
+  const pt = MAPA_SEO.pt, en = MAPA_SEO.en;
+  write("/mapa-dos-sinais", page({
+    title: pt.title, titleFull: `${pt.title} | SINAL/RUÍDO`, description: pt.description, path: pt.path,
+    bodyHtml: mapaBody("pt"),
+    alternates: ptEnAlternates(pt.path, en.path), langSwitch: en.path,
+  }));
+  write("/en/world-map-of-signals", page({
+    title: en.title, titleFull: `${en.title} | SIGNAL/NOISE`, description: en.description, path: en.path,
+    bodyHtml: mapaBody("en"),
+    lang: "en", ogLocale: "en_US", minimal: true,
+    alternates: ptEnAlternates(pt.path, en.path), langSwitch: pt.path,
+  }));
+  const cpt = ESCOLHA_SEO.pt, cen = ESCOLHA_SEO.en;
+  write(cpt.path.replace(/\/$/, ""), page({
+    title: cpt.title, titleFull: `${cpt.title} | SINAL/RUÍDO`, description: cpt.description, path: cpt.path,
+    bodyHtml: escolhaBody("pt"),
+    alternates: ptEnAlternates(cpt.path, cen.path), langSwitch: cen.path,
+  }));
+  write(cen.path.replace(/\/$/, ""), page({
+    title: cen.title, titleFull: `${cen.title} | SIGNAL/NOISE`, description: cen.description, path: cen.path,
+    bodyHtml: escolhaBody("en"),
+    lang: "en", ogLocale: "en_US", minimal: true,
+    alternates: ptEnAlternates(cpt.path, cen.path), langSwitch: cpt.path,
   }));
 }
 
@@ -2673,7 +2707,7 @@ function buildSeoFiles() {
 // ---------------------------------------------------------------------
 // run
 // ---------------------------------------------------------------------
-["arquivo", "casos", "documentos", "colecoes", "midia", "noticias", "metodo", "correcoes", "livro", "livros", "leitores", "imprensa", "privacidade", "r", "explorar", "brinde", "buy", "en", "autor"].forEach(clean);
+["arquivo", "casos", "documentos", "colecoes", "midia", "noticias", "metodo", "correcoes", "livro", "livros", "leitores", "imprensa", "privacidade", "r", "explorar", "brinde", "buy", "en", "autor", "mapa-dos-sinais"].forEach(clean);
 
 validateI18n();
 homePage();
@@ -2718,6 +2752,8 @@ privacidadePage();
 enPrivacidadePage();
 contatoPage();
 enContatoPage();
+mapaPages();
+writePublicSignals();
 buyPage();
 notFoundPage();
 ["livro", "bunkerx", "cienciatododia", "spacetoday"].forEach(campanhaRedirect);

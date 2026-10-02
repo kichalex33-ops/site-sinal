@@ -1,0 +1,293 @@
+{
+  "_doc": "Cartazes oficiais. Para adicionar: coloque o arquivo em public/cartazes/<lang>/, a miniatura (360x480 jpg) em public/cartazes/thumbs/ e acrescente um item aqui. lang: pt|en. color: color|bw. O gerador ignora itens cujo arquivo nao existe.",
+  "posters": [
+    {
+      "id": "pt-c01",
+      "lang": "pt",
+      "color": "color",
+      "file": "/cartazes/pt/SINAL_RUIDO_display_colorido_01.png",
+      "thumb": "/cartazes/thumbs/pt-c01.jpg",
+      "width": 1055,
+      "height": 1491,
+      "thumbW": 340,
+      "thumbH": 480,
+      "name": {
+        "pt": "Colorido 01: Em 1977, um sinal apareceu",
+        "en": "Colour 01: In 1977, a signal appeared"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em português, versão colorida: \"Em 1977, um sinal apareceu\". Imagem: fundo claro, planeta craterado.",
+        "en": "SIGNAL/NOISE poster in Portuguese, colour version: \"In 1977, a signal appeared\". Image: fundo claro, planeta craterado."
+      }
+    },
+    {
+      "id": "pt-c02",
+      "lang": "pt",
+      "color": "color",
+      "file": "/cartazes/pt/SINAL_RUIDO_display_colorido_02.png",
+      "thumb": "/cartazes/thumbs/pt-c02.jpg",
+      "width": 1055,
+      "height": 1491,
+      "thumbW": 340,
+      "thumbH": 480,
+      "name": {
+        "pt": "Colorido 02: Os sinais estão aparecendo",
+        "en": "Colour 02: The signals are appearing"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em português, versão colorida: \"Os sinais estão aparecendo\". Imagem: fundo claro, planeta craterado.",
+        "en": "SIGNAL/NOISE poster in Portuguese, colour version: \"The signals are appearing\". Image: fundo claro, planeta craterado."
+      }
+    },
+    {
+      "id": "pt-c03",
+      "lang": "pt",
+      "color": "color",
+      "file": "/cartazes/pt/SINAL_RUIDO_display_colorido_03.png",
+      "thumb": "/cartazes/thumbs/pt-c03.jpg",
+      "width": 1055,
+      "height": 1491,
+      "thumbW": 340,
+      "thumbH": 480,
+      "name": {
+        "pt": "Colorido 03: Nem todo sinal quer ser ouvido",
+        "en": "Colour 03: Not every signal wants to be heard"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em português, versão colorida: \"Nem todo sinal quer ser ouvido\". Imagem: radiotelescópio sob a Via Láctea.",
+        "en": "SIGNAL/NOISE poster in Portuguese, colour version: \"Not every signal wants to be heard\". Image: radiotelescópio sob a Via Láctea."
+      }
+    },
+    {
+      "id": "pt-c04",
+      "lang": "pt",
+      "color": "color",
+      "file": "/cartazes/pt/SINAL_RUIDO_display_colorido_04.png",
+      "thumb": "/cartazes/thumbs/pt-c04.jpg",
+      "width": 1055,
+      "height": 1491,
+      "thumbW": 340,
+      "thumbH": 480,
+      "name": {
+        "pt": "Colorido 04: 72 segundos que nunca se repetiram",
+        "en": "Colour 04: 72 seconds that never repeated"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em português, versão colorida: \"72 segundos que nunca se repetiram\". Imagem: figura diante da Via Láctea.",
+        "en": "SIGNAL/NOISE poster in Portuguese, colour version: \"72 seconds that never repeated\". Image: figura diante da Via Láctea."
+      }
+    },
+    {
+      "id": "pt-bw01",
+      "lang": "pt",
+      "color": "bw",
+      "file": "/cartazes/pt/SINAL_RUIDO_display_preto_branco_01.png",
+      "thumb": "/cartazes/thumbs/pt-bw01.jpg",
+      "width": 1055,
+      "height": 1491,
+      "thumbW": 340,
+      "thumbH": 480,
+      "name": {
+        "pt": "P&B 01: Nem todo sinal quer ser ouvido",
+        "en": "B&W 01: Not every signal wants to be heard"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em português, versão preto e branco: \"Nem todo sinal quer ser ouvido\". Imagem: radiotelescópio.",
+        "en": "SIGNAL/NOISE poster in Portuguese, black and white version: \"Not every signal wants to be heard\". Image: radiotelescópio."
+      }
+    },
+    {
+      "id": "pt-bw02",
+      "lang": "pt",
+      "color": "bw",
+      "file": "/cartazes/pt/SINAL_RUIDO_display_preto_branco_02.png",
+      "thumb": "/cartazes/thumbs/pt-bw02.jpg",
+      "width": 1055,
+      "height": 1491,
+      "thumbW": 340,
+      "thumbH": 480,
+      "name": {
+        "pt": "P&B 02: Os sinais estão aparecendo",
+        "en": "B&W 02: The signals are appearing"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em português, versão preto e branco: \"Os sinais estão aparecendo\". Imagem: planeta craterado.",
+        "en": "SIGNAL/NOISE poster in Portuguese, black and white version: \"The signals are appearing\". Image: planeta craterado."
+      }
+    },
+    {
+      "id": "pt-bw03",
+      "lang": "pt",
+      "color": "bw",
+      "file": "/cartazes/pt/SINAL_RUIDO_display_preto_branco_03.png",
+      "thumb": "/cartazes/thumbs/pt-bw03.jpg",
+      "width": 1055,
+      "height": 1491,
+      "thumbW": 340,
+      "thumbH": 480,
+      "name": {
+        "pt": "P&B 03: 72 segundos que nunca se repetiram",
+        "en": "B&W 03: 72 seconds that never repeated"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em português, versão preto e branco: \"72 segundos que nunca se repetiram\". Imagem: figura diante da Via Láctea.",
+        "en": "SIGNAL/NOISE poster in Portuguese, black and white version: \"72 seconds that never repeated\". Image: figura diante da Via Láctea."
+      }
+    },
+    {
+      "id": "pt-bw04",
+      "lang": "pt",
+      "color": "bw",
+      "file": "/cartazes/pt/SINAL_RUIDO_display_preto_branco_04.png",
+      "thumb": "/cartazes/thumbs/pt-bw04.jpg",
+      "width": 1055,
+      "height": 1491,
+      "thumbW": 340,
+      "thumbH": 480,
+      "name": {
+        "pt": "P&B 04: Em 1977, um sinal apareceu",
+        "en": "B&W 04: In 1977, a signal appeared"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em português, versão preto e branco: \"Em 1977, um sinal apareceu\". Imagem: planeta craterado.",
+        "en": "SIGNAL/NOISE poster in Portuguese, black and white version: \"In 1977, a signal appeared\". Image: planeta craterado."
+      }
+    },
+    {
+      "id": "en-01",
+      "lang": "en",
+      "color": "color",
+      "file": "/cartazes/en/SIGNAL_NOISE_EN_FLYER_01.png",
+      "thumb": "/cartazes/thumbs/en-01.jpg",
+      "width": 1200,
+      "height": 1600,
+      "name": {
+        "pt": "Cartaz 01 — Planeta craterado",
+        "en": "Poster 01 — Cratered planet"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em inglês, versão colorida: \"The signals are appearing\". Imagem: planeta craterado.",
+        "en": "SIGNAL/NOISE poster in English, colour version: \"The signals are appearing\". Image: cratered planet."
+      }
+    },
+    {
+      "id": "en-02",
+      "lang": "en",
+      "color": "color",
+      "file": "/cartazes/en/SIGNAL_NOISE_EN_FLYER_02.png",
+      "thumb": "/cartazes/thumbs/en-02.jpg",
+      "width": 1200,
+      "height": 1600,
+      "name": {
+        "pt": "Cartaz 02 — Radiotelescópios sob a Via Láctea",
+        "en": "Poster 02 — Radio telescopes under the Milky Way"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em inglês, versão colorida: \"The signals are appearing\". Imagem: radiotelescópios sob a via láctea.",
+        "en": "SIGNAL/NOISE poster in English, colour version: \"The signals are appearing\". Image: radio telescopes under the milky way."
+      }
+    },
+    {
+      "id": "en-03",
+      "lang": "en",
+      "color": "color",
+      "file": "/cartazes/en/SIGNAL_NOISE_EN_FLYER_03.png",
+      "thumb": "/cartazes/thumbs/en-03.jpg",
+      "width": 1200,
+      "height": 1600,
+      "name": {
+        "pt": "Cartaz 03 — Rosto alienígena",
+        "en": "Poster 03 — Alien face"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em inglês, versão colorida: \"The signals are appearing\". Imagem: rosto alienígena.",
+        "en": "SIGNAL/NOISE poster in English, colour version: \"The signals are appearing\". Image: alien face."
+      }
+    },
+    {
+      "id": "en-04",
+      "lang": "en",
+      "color": "color",
+      "file": "/cartazes/en/SIGNAL_NOISE_EN_FLYER_04.png",
+      "thumb": "/cartazes/thumbs/en-04.jpg",
+      "width": 1200,
+      "height": 1600,
+      "name": {
+        "pt": "Cartaz 04 — Onda de sinal e buraco negro",
+        "en": "Poster 04 — Signal waveform and black hole"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em inglês, versão colorida: \"The signals are appearing\". Imagem: onda de sinal e buraco negro.",
+        "en": "SIGNAL/NOISE poster in English, colour version: \"The signals are appearing\". Image: signal waveform and black hole."
+      }
+    },
+    {
+      "id": "en-05",
+      "lang": "en",
+      "color": "bw",
+      "file": "/cartazes/en/SIGNAL_NOISE_EN_FLYER_05.png",
+      "thumb": "/cartazes/thumbs/en-05.jpg",
+      "width": 1200,
+      "height": 1600,
+      "name": {
+        "pt": "Cartaz 05 — Radiotelescópio em traço",
+        "en": "Poster 05 — Radio telescope, line art"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em inglês, versão preto e branco: \"The signals are appearing\". Imagem: radiotelescópio em traço.",
+        "en": "SIGNAL/NOISE poster in English, black and white version: \"The signals are appearing\". Image: radio telescope, line art."
+      }
+    },
+    {
+      "id": "en-06",
+      "lang": "en",
+      "color": "bw",
+      "file": "/cartazes/en/SIGNAL_NOISE_EN_FLYER_06.png",
+      "thumb": "/cartazes/thumbs/en-06.jpg",
+      "width": 1200,
+      "height": 1600,
+      "name": {
+        "pt": "Cartaz 06 — Onda de sinal",
+        "en": "Poster 06 — Signal waveform"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em inglês, versão preto e branco: \"The signals are appearing\". Imagem: onda de sinal.",
+        "en": "SIGNAL/NOISE poster in English, black and white version: \"The signals are appearing\". Image: signal waveform."
+      }
+    },
+    {
+      "id": "en-07",
+      "lang": "en",
+      "color": "bw",
+      "file": "/cartazes/en/SIGNAL_NOISE_EN_FLYER_07.png",
+      "thumb": "/cartazes/thumbs/en-07.jpg",
+      "width": 1200,
+      "height": 1600,
+      "name": {
+        "pt": "Cartaz 07 — Galáxia espiral",
+        "en": "Poster 07 — Spiral galaxy"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em inglês, versão preto e branco: \"The signals are appearing\". Imagem: galáxia espiral.",
+        "en": "SIGNAL/NOISE poster in English, black and white version: \"The signals are appearing\". Image: spiral galaxy."
+      }
+    },
+    {
+      "id": "en-08",
+      "lang": "en",
+      "color": "bw",
+      "file": "/cartazes/en/SIGNAL_NOISE_EN_FLYER_08.png",
+      "thumb": "/cartazes/thumbs/en-08.jpg",
+      "width": 1200,
+      "height": 1600,
+      "name": {
+        "pt": "Cartaz 08 — Rosto alienígena",
+        "en": "Poster 08 — Alien face"
+      },
+      "alt": {
+        "pt": "Cartaz de SINAL/RUÍDO em inglês, versão preto e branco: \"The signals are appearing\". Imagem: rosto alienígena.",
+        "en": "SIGNAL/NOISE poster in English, black and white version: \"The signals are appearing\". Image: alien face."
+      }
+    }
+  ]
+}

@@ -26,6 +26,13 @@ const NAV = [
     ],
   },
   {
+    href: "/mapa-dos-sinais/", label: "Mapa dos Sinais", match: ["/mapa-dos-sinais/"],
+    children: [
+      { href: "/mapa-dos-sinais/", label: "Ver o mapa" },
+      { href: "/mapa-dos-sinais/escolha-seu-sinal/", label: "Escolha seu sinal" },
+    ],
+  },
+  {
     href: "/contato/", label: "Contato", match: ["/contato/", "/imprensa/"],
     children: [
       { href: "/contato/#autor", label: "Autor" },
@@ -70,12 +77,13 @@ export function page({
   alternates = [],
   minimal = false,
   langSwitch,
+  titleFull,
 }) {
   const isEn = lang.startsWith("en");
   const switchHref = langSwitch || (isEn ? "/" : "/en/");
   const switchLabel = isEn ? "Português" : "English";
   const langSwitchHtml = `<a href="${escapeAttr(switchHref)}" class="lang-switch" hreflang="${isEn ? "pt-BR" : "en"}">${switchLabel}</a>`;
-  const fullTitle = title === "SINAL/RUÍDO" ? title : `${title} · SINAL/RUÍDO`;
+  const fullTitle = titleFull || (title === "SINAL/RUÍDO" ? title : `${title} · SINAL/RUÍDO`);
   const safeTitle = escapeAttr(fullTitle);
   const safeDescription = escapeAttr(description);
   const canonicalUrl = `${SITE_URL}${path}`;
@@ -122,6 +130,7 @@ export function page({
       <div class="mono footer-links">
         <a href="/livro/amostra/">Ler 3 capítulos</a>
         <a href="/livro/">O livro</a>
+        <a href="/mapa-dos-sinais/">Mapa dos Sinais</a>
         <a href="/leitores/">Leitores</a>
         <a href="/imprensa/">Imprensa</a>
         <a href="/contato/">Contato</a>
@@ -144,6 +153,7 @@ export function page({
         <span class="brand__sub">SIGNAL/NOISE · Alex Jr. Kich</span>
       </a>
       <div class="header-actions">
+        <a href="/en/world-map-of-signals/" class="lang-switch"${path.startsWith("/en/world-map") ? ' aria-current="page"' : ""}>World Map</a>
         ${langSwitchHtml}
         <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram @sinal_ruido">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
@@ -160,6 +170,8 @@ export function page({
       <div><span class="brand__mark">SINAL<b>/</b>RUÍDO</span></div>
       <div class="mono footer-links">
         <a href="/en/">Home</a>
+        <a href="/en/world-map-of-signals/">World Map of Signals</a>
+        <a href="/en/world-map-of-signals/choose-your-signal/">Choose your signal</a>
         <a href="/en/privacy/">Privacy</a>
         <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>
       </div>

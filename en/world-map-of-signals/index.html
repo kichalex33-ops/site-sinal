@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Map of Signals | SIGNAL/NOISE</title>
+  <meta name="description" content="Help SIGNAL/NOISE cross into the real world. Download a poster, place the signal in your city and join the World Map of Signals." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0B0E14" />
+  <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://sinalruido.com.br/en/world-map-of-signals/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://sinalruido.com.br/mapa-dos-sinais/" />
+  <link rel="alternate" hreflang="en" href="https://sinalruido.com.br/en/world-map-of-signals/" />
+  <link rel="alternate" hreflang="x-default" href="https://sinalruido.com.br/mapa-dos-sinais/" />
+  <meta property="og:title" content="World Map of Signals | SIGNAL/NOISE" />
+  <meta property="og:description" content="Help SIGNAL/NOISE cross into the real world. Download a poster, place the signal in your city and join the World Map of Signals." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sinalruido.com.br/en/world-map-of-signals/" />
+  <meta property="og:site_name" content="SINAL/RUÍDO" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://sinalruido.com.br/og/arquivo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://sinalruido.com.br/og/arquivo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" />
+  <link rel="stylesheet" href="/src/css/tokens.css" />
+  <link rel="stylesheet" href="/src/css/reset.css" />
+  <link rel="stylesheet" href="/src/css/base.css" />
+  <link rel="stylesheet" href="/src/css/layout.css" />
+  <link rel="stylesheet" href="/src/css/components.css" />
+  
+</head>
+<body>
+  <a href="#conteudo" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__row">
+      <a href="/" class="brand">
+        <span class="brand__mark">SINAL<b>/</b>RUÍDO</span>
+        <span class="brand__sub">SIGNAL/NOISE · Alex Jr. Kich</span>
+      </a>
+      <div class="header-actions">
+        <a href="/en/world-map-of-signals/" class="lang-switch" aria-current="page">World Map</a>
+        <a href="/mapa-dos-sinais/" class="lang-switch" hreflang="pt-BR">Português</a>
+        <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram @sinal_ruido">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
+            <circle cx="12" cy="12" r="4.3" />
+            <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="mapa-hero grid-texture">
+      <div class="container--medium mapa-hero__inner">
+        <span class="kicker">World Map of Signals</span>
+        <h1 class="mapa-hero__title">Help the signal reach your city.</h1>
+        <p class="mapa-hero__tagline">A signal began in Brazil. Now it can appear anywhere in the world.</p>
+        <p class="mapa-hero__lead">SIGNAL/NOISE began as a story about an impossible signal.<br />Now the signal is crossing the real world.</p>
+        <p class="mapa-hero__lead mapa-hero__lead--muted">Download one of the official posters, place it in a space in your city, and send us a photo. Every confirmed location can become part of the World Map of Signals.</p>
+        <div class="home-hero-book__actions">
+          <a class="btn btn--primary" href="/en/world-map-of-signals/choose-your-signal/">Bring the signal to your city</a>
+          <a class="btn" href="#mapa">Explore the map</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mapa-stats" aria-label="Map numbers" data-signal-stats>
+      <dl class="container--medium mapa-stats__grid">
+        <div><dt class="mono">Confirmed signals</dt><dd class="mapa-stats__num" data-stat="signals">3</dd></div><div><dt class="mono">Cities</dt><dd class="mapa-stats__num" data-stat="cities">3</dd></div><div><dt class="mono">Countries</dt><dd class="mapa-stats__num" data-stat="countries">1</dd></div>
+      </dl>
+    </section>
+
+    <section class="section" id="mapa">
+      <div class="container">
+        <div class="section-heading"><div><span class="kicker">World Map of Signals</span><h2>Where the signal has appeared</h2></div></div>
+        <div class="signal-map" id="signal-map" data-signal-map data-src="/data/signals.public.json" data-lang="en" data-confirmed="Confirmed signal" data-photo-alt="Poster displayed at" role="region" aria-label="World map of confirmed signals"></div>
+        <noscript><p class="mono" style="margin-top:10px">The map needs JavaScript to be displayed.</p></noscript>
+        <p class="mono signal-map__hint">Drag to move, use the + and − buttons to zoom. Hover, tap or press Enter on a marker to see the venue. <span>Map: © OpenStreetMap contributors</span></p>
+      </div>
+    </section>
+
+    <section class="section section--divider" id="envie">
+      <div class="container--medium">
+        <span class="kicker">Send your signal</span>
+        <h2 style="margin-top:10px">Placed a signal? Tell us.</h2>
+        <p style="margin-top:10px;color:var(--muted);max-width:66ch">Fill in the details below. This site stores and sends nothing: it builds the message on your device and you send it through Instagram @sinal_ruido, attaching the photo in the chat. Every submission is manually reviewed before anything appears on the map.</p>
+        <form class="signal-form" data-signal-form novalidate autocomplete="on"
+      data-lang="en" data-ig="https://www.instagram.com/sinal_ruido/"
+      data-head="Signal placed (request to be added to the World Map of Signals)" data-labels='{&quot;name&quot;:&quot;Name&quot;,&quot;email&quot;:&quot;Email&quot;,&quot;venue&quot;:&quot;Venue&quot;,&quot;type&quot;:&quot;Type&quot;,&quot;city&quot;:&quot;City&quot;,&quot;region&quot;:&quot;State/region&quot;,&quot;country&quot;:&quot;Country&quot;,&quot;message&quot;:&quot;Message&quot;,&quot;consent&quot;:&quot;I authorize the submitted photo to be used for the project and the World Map of Signals.&quot;,&quot;photo&quot;:&quot;(photo of the poster on site attached)&quot;}' data-types='{&quot;library&quot;:&quot;Library&quot;,&quot;bookstore&quot;:&quot;Bookstore&quot;,&quot;cafe&quot;:&quot;Café&quot;,&quot;university&quot;:&quot;University&quot;,&quot;school&quot;:&quot;School&quot;,&quot;cultural&quot;:&quot;Cultural venue&quot;,&quot;other&quot;:&quot;Other&quot;}'
+      data-copied="Message copied" data-copy="Copy message"
+      data-err-required="Please fill in this field." data-err-email="Enter a valid email." data-err-consent="You need to authorize the use of the photo.">
+      <div class="signal-form__grid">
+        <div class="sf-field"><label for="sf-name">Name</label><input id="sf-name" name="name" type="text" required maxlength="80" autocomplete="name" /></div>
+        <div class="sf-field"><label for="sf-email">Email</label><input id="sf-email" name="email" type="email" required maxlength="120" autocomplete="email" inputmode="email" /></div>
+        <div class="sf-field"><label for="sf-venue">Venue name</label><input id="sf-venue" name="venue" type="text" required maxlength="120" /></div>
+        <div class="sf-field"><label for="sf-type">Venue type</label>
+          <select id="sf-type" name="type" required><option value="">Select…</option><option value="library">Library</option><option value="bookstore">Bookstore</option><option value="cafe">Café</option><option value="university">University</option><option value="school">School</option><option value="cultural">Cultural venue</option><option value="other">Other</option></select></div>
+        <div class="sf-field"><label for="sf-city">City</label><input id="sf-city" name="city" type="text" required maxlength="80" autocomplete="address-level2" /></div>
+        <div class="sf-field"><label for="sf-region">State/region</label><input id="sf-region" name="region" type="text" maxlength="80" autocomplete="address-level1" /></div>
+        <div class="sf-field"><label for="sf-country">Country</label><input id="sf-country" name="country" type="text" required maxlength="80" autocomplete="country-name" /></div>
+      </div>
+      <div class="sf-field"><label for="sf-message">Message (optional)</label><textarea id="sf-message" name="message" rows="3" maxlength="600"></textarea></div>
+      <div class="sf-check"><input type="checkbox" id="sf-consent" name="consent" required /><label for="sf-consent">I authorize the submitted photo to be used for the project and the World Map of Signals.</label></div>
+      <p class="sf-error" role="alert" data-sf-error hidden></p>
+      <button type="submit" class="btn btn--primary">Build message</button>
+      <div class="signal-form__out" data-sf-out hidden>
+        <label for="sf-output">Your message</label>
+        <textarea id="sf-output" data-sf-output rows="11" readonly></textarea>
+        <p class="mono" style="color:var(--muted);font-size:12px">Copy it, open Instagram, paste it into a chat with @sinal_ruido and attach the photo of the poster on site.</p>
+        <div class="home-hero-book__actions">
+          <button type="button" class="btn btn--primary" data-sf-copy>Copy message</button>
+          <a class="btn" href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Open Instagram</a>
+        </div>
+        <p class="mono" role="status" data-sf-status style="font-size:12px;color:var(--verified)"></p>
+      </div>
+    </form>
+      </div>
+    </section></main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div><span class="brand__mark">SINAL<b>/</b>RUÍDO</span></div>
+      <div class="mono footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/world-map-of-signals/">World Map of Signals</a>
+        <a href="/en/world-map-of-signals/choose-your-signal/">Choose your signal</a>
+        <a href="/en/privacy/">Privacy</a>
+        <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

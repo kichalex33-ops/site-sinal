@@ -12,6 +12,11 @@ import "./hero-signal-line.js";
 import "./reading.js";
 import "./buy-router.js";
 import "./book-dialog.js";
+import "./poster-gallery.js";
+
+// Mapa dos Sinais: Leaflet e formulário só carregam na própria página
+if (document.querySelector("[data-signal-map]")) import("./signal-map.js");
+if (document.querySelector("[data-signal-form]")) import("./signal-form.js");
 
 // Menu mobile
 const toggle = document.querySelector("[data-mobile-nav-toggle]");
