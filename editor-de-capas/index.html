@@ -1,0 +1,206 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Editor de capas · SINAL/RUÍDO</title><meta name="description" content="Crie e exporte uma capa completa com lombada, orelhas e sangria."><meta name="theme-color" content="#0b0e14"><link rel="canonical" href="https://sinalruido.com.br/editor-de-capas/"><link rel="alternate" hreflang="pt-BR" href="https://sinalruido.com.br/editor-de-capas/"><link rel="alternate" hreflang="en" href="https://sinalruido.com.br/en/cover-editor/"><link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@400;600;800;900&family=Lora:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&display=swap" rel="stylesheet"><link rel="stylesheet" href="/src/css/cover-editor.css"></head><body>
+<div id="app">
+
+  <header id="topbar">
+    <div class="editor-brand"><a class="site-brand" href="/" aria-label="SINAL/RUÍDO">SINAL<b>/</b>RUÍDO</a>
+      
+      <div>
+        <h1>Editor de capas</h1>
+        <span>CAPA ABERTA · 300 DPI</span>
+      </div>
+    </div>
+    <div class="top-spacer"></div><nav class="editor-site-nav" aria-label="Navegação do site"><a href="/">← Voltar ao site</a><a href="/en/cover-editor/" lang="en" hreflang="en">EN</a></nav>
+    <div class="top-actions">
+      <div class="zoom-group">
+        <button type="button" class="btn" id="zoomOut" title="Reduzir">−</button>
+        <span id="zoomLabel">100%</span>
+        <button type="button" class="btn" id="zoomIn" title="Ampliar">+</button>
+        <button type="button" class="btn" id="zoomFit" title="Ajustar à tela">Ajustar</button>
+      </div>
+      <button type="button" class="btn" id="btnJpg">Exportar JPG</button>
+      <button type="button" class="btn primary" id="btnPdf">Exportar PDF</button>
+    </div>
+  </header>
+
+  <nav class="editor-tabs" aria-label="Painéis do editor"><button type="button" data-editor-panel="document" aria-pressed="false">Documento</button><button type="button" data-editor-panel="preview" aria-pressed="true">Prévia</button><button type="button" data-editor-panel="properties" aria-pressed="false">Propriedades</button></nav><div id="main" data-panel="preview">
+
+    <aside class="sidebar" id="documentPanel" aria-label="Documento">
+      <div class="panel-section">
+        <h3>Documento</h3>
+        <div class="row">
+          <div class="field">
+            <label for="inPageW">Largura da Página (cm)</label>
+            <input type="number" id="inPageW" step="0.1" min="5" max="40" value="14.8">
+          </div>
+          <div class="field">
+            <label for="inPageH">Altura da Página (cm)</label>
+            <input type="number" id="inPageH" step="0.1" min="5" max="40" value="21">
+          </div>
+        </div>
+        <div class="field">
+          <label for="inBleed">Sangria (cm)</label>
+          <input type="number" id="inBleed" step="0.1" min="0" max="5" value="0.5">
+          <div class="hint">Margem extra em cada borda para o corte. Use 0 para não incluir.</div>
+        </div>
+        <label class="check"><input type="checkbox" id="inExportBleed" checked> Incluir sangria no arquivo exportado</label>
+        <div class="field">
+          <label for="inPages">Número de Páginas</label>
+          <input type="number" id="inPages" step="2" min="8" max="2000" value="150">
+        </div>
+        <div class="field">
+          <label for="inFlap">Tamanho da Orelha (cm)</label>
+          <input type="number" id="inFlap" step="0.5" min="0" max="20" value="8">
+          <div class="hint">Use 0 para brochura sem orelha.</div>
+        </div>
+        <div class="field">
+          <label for="inPaper">Tipo de Papel (miolo)</label>
+          <select id="inPaper"></select>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <h3>Cálculo</h3><p class="hint">Confirme a espessura do papel e a lombada com a gráfica antes de imprimir.</p>
+        <div class="summary">
+          <div><span>Papel</span><span id="sPaper">—</span></div>
+          <div><span>Espessura / folha</span><span id="sThick">—</span></div>
+          <div><span>Lombada</span><span id="sSpine">—</span></div>
+          <div><span>Largura total</span><span id="sTotalW">—</span></div>
+          <div><span>Altura total</span><span id="sTotalH">—</span></div>
+          <div><span>Pixels (300 DPI)</span><span id="sPx">—</span></div>
+        </div>
+      </div>
+
+      <!-- ============ IMAGENS DE FUNDO (reescrito) ============ -->
+      <div class="panel-section">
+        <h3>Imagens de Fundo</h3>
+
+        <div class="field">
+          <label for="inImgArea">Área de destino</label>
+          <select id="inImgArea"></select>
+        </div>
+
+        <div class="field">
+          <label for="inImage">Arquivo (JPG / PNG)</label>
+          <input type="file" id="inImage" accept="image/*">
+        </div>
+
+        <div class="field">
+          <label for="inImgFit">Ajuste da área selecionada</label>
+          <select id="inImgFit">
+            <option value="cover">Preencher (cover)</option>
+            <option value="contain">Conter (contain)</option>
+            <option value="fill">Esticar</option>
+          </select>
+        </div>
+
+        <button type="button" class="btn block danger" id="btnClearImg">Remover imagem da área</button>
+        <button type="button" class="btn block danger" id="btnClearAllImg" style="margin-top:6px">Remover todas as imagens</button>
+
+        <div class="hint" id="imgStatus" style="margin-top:9px">—</div>
+      </div>
+      <p class="hint">As imagens e os textos são editados no seu navegador. Não é necessário enviar arquivos para o site.</p>
+
+      <div class="panel-section">
+        <h3>Aparência</h3>
+        <div class="field">
+          <label for="inBgColor">Cor de fundo da capa</label>
+          <input type="color" id="inBgColor" value="#ffffff">
+        </div>
+        <label class="check"><input type="checkbox" id="inShowGuides" checked> Mostrar guias (corte / vinco)</label>
+        <label class="check"><input type="checkbox" id="inShowZones" checked> Mostrar áreas e rótulos</label>
+      </div>
+
+      <div class="panel-section">
+        <h3>Elementos</h3>
+        <button type="button" class="btn block" id="btnAddText">＋ Adicionar bloco de texto</button>
+        <div class="hint">
+          Arraste os blocos pela capa. <strong>Duplo clique</strong> para editar o texto.
+          <strong>Delete</strong> remove o bloco selecionado.
+        </div>
+      </div>
+    </aside>
+
+    <main id="workspace" aria-label="Prévia da capa">
+      <div id="stage">
+        <div id="artboard">
+          <div id="layerBg"      class="ab-layer"></div>
+          <div id="layerZones"   class="ab-layer"></div>
+          <div id="layerGuides"  class="ab-layer"></div>
+          <div id="layerContent" class="ab-layer"></div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="sidebar right" id="propertiesPanel" aria-label="Propriedades">
+      <div class="panel-section">
+        <h3>Propriedades</h3>
+
+        <div id="inspectorEmpty" class="empty-state">
+          Nenhum elemento selecionado.<br>
+          Clique em um bloco de texto na capa.
+        </div>
+
+        <div id="inspectorBody" hidden>
+          <div class="field">
+            <label for="pText">Conteúdo</label>
+            <textarea id="pText" rows="3"></textarea>
+          </div>
+          <div class="field">
+            <label for="pFont">Fonte</label>
+            <select id="pFont"><option value="Oswald, sans-serif">Oswald · SINAL/RUÍDO</option>
+              <option value="'Playfair Display', Georgia, serif">Playfair Display</option>
+              <option value="'Lora', Georgia, serif">Lora</option>
+              <option value="'Montserrat', sans-serif">Montserrat</option>
+              <option value="Inter, sans-serif">Inter</option>
+              <option value="'Bebas Neue', sans-serif">Bebas Neue</option>
+              <option value="Georgia, serif">Georgia</option>
+              <option value="'Times New Roman', serif">Times New Roman</option>
+              <option value="Arial, Helvetica, sans-serif">Arial</option>
+              <option value="'Courier New', monospace">Courier New</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="pSize">Tamanho (pt)</label>
+              <input type="number" id="pSize" step="0.5" min="4" max="300" value="24">
+            </div>
+            <div class="field">
+              <label for="pColor">Cor</label>
+              <input type="color" id="pColor" value="#111111">
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="pAlign">Alinhamento</label>
+              <select id="pAlign">
+                <option value="left">Esquerda</option>
+                <option value="center" selected>Centro</option>
+                <option value="right">Direita</option>
+                <option value="justify">Justificado</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Estilo</label>
+              <div style="display:flex;gap:6px">
+                <button type="button" class="btn" id="pBold"   style="flex:1;font-weight:800" title="Negrito">B</button>
+                <button type="button" class="btn" id="pItalic" style="flex:1;font-style:italic" title="Itálico">I</button>
+              </div>
+            </div>
+          </div>
+          <div class="row3">
+            <div class="field"><label for="pX">X (cm)</label>   <input type="number" id="pX" step="0.1"></div>
+            <div class="field"><label for="pY">Y (cm)</label>   <input type="number" id="pY" step="0.1"></div>
+            <div class="field"><label for="pW">Larg. (cm)</label><input type="number" id="pW" step="0.1" min="0.5"></div>
+          </div>
+          <button type="button" class="btn block danger" id="pDelete">Excluir bloco</button>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+
+<noscript><p class="editor-noscript">Ative o JavaScript para usar o editor de capas.</p></noscript><script type="module" src="/src/js/cover-editor.js"></script></body></html>

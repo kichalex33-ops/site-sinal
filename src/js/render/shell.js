@@ -134,6 +134,7 @@ export function page({
         <a href="/imprensa/">Imprensa</a>
         <a href="/contato/">Contato</a>
         <a href="/privacidade/">Privacidade</a>
+        <a href="/editor-de-capas/">Editor de capas</a>
         <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>
         <span>Ainda não leu? Comece agora.</span>
       </div>
@@ -177,6 +178,7 @@ export function page({
         <a href="/en/world-map-of-signals/">World Map of Signals</a>
         <a href="/en/world-map-of-signals/choose-your-signal/">Choose your signal</a>
         <a href="/en/privacy/">Privacy</a>
+        <a href="/en/cover-editor/">Cover editor</a>
         <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
