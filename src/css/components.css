@@ -1157,3 +1157,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {outline:2px solid 
   .home-hero-book__copy > .conversion-meta {font-size:14px;}
   .home-hero-book__copy > .conversion-actions .btn {flex:1 1 100%;}
 }
+@media(max-width:859px) {.header-actions--en > .lang-switch {display:none;}}
+@media(min-width:860px) and (max-width:1150px) {.header-actions--en {gap:6px;} .header-actions--en .lang-switch {padding:8px;font-size:12px;} header:has(.header-actions--en) .brand__mark {font-size:22px;} header:has(.header-actions--en) .brand__sub {display:none;}}
+.conversion-meta a {text-decoration:underline;text-underline-offset:3px;}
+[data-reading-return][hidden] {display:none !important;}

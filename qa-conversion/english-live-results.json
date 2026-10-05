@@ -1,0 +1,222 @@
+[
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/en/",
+    "scroll": 393,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/en/signal-noise/",
+    "scroll": 393,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/livro/sample/",
+    "scroll": 393,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/en/chronicles/",
+    "scroll": 393,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/en/chronicles/os-deuses-nao-tem-filhos/",
+    "scroll": 393,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/en/readers/",
+    "scroll": 393,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/buy/",
+    "scroll": 393,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/en/author/",
+    "scroll": 393,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/",
+    "scroll": 393,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/livro/amostra/",
+    "scroll": 393,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/en/",
+    "scroll": 1440,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/en/signal-noise/",
+    "scroll": 1440,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/livro/sample/",
+    "scroll": 1440,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/en/chronicles/",
+    "scroll": 1440,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/en/chronicles/os-deuses-nao-tem-filhos/",
+    "scroll": 1440,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/en/readers/",
+    "scroll": 1440,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/buy/",
+    "scroll": 1440,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/en/author/",
+    "scroll": 1440,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/",
+    "scroll": 1440,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/livro/amostra/",
+    "scroll": 1440,
+    "images": [],
+    "h1": 1,
+    "headerOverlap": false,
+    "errors": [],
+    "failed": []
+  }
+]

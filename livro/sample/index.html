@@ -9,6 +9,9 @@
   <meta name="theme-color" content="#0B0E14" />
   <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://sinalruido.com.br/livro/sample/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://sinalruido.com.br/livro/amostra/" />
+  <link rel="alternate" hreflang="en" href="https://sinalruido.com.br/livro/sample/" />
+  <link rel="alternate" hreflang="x-default" href="https://sinalruido.com.br/livro/amostra/" />
   <meta property="og:title" content="SIGNAL/NOISE: free sample chapters · SINAL/RUÍDO" />
   <meta property="og:description" content="Read a free sample of the first three chapters of SIGNAL/NOISE, a novel by Alex Jr. Kich." />
   <meta property="og:type" content="website" />
@@ -35,13 +38,14 @@
 
   <header class="site-header">
     <div class="container site-header__row">
-      <a href="/" class="brand">
+      <a href="/en/" class="brand">
         <span class="brand__mark">SINAL<b>/</b>RUÍDO</span>
         <span class="brand__sub">SIGNAL/NOISE · Alex Jr. Kich</span>
       </a>
-      <div class="header-actions">
+      <nav class="main-nav" aria-label="Main navigation"><a href="/livro/sample/">Read</a><a href="/en/signal-noise/">The book</a><a href="/en/author/">Author</a><a href="/buy/">Buy</a></nav>
+      <div class="header-actions header-actions--en">
         <a href="/en/world-map-of-signals/" class="lang-switch">World Map</a>
-        <a href="/" class="lang-switch" hreflang="pt-BR">Português</a>
+        <a href="/livro/amostra/" class="lang-switch" hreflang="pt-BR">Português</a>
         <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram @sinal_ruido">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
@@ -49,24 +53,28 @@
             <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
           </svg>
         </a>
+        <button type="button" class="mobile-nav-toggle" data-mobile-nav-toggle aria-label="Open menu" aria-expanded="false">☰</button>
       </div>
     </div>
+    <nav class="mobile-nav container" data-mobile-nav aria-label="Navigation">
+      <a href="/livro/sample/">Read 3 free chapters</a><a href="/en/signal-noise/">SIGNAL/NOISE</a><a href="/buy/">Buy the English edition</a><a href="/en/chronicles/">Cosmological Chronicles</a><a href="/en/author/">Author</a><a href="/en/archive/">Archive</a><a href="/en/world-map-of-signals/">World Map of Signals</a><a href="/en/readers/">After reading</a><a href="/livro/amostra/" class="lang-switch" hreflang="pt-BR">Português</a>
+    </nav>
   </header>
 
   <main id="conteudo">
-    <article class="section reading-shell" data-reading-sample>
+    <article class="section reading-shell" data-reading-sample><h1 class="visually-hidden">SIGNAL/NOISE — free sample</h1>
       <header class="reading-meta">
         <div><span class="badge" style="border-color:var(--signal);color:var(--signal)">FICTION · FREE SAMPLE</span><p class="mono">SIGNAL/NOISE · Alex Jr. Kich</p></div>
         <div class="reading-tools" aria-label="Reading options"><button type="button" data-reading-size="down" aria-label="Decrease font size">A−</button><button type="button" data-reading-size="up" aria-label="Increase font size">A+</button><button type="button" data-reading-theme aria-label="Toggle reading mode">◐</button></div>
       </header>
 
-      <nav class="chapter-nav" aria-label="Sample chapters">
-        <button type="button" data-chapter-tab="chapter-1-en" aria-selected="true"><span>1</span>The Bad File</button><button type="button" data-chapter-tab="chapter-2-en" aria-selected="false"><span>2</span>Known Error</button><button type="button" data-chapter-tab="chapter-3-en" aria-selected="false"><span>3</span>The Machine Against Itself</button>
+      <nav class="chapter-nav" id="chapters" role="tablist" aria-label="Sample chapters">
+        <button type="button" id="tab-chapter-1-en" role="tab" aria-controls="chapter-1-en" tabindex="0" data-chapter-tab="chapter-1-en" aria-selected="true"><span>1</span>The Bad File</button><button type="button" id="tab-chapter-2-en" role="tab" aria-controls="chapter-2-en" tabindex="-1" data-chapter-tab="chapter-2-en" aria-selected="false"><span>2</span>Known Error</button><button type="button" id="tab-chapter-3-en" role="tab" aria-controls="chapter-3-en" tabindex="-1" data-chapter-tab="chapter-3-en" aria-selected="false"><span>3</span>The Machine Against Itself</button>
       </nav>
 
-      <section class="paper reading-paper" data-chapter-panel="chapter-1-en" >
+      <section class="paper reading-paper" id="chapter-1-en" role="tabpanel" aria-labelledby="tab-chapter-1-en" data-chapter-panel="chapter-1-en" >
         <p class="mono reading-progress">CHAPTER 1 OF 3</p>
-        <h1>1. The Bad File</h1>
+        <h2>1. The Bad File</h2>
         <div class="reading-body">
           <p>On the night of August 15, 1977, the strongest narrowband signal Big Ear would record in nearly twenty-four years of systematic searching for extraterrestrial intelligence reached Earth while no one was listening.</p>
           <p>Big Ear did not track a source across the sky. It set its declination band and let Earth&#39;s rotation drag the stars through its beams, the way a page passes slowly beneath your eyes. What the instrument received was converted into a number, and that number was printed on continuous paper as a character: digits for lower intensities, letters for higher ones, an economy of ink that turned the universe&#39;s background noise into columns of readable marks.</p>
@@ -359,9 +367,9 @@
           <p>This time, no one was watching.</p>
         </div>
         <div class="chapter-end"><span>End of chapter 1</span><button class="btn btn--primary" type="button" data-next-chapter="chapter-2-en">Next chapter →</button></div>
-      </section><section class="paper reading-paper" data-chapter-panel="chapter-2-en" hidden>
+      </section><section class="paper reading-paper" id="chapter-2-en" role="tabpanel" aria-labelledby="tab-chapter-2-en" data-chapter-panel="chapter-2-en" hidden>
         <p class="mono reading-progress">CHAPTER 2 OF 3</p>
-        <h1>2. Known Error</h1>
+        <h2>2. Known Error</h2>
         <div class="reading-body">
           <p>By 8:26 the next morning, Henrique already had a list of suspects.</p>
           <p>The list was printed.</p>
@@ -780,9 +788,9 @@
           <p>And something had remained.</p>
         </div>
         <div class="chapter-end"><span>End of chapter 2</span><button class="btn btn--primary" type="button" data-next-chapter="chapter-3-en">Next chapter →</button></div>
-      </section><section class="paper reading-paper" data-chapter-panel="chapter-3-en" hidden>
+      </section><section class="paper reading-paper" id="chapter-3-en" role="tabpanel" aria-labelledby="tab-chapter-3-en" data-chapter-panel="chapter-3-en" hidden>
         <p class="mono reading-progress">CHAPTER 3 OF 3</p>
-        <h1>3. The Machine Against Itself</h1>
+        <h2>3. The Machine Against Itself</h2>
         <div class="reading-body">
           <p>The next morning, Henrique decided that the best way to trust ARGOS was to teach it to lie.</p>
           <p>Lara read the sentence on the whiteboard and spent several seconds saying nothing.</p>
@@ -1043,10 +1051,16 @@
           <p>The problem was the other thing.</p>
           <p>The thing that kept surviving.</p>
         </div>
-        <div class="chapter-end"><span>End of chapter 3</span><a class="btn btn--primary" href="https://www.amazon.com/dp/B0HJP3HM7J">Buy the book →</a></div>
+        <div class="chapter-end"><span>End of chapter 3</span><section class="sample-finish" data-sample-finish><h2>You have reached the end of the sample.</h2><p>But the signal continues.</p><div class="conversion-actions" id="continuar-amostra">
+    <a class="btn btn--primary" href="https://www.amazon.com/dp/B0HJP3HM7J" target="_blank" rel="noopener noreferrer">Continue on Kindle</a>
+    <a class="btn btn--primary" href="https://www.amazon.com/dp/B0HJQQBS8Q" target="_blank" rel="noopener noreferrer">Get the paperback</a>
+    
+    
+  </div><p class="conversion-meta">Alex Jr. Kich · English · Kindle / paperback / hardcover · Amazon · Check price in store</p>
+  <p class="conversion-meta">Kindle and paperback: Amazon US. <a href="/buy/">Choose your country and edition</a>.</p><a class="btn" href="/en/signal-noise/">Back to the book</a></section></div>
       </section>
 
-      <div class="reading-actions"><a class="btn" href="/livro/">Read in Portuguese →</a><a class="btn" href="/casos/">Explore the real cases →</a></div>
+      <div class="reading-actions"><a class="btn" data-reading-return href="/en/signal-noise/">Back to the book</a><a class="btn" href="/en/archive/">Explore the real cases</a></div>
     </article></main>
 
   <footer class="site-footer">

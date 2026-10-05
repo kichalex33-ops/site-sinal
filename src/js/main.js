@@ -47,6 +47,7 @@ document.querySelectorAll("[data-copy-pix]").forEach((btn) => {
 // Botão de compartilhar (Web Share API + fallback de copiar link)
 document.querySelectorAll("[data-share]").forEach((btn) => {
   btn.addEventListener("click", async () => {
+    const en = document.documentElement.lang.startsWith("en");
     const title = btn.dataset.shareTitle || document.title;
     const text = btn.dataset.shareText || "";
     const url = document.querySelector('link[rel="canonical"]')?.href || window.location.href;
@@ -61,11 +62,11 @@ document.querySelectorAll("[data-share]").forEach((btn) => {
     try {
       await navigator.clipboard.writeText(url);
       const original = btn.textContent;
-      btn.textContent = "Link copiado";
+      btn.textContent = en ? "Link copied" : "Link copiado";
       setTimeout(() => { btn.textContent = original; }, 2000);
     } catch {
       const status = document.querySelector("[data-share-status]");
-      if (status) status.textContent = "Não foi possível copiar. Copie o endereço da página.";
+      if (status) status.textContent = en ? "Could not copy the link. Copy the page address." : "Não foi possível copiar. Copie o endereço da página.";
     }
   });
 });

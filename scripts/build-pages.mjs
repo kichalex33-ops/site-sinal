@@ -86,10 +86,10 @@ function clean(routePath) {
 // Botão de compra: ícone da loja (Amazon) e preço opcional. Preço só aparece se informado nos dados
 // (books.json: `prices` por campo de link, ou `purchasePrice`); nunca é inventado.
 const AMAZON_ICON = `<svg class="buy-link__icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M.045 18.02c.072-.116.187-.124.348-.022 3.636 2.11 7.594 3.166 11.87 3.166 2.852 0 5.668-.533 8.447-1.595l.315-.14c.138-.06.234-.1.293-.13.226-.088.39-.046.525.13.12.174.09.336-.12.48-.256.19-.6.41-1.006.654-1.244.743-2.64 1.316-4.185 1.726a17.617 17.617 0 01-10.951-.577 17.88 17.88 0 01-5.43-3.35c-.1-.074-.151-.15-.151-.22 0-.047.021-.09.051-.13zm6.565-6.218c0-1.005.247-1.863.743-2.577.495-.71 1.17-1.25 2.04-1.615.796-.335 1.756-.575 2.912-.72.39-.046 1.033-.103 1.92-.174v-.37c0-.93-.105-1.558-.3-1.875-.302-.43-.78-.65-1.44-.65h-.182c-.48.046-.896.196-1.246.46-.35.27-.575.63-.675 1.096-.06.3-.206.465-.435.51l-2.52-.315c-.248-.06-.372-.18-.372-.39 0-.046.007-.09.022-.15.247-1.29.855-2.25 1.82-2.88.976-.616 2.1-.975 3.39-1.05h.54c1.65 0 2.957.434 3.888 1.29.135.15.27.3.405.48.12.165.224.314.283.45.075.134.15.33.195.57.06.254.105.42.135.51.03.104.062.3.076.615.01.313.02.493.02.553v5.28c0 .376.06.72.165 1.036.105.313.21.54.315.674l.51.674c.09.136.136.256.136.36 0 .12-.06.226-.18.314-1.2 1.05-1.86 1.62-1.963 1.71-.165.135-.375.15-.63.045a6.062 6.062 0 01-.526-.496l-.31-.347a9.391 9.391 0 01-.317-.42l-.3-.435c-.81.886-1.603 1.44-2.4 1.665-.494.15-1.093.227-1.83.227-1.11 0-2.04-.343-2.76-1.034-.72-.69-1.08-1.665-1.08-2.94l-.05-.076zm3.753-.438c0 .566.14 1.02.425 1.364.285.34.675.512 1.155.512.045 0 .106-.007.195-.02.09-.016.134-.023.166-.023.614-.16 1.08-.553 1.424-1.178.165-.28.285-.58.36-.91.09-.32.12-.59.135-.8.015-.195.015-.54.015-1.005v-.54c-.84 0-1.484.06-1.92.18-1.275.36-1.92 1.17-1.92 2.43l-.035-.02zm9.162 7.027c.03-.06.075-.11.132-.17.362-.243.714-.41 1.05-.5a8.094 8.094 0 011.612-.24c.14-.012.28 0 .41.03.65.06 1.05.168 1.172.33.063.09.099.228.099.39v.15c0 .51-.149 1.11-.424 1.8-.278.69-.664 1.248-1.156 1.68-.073.06-.14.09-.197.09-.03 0-.06 0-.09-.012-.09-.044-.107-.12-.064-.24.54-1.26.806-2.143.806-2.64 0-.15-.03-.27-.087-.344-.145-.166-.55-.257-1.224-.257-.243 0-.533.016-.87.046-.363.045-.7.09-1 .135-.09 0-.148-.014-.18-.044-.03-.03-.036-.047-.02-.077 0-.017.006-.03.02-.063v-.06z"/></svg>`;
-function buyLinkHtml(url, format, store, price) {
+function buyLinkHtml(url, format, store, price, lang = "pt") {
   if (!url) return "";
   const icon = /^Amazon/.test(store) ? AMAZON_ICON : "";
-  return `<a class="buy-link" href="${escapeHtml(url)}" target="_blank" rel="noopener"><span class="buy-link__format">${format}</span><span class="buy-link__store">${icon}<span>${store}</span><em class="buy-link__price">Ver preço na loja</em></span><span class="buy-link__arrow" aria-hidden="true">↗</span></a>`;
+  return `<a class="buy-link" href="${escapeHtml(url)}" target="_blank" rel="noopener"><span class="buy-link__format">${format}</span><span class="buy-link__store">${icon}<span>${store}</span><em class="buy-link__price">${lang === "en" ? "Check price in store" : "Ver preço na loja"}</em></span><span class="buy-link__arrow" aria-hidden="true">↗</span></a>`;
 }
 
 function buyPanel(book, { hideEnBr = false, hidePt = false } = {}) {
@@ -116,33 +116,56 @@ function buyPanel(book, { hideEnBr = false, hidePt = false } = {}) {
 
 
 const conversion = JSON.parse(readFileSync(join(dataDir, "book-conversion.json"), "utf-8"));
-function purchaseActions(b, {sample = true, ending = false} = {}) {
+function purchaseActions(b, {sample = true, ending = false, lang = 'pt'} = {}) {
+  const en = lang === 'en', origin = b.slug === 'sinal-ruido';
+  const kindle = en ? b.purchaseUrlEn : b.purchaseUrl;
+  const print = en ? origin ? buyLinks('US').find(l => l.edition === 'paperback')?.url : b.purchaseUrlEnUk : b.purchaseUrlUiclap;
+  const link = (url, label) => url ? `<a class="btn btn--primary" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${label}</a>` : '';
   return `<div class="conversion-actions" id="${ending ? 'continuar-amostra' : 'comprar-' + b.slug}">
-    ${b.purchaseUrl ? `<a class="btn btn--primary" href="${escapeHtml(b.purchaseUrl)}" target="_blank" rel="noopener noreferrer">${ending ? 'Continuar no Kindle' : b.slug === 'sinal-ruido' ? 'Comprar Kindle' : 'Comprar na Amazon'}</a>` : ''}
-    ${b.purchaseUrlUiclap ? `<a class="btn btn--primary" href="${escapeHtml(b.purchaseUrlUiclap)}" target="_blank" rel="noopener noreferrer">${ending ? 'Quero o livro impresso' : 'Comprar impresso'}</a>` : ''}
-    ${sample && b.sampleUrl ? `<a class="btn" href="${escapeHtml(b.sampleUrl)}">Ler 3 capítulos grátis</a>` : ''}
-  </div><p class="conversion-meta">${escapeHtml(b.author)} · Português${b.slug === 'sinal-ruido' ? ' · Kindle' : ''}${b.purchaseUrlUiclap ? ' e impresso · Amazon / UICLAP' : ' · Amazon'}${b.kindlePages ? ' · ' + b.kindlePages + ' páginas no Kindle' : ''} · Ver preço na loja</p>`;
+    ${link(kindle, en ? (ending ? 'Continue on Kindle' : 'Buy Kindle') : ending ? 'Continuar no Kindle' : origin ? 'Comprar Kindle' : 'Comprar na Amazon')}
+    ${link(print, en ? (ending ? 'Get the paperback' : 'Buy paperback') : ending ? 'Quero o livro impresso' : 'Comprar impresso')}
+    ${en && !kindle && b.purchaseUrl ? link(b.purchaseUrl, 'Buy the Portuguese edition') : ''}
+    ${sample && origin ? `<a class="btn" href="${en ? '/livro/sample/' : b.sampleUrl}">${en ? 'Read 3 free chapters' : 'Ler 3 capítulos grátis'}</a>` : ''}
+  </div><p class="conversion-meta">${escapeHtml(b.author)} · ${en ? kindle ? 'English · Kindle / paperback / hardcover · Amazon · Check price in store' : 'Portuguese edition · Amazon · Check price in store' : 'Português' + (origin ? ' · Kindle' : '') + (print ? ' e impresso · Amazon / UICLAP' : ' · Amazon') + (b.kindlePages ? ' · ' + b.kindlePages + ' páginas no Kindle' : '') + ' · Ver preço na loja'}</p>
+  ${en && origin ? '<p class="conversion-meta">Kindle and paperback: Amazon US. <a href="/buy/">Choose your country and edition</a>.</p>' : ''}`;
 }
-function authorCompact() {
-  return `<section class="author-compact"><img src="/autor/retrato.jpg" alt="Alex Jr. Kich" width="1149" height="1368" loading="lazy"><div><span class="kicker">Sobre o autor</span><h2>Alex Jr. Kich</h2><p>Escritor, artista e criador de mundos. Vive no Rio Grande do Sul, desenha, compõe e escreve histórias em diferentes escalas.</p><a class="btn" href="/autor/">Conhecer o autor</a></div></section>`;
+
+function authorCompact(lang = 'pt') {
+  const en = lang === 'en';
+  return `<section class="author-compact"><img src="/autor/retrato.jpg" alt="Alex Jr. Kich" width="1149" height="1368" loading="lazy"><div><span class="kicker">${en ? 'About the author' : 'Sobre o autor'}</span><h2>Alex Jr. Kich</h2><p>${en ? 'Writer, artist and worldbuilder. Based in Rio Grande do Sul, Brazil, he draws, composes and writes stories at different scales.' : 'Escritor, artista e criador de mundos. Vive no Rio Grande do Sul, desenha, compõe e escreve histórias em diferentes escalas.'}</p><a class="btn" href="${en ? '/en/author/' : '/autor/'}">${en ? 'Meet the author' : 'Conhecer o autor'}</a></div></section>`;
 }
-function conversionEditorial(b) {
-  const reviews = conversion.reviews.filter(r => r.book_id === b.slug && r.name && r.comment);
-  const press = conversion.press.filter(r => r.book_id === b.slug && r.title && /^https:\/\//.test(r.url));
-  return (reviews.length ? `<section class="section"><h2>O que os leitores estão dizendo</h2>${reviews.map(r => `<figure class="card"><blockquote>${escapeHtml(r.comment)}</blockquote><figcaption>${escapeHtml(r.name)}${r.origin ? ' · ' + escapeHtml(r.origin) : ''}${r.date ? ' · ' + escapeHtml(r.date) : ''}</figcaption></figure>`).join('')}</section>` : '') +
-    (press.length ? `<section class="section"><h2>Imprensa e conversas</h2>${press.map(r => `<p><a href="${escapeHtml(r.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(r.title)}</a></p>`).join('')}</section>` : '');
+
+function conversionEditorial(b, lang = 'pt') {
+  const reviews = conversion.reviews.filter(r => r.book_id === b.slug && (r.lang || 'pt') === lang && r.name && r.comment);
+  const press = conversion.press.filter(r => r.book_id === b.slug && (r.lang || 'pt') === lang && r.title && /^https:\/\//.test(r.url));
+  return (reviews.length ? `<section class="section"><h2>${lang === 'en' ? 'What readers are saying' : 'O que os leitores estão dizendo'}</h2>${reviews.map(r => `<figure class="card"><blockquote>${escapeHtml(r.comment)}</blockquote><figcaption>${escapeHtml(r.name)}${r.origin ? ' · ' + escapeHtml(r.origin) : ''}${r.date ? ' · ' + escapeHtml(r.date) : ''}</figcaption></figure>`).join('')}</section>` : '') +
+    (press.length ? `<section class="section"><h2>${lang === 'en' ? 'Press and conversations' : 'Imprensa e conversas'}</h2>${press.map(r => `<p><a href="${escapeHtml(r.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(r.title)}</a></p>`).join('')}</section>` : '');
 }
-function stickyPurchase(b) {
-  return `<aside class="mobile-purchase" aria-label="Comprar o livro"><span>${escapeHtml(b.title)}</span><a class="btn btn--primary" href="#comprar-${b.slug}">Comprar</a></aside>`;
+function stickyPurchase(b, lang = 'pt') {
+  const en = lang === 'en';
+  return `<aside class="mobile-purchase" aria-label="${en ? 'Buy the book' : 'Comprar o livro'}"><span>${escapeHtml(en && b.slug === 'sinal-ruido' ? 'SIGNAL/NOISE' : en && b.titleEn || b.title)}</span><a class="btn btn--primary" href="#comprar-${b.slug}">${en ? 'Buy' : 'Comprar'}</a></aside>`;
 }
+
 function bookSchema(b, path, en = false) {
-  const schema = {'@context':'https://schema.org','@type':'Book',name:en && b.titleEn || b.title,author:{'@type':'Person',name:b.author,url:SITE_URL+'/autor/'},url:SITE_URL+path,image:SITE_URL+(en && b.coverEn || b.cover),inLanguage:en ? 'en' : 'pt-BR',description:b.description};
+  const schema = {'@context':'https://schema.org','@type':'Book',name:en && b.purchaseUrlEn ? (b.titleEn || (b.slug === 'sinal-ruido' ? 'SIGNAL/NOISE' : b.title)) : b.slug === 'sinal-ruido' && en ? 'SIGNAL/NOISE' : b.title,author:{'@type':'Person',name:b.author,url:SITE_URL+(en ? '/en/author/' : '/autor/')},url:SITE_URL+path,image:SITE_URL+(en && b.purchaseUrlEn && b.coverEn || b.cover),inLanguage:en && b.purchaseUrlEn ? 'en' : 'pt-BR',description:en ? (bookSheetsEn[b.slug]?.synopsis || b.description).split(/\n\s*\n/)[0] : b.description};
   if(b.isbn) schema.isbn=b.isbn;
   return '<script type="application/ld+json">'+JSON.stringify(schema).replace(/</g,'\\u003c')+'</script>';
 }
 const shortSynopsis = `<p>Em Santa Maria, Henrique usa o sinal Wow! de 1977 para testar ARGOS, um sistema que procura estruturas em dados imperfeitos. Ele espera encontrar erro. Encontra um padrão que resiste a cada tentativa de descartá-lo.</p><p>Com Marina e Lara, a investigação atravessa registros, lembranças e acontecimentos no Brasil. Mas correlação não é prova — e separar coincidência de evidência começa a cobrar um preço humano.</p>`;
 function readerFit() {
   return `<section class="section container--narrow"><span class="kicker">Este livro é para você se…</span><h2>Você pode gostar de SINAL/RUÍDO se procura:</h2><ul class="reader-fit"><li>Ficção científica investigativa.</li><li>Mistérios envolvendo sinais e fenômenos reais.</li><li>Primeiro contato tratado com seriedade.</li><li>Documentos, arquivos e pistas dentro da narrativa.</li><li>Histórias em que ciência, obsessão e incerteza se misturam.</li></ul></section>`;
+}
+
+
+const shortSynopsisEn = `<p>In Santa Maria, Brazil, Henrique uses the Wow! signal recorded in 1977 to test ARGOS, a system built to find patterns in imperfect data. He expects an error. Instead, he finds a pattern that survives every attempt to dismiss it.</p><p>With Marina and Lara, the investigation crosses records, memories and events in Brazil. But correlation is not proof — and separating coincidence from evidence begins to exact a human cost.</p>`;
+function readerFitEn() {
+  return `<section class="section container--narrow"><span class="kicker">This book may be for you if…</span><h2>You may enjoy SIGNAL/NOISE if you are looking for:</h2><ul class="reader-fit"><li>Investigative science fiction.</li><li>Mysteries involving signals and real phenomena.</li><li>A serious approach to first contact.</li><li>Documents, archives and clues woven into the story.</li><li>Stories where science, obsession and uncertainty meet.</li></ul></section>`;
+}
+const englishStatus = b => b.status === 'À venda' ? b.purchaseUrlEn ? 'Available' : 'Available in Portuguese' : SHEET_UI.en.statusMap[b.status] || b.status;
+function englishAvailableBooks() {
+  const gods = books.find(b => b.slug === 'os-deuses-nao-tem-filhos');
+  const sh = bookSheetsEn[gods.slug];
+  return `<section class="section home-vitrine" id="books"><div class="container"><span class="kicker">The published books</span><h2>The story continues</h2><article class="vitrine-card" style="margin-top:24px"><a class="vitrine-card__cover" href="/en/chronicles/${gods.slug}/"><img src="${escapeHtml(gods.cover)}" alt="Cover of the Portuguese edition of ${escapeHtml(gods.title)}" width="300" height="480" loading="lazy"></a><div class="vitrine-card__body"><span class="badge badge--sale">Available in Portuguese</span><span class="mono">Cosmological Chronicles · Volume I</span><h3><a href="/en/chronicles/${gods.slug}/">${escapeHtml(gods.titleEn)}</a></h3><p>${escapeHtml(sh.tagline)}</p><p>${escapeHtml(sh.synopsis.split(/\n\s*\n/)[0])}</p>${purchaseActions(gods,{lang:'en',sample:false})}<a class="btn" href="/en/chronicles/${gods.slug}/">Read the synopsis and details</a></div></article></div></section>`;
 }
 
 // Vitrine da página inicial: destaque para os livros à venda e catálogo completo (substitui a antiga /livros/).
@@ -1262,7 +1285,7 @@ function livroAmostraPage() {
         <div class="chapter-end"><span>Fim do capítulo ${c.n}</span>${i < chapters.length - 1 ? `<button class="btn btn--primary" type="button" data-next-chapter="${chapters[i+1].id}">Capítulo seguinte →</button>` : `<section class="sample-finish" data-sample-finish><h2>Você chegou ao fim da amostra.</h2><p>Mas o sinal continua.</p>${purchaseActions(books.find(b => b.slug === "sinal-ruido"), {sample:false, ending:true})}<a class="btn" href="/livros/sinal-ruido/">Voltar à página do livro</a></section>`}</div>
       </section>`).join("")}
 
-      <div class="reading-actions"><a class="btn" href="/livro/">← Voltar ao livro</a><a class="btn" href="/casos/">Explorar os casos reais →</a></div>
+      <div class="reading-actions"><a class="btn" data-reading-return href="/livro/">← Voltar ao livro</a><a class="btn" href="/casos/">Explorar os casos reais →</a></div>
     </article>`;
   write("/livro/amostra", page({
     title: "Amostra do romance",
@@ -1277,26 +1300,26 @@ function livroAmostraPage() {
 function livroSampleEnPage() {
   const chapters = SAMPLE_CHAPTERS_EN;
   const body = `
-    <article class="section reading-shell" data-reading-sample>
+    <article class="section reading-shell" data-reading-sample><h1 class="visually-hidden">SIGNAL/NOISE — free sample</h1>
       <header class="reading-meta">
         <div><span class="badge" style="border-color:var(--signal);color:var(--signal)">FICTION · FREE SAMPLE</span><p class="mono">SIGNAL/NOISE · Alex Jr. Kich</p></div>
         <div class="reading-tools" aria-label="Reading options"><button type="button" data-reading-size="down" aria-label="Decrease font size">A−</button><button type="button" data-reading-size="up" aria-label="Increase font size">A+</button><button type="button" data-reading-theme aria-label="Toggle reading mode">◐</button></div>
       </header>
 
-      <nav class="chapter-nav" aria-label="Sample chapters">
-        ${chapters.map((c, i) => `<button type="button" data-chapter-tab="${c.id}" aria-selected="${i === 0 ? "true" : "false"}"><span>${c.n}</span>${escapeHtml(c.title)}</button>`).join("")}
+      <nav class="chapter-nav" id="chapters" role="tablist" aria-label="Sample chapters">
+        ${chapters.map((c, i) => `<button type="button" id="tab-${c.id}" role="tab" aria-controls="${c.id}" tabindex="${i === 0 ? "0" : "-1"}" data-chapter-tab="${c.id}" aria-selected="${i === 0 ? "true" : "false"}"><span>${c.n}</span>${escapeHtml(c.title)}</button>`).join("")}
       </nav>
 
-      ${chapters.map((c, i) => `<section class="paper reading-paper" data-chapter-panel="${c.id}" ${i ? "hidden" : ""}>
+      ${chapters.map((c, i) => `<section class="paper reading-paper" id="${c.id}" role="tabpanel" aria-labelledby="tab-${c.id}" data-chapter-panel="${c.id}" ${i ? "hidden" : ""}>
         <p class="mono reading-progress">CHAPTER ${c.n} OF 3</p>
-        <h1>${c.n}. ${escapeHtml(c.title)}</h1>
+        <h2>${c.n}. ${escapeHtml(c.title)}</h2>
         <div class="reading-body">
           ${c.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join("\n          ")}
         </div>
-        <div class="chapter-end"><span>End of chapter ${c.n}</span>${i < chapters.length - 1 ? `<button class="btn btn--primary" type="button" data-next-chapter="${chapters[i+1].id}">Next chapter →</button>` : `<a class="btn btn--primary" href="${escapeHtml((books.find((b) => b.slug === "sinal-ruido") || books[0]).purchaseUrlEn || "/livro/")}">Buy the book →</a>`}</div>
+        <div class="chapter-end"><span>End of chapter ${c.n}</span>${i < chapters.length - 1 ? `<button class="btn btn--primary" type="button" data-next-chapter="${chapters[i+1].id}">Next chapter →</button>` : `<section class="sample-finish" data-sample-finish><h2>You have reached the end of the sample.</h2><p>But the signal continues.</p>${purchaseActions(books.find(b => b.slug === "sinal-ruido"), {sample:false,ending:true,lang:"en"})}<a class="btn" href="/en/signal-noise/">Back to the book</a></section>`}</div>
       </section>`).join("")}
 
-      <div class="reading-actions"><a class="btn" href="/livro/">Read in Portuguese →</a><a class="btn" href="/casos/">Explore the real cases →</a></div>
+      <div class="reading-actions"><a class="btn" data-reading-return href="/en/signal-noise/">Back to the book</a><a class="btn" href="/en/archive/">Explore the real cases</a></div>
     </article>`;
   write("/livro/sample", page({
     title: "SIGNAL/NOISE: free sample chapters",
@@ -1306,7 +1329,7 @@ function livroSampleEnPage() {
     ogImage: "/livro/capa-en.jpg",
     lang: "en",
     ogLocale: "en_US",
-    minimal: true,
+    minimal: true, langSwitch: "/livro/amostra/", alternates: ptEnAlternates("/livro/amostra/", "/livro/sample/"),
   }));
 }
 
@@ -1349,7 +1372,7 @@ const SHEET_UI = {
   },
 };
 
-const SINAL_RUIDO_ORIGIN = { slug: "sinal-ruido", title: "SIGNAL/NOISE", author: "Alex Jr. Kich", numeral: "Origin", status: "Origin work", cover: "/livro/capa-en.jpg" };
+const SINAL_RUIDO_ORIGIN = { ...books.find(b => b.slug === "sinal-ruido"), slug: "sinal-ruido", title: "SIGNAL/NOISE", author: "Alex Jr. Kich", numeral: "Origin", status: "À venda", cover: "/livro/capa-en.jpg" };
 
 // /livros/<slug> (pt) e /en/chronicles/<slug> (en): ficha do livro com sinopse, personagens e seções.
 // Dados em src/data/book-sheets.json (pt) e book-sheets-en.json (en). Páginas em inglês ficam noindex
@@ -1363,14 +1386,14 @@ function bookSheetPage(b, list, lang) {
   const ui = SHEET_UI[lang];
   const en = lang === "en";
   const tt = (x) => (en && x.titleEn) || x.title;
-  const cv = (x) => (en && x.coverEn) || x.cover;
+  const cv = (x) => en && isOnSale(x) && !x.purchaseUrlEn ? x.cover : (en && x.coverEn) || x.cover;
   const isOrigin = b.slug === "sinal-ruido";
   const sh = (en ? bookSheetsEn : bookSheets)[b.slug] || {};
   const otherSheet = (en ? bookSheets : bookSheetsEn)[b.slug];
   const amb = sh.ambientacao || {};
   const paras = (t) => String(t || "").split(/\n\s*\n/).filter(Boolean).map((x) => `<p>${escapeHtml(x)}</p>`).join("");
   const synopsis = sh.synopsis || b.synopsis || "";
-  const status = en && b.status === "À venda" ? "Available" : ui.statusMap[b.status] || b.status;
+  const status = en ? englishStatus(b) : ui.statusMap[b.status] || b.status;
   const rows = [
     ...(isOrigin ? [en ? ["Type", "Origin work, outside the numbering of the Cosmological Chronicles"] : ["Tipo", "Obra de origem, fora da numeração das Crônicas Cosmológicas"]] : [[ui.seriesLabel, ui.series], [ui.volume, b.numeral]]),
     ...(en && b.titleEn ? [["Original title", b.title]] : []),
@@ -1406,13 +1429,13 @@ function bookSheetPage(b, list, lang) {
             <h1 style="margin-top:12px">${escapeHtml(tt(b))}</h1>
             <p class="mono" style="margin-top:8px;color:var(--signal)">${escapeHtml(b.author)}</p>
             ${sh.tagline ? `<p class="book-sheet__tagline" style="margin-top:14px;font-style:italic;color:var(--muted)">${escapeHtml(sh.tagline)}</p>` : ""}
-            ${!en && isOnSale(b) ? purchaseActions(b) + (isOrigin ? shortSynopsis : "") : ""}
+            ${isOnSale(b) ? purchaseActions(b, {lang}) + (isOrigin ? en ? shortSynopsisEn : shortSynopsis : "") : ""}
             <div class="book-sheet__synopsis">${synopsis ? paras(synopsis) : `<p class="book-sheet__pending">${ui.synopsisSoon}</p>`}</div>
-            ${isOrigin && en ? `<p style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--primary" href="/livro/sample/">Read the sample</a><a class="btn" href="/buy/">Get the book</a></p>` : ""}${isOrigin && !en ? `<details class="conversion-editions"><summary>Outras edições e idiomas</summary>${buyPanel(b, {hidePt:true})}</details>` : ""}
+            ${isOrigin && !en ? `<details class="conversion-editions"><summary>Outras edições e idiomas</summary>${buyPanel(b, {hidePt:true})}</details>` : ""}
           </div>
         </div>
 
-        ${!en && isOnSale(b) ? authorCompact() + conversionEditorial(b) + stickyPurchase(b) + `<button class="btn" type="button" data-share>Compartilhar</button><span class="visually-hidden" role="status" data-share-status></span>` : ""}
+        ${isOnSale(b) ? authorCompact(lang) + conversionEditorial(b, lang) + stickyPurchase(b, lang) + `<button class="btn" type="button" data-share>${en ? "Share" : "Compartilhar"}</button><span class="visually-hidden" role="status" data-share-status></span>` : ""}
         <div class="book-sheet__grid">
           <section class="paper book-sheet__box">
             <span class="kicker">${ui.sheet}</span>
@@ -1452,7 +1475,7 @@ function bookSheetPage(b, list, lang) {
 function chroniclesEnPage(list) {
   const withEn = list.filter((b) => (bookSheetsEn[b.slug] || {}).synopsis);
   const origin = bookSheetsEn["sinal-ruido"] || {};
-  const status = (s) => s === "À venda" ? "Available" : SHEET_UI.en.statusMap[s] || s;
+  const status = (s) => s === "À venda" ? "Available in Portuguese" : SHEET_UI.en.statusMap[s] || s;
   const body = `
     <section class="section books-page">
       <div class="container">
@@ -1470,11 +1493,12 @@ function chroniclesEnPage(list) {
               <h2>SIGNAL/NOISE</h2>
               <p class="mono">Alex Jr. Kich · Not numbered as part of the Cosmological Chronicles</p>
               ${origin.tagline ? `<p style="margin-top:10px;font-style:italic;color:var(--muted)">${escapeHtml(origin.tagline)}</p>` : ""}
-              <p style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--primary" href="/en/signal-noise/">Discover SIGNAL/NOISE</a><a class="btn" href="/livro/sample/">Read the sample</a></p>
+              ${purchaseActions(books.find(b => b.slug === "sinal-ruido"), {lang:"en"})}<a class="btn" href="/en/signal-noise/">Discover SIGNAL/NOISE</a>
             </div>
           </div>
         </section>
 
+        ${englishAvailableBooks()}
         <section class="books-future" id="chronicles">
           <span class="kicker">Cosmological Chronicles · I–X</span>
           <div class="books-grid books-grid--covers" style="margin-top:16px">${withEn.map((b) => `<a class="book-card book-card--cover" href="/en/chronicles/${b.slug}/"><img src="${escapeHtml(b.coverEn || b.cover)}" alt="Cover of ${escapeHtml(b.titleEn || b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(status(b.status))}</span><h3>${escapeHtml(b.titleEn || b.title)}</h3>${(bookSheetsEn[b.slug] || {}).tagline ? `<p>${escapeHtml(bookSheetsEn[b.slug].tagline)}</p>` : ""}<span class="book-card__more mono">Synopsis and details →</span></a>`).join("")}</div>
@@ -1493,70 +1517,21 @@ function chroniclesEnPage(list) {
 
 // /en — English home. Hub for the global site: SIGNAL/NOISE, the Cosmological Chronicles and the author.
 function enHomePage(list) {
-  const featuredBook = books.find((b) => b.slug === "sinal-ruido");
-  const origin = bookSheetsEn["sinal-ruido"] || {};
-  const withEn = list.filter((b) => (bookSheetsEn[b.slug] || {}).synopsis);
-  const status = (s) => SHEET_UI.en.statusMap[s] || s;
-
+  const b = books.find(b => b.slug === 'sinal-ruido');
+  const future = list.filter(b => b.status !== 'À venda' && bookSheetsEn[b.slug]?.synopsis);
   const body = `
-    <section class="home-hero-book grid-texture" data-book-hero>
-      <div class="container home-hero-book__grid">
-        <div class="home-hero-book__copy" data-book-hero-copy>
-          <span class="kicker">Novel · Science fiction investigation</span>
-          <h1 class="home-hero-book__title">SIGNAL<span class="title-slash">/</span>NOISE</h1>
-          <p class="mono home-hero-book__author">${escapeHtml(featuredBook.author)}</p>
-          <p class="home-hero-book__pitch">A signal arrives from where it shouldn't — and someone decides it's safer to call it noise.</p>
-          <div class="home-hero-book__actions">
-            <a class="btn btn--primary" href="/livro/sample/">Read the sample</a>
-            <a class="btn" href="/en/signal-noise/">Discover SIGNAL/NOISE</a>
-          </div>
-          ${buyPanel(featuredBook, { hideEnBr: true, hidePt: true })}
-        </div>
-        <div class="home-hero-book__cover" data-book-hero-cover>
-          <img src="/livro/capa-en.jpg" alt="Cover of SIGNAL/NOISE" width="400" height="600" />
-        </div>
-      </div>
-    </section>
-
-    <section class="section container--narrow home-about-book">
-      <span class="kicker">About the novel</span>
-      <h2 style="margin-top:10px">SIGNAL/NOISE</h2>
-      ${origin.tagline ? `<p class="home-about-book__lead" style="margin-top:14px;font-style:italic">${escapeHtml(origin.tagline)}</p>` : ""}
-      <p class="home-about-book__lead" style="margin-top:14px">On August 15, 1977, the Big Ear radio telescope picked up, for 72 seconds, a signal too strong to be noise. It never repeated. SIGNAL/NOISE begins with that real event and follows three people whose lives it never should have touched.</p>
-    </section>
-
-    ${homeCallout("en")}
-
-    <section class="section section--divider" id="chronicles">
-      <div class="container">
-        <div class="section-heading"><div><span class="kicker">Cosmological Chronicles · I–X</span><h2>Ten stories. One Archive. No complete answer.</h2></div></div>
-        <div class="books-grid books-grid--covers" style="margin-top:16px">${withEn.map((b) => `<a class="book-card book-card--cover" href="/en/chronicles/${b.slug}/"><img src="${escapeHtml(b.coverEn || b.cover)}" alt="Cover of ${escapeHtml(b.titleEn || b.title)}" loading="lazy" /><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(status(b.status))}</span><h3>${escapeHtml(b.titleEn || b.title)}</h3>${(bookSheetsEn[b.slug] || {}).tagline ? `<p>${escapeHtml(bookSheetsEn[b.slug].tagline)}</p>` : ""}</a>`).join("")}</div>
-        <div style="margin-top:20px"><a class="btn btn--primary" href="/en/chronicles/">Explore the Chronicles</a></div>
-      </div>
-    </section>
-
-    <section class="section section--divider">
-      <div class="container" style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;justify-content:space-between">
-        <div>
-          <span class="kicker">The author</span>
-          <h2 style="margin-top:10px">Alex Jr. Kich</h2>
-          <p style="margin-top:8px;color:var(--muted);max-width:56ch">Writer, artist and worldbuilder, based in Rio Grande do Sul, Brazil. Author of SIGNAL/NOISE, the Cosmological Chronicles and VALANDOR.</p>
-        </div>
-        <a class="btn" href="/en/author/">Meet the author</a>
-      </div>
-    </section>`;
-
-  write("/en", page({
-    title: "SIGNAL/NOISE",
-    description: "SIGNAL/NOISE, a novel by Alex Jr. Kich. A real signal captured in 1977, and a question that never went away. Read the first chapters for free.",
-    path: "/en/",
-    bodyHtml: body,
-    ogImage: "/livro/capa-en.jpg",
-    lang: "en", ogLocale: "en_US", minimal: true, langSwitch: "/",
-    alternates: ptEnAlternates("/", "/en/"),
-  }));
+    <section class="home-hero-book grid-texture" data-book-hero><div class="container home-hero-book__grid"><div class="home-hero-book__copy" data-book-hero-copy><span class="kicker">Novel · Investigative science fiction</span><h1 class="home-hero-book__title">SIGNAL<span class="title-slash">/</span>NOISE</h1><p class="mono home-hero-book__author">${escapeHtml(b.author)}</p><p class="home-hero-book__pitch">A real signal.<br>A fictional investigation.<br>A question we perhaps should never answer.</p><p class="conversion-meta">An investigative science fiction novel by Alex Jr. Kich.</p>${purchaseActions(b,{lang:'en'})}</div><div class="home-hero-book__cover" data-book-hero-cover><img src="/livro/capa-en.jpg" alt="Cover of SIGNAL/NOISE" width="400" height="640"></div></div></section>
+    ${readerFitEn()}
+    <section class="section container--narrow home-about-book"><span class="kicker">About the novel</span><h2>SIGNAL/NOISE</h2><p class="conversion-meta">Novel · Available in English</p>${shortSynopsisEn}<a class="btn" href="/en/signal-noise/">Discover the story and book details</a></section>
+    <section class="section section--divider home-sample"><div class="container"><div class="section-heading"><div><span class="kicker">Read before you decide</span><h2>Read the first three chapters for free.</h2></div></div><div class="home-sample__grid">${SAMPLE_CHAPTERS_EN.map(c=>`<a class="home-sample__chapter card" href="/livro/sample/"><span class="mono">CHAPTER ${c.n}</span><h3>${escapeHtml(c.title)}</h3></a>`).join('')}</div><p style="margin-top:20px"><a class="btn btn--primary" href="/livro/sample/">Start reading</a></p></div></section>
+    <div class="container">${conversionEditorial(b,'en')}</div>
+    ${englishAvailableBooks()}
+    <div class="container">${authorCompact('en')}</div>
+    <section class="section container--narrow"><span class="kicker">The real starting point</span><h2>The Wow! signal</h2><p>The 1977 record is the novel’s starting point. In the public archive, sources, testimony and hypotheses remain separate from fiction.</p><p><a class="btn" href="/en/archive/cases/sinal-wow/">Investigate the Wow! signal</a><a class="btn" href="/en/archive/">Enter the archive</a></p></section>
+    ${homeCallout('en')}
+    <section class="section section--divider home-catalog" id="chronicles"><div class="container"><span class="kicker">Cosmological Chronicles · I–X</span><h2>The universe continues</h2><p>Upcoming books in a shared universe.</p><div class="books-grid books-grid--covers" style="margin-top:20px">${future.map(b=>`<a class="book-card book-card--cover" href="/en/chronicles/${b.slug}/"><img src="${escapeHtml(b.coverEn || b.cover)}" alt="Cover of ${escapeHtml(b.titleEn || b.title)}" width="300" height="480" loading="lazy"><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(englishStatus(b))}</span><h3>${escapeHtml(b.titleEn || b.title)}</h3><p>${escapeHtml(bookSheetsEn[b.slug]?.tagline || '')}</p></a>`).join('')}</div><p><a class="btn" href="/en/chronicles/">Explore the Chronicles</a></p></div></section>`;
+  write('/en',page({title:'SIGNAL/NOISE',description:'SIGNAL/NOISE, an investigative science fiction novel by Alex Jr. Kich. Read three free chapters or buy the English Kindle and print editions.',path:'/en/',bodyHtml:body,ogImage:'/livro/capa-en.jpg',lang:'en',ogLocale:'en_US',minimal:true,langSwitch:'/',alternates:ptEnAlternates('/','/en/')}));
 }
-
 
 // /cortesia/<token> — páginas não listadas de cortesia (uma em português, outra em inglês): só acessa quem tem o
 // link (noindex, fora do menu, do sitemap e da busca). O EPUB fica sob o mesmo endereço secreto.
@@ -1821,7 +1796,7 @@ function buyPage() {
   const markets = marketList();
   const chips = markets.map((m) => `<a class="buy-chip" href="#${m.code.toLowerCase()}" data-market-chip="${m.code}">${escapeHtml(m.name)}</a>`).join("");
   const sections = markets.map((m) => {
-    const links = buyLinks(m.code).map((l) => `${buyLinkHtml(l.url, escapeHtml(l.label), "Amazon " + m.code)}`).join("");
+    const links = buyLinks(m.code).map((l) => `${buyLinkHtml(l.url, escapeHtml(l.label), "Amazon " + m.code, undefined, "en")}`).join("");
     return `<section class="buy-market" id="${m.code.toLowerCase()}" data-market="${m.code}">
         <h2>${escapeHtml(m.name)} <span class="mono buy-market__flag" data-suggested-label hidden>Suggested for you</span></h2>
         <div class="buy-group__links">${links}</div>
@@ -1891,7 +1866,7 @@ function enLeitoresPage() {
   const body = `
     <section class="section container--narrow">
       <span class="kicker">For readers of the book</span>
-      <h1 style="margin-top:12px">The investigation doesn't end here.</h1>
+      <h1 style="margin-top:12px">After reading</h1><p>The investigation doesn't end here.</p>
       <p style="margin-top:8px;color:var(--muted)">The novel is fiction. The themes it touches — and the cases that inspired it — are real and remain documented in this public archive.</p>
 
       <section style="margin-top:32px">

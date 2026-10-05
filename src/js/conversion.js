@@ -11,9 +11,9 @@ export function track(name, extra = {}) {
 }
 window.addEventListener('sinalruido:consent', e => setAnalyticsConsent(e.detail?.analytics));
 const origin = books.find(b => b.slug === 'sinal-ruido');
-const current = books.find(b => location.pathname === `/livros/${b.slug}/`) ||
+const current = books.find(b => b.slug === document.querySelector('[data-book-id]')?.dataset.bookId || location.pathname === `/livros/${b.slug}/`) ||
   (['/livro/','/livro/amostra/','/livro/sample/','/en/signal-noise/'].includes(location.pathname) ? origin : null);
-const payload = b => ({book_id:b?.slug,book_title:b?.title});
+const payload = b => ({book_id:b?.slug,book_title:document.documentElement.lang.startsWith('en') ? b?.titleEn || (b?.slug === 'sinal-ruido' ? 'SIGNAL/NOISE' : b?.title) : b?.title});
 let viewed = false;
 window.addEventListener('sinalruido:consent', () => {
   if (viewed || !consent) return;
@@ -38,10 +38,12 @@ document.addEventListener('click', e => {
 }, {capture:true});
 const ending = document.querySelector('[data-sample-finish]');
 if(ending) {
+  let finished = false;
   const observer = new IntersectionObserver(entries=> {
     if(entries.some(e=>e.isIntersecting) && !ending.closest('[hidden]')) {
-      if (track('finish_sample',payload(origin))) observer.disconnect();
+      if (!finished && track('finish_sample',payload(origin))) {finished = true;observer.disconnect();}
     }
   },{threshold:0.1});
   observer.observe(ending);
+  window.addEventListener('sinalruido:consent', () => { if(consent && !finished) {observer.unobserve(ending); observer.observe(ending);} });
 }

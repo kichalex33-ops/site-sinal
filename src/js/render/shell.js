@@ -148,11 +148,12 @@ export function page({
   </div>`;
   const minimalHeader = `  <header class="site-header">
     <div class="container site-header__row">
-      <a href="/" class="brand">
+      <a href="/en/" class="brand">
         <span class="brand__mark">SINAL<b>/</b>RUÍDO</span>
         <span class="brand__sub">SIGNAL/NOISE · Alex Jr. Kich</span>
       </a>
-      <div class="header-actions">
+      <nav class="main-nav" aria-label="Main navigation"><a href="/livro/sample/">Read</a><a href="/en/signal-noise/">The book</a><a href="/en/author/">Author</a><a href="/buy/">Buy</a></nav>
+      <div class="header-actions header-actions--en">
         <a href="/en/world-map-of-signals/" class="lang-switch"${path.startsWith("/en/world-map") ? ' aria-current="page"' : ""}>World Map</a>
         ${langSwitchHtml}
         <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram @sinal_ruido">
@@ -162,8 +163,12 @@ export function page({
             <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
           </svg>
         </a>
+        <button type="button" class="mobile-nav-toggle" data-mobile-nav-toggle aria-label="Open menu" aria-expanded="false">☰</button>
       </div>
     </div>
+    <nav class="mobile-nav container" data-mobile-nav aria-label="Navigation">
+      <a href="/livro/sample/">Read 3 free chapters</a><a href="/en/signal-noise/">SIGNAL/NOISE</a><a href="/buy/">Buy the English edition</a><a href="/en/chronicles/">Cosmological Chronicles</a><a href="/en/author/">Author</a><a href="/en/archive/">Archive</a><a href="/en/world-map-of-signals/">World Map of Signals</a><a href="/en/readers/">After reading</a>${langSwitchHtml}
+    </nav>
   </header>`;
   const minimalFooter = `  <footer class="site-footer">
     <div class="container site-footer__grid">
