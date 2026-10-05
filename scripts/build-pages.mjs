@@ -6,7 +6,6 @@ import { caseCard, collectionCard, mediaCard } from "../src/js/render/cards.js";
 import { editorialBadge, maturityBadge, provenanceBadge, integrityBadge, escapeHtml } from "../src/js/render/badges.js";
 import { marketList, buyLinks, buyData, validateI18n } from "./i18n.mjs";
 import { mapaBody, escolhaBody, MAPA_SEO, ESCOLHA_SEO, homeCallout, writePublicSignals } from "./mapa.mjs";
-import {coverEditorPage} from './cover-editor.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -2752,8 +2751,6 @@ enPrivacidadePage();
 contatoPage();
 enContatoPage();
 mapaPages();
-write('/editor-de-capas',coverEditorPage('pt'));
-write('/en/cover-editor',coverEditorPage('en'));
 writePublicSignals();
 buyPage();
 notFoundPage();
