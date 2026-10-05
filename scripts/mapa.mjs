@@ -1,5 +1,5 @@
 // Mapa dos Sinais / World Map of Signals: dados + HTML das duas versoes.
-// Fonte unica dos pontos: src/data/signals.json. So status "confirmed" sai do repositorio para o site:
+// Fonte única: src/data/signals.json. Publica somente os status editoriais autorizados:
 // o gerador filtra aqui e escreve public/data/signals.public.json (o mapa e os cards leem dele).
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
@@ -12,7 +12,7 @@ const read = (f) => JSON.parse(readFileSync(join(root, "src/data", f), "utf-8"))
 const signalsData = read("signals.json");
 const postersData = read("posters.json");
 
-export const PUBLIC_STATUS = "confirmed";
+import { PUBLIC_SIGNAL_STATUSES, signalStatus } from "../src/js/signal-status.js";
 
 function validate() {
   const errors = [];
@@ -21,26 +21,26 @@ function validate() {
     if (ids.has(s.id)) errors.push(`id duplicado: ${s.id}`);
     ids.add(s.id);
     if (!signalsData.statuses.includes(s.status)) errors.push(`${s.id}: status invalido (${s.status})`);
-    if (s.status === PUBLIC_STATUS) {
+    if (PUBLIC_SIGNAL_STATUSES.includes(s.status)) {
       const lat = s.latitude, lon = s.longitude;
-      if (typeof lat !== "number" || typeof lon !== "number" || Math.abs(lat) > 90 || Math.abs(lon) > 180) errors.push(`${s.id}: confirmed exige latitude/longitude validas`);
-      for (const k of ["nome", "cidade", "pais", "pais_en", "pais_codigo", "tipo"]) if (!s[k]) errors.push(`${s.id}: confirmed sem ${k}`);
+      if (typeof lat !== "number" || typeof lon !== "number" || Math.abs(lat) > 90 || Math.abs(lon) > 180) errors.push(`${s.id}: local público exige latitude/longitude validas`);
+      for (const k of ["nome", "cidade", "pais", "pais_en", "pais_codigo", "tipo"]) if (!s[k]) errors.push(`${s.id}: local público sem ${k}`);
     }
   }
   if (errors.length) throw new Error("signals.json invalido:\n- " + errors.join("\n- "));
 }
 
-export function confirmedSignals() {
+export function publicSignals() {
   validate();
   return signalsData.signals
-    .filter((s) => s.status === PUBLIC_STATUS)
+    .filter((s) => PUBLIC_SIGNAL_STATUSES.includes(s.status))
     // campos publicos apenas: nada de "interno", coord_source etc.
-    .map(({ id, nome, nome_en, tipo, cidade, estado, estado_sigla, pais, pais_en, pais_codigo, latitude, longitude, status, data_confirmacao, foto, descricao, descricao_en, link }) =>
-      ({ id, nome, nome_en: nome_en || nome, tipo, cidade, estado, estado_sigla, pais, pais_en, pais_codigo, latitude, longitude, status, data_confirmacao, foto, descricao, descricao_en, link }));
+    .map(({ id, nome, nome_en, tipo, cidade, estado, estado_sigla, pais, pais_en, pais_codigo, latitude, longitude, coord_precision, status, data_confirmacao, foto, descricao, descricao_en, link }) =>
+      ({ id, nome, nome_en: nome_en || nome, tipo, cidade, estado, estado_sigla, pais, pais_en, pais_codigo, latitude, longitude, coord_precision, status, data_confirmacao, foto, descricao, descricao_en, link }));
 }
 
 export function writePublicSignals() {
-  const list = confirmedSignals();
+  const list = publicSignals();
   mkdirSync(join(root, "public/data"), { recursive: true });
   writeFileSync(join(root, "public/data/signals.public.json"), JSON.stringify({ signals: list }, null, 1) + "\n");
   return list;
@@ -67,9 +67,9 @@ const T = {
     cta2: "Ver o mapa",
     tagline: "Um sinal começou no Brasil. Agora ele pode aparecer em qualquer lugar do mundo.",
     statsLabel: "Números do mapa",
-    statNames: ["Sinais confirmados", "Cidades", "Países"],
-    mapH: "Onde o sinal já apareceu",
-    mapLabel: "Mapa-múndi com os sinais confirmados",
+    statNames: ["Locais acompanhados", "Cidades", "Países"],
+    mapH: "Por onde o sinal está chegando",
+    mapLabel: "Mapa-múndi com locais confirmados e em negociação",
     mapHint: "Arraste para mover, use os botões + e − para ampliar. Passe o mouse, toque ou pressione Enter em um marcador para ver o local.",
     mapNoJs: "O mapa precisa de JavaScript para ser exibido.",
     photoAlt: "Cartaz exposto em",
@@ -130,9 +130,9 @@ const T = {
     cta2: "Explore the map",
     tagline: "A signal began in Brazil. Now it can appear anywhere in the world.",
     statsLabel: "Map numbers",
-    statNames: ["Confirmed signals", "Cities", "Countries"],
-    mapH: "Where the signal has appeared",
-    mapLabel: "World map of confirmed signals",
+    statNames: ["Locations tracked", "Cities", "Countries"],
+    mapH: "Where the signal is reaching",
+    mapLabel: "World map of confirmed locations and negotiations",
     mapHint: "Drag to move, use the + and − buttons to zoom. Hover, tap or press Enter on a marker to see the venue.",
     mapNoJs: "The map needs JavaScript to be displayed.",
     photoAlt: "Poster displayed at",
@@ -220,9 +220,22 @@ function chip(group, value, label, pressed) {
   return `<button type="button" class="buy-chip poster-chip" data-poster-filter="${group}" data-filter-value="${value}" aria-pressed="${pressed}">${escapeHtml(label)}</button>`;
 }
 
+
+function signalDirectory(t, list) {
+  const en = t.lang === 'en';
+  const approximate = en ? 'Approximate city location; venue address not yet provided.' : 'Localização aproximada na cidade; endereço do local ainda não informado.';
+  const keys = ['photo', 'waiting-photo', 'installation', 'negotiation'];
+  const labels = keys.map(key => ({key, ...signalStatus({status: key === 'negotiation' ? 'in_negotiation' : key === 'installation' ? 'accepted_waiting_installation' : 'confirmed', foto: key === 'photo' ? 'photo' : null}, t.lang)}));
+  return `<p class="signal-directory__intro">${en ? 'Confirmed locations and ongoing negotiations. Negotiations do not mean a poster is already installed.' : 'Locais confirmados e negociações em andamento. Em negociação não significa que o cartaz já esteja instalado.'}</p>
+    <ul class="signal-legend" aria-label="${en ? 'Location status legend' : 'Legenda dos status'}">${labels.map(({key,label}) => `<li class="signal-status signal-status--${key}">${escapeHtml(label)} · ${list.filter(s => signalStatus(s,t.lang).key === key).length}</li>`).join('')}</ul>
+    <p class="signal-directory__note">${escapeHtml(approximate)}</p>
+    <details class="signal-directory" open><summary>${en ? 'All locations and their status' : 'Todos os locais e seus status'} (${list.length})</summary>
+      <ul class="signal-directory__grid">${list.map(s => {const status = signalStatus(s,t.lang); return `<li><h3>${escapeHtml(en ? s.nome_en : s.nome)}</h3><p>${escapeHtml([s.cidade,s.estado_sigla || s.estado,en ? s.pais_en : s.pais].filter(Boolean).join(' — '))}</p><p class="signal-status signal-status--${status.key}">${escapeHtml(status.label)}</p>${s.coord_precision === 'area' ? `<small>${escapeHtml(approximate)}</small>` : ''}<button type="button" class="btn" data-signal-focus="${escapeHtml(s.id)}">${en ? 'View on map' : 'Ver no mapa'}</button>${s.foto ? `<a href="${escapeHtml(s.foto)}">${en ? 'View photo' : 'Ver foto'}</a>` : ''}</li>`;}).join('')}</ul></details>`;
+}
+
 export function mapaBody(lang) {
   const t = T[lang];
-  const list = confirmedSignals();
+  const list = publicSignals();
   const st = stats(list);
   const nums = [st.signals, st.cities, st.countries];
 
@@ -253,6 +266,7 @@ export function mapaBody(lang) {
         <div class="signal-map" id="signal-map" data-signal-map data-src="/data/signals.public.json" data-lang="${lang}" data-confirmed="${escapeHtml(t.confirmedLabel)}" data-photo-alt="${escapeHtml(t.photoAlt)}" role="region" aria-label="${escapeHtml(t.mapLabel)}"></div>
         <noscript><p class="mono" style="margin-top:10px">${escapeHtml(t.mapNoJs)}</p></noscript>
         <p class="mono signal-map__hint">${escapeHtml(t.mapHint)} <span>${escapeHtml(t.mapAttr)}</span></p>
+        ${signalDirectory(t, list)}
       </div>
     </section>
 

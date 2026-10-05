@@ -1161,3 +1161,26 @@ a:focus-visible, button:focus-visible, summary:focus-visible {outline:2px solid 
 @media(min-width:860px) and (max-width:1150px) {.header-actions--en {gap:6px;} .header-actions--en .lang-switch {padding:8px;font-size:12px;} header:has(.header-actions--en) .brand__mark {font-size:22px;} header:has(.header-actions--en) .brand__sub {display:none;}}
 .conversion-meta a {text-decoration:underline;text-underline-offset:3px;}
 [data-reading-return][hidden] {display:none !important;}
+/* Editorial location status: labels accompany every color. */
+.signal-status--photo, .signal-status--waiting-photo {color:#70d99a !important;}
+.signal-status--installation {color:#8bc9ff !important;}
+.signal-status--negotiation {color:#f0cc73 !important;}
+.signal-marker span {width:20px;height:20px;margin:5px;display:grid;place-items:center;background:#3b9860;animation:none;color:#07120c;font-weight:700;font-size:12px;}
+.signal-marker--waiting-photo span {background:#3b9860;border-style:dashed;}
+.signal-marker--installation span {background:#74b9f4;}
+.signal-marker--negotiation span {background:#e4bb53;}
+.signal-directory__intro {margin-top:24px;line-height:1.6;}
+.signal-directory__note {color:var(--muted);font-size:13px;margin:12px 0 20px;}
+.signal-legend {display:flex;gap:12px 24px;flex-wrap:wrap;list-style:none;padding:0;margin:14px 0;font-size:13px;}
+.signal-status::before {content:'●';margin-right:7px;}
+.signal-directory summary {cursor:pointer;padding:16px 0;font-weight:700;}
+.signal-directory__grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));list-style:none;padding:0;gap:16px;}
+.signal-directory__grid > li {border:1px solid var(--border);border-radius:var(--radius-md);padding:18px;display:flex;flex-direction:column;gap:10px;background:var(--surface);min-width:0;}
+.signal-directory__grid h3 {font-size:17px;line-height:1.4;overflow-wrap:anywhere;}
+.signal-directory__grid p {font-size:14px;line-height:1.5;}
+.signal-directory__grid small,.signal-popup small {color:var(--muted);line-height:1.5;}
+.signal-directory__grid .btn {margin-top:auto;align-self:flex-start;min-height:44px;cursor:pointer;}
+.signal-directory__grid a {text-decoration:underline;min-height:24px;}
+.signal-popup-group {display:grid;gap:18px;}
+.signal-popup + .signal-popup {border-top:1px solid var(--border);padding-top:14px;}
+.signal-popup em {text-transform:none;letter-spacing:0;line-height:1.5;}

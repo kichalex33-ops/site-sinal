@@ -1,0 +1,38 @@
+[
+  {
+    "channel": "chrome",
+    "width": 393,
+    "lang": "pt",
+    "locations": 14,
+    "markers": 13,
+    "errors": [],
+    "scroll": 393
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "lang": "en",
+    "locations": 14,
+    "markers": 13,
+    "errors": [],
+    "scroll": 393
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "lang": "pt",
+    "locations": 14,
+    "markers": 13,
+    "errors": [],
+    "scroll": 1440
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "lang": "en",
+    "locations": 14,
+    "markers": 13,
+    "errors": [],
+    "scroll": 1440
+  }
+]

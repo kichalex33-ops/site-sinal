@@ -1,0 +1,16 @@
+import {chromium} from 'file:///F:/SINAL_RUIDO/entrelinhas-site/node_modules/playwright-core/index.mjs';
+import {spawn} from 'node:child_process';import {writeFileSync,readFileSync} from 'node:fs';import assert from 'node:assert/strict';
+const base=process.env.SR_QA_BASE||'http://127.0.0.1:4182';const local=!process.env.SR_QA_BASE;const server=local?spawn(process.execPath,['node_modules/vite/bin/vite.js','preview','--host','127.0.0.1','--port','4182'],{windowsHide:true,stdio:'ignore'}):null;const results=[];
+try{
+ if(local)for(let i=0;i<50;i++){try{if((await fetch(base)).ok)break;}catch{}await new Promise(r=>setTimeout(r,200));}
+ const data=await(await fetch(base+'/data/signals.public.json')).json();assert.equal(data.signals.length,14);assert.equal(data.signals.filter(s=>s.status==='in_negotiation').length,7);assert.equal(data.signals.filter(s=>s.status==='accepted_waiting_installation').length,1);assert.equal(data.signals.filter(s=>s.foto).length,2);assert.equal(data.signals.filter(s=>s.status==='confirmed'&&!s.foto).length,4);assert.ok(!JSON.stringify(data).includes('interno'));assert.ok(!JSON.stringify(data).includes('coord_source'));
+ for(const channel of local?['chrome','msedge']:['chrome']){const browser=await chromium.launch({channel,headless:true});
+ for(const width of local?[320,393,768,1440]:[393,1440])for(const lang of ['pt','en']){
+ const page=await browser.newPage({viewport:{width,height:900},reducedMotion:'reduce'});const errors=[];page.on('pageerror',e=>errors.push(e.message));const path=lang==='pt'?'/mapa-dos-sinais/':'/en/world-map-of-signals/';await page.goto(base+path,{waitUntil:'networkidle'});await page.waitForSelector('.signal-marker');assert.equal(await page.locator('.signal-marker').count(),13);assert.equal(await page.locator('.signal-directory__grid > li').count(),14);assert.equal(await page.locator('[data-stat="signals"]').textContent(),'14');assert.equal(await page.locator('[data-stat="cities"]').textContent(),'13');assert.equal(await page.locator('[data-stat="countries"]').textContent(),'3');
+ for(const s of data.signals){await page.locator(`[data-signal-focus="${s.id}"]`).click();const text=await page.locator('.leaflet-popup-content').textContent();assert.ok(text.includes(lang==='pt'?s.nome:s.nome_en));if(s.status==='in_negotiation')assert.ok(text.includes(lang==='pt'?'Em negociação':'In negotiation'));if(s.coord_precision==='area')assert.ok(text.includes(lang==='pt'?'Localização aproximada':'Approximate city location'));}
+ const layout=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));assert.ok(layout.scroll<=width+1,JSON.stringify(layout));assert.equal(errors.length,0,JSON.stringify(errors));
+ if(channel==='chrome'&&[393,1440].includes(width)){await page.locator('#mapa').scrollIntoViewIfNeeded();await page.waitForTimeout(1200);await page.screenshot({path:`qa-conversion/map-${local?'local':'live'}-${lang}-${width}.png`});}
+ results.push({channel,width,lang,locations:14,markers:13,errors,...layout});await page.close();}
+ await browser.close();}
+ writeFileSync(`qa-conversion/map-${local?'results':'live-results'}.json`,JSON.stringify(results,null,2)+'\n');console.log(JSON.stringify({checks:results.length,locations:14,statusCounts:{photo:2,waitingPhoto:4,installation:1,negotiation:7}}));
+}finally{server?.kill();}

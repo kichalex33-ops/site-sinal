@@ -1,0 +1,262 @@
+[
+  {
+    "query": "Seattle, Washington, USA",
+    "result": [
+      {
+        "place_id": 325639520,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 237385,
+        "lat": "47.6038321",
+        "lon": "-122.3300620",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 16,
+        "importance": 0.7344378062407435,
+        "addresstype": "city",
+        "name": "Seattle",
+        "display_name": "Seattle, King County, Washington, United States",
+        "boundingbox": [
+          "47.4810022",
+          "47.7341503",
+          "-122.4596960",
+          "-122.2244330"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "São Paulo, SP, Brasil",
+    "result": [
+      {
+        "place_id": 9054698,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 298285,
+        "lat": "-23.5506507",
+        "lon": "-46.6333824",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 16,
+        "importance": 0.7552016442287615,
+        "addresstype": "city",
+        "name": "São Paulo",
+        "display_name": "São Paulo, Região Sudeste, Brasil",
+        "boundingbox": [
+          "-24.0079003",
+          "-23.3577551",
+          "-46.8262692",
+          "-46.3650898"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Christchurch, New Zealand",
+    "result": [
+      {
+        "place_id": 24624213,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 2730349,
+        "lat": "-43.5309550",
+        "lon": "172.6364343",
+        "category": "place",
+        "type": "city",
+        "place_rank": 16,
+        "importance": 0.65369460759656,
+        "addresstype": "city",
+        "name": "Christchurch",
+        "display_name": "Christchurch, Christchurch City, Canterbury, New Zealand / Aotearoa",
+        "boundingbox": [
+          "-43.6285930",
+          "-43.4346175",
+          "172.4239816",
+          "172.7797721"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Curitiba, PR, Brasil",
+    "result": [
+      {
+        "place_id": 429397612,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 297514,
+        "lat": "-25.4295963",
+        "lon": "-49.2712724",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 16,
+        "importance": 0.6492979132521693,
+        "addresstype": "city",
+        "name": "Curitiba",
+        "display_name": "Curitiba, Paraná, Região Sul, Brasil",
+        "boundingbox": [
+          "-25.6435043",
+          "-25.3450768",
+          "-49.3891400",
+          "-49.1843182"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Londrina, PR, Brasil",
+    "result": [
+      {
+        "place_id": 420399638,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 297756,
+        "lat": "-23.3112878",
+        "lon": "-51.1595023",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 16,
+        "importance": 0.5681449262508692,
+        "addresstype": "city",
+        "name": "Londrina",
+        "display_name": "Londrina, Paraná, Região Sul, Brasil",
+        "boundingbox": [
+          "-23.7799202",
+          "-23.1721548",
+          "-51.3212639",
+          "-50.8760623"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "São Leopoldo, RS, Brasil",
+    "result": [
+      {
+        "place_id": 7823065,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 242399,
+        "lat": "-29.7544405",
+        "lon": "-51.1516497",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 16,
+        "importance": 0.5557602196119722,
+        "addresstype": "city",
+        "name": "São Leopoldo",
+        "display_name": "São Leopoldo, Rio Grande do Sul, Região Sul, Brasil",
+        "boundingbox": [
+          "-29.8122567",
+          "-29.6719664",
+          "-51.2100287",
+          "-51.0680000"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Canela, RS, Brasil",
+    "result": [
+      {
+        "place_id": 419427890,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 242467,
+        "lat": "-29.3636094",
+        "lon": "-50.8096844",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 16,
+        "importance": 0.5321712867329288,
+        "addresstype": "town",
+        "name": "Canela",
+        "display_name": "Canela, Rio Grande do Sul, Região Sul, Brasil",
+        "boundingbox": [
+          "-29.4420000",
+          "-29.2475181",
+          "-50.8901771",
+          "-50.6420000"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Varginha, MG, Brasil",
+    "result": [
+      {
+        "place_id": 9848923,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 315111,
+        "lat": "-21.5565914",
+        "lon": "-45.4340674",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 16,
+        "importance": 0.5745837805718689,
+        "addresstype": "city",
+        "name": "Varginha",
+        "display_name": "Varginha, Minas Gerais, Região Sudeste, Brasil",
+        "boundingbox": [
+          "-21.6850000",
+          "-21.4593162",
+          "-45.5497069",
+          "-45.2503040"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Lages, SC, Brasil",
+    "result": [
+      {
+        "place_id": 8003744,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 296771,
+        "lat": "-27.8165664",
+        "lon": "-50.3258830",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 16,
+        "importance": 0.5192119411276137,
+        "addresstype": "city",
+        "name": "Lages",
+        "display_name": "Lages, Santa Catarina, Região Sul, Brasil",
+        "boundingbox": [
+          "-28.4333434",
+          "-27.5690810",
+          "-50.6964052",
+          "-49.9982107"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Brasília, DF, Brasil",
+    "result": [
+      {
+        "place_id": 15608674,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 34567423,
+        "lat": "-15.7939869",
+        "lon": "-47.8828000",
+        "category": "place",
+        "type": "city",
+        "place_rank": 15,
+        "importance": 0.6925659039688494,
+        "addresstype": "city",
+        "name": "Brasília",
+        "display_name": "Brasília, Plano Piloto, Distrito Federal, Região Centro-Oeste, 70391-900, Brasil",
+        "boundingbox": [
+          "-15.9539869",
+          "-15.6339869",
+          "-48.0428000",
+          "-47.7228000"
+        ]
+      }
+    ]
+  }
+]
