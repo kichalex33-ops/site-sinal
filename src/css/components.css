@@ -1041,6 +1041,7 @@ body:has(dialog.book-dialog[open]) { overflow: hidden; }
 .signal-map .leaflet-control-attribution { background: rgba(11,14,20,.8); color: var(--muted); }
 .signal-map .leaflet-control-attribution a { color: var(--text); }
 .signal-map .leaflet-marker-icon:focus-visible span { box-shadow: var(--focus-ring); }
+.signal-map .leaflet-pane,.signal-map .leaflet-zoom-animated {transition-property:none;}
 .signal-map .leaflet-popup-content-wrapper { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm); }
 .signal-map .leaflet-popup-tip { background: var(--surface); }
 .signal-map .leaflet-popup-close-button { color: var(--muted); width: 32px; height: 32px; font-size: 22px; }
@@ -1244,6 +1245,19 @@ body:has([data-book-hero])::before,body:has([data-book-hero])::after,body:has([d
 .reading-shell {width:min(880px,calc(100% - 32px));}
 .reading-paper {padding:clamp(20px,5vw,60px);border-radius:0;box-shadow:none;line-height:1.85;}
 .reading-body {max-width:720px;margin-inline:auto;}
+.is-paginated .reading-paper {padding:clamp(20px,4vw,44px);}
+.reading-viewport {height:clamp(260px,calc(100svh - 460px),600px);overflow:hidden;touch-action:pan-y;outline-offset:6px;}
+.reading-flow {height:100%;column-gap:40px;column-fill:auto;column-count:auto;transition-property:none;font-family:Georgia,'Times New Roman',serif;}
+.reading-flow .reading-body {max-width:none;margin:0;}
+.reading-flow p {orphans:2;widows:2;}
+.reading-flow h2 {font-size:clamp(26px,4vw,36px);break-after:avoid;line-height:1.2;}
+.is-paginated .chapter-end[hidden] {display:none;}
+.reading-pagination {display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin-top:14px;}
+.reading-pagination button {min-height:48px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;color:var(--text);background:var(--surface);}
+.reading-pagination button:last-child {justify-self:end;}
+.reading-pagination button:disabled {opacity:.35;cursor:default;}
+.reading-pagination [data-page-position] {font-size:11px;color:var(--muted);text-align:center;}
+@media(max-width:540px){.reading-pagination {grid-template-columns:1fr 1fr;gap:8px;}.reading-pagination [data-page-position] {grid-column:1/-1;grid-row:1;}.reading-pagination button {font-size:12px;width:100%;}}
 @media(max-width:859px) {
  .site-header .header-actions > .lang-switch {display:inline-flex;}
  .site-header__row {gap:12px;}

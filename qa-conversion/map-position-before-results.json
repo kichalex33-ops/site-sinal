@@ -1,0 +1,674 @@
+[
+  {
+    "width": 320,
+    "lang": "pt",
+    "positions": [
+      {
+        "name": "Biblioteca Pública Municipal de Eldorado do Sul",
+        "x": 46,
+        "y": 383,
+        "inside": true
+      },
+      {
+        "name": "Restaurante Universitário da UFSM",
+        "x": 39,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "Posto de Saúde de São José do Sul",
+        "x": 46,
+        "y": 381,
+        "inside": true
+      },
+      {
+        "name": "Christchurch City Libraries / Ngā Kete Wānanga o Ōtautahi",
+        "x": 683,
+        "y": 431,
+        "inside": false
+      },
+      {
+        "name": "The Fishbowl Open Mic / Art Gallery",
+        "x": -156,
+        "y": 139,
+        "inside": false
+      },
+      {
+        "name": "Centro Cultural da Juventude Ruth Cardoso, CCJ",
+        "x": 59,
+        "y": 362,
+        "inside": true
+      },
+      {
+        "name": "Gibiteca de Curitiba",
+        "x": 52,
+        "y": 368,
+        "inside": true
+      },
+      {
+        "name": "Diretoria de Bibliotecas de Londrina",
+        "x": 46,
+        "y": 361,
+        "inside": true
+      },
+      {
+        "name": "Biblioteca Pública Municipal Vianna Moog",
+        "x": 47,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "Departamento de Cultura / Biblioteca de Canela",
+        "x": 47,
+        "y": 380,
+        "inside": true
+      },
+      {
+        "name": "Prefeitura / área cultural de Varginha",
+        "x": 63,
+        "y": 356,
+        "inside": true
+      },
+      {
+        "name": "Biblioteca / Fundação Cultural de Lages",
+        "x": 49,
+        "y": 375,
+        "inside": true
+      },
+      {
+        "name": "Biblioteca Nacional de Brasília / Biblioteca Paulo Bertran, Câmara Legislativa do DF",
+        "x": 56,
+        "y": 339,
+        "inside": true
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "lang": "en",
+    "positions": [
+      {
+        "name": "Eldorado do Sul Municipal Public Library",
+        "x": 46,
+        "y": 383,
+        "inside": true
+      },
+      {
+        "name": "UFSM University Restaurant",
+        "x": 39,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "São José do Sul Health Centre",
+        "x": 46,
+        "y": 381,
+        "inside": true
+      },
+      {
+        "name": "Christchurch City Libraries / Ngā Kete Wānanga o Ōtautahi",
+        "x": 683,
+        "y": 431,
+        "inside": false
+      },
+      {
+        "name": "The Fishbowl Open Mic / Art Gallery",
+        "x": -156,
+        "y": 139,
+        "inside": false
+      },
+      {
+        "name": "Ruth Cardoso Youth Cultural Centre, CCJ",
+        "x": 59,
+        "y": 362,
+        "inside": true
+      },
+      {
+        "name": "Curitiba Comic Book Library",
+        "x": 52,
+        "y": 368,
+        "inside": true
+      },
+      {
+        "name": "Londrina Library Directorate",
+        "x": 46,
+        "y": 361,
+        "inside": true
+      },
+      {
+        "name": "Vianna Moog Municipal Public Library",
+        "x": 47,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "Canela Culture Department / Library",
+        "x": 47,
+        "y": 380,
+        "inside": true
+      },
+      {
+        "name": "Varginha City Hall / Culture Department",
+        "x": 63,
+        "y": 356,
+        "inside": true
+      },
+      {
+        "name": "Lages Library / Cultural Foundation",
+        "x": 49,
+        "y": 375,
+        "inside": true
+      },
+      {
+        "name": "National Library of Brasília / Paulo Bertran Library, Federal District Legislative Chamber",
+        "x": 56,
+        "y": 339,
+        "inside": true
+      }
+    ]
+  },
+  {
+    "width": 393,
+    "lang": "pt",
+    "positions": [
+      {
+        "name": "Biblioteca Pública Municipal de Eldorado do Sul",
+        "x": 83,
+        "y": 383,
+        "inside": true
+      },
+      {
+        "name": "Restaurante Universitário da UFSM",
+        "x": 76,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "Posto de Saúde de São José do Sul",
+        "x": 83,
+        "y": 381,
+        "inside": true
+      },
+      {
+        "name": "Christchurch City Libraries / Ngā Kete Wānanga o Ōtautahi",
+        "x": 720,
+        "y": 431,
+        "inside": false
+      },
+      {
+        "name": "The Fishbowl Open Mic / Art Gallery",
+        "x": -119,
+        "y": 139,
+        "inside": false
+      },
+      {
+        "name": "Centro Cultural da Juventude Ruth Cardoso, CCJ",
+        "x": 96,
+        "y": 362,
+        "inside": true
+      },
+      {
+        "name": "Gibiteca de Curitiba",
+        "x": 89,
+        "y": 368,
+        "inside": true
+      },
+      {
+        "name": "Diretoria de Bibliotecas de Londrina",
+        "x": 83,
+        "y": 361,
+        "inside": true
+      },
+      {
+        "name": "Biblioteca Pública Municipal Vianna Moog",
+        "x": 84,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "Departamento de Cultura / Biblioteca de Canela",
+        "x": 84,
+        "y": 380,
+        "inside": true
+      },
+      {
+        "name": "Prefeitura / área cultural de Varginha",
+        "x": 100,
+        "y": 356,
+        "inside": true
+      },
+      {
+        "name": "Biblioteca / Fundação Cultural de Lages",
+        "x": 86,
+        "y": 375,
+        "inside": true
+      },
+      {
+        "name": "Biblioteca Nacional de Brasília / Biblioteca Paulo Bertran, Câmara Legislativa do DF",
+        "x": 93,
+        "y": 339,
+        "inside": true
+      }
+    ]
+  },
+  {
+    "width": 393,
+    "lang": "en",
+    "positions": [
+      {
+        "name": "Eldorado do Sul Municipal Public Library",
+        "x": 83,
+        "y": 383,
+        "inside": true
+      },
+      {
+        "name": "UFSM University Restaurant",
+        "x": 76,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "São José do Sul Health Centre",
+        "x": 83,
+        "y": 381,
+        "inside": true
+      },
+      {
+        "name": "Christchurch City Libraries / Ngā Kete Wānanga o Ōtautahi",
+        "x": 720,
+        "y": 431,
+        "inside": false
+      },
+      {
+        "name": "The Fishbowl Open Mic / Art Gallery",
+        "x": -119,
+        "y": 139,
+        "inside": false
+      },
+      {
+        "name": "Ruth Cardoso Youth Cultural Centre, CCJ",
+        "x": 96,
+        "y": 362,
+        "inside": true
+      },
+      {
+        "name": "Curitiba Comic Book Library",
+        "x": 89,
+        "y": 368,
+        "inside": true
+      },
+      {
+        "name": "Londrina Library Directorate",
+        "x": 83,
+        "y": 361,
+        "inside": true
+      },
+      {
+        "name": "Vianna Moog Municipal Public Library",
+        "x": 84,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "Canela Culture Department / Library",
+        "x": 84,
+        "y": 380,
+        "inside": true
+      },
+      {
+        "name": "Varginha City Hall / Culture Department",
+        "x": 100,
+        "y": 356,
+        "inside": true
+      },
+      {
+        "name": "Lages Library / Cultural Foundation",
+        "x": 86,
+        "y": 375,
+        "inside": true
+      },
+      {
+        "name": "National Library of Brasília / Paulo Bertran Library, Federal District Legislative Chamber",
+        "x": 93,
+        "y": 339,
+        "inside": true
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "lang": "pt",
+    "positions": [
+      {
+        "name": "Biblioteca Pública Municipal de Eldorado do Sul",
+        "x": 270,
+        "y": 383,
+        "inside": true
+      },
+      {
+        "name": "Restaurante Universitário da UFSM",
+        "x": 263,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "Posto de Saúde de São José do Sul",
+        "x": 270,
+        "y": 381,
+        "inside": true
+      },
+      {
+        "name": "Christchurch City Libraries / Ngā Kete Wānanga o Ōtautahi",
+        "x": 907,
+        "y": 431,
+        "inside": false
+      },
+      {
+        "name": "The Fishbowl Open Mic / Art Gallery",
+        "x": 68,
+        "y": 139,
+        "inside": true
+      },
+      {
+        "name": "Centro Cultural da Juventude Ruth Cardoso, CCJ",
+        "x": 283,
+        "y": 362,
+        "inside": true
+      },
+      {
+        "name": "Gibiteca de Curitiba",
+        "x": 276,
+        "y": 368,
+        "inside": true
+      },
+      {
+        "name": "Diretoria de Bibliotecas de Londrina",
+        "x": 270,
+        "y": 361,
+        "inside": true
+      },
+      {
+        "name": "Biblioteca Pública Municipal Vianna Moog",
+        "x": 271,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "Departamento de Cultura / Biblioteca de Canela",
+        "x": 271,
+        "y": 380,
+        "inside": true
+      },
+      {
+        "name": "Prefeitura / área cultural de Varginha",
+        "x": 287,
+        "y": 356,
+        "inside": true
+      },
+      {
+        "name": "Biblioteca / Fundação Cultural de Lages",
+        "x": 273,
+        "y": 375,
+        "inside": true
+      },
+      {
+        "name": "Biblioteca Nacional de Brasília / Biblioteca Paulo Bertran, Câmara Legislativa do DF",
+        "x": 280,
+        "y": 339,
+        "inside": true
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "lang": "en",
+    "positions": [
+      {
+        "name": "Eldorado do Sul Municipal Public Library",
+        "x": 270,
+        "y": 383,
+        "inside": true
+      },
+      {
+        "name": "UFSM University Restaurant",
+        "x": 263,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "São José do Sul Health Centre",
+        "x": 270,
+        "y": 381,
+        "inside": true
+      },
+      {
+        "name": "Christchurch City Libraries / Ngā Kete Wānanga o Ōtautahi",
+        "x": 907,
+        "y": 431,
+        "inside": false
+      },
+      {
+        "name": "The Fishbowl Open Mic / Art Gallery",
+        "x": 68,
+        "y": 139,
+        "inside": true
+      },
+      {
+        "name": "Ruth Cardoso Youth Cultural Centre, CCJ",
+        "x": 283,
+        "y": 362,
+        "inside": true
+      },
+      {
+        "name": "Curitiba Comic Book Library",
+        "x": 276,
+        "y": 368,
+        "inside": true
+      },
+      {
+        "name": "Londrina Library Directorate",
+        "x": 270,
+        "y": 361,
+        "inside": true
+      },
+      {
+        "name": "Vianna Moog Municipal Public Library",
+        "x": 271,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "Canela Culture Department / Library",
+        "x": 271,
+        "y": 380,
+        "inside": true
+      },
+      {
+        "name": "Varginha City Hall / Culture Department",
+        "x": 287,
+        "y": 356,
+        "inside": true
+      },
+      {
+        "name": "Lages Library / Cultural Foundation",
+        "x": 273,
+        "y": 375,
+        "inside": true
+      },
+      {
+        "name": "National Library of Brasília / Paulo Bertran Library, Federal District Legislative Chamber",
+        "x": 280,
+        "y": 339,
+        "inside": true
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "lang": "pt",
+    "positions": [
+      {
+        "name": "Biblioteca Pública Municipal de Eldorado do Sul",
+        "x": 606,
+        "y": 383,
+        "inside": true
+      },
+      {
+        "name": "Restaurante Universitário da UFSM",
+        "x": 599,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "Posto de Saúde de São José do Sul",
+        "x": 606,
+        "y": 381,
+        "inside": true
+      },
+      {
+        "name": "Christchurch City Libraries / Ngā Kete Wānanga o Ōtautahi",
+        "x": 1243,
+        "y": 431,
+        "inside": true
+      },
+      {
+        "name": "The Fishbowl Open Mic / Art Gallery",
+        "x": 404,
+        "y": 139,
+        "inside": true
+      },
+      {
+        "name": "Centro Cultural da Juventude Ruth Cardoso, CCJ",
+        "x": 619,
+        "y": 362,
+        "inside": true
+      },
+      {
+        "name": "Gibiteca de Curitiba",
+        "x": 612,
+        "y": 368,
+        "inside": true
+      },
+      {
+        "name": "Diretoria de Bibliotecas de Londrina",
+        "x": 606,
+        "y": 361,
+        "inside": true
+      },
+      {
+        "name": "Biblioteca Pública Municipal Vianna Moog",
+        "x": 607,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "Departamento de Cultura / Biblioteca de Canela",
+        "x": 607,
+        "y": 380,
+        "inside": true
+      },
+      {
+        "name": "Prefeitura / área cultural de Varginha",
+        "x": 623,
+        "y": 356,
+        "inside": true
+      },
+      {
+        "name": "Biblioteca / Fundação Cultural de Lages",
+        "x": 609,
+        "y": 375,
+        "inside": true
+      },
+      {
+        "name": "Biblioteca Nacional de Brasília / Biblioteca Paulo Bertran, Câmara Legislativa do DF",
+        "x": 616,
+        "y": 339,
+        "inside": true
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "positions": [
+      {
+        "name": "Eldorado do Sul Municipal Public Library",
+        "x": 606,
+        "y": 383,
+        "inside": true
+      },
+      {
+        "name": "UFSM University Restaurant",
+        "x": 599,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "São José do Sul Health Centre",
+        "x": 606,
+        "y": 381,
+        "inside": true
+      },
+      {
+        "name": "Christchurch City Libraries / Ngā Kete Wānanga o Ōtautahi",
+        "x": 1243,
+        "y": 431,
+        "inside": true
+      },
+      {
+        "name": "The Fishbowl Open Mic / Art Gallery",
+        "x": 404,
+        "y": 139,
+        "inside": true
+      },
+      {
+        "name": "Ruth Cardoso Youth Cultural Centre, CCJ",
+        "x": 619,
+        "y": 362,
+        "inside": true
+      },
+      {
+        "name": "Curitiba Comic Book Library",
+        "x": 612,
+        "y": 368,
+        "inside": true
+      },
+      {
+        "name": "Londrina Library Directorate",
+        "x": 606,
+        "y": 361,
+        "inside": true
+      },
+      {
+        "name": "Vianna Moog Municipal Public Library",
+        "x": 607,
+        "y": 382,
+        "inside": true
+      },
+      {
+        "name": "Canela Culture Department / Library",
+        "x": 607,
+        "y": 380,
+        "inside": true
+      },
+      {
+        "name": "Varginha City Hall / Culture Department",
+        "x": 623,
+        "y": 356,
+        "inside": true
+      },
+      {
+        "name": "Lages Library / Cultural Foundation",
+        "x": 609,
+        "y": 375,
+        "inside": true
+      },
+      {
+        "name": "National Library of Brasília / Paulo Bertran Library, Federal District Legislative Chamber",
+        "x": 616,
+        "y": 339,
+        "inside": true
+      }
+    ]
+  }
+]

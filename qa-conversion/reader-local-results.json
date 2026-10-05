@@ -1,0 +1,524 @@
+[
+  {
+    "width": 320,
+    "lang": "pt",
+    "chapters": [
+      {
+        "count": 78,
+        "label": "Capítulo 1 · Página 78 de 78",
+        "endHidden": false,
+        "viewport": {
+          "x": 37,
+          "y": 352,
+          "width": 246,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 37,
+            "y": 633.125,
+            "width": 246,
+            "height": 35.140625
+          }
+        ],
+        "scrollWidth": 22268,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -22022, 0)",
+        "display": "block",
+        "transform": "translateX(-22022px)",
+        "lastVisible": true
+      },
+      {
+        "count": 94,
+        "label": "Capítulo 2 · Página 94 de 94",
+        "endHidden": false,
+        "viewport": {
+          "x": 37,
+          "y": 352,
+          "width": 246,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 37,
+            "y": 492.5625,
+            "width": 246,
+            "height": 70.28125
+          }
+        ],
+        "scrollWidth": 26844,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -26598, 0)",
+        "display": "block",
+        "transform": "translateX(-26598px)",
+        "lastVisible": true
+      },
+      {
+        "count": 77,
+        "label": "Capítulo 3 · Página 77 de 77",
+        "endHidden": false,
+        "viewport": {
+          "x": 37,
+          "y": 352,
+          "width": 246,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 37,
+            "y": 633.125,
+            "width": 246,
+            "height": 70.28125
+          }
+        ],
+        "scrollWidth": 21982,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -21736, 0)",
+        "display": "block",
+        "transform": "translateX(-21736px)",
+        "lastVisible": true
+      }
+    ],
+    "beforeResize": "Capítulo 3 · Página 77 de 77",
+    "afterResize": "Capítulo 3 · Página 92 de 92",
+    "errors": []
+  },
+  {
+    "width": 320,
+    "lang": "en",
+    "chapters": [
+      {
+        "count": 100,
+        "label": "Chapter 1 · Page 100 of 100",
+        "endHidden": false,
+        "viewport": {
+          "x": 37,
+          "y": 352,
+          "width": 246,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 37,
+            "y": 527.703125,
+            "width": 246,
+            "height": 70.28125
+          }
+        ],
+        "scrollWidth": 28560,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -28314, 0)",
+        "display": "block",
+        "transform": "translateX(-28314px)",
+        "lastVisible": true
+      },
+      {
+        "count": 88,
+        "label": "Chapter 2 · Page 88 of 88",
+        "endHidden": false,
+        "viewport": {
+          "x": 37,
+          "y": 352,
+          "width": 246,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 37,
+            "y": 562.84375,
+            "width": 246,
+            "height": 70.28125
+          }
+        ],
+        "scrollWidth": 25128,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -24882, 0)",
+        "display": "block",
+        "transform": "translateX(-24882px)",
+        "lastVisible": true
+      },
+      {
+        "count": 56,
+        "label": "Chapter 3 · Page 56 of 56",
+        "endHidden": false,
+        "viewport": {
+          "x": 37,
+          "y": 352,
+          "width": 246,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 37,
+            "y": 703.40625,
+            "width": 246,
+            "height": 70.28125
+          }
+        ],
+        "scrollWidth": 15976,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -15730, 0)",
+        "display": "block",
+        "transform": "translateX(-15730px)",
+        "lastVisible": true
+      }
+    ],
+    "beforeResize": "Chapter 3 · Page 56 of 56",
+    "afterResize": "Chapter 3 · Page 68 of 68",
+    "errors": []
+  },
+  {
+    "width": 393,
+    "lang": "pt",
+    "chapters": [
+      {
+        "count": 63,
+        "label": "Capítulo 1 · Página 63 de 63",
+        "endHidden": false,
+        "viewport": {
+          "x": 37,
+          "y": 288,
+          "width": 319,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 37,
+            "y": 569.125,
+            "width": 319,
+            "height": 35.140625
+          }
+        ],
+        "scrollWidth": 22577,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -22258, 0)",
+        "display": "block",
+        "transform": "translateX(-22258px)",
+        "lastVisible": true
+      },
+      {
+        "count": 74,
+        "label": "Capítulo 2 · Página 74 de 74",
+        "endHidden": false,
+        "viewport": {
+          "x": 37,
+          "y": 249,
+          "width": 319,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 37,
+            "y": 249,
+            "width": 319,
+            "height": 70.28125
+          }
+        ],
+        "scrollWidth": 26526,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -26207, 0)",
+        "display": "block",
+        "transform": "translateX(-26207px)",
+        "lastVisible": true
+      },
+      {
+        "count": 60,
+        "label": "Capítulo 3 · Página 60 de 60",
+        "endHidden": false,
+        "viewport": {
+          "x": 37,
+          "y": 249,
+          "width": 319,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 37,
+            "y": 600.40625,
+            "width": 319,
+            "height": 70.28125
+          }
+        ],
+        "scrollWidth": 21500,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -21181, 0)",
+        "display": "block",
+        "transform": "translateX(-21181px)",
+        "lastVisible": true
+      }
+    ],
+    "beforeResize": "Capítulo 3 · Página 60 de 60",
+    "afterResize": "Capítulo 3 · Página 92 de 92",
+    "errors": []
+  },
+  {
+    "width": 393,
+    "lang": "en",
+    "chapters": [
+      {
+        "count": 78,
+        "label": "Chapter 1 · Page 78 of 78",
+        "endHidden": false,
+        "viewport": {
+          "x": 37,
+          "y": 288,
+          "width": 319,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 37,
+            "y": 463.703125,
+            "width": 319,
+            "height": 35.140625
+          }
+        ],
+        "scrollWidth": 27962,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -27643, 0)",
+        "display": "block",
+        "transform": "translateX(-27643px)",
+        "lastVisible": true
+      },
+      {
+        "count": 72,
+        "label": "Chapter 2 · Page 72 of 72",
+        "endHidden": false,
+        "viewport": {
+          "x": 37,
+          "y": 249,
+          "width": 319,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 37,
+            "y": 459.84375,
+            "width": 319,
+            "height": 35.140625
+          }
+        ],
+        "scrollWidth": 25808,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -25489, 0)",
+        "display": "block",
+        "transform": "translateX(-25489px)",
+        "lastVisible": true
+      },
+      {
+        "count": 44,
+        "label": "Chapter 3 · Page 44 of 44",
+        "endHidden": false,
+        "viewport": {
+          "x": 37,
+          "y": 249,
+          "width": 319,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 37,
+            "y": 600.40625,
+            "width": 319,
+            "height": 35.140625
+          }
+        ],
+        "scrollWidth": 15756,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -15437, 0)",
+        "display": "block",
+        "transform": "translateX(-15437px)",
+        "lastVisible": true
+      }
+    ],
+    "beforeResize": "Chapter 3 · Page 44 of 44",
+    "afterResize": "Chapter 3 · Page 68 of 68",
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "lang": "pt",
+    "chapters": [
+      {
+        "count": 36,
+        "label": "Capítulo 1 · Página 36 de 36",
+        "endHidden": false,
+        "viewport": {
+          "x": 335,
+          "y": 312,
+          "width": 770,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 335,
+            "y": 487.703125,
+            "width": 770,
+            "height": 35.140625
+          }
+        ],
+        "scrollWidth": 29120,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -28350, 0)",
+        "display": "block",
+        "transform": "translateX(-28350px)",
+        "lastVisible": true
+      },
+      {
+        "count": 39,
+        "label": "Capítulo 2 · Página 39 de 39",
+        "endHidden": false,
+        "viewport": {
+          "x": 335,
+          "y": 312,
+          "width": 770,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 335,
+            "y": 382.28125,
+            "width": 770,
+            "height": 35.140625
+          }
+        ],
+        "scrollWidth": 31550,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -30780, 0)",
+        "display": "block",
+        "transform": "translateX(-30780px)",
+        "lastVisible": true
+      },
+      {
+        "count": 32,
+        "label": "Capítulo 3 · Página 32 de 32",
+        "endHidden": false,
+        "viewport": {
+          "x": 335,
+          "y": 312,
+          "width": 770,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 335,
+            "y": 487.703125,
+            "width": 770,
+            "height": 35.140625
+          }
+        ],
+        "scrollWidth": 25880,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -25110, 0)",
+        "display": "block",
+        "transform": "translateX(-25110px)",
+        "lastVisible": true
+      }
+    ],
+    "beforeResize": "Capítulo 3 · Página 32 de 32",
+    "afterResize": "Capítulo 3 · Página 55 de 55",
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "lang": "en",
+    "chapters": [
+      {
+        "count": 42,
+        "label": "Chapter 1 · Page 42 of 42",
+        "endHidden": false,
+        "viewport": {
+          "x": 335,
+          "y": 312,
+          "width": 770,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 335,
+            "y": 312,
+            "width": 770,
+            "height": 35.140625
+          }
+        ],
+        "scrollWidth": 33980,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -33210, 0)",
+        "display": "block",
+        "transform": "translateX(-33210px)",
+        "lastVisible": true
+      },
+      {
+        "count": 44,
+        "label": "Chapter 2 · Page 44 of 44",
+        "endHidden": false,
+        "viewport": {
+          "x": 335,
+          "y": 312,
+          "width": 770,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 335,
+            "y": 663.40625,
+            "width": 770,
+            "height": 35.140625
+          }
+        ],
+        "scrollWidth": 35600,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -34830, 0)",
+        "display": "block",
+        "transform": "translateX(-34830px)",
+        "lastVisible": true
+      },
+      {
+        "count": 27,
+        "label": "Chapter 3 · Page 27 of 27",
+        "endHidden": false,
+        "viewport": {
+          "x": 335,
+          "y": 312,
+          "width": 770,
+          "height": 440
+        },
+        "rects": [
+          {
+            "x": 335,
+            "y": 593.125,
+            "width": 770,
+            "height": 35.140625
+          }
+        ],
+        "scrollWidth": 21830,
+        "transition": "none 1e-05s",
+        "animation": "1e-05s",
+        "computed": "matrix(1, 0, 0, 1, -21060, 0)",
+        "display": "block",
+        "transform": "translateX(-21060px)",
+        "lastVisible": true
+      }
+    ],
+    "beforeResize": "Chapter 3 · Page 27 of 27",
+    "afterResize": "Chapter 3 · Page 46 of 46",
+    "errors": []
+  }
+]
