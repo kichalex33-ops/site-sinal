@@ -71,3 +71,5 @@ document.querySelectorAll("[data-share]").forEach((btn) => {
 });
 import "./conversion.js";
 
+
+if (document.querySelector("[data-christchurch-map]")) import("./christchurch-map.js");

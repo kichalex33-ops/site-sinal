@@ -4,7 +4,7 @@
 const root = document.querySelector("[data-buy-router]");
 if (root) {
   const known = new Map([...root.querySelectorAll("[data-market]")].map((el) => [el.dataset.market, el]));
-  const alias = { GB: "UK" };
+  const alias = { GB: "UK", NZ: "AU" };
   const fromUrl = new URLSearchParams(location.search).get("market");
   const fromLang = (navigator.languages || [navigator.language || ""]).map((l) => (l.split("-")[1] || "").toUpperCase()).find(Boolean);
   const pick = [fromUrl, fromLang].filter(Boolean).map((c) => alias[c.toUpperCase()] || c.toUpperCase()).find((c) => known.has(c));

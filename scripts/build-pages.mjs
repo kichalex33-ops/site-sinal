@@ -1,3 +1,4 @@
+import { christchurchBody } from './christchurch.mjs';
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -120,10 +121,10 @@ function purchaseActions(b, {sample = true, ending = false, lang = 'pt'} = {}) {
   const en = lang === 'en', origin = b.slug === 'sinal-ruido';
   const kindle = en ? b.purchaseUrlEn : b.purchaseUrl;
   const print = en ? origin ? buyLinks('US').find(l => l.edition === 'paperback')?.url : b.purchaseUrlEnUk : b.purchaseUrlUiclap;
-  const link = (url, label, primary = true) => url ? `<a class="btn ${primary ? 'btn--primary' : 'btn--outline'}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${label}</a>` : '';
+  const link = (url, label, primary = true, edition = '') => url ? `<a class="btn ${primary ? 'btn--primary' : 'btn--outline'}"${en && origin && edition ? ` data-signal-edition="${edition}"` : ''} href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${label}</a>` : '';
   return `<div class="conversion-actions" id="${ending ? 'continuar-amostra' : 'comprar-' + b.slug}">
-    ${link(kindle, en ? (ending ? 'Continue on Kindle' : 'Buy Kindle') : ending ? 'Continuar no Kindle' : origin ? 'Comprar Kindle' : 'Comprar na Amazon')}
-    ${link(print, en ? (ending ? 'Get the paperback' : 'Buy paperback') : ending ? 'Quero o livro impresso' : 'Comprar impresso', false)}
+    ${link(kindle, en ? (ending ? 'Continue on Kindle' : 'Buy Kindle') : ending ? 'Continuar no Kindle' : origin ? 'Comprar Kindle' : 'Comprar na Amazon', true, 'kindle')}
+    ${link(print, en ? (ending ? 'Get the paperback' : 'Buy paperback') : ending ? 'Quero o livro impresso' : 'Comprar impresso', false, 'paperback')}
     ${en && !kindle && b.purchaseUrl ? link(b.purchaseUrl, 'Buy the Portuguese edition') : ''}
     ${sample && origin ? `<a class="btn btn--reading" href="${en ? '/livro/sample/' : b.sampleUrl}">${en ? 'Read 3 free chapters' : 'Ler 3 capítulos grátis'}</a>` : ''}
   </div><ul class="edition-indicators" aria-label="${en ? 'Edition' : 'Edição'}"><li>${en ? kindle ? 'English' : 'Portuguese edition' : 'Português'}</li><li>${origin ? en ? 'Kindle + paperback' : 'Kindle + impresso' : 'Amazon'}</li>${origin ? `<li>${en ? 'Amazon' : 'Amazon / UICLAP'}</li>` : ''}</ul>`;
@@ -1283,7 +1284,7 @@ function livroAmostraPage() {
 function livroSampleEnPage() {
   const chapters = SAMPLE_CHAPTERS_EN;
   const body = `
-    <article class="section reading-shell" data-reading-sample><h1 class="visually-hidden">SIGNAL/NOISE — free sample</h1>
+    <aside class="container section" data-region-entry hidden><p class="kicker">For readers in New Zealand</p><p>Discover the signal in Christchurch and continue the English edition on Amazon Australia.</p><div class="conversion-actions"><a class="btn" href="/en/christchurch/">The Christchurch signal</a><a class="btn btn--primary" href="https://www.amazon.com.au/dp/B0HJP3HM7J" target="_blank" rel="noopener noreferrer">English Kindle</a><a class="btn" href="https://www.amazon.com.au/dp/B0HJQQBS8Q" target="_blank" rel="noopener noreferrer">English paperback</a></div></aside><article class="section reading-shell" data-reading-sample><h1 class="visually-hidden">SIGNAL/NOISE — free sample</h1>
       <header class="reading-meta">
         <div><span class="badge" style="border-color:var(--signal);color:var(--signal)">FICTION · FREE SAMPLE</span><p class="mono">SIGNAL/NOISE · Alex Jr. Kich</p></div>
         <div class="reading-tools" aria-label="Reading options"><button type="button" data-reading-size="down" aria-label="Decrease font size">A−</button><button type="button" data-reading-size="up" aria-label="Increase font size">A+</button><button type="button" data-reading-theme aria-label="Toggle reading mode">◐</button></div>
@@ -2751,6 +2752,10 @@ enPrivacidadePage();
 contatoPage();
 enContatoPage();
 mapaPages();
+for (const lang of ['en','pt']) {
+ const en=lang==='en',path=en?'/en/christchurch/':'/christchurch/';
+ write(path,page({title:en?'SIGNAL/NOISE — Christchurch':'SINAL/RUÍDO — Christchurch',description:en?'Discover a Brazilian novel reaching Christchurch. Read three free chapters and find the English Kindle and paperback editions on Amazon Australia.':'Conheça o sinal de Christchurch, leia três capítulos grátis e encontre a edição em inglês na Amazon Austrália.',path,bodyHtml:christchurchBody(lang),lang:en?'en-NZ':'pt-BR',ogLocale:en?'en_NZ':'pt_BR',minimal:en,langSwitch:en?'/christchurch/':'/en/christchurch/',alternates:ptEnAlternates('/christchurch/','/en/christchurch/'),ogImage:'/livro/capa-en.jpg',extraHead:'<link rel="stylesheet" href="/src/css/christchurch.css">'}));
+}
 writePublicSignals();
 buyPage();
 notFoundPage();

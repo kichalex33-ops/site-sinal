@@ -31,7 +31,7 @@ class CoverSwapRatioFix {
 // ?market=XX escolhe a região manualmente; ?all=1 mostra todos os países de novo.
 const MARKET_BY_COUNTRY = {
   US: "US", GB: "UK", DE: "DE", FR: "FR", ES: "ES", IT: "IT", NL: "NL",
-  JP: "JP", CA: "CA", MX: "MX", AU: "AU", IN: "IN",
+  JP: "JP", CA: "CA", MX: "MX", AU: "AU", NZ: "AU", IN: "IN",
 };
 const MARKET_NAMES = {
   US: "United States", UK: "United Kingdom", DE: "Deutschland", FR: "France", ES: "España",
@@ -62,6 +62,11 @@ class BuyChipsReplace {
 }
 
 export async function onRequest(context) {
+  const regionalUrl = new URL(context.request.url);
+  const region = regionalUrl.searchParams.get('region') === 'NZ' ? 'NZ' : context.request.cf?.country;
+  if (region === 'NZ' && ['/', '/en/', '/en'].includes(regionalUrl.pathname) && regionalUrl.searchParams.get('lang') !== 'pt') {
+    return new Response(null, { status: 302, headers: { Location: new URL('/en/christchurch/', regionalUrl).href, 'Cache-Control': 'private, no-store' } });
+  }
   let response = await context.next();
   const contentType = response.headers.get("content-type") || "";
   if (!contentType.includes("text/html")) return response;
@@ -83,7 +88,7 @@ export async function onRequest(context) {
   if (url.pathname === "/buy/" || url.pathname === "/buy") {
     const showAll = url.searchParams.get("all") === "1";
     const marketParam = url.searchParams.get("market");
-    const market = (marketParam || (country && MARKET_BY_COUNTRY[country]) || "").toUpperCase();
+    const market = (marketParam || (region && MARKET_BY_COUNTRY[region]) || "").toUpperCase();
     if (!showAll && MARKET_NAMES[market]) {
       response = new HTMLRewriter()
         .on("nav.buy-chips", new BuyChipsReplace(market))
@@ -92,5 +97,17 @@ export async function onRequest(context) {
     }
   }
 
+  if (region === 'NZ' || region === 'AU') {
+    response = new HTMLRewriter()
+      .on('a[data-signal-edition]', { element(el) {
+        const asin = {kindle:'B0HJP3HM7J',paperback:'B0HJQQBS8Q'}[el.getAttribute('data-signal-edition')];
+        if (asin) el.setAttribute('href', 'https://www.amazon.com.au/dp/' + asin);
+      } })
+      .on('[data-region-entry]', { element(el) { if (region === 'NZ') el.removeAttribute('hidden'); } })
+      .on('a[hreflang="pt-BR"]', { element(el) { if (el.getAttribute('href') === '/') el.setAttribute('href', '/?lang=pt'); } })
+      .transform(response);
+    response = new Response(response.body, response);
+    response.headers.set('Cache-Control', 'private, no-store');
+  }
   return response;
 }
