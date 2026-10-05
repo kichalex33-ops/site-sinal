@@ -81,7 +81,7 @@ export function page({
 }) {
   const isEn = lang.startsWith("en");
   const switchHref = langSwitch || (isEn ? "/" : "/en/");
-  const switchLabel = isEn ? "Português" : "English";
+  const switchLabel = isEn ? "PT" : "EN";
   const langSwitchHtml = `<a href="${escapeAttr(switchHref)}" class="lang-switch" hreflang="${isEn ? "pt-BR" : "en"}">${switchLabel}</a>`;
   const fullTitle = titleFull || (title === "SINAL/RUÍDO" ? title : `${title} · SINAL/RUÍDO`);
   const safeTitle = escapeAttr(fullTitle);
@@ -97,7 +97,7 @@ export function page({
         <span class="brand__sub">Romance de investigação · Alex Jr. Kich</span>
       </a>
       <nav class="main-nav" aria-label="Navegação principal">
-        ${NAV.map((i) => navLink(i, path)).join("")}
+        ${[NAV[0],NAV[1],NAV[3],{...NAV[4],label:"Mapa"},{...NAV[2],children:[{href:"/autor/",label:"Sobre o autor"},{href:"/contato/",label:"Contato"},{href:"/imprensa/",label:"Imprensa"}]}].map(i=>navLink(i,path)).join("")}
       </nav>
       <div class="header-actions">
         ${langSwitchHtml}
@@ -108,15 +108,14 @@ export function page({
             <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
           </svg>
         </a>
-        <button type="button" class="search-trigger" data-cmdk-open aria-haspopup="dialog">
-          Buscar no arquivo…
-          <kbd>Ctrl K</kbd>
+        <button type="button" class="search-trigger" data-cmdk-open aria-label="Buscar no arquivo" aria-haspopup="dialog">
+          <span aria-hidden="true">⌕</span>
         </button>
         <button type="button" class="mobile-nav-toggle" data-mobile-nav-toggle aria-label="Abrir menu" aria-expanded="false">☰</button>
       </div>
     </div>
     <nav class="mobile-nav container" data-mobile-nav aria-label="Navegação (compacta)">
-      ${NAV.map((i) => navLink(i, path, true)).join("")}
+      ${NAV.map((i) => navLink(i, path, true)).join("")}<a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>
       ${langSwitchHtml}
     </nav>
   </header>`;
@@ -141,8 +140,8 @@ export function page({
     </div>
   </footer>`;
   const cmdkHtml = `  <div class="cmdk-backdrop" data-cmdk-backdrop>
-    <div class="cmdk" role="dialog" aria-modal="true" aria-label="Busca">
-      <input type="text" placeholder="Buscar caso, documento, coleção, mídia, órgão, local…" data-cmdk-input autocomplete="off" />
+    <div class="cmdk" role="dialog" aria-modal="true" aria-label="${isEn ? 'Search archive' : 'Busca'}">
+      <input type="text" placeholder="${isEn ? 'Search the archive (Portuguese catalogs)…' : 'Buscar caso, documento, coleção, mídia, órgão, local…'}" data-cmdk-input autocomplete="off" />
       <ul data-cmdk-results></ul>
     </div>
   </div>`;
@@ -152,10 +151,10 @@ export function page({
         <span class="brand__mark">SINAL<b>/</b>RUÍDO</span>
         <span class="brand__sub">SIGNAL/NOISE · Alex Jr. Kich</span>
       </a>
-      <nav class="main-nav" aria-label="Main navigation"><a href="/livro/sample/">Read</a><a href="/en/signal-noise/">The book</a><a href="/en/author/">Author</a><a href="/buy/">Buy</a></nav>
+      <nav class="main-nav" aria-label="Main navigation">${[{href:'/livro/sample/',label:'Read'},{href:'/en/#books',label:'Books',children:[{href:'/en/signal-noise/',label:'SIGNAL/NOISE'},{href:'/en/chronicles/',label:'Cosmological Chronicles'},{href:'/buy/',label:'Other editions'}]},{href:'/en/archive/',label:'Archive'},{href:'/en/world-map-of-signals/',label:'Map'},{href:'/en/author/',label:'Author',children:[{href:'/en/author/',label:'About the author'},{href:'/en/contact/',label:'Contact'}]}].map(i=>navLink(i,path)).join('')}</nav>
       <div class="header-actions header-actions--en">
-        <a href="/en/world-map-of-signals/" class="lang-switch"${path.startsWith("/en/world-map") ? ' aria-current="page"' : ""}>World Map</a>
         ${langSwitchHtml}
+        <button type="button" class="search-trigger" data-cmdk-open aria-label="Search the archive" aria-haspopup="dialog"><span aria-hidden="true">⌕</span></button>
         <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram @sinal_ruido">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
@@ -167,7 +166,7 @@ export function page({
       </div>
     </div>
     <nav class="mobile-nav container" data-mobile-nav aria-label="Navigation">
-      <a href="/livro/sample/">Read 3 free chapters</a><a href="/en/signal-noise/">SIGNAL/NOISE</a><a href="/buy/">Buy the English edition</a><a href="/en/chronicles/">Cosmological Chronicles</a><a href="/en/author/">Author</a><a href="/en/archive/">Archive</a><a href="/en/world-map-of-signals/">World Map of Signals</a><a href="/en/readers/">After reading</a>${langSwitchHtml}
+      <a href="/livro/sample/">Read 3 free chapters</a><a href="/en/signal-noise/">SIGNAL/NOISE</a><a href="/buy/">Buy the English edition</a><a href="/en/chronicles/">Cosmological Chronicles</a><a href="/en/author/">Author</a><a href="/en/archive/">Archive</a><a href="/en/world-map-of-signals/">World Map of Signals</a><a href="/en/readers/">After reading</a><a href="/en/contact/">Contact</a><a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>${langSwitchHtml}
     </nav>
   </header>`;
   const minimalFooter = `  <footer class="site-footer">
@@ -225,7 +224,7 @@ ${minimal ? minimalHeader : fullHeader}
 
 ${minimal ? minimalFooter : fullFooter}
 
-${minimal ? "" : cmdkHtml}
+${cmdkHtml}
 
   <script type="module" src="/src/js/main.js"></script>
 </body>

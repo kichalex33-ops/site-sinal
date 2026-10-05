@@ -120,14 +120,13 @@ function purchaseActions(b, {sample = true, ending = false, lang = 'pt'} = {}) {
   const en = lang === 'en', origin = b.slug === 'sinal-ruido';
   const kindle = en ? b.purchaseUrlEn : b.purchaseUrl;
   const print = en ? origin ? buyLinks('US').find(l => l.edition === 'paperback')?.url : b.purchaseUrlEnUk : b.purchaseUrlUiclap;
-  const link = (url, label) => url ? `<a class="btn btn--primary" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${label}</a>` : '';
+  const link = (url, label, primary = true) => url ? `<a class="btn ${primary ? 'btn--primary' : 'btn--outline'}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${label}</a>` : '';
   return `<div class="conversion-actions" id="${ending ? 'continuar-amostra' : 'comprar-' + b.slug}">
     ${link(kindle, en ? (ending ? 'Continue on Kindle' : 'Buy Kindle') : ending ? 'Continuar no Kindle' : origin ? 'Comprar Kindle' : 'Comprar na Amazon')}
-    ${link(print, en ? (ending ? 'Get the paperback' : 'Buy paperback') : ending ? 'Quero o livro impresso' : 'Comprar impresso')}
+    ${link(print, en ? (ending ? 'Get the paperback' : 'Buy paperback') : ending ? 'Quero o livro impresso' : 'Comprar impresso', false)}
     ${en && !kindle && b.purchaseUrl ? link(b.purchaseUrl, 'Buy the Portuguese edition') : ''}
-    ${sample && origin ? `<a class="btn" href="${en ? '/livro/sample/' : b.sampleUrl}">${en ? 'Read 3 free chapters' : 'Ler 3 capítulos grátis'}</a>` : ''}
-  </div><p class="conversion-meta">${escapeHtml(b.author)} · ${en ? kindle ? 'English · Kindle / paperback / hardcover · Amazon · Check price in store' : 'Portuguese edition · Amazon · Check price in store' : 'Português' + (origin ? ' · Kindle' : '') + (print ? ' e impresso · Amazon / UICLAP' : ' · Amazon') + (b.kindlePages ? ' · ' + b.kindlePages + ' páginas no Kindle' : '') + ' · Ver preço na loja'}</p>
-  ${en && origin ? '<p class="conversion-meta">Kindle and paperback: Amazon US. <a href="/buy/">Choose your country and edition</a>.</p>' : ''}`;
+    ${sample && origin ? `<a class="btn btn--reading" href="${en ? '/livro/sample/' : b.sampleUrl}">${en ? 'Read 3 free chapters' : 'Ler 3 capítulos grátis'}</a>` : ''}
+  </div><ul class="edition-indicators" aria-label="${en ? 'Edition' : 'Edição'}"><li>${en ? kindle ? 'English' : 'Portuguese edition' : 'Português'}</li><li>${origin ? en ? 'Kindle + paperback' : 'Kindle + impresso' : 'Amazon'}</li>${origin ? `<li>${en ? 'Amazon' : 'Amazon / UICLAP'}</li>` : ''}</ul>`;
 }
 
 function authorCompact(lang = 'pt') {
@@ -163,9 +162,7 @@ function readerFitEn() {
 }
 const englishStatus = b => b.status === 'À venda' ? b.purchaseUrlEn ? 'Available' : 'Available in Portuguese' : SHEET_UI.en.statusMap[b.status] || b.status;
 function englishAvailableBooks() {
-  const gods = books.find(b => b.slug === 'os-deuses-nao-tem-filhos');
-  const sh = bookSheetsEn[gods.slug];
-  return `<section class="section home-vitrine" id="books"><div class="container"><span class="kicker">The published books</span><h2>The story continues</h2><article class="vitrine-card" style="margin-top:24px"><a class="vitrine-card__cover" href="/en/chronicles/${gods.slug}/"><img src="${escapeHtml(gods.cover)}" alt="Cover of the Portuguese edition of ${escapeHtml(gods.title)}" width="300" height="480" loading="lazy"></a><div class="vitrine-card__body"><span class="badge badge--sale">Available in Portuguese</span><span class="mono">Cosmological Chronicles · Volume I</span><h3><a href="/en/chronicles/${gods.slug}/">${escapeHtml(gods.titleEn)}</a></h3><p>${escapeHtml(sh.tagline)}</p><p>${escapeHtml(sh.synopsis.split(/\n\s*\n/)[0])}</p>${purchaseActions(gods,{lang:'en',sample:false})}<a class="btn" href="/en/chronicles/${gods.slug}/">Read the synopsis and details</a></div></article></div></section>`;
+ return `<section class="section home-vitrine" id="books"><div class="container"><span class="kicker">The published books</span><h2>Available now</h2><div class="vitrine-grid">${books.filter(b=>['sinal-ruido','os-deuses-nao-tem-filhos'].includes(b.slug)).map(b=>{const origin=b.slug==='sinal-ruido'; const href=origin?'/en/signal-noise/':'/en/chronicles/'+b.slug+'/';return `<article class="vitrine-card"><a class="vitrine-card__cover" href="${href}"><img src="${origin?'/livro/capa-en.jpg':escapeHtml(b.cover)}" alt="Cover of ${escapeHtml(b.titleEn||b.title)}${origin?'':' — Portuguese edition'}" width="300" height="480" loading="lazy"></a><div class="vitrine-card__body"><span class="badge badge--sale">${origin?'Available in English':'Available in Portuguese'}</span><h3><a href="${href}">${escapeHtml(origin?'SIGNAL/NOISE':b.titleEn)}</a></h3><p>${escapeHtml(bookSheetsEn[b.slug]?.tagline||b.description)}</p>${purchaseActions(b,{lang:'en',sample:false})}<a class="btn" href="${href}">Read the synopsis and details</a></div></article>`;}).join('')}</div></div></section>`;
 }
 
 // Vitrine da página inicial: destaque para os livros à venda e catálogo completo (substitui a antiga /livros/).
@@ -269,14 +266,33 @@ function homeShowcase({future = false} = {}) {
         <h2 style="margin-top:10px">O universo continua</h2><p>Crônicas Cosmológicas e próximos livros.</p>
         <p class="mono" style="margin-top:8px"><a href="/en/chronicles/" hreflang="en" style="color:var(--muted)">English version →</a></p>
         <div class="books-grid books-grid--covers" style="margin-top:20px">
-          ${catalogCard(origin, "/livros/sinal-ruido/", "ORIGEM · À VENDA")}
-          ${chronicles.map((b) => catalogCard(b, (bookSheets[b.slug] || {}).synopsis ? `/livros/${b.slug}/` : "", stateLabel(b))).join("")}
+          
+          ${chronicles.filter(b => !isOnSale(b)).map((b) => catalogCard(b, (bookSheets[b.slug] || {}).synopsis ? `/livros/${b.slug}/` : "", stateLabel(b))).join("")}
         </div>
         ${others.length ? `<div style="margin-top:36px"><span class="kicker">Outro projeto literário</span><div class="books-grid" style="margin-top:14px">${others.map((b) => `<article class="book-card"><span class="mono">${escapeHtml(b.status)}</span><h3>${escapeHtml(b.title)}</h3>${b.description ? `<p>${escapeHtml(b.description)}</p>` : ""}</article>`).join("")}</div></div>` : ""}
       </div>
     </section>
     ` : ""}
     ${future ? [origin, ...chronicles.filter((b) => (bookSheets[b.slug] || {}).synopsis)].map(bookDialogHtml).join("") : ""}`;
+}
+
+
+function cinematicHero(b, lang = 'pt') {
+ const en = lang === 'en';
+ return `<section class="home-hero-book" data-book-hero><div class="container home-hero-book__grid">
+ <div class="home-hero-book__copy" data-book-hero-copy><h1 class="home-hero-book__title">${en ? 'SIGNAL/NOISE' : escapeHtml(b.title)}</h1><p class="home-hero-book__author">${escapeHtml(b.author)}</p><p class="home-hero-book__pitch">${en ? 'A question we perhaps should never answer.' : 'Uma pergunta que talvez não devêssemos responder.'}</p>${purchaseActions(b,{lang})}</div>
+ <div class="home-hero-book__cover" data-book-hero-cover><img src="${en ? '/livro/capa-en.jpg' : escapeHtml(b.cover)}" alt="${en ? 'Cover of SIGNAL/NOISE' : 'Capa de SINAL/RUÍDO'}" width="400" height="640" fetchpriority="high"></div></div></section>
+ <div class="container other-editions"><details class="conversion-editions"><summary>${en ? 'Other editions' : 'Outras edições'}</summary>${en ? '<p><a href="/buy/">Choose your country and edition</a> · <a href="/">Português</a></p>' : buyPanel(b,{hidePt:true})}</details></div>`;
+}
+function archiveLabels(lang = 'pt') {
+ const en=lang==='en'; const labels=en?['SCIENTIFIC INVESTIGATION','FIRST CONTACT','REAL CASES','ARCHIVES AND EVIDENCE']:['INVESTIGAÇÃO CIENTÍFICA','PRIMEIRO CONTATO','CASOS REAIS','ARQUIVOS E EVIDÊNCIAS'];
+ return `<section class="section container dossier-labels" aria-label="${en ? 'Inside the novel' : 'Dentro do romance'}"><ul>${labels.map((label,i)=>`<li><span class="mono">0${i+1}</span>${label}</li>`).join('')}</ul></section>`;
+}
+function transmission(lang='pt') {
+ const en=lang==='en';return `<section class="home-bridge-question" aria-label="${en?'Between the novel and the archive':'Entre o romance e o arquivo'}"><div class="container">${(en?['What we know.','What we do not know.','What we have yet to find.']:['O que sabemos.','O que não sabemos.','O que ainda falta encontrar.']).map(text=>`<p class="home-bridge-question__line" data-transmission-line>${text}</p>`).join('')}</div></section>`;
+}
+function sampleInvitation(lang='pt') {
+ const en=lang==='en';return `<section class="section section--divider home-sample"><div class="container--narrow"><span class="kicker">${en?'Read before you decide':'Leia antes de decidir'}</span><h2>${en?'Three chapters. The first clues.':'Três capítulos. As primeiras pistas.'}</h2><ol class="sample-index">${(en?SAMPLE_CHAPTERS_EN:SAMPLE_CHAPTERS).map(c=>`<li><span class="mono">${String(c.n).padStart(2,'0')}</span><h3>${escapeHtml(c.title)}</h3></li>`).join('')}</ol><a class="btn btn--primary" href="${en?'/livro/sample/':'/livro/amostra/'}">${en?'Start reading':'Começar a leitura'}</a></div></section>`;
 }
 
 function homePage() {
@@ -288,22 +304,9 @@ function homePage() {
   const purchaseUrlEnUk = featuredBook.purchaseUrlEnUk; // edição em inglês, Amazon UK, opcional
 
   const body = `
-    <section class="home-hero-book grid-texture" data-book-hero>
-      <div class="container home-hero-book__grid">
-        <div class="home-hero-book__copy" data-book-hero-copy>
-          <span class="kicker">Romance · Ficção científica de investigação</span>
-          <h1 class="home-hero-book__title">${escapeHtml(featuredBook.title).replace("/", `<span class="title-slash">/</span>`)}</h1>
-          <p class="mono home-hero-book__author">${escapeHtml(featuredBook.author)}</p>
-          <p class="home-hero-book__pitch">Um sinal real.<br>Uma investigação fictícia.<br>Uma pergunta que talvez não devêssemos responder.</p><p class="conversion-meta">Romance de ficção científica investigativa de Alex Jr. Kich.</p>
-          ${purchaseActions(featuredBook)}<details class="conversion-editions"><summary>Outras edições e idiomas</summary>${buyPanel(featuredBook, {hidePt:true})}</details>
-        </div>
-        <div class="home-hero-book__cover" data-book-hero-cover>
-          <img src="${escapeHtml(featuredBook.cover)}" alt="Capa de ${escapeHtml(featuredBook.title)}" width="400" height="600" />
-        </div>
-      </div>
-    </section>
+    ${cinematicHero(featuredBook)}
 
-    ${readerFit()}
+    ${archiveLabels()}
 
     <section class="section container--narrow home-about-book">
       <span class="kicker">Sobre o romance</span>
@@ -313,28 +316,8 @@ function homePage() {
       ${shortSynopsis}<p><a class="btn" href="/livros/sinal-ruido/">Conhecer a história e a ficha do livro</a></p>
     </section>
 
-    <section class="home-bridge-question" aria-label="Ponte entre o romance e o arquivo factual">
-      <div class="container">
-        <p class="mono home-bridge-question__cue">↓</p>
-        <p class="home-bridge-question__line">O que sabemos.</p>
-        <p class="home-bridge-question__line">O que não sabemos.</p>
-        <p class="home-bridge-question__line home-bridge-question__line--accent">O que ainda falta encontrar.</p>
-      </div>
-    </section>
-
-    <section class="section section--divider home-sample">
-      <div class="container">
-        <div class="section-heading"><div><span class="kicker">Leia antes de decidir</span><h2>Leia gratuitamente os três primeiros capítulos.</h2></div></div>
-        <div class="home-sample__grid" data-motion-group>
-          ${SAMPLE_CHAPTERS.map((c) => `
-            <a class="home-sample__chapter card" href="/livro/amostra/" data-motion-reveal>
-              <span class="mono">CAPÍTULO ${c.n}</span>
-              <h3>${escapeHtml(c.title)}</h3>
-            </a>`).join("")}
-        </div>
-        <div style="margin-top:20px"><a class="btn btn--primary" href="/livro/amostra/">Começar a leitura</a></div>
-      </div>
-    </section>
+    ${transmission()}
+    ${sampleInvitation()}
 
     ${conversionEditorial(featuredBook)}
     ${homeShowcase()}
@@ -1282,10 +1265,10 @@ function livroAmostraPage() {
         <div class="reading-body">
           ${c.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join("\n          ")}
         </div>
-        <div class="chapter-end"><span>Fim do capítulo ${c.n}</span>${i < chapters.length - 1 ? `<button class="btn btn--primary" type="button" data-next-chapter="${chapters[i+1].id}">Capítulo seguinte →</button>` : `<section class="sample-finish" data-sample-finish><h2>Você chegou ao fim da amostra.</h2><p>Mas o sinal continua.</p>${purchaseActions(books.find(b => b.slug === "sinal-ruido"), {sample:false, ending:true})}<a class="btn" href="/livros/sinal-ruido/">Voltar à página do livro</a></section>`}</div>
+        <div class="chapter-end"><span>Fim do capítulo ${c.n}</span>${i < chapters.length - 1 ? `<button class="btn btn--primary" type="button" data-next-chapter="${chapters[i+1].id}">Capítulo seguinte →</button>` : `<section class="sample-finish" data-sample-finish><h2>Você chegou ao fim da amostra.</h2><p>Mas o sinal continua.</p>${purchaseActions(books.find(b => b.slug === "sinal-ruido"), {sample:false, ending:true})}</section>`}</div>
       </section>`).join("")}
 
-      <div class="reading-actions"><a class="btn" data-reading-return href="/livro/">← Voltar ao livro</a><a class="btn" href="/casos/">Explorar os casos reais →</a></div>
+      <div class="reading-actions"><a class="btn" data-reading-return href="/livros/sinal-ruido/">← Voltar ao livro</a><a class="btn" href="/casos/">Explorar os casos reais →</a></div>
     </article>`;
   write("/livro/amostra", page({
     title: "Amostra do romance",
@@ -1316,7 +1299,7 @@ function livroSampleEnPage() {
         <div class="reading-body">
           ${c.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join("\n          ")}
         </div>
-        <div class="chapter-end"><span>End of chapter ${c.n}</span>${i < chapters.length - 1 ? `<button class="btn btn--primary" type="button" data-next-chapter="${chapters[i+1].id}">Next chapter →</button>` : `<section class="sample-finish" data-sample-finish><h2>You have reached the end of the sample.</h2><p>But the signal continues.</p>${purchaseActions(books.find(b => b.slug === "sinal-ruido"), {sample:false,ending:true,lang:"en"})}<a class="btn" href="/en/signal-noise/">Back to the book</a></section>`}</div>
+        <div class="chapter-end"><span>End of chapter ${c.n}</span>${i < chapters.length - 1 ? `<button class="btn btn--primary" type="button" data-next-chapter="${chapters[i+1].id}">Next chapter →</button>` : `<section class="sample-finish" data-sample-finish><h2>You have reached the end of the sample.</h2><p>But the signal continues.</p>${purchaseActions(books.find(b => b.slug === "sinal-ruido"), {sample:false,ending:true,lang:"en"})}</section>`}</div>
       </section>`).join("")}
 
       <div class="reading-actions"><a class="btn" data-reading-return href="/en/signal-noise/">Back to the book</a><a class="btn" href="/en/archive/">Explore the real cases</a></div>
@@ -1520,10 +1503,11 @@ function enHomePage(list) {
   const b = books.find(b => b.slug === 'sinal-ruido');
   const future = list.filter(b => b.status !== 'À venda' && bookSheetsEn[b.slug]?.synopsis);
   const body = `
-    <section class="home-hero-book grid-texture" data-book-hero><div class="container home-hero-book__grid"><div class="home-hero-book__copy" data-book-hero-copy><span class="kicker">Novel · Investigative science fiction</span><h1 class="home-hero-book__title">SIGNAL<span class="title-slash">/</span>NOISE</h1><p class="mono home-hero-book__author">${escapeHtml(b.author)}</p><p class="home-hero-book__pitch">A real signal.<br>A fictional investigation.<br>A question we perhaps should never answer.</p><p class="conversion-meta">An investigative science fiction novel by Alex Jr. Kich.</p>${purchaseActions(b,{lang:'en'})}</div><div class="home-hero-book__cover" data-book-hero-cover><img src="/livro/capa-en.jpg" alt="Cover of SIGNAL/NOISE" width="400" height="640"></div></div></section>
-    ${readerFitEn()}
+    ${cinematicHero(b,'en')}
+    ${archiveLabels("en")}
     <section class="section container--narrow home-about-book"><span class="kicker">About the novel</span><h2>SIGNAL/NOISE</h2><p class="conversion-meta">Novel · Available in English</p>${shortSynopsisEn}<a class="btn" href="/en/signal-noise/">Discover the story and book details</a></section>
-    <section class="section section--divider home-sample"><div class="container"><div class="section-heading"><div><span class="kicker">Read before you decide</span><h2>Read the first three chapters for free.</h2></div></div><div class="home-sample__grid">${SAMPLE_CHAPTERS_EN.map(c=>`<a class="home-sample__chapter card" href="/livro/sample/"><span class="mono">CHAPTER ${c.n}</span><h3>${escapeHtml(c.title)}</h3></a>`).join('')}</div><p style="margin-top:20px"><a class="btn btn--primary" href="/livro/sample/">Start reading</a></p></div></section>
+    ${transmission('en')}
+    ${sampleInvitation('en')}
     <div class="container">${conversionEditorial(b,'en')}</div>
     ${englishAvailableBooks()}
     <div class="container">${authorCompact('en')}</div>

@@ -1,0 +1,602 @@
+[
+  {
+    "channel": "chrome",
+    "width": 320,
+    "path": "/",
+    "scroll": 320,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 320,
+    "path": "/en/",
+    "scroll": 320,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 320,
+    "path": "/livros/sinal-ruido/",
+    "scroll": 320,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 320,
+    "path": "/en/signal-noise/",
+    "scroll": 320,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 320,
+    "path": "/livro/amostra/",
+    "scroll": 320,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 320,
+    "path": "/livro/sample/",
+    "scroll": 320,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/en/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/livros/sinal-ruido/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/en/signal-noise/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/livro/amostra/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/livro/sample/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 768,
+    "path": "/",
+    "scroll": 768,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 768,
+    "path": "/en/",
+    "scroll": 768,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 768,
+    "path": "/livros/sinal-ruido/",
+    "scroll": 768,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 768,
+    "path": "/en/signal-noise/",
+    "scroll": 768,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 768,
+    "path": "/livro/amostra/",
+    "scroll": 768,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 768,
+    "path": "/livro/sample/",
+    "scroll": 768,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1024,
+    "path": "/",
+    "scroll": 1024,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1024,
+    "path": "/en/",
+    "scroll": 1024,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1024,
+    "path": "/livros/sinal-ruido/",
+    "scroll": 1024,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1024,
+    "path": "/en/signal-noise/",
+    "scroll": 1024,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1024,
+    "path": "/livro/amostra/",
+    "scroll": 1024,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1024,
+    "path": "/livro/sample/",
+    "scroll": 1024,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/en/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/livros/sinal-ruido/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/en/signal-noise/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/livro/amostra/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/livro/sample/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 320,
+    "path": "/",
+    "scroll": 320,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 320,
+    "path": "/en/",
+    "scroll": 320,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 320,
+    "path": "/livros/sinal-ruido/",
+    "scroll": 320,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 320,
+    "path": "/en/signal-noise/",
+    "scroll": 320,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 320,
+    "path": "/livro/amostra/",
+    "scroll": 320,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 320,
+    "path": "/livro/sample/",
+    "scroll": 320,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 393,
+    "path": "/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 393,
+    "path": "/en/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 393,
+    "path": "/livros/sinal-ruido/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 393,
+    "path": "/en/signal-noise/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 393,
+    "path": "/livro/amostra/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 393,
+    "path": "/livro/sample/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 768,
+    "path": "/",
+    "scroll": 768,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 768,
+    "path": "/en/",
+    "scroll": 768,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 768,
+    "path": "/livros/sinal-ruido/",
+    "scroll": 768,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 768,
+    "path": "/en/signal-noise/",
+    "scroll": 768,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 768,
+    "path": "/livro/amostra/",
+    "scroll": 768,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 768,
+    "path": "/livro/sample/",
+    "scroll": 768,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 1024,
+    "path": "/",
+    "scroll": 1024,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 1024,
+    "path": "/en/",
+    "scroll": 1024,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 1024,
+    "path": "/livros/sinal-ruido/",
+    "scroll": 1024,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 1024,
+    "path": "/en/signal-noise/",
+    "scroll": 1024,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 1024,
+    "path": "/livro/amostra/",
+    "scroll": 1024,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 1024,
+    "path": "/livro/sample/",
+    "scroll": 1024,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 1440,
+    "path": "/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 1440,
+    "path": "/en/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 1440,
+    "path": "/livros/sinal-ruido/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 1440,
+    "path": "/en/signal-noise/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 1440,
+    "path": "/livro/amostra/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "msedge",
+    "width": 1440,
+    "path": "/livro/sample/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  }
+]

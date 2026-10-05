@@ -66,3 +66,13 @@ if (revealCards.length && 'IntersectionObserver' in window && !reduceMotion) {
     revealCards.forEach((el) => observer.observe(el));
   }).catch(() => {});
 }
+// Transmission interval: subtle successive entrance, with a fully static fallback.
+const transmissionLines = document.querySelectorAll('[data-transmission-line]');
+if (transmissionLines.length && !reduceMotion && 'IntersectionObserver' in window) {
+ const observer = new IntersectionObserver(entries => {
+  if (!entries.some(entry => entry.isIntersecting)) return;
+  transmissionLines.forEach((line,index) => line.animate([{opacity:.4,transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'}],{duration:500,delay:index*160,easing:'ease-out'}));
+  observer.disconnect();
+ },{threshold:.5});
+ observer.observe(transmissionLines[0].parentElement);
+}

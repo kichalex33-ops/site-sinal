@@ -8,7 +8,6 @@ import "./reveal.js";
 import "./ambience.js";
 import "./intro.js";
 import "./home-motion.js";
-import "./hero-signal-line.js";
 import "./reading.js";
 import "./buy-router.js";
 import "./book-dialog.js";

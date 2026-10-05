@@ -42,10 +42,10 @@
         <span class="brand__mark">SINAL<b>/</b>RUÍDO</span>
         <span class="brand__sub">SIGNAL/NOISE · Alex Jr. Kich</span>
       </a>
-      <nav class="main-nav" aria-label="Main navigation"><a href="/livro/sample/">Read</a><a href="/en/signal-noise/">The book</a><a href="/en/author/">Author</a><a href="/buy/">Buy</a></nav>
+      <nav class="main-nav" aria-label="Main navigation"><a href="/livro/sample/">Read</a><div class="nav-group"><a href="/en/#books">Books</a><div class="nav-sub"><a href="/en/signal-noise/">SIGNAL/NOISE</a><a href="/en/chronicles/">Cosmological Chronicles</a><a href="/buy/">Other editions</a></div></div><a href="/en/archive/">Archive</a><a href="/en/world-map-of-signals/">Map</a><div class="nav-group"><a href="/en/author/">Author</a><div class="nav-sub"><a href="/en/author/">About the author</a><a href="/en/contact/">Contact</a></div></div></nav>
       <div class="header-actions header-actions--en">
-        <a href="/en/world-map-of-signals/" class="lang-switch">World Map</a>
-        <a href="/metodo/" class="lang-switch" hreflang="pt-BR">Português</a>
+        <a href="/metodo/" class="lang-switch" hreflang="pt-BR">PT</a>
+        <button type="button" class="search-trigger" data-cmdk-open aria-label="Search the archive" aria-haspopup="dialog"><span aria-hidden="true">⌕</span></button>
         <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram @sinal_ruido">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
@@ -57,7 +57,7 @@
       </div>
     </div>
     <nav class="mobile-nav container" data-mobile-nav aria-label="Navigation">
-      <a href="/livro/sample/">Read 3 free chapters</a><a href="/en/signal-noise/">SIGNAL/NOISE</a><a href="/buy/">Buy the English edition</a><a href="/en/chronicles/">Cosmological Chronicles</a><a href="/en/author/">Author</a><a href="/en/archive/">Archive</a><a href="/en/world-map-of-signals/">World Map of Signals</a><a href="/en/readers/">After reading</a><a href="/metodo/" class="lang-switch" hreflang="pt-BR">Português</a>
+      <a href="/livro/sample/">Read 3 free chapters</a><a href="/en/signal-noise/">SIGNAL/NOISE</a><a href="/buy/">Buy the English edition</a><a href="/en/chronicles/">Cosmological Chronicles</a><a href="/en/author/">Author</a><a href="/en/archive/">Archive</a><a href="/en/world-map-of-signals/">World Map of Signals</a><a href="/en/readers/">After reading</a><a href="/en/contact/">Contact</a><a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a><a href="/metodo/" class="lang-switch" hreflang="pt-BR">PT</a>
     </nav>
   </header>
 
@@ -101,7 +101,12 @@
     </div>
   </footer>
 
-
+  <div class="cmdk-backdrop" data-cmdk-backdrop>
+    <div class="cmdk" role="dialog" aria-modal="true" aria-label="Search archive">
+      <input type="text" placeholder="Search the archive (Portuguese catalogs)…" data-cmdk-input autocomplete="off" />
+      <ul data-cmdk-results></ul>
+    </div>
+  </div>
 
   <script type="module" src="/src/js/main.js"></script>
 </body>

@@ -15,7 +15,7 @@ function markSeen() {
   try { localStorage.setItem(SEEN_KEY, "1"); } catch {}
 }
 
-if (location.pathname === "/" && !alreadySeen()) {
+if (location.pathname === "/" && !document.querySelector("[data-book-hero]") && !alreadySeen()) {
   if (reduceMotion) {
     markSeen();
   } else {

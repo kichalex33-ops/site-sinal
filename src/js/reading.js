@@ -10,7 +10,7 @@ if (shell) {
     tabs.forEach((tab) => { tab.setAttribute('aria-selected', String(tab.dataset.chapterTab === id)); tab.tabIndex = tab.dataset.chapterTab === id ? 0 : -1; });
     panels.forEach((panel) => { panel.hidden = panel.dataset.chapterPanel !== id; });
     const back = shell.querySelector('[data-reading-return]');
-    if (back) back.hidden = id === tabs.at(-1)?.dataset.chapterTab;
+    if (back) back.hidden = false;
     try { localStorage.setItem(key, id); } catch {}
     if (scroll) shell.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
   };

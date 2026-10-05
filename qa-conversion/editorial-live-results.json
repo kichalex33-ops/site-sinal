@@ -1,0 +1,122 @@
+[
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/en/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/livros/sinal-ruido/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/en/signal-noise/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/livro/amostra/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "path": "/livro/sample/",
+    "scroll": 393,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/en/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/livros/sinal-ruido/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/en/signal-noise/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/livro/amostra/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "path": "/livro/sample/",
+    "scroll": 1440,
+    "h1": 1,
+    "broken": [],
+    "errors": [],
+    "failed": []
+  }
+]
