@@ -1,7 +1,8 @@
 {
-  "_doc": "Fonte única dos sinais. Publicados: confirmed, accepted_waiting_installation e in_negotiation. pending e rejected continuam privados. Confirmado sem foto não equivale a confirmação fotográfica. coord_precision: exact | street | area; area indica apenas a cidade, não o endereço da instituição. Campos nulos = não informado.",
+  "_doc": "Fonte única dos sinais. confirmed exige foto do cartaz instalado (foto). accepted_waiting_photo / accepted_waiting_installation indicam participação aceita, sem confirmação fotográfica. foto_local é imagem de referência do espaço e nunca confirma instalação. in_negotiation é público; pending e rejected são privados. coord_precision: exact | street | area. Campos nulos = não informado.",
   "statuses": [
     "confirmed",
+    "accepted_waiting_photo",
     "accepted_waiting_installation",
     "in_negotiation",
     "pending",
@@ -10,8 +11,8 @@
   "signals": [
     {
       "id": "br-eldorado-do-sul-biblioteca",
-      "nome": "Biblioteca Pública Municipal",
-      "nome_en": "Municipal Public Library",
+      "nome": "Biblioteca Pública Municipal de Eldorado do Sul",
+      "nome_en": "Eldorado do Sul Municipal Public Library",
       "tipo": "library",
       "cidade": "Eldorado do Sul",
       "estado": "Rio Grande do Sul",
@@ -26,9 +27,29 @@
       "status": "confirmed",
       "data_confirmacao": null,
       "foto": "/sinais/br-eldorado-do-sul-biblioteca.jpg",
-      "descricao": null,
-      "descricao_en": null,
-      "link": null
+      "descricao": "Biblioteca pública municipal e espaço de leitura e acesso à cultura para a comunidade de Eldorado do Sul.",
+      "descricao_en": "A municipal public library and a space for reading and access to culture for the Eldorado do Sul community.",
+      "link": "https://www.eldorado.rs.gov.br/",
+      "endereco": "Rua Argentina, 19, Centro, Eldorado do Sul/RS, Brasil",
+      "contatos": [
+        {
+          "tipo": "website",
+          "nome": "Prefeitura de Eldorado do Sul",
+          "nome_en": "Eldorado do Sul City Hall",
+          "url": "https://www.eldorado.rs.gov.br/"
+        },
+        {
+          "tipo": "instagram",
+          "nome": "@bibliotecaeldoradodosul",
+          "url": "https://www.instagram.com/bibliotecaeldoradodosul/"
+        },
+        {
+          "tipo": "facebook",
+          "nome": "Biblioteca Pública de Eldorado do Sul",
+          "url": null
+        }
+      ],
+      "foto_local": "/sinais/eldorado-espaco.jpg"
     },
     {
       "id": "br-santa-maria-ufsm-ru",
@@ -48,9 +69,31 @@
       "status": "confirmed",
       "data_confirmacao": null,
       "foto": "/sinais/br-santa-maria-ufsm-ru.jpg",
-      "descricao": null,
-      "descricao_en": null,
-      "link": null
+      "descricao": "Espaço universitário da Universidade Federal de Santa Maria, frequentado diariamente por estudantes e pela comunidade acadêmica.",
+      "descricao_en": "A university space at the Federal University of Santa Maria, used daily by students and the academic community.",
+      "link": "https://www.ufsm.br/orgaos-suplementares/ru",
+      "endereco": "Campus da UFSM, Av. Roraima, 1000, Camobi, Santa Maria/RS, Brasil",
+      "contatos": [
+        {
+          "tipo": "website",
+          "nome": "Universidade Federal de Santa Maria / RU",
+          "nome_en": "Federal University of Santa Maria / University Restaurant",
+          "url": "https://www.ufsm.br/orgaos-suplementares/ru"
+        },
+        {
+          "tipo": "instagram",
+          "nome": "@ru.ufsm.sm",
+          "url": "https://www.instagram.com/ru.ufsm.sm/"
+        },
+        {
+          "tipo": "facebook",
+          "nome": "UFSM RU",
+          "url": null
+        }
+      ],
+      "foto_local": "/sinais/ufsm-espaco.jpg",
+      "foto_local_legenda": "UFSM — imagem de referência fornecida pelo autor.",
+      "foto_local_legenda_en": "UFSM — reference image supplied by the author."
     },
     {
       "id": "br-sao-jose-do-sul-posto-saude",
@@ -67,7 +110,7 @@
       "longitude": -51.484389,
       "coord_precision": "exact",
       "coord_source": "Coordenadas fornecidas pelo autor em 02/10/2026 (Google Maps).",
-      "status": "confirmed",
+      "status": "accepted_waiting_photo",
       "data_confirmacao": null,
       "foto": null,
       "descricao": null,
@@ -76,8 +119,8 @@
     },
     {
       "id": "nz-christchurch-city-libraries",
-      "nome": "Christchurch City Libraries",
-      "nome_en": "Christchurch City Libraries",
+      "nome": "Christchurch City Libraries / Ngā Kete Wānanga o Ōtautahi",
+      "nome_en": "Christchurch City Libraries / Ngā Kete Wānanga o Ōtautahi",
       "tipo": "library",
       "cidade": "Christchurch",
       "estado": "Canterbury",
@@ -92,19 +135,46 @@
       "status": "accepted_waiting_installation",
       "data_confirmacao": null,
       "foto": null,
-      "descricao": null,
-      "descricao_en": null,
-      "link": null,
+      "descricao": "Rede pública de bibliotecas de Christchurch, com unidades distribuídas pela cidade e espaços dedicados à leitura, cultura, aprendizagem e comunidade.",
+      "descricao_en": "Christchurch’s public library network, with branches throughout the city and spaces for reading, culture, learning and community.",
+      "link": "https://my.christchurchcitylibraries.com/",
       "interno": {
         "cartazes_a4_aceitos": 20,
         "folhetos_aceitos": 100,
         "nota": "A rede aceitou distribuir pelas bibliotecas. Só vira 'confirmed' quando houver confirmação de exposição física (foto)."
-      }
+      },
+      "endereco": "Christchurch, Canterbury, New Zealand",
+      "contatos": [
+        {
+          "tipo": "website",
+          "nome": "Christchurch City Libraries",
+          "nome_en": "Christchurch City Libraries",
+          "url": "https://my.christchurchcitylibraries.com/"
+        },
+        {
+          "tipo": "instagram",
+          "nome": "@christchurchlib",
+          "url": "https://www.instagram.com/christchurchlib/"
+        },
+        {
+          "tipo": "facebook",
+          "nome": "Christchurch City Libraries",
+          "url": null
+        },
+        {
+          "tipo": "youtube",
+          "nome": "Christchurch City Libraries NZ",
+          "url": null
+        }
+      ],
+      "foto_local": "/sinais/christchurch-turanga.jpg",
+      "foto_local_legenda": "Tūranga — uma das unidades da rede. Imagem do espaço, sem confirmação de instalação do cartaz.",
+      "foto_local_legenda_en": "Tūranga — one of the network’s branches. Venue image; poster installation has not been confirmed."
     },
     {
       "id": "us-seattle-fishbowl",
-      "nome": "Fishbowl Open Mic / Art Gallery",
-      "nome_en": "Fishbowl Open Mic / Art Gallery",
+      "nome": "The Fishbowl Open Mic / Art Gallery",
+      "nome_en": "The Fishbowl Open Mic / Art Gallery",
       "tipo": "other",
       "cidade": "Seattle",
       "estado": "Washington",
@@ -112,21 +182,35 @@
       "pais": "EUA",
       "pais_en": "United States",
       "pais_codigo": "US",
-      "status": "confirmed",
+      "status": "accepted_waiting_photo",
       "data_confirmacao": null,
       "foto": null,
-      "descricao": null,
-      "descricao_en": null,
-      "link": null,
-      "latitude": 47.6038321,
-      "longitude": -122.330062,
-      "coord_precision": "area",
-      "coord_source": "OpenStreetMap/Nominatim, consulta de cidade em 05/10/2026: Seattle, Washington, USA. Seattle, King County, Washington, United States. Localização aproximada; endereço da instituição ainda não informado."
+      "descricao": "Espaço dedicado a apresentações, arte, música, poesia e comunidade criativa em Seattle.",
+      "descricao_en": "A space for performances, art, music, poetry and Seattle’s creative community.",
+      "link": "https://www.thefishbowlseattle.com/",
+      "latitude": 47.6229445,
+      "longitude": -122.3591857,
+      "coord_precision": "exact",
+      "coord_source": "OpenStreetMap/Nominatim em 05/10/2026: 424, 2nd Avenue West, Uptown, Queen Anne, Seattle, King County, Washington, 98119, United States; node 2400948751. Endereço/local informado pelo autor.",
+      "endereco": "424 2nd Ave W, Seattle, WA 98119, USA",
+      "contatos": [
+        {
+          "tipo": "website",
+          "nome": "The Fishbowl",
+          "nome_en": "The Fishbowl",
+          "url": "https://www.thefishbowlseattle.com/"
+        },
+        {
+          "tipo": "instagram",
+          "nome": "@thefishbowlseattle",
+          "url": "https://www.instagram.com/thefishbowlseattle/"
+        }
+      ]
     },
     {
       "id": "br-sao-paulo-ccj",
-      "nome": "CCJ Ruth Cardoso",
-      "nome_en": "CCJ Ruth Cardoso",
+      "nome": "Centro Cultural da Juventude Ruth Cardoso, CCJ",
+      "nome_en": "Ruth Cardoso Youth Cultural Centre, CCJ",
       "tipo": "other",
       "cidade": "São Paulo",
       "estado": "São Paulo",
@@ -134,16 +218,35 @@
       "pais": "Brasil",
       "pais_en": "Brazil",
       "pais_codigo": "BR",
-      "status": "confirmed",
+      "status": "accepted_waiting_photo",
       "data_confirmacao": null,
       "foto": null,
-      "descricao": null,
-      "descricao_en": null,
-      "link": null,
-      "latitude": -23.5506507,
-      "longitude": -46.6333824,
-      "coord_precision": "area",
-      "coord_source": "OpenStreetMap/Nominatim, consulta de cidade em 05/10/2026: São Paulo, SP, Brasil. São Paulo, Região Sudeste, Brasil. Localização aproximada; endereço da instituição ainda não informado."
+      "descricao": "Centro cultural público dedicado à juventude, com programação de música, literatura, artes, formação e atividades culturais.",
+      "descricao_en": "A public cultural centre for young people, with music, literature, arts, education and cultural activities.",
+      "link": "https://ccj.prefeitura.sp.gov.br/",
+      "latitude": -23.4759127,
+      "longitude": -46.6703981,
+      "coord_precision": "exact",
+      "coord_source": "OpenStreetMap/Nominatim em 05/10/2026: Centro Cultural da Juventude Ruth Cardoso, 3641, Avenida Deputado Emílio Carlos, Vila Amélia, Cachoeirinha, São Paulo, Região Sudeste, 02720-200, Brasil; way 1169165531. Endereço/local informado pelo autor.",
+      "endereco": "Av. Deputado Emílio Carlos, 3641, Vila Nova Cachoeirinha, São Paulo/SP, Brasil",
+      "contatos": [
+        {
+          "tipo": "website",
+          "nome": "Centro Cultural da Juventude",
+          "nome_en": "Youth Cultural Centre",
+          "url": "https://ccj.prefeitura.sp.gov.br/"
+        },
+        {
+          "tipo": "instagram",
+          "nome": "@ccjuventude",
+          "url": "https://www.instagram.com/ccjuventude/"
+        },
+        {
+          "tipo": "facebook",
+          "nome": "CCJuventude",
+          "url": null
+        }
+      ]
     },
     {
       "id": "br-curitiba-gibiteca",
@@ -156,16 +259,38 @@
       "pais": "Brasil",
       "pais_en": "Brazil",
       "pais_codigo": "BR",
-      "status": "confirmed",
+      "status": "accepted_waiting_photo",
       "data_confirmacao": null,
       "foto": null,
-      "descricao": null,
-      "descricao_en": null,
-      "link": null,
-      "latitude": -25.4295963,
-      "longitude": -49.2712724,
-      "coord_precision": "area",
-      "coord_source": "OpenStreetMap/Nominatim, consulta de cidade em 05/10/2026: Curitiba, PR, Brasil. Curitiba, Paraná, Região Sul, Brasil. Localização aproximada; endereço da instituição ainda não informado."
+      "descricao": "Espaço cultural especializado em quadrinhos, ilustração, narrativa gráfica e formação artística, ligado à Fundação Cultural de Curitiba.",
+      "descricao_en": "A cultural space specialising in comics, illustration, graphic storytelling and arts education, linked to the Curitiba Cultural Foundation.",
+      "link": "https://locais.curitiba.pr.gov.br/gibiteca-de-curitiba/500",
+      "latitude": -25.4282704,
+      "longitude": -49.2697144,
+      "coord_precision": "street",
+      "coord_source": "OpenStreetMap/Nominatim em 05/10/2026: Rua São Francisco, Centro Histórico, Centro, Curitiba, Paraná, Região Sul, 80020-240, Brasil; way 137443027. Aproximação da rua; não é geocodificação do número 326.",
+      "endereco": "Rua São Francisco, 326, Largo da Ordem, Curitiba/PR, Brasil",
+      "contatos": [
+        {
+          "tipo": "website",
+          "nome": "Fundação Cultural de Curitiba / Gibiteca",
+          "nome_en": "Curitiba Cultural Foundation / Comic Book Library",
+          "url": "https://locais.curitiba.pr.gov.br/gibiteca-de-curitiba/500"
+        },
+        {
+          "tipo": "instagram",
+          "nome": "@gibitecadecuritiba",
+          "url": "https://www.instagram.com/gibitecadecuritiba/"
+        },
+        {
+          "tipo": "facebook",
+          "nome": "Gibiteca de Curitiba",
+          "url": null
+        }
+      ],
+      "foto_local": "/sinais/gibiteca-espaco.webp",
+      "foto_local_legenda": "Gibiteca de Curitiba — imagem de referência fornecida pelo autor.",
+      "foto_local_legenda_en": "Curitiba Comic Book Library — reference image supplied by the author."
     },
     {
       "id": "br-londrina-bibliotecas",

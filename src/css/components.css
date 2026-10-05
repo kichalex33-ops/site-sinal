@@ -1277,3 +1277,17 @@ body:has([data-book-hero])::before,body:has([data-book-hero])::after,body:has([d
 .conversion-actions .btn--primary,.home-sample .btn--primary {background:#e8541d;border-color:#e8541d;color:#101216;}
 .conversion-actions .btn--primary:hover,.home-sample .btn--primary:hover {background:#f06b35;border-color:#f06b35;}
 .site-header .search-trigger::before {content:none;}
+/* Participation status is independent from reference photos of venues. */
+.signal-status::before {content:none;}
+.signal-status--accepted {color:#8bc9ff !important;}
+.signal-directory__grid .signal-status {font-weight:600;}
+.signal-pending-note {color:var(--muted);font-size:13px;line-height:1.6;}
+.signal-description,.signal-address {line-height:1.65;overflow-wrap:anywhere;}
+.signal-contacts {list-style:none;padding:0;margin:10px 0;display:grid;gap:8px;font-size:13px;overflow-wrap:anywhere;}
+.signal-contacts a {color:inherit;text-decoration:underline;text-underline-offset:3px;}
+.signal-photo {margin:12px 0;}
+.signal-photo img,.signal-popup .signal-photo img {width:100%;height:auto;max-height:230px;object-fit:contain;margin:0;border-radius:4px;}
+.signal-photo figcaption {font-size:11px;line-height:1.5;color:var(--muted);margin-top:8px;}
+.signal-popup-details {display:grid;gap:8px;font-size:13px;line-height:1.6;}
+.signal-popup .signal-address strong {display:inline;font-size:13px;}
+.signal-popup-details p {margin:0;}

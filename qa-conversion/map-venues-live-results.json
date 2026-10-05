@@ -1,0 +1,54 @@
+[
+  {
+    "channel": "chrome",
+    "width": 393,
+    "lang": "pt",
+    "viewport": 393,
+    "scroll": 393,
+    "errors": [],
+    "confirmed": 2,
+    "accepted": 5,
+    "negotiation": 7,
+    "venuePhotos": 4,
+    "posterPhotos": 2
+  },
+  {
+    "channel": "chrome",
+    "width": 393,
+    "lang": "en",
+    "viewport": 393,
+    "scroll": 393,
+    "errors": [],
+    "confirmed": 2,
+    "accepted": 5,
+    "negotiation": 7,
+    "venuePhotos": 4,
+    "posterPhotos": 2
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "lang": "pt",
+    "viewport": 1440,
+    "scroll": 1440,
+    "errors": [],
+    "confirmed": 2,
+    "accepted": 5,
+    "negotiation": 7,
+    "venuePhotos": 4,
+    "posterPhotos": 2
+  },
+  {
+    "channel": "chrome",
+    "width": 1440,
+    "lang": "en",
+    "viewport": 1440,
+    "scroll": 1440,
+    "errors": [],
+    "confirmed": 2,
+    "accepted": 5,
+    "negotiation": 7,
+    "venuePhotos": 4,
+    "posterPhotos": 2
+  }
+]

@@ -13,6 +13,7 @@ const signalsData = read("signals.json");
 const postersData = read("posters.json");
 
 import { PUBLIC_SIGNAL_STATUSES, signalStatus } from "../src/js/signal-status.js";
+import { signalDetailsHtml } from "../src/js/signal-details.js";
 
 function validate() {
   const errors = [];
@@ -21,6 +22,7 @@ function validate() {
     if (ids.has(s.id)) errors.push(`id duplicado: ${s.id}`);
     ids.add(s.id);
     if (!signalsData.statuses.includes(s.status)) errors.push(`${s.id}: status invalido (${s.status})`);
+    if (s.status === "confirmed" && !s.foto) errors.push(`${s.id}: confirmação exige foto do cartaz instalado`);
     if (PUBLIC_SIGNAL_STATUSES.includes(s.status)) {
       const lat = s.latitude, lon = s.longitude;
       if (typeof lat !== "number" || typeof lon !== "number" || Math.abs(lat) > 90 || Math.abs(lon) > 180) errors.push(`${s.id}: local público exige latitude/longitude validas`);
@@ -35,8 +37,8 @@ export function publicSignals() {
   return signalsData.signals
     .filter((s) => PUBLIC_SIGNAL_STATUSES.includes(s.status))
     // campos publicos apenas: nada de "interno", coord_source etc.
-    .map(({ id, nome, nome_en, tipo, cidade, estado, estado_sigla, pais, pais_en, pais_codigo, latitude, longitude, coord_precision, status, data_confirmacao, foto, descricao, descricao_en, link }) =>
-      ({ id, nome, nome_en: nome_en || nome, tipo, cidade, estado, estado_sigla, pais, pais_en, pais_codigo, latitude, longitude, coord_precision, status, data_confirmacao, foto, descricao, descricao_en, link }));
+    .map(({ id, nome, nome_en, tipo, cidade, estado, estado_sigla, pais, pais_en, pais_codigo, latitude, longitude, coord_precision, status, data_confirmacao, foto, foto_local, foto_local_legenda, foto_local_legenda_en, endereco, contatos, descricao, descricao_en, link }) =>
+      ({ id, nome, nome_en: nome_en || nome, tipo, cidade, estado, estado_sigla, pais, pais_en, pais_codigo, latitude, longitude, coord_precision, status, data_confirmacao, foto, foto_local, foto_local_legenda, foto_local_legenda_en, endereco, contatos, descricao, descricao_en, link }));
 }
 
 export function writePublicSignals() {
@@ -223,14 +225,11 @@ function chip(group, value, label, pressed) {
 
 function signalDirectory(t, list) {
   const en = t.lang === 'en';
-  const approximate = en ? 'Approximate city location; venue address not yet provided.' : 'Localização aproximada na cidade; endereço do local ainda não informado.';
-  const keys = ['photo', 'waiting-photo', 'installation', 'negotiation'];
-  const labels = keys.map(key => ({key, ...signalStatus({status: key === 'negotiation' ? 'in_negotiation' : key === 'installation' ? 'accepted_waiting_installation' : 'confirmed', foto: key === 'photo' ? 'photo' : null}, t.lang)}));
-  return `<p class="signal-directory__intro">${en ? 'Confirmed locations and ongoing negotiations. Negotiations do not mean a poster is already installed.' : 'Locais confirmados e negociações em andamento. Em negociação não significa que o cartaz já esteja instalado.'}</p>
-    <ul class="signal-legend" aria-label="${en ? 'Location status legend' : 'Legenda dos status'}">${labels.map(({key,label}) => `<li class="signal-status signal-status--${key}">${escapeHtml(label)} · ${list.filter(s => signalStatus(s,t.lang).key === key).length}</li>`).join('')}</ul>
-    <p class="signal-directory__note">${escapeHtml(approximate)}</p>
+  const categories = [{status:'confirmed',foto:'proof'}, {status:'accepted_waiting_photo'}, {status:'in_negotiation'}].map(s=>signalStatus(s,t.lang));
+  return `<p class="signal-directory__intro">${en ? '📸 Confirmed means we have a photo of the installed poster. 📡 Accepted means the venue has agreed to participate and installation or a photo is still pending. Venue images do not confirm installation.' : '📸 Confirmado significa que temos foto do cartaz instalado. 📡 Aceito significa que o espaço aceitou participar e ainda aguardamos instalação ou foto. Imagens dos espaços não confirmam a instalação.'}</p>
+    <ul class="signal-legend" aria-label="${en ? 'Location status legend' : 'Legenda dos status'}">${categories.map(({key,label})=>`<li class="signal-status signal-status--${key}">${escapeHtml(label)} · ${list.filter(s=>signalStatus(s,t.lang).key===key).length}</li>`).join('')}</ul>
     <details class="signal-directory" open><summary>${en ? 'All locations and their status' : 'Todos os locais e seus status'} (${list.length})</summary>
-      <ul class="signal-directory__grid">${list.map(s => {const status = signalStatus(s,t.lang); return `<li><h3>${escapeHtml(en ? s.nome_en : s.nome)}</h3><p>${escapeHtml([s.cidade,s.estado_sigla || s.estado,en ? s.pais_en : s.pais].filter(Boolean).join(' — '))}</p><p class="signal-status signal-status--${status.key}">${escapeHtml(status.label)}</p>${s.coord_precision === 'area' ? `<small>${escapeHtml(approximate)}</small>` : ''}<button type="button" class="btn" data-signal-focus="${escapeHtml(s.id)}">${en ? 'View on map' : 'Ver no mapa'}</button>${s.foto ? `<a href="${escapeHtml(s.foto)}">${en ? 'View photo' : 'Ver foto'}</a>` : ''}</li>`;}).join('')}</ul></details>`;
+    <ul class="signal-directory__grid">${list.map(s=>{const status=signalStatus(s,t.lang);return `<li data-signal-card="${escapeHtml(s.id)}"><h3>${escapeHtml(en?s.nome_en:s.nome)}</h3><p>${escapeHtml([s.cidade,s.estado,en?s.pais_en:s.pais].filter(Boolean).join(' — '))}</p><p class="signal-status signal-status--${status.key}">${escapeHtml(status.label)}</p>${signalDetailsHtml(s,t.lang)}<button type="button" class="btn" data-signal-focus="${escapeHtml(s.id)}">${en?'View on map':'Ver no mapa'}</button></li>`;}).join('')}</ul></details>`;
 }
 
 export function mapaBody(lang) {

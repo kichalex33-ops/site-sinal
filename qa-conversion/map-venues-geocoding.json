@@ -1,0 +1,101 @@
+[
+  {
+    "query": "424 2nd Avenue West, Seattle, USA",
+    "result": [
+      {
+        "place_id": 323603597,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 2400948751,
+        "lat": "47.6229445",
+        "lon": "-122.3591857",
+        "category": "place",
+        "type": "house",
+        "place_rank": 30,
+        "importance": 7.72983901731444E-05,
+        "addresstype": "place",
+        "name": "",
+        "display_name": "424, 2nd Avenue West, Uptown, Queen Anne, Seattle, King County, Washington, 98119, United States",
+        "boundingbox": [
+          "47.6228945",
+          "47.6229945",
+          "-122.3592357",
+          "-122.3591357"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Centro Cultural da Juventude Ruth Cardoso, São Paulo, Brasil",
+    "result": [
+      {
+        "place_id": 8609563,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 1169165531,
+        "lat": "-23.4759127",
+        "lon": "-46.6703981",
+        "category": "amenity",
+        "type": "arts_centre",
+        "place_rank": 30,
+        "importance": 7.861829556720863E-05,
+        "addresstype": "amenity",
+        "name": "Centro Cultural da Juventude Ruth Cardoso",
+        "display_name": "Centro Cultural da Juventude Ruth Cardoso, 3641, Avenida Deputado Emílio Carlos, Vila Amélia, Cachoeirinha, São Paulo, Região Sudeste, 02720-200, Brasil",
+        "boundingbox": [
+          "-23.4762615",
+          "-23.4755676",
+          "-46.6708070",
+          "-46.6699919"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "326 Rua São Francisco, Curitiba, Brasil",
+    "result": [
+      {
+        "place_id": 6974386,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 137443027,
+        "lat": "-25.4282704",
+        "lon": "-49.2697144",
+        "category": "highway",
+        "type": "living_street",
+        "place_rank": 26,
+        "importance": 0.05340385519188216,
+        "addresstype": "road",
+        "name": "Rua São Francisco",
+        "display_name": "Rua São Francisco, Centro Histórico, Centro, Curitiba, Paraná, Região Sul, 80020-240, Brasil",
+        "boundingbox": [
+          "-25.4283614",
+          "-25.4279409",
+          "-49.2709708",
+          "-49.2684273"
+        ]
+      },
+      {
+        "place_id": 6887684,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 554568546,
+        "lat": "-25.4278003",
+        "lon": "-49.2715762",
+        "category": "highway",
+        "type": "pedestrian",
+        "place_rank": 26,
+        "importance": 0.05340385519188216,
+        "addresstype": "road",
+        "name": "Rua São Francisco",
+        "display_name": "Rua São Francisco, Centro Histórico, São Francisco, Curitiba, Paraná, Região Sul, 80020-200, Brasil",
+        "boundingbox": [
+          "-25.4278911",
+          "-25.4277097",
+          "-49.2719684",
+          "-49.2711840"
+        ]
+      }
+    ]
+  }
+]
