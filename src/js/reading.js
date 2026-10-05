@@ -7,12 +7,21 @@ if (shell) {
   const themeKey = 'sinalruido.sample.theme';
 
   const activate = (id, { scroll = false } = {}) => {
-    tabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.dataset.chapterTab === id)));
+    tabs.forEach((tab) => { tab.setAttribute('aria-selected', String(tab.dataset.chapterTab === id)); tab.tabIndex = tab.dataset.chapterTab === id ? 0 : -1; });
     panels.forEach((panel) => { panel.hidden = panel.dataset.chapterPanel !== id; });
     try { localStorage.setItem(key, id); } catch {}
     if (scroll) shell.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
   };
 
+  tabs.forEach((tab, index) => tab.addEventListener('keydown', e => {
+    let next;
+    if(e.key === 'ArrowRight') next = (index + 1) % tabs.length;
+    if(e.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+    if(e.key === 'Home') next = 0;
+    if(e.key === 'End') next = tabs.length - 1;
+    if(next === undefined) return;
+    e.preventDefault(); activate(tabs[next].dataset.chapterTab); tabs[next].focus();
+  }));
   tabs.forEach((tab) => tab.addEventListener('click', () => activate(tab.dataset.chapterTab, { scroll: true })));
   shell.querySelectorAll('[data-next-chapter]').forEach((btn) => btn.addEventListener('click', () => activate(btn.dataset.nextChapter, { scroll: true })));
 

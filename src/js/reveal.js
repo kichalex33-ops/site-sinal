@@ -1,10 +1,10 @@
 // Revelação suave ao rolar. Progressive enhancement: só esconde elementos
 // depois de marcar <html>, então se este script falhar, nada some da página.
 const targets = document.querySelectorAll(
-  ".card, .yt-card, .paper, .update-row, .timeline__item, .contradiction, .knowns__panel"
+  ".card, .yt-card, .paper:not(.reading-paper), .update-row, .timeline__item, .contradiction, .knowns__panel"
 );
 
-if (targets.length && "IntersectionObserver" in window) {
+if (targets.length && "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
   const groups = new Map();
   targets.forEach((el) => {
     const parent = el.parentElement;

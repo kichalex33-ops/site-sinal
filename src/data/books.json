@@ -4,7 +4,7 @@
     "title": "SINAL/RUÍDO",
     "author": "Alex Jr. Kich",
     "kind": "Romance",
-    "status": "Edição editorial",
+    "status": "À venda",
     "description": "Ficção científica de investigação sobre sinais, memória, evidência e primeiro contato. A pesquisa factual usada na obra permanece separada do arquivo público.",
     "synopsis": "Em 1977, um radiotelescópio registrou um sinal vindo da direção de Sagitário. Durou pouco mais de um minuto. Nunca se repetiu. Quarenta e nove anos depois, em Santa Maria, no Rio Grande do Sul, Henrique decide usar aquele velho registro como teste para ARGOS, um sistema criado para reconstruir, comparar e encontrar estruturas em dados imperfeitos. Ele espera encontrar erro. Encontra um padrão. Quanto mais Henrique tenta destruí-lo, mais o padrão resiste. E, quando a equipe começa a compará-lo com registros produzidos em outros tempos e lugares, nomes conhecidos da história brasileira surgem onde não deveriam estar: Colares, Varginha, a Noite Oficial dos OVNIs. Mas correlação não é prova. Testemunho não é medição. E um padrão não se torna verdade apenas porque queremos que seja. A investigação deixa as telas, atravessa o Brasil e começa a cobrar um preço real. Porque talvez a pergunta nunca tenha sido se existe alguém lá fora. Talvez seja outra: o que acontece quando percebemos que alguma coisa também está olhando para nós?",
     "cover": "/livro/capa.jpg",
@@ -16,7 +16,8 @@
     "purchaseUrlEn": "https://www.amazon.com/dp/B0HJP3HM7J",
     "purchaseUrlEnUk": "https://www.amazon.co.uk/dp/B0HJQQBS8Q",
     "purchaseUrlEs": "https://www.amazon.es/dp/B0HLD9PZ9W",
-    "featured": true
+    "featured": true,
+    "kindlePages": 687
   },
   {
     "slug": "a-primeira-morte",
@@ -31,7 +32,7 @@
     "slug": "os-deuses-nao-tem-filhos",
     "author": "Alex Jr. Kich",
     "kind": "Crônicas Cosmológicas",
-    "status": "Em desenvolvimento",
+    "status": "À venda",
     "featured": false,
     "title": "OS DEUSES NÃO TÊM FILHOS",
     "numeral": "I",

@@ -66,18 +66,19 @@
 
   <main id="conteudo">
     <article class="section reading-shell" data-reading-sample>
+      <h1 class="visually-hidden">Amostra de SINAL/RUÍDO</h1>
       <header class="reading-meta">
         <div><span class="badge" style="border-color:var(--signal);color:var(--signal)">FICÇÃO · AMOSTRA GRATUITA</span><p class="mono">SINAL/RUÍDO · Alex Jr. Kich</p></div>
         <div class="reading-tools" aria-label="Opções de leitura"><button type="button" data-reading-size="down" aria-label="Diminuir fonte">A−</button><button type="button" data-reading-size="up" aria-label="Aumentar fonte">A+</button><button type="button" data-reading-theme aria-label="Alternar modo de leitura">◐</button></div>
       </header>
 
-      <nav class="chapter-nav" id="capitulos" aria-label="Capítulos da amostra">
-        <button type="button" data-chapter-tab="chapter-1" aria-selected="true"><span>1</span>O arquivo ruim</button><button type="button" data-chapter-tab="chapter-2" aria-selected="false"><span>2</span>Sinal</button><button type="button" data-chapter-tab="chapter-3" aria-selected="false"><span>3</span>O estatuto</button>
+      <nav class="chapter-nav" id="capitulos" role="tablist" aria-label="Capítulos da amostra">
+        <button type="button" id="tab-chapter-1" role="tab" aria-controls="chapter-1" data-chapter-tab="chapter-1" tabindex="0" aria-selected="true"><span>1</span>O arquivo ruim</button><button type="button" id="tab-chapter-2" role="tab" aria-controls="chapter-2" data-chapter-tab="chapter-2" tabindex="-1" aria-selected="false"><span>2</span>Sinal</button><button type="button" id="tab-chapter-3" role="tab" aria-controls="chapter-3" data-chapter-tab="chapter-3" tabindex="-1" aria-selected="false"><span>3</span>O estatuto</button>
       </nav>
 
-      <section class="paper reading-paper" data-chapter-panel="chapter-1" >
+      <section class="paper reading-paper" id="chapter-1" role="tabpanel" aria-labelledby="tab-chapter-1" data-chapter-panel="chapter-1" >
         <p class="mono reading-progress">CAPÍTULO 1 DE 3</p>
-        <h1>1. O arquivo ruim</h1>
+        <h2>1. O arquivo ruim</h2>
         <div class="reading-body">
           <p>Na noite de 15 de agosto de 1977, o sinal mais forte que o radiotelescópio Big Ear registraria em quase vinte e quatro anos de busca por inteligência extraterrestre chegou à Terra sem que ninguém estivesse ouvindo.</p>
           <p>O Big Ear não seguia uma fonte pelo céu. Ficava parado e deixava a rotação da Terra fazer o trabalho. O que captava virava números e caracteres impressos em papel contínuo. Na maior parte do tempo, aquilo era apenas o ruído esperado do universo.</p>
@@ -383,9 +384,9 @@
           <p>— Não.</p>
         </div>
         <div class="chapter-end"><span>Fim do capítulo 1</span><button class="btn btn--primary" type="button" data-next-chapter="chapter-2">Capítulo seguinte →</button></div>
-      </section><section class="paper reading-paper" data-chapter-panel="chapter-2" hidden>
+      </section><section class="paper reading-paper" id="chapter-2" role="tabpanel" aria-labelledby="tab-chapter-2" data-chapter-panel="chapter-2" hidden>
         <p class="mono reading-progress">CAPÍTULO 2 DE 3</p>
-        <h1>2. Sinal</h1>
+        <h2>2. Sinal</h2>
         <div class="reading-body">
           <p>Henrique passou a manhã seguinte tentando decidir como chamar uma coisa que ainda não sabia o que era. Lara achou divertido.</p>
           <p>— Objeto.</p>
@@ -658,9 +659,9 @@
           <p>Isso foi exatamente o que fez Henrique continuar olhando.</p>
         </div>
         <div class="chapter-end"><span>Fim do capítulo 2</span><button class="btn btn--primary" type="button" data-next-chapter="chapter-3">Capítulo seguinte →</button></div>
-      </section><section class="paper reading-paper" data-chapter-panel="chapter-3" hidden>
+      </section><section class="paper reading-paper" id="chapter-3" role="tabpanel" aria-labelledby="tab-chapter-3" data-chapter-panel="chapter-3" hidden>
         <p class="mono reading-progress">CAPÍTULO 3 DE 3</p>
-        <h1>3. O estatuto</h1>
+        <h2>3. O estatuto</h2>
         <div class="reading-body">
           <p>Henrique terminou a primeira versão com onze regras. Lara leu, acrescentou duas e riscou três palavras que ele considerava perfeitamente defensáveis. A primeira era mensagem. A segunda, intenção. A terceira, anômalo.</p>
           <p>— Anômalo é um termo técnico — disse Henrique.</p>
@@ -888,7 +889,11 @@
           <p>Talvez porque fosse a única que não existia para proteger a investigação de um erro.</p>
           <p>Existia para proteger alguém da investigação.</p>
         </div>
-        <div class="chapter-end"><span>Fim do capítulo 3</span><a class="btn btn--primary" href="/livro/">Conhecer o livro →</a></div>
+        <div class="chapter-end"><span>Fim do capítulo 3</span><section class="sample-finish" data-sample-finish><h2>Você chegou ao fim da amostra.</h2><p>Mas o sinal continua.</p><div class="conversion-actions" id="continuar-amostra">
+    <a class="btn btn--primary" href="https://www.amazon.com.br/dp/B0HKTBMSJ9" target="_blank" rel="noopener noreferrer">Continuar no Kindle</a>
+    <a class="btn btn--primary" href="https://loja.uiclap.com/titulo/ua205823" target="_blank" rel="noopener noreferrer">Quero o livro impresso</a>
+    
+  </div><p class="conversion-meta">Alex Jr. Kich · Português · Kindle e impresso · Amazon / UICLAP · 687 páginas no Kindle · Ver preço na loja</p><a class="btn" href="/livros/sinal-ruido/">Voltar à página do livro</a></section></div>
       </section>
 
       <div class="reading-actions"><a class="btn" href="/livro/">← Voltar ao livro</a><a class="btn" href="/casos/">Explorar os casos reais →</a></div>

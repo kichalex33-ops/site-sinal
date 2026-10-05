@@ -49,13 +49,13 @@ document.querySelectorAll("[data-share]").forEach((btn) => {
   btn.addEventListener("click", async () => {
     const title = btn.dataset.shareTitle || document.title;
     const text = btn.dataset.shareText || "";
-    const url = window.location.href;
+    const url = document.querySelector('link[rel="canonical"]')?.href || window.location.href;
     if (navigator.share) {
       try {
         await navigator.share({ title, text, url });
         return;
-      } catch {
-        /* cancelado — cai no fallback */
+      } catch (error) {
+        if (error.name === "AbortError") return;
       }
     }
     try {
@@ -64,7 +64,10 @@ document.querySelectorAll("[data-share]").forEach((btn) => {
       btn.textContent = "Link copiado";
       setTimeout(() => { btn.textContent = original; }, 2000);
     } catch {
-      /* sem acesso à área de transferência */
+      const status = document.querySelector("[data-share-status]");
+      if (status) status.textContent = "Não foi possível copiar. Copie o endereço da página.";
     }
   });
 });
+import "./conversion.js";
+

@@ -1,0 +1,111 @@
+{
+  "checkedAt": "2026-10-05T11:47:51.849Z",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "url": "https://sinalruido.com.br/",
+      "conversion": true
+    },
+    {
+      "path": "/livro/",
+      "status": 200,
+      "url": "https://sinalruido.com.br/livro/"
+    },
+    {
+      "path": "/livros/sinal-ruido/",
+      "status": 200,
+      "url": "https://sinalruido.com.br/livros/sinal-ruido/"
+    },
+    {
+      "path": "/livros/os-deuses-nao-tem-filhos/",
+      "status": 200,
+      "url": "https://sinalruido.com.br/livros/os-deuses-nao-tem-filhos/"
+    },
+    {
+      "path": "/livro/amostra/",
+      "status": 200,
+      "url": "https://sinalruido.com.br/livro/amostra/"
+    },
+    {
+      "path": "/leitores/",
+      "status": 200,
+      "url": "https://sinalruido.com.br/leitores/"
+    },
+    {
+      "path": "/arquivo/",
+      "status": 200,
+      "url": "https://sinalruido.com.br/arquivo/"
+    },
+    {
+      "path": "/mapa-dos-sinais/",
+      "status": 200,
+      "url": "https://sinalruido.com.br/mapa-dos-sinais/"
+    },
+    {
+      "path": "/autor/",
+      "status": 200,
+      "url": "https://sinalruido.com.br/autor/"
+    },
+    {
+      "path": "/r/livro",
+      "status": 200,
+      "url": "https://sinalruido.com.br/leitores/?campanha=livro"
+    },
+    {
+      "path": "/pagina-inexistente-validacao-conversao-20261005/",
+      "status": 404,
+      "url": "https://sinalruido.com.br/pagina-inexistente-validacao-conversao-20261005/"
+    }
+  ],
+  "visual": [
+    {
+      "width": 393,
+      "path": "/",
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 393,
+      "path": "/livros/sinal-ruido/",
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 393,
+      "path": "/livros/os-deuses-nao-tem-filhos/",
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 393,
+      "path": "/livro/amostra/",
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "path": "/",
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "path": "/livros/sinal-ruido/",
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "path": "/livros/os-deuses-nao-tem-filhos/",
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 1440,
+      "path": "/livro/amostra/",
+      "errors": [],
+      "failed": []
+    }
+  ]
+}
