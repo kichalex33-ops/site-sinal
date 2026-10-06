@@ -18,7 +18,7 @@ function markAlienSeen() {
   try { localStorage.setItem(LAST_SEEN_KEY, String(Date.now())); } catch {}
 }
 
-if (!reduceMotion && !document.querySelector("[data-book-hero], [data-reading-sample], .book-sheet")) {
+if (!reduceMotion && !document.querySelector("[data-reading-sample], .book-sheet")) {
   const layer = document.createElement("div");
   layer.className = "ambience-layer";
   layer.setAttribute("aria-hidden", "true");

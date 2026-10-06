@@ -1190,7 +1190,7 @@ body:has([data-book-hero])::before,body:has([data-book-hero])::after,body:has([d
 .site-header .social-icon-link {display:none;}
 .site-header .search-trigger {min-width:44px;width:44px;height:44px;padding:0;justify-content:center;font-size:28px;border:0;cursor:pointer;}
 .site-header .brand__sub {display:none;}
-.site-header .brand__mark b {color:inherit;}
+.site-header .brand__mark b {color:var(--signal);}
 .site-header .lang-switch {font-size:12px;min-height:44px;padding:12px;}
 .home-hero-book {background:#101216;padding:clamp(40px,6vw,80px) 0;}
 .home-hero-book__grid {max-width:1160px;display:grid;grid-template-columns:40% minmax(0,60%);gap:0;align-items:center;}
@@ -1349,3 +1349,27 @@ body:has([data-book-hero])::before,body:has([data-book-hero])::after,body:has([d
 .sample-finish .conversion-actions {margin-top:16px;}
 .sample-finish .btn {text-decoration:none;}
 @media (max-width:540px) {.reading-shell {width:calc(100% - 16px);} .is-paginated .reading-paper {padding-inline:18px;}}
+/* Etapa 3 — fluxo depois do hero: ruptura, sobre o romance, amostra. */
+.home-bridge-question .container {max-width:1160px;}
+.home-bridge-question__line {font-family:var(--display);text-transform:uppercase;letter-spacing:.02em;}
+.home-bridge-question__line--open {color:var(--signal);}
+.home-about-book {padding-block:clamp(88px,12vw,160px);}
+.home-about-book__title {font-family:var(--display);font-size:clamp(32px,4.6vw,56px);line-height:1.08;margin:18px 0 36px;color:#f0ede5;letter-spacing:.005em;}
+.home-about-book p {font-size:clamp(17px,1.5vw,19px);line-height:1.75;color:#cfcbc3;max-width:62ch;}
+.home-about-book p + p {margin-top:18px;}
+.home-about-book__link {display:inline-block;margin-top:20px;padding:10px 0;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#f0ede5;text-decoration:underline;text-decoration-color:var(--signal);text-underline-offset:6px;}
+.home-about-book__link:hover {color:var(--signal);}
+.home-sample {padding-block:clamp(88px,12vw,160px);}
+.home-sample h2 {font-family:var(--display);font-size:clamp(32px,4.6vw,56px);line-height:1.08;color:#f0ede5;}
+.home-sample .sample-index {border-top:1px solid var(--border);margin:48px 0 32px;}
+.home-sample .sample-index li {grid-template-columns:64px 1fr;padding:28px 0;}
+.home-sample .sample-index span {color:var(--signal);font-size:13px;letter-spacing:.08em;}
+.home-sample .sample-index h3 {font-family:var(--display);font-size:clamp(20px,2.4vw,28px);font-weight:500;}
+.home-sample__note {color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:28px;}
+.home-sample .btn--primary {min-height:52px;padding:0 28px;border-radius:3px;font-size:12px;}
+.sample-finish__back {margin-top:22px;font-size:14px;}
+.sample-finish__back a {color:var(--paper-muted);text-underline-offset:4px;}
+.sample-finish__back a:hover {color:var(--paper-text);}
+/* Home com a ambiência do site (estrelas, névoa, pixels no cursor): seções do topo sem fundo sólido. */
+.home-hero-book, .home-bridge-question {background:transparent;}
+
