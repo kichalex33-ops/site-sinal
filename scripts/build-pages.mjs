@@ -2754,7 +2754,7 @@ enContatoPage();
 mapaPages();
 for (const lang of ['en','pt']) {
  const en=lang==='en',path=en?'/en/christchurch/':'/christchurch/';
- write(path,page({title:en?'SIGNAL/NOISE — Christchurch':'SINAL/RUÍDO — Christchurch',description:en?'Discover a Brazilian novel reaching Christchurch. Read three free chapters and find the English Kindle and paperback editions on Amazon Australia.':'Conheça o sinal de Christchurch, leia três capítulos grátis e encontre a edição em inglês na Amazon Austrália.',path,bodyHtml:christchurchBody(lang),lang:en?'en-NZ':'pt-BR',ogLocale:en?'en_NZ':'pt_BR',minimal:en,langSwitch:en?'/christchurch/':'/en/christchurch/',alternates:ptEnAlternates('/christchurch/','/en/christchurch/'),ogImage:'/livro/capa-en.jpg',extraHead:'<link rel="stylesheet" href="/src/css/christchurch.css">'}));
+ write(path,page({title:en?'SIGNAL/NOISE — Christchurch':'SINAL/RUÍDO — Christchurch',description:en?'Discover a Brazilian novel reaching Christchurch. Read three free chapters and find the English Kindle and paperback editions on Amazon Australia.':'Conheça o sinal de Christchurch, leia três capítulos grátis e encontre a edição em inglês na Amazon Austrália.',path,bodyHtml:christchurchBody(lang),lang:en?'en-NZ':'pt-BR',ogLocale:en?'en_NZ':'pt_BR',minimal:en,langSwitch:en?'/christchurch/':'/en/christchurch/',alternates:ptEnAlternates('/christchurch/','/en/christchurch/'),ogImage:en?'/livro/capa-en.jpg':'/livro/capa.jpg',extraHead:'<link rel="stylesheet" href="/src/css/christchurch.css">'}));
 }
 writePublicSignals();
 buyPage();

@@ -201,8 +201,8 @@ export function page({
   <meta property="og:site_name" content="SINAL/RUÍDO" />
   <meta property="og:locale" content="${escapeAttr(ogLocale)}" />
   <meta property="og:image" content="${escapeAttr(ogImageUrl)}" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  ${ogImage === "/og/arquivo.png" ? `<meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />` : ""}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="${escapeAttr(ogImageUrl)}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
