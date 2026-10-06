@@ -445,6 +445,77 @@
       "longitude": -47.8828,
       "coord_precision": "area",
       "coord_source": "OpenStreetMap/Nominatim, consulta de cidade em 05/10/2026: Brasília, DF, Brasil. Brasília, Plano Piloto, Distrito Federal, Região Centro-Oeste, 70391-900, Brasil. Localização aproximada; endereço da instituição ainda não informado."
+    },
+    {
+      "id": "au-sydney-sappho-books",
+      "nome": "Sappho Books, Cafe & Bar",
+      "nome_en": "Sappho Books, Cafe & Bar",
+      "tipo": "bookstore",
+      "cidade": "Sydney",
+      "estado": "New South Wales",
+      "estado_sigla": null,
+      "pais": "Austrália",
+      "pais_en": "Australia",
+      "pais_codigo": "AU",
+      "status": "accepted_waiting_photo",
+      "data_confirmacao": null,
+      "foto": null,
+      "descricao": "Entre livros, café, música e poesia, a Sappho Books, Cafe & Bar abriu espaço para SIGNAL/NOISE e confirmou sua participação no Mapa dos Sinais.",
+      "descricao_en": "Among books, coffee, music and poetry, Sappho Books, Cafe & Bar made room for SIGNAL/NOISE and confirmed its place on the World Map of Signals.",
+      "link": "https://www.sapphobooks.com.au/",
+      "latitude": -33.8832148,
+      "longitude": 151.1914551,
+      "coord_precision": "exact",
+      "coord_source": "OpenStreetMap/Nominatim em 06/10/2026: Sappho's Books, Cafe & Wine Bar, 51, Glebe Point Road, Glebe, Inner West, Sydney, New South Wales, 2037, Australia; node 2968344432. Endereço informado pelo autor.",
+      "endereco": "51 Glebe Point Rd, Glebe NSW 2037, Australia",
+      "contatos": [
+        {
+          "tipo": "website",
+          "nome": "Sappho Books",
+          "nome_en": "Sappho Books",
+          "url": "https://www.sapphobooks.com.au/"
+        },
+        {
+          "tipo": "instagram",
+          "nome": "@sapphobooks",
+          "url": "https://www.instagram.com/sapphobooks/"
+        },
+        {
+          "tipo": "facebook",
+          "nome": "Sapphobooks",
+          "url": "https://www.facebook.com/Sapphobooks"
+        }
+      ]
+    },
+    {
+      "id": "br-joia-biblioteca-municipal",
+      "nome": "Biblioteca Pública Municipal de Jóia",
+      "nome_en": "Jóia Municipal Public Library",
+      "tipo": "library",
+      "cidade": "Jóia",
+      "estado": "Rio Grande do Sul",
+      "estado_sigla": "RS",
+      "pais": "Brasil",
+      "pais_en": "Brazil",
+      "pais_codigo": "BR",
+      "status": "accepted_waiting_installation",
+      "data_confirmacao": null,
+      "foto": null,
+      "descricao": "A Biblioteca Pública Municipal de Jóia confirmou sua participação por meio da Secretaria Municipal de Cultura e receberá o material de SIGNAL/NOISE para impressão e exposição.",
+      "descricao_en": "The Jóia Municipal Public Library confirmed its participation through the Municipal Department of Culture and will receive the SIGNAL/NOISE material to print and display.",
+      "link": "https://www.joia.rs.gov.br/",
+      "latitude": -28.6465036,
+      "longitude": -54.1199165,
+      "coord_precision": "area",
+      "coord_source": "OpenStreetMap/Nominatim, consulta de cidade em 06/10/2026: Jóia, Rio Grande do Sul, Região Sul, Brasil. Localização aproximada; endereço da instituição ainda não informado.",
+      "contatos": [
+        {
+          "tipo": "website",
+          "nome": "Prefeitura de Jóia",
+          "nome_en": "Jóia City Hall",
+          "url": "https://www.joia.rs.gov.br/"
+        }
+      ]
     }
   ]
 }

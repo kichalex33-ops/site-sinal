@@ -1305,3 +1305,39 @@ body:has([data-book-hero])::before,body:has([data-book-hero])::after,body:has([d
 .signal-popup-details {display:grid;gap:8px;font-size:13px;line-height:1.6;}
 .signal-popup .signal-address strong {display:inline;font-size:13px;}
 .signal-popup-details p {margin:0;}
+/* Hero da Home (PT): livro, gancho e compra na primeira dobra. Capa ~40% / texto ~60% no desktop. */
+.home-hero {display:flex;align-items:center;padding-block:clamp(40px,5vh,72px);}
+.home-hero > .container {width:min(1160px,calc(100% - 48px));}
+.home-hero__grid {display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);grid-template-areas:"cover head" "cover hook" "cover actions";column-gap:clamp(40px,6vw,96px);align-items:start;}
+.home-hero__head {grid-area:head;align-self:end;}
+.home-hero__hook {grid-area:hook;margin-top:clamp(20px,3vh,32px);max-width:44ch;}
+.home-hero__cover {grid-area:cover;align-self:center;margin:0;}
+.home-hero__cover img {display:block;width:auto;max-width:100%;height:auto;max-height:min(600px,calc(100svh - 190px));margin-inline:auto;box-shadow:0 32px 60px -24px #000;}
+.home-hero__actions {grid-area:actions;display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:clamp(24px,4vh,40px);}
+.home-hero__eyebrow {font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);}
+.home-hero__title {font-family:var(--display);font-size:clamp(52px,min(7.2vw,12vh),104px);line-height:.95;letter-spacing:.01em;color:#f0ede5;margin-top:16px;}
+.home-hero__title span {color:var(--signal);}
+.home-hero__hook p {font-size:clamp(18px,1.6vw,22px);line-height:1.55;color:#cfcbc3;text-wrap:pretty;}
+.home-hero__hook p + p {margin-top:6px;}
+.home-hero__hook .home-hero__turn {color:#f0ede5;}
+.home-hero__hook .home-hero__byline {margin-top:18px;font-size:14px;line-height:1.6;color:var(--muted);}
+.home-hero__actions .btn {min-height:52px;padding:0 26px;border-radius:3px;font-size:12px;}
+.home-hero__actions .btn--primary {background:#e8541d;border-color:#e8541d;color:#101216;}
+.home-hero__actions .btn--primary:hover {background:#f06b35;border-color:#f06b35;opacity:1;}
+.home-hero__actions .btn--outline {background:transparent;color:#f0ede5;border-color:#81858a;}
+.home-hero__actions .btn--outline:hover {border-color:#f0ede5;}
+.home-hero__sample {flex-basis:100%;width:fit-content;padding:10px 0;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#f0ede5;text-decoration:underline;text-decoration-color:var(--signal);text-underline-offset:6px;}
+.home-hero__sample:hover {color:var(--signal);}
+.home-hero__actions a:focus-visible {outline:2px solid var(--signal);outline-offset:4px;}
+@media (min-width:860px) and (min-height:640px) {.home-hero {min-height:calc(100svh - 72px);}}
+@media (max-width:859px) {
+ .home-hero {padding-block:40px 56px;}
+ .home-hero__grid {grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "hook" "cover" "actions";max-width:560px;margin-inline:auto;text-align:center;}
+ .home-hero__title {font-size:clamp(44px,12vw,72px);}
+ .home-hero__hook {max-width:30ch;margin-inline:auto;}
+ .home-hero__cover {margin-top:40px;}
+ .home-hero__cover img {width:min(300px,70vw);max-height:none;}
+ .home-hero__actions {flex-direction:column;align-items:stretch;margin-top:36px;}
+ .home-hero__actions .btn {width:100%;}
+ .home-hero__sample {align-self:center;margin-top:4px;}
+}

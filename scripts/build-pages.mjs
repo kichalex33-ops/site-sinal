@@ -285,6 +285,19 @@ function cinematicHero(b, lang = 'pt') {
  <div class="home-hero-book__cover" data-book-hero-cover><img src="${en ? '/livro/capa-en.jpg' : escapeHtml(b.cover)}" alt="${en ? 'Cover of SIGNAL/NOISE' : 'Capa de SINAL/RUÍDO'}" width="400" height="640" fetchpriority="high"></div></div></section>
  <div class="container other-editions"><details class="conversion-editions"><summary>${en ? 'Other editions' : 'Outras edições'}</summary>${en ? '<p><a href="/buy/">Choose your country and edition</a> · <a href="/">Português</a></p>' : buyPanel(b,{hidePt:true})}</details></div>`;
 }
+// Hero da Home em português: livro + gancho + compra em uma única dobra.
+// Edições internacionais ficam fora daqui (ver otherEditionsHome).
+function homeHero(b) {
+ return `<section class="home-hero-book home-hero" data-book-hero aria-labelledby="home-hero-title"><div class="container home-hero__grid">
+ <div class="home-hero__head" data-book-hero-copy><p class="home-hero__eyebrow">Ficção científica investigativa</p><h1 class="home-hero__title" id="home-hero-title">SINAL<span>/</span>RUÍDO</h1></div>
+ <div class="home-hero__hook" data-book-hero-copy><p>Em 1977, um sinal apareceu por 72&nbsp;segundos.</p><p>Quarenta e nove anos depois, Henrique tenta provar que aquilo não significa nada.</p><p class="home-hero__turn">O padrão se recusa a desaparecer.</p><p class="home-hero__byline">Um romance de ${escapeHtml(b.author)} inspirado no mistério real do sinal Wow!</p></div>
+ <figure class="home-hero__cover" data-book-hero-cover><img src="${escapeHtml(b.cover)}" alt="Capa de SINAL/RUÍDO, de ${escapeHtml(b.author)}" width="1050" height="1512" fetchpriority="high"></figure>
+ <div class="home-hero__actions" id="comprar-${b.slug}">${b.purchaseUrl ? `<a class="btn btn--primary" href="${escapeHtml(b.purchaseUrl)}" target="_blank" rel="noopener noreferrer">Comprar Kindle</a>` : ''}${b.purchaseUrlUiclap ? `<a class="btn btn--outline" href="${escapeHtml(b.purchaseUrlUiclap)}" target="_blank" rel="noopener noreferrer">Comprar impresso</a>` : ''}<a class="home-hero__sample" href="${escapeHtml(b.sampleUrl)}">Ler 3 capítulos grátis <span aria-hidden="true">→</span></a></div>
+ </div></section>`;
+}
+function otherEditionsHome(b) {
+ return `<div class="container other-editions"><details class="conversion-editions"><summary>Outras edições e idiomas</summary>${buyPanel(b,{hidePt:true})}</details></div>`;
+}
 function archiveLabels(lang = 'pt') {
  const en=lang==='en'; const labels=en?['SCIENTIFIC INVESTIGATION','FIRST CONTACT','REAL CASES','ARCHIVES AND EVIDENCE']:['INVESTIGAÇÃO CIENTÍFICA','PRIMEIRO CONTATO','CASOS REAIS','ARQUIVOS E EVIDÊNCIAS'];
  return `<section class="section container dossier-labels" aria-label="${en ? 'Inside the novel' : 'Dentro do romance'}"><ul>${labels.map((label,i)=>`<li><span class="mono">0${i+1}</span>${label}</li>`).join('')}</ul></section>`;
@@ -305,7 +318,7 @@ function homePage() {
   const purchaseUrlEnUk = featuredBook.purchaseUrlEnUk; // edição em inglês, Amazon UK, opcional
 
   const body = `
-    ${cinematicHero(featuredBook)}
+    ${homeHero(featuredBook)}
 
     ${archiveLabels()}
 
@@ -319,6 +332,7 @@ function homePage() {
 
     ${transmission()}
     ${sampleInvitation()}
+    ${otherEditionsHome(featuredBook)}
 
     ${conversionEditorial(featuredBook)}
     ${homeShowcase()}
