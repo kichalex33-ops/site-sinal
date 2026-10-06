@@ -32,7 +32,7 @@ Atenção: antes de 06/10/2026 o site no ar tinha arquivos que não estavam no G
 | 1 — Auditoria e correções de base | ✅ | ✅ | ✅ 06/10 |
 | 2 — Hero e primeira dobra | ✅ | ✅ | PT ✅ · EN aguardando deploy |
 | 3 — Fluxo de desejo e amostra | ✅ | ✅ | aguardando deploy |
-| 4 — Prova social, autor e segundo livro | ⏳ | ⏳ | — |
+| 4 — Prova social, autor e segundo livro | 🔎 iniciada (só análise) | 🔎 | — |
 | 5 — Universo sem atrapalhar a venda | ⏳ | ⏳ | — |
 | 6 — Polimento final e auditoria | ⏳ | ⏳ | — |
 
@@ -61,6 +61,16 @@ Atenção: antes de 06/10/2026 o site no ar tinha arquivos que não estavam no G
 - Home com a ambiência do site (estrelas, névoa, rastro de pixels no cursor). A amostra continua sem efeitos.
 - "/" laranja de SINAL/RUÍDO restaurado no cabeçalho.
 - Menu: itens com submenu (Livros/Books, Autor/Author) alinhados aos demais.
+
+## Situação em 06/10/2026 (fim do dia)
+
+- **No ar** (último deploy `ed0050a0`): Etapa 1, Etapa 2 só em PT, os dois pontos novos do mapa, o leitor da amostra no tamanho de leitura e o fim da amostra com o convite e o ARGOS.
+- **No GitHub, mas ainda não publicado** (commit `7e14424`): hero em inglês, Etapa 3 em PT e EN, ambiência na Home, "/" laranja no cabeçalho, menu alinhado e a remoção do modo claro (que nunca chegou a ir ao ar).
+  Para publicar: `npx wrangler pages deploy dist --project-name sinalruido --branch main --commit-dirty=true` (depois de `npm run build`).
+- **Etapa 4 iniciada e pausada a pedido do autor.** Nenhum arquivo foi alterado. Só foi feita a leitura do código:
+  - avaliações: `conversionEditorial()` já lê `src/data/book-conversion.json` (`reviews` com nome, comentário, origem e data, hoje vazio) e não mostra nada quando está vazio. Falta trocar o título para "O que ficou depois da leitura" / "What stayed after reading" e limitar a 3 avaliações iniciais;
+  - a vitrine atual (`homeShowcase()` em PT, `englishAvailableBooks()` em EN) mostra SINAL/RUÍDO e Os Deuses Não Têm Filhos com a sinopse completa. Deve virar "Continue o sinal" (capa menor, sem sinopse) e um bloco próprio, menor, para Os Deuses Não Têm Filhos;
+  - autor: `authorCompact()` já tem foto e texto lado a lado. Falta o CTA "Conhecer Alex Jr. Kich" / "Meet Alex Jr. Kich".
 
 ## Decisões pendentes do autor
 - [ ] Página canônica do livro: recomendação `/livro/` (hoje `/livro/` e `/livros/sinal-ruido/` fazem a mesma função e as duas são indexadas).
