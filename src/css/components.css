@@ -1341,3 +1341,11 @@ body:has([data-book-hero])::before,body:has([data-book-hero])::after,body:has([d
  .home-hero__actions .btn {width:100%;}
  .home-hero__sample {align-self:center;margin-top:4px;}
 }
+/* Leitor da amostra: página de livro. Medida de ~65 caracteres e altura que ocupa a tela (cabeçalho fixo + paginação descontados). */
+.reading-shell {width:min(720px,calc(100% - 32px));}
+.is-paginated .reading-paper {padding:clamp(20px,4vw,48px) clamp(20px,5vw,56px);scroll-margin-top:84px;}
+.reading-viewport {height:min(calc(100svh - 250px),860px);min-height:300px;}
+.sample-finish__ask {margin-top:18px;max-width:46ch;font-size:1.05em;line-height:1.6;color:var(--paper-text);}
+.sample-finish .conversion-actions {margin-top:16px;}
+.sample-finish .btn {text-decoration:none;}
+@media (max-width:540px) {.reading-shell {width:calc(100% - 16px);} .is-paginated .reading-paper {padding-inline:18px;}}

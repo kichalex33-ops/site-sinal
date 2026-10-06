@@ -1280,7 +1280,7 @@ function livroAmostraPage() {
         <div class="reading-body">
           ${c.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join("\n          ")}
         </div>
-        <div class="chapter-end"><span>Fim do capítulo ${c.n}</span>${i < chapters.length - 1 ? `<button class="btn btn--primary" type="button" data-next-chapter="${chapters[i+1].id}">Capítulo seguinte →</button>` : `<section class="sample-finish" data-sample-finish><h2>Você chegou ao fim da amostra.</h2><p>Mas o sinal continua.</p>${purchaseActions(books.find(b => b.slug === "sinal-ruido"), {sample:false, ending:true})}</section>`}</div>
+        <div class="chapter-end"><span>Fim do capítulo ${c.n}</span>${i < chapters.length - 1 ? `<button class="btn btn--primary" type="button" data-next-chapter="${chapters[i+1].id}">Capítulo seguinte →</button>` : `${sampleFinishPt(books.find(b => b.slug === "sinal-ruido"))}`}</div>
       </section>`).join("")}
 
       <div class="reading-actions"><a class="btn" data-reading-return href="/livros/sinal-ruido/">← Voltar ao livro</a><a class="btn" href="/casos/">Explorar os casos reais →</a></div>
@@ -1293,6 +1293,12 @@ function livroAmostraPage() {
     ogImage: "/livro/capa.jpg",
     robots: "noindex,follow",
   }));
+}
+
+// Fim da amostra (PT): convite + compra com a loja explícita (Amazon BR para o Kindle, UICLAP para o impresso).
+function sampleFinishPt(b) {
+  const link = (url, label, primary) => url ? `<a class="btn ${primary ? 'btn--primary' : 'btn--outline'}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${label}</a>` : '';
+  return `<section class="sample-finish" data-sample-finish><h2>Você chegou ao fim da amostra.</h2><p>Mas o sinal continua.</p><p class="sample-finish__ask">Quer saber o que esse sinal trouxe para Henrique, Lara, ARGOS e os demais? Adquira o livro aqui:</p><div class="conversion-actions" id="continuar-amostra">${link(b.purchaseUrl, 'Kindle · Amazon', true)}${link(b.purchaseUrlUiclap, 'Livro impresso · UICLAP', false)}</div></section>`;
 }
 
 function livroSampleEnPage() {
@@ -1314,7 +1320,7 @@ function livroSampleEnPage() {
         <div class="reading-body">
           ${c.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join("\n          ")}
         </div>
-        <div class="chapter-end"><span>End of chapter ${c.n}</span>${i < chapters.length - 1 ? `<button class="btn btn--primary" type="button" data-next-chapter="${chapters[i+1].id}">Next chapter →</button>` : `<section class="sample-finish" data-sample-finish><h2>You have reached the end of the sample.</h2><p>But the signal continues.</p>${purchaseActions(books.find(b => b.slug === "sinal-ruido"), {sample:false,ending:true,lang:"en"})}</section>`}</div>
+        <div class="chapter-end"><span>End of chapter ${c.n}</span>${i < chapters.length - 1 ? `<button class="btn btn--primary" type="button" data-next-chapter="${chapters[i+1].id}">Next chapter →</button>` : `<section class="sample-finish" data-sample-finish><h2>You have reached the end of the sample.</h2><p>But the signal continues.</p><p class="sample-finish__ask">Want to know what this signal brought to Henrique, Lara, ARGOS and the others? Get the book here:</p>${purchaseActions(books.find(b => b.slug === "sinal-ruido"), {sample:false,ending:true,lang:"en"})}</section>`}</div>
       </section>`).join("")}
 
       <div class="reading-actions"><a class="btn" data-reading-return href="/en/signal-noise/">Back to the book</a><a class="btn" href="/en/archive/">Explore the real cases</a></div>
