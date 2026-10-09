@@ -132,13 +132,13 @@ function purchaseActions(b, {sample = true, ending = false, lang = 'pt'} = {}) {
 
 function authorCompact(lang = 'pt') {
   const en = lang === 'en';
-  return `<section class="author-compact"><img src="/autor/retrato.jpg" alt="Alex Jr. Kich" width="1149" height="1368" loading="lazy"><div><span class="kicker">${en ? 'About the author' : 'Sobre o autor'}</span><h2>Alex Jr. Kich</h2><p>${en ? 'Writer, artist and worldbuilder. Based in Rio Grande do Sul, Brazil, he draws, composes and writes stories at different scales.' : 'Escritor, artista e criador de mundos. Vive no Rio Grande do Sul, desenha, compõe e escreve histórias em diferentes escalas.'}</p><a class="btn" href="${en ? '/en/author/' : '/autor/'}">${en ? 'Meet the author' : 'Conhecer o autor'}</a></div></section>`;
+  return `<section class="author-compact"><img src="/autor/retrato.jpg" alt="Alex Jr. Kich" width="1149" height="1368" loading="lazy"><div><span class="kicker">${en ? 'About the author' : 'Sobre o autor'}</span><h2>Alex Jr. Kich</h2><p>${en ? 'Writer, artist and worldbuilder. Based in Rio Grande do Sul, Brazil, he draws, composes and writes stories at different scales.' : 'Escritor, artista e criador de mundos. Vive no Rio Grande do Sul, desenha, compõe e escreve histórias em diferentes escalas.'}</p><a class="btn" href="${en ? '/en/author/' : '/autor/'}">${en ? 'Meet Alex Jr. Kich' : 'Conhecer Alex Jr. Kich'}</a></div></section>`;
 }
 
 function conversionEditorial(b, lang = 'pt') {
-  const reviews = conversion.reviews.filter(r => r.book_id === b.slug && (r.lang || 'pt') === lang && r.name && r.comment);
+  const reviews = conversion.reviews.filter(r => r.book_id === b.slug && (r.lang || 'pt') === lang && r.name && r.comment).slice(0, 3); // só depoimentos reais, no máximo 3
   const press = conversion.press.filter(r => r.book_id === b.slug && (r.lang || 'pt') === lang && r.title && /^https:\/\//.test(r.url));
-  return (reviews.length ? `<section class="section"><h2>${lang === 'en' ? 'What readers are saying' : 'O que os leitores estão dizendo'}</h2>${reviews.map(r => `<figure class="card"><blockquote>${escapeHtml(r.comment)}</blockquote><figcaption>${escapeHtml(r.name)}${r.origin ? ' · ' + escapeHtml(r.origin) : ''}${r.date ? ' · ' + escapeHtml(r.date) : ''}</figcaption></figure>`).join('')}</section>` : '') +
+  return (reviews.length ? `<section class="section"><h2>${lang === 'en' ? 'What stayed after reading' : 'O que ficou depois da leitura'}</h2>${reviews.map(r => `<figure class="card"><blockquote>${escapeHtml(r.comment)}</blockquote><figcaption>${escapeHtml(r.name)}${r.origin ? ' · ' + escapeHtml(r.origin) : ''}${r.date ? ' · ' + escapeHtml(r.date) : ''}</figcaption></figure>`).join('')}</section>` : '') +
     (press.length ? `<section class="section"><h2>${lang === 'en' ? 'Press and conversations' : 'Imprensa e conversas'}</h2>${press.map(r => `<p><a href="${escapeHtml(r.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(r.title)}</a></p>`).join('')}</section>` : '');
 }
 function stickyPurchase(b, lang = 'pt') {
@@ -210,34 +210,10 @@ function bookDialogHtml(b) {
     </dialog>`;
 }
 
-function homeShowcase({future = false} = {}) {
+function homeShowcase() {
   const origin = books.find((b) => b.slug === "sinal-ruido");
-  const gods = books.find((b) => b.slug === "os-deuses-nao-tem-filhos");
   const chronicles = books.filter((b) => b.kind === "Crônicas Cosmológicas");
   const others = books.filter((b) => !b.featured && b.kind !== "Crônicas Cosmológicas");
-  const firstPara = (t) => String(t || "").split(/\n\s*\n/)[0];
-  const sheet = (b) => bookSheets[b.slug] || {};
-  const price = (b, k) => (b.prices || {})[k];
-
-  const originBuy = [
-    buyLinkHtml(origin.purchaseUrl, "Ebook", "Amazon Kindle", price(origin, "purchaseUrl")),
-    buyLinkHtml(origin.purchaseUrlUiclap, "Impresso", "UICLAP", price(origin, "purchaseUrlUiclap")),
-  ].join("");
-  const godsBuy = buyLinkHtml(gods.purchaseUrl, "Comprar", "Amazon BR", gods.purchasePrice);
-
-  const highlight = (b, kicker, href, buy, extra = "") => `
-        <article class="vitrine-card">
-          <a class="vitrine-card__cover" href="${href}" data-book-open="${b.slug}"><img src="${escapeHtml(b.cover)}" alt="Capa de ${escapeHtml(b.title)}" width="300" height="480" loading="lazy" /></a>
-          <div class="vitrine-card__body">
-            <span class="badge badge--sale">À VENDA</span>
-            <span class="mono vitrine-card__kicker">${escapeHtml(kicker)}</span>
-            <h3><a href="${href}" data-book-open="${b.slug}">${escapeHtml(b.title)}</a></h3>
-            ${sheet(b).tagline ? `<p class="vitrine-card__tagline">${escapeHtml(sheet(b).tagline)}</p>` : ""}
-            <p>${escapeHtml(firstPara(sheet(b).synopsis || b.synopsis || b.description))}</p>
-            <div class="buy-group__links">${buy}</div>
-            <p class="vitrine-card__actions">${extra}<a class="btn" href="${href}">Ver ficha completa →</a></p>
-          </div>
-        </article>`;
 
   const catalogCard = (b, href, label) => {
     const inner = `<img src="${escapeHtml(b.cover)}" alt="Capa de ${escapeHtml(b.title)}" loading="lazy" /><span class="mono">${label}</span><h3>${escapeHtml(b.title)}</h3>${b.description ? `<p>${escapeHtml(b.description)}</p>` : ""}`;
@@ -248,20 +224,7 @@ function homeShowcase({future = false} = {}) {
   const stateLabel = (b) => (isOnSale(b) ? `${escapeHtml(b.numeral || "ORIGEM")} · À VENDA` : `${escapeHtml(b.numeral)} · ${escapeHtml(b.status)}`);
 
   return `
-    ${!future ? `<section class="section home-vitrine" id="livros">
-      <div class="container">
-        <span class="kicker">Livros</span>
-        <h2 style="margin-top:10px">Já à venda</h2>
-        <p style="margin-top:8px;color:var(--muted);max-width:760px">O romance que abre o universo e o primeiro volume das Crônicas Cosmológicas. Tudo aqui é ficção e permanece separado do arquivo factual.</p>
-        <div class="vitrine-grid">
-          ${highlight(origin, "Romance · Obra de origem", "/livros/sinal-ruido/", originBuy, `<a class="btn btn--primary" href="/livro/amostra/">Ler 3 capítulos</a>`)}
-          ${highlight(gods, "Crônicas Cosmológicas · Volume I", "/livros/os-deuses-nao-tem-filhos/", godsBuy)}
-        </div>
-      </div>
-    </section>
-
-    ` : ""}
-    ${future ? `<section class="section section--divider home-catalog" id="cronicas">
+    <section class="section section--divider home-catalog" id="cronicas">
       <div class="container">
         <span class="kicker">Crônicas Cosmológicas · I–X</span>
         <h2 style="margin-top:10px">O universo continua</h2><p>Crônicas Cosmológicas e próximos livros.</p>
@@ -273,10 +236,26 @@ function homeShowcase({future = false} = {}) {
         ${others.length ? `<div style="margin-top:36px"><span class="kicker">Outro projeto literário</span><div class="books-grid" style="margin-top:14px">${others.map((b) => `<article class="book-card"><span class="mono">${escapeHtml(b.status)}</span><h3>${escapeHtml(b.title)}</h3>${b.description ? `<p>${escapeHtml(b.description)}</p>` : ""}</article>`).join("")}</div></div>` : ""}
       </div>
     </section>
-    ` : ""}
-    ${future ? [origin, ...chronicles.filter((b) => (bookSheets[b.slug] || {}).synopsis)].map(bookDialogHtml).join("") : ""}`;
+    ${[origin, ...chronicles.filter((b) => (bookSheets[b.slug] || {}).synopsis)].map(bookDialogHtml).join("")}`;
 }
 
+
+// Livros na Home (PT e EN, Etapa 4): "Continue o sinal" com capa menor e sem sinopse, seguido de um bloco
+// próprio, menor, para o volume I das Crônicas. Os botões não repetem o id do hero (#comprar-sinal-ruido).
+function homeBooks(b, lang = 'pt') {
+ const en = lang === 'en';
+ const gods = books.find((x) => x.slug === 'os-deuses-nao-tem-filhos');
+ const link = (url, label, cls) => url ? `<a class="btn ${cls}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${label}</a>` : '';
+ const t = en
+  ? { id: 'books', kicker: 'Keep following the signal', title: 'SIGNAL<span>/</span>NOISE', line: bookSheetsEn[b.slug]?.tagline, cover: '/livro/capa-en.jpg', w: 1000, h: 1600, alt: 'Cover of SIGNAL/NOISE', kindle: b.purchaseUrlEn, print: buyLinks('US').find(l => l.edition === 'paperback')?.url, buyK: 'Buy Kindle', buyP: 'Buy paperback', sample: 'Read 3 free chapters', sampleUrl: '/livro/sample/', details: 'Book details', detailsUrl: '/en/signal-noise/',
+      gKicker: 'Cosmological Chronicles · Volume I', gTitle: gods.titleEn, gCover: gods.coverEn || gods.cover, gAlt: `Cover of ${gods.titleEn}`, gLine: bookSheetsEn[gods.slug]?.tagline, gNote: 'Currently available in Portuguese.', gBuy: 'Buy the Portuguese edition', gMore: 'About the book', gUrl: `/en/chronicles/${gods.slug}/` }
+  : { id: 'livros', kicker: 'Continue o sinal', title: 'SINAL<span>/</span>RUÍDO', line: bookSheets[b.slug]?.tagline, cover: escapeHtml(b.cover), w: 1050, h: 1512, alt: 'Capa de SINAL/RUÍDO', kindle: b.purchaseUrl, print: b.purchaseUrlUiclap, buyK: 'Comprar Kindle', buyP: 'Comprar impresso', sample: 'Ler 3 capítulos grátis', sampleUrl: escapeHtml(b.sampleUrl), details: 'Ficha do livro', detailsUrl: '/livros/sinal-ruido/',
+      gKicker: 'Crônicas Cosmológicas · Volume I', gTitle: gods.title, gCover: gods.cover, gAlt: `Capa de ${gods.title}`, gLine: bookSheets[gods.slug]?.tagline, gNote: '', gBuy: 'Comprar na Amazon', gMore: 'Conhecer o livro', gUrl: `/livros/${gods.slug}/` };
+ return `<section class="section section--divider home-books" id="${t.id}"><div class="container">
+ <div class="continue-signal"><a class="continue-signal__cover" href="${t.detailsUrl}"><img src="${t.cover}" alt="${t.alt}" width="${t.w}" height="${t.h}" loading="lazy"></a><div><span class="kicker">${t.kicker}</span><h2 class="continue-signal__title">${t.title}</h2>${t.line ? `<p class="continue-signal__line">${escapeHtml(t.line)}</p>` : ''}<div class="conversion-actions">${link(t.kindle, t.buyK, 'btn--primary')}${link(t.print, t.buyP, 'btn--outline')}<a class="btn btn--reading" href="${t.sampleUrl}">${t.sample}</a></div><p><a class="home-about-book__link" href="${t.detailsUrl}">${t.details} <span aria-hidden="true">→</span></a></p></div></div>
+ <article class="next-book"><a class="next-book__cover" href="${t.gUrl}"><img src="${escapeHtml(t.gCover)}" alt="${escapeHtml(t.gAlt)}" width="900" height="1436" loading="lazy"></a><div><span class="kicker">${t.gKicker}</span><h3><a href="${t.gUrl}">${escapeHtml(t.gTitle)}</a></h3>${t.gLine ? `<p class="next-book__line">${escapeHtml(t.gLine)}</p>` : ''}${t.gNote ? `<p class="next-book__note">${t.gNote}</p>` : ''}<p class="next-book__actions">${link(gods.purchaseUrl, t.gBuy, 'btn--outline')}<a class="btn" href="${t.gUrl}">${t.gMore}</a></p></div></article>
+ </div></section>`;
+}
 
 // Hero da Home (PT e EN): livro + gancho + compra em uma única dobra.
 // Edições internacionais ficam fora daqui (ver otherEditionsHome).
@@ -333,12 +312,12 @@ function homePage() {
     ${otherEditionsHome(featuredBook)}
     ${archiveLabels()}
 
-    ${conversionEditorial(featuredBook)}
-    ${homeShowcase()}
+    <div class="container">${conversionEditorial(featuredBook)}</div>
+    ${homeBooks(featuredBook)}
     <div class="container">${authorCompact()}</div>
     <section class="section container--narrow"><span class="kicker">A base real</span><h2>O sinal Wow!</h2><p>O registro de 1977 é o ponto de partida do romance. No arquivo, fontes, testemunhos e hipóteses são apresentados separadamente da ficção.</p><a class="btn" href="/casos/sinal-wow/">Investigar o sinal Wow!</a><a class="btn" href="/arquivo/">Entrar no arquivo</a></section>
     ${homeCallout("pt")}
-    ${homeShowcase({future:true})}
+    ${homeShowcase()}
 
     <section class="section section--divider home-comments-support">
       <div class="container home-comments-support__inner">
@@ -1530,7 +1509,7 @@ function enHomePage(list) {
     ${otherEditionsHome(b,'en')}
     ${archiveLabels("en")}
     <div class="container">${conversionEditorial(b,'en')}</div>
-    ${englishAvailableBooks()}
+    ${homeBooks(b,'en')}
     <div class="container">${authorCompact('en')}</div>
     <section class="section container--narrow"><span class="kicker">The real starting point</span><h2>The Wow! signal</h2><p>The 1977 record is the novel’s starting point. In the public archive, sources, testimony and hypotheses remain separate from fiction.</p><p><a class="btn" href="/en/archive/cases/sinal-wow/">Investigate the Wow! signal</a><a class="btn" href="/en/archive/">Enter the archive</a></p></section>
     ${homeCallout('en')}

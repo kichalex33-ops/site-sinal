@@ -1373,3 +1373,25 @@ body:has([data-book-hero])::before,body:has([data-book-hero])::after,body:has([d
 /* Home com a ambiência do site (estrelas, névoa, pixels no cursor): seções do topo sem fundo sólido. */
 .home-hero-book, .home-bridge-question {background:transparent;}
 
+/* Etapa 4: livros na Home. "Continue o sinal" (capa menor, sem sinopse) + bloco menor do volume I. */
+.home-books .continue-signal {display:grid;grid-template-columns:minmax(140px,220px) minmax(0,600px);justify-content:center;gap:clamp(28px,5vw,64px);align-items:center;}
+.continue-signal__cover img {display:block;width:100%;height:auto;box-shadow:0 6px 16px #0003;}
+.continue-signal__title {font-size:clamp(30px,4vw,48px);margin:14px 0;letter-spacing:.02em;}
+.continue-signal__title span {color:#e8541d;}
+.continue-signal__line {font-style:italic;color:var(--muted);max-width:46ch;line-height:1.6;}
+.home-books .conversion-actions {margin-top:24px;}
+.home-books .next-book {display:grid;grid-template-columns:96px minmax(0,1fr);gap:24px;align-items:center;max-width:884px;margin:72px auto 0;padding-top:40px;border-top:1px solid var(--border);}
+.next-book__cover img {display:block;width:96px;height:auto;}
+.next-book h3 {font-size:clamp(20px,2.4vw,26px);margin:10px 0 6px;text-transform:uppercase;letter-spacing:.03em;}
+.next-book h3 a {color:inherit;text-decoration:none;}
+.next-book__line {color:var(--muted);font-style:italic;margin:0;}
+.next-book__note {color:var(--muted);font-size:13px;margin:6px 0 0;}
+.next-book__actions {display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 0;}
+@media(max-width:700px) {
+ .home-books .continue-signal {grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;}
+ .continue-signal__cover img {width:150px;}
+ .continue-signal__line {margin-inline:auto;}
+ .home-books .conversion-actions {justify-content:center;}
+ .home-books .next-book {grid-template-columns:72px minmax(0,1fr);gap:16px;align-items:start;margin-top:48px;}
+ .next-book__cover img {width:72px;}
+}

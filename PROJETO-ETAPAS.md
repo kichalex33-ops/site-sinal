@@ -32,7 +32,7 @@ Atenção: antes de 06/10/2026 o site no ar tinha arquivos que não estavam no G
 | 1 — Auditoria e correções de base | ✅ | ✅ | ✅ 06/10 |
 | 2 — Hero e primeira dobra | ✅ | ✅ | ✅ |
 | 3 — Fluxo de desejo e amostra | ✅ | ✅ | ✅ |
-| 4 — Prova social, autor e segundo livro | 🔎 iniciada (só análise) | 🔎 | — |
+| 4 — Prova social, autor e segundo livro | ✅ | ✅ | ⏳ aguardando deploy |
 | 5 — Universo sem atrapalhar a venda | ⏳ | ⏳ | — |
 | 6 — Polimento final e auditoria | ⏳ | ⏳ | — |
 
@@ -61,6 +61,15 @@ Atenção: antes de 06/10/2026 o site no ar tinha arquivos que não estavam no G
 - Home com a ambiência do site (estrelas, névoa, rastro de pixels no cursor). A amostra continua sem efeitos.
 - "/" laranja de SINAL/RUÍDO restaurado no cabeçalho.
 - Menu: itens com submenu (Livros/Books, Autor/Author) alinhados aos demais.
+
+### Etapa 4 — Confiança (concluída PT + EN, 09/10, ainda não publicada)
+- Avaliações: título "O que ficou depois da leitura" / "What stayed after reading", no máximo 3. Continua oculto enquanto `reviews` estiver vazio (sem placeholders).
+- Nova função `homeBooks(b, lang)` substitui a vitrine com sinopse na Home PT (`homeShowcase` sem o ramo "Já à venda") e EN (`englishAvailableBooks` continua só em /en/chronicles/):
+  - "Continue o sinal" / "Keep following the signal": capa menor, tagline do livro (dados de `book-sheets`), Kindle, impresso, amostra, ficha;
+  - bloco menor de Os Deuses Não Têm Filhos (capa, tagline, Comprar na Amazon, Conhecer o livro). EN: "Currently available in Portuguese."
+  - âncoras `/#livros` e `/en/#books` apontam para esse bloco; sem id duplicado com o hero.
+- Autor: CTA "Conhecer Alex Jr. Kich" / "Meet Alex Jr. Kich" (vale também nas páginas do livro).
+- Testado: desktop 1366 e celular 390, PT e EN, sem erros no console e sem rolagem horizontal.
 
 ## Situação em 06/10/2026 (fim do dia)
 
