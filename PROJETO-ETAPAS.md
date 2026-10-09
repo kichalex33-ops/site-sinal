@@ -30,8 +30,8 @@ Atenção: antes de 06/10/2026 o site no ar tinha arquivos que não estavam no G
 | Etapa | PT | EN | Publicado |
 |---|---|---|---|
 | 1 — Auditoria e correções de base | ✅ | ✅ | ✅ 06/10 |
-| 2 — Hero e primeira dobra | ✅ | ✅ | PT ✅ · EN aguardando deploy |
-| 3 — Fluxo de desejo e amostra | ✅ | ✅ | aguardando deploy |
+| 2 — Hero e primeira dobra | ✅ | ✅ | ✅ |
+| 3 — Fluxo de desejo e amostra | ✅ | ✅ | ✅ |
 | 4 — Prova social, autor e segundo livro | 🔎 iniciada (só análise) | 🔎 | — |
 | 5 — Universo sem atrapalhar a venda | ⏳ | ⏳ | — |
 | 6 — Polimento final e auditoria | ⏳ | ⏳ | — |
@@ -63,6 +63,8 @@ Atenção: antes de 06/10/2026 o site no ar tinha arquivos que não estavam no G
 - Menu: itens com submenu (Livros/Books, Autor/Author) alinhados aos demais.
 
 ## Situação em 06/10/2026 (fim do dia)
+
+> Atualização: tudo o que estava pendente foi publicado no deploy `2bc4d729` e conferido no ar. Site e GitHub iguais.
 
 - **No ar** (último deploy `ed0050a0`): Etapa 1, Etapa 2 só em PT, os dois pontos novos do mapa, o leitor da amostra no tamanho de leitura e o fim da amostra com o convite e o ARGOS.
 - **No GitHub, mas ainda não publicado** (commit `7e14424`): hero em inglês, Etapa 3 em PT e EN, ambiência na Home, "/" laranja no cabeçalho, menu alinhado e a remoção do modo claro (que nunca chegou a ir ao ar).
