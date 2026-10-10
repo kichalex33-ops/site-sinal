@@ -837,10 +837,15 @@ html:not(.reduced-motion) [data-hero-line] { opacity: 0; transform: translateY(2
 .books-page { position: relative; background: linear-gradient(180deg, rgba(11,14,20,.55) 0%, var(--bg) 520px), var(--books-art) right top / min(720px, 100%) auto no-repeat; }
 .books-grid--covers { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 18px; }
 .book-card--cover { padding: 0 0 16px; min-height: 0; overflow: hidden; }
-.book-card--cover img { width: 100%; display: block; aspect-ratio: 900 / 1437; object-fit: cover; }
+.book-card--cover img { width: 100%; height: auto; display: block; aspect-ratio: 900 / 1437; object-fit: cover; }
 .book-card--cover > span { padding: 14px 16px 0; }
 .book-card--cover h3 { margin-top: 8px; padding: 0 16px; font-size: 15px; }
 .book-card--cover p { padding: 0 16px; }
+/* Etapa 5: fatos do sinal Wow! */
+.home-origin__facts { list-style: none; padding: 0; margin: 20px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.home-origin__facts li { border: 1px solid var(--border); padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; }
+.home-origin__facts strong { font-family: var(--mono); font-size: 18px; letter-spacing: .02em; }
+.home-origin__facts span { color: var(--muted); font-size: 13px; }
 .book-card--soon { justify-content: center; text-align: left; border-style: dashed; }
 .book-card--soon h3 { margin-top: 10px; }
 

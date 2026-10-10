@@ -230,9 +230,9 @@ function homeShowcase() {
         <h2 style="margin-top:10px">O universo continua</h2><p>Crônicas Cosmológicas e próximos livros.</p>
         <p class="mono" style="margin-top:8px"><a href="/en/chronicles/" hreflang="en" style="color:var(--muted)">English version →</a></p>
         <div class="books-grid books-grid--covers" style="margin-top:20px">
-          
-          ${chronicles.filter(b => !isOnSale(b)).map((b) => catalogCard(b, (bookSheets[b.slug] || {}).synopsis ? `/livros/${b.slug}/` : "", stateLabel(b))).join("")}
+          ${chronicles.filter(b => !isOnSale(b)).slice(0, 3).map((b) => catalogCard(b, (bookSheets[b.slug] || {}).synopsis ? `/livros/${b.slug}/` : "", stateLabel(b))).join("")}
         </div>
+        <p style="margin-top:18px"><a class="btn" href="/livros/">Ver os dez livros da coleção</a></p>
         ${others.length ? `<div style="margin-top:36px"><span class="kicker">Outro projeto literário</span><div class="books-grid" style="margin-top:14px">${others.map((b) => `<article class="book-card"><span class="mono">${escapeHtml(b.status)}</span><h3>${escapeHtml(b.title)}</h3>${b.description ? `<p>${escapeHtml(b.description)}</p>` : ""}</article>`).join("")}</div></div>` : ""}
       </div>
     </section>
@@ -273,6 +273,17 @@ function homeHero(b, lang = 'pt') {
  <figure class="home-hero__cover" data-book-hero-cover><img src="${t.cover}" alt="${t.alt}" width="${t.w}" height="${t.h}" fetchpriority="high"></figure>
  <div class="home-hero__actions" id="comprar-${b.slug}">${link(kindle, t.buyK, 'btn--primary')}${link(print, t.buyP, 'btn--outline')}<a class="home-hero__sample" href="${t.sampleUrl}">${t.sample} <span aria-hidden="true">→</span></a></div>
  </div></section>`;
+}
+// Etapa 5: a base real do romance (sinal Wow!) em poucos fatos, antes do catálogo
+function homeOrigin(lang = 'pt') {
+ const en = lang === 'en';
+ const facts = en
+  ? [['Aug 15, 1977', 'date of the record'], ['Big Ear', 'Ohio State University radio telescope'], ['72 s', 'the observation window'], ['6EQUJ5', 'the circled sequence']]
+  : [['15/08/1977', 'data do registro'], ['Big Ear', 'radiotelescópio da Ohio State University'], ['72 s', 'a janela de observação'], ['6EQUJ5', 'a sequência circulada']];
+ const list = facts.map(([k, v]) => `<li><strong>${k}</strong><span>${v}</span></li>`).join('');
+ return en
+  ? `<section class="section container--narrow home-origin"><span class="kicker">The real starting point</span><h2>The story began before the novel</h2><p>On August 15, 1977, the Big Ear radio telescope in Ohio recorded a narrow, intense radio signal that lasted 72 seconds and was never detected again. Astronomer Jerry Ehman circled the sequence on the printout and wrote beside it: “Wow!”</p><ul class="home-origin__facts">${list}</ul><p>In the public archive, sources, testimony and hypotheses remain separate from fiction.</p><p><a class="btn" href="/en/archive/cases/sinal-wow/">Investigate the Wow! signal</a> <a class="btn" href="/en/archive/">Enter the archive</a></p></section>`
+  : `<section class="section container--narrow home-origin"><span class="kicker">A base real</span><h2>A história começou antes do romance</h2><p>Em 15 de agosto de 1977, o radiotelescópio Big Ear, em Ohio, registrou um sinal de rádio estreito e intenso que durou 72 segundos e nunca mais foi detectado. O astrônomo Jerry Ehman circulou a sequência na impressão e escreveu ao lado: “Wow!”.</p><ul class="home-origin__facts">${list}</ul><p>No arquivo, fontes, testemunhos e hipóteses ficam separados da ficção.</p><p><a class="btn" href="/casos/sinal-wow/">Investigar o sinal Wow!</a> <a class="btn" href="/arquivo/">Entrar no arquivo</a></p></section>`;
 }
 function otherEditionsHome(b, lang = 'pt') {
  const en = lang === 'en';
@@ -315,7 +326,7 @@ function homePage() {
     <div class="container">${conversionEditorial(featuredBook)}</div>
     ${homeBooks(featuredBook)}
     <div class="container">${authorCompact()}</div>
-    <section class="section container--narrow"><span class="kicker">A base real</span><h2>O sinal Wow!</h2><p>O registro de 1977 é o ponto de partida do romance. No arquivo, fontes, testemunhos e hipóteses são apresentados separadamente da ficção.</p><a class="btn" href="/casos/sinal-wow/">Investigar o sinal Wow!</a><a class="btn" href="/arquivo/">Entrar no arquivo</a></section>
+    ${homeOrigin()}
     ${homeCallout("pt")}
     ${homeShowcase()}
 
@@ -1511,9 +1522,9 @@ function enHomePage(list) {
     <div class="container">${conversionEditorial(b,'en')}</div>
     ${homeBooks(b,'en')}
     <div class="container">${authorCompact('en')}</div>
-    <section class="section container--narrow"><span class="kicker">The real starting point</span><h2>The Wow! signal</h2><p>The 1977 record is the novel’s starting point. In the public archive, sources, testimony and hypotheses remain separate from fiction.</p><p><a class="btn" href="/en/archive/cases/sinal-wow/">Investigate the Wow! signal</a><a class="btn" href="/en/archive/">Enter the archive</a></p></section>
+    ${homeOrigin('en')}
     ${homeCallout('en')}
-    <section class="section section--divider home-catalog" id="chronicles"><div class="container"><span class="kicker">Cosmological Chronicles · I–X</span><h2>The universe continues</h2><p>Upcoming books in a shared universe.</p><div class="books-grid books-grid--covers" style="margin-top:20px">${future.map(b=>`<a class="book-card book-card--cover" href="/en/chronicles/${b.slug}/"><img src="${escapeHtml(b.coverEn || b.cover)}" alt="Cover of ${escapeHtml(b.titleEn || b.title)}" width="300" height="480" loading="lazy"><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(englishStatus(b))}</span><h3>${escapeHtml(b.titleEn || b.title)}</h3><p>${escapeHtml(bookSheetsEn[b.slug]?.tagline || '')}</p></a>`).join('')}</div><p><a class="btn" href="/en/chronicles/">Explore the Chronicles</a></p></div></section>`;
+    <section class="section section--divider home-catalog" id="chronicles"><div class="container"><span class="kicker">Cosmological Chronicles · I–X</span><h2>The universe continues</h2><p>Upcoming books in a shared universe.</p><div class="books-grid books-grid--covers" style="margin-top:20px">${future.slice(0, 3).map(b=>`<a class="book-card book-card--cover" href="/en/chronicles/${b.slug}/"><img src="${escapeHtml(b.coverEn || b.cover)}" alt="Cover of ${escapeHtml(b.titleEn || b.title)}" width="300" height="480" loading="lazy"><span class="mono">${escapeHtml(b.numeral)} · ${escapeHtml(englishStatus(b))}</span><h3>${escapeHtml(b.titleEn || b.title)}</h3><p>${escapeHtml(bookSheetsEn[b.slug]?.tagline || '')}</p></a>`).join('')}</div><p style="margin-top:18px"><a class="btn" href="/en/chronicles/">See all ten books in the series</a></p></div></section>`;
   write('/en',page({title:'SIGNAL/NOISE',description:'SIGNAL/NOISE, an investigative science fiction novel by Alex Jr. Kich. Read three free chapters or buy the English Kindle and print editions.',path:'/en/',bodyHtml:body,ogImage:'/livro/capa-en.jpg',lang:'en',ogLocale:'en_US',minimal:true,langSwitch:'/',alternates:ptEnAlternates('/','/en/')}));
 }
 

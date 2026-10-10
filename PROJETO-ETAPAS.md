@@ -33,8 +33,16 @@ Atenção: antes de 06/10/2026 o site no ar tinha arquivos que não estavam no G
 | 2 — Hero e primeira dobra | ✅ | ✅ | ✅ |
 | 3 — Fluxo de desejo e amostra | ✅ | ✅ | ✅ |
 | 4 — Prova social, autor e segundo livro | ✅ | ✅ | ⏳ aguardando deploy |
-| 5 — Universo sem atrapalhar a venda | ⏳ | ⏳ | — |
+| 5 — Universo sem atrapalhar a venda | ✅ | ✅ | ⏳ aguardando deploy |
 | 6 — Polimento final e auditoria | ⏳ | ⏳ | — |
+
+### Etapa 5 — Universo (pronta em 09/10, commit local, não publicada)
+- "A história começou antes do romance" (PT/EN): o sinal Wow! em quatro fatos — 15/08/1977, Big Ear (Ohio State), 72 s, 6EQUJ5 — com Jerry Ehman e o "Wow!"; links para o caso e o arquivo.
+- Mapa dos Sinais: mantido o chamado curto que já existia logo abaixo.
+- "O universo continua": a home mostra só II–IV (antes eram II–X) + botão "Ver os dez livros da coleção" (/livros/) / "See all ten books in the series" (/en/chronicles/). As fichas (dialogs) de todos continuam no HTML.
+- "Outras edições": já estava discreto (details fechado) desde a Etapa 4; sem mudança.
+- Corrigido: capas esticadas no catálogo da home EN (img com height="480"; CSS agora força height:auto).
+- Conferido em print: PT e EN, 1280 px e 390 px.
 
 ### Etapa 1 — Auditoria (concluída)
 - Status de SINAL/RUÍDO já era "À venda" em todas as páginas, PT e EN. Nenhum "Edição editorial"/"Em desenvolvimento" ligado ao livro.
