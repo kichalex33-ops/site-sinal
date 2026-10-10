@@ -9,7 +9,7 @@
 
   /* marca — não muda entre modos */
   --signal: #e8541d;
-  --signal-ink: #ffffff;
+  --signal-ink: #101216; /* texto sobre laranja: branco dava 3,7:1; este dá 5,1:1 (AA) */
 
   /* estado técnico (proveniência/integridade/estado editorial) */
   --verified: #3fb950;
@@ -21,7 +21,7 @@
   --paper-2: #eef1e7;
   --paper-text: #171a18;
   --paper-text-2: #343936;
-  --paper-muted: #747a72;
+  --paper-muted: #62685f; /* era #747a72 (4,0:1 no papel); agora 5,2:1 (AA) */
   --paper-border: #d6dad2;
 
   /* camadas D/T/E, só usadas dentro de superfícies "paper" */

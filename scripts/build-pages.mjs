@@ -2335,7 +2335,7 @@ function autorPage() {
     ogImage: "/autor/retrato.jpg",
     alternates: ptEnAlternates("/autor/", "/en/author/"),
     langSwitch: "/en/author/",
-    extraHead: `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" />`,
+    extraHead: `<link rel="stylesheet" href="/src/css/fonts-caveat.css" />`,
   }));
 }
 
@@ -2576,7 +2576,7 @@ function enAuthorPage() {
     lang: "en", ogLocale: "en_US", minimal: true,
     alternates: ptEnAlternates("/autor/", "/en/author/"),
     langSwitch: "/autor/",
-    extraHead: `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" />`,
+    extraHead: `<link rel="stylesheet" href="/src/css/fonts-caveat.css" />`,
   }));
 }
 

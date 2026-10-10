@@ -1400,3 +1400,12 @@ body:has([data-book-hero])::before,body:has([data-book-hero])::after,body:has([d
  .home-books .next-book {grid-template-columns:72px minmax(0,1fr);gap:16px;align-items:start;margin-top:48px;}
  .next-book__cover img {width:72px;}
 }
+
+/* Etapa 6 — alvos de toque no celular (mínimo ~44 px) */
+@media (max-width: 859px) {
+  .footer-links { gap: 0; }
+  .footer-links a { display: block; padding: 13px 0; }
+  .site-header .lang-switch { min-width: 44px; justify-content: center; text-align: center; }
+  .arquivo-search { padding-block: 0; }
+  .arquivo-search__input { min-height: 46px; }
+}
