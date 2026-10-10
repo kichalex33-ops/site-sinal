@@ -36,7 +36,7 @@ Atenção: antes de 06/10/2026 o site no ar tinha arquivos que não estavam no G
 | 5 — Universo sem atrapalhar a venda | ✅ | ✅ | ⏳ aguardando deploy |
 | 6 — Polimento final e auditoria | ⏳ | ⏳ | — |
 
-### Etapa 5 — Universo (pronta em 09/10, commit local, não publicada)
+### Etapa 5 — Universo (concluída PT + EN, publicada em 10/10 no deploy 0143743b)
 - "A história começou antes do romance" (PT/EN): o sinal Wow! em quatro fatos — 15/08/1977, Big Ear (Ohio State), 72 s, 6EQUJ5 — com Jerry Ehman e o "Wow!"; links para o caso e o arquivo.
 - Mapa dos Sinais: mantido o chamado curto que já existia logo abaixo.
 - "O universo continua": a home mostra só II–IV (antes eram II–X) + botão "Ver os dez livros da coleção" (/livros/) / "See all ten books in the series" (/en/chronicles/). As fichas (dialogs) de todos continuam no HTML.
@@ -70,7 +70,7 @@ Atenção: antes de 06/10/2026 o site no ar tinha arquivos que não estavam no G
 - "/" laranja de SINAL/RUÍDO restaurado no cabeçalho.
 - Menu: itens com submenu (Livros/Books, Autor/Author) alinhados aos demais.
 
-### Etapa 4 — Confiança (concluída PT + EN, 09/10, ainda não publicada)
+### Etapa 4 — Confiança (concluída PT + EN, publicada em 10/10 no deploy 0143743b)
 - Avaliações: título "O que ficou depois da leitura" / "What stayed after reading", no máximo 3. Continua oculto enquanto `reviews` estiver vazio (sem placeholders).
 - Nova função `homeBooks(b, lang)` substitui a vitrine com sinopse na Home PT (`homeShowcase` sem o ramo "Já à venda") e EN (`englishAvailableBooks` continua só em /en/chronicles/):
   - "Continue o sinal" / "Keep following the signal": capa menor, tagline do livro (dados de `book-sheets`), Kindle, impresso, amostra, ficha;
