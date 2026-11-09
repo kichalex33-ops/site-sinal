@@ -7,7 +7,7 @@ const NAV = [
     ],
   },
   {
-    href: "/#livros", label: "Livros", match: ["/livros/", "/livro/"],
+    href: "/#cronicas", label: "Livros", match: ["/livros/", "/livro/"],
     children: [
       { href: "/livros/sinal-ruido/", label: "SINAL/RUÍDO — Origem" },
       { href: "/#cronicas", label: "Crônicas Cosmológicas I–X" },
@@ -40,6 +40,19 @@ const NAV = [
       { href: "/contato/#profissional", label: "Contato profissional" },
     ],
   },
+];
+
+// Menu principal (desktop e celular na mesma ordem): Ler, Livros, Arquivo, Mapa, Autor. A busca fica no botão ⌕.
+const MAIN_NAV = [
+  NAV[0],
+  NAV[1],
+  NAV[3],
+  { ...NAV[4], label: "Mapa" },
+  { ...NAV[2], match: ["/autor/", "/contato/", "/imprensa/"], children: [
+    { href: "/autor/", label: "Sobre o autor" },
+    { href: "/contato/", label: "Contato" },
+    { href: "/imprensa/", label: "Imprensa" },
+  ] },
 ];
 
 function isCurrent(item, currentPath) {
@@ -97,7 +110,7 @@ export function page({
         <span class="brand__sub">Romance de investigação · Alex Jr. Kich</span>
       </a>
       <nav class="main-nav" aria-label="Navegação principal">
-        ${[NAV[0],NAV[1],NAV[3],{...NAV[4],label:"Mapa"},{...NAV[2],children:[{href:"/autor/",label:"Sobre o autor"},{href:"/contato/",label:"Contato"},{href:"/imprensa/",label:"Imprensa"}]}].map(i=>navLink(i,path)).join("")}
+        ${MAIN_NAV.map((i) => navLink(i, path)).join("")}
       </nav>
       <div class="header-actions">
         ${langSwitchHtml}
@@ -115,7 +128,7 @@ export function page({
       </div>
     </div>
     <nav class="mobile-nav container" data-mobile-nav aria-label="Navegação (compacta)">
-      ${NAV.map((i) => navLink(i, path, true)).join("")}<a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>
+      ${MAIN_NAV.map((i) => navLink(i, path, true)).join("")}<a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>
       ${langSwitchHtml}
     </nav>
   </header>`;
@@ -166,7 +179,7 @@ export function page({
       </div>
     </div>
     <nav class="mobile-nav container" data-mobile-nav aria-label="Navigation">
-      <a href="/livro/sample/">Read 3 free chapters</a><a href="/en/signal-noise/">SIGNAL/NOISE</a><a href="/buy/">Buy the English edition</a><a href="/en/chronicles/">Cosmological Chronicles</a><a href="/en/author/">Author</a><a href="/en/archive/">Archive</a><a href="/en/world-map-of-signals/">World Map of Signals</a><a href="/en/readers/">After reading</a><a href="/en/contact/">Contact</a><a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>${langSwitchHtml}
+      <a href="/livro/sample/">Read 3 free chapters</a><a href="/en/signal-noise/">SIGNAL/NOISE</a><a href="/buy/">Buy the English edition</a><a href="/en/chronicles/">Cosmological Chronicles</a><a href="/en/archive/">Archive</a><a href="/en/world-map-of-signals/">World Map of Signals</a><a href="/en/author/">Author</a><a href="/en/contact/">Contact</a><a href="/en/readers/">After reading</a><a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>${langSwitchHtml}
     </nav>
   </header>`;
   const minimalFooter = `  <footer class="site-footer">
@@ -205,9 +218,8 @@ export function page({
   <meta property="og:image:height" content="630" />` : ""}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="${escapeAttr(ogImageUrl)}" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" />
+  <link rel="preload" href="/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/src/css/fonts.css" />
   <link rel="stylesheet" href="/src/css/tokens.css" />
   <link rel="stylesheet" href="/src/css/reset.css" />
   <link rel="stylesheet" href="/src/css/base.css" />

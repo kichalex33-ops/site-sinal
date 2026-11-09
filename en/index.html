@@ -1,111 +1,114 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SIGNAL/NOISE · SINAL/RUÍDO</title>
-  <meta name="description" content="SIGNAL/NOISE, an investigative science fiction novel by Alex Jr. Kich. Read three free chapters or buy the English Kindle and print editions." />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0B0E14" />
-  <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
-  <link rel="canonical" href="https://sinalruido.com.br/en/" />
-  <link rel="alternate" hreflang="pt-BR" href="https://sinalruido.com.br/" />
-  <link rel="alternate" hreflang="en" href="https://sinalruido.com.br/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://sinalruido.com.br/" />
-  <meta property="og:title" content="SIGNAL/NOISE · SINAL/RUÍDO" />
-  <meta property="og:description" content="SIGNAL/NOISE, an investigative science fiction novel by Alex Jr. Kich. Read three free chapters or buy the English Kindle and print editions." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sinalruido.com.br/en/" />
-  <meta property="og:site_name" content="SINAL/RUÍDO" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:image" content="https://sinalruido.com.br/livro/capa-en.jpg" />
-  
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://sinalruido.com.br/livro/capa-en.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" />
-  <link rel="stylesheet" href="/src/css/tokens.css" />
-  <link rel="stylesheet" href="/src/css/reset.css" />
-  <link rel="stylesheet" href="/src/css/base.css" />
-  <link rel="stylesheet" href="/src/css/layout.css" />
-  <link rel="stylesheet" href="/src/css/components.css" />
-  
-</head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SIGNAL/NOISE — Alex Jr. Kich</title><meta name="description" content="SIGNAL/NOISE, an investigative science-fiction novel by Alex Jr. Kich. Read 3 chapters free."><meta name="theme-color" content="#07090d"><link rel="icon" href="data:,">
+<link rel="stylesheet" href="/home/style.css"><link rel="stylesheet" href="/home/mapa.css"><link rel="preload" as="image" href="/home/telescopio-poster.jpg">
+<script src="/home/lenis.min.js"></script><script type="module" src="/home/main.js"></script><script type="module" src="/src/js/home-map.js"></script></head>
 <body>
-  <a href="#conteudo" class="skip-link">Skip to content</a>
+<div class="progress" aria-hidden="true"></div><div class="curtain" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <div class="container site-header__row">
-      <a href="/en/" class="brand">
-        <span class="brand__mark">SINAL<b>/</b>RUÍDO</span>
-        <span class="brand__sub">SIGNAL/NOISE · Alex Jr. Kich</span>
-      </a>
-      <nav class="main-nav" aria-label="Main navigation"><a href="/livro/sample/">Read</a><div class="nav-group"><a href="/en/#books">Books</a><div class="nav-sub"><a href="/en/signal-noise/">SIGNAL/NOISE</a><a href="/en/chronicles/">Cosmological Chronicles</a><a href="/buy/">Other editions</a></div></div><a href="/en/archive/">Archive</a><a href="/en/world-map-of-signals/">Map</a><div class="nav-group"><a href="/en/author/">Author</a><div class="nav-sub"><a href="/en/author/">About the author</a><a href="/en/contact/">Contact</a></div></div></nav>
-      <div class="header-actions header-actions--en">
-        <a href="/" class="lang-switch" hreflang="pt-BR">PT</a>
-        <button type="button" class="search-trigger" data-cmdk-open aria-label="Search the archive" aria-haspopup="dialog"><span aria-hidden="true">⌕</span></button>
-        <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram @sinal_ruido">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-            <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
-            <circle cx="12" cy="12" r="4.3" />
-            <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
-          </svg>
-        </a>
-        <button type="button" class="mobile-nav-toggle" data-mobile-nav-toggle aria-label="Open menu" aria-expanded="false">☰</button>
-      </div>
+<div class="intro" role="dialog" aria-label="Signal received">
+  <video src="/home/intro.mp4" poster="/home/intro-poster.jpg" playsinline preload="auto"></video>
+  <div class="intro__gray" aria-hidden="true"><img src="/home/gray.jpg" alt=""></div>
+  <button class="intro__sound" type="button" hidden data-on="Mute" data-off="Sound off">Mute</button>
+  <button class="intro__play" type="button" hidden>Tap to start</button>
+  <p class="intro__warn mono">Contains flashing lights and sound. Use “Skip” or Esc to go straight to the site.</p>
+  <button class="intro__skip" type="button">Skip →</button>
+</div>
+
+<header class="hdr"><a class="logo" href="/en/" aria-label="SINAL/RUÍDO">SIGNAL<span class="slash">/</span>NOISE</a>
+  <nav class="nav" aria-label="Principal"><a href="/livro/sample/">Read</a><a href="/en/chronicles/">Books</a><a href="/en/archive/">Archive</a><a href="/en/world-map-of-signals/">Map</a><a href="/en/author/">Author</a></nav>
+  <div class="lang"><a href="/" hreflang="pt-BR">PT</a></div>
+  <button class="menu-btn" type="button" aria-expanded="false">Menu</button></header>
+
+<main>
+<section class="hero" aria-labelledby="h1">
+  <video class="hero__video" muted loop playsinline preload="auto" poster="/home/telescopio-poster.jpg" aria-hidden="true"><source src="/home/telescopio-mobile.mp4" media="(max-width:700px)" type="video/mp4"><source src="/home/telescopio.mp4" type="video/mp4"></video>
+  <div class="wrap hero__grid">
+    <div>
+      <p class="eyebrow mono">Investigative science fiction</p>
+      <h1 class="title" id="h1"><span class="ln">SIGNAL</span><span class="ln">/NOISE</span></h1>
+      <div class="hook"><p>In 1977, a signal appeared for 72&nbsp;seconds.</p><p>Forty-nine years later, Henrique tries to prove it means nothing.</p><p class="turn">The pattern refuses to disappear.</p></div>
+      <div class="cta"><a class="btn btn--primary" href="https://www.amazon.com/dp/B0HJP3HM7J" target="_blank" rel="noopener noreferrer"><span>Buy Kindle</span></a><a class="btn btn--ghost" href="https://www.amazon.com/dp/B0HJQQBS8Q" target="_blank" rel="noopener noreferrer"><span>Buy paperback</span></a><a class="link-arrow" href="/livro/sample/">Read 3 free chapters <span class="arrow">→</span></a></div>
+      <p class="by mono">A novel by Alex Jr. Kich inspired by the real mystery of the Wow! signal.</p>
     </div>
-    <nav class="mobile-nav container" data-mobile-nav aria-label="Navigation">
-      <a href="/livro/sample/">Read 3 free chapters</a><a href="/en/signal-noise/">SIGNAL/NOISE</a><a href="/buy/">Buy the English edition</a><a href="/en/chronicles/">Cosmological Chronicles</a><a href="/en/author/">Author</a><a href="/en/archive/">Archive</a><a href="/en/world-map-of-signals/">World Map of Signals</a><a href="/en/readers/">After reading</a><a href="/en/contact/">Contact</a><a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a><a href="/" class="lang-switch" hreflang="pt-BR">PT</a>
-    </nav>
-  </header>
-
-  <main id="conteudo">
-    <section class="home-hero-book home-hero" data-book-hero aria-labelledby="home-hero-title"><div class="container home-hero__grid">
- <div class="home-hero__head" data-book-hero-copy><p class="home-hero__eyebrow">Investigative science fiction</p><h1 class="home-hero__title" id="home-hero-title">SIGNAL<span>/</span>NOISE</h1></div>
- <div class="home-hero__hook" data-book-hero-copy><p>In 1977, a signal appeared for 72&nbsp;seconds.</p><p>Forty-nine years later, Henrique tries to prove it means nothing.</p><p class="home-hero__turn">The pattern refuses to disappear.</p><p class="home-hero__byline">A novel by Alex Jr. Kich inspired by the real mystery of the Wow! signal.</p></div>
- <figure class="home-hero__cover" data-book-hero-cover><img src="/livro/capa-en.jpg" alt="Cover of SIGNAL/NOISE by Alex Jr. Kich" width="1000" height="1600" fetchpriority="high"></figure>
- <div class="home-hero__actions" id="comprar-sinal-ruido"><a class="btn btn--primary" href="https://www.amazon.com/dp/B0HJP3HM7J" target="_blank" rel="noopener noreferrer">Buy Kindle</a><a class="btn btn--outline" href="https://www.amazon.com/dp/B0HJQQBS8Q" target="_blank" rel="noopener noreferrer">Buy paperback</a><a class="home-hero__sample" href="/livro/sample/">Read 3 free chapters <span aria-hidden="true">→</span></a></div>
- </div></section>
-    <section class="home-bridge-question" aria-label="Between the novel and the archive"><div class="container"><p class="home-bridge-question__line" data-transmission-line>What we know.</p><p class="home-bridge-question__line" data-transmission-line>What we do not know.</p><p class="home-bridge-question__line home-bridge-question__line--open" data-transmission-line>What we have yet to find.</p></div></section>
-    <section class="section container--narrow home-about-book"><span class="kicker">About the novel</span><h2 class="home-about-book__title">The signal existed.<br>The rest is where the story begins.</h2><p>In Santa Maria, Brazil, Henrique uses the Wow! signal recorded in 1977 to test ARGOS, a system built to find patterns in imperfect data. He expects an error. Instead, he finds a pattern that survives every attempt to dismiss it.</p><p>With Marina and Lara, the investigation crosses records, memories and events in Brazil. But correlation is not proof — and separating coincidence from evidence begins to exact a human cost.</p><p><a class="home-about-book__link" href="/en/signal-noise/">Discover the story and book details <span aria-hidden="true">→</span></a></p></section>
-    <section class="section section--divider home-sample"><div class="container--narrow"><span class="kicker">Read before you decide</span><h2>Three chapters.<br>The first clues.</h2><ol class="sample-index"><li><span class="mono">01</span><h3>The Bad File</h3></li><li><span class="mono">02</span><h3>Known Error</h3></li><li><span class="mono">03</span><h3>The Machine Against Itself</h3></li></ol><p class="home-sample__note">No sign-up. Start reading and decide later.</p><a class="btn btn--primary" href="/livro/sample/">Read the 3 chapters</a></div></section>
-    <div class="container other-editions"><details class="conversion-editions"><summary>Other editions and languages</summary><p><a href="/buy/">Choose your country and edition</a> · <a href="/">Português</a></p></details></div>
-    <section class="section container dossier-labels" aria-label="Inside the novel"><ul><li><span class="mono">01</span>SCIENTIFIC INVESTIGATION</li><li><span class="mono">02</span>FIRST CONTACT</li><li><span class="mono">03</span>REAL CASES</li><li><span class="mono">04</span>ARCHIVES AND EVIDENCE</li></ul></section>
-    <div class="container"></div>
-    <section class="section section--divider home-books" id="books"><div class="container">
- <div class="continue-signal"><a class="continue-signal__cover" href="/en/signal-noise/"><img src="/livro/capa-en.jpg" alt="Cover of SIGNAL/NOISE" width="1000" height="1600" loading="lazy"></a><div><span class="kicker">Keep following the signal</span><h2 class="continue-signal__title">SIGNAL<span>/</span>NOISE</h2><p class="continue-signal__line">What if the most important signal in history had already arrived, and no one knew what it was trying to say?</p><div class="conversion-actions"><a class="btn btn--primary" href="https://www.amazon.com/dp/B0HJP3HM7J" target="_blank" rel="noopener noreferrer">Buy Kindle</a><a class="btn btn--outline" href="https://www.amazon.com/dp/B0HJQQBS8Q" target="_blank" rel="noopener noreferrer">Buy paperback</a><a class="btn btn--reading" href="/livro/sample/">Read 3 free chapters</a></div><p><a class="home-about-book__link" href="/en/signal-noise/">Book details <span aria-hidden="true">→</span></a></p></div></div>
- <article class="next-book"><a class="next-book__cover" href="/en/chronicles/os-deuses-nao-tem-filhos/"><img src="/livros/os-deuses-nao-tem-filhos-en.jpg" alt="Cover of THE GODS HAVE NO CHILDREN" width="900" height="1436" loading="lazy"></a><div><span class="kicker">Cosmological Chronicles · Volume I</span><h3><a href="/en/chronicles/os-deuses-nao-tem-filhos/">THE GODS HAVE NO CHILDREN</a></h3><p class="next-book__line">Creating a life gives no one the right to own it.</p><p class="next-book__note">Currently available in Portuguese.</p><p class="next-book__actions"><a class="btn btn--outline" href="https://www.amazon.com.br/dp/B0HKZY434C" target="_blank" rel="noopener noreferrer">Buy the Portuguese edition</a><a class="btn" href="/en/chronicles/os-deuses-nao-tem-filhos/">About the book</a></p></div></article>
- </div></section>
-    <div class="container"><section class="author-compact"><img src="/autor/retrato.jpg" alt="Alex Jr. Kich" width="1149" height="1368" loading="lazy"><div><span class="kicker">About the author</span><h2>Alex Jr. Kich</h2><p>Writer, artist and worldbuilder. Based in Rio Grande do Sul, Brazil, he draws, composes and writes stories at different scales.</p><a class="btn" href="/en/author/">Meet Alex Jr. Kich</a></div></section></div>
-    <section class="section container--narrow home-origin"><span class="kicker">The real starting point</span><h2>The story began before the novel</h2><p>On August 15, 1977, the Big Ear radio telescope in Ohio recorded a narrow, intense radio signal that lasted 72 seconds and was never detected again. Astronomer Jerry Ehman circled the sequence on the printout and wrote beside it: “Wow!”</p><ul class="home-origin__facts"><li><strong>Aug 15, 1977</strong><span>date of the record</span></li><li><strong>Big Ear</strong><span>Ohio State University radio telescope</span></li><li><strong>72 s</strong><span>the observation window</span></li><li><strong>6EQUJ5</strong><span>the circled sequence</span></li></ul><p>In the public archive, sources, testimony and hypotheses remain separate from fiction.</p><p><a class="btn" href="/en/archive/cases/sinal-wow/">Investigate the Wow! signal</a> <a class="btn" href="/en/archive/">Enter the archive</a></p></section>
-    <section class="section section--tight section--divider home-map-callout">
-      <div class="container" style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between">
-        <p class="home-map-callout__text">The signal has started appearing in the real world.<br /><a href="/en/world-map-of-signals/">Explore the World Map of Signals.</a></p>
-      </div>
-    </section>
-    <section class="section section--divider home-catalog" id="chronicles"><div class="container"><span class="kicker">Cosmological Chronicles · I–X</span><h2>The universe continues</h2><p>Upcoming books in a shared universe.</p><div class="books-grid books-grid--covers" style="margin-top:20px"><a class="book-card book-card--cover" href="/en/chronicles/a-ultima-testemunha/"><img src="/livros/a-ultima-testemunha-en.jpg" alt="Cover of THE LAST WITNESS" width="300" height="480" loading="lazy"><span class="mono">II · In development</span><h3>THE LAST WITNESS</h3><p>Some things only happen when someone is watching.</p></a><a class="book-card book-card--cover" href="/en/chronicles/amanha-nao-existe/"><img src="/livros/amanha-nao-existe-en.jpg" alt="Cover of TOMORROW DOES NOT EXIST" width="300" height="480" loading="lazy"><span class="mono">III · In development</span><h3>TOMORROW DOES NOT EXIST</h3><p>Receiving the answer before the question does not make the choice any easier.</p></a><a class="book-card book-card--cover" href="/en/chronicles/o-universo-nao-responde/"><img src="/livros/o-universo-nao-responde-en.jpg" alt="Cover of THE UNIVERSE DOES NOT ANSWER" width="300" height="480" loading="lazy"><span class="mono">IV · In development</span><h3>THE UNIVERSE DOES NOT ANSWER</h3><p>Perhaps silence is only an answer we have not yet learned to hear.</p></a></div><p style="margin-top:18px"><a class="btn" href="/en/chronicles/">See all ten books in the series</a></p></div></section></main>
-
-  <footer class="site-footer">
-    <div class="container site-footer__grid">
-      <div><span class="brand__mark">SINAL<b>/</b>RUÍDO</span></div>
-      <div class="mono footer-links">
-        <a href="/en/">Home</a>
-        <a href="/en/world-map-of-signals/">World Map of Signals</a>
-        <a href="/en/world-map-of-signals/choose-your-signal/">Choose your signal</a>
-        <a href="/en/privacy/">Privacy</a>
-        <a href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </div>
-  </footer>
-
-  <div class="cmdk-backdrop" data-cmdk-backdrop>
-    <div class="cmdk" role="dialog" aria-modal="true" aria-label="Search archive">
-      <input type="text" placeholder="Search the archive (Portuguese catalogs)…" data-cmdk-input autocomplete="off" />
-      <ul data-cmdk-results></ul>
-    </div>
+    <div class="cover-stage"><div class="cover"><img src="/home/capa-en.jpg" alt="Cover of SIGNAL/NOISE" width="1050" height="1512" fetchpriority="high"></div></div>
   </div>
+  <div class="scroll-cue mono"><i></i>Scroll</div>
+</section>
 
-  <script type="module" src="/src/js/main.js"></script>
-</body>
-</html>
+<section class="trans" aria-label="The transmission"><div class="trans__pin"><video class="trans__v" muted playsinline preload="none" poster="/home/transmissao/t1.jpg" data-src="/home/transmissao/t1.mp4" aria-hidden="true"></video><video class="trans__v" muted playsinline preload="none" poster="/home/transmissao/t2.jpg" data-src="/home/transmissao/t2.mp4" aria-hidden="true"></video><video class="trans__v" muted playsinline preload="none" poster="/home/transmissao/t3.jpg" data-src="/home/transmissao/t3.mp4" aria-hidden="true"></video><video class="trans__v" muted playsinline preload="none" poster="/home/transmissao/t4.jpg" data-src="/home/transmissao/t4.mp4" aria-hidden="true"></video><video class="trans__v" muted playsinline preload="none" poster="/home/transmissao/t5.jpg" data-src="/home/transmissao/t5.mp4" aria-hidden="true"></video>
+  <div class="trans__noise" aria-hidden="true"></div><div class="trans__vig" aria-hidden="true"></div>
+  <div class="trans__hud mono"><span><b>●</b> The transmission</span><span class="trans__n" aria-hidden="true">01 / 05</span></div>
+  <a class="trans__skip mono" href="#cenas">Continue <span class="arrow">→</span></a></div></section>
+
+<section class="cenas" id="cenas"><div class="wrap"><span class="mono" data-r><b>●</b> Scenes from the opening</span><h2 class="big" data-r>The book starts here.</h2><p class="mono" data-r style="margin-top:14px">Fragments of the first pages. No sound, only what is on screen.</p></div>
+  <div class="rail rail--cenas"><figure class="cena"><video muted loop playsinline preload="none" poster="/home/cenas/espectro.jpg" data-src="/home/cenas/espectro.mp4"></video><figcaption><span class="mono"><b>01</b></span>The peak</figcaption></figure><figure class="cena"><video muted loop playsinline preload="none" poster="/home/cenas/impressao.jpg" data-src="/home/cenas/impressao.mp4"></video><figcaption><span class="mono"><b>02</b></span>6EQUJ5</figcaption></figure><figure class="cena"><video muted loop playsinline preload="none" poster="/home/cenas/equipamentos.jpg" data-src="/home/cenas/equipamentos.mp4"></video><figcaption><span class="mono"><b>03</b></span>The room</figcaption></figure><figure class="cena"><video muted loop playsinline preload="none" poster="/home/cenas/digitando.jpg" data-src="/home/cenas/digitando.mp4"></video><figcaption><span class="mono"><b>04</b></span>“This should not be here.”</figcaption></figure><figure class="cena"><video muted loop playsinline preload="none" poster="/home/cenas/laboratorio.jpg" data-src="/home/cenas/laboratorio.mp4"></video><figcaption><span class="mono"><b>05</b></span>The two of them</figcaption></figure><figure class="cena"><video muted loop playsinline preload="none" poster="/home/cenas/onda.jpg" data-src="/home/cenas/onda.mp4"></video><figcaption><span class="mono"><b>06</b></span>The line</figcaption></figure></div></section>
+
+<section class="scene" aria-labelledby="sceneh"><div class="scene__pin">
+  <div><span class="mono"><b>●</b> The real starting point</span><h2 id="sceneh">Seventy-two seconds that never happened again.</h2></div>
+  <div class="wave-box"><canvas id="wave" role="img" aria-label="Seventy-two seconds that never happened again."></canvas><div class="wow" aria-hidden="true"><strong>Wow!</strong><span class="mono">6EQUJ5</span></div></div>
+  <div class="facts"><div class="fact"><b>Aug 15, 1977</b><span>date of the record</span></div><div class="fact"><b>Big Ear</b><span>radio telescope, Ohio State</span></div><div class="fact"><b>72 s</b><span>observation window</span></div><div class="fact"><b>6EQUJ5</b><span>the circled sequence</span></div></div>
+</div></section>
+
+<section class="syn"><div class="wrap"><span class="mono" data-r><b>●</b> About the novel</span>
+  <h2 class="syn__txt"><span class="w">The</span> <span class="w">signal</span> <span class="w">existed.</span> <span class="w">The</span> <span class="w">rest</span> <span class="w">is</span> <span class="w">where</span> <span class="w">the</span> <span class="w">story</span> <span class="w">begins.</span></h2>
+  <div class="syn__more" data-r><p>In Santa Maria, Brazil, Henrique uses the Wow! signal recorded in 1977 to test ARGOS, a system built to find patterns in imperfect data. He expects an error. Instead, he finds a pattern that survives every attempt to dismiss it.</p><p>But correlation is not proof — and separating coincidence from evidence begins to exact a human cost.</p><a class="link-arrow" href="/en/signal-noise/">The story and book details <span class="arrow">→</span></a></div></div></section>
+
+<section class="livro" aria-label="The book"><div class="livro__pin"><div class="livro__head"><span class="mono"><b>●</b> The book</span><h2>Turn it over. There is more.</h2></div>
+  <div class="livro__view"><img class="livro__img" src="/home/capa-aberta.jpg" alt="" width="2600" height="1222"></div>
+  <ol class="livro__parts"><li data-i="0"><span class="mono">01</span>Front</li><li data-i="1"><span class="mono">02</span>Spine</li><li data-i="2"><span class="mono">03</span>Back cover</li><li data-i="3"><span class="mono">04</span>Inside flap</li></ol></div></section>
+
+<section class="sample"><div class="wrap">
+  <div class="sample__head"><div><span class="mono" data-r><b>●</b> Read before you decide</span><h2 class="big" data-r>Three chapters.<br>The first clues.</h2></div></div>
+  <div style="margin-top:40px"><a class="chap" data-r href="/livro/sample/"><span class="n">01</span><h3>The Bad File</h3><span class="go mono">Read the 3 chapters <span class="arrow">→</span></span></a><a class="chap" data-r href="/livro/sample/"><span class="n">02</span><h3>Known Error</h3><span class="go mono">Read the 3 chapters <span class="arrow">→</span></span></a><a class="chap" data-r href="/livro/sample/"><span class="n">03</span><h3>The Machine Against Itself</h3><span class="go mono">Read the 3 chapters <span class="arrow">→</span></span></a></div>
+  <div class="sample__foot" data-r><a class="btn btn--primary" href="/livro/sample/"><span>Read the 3 chapters <span class="arrow">→</span></span></a><span class="mono">No sign-up. Start reading and decide later.</span></div>
+</div></section>
+
+<section class="cron" id="cronicas"><div class="wrap"><span class="mono" data-r><b>●</b> The universe</span><h2 class="big" data-r>Cosmological Chronicles</h2><p class="cron__sub" data-r>Ten books. One thread runs through all of them. Where it ends is not yet known.</p></div>
+  <div class="cron__track"><svg class="thread" preserveAspectRatio="none" aria-hidden="true"><path class="thread__bg"/><path class="thread__fg"/></svg>
+  <article class="vol " data-vol data-r><span class="vol__n" aria-hidden="true">Origin</span>
+      <a class="vol__book" href="/en/signal-noise/"><span class="vol__flip"><img class="f" src="/home/vol/sinal-ruido-en.jpg" alt="SIGNAL/NOISE" loading="lazy" width="520" height="780"><img class="b" src="/home/vol/sinal-ruido-verso.jpg" alt="" loading="lazy" width="520" height="780"></span></a>
+      <div class="vol__t"><span class="mono"><b>Available</b></span><h3><a href="/en/signal-noise/">SIGNAL/NOISE</a></h3><p>It all begins with a 72-second signal.</p></div></article><article class="vol vol--r" data-vol data-r><span class="vol__n" aria-hidden="true">I</span>
+      <a class="vol__book" href="/en/chronicles/os-deuses-nao-tem-filhos/"><span class="vol__flip"><img class="f" src="/home/vol/os-deuses-nao-tem-filhos-en.jpg" alt="THE GODS HAVE NO CHILDREN" loading="lazy" width="520" height="780"><img class="b" src="/home/vol/os-deuses-nao-tem-filhos-verso.jpg" alt="" loading="lazy" width="520" height="780"></span></a>
+      <div class="vol__t"><span class="mono"><b>Available</b></span><h3><a href="/en/chronicles/os-deuses-nao-tem-filhos/">THE GODS HAVE NO CHILDREN</a></h3><p>Creating a life gives no one the right to own it.</p></div></article><article class="vol " data-vol data-r><span class="vol__n" aria-hidden="true">II</span>
+      <a class="vol__book" href="/en/chronicles/a-ultima-testemunha/"><span class="vol__flip"><img class="f" src="/home/vol/a-ultima-testemunha-en.jpg" alt="THE LAST WITNESS" loading="lazy" width="520" height="780"><img class="b" src="/home/vol/a-ultima-testemunha-verso.jpg" alt="" loading="lazy" width="520" height="780"></span></a>
+      <div class="vol__t"><span class="mono"><b>In development</b></span><h3><a href="/en/chronicles/a-ultima-testemunha/">THE LAST WITNESS</a></h3><p>Some things only happen when someone is watching.</p></div></article><article class="vol vol--r" data-vol data-r><span class="vol__n" aria-hidden="true">III</span>
+      <a class="vol__book" href="/en/chronicles/amanha-nao-existe/"><span class="vol__flip"><img class="f" src="/home/vol/amanha-nao-existe-en.jpg" alt="TOMORROW DOES NOT EXIST" loading="lazy" width="520" height="780"><img class="b" src="/home/vol/amanha-nao-existe-verso.jpg" alt="" loading="lazy" width="520" height="780"></span></a>
+      <div class="vol__t"><span class="mono"><b>In development</b></span><h3><a href="/en/chronicles/amanha-nao-existe/">TOMORROW DOES NOT EXIST</a></h3><p>Receiving the answer before the question does not make the choice any easier.</p></div></article><article class="vol " data-vol data-r><span class="vol__n" aria-hidden="true">IV</span>
+      <a class="vol__book" href="/en/chronicles/o-universo-nao-responde/"><span class="vol__flip"><img class="f" src="/home/vol/o-universo-nao-responde-en.jpg" alt="THE UNIVERSE DOES NOT ANSWER" loading="lazy" width="520" height="780"><img class="b" src="/home/vol/o-universo-nao-responde-verso.jpg" alt="" loading="lazy" width="520" height="780"></span></a>
+      <div class="vol__t"><span class="mono"><b>In development</b></span><h3><a href="/en/chronicles/o-universo-nao-responde/">THE UNIVERSE DOES NOT ANSWER</a></h3><p>Perhaps silence is only an answer we have not yet learned to hear.</p></div></article><article class="vol vol--r" data-vol data-r><span class="vol__n" aria-hidden="true">V</span>
+      <a class="vol__book" href="/en/chronicles/o-arquivo-dos-mortos/"><span class="vol__flip"><img class="f" src="/home/vol/o-arquivo-dos-mortos-en.jpg" alt="THE ARCHIVE OF THE DEAD" loading="lazy" width="520" height="780"><img class="b" src="/home/vol/o-arquivo-dos-mortos-verso.jpg" alt="" loading="lazy" width="520" height="780"></span></a>
+      <div class="vol__t"><span class="mono"><b>In development</b></span><h3><a href="/en/chronicles/o-arquivo-dos-mortos/">THE ARCHIVE OF THE DEAD</a></h3><p>Keeping everything about someone does not bring them back.</p></div></article><article class="vol " data-vol data-r><span class="vol__n" aria-hidden="true">VI</span>
+      <a class="vol__book" href="/en/chronicles/antes-de-nascermos/"><span class="vol__flip"><img class="f" src="/home/vol/antes-de-nascermos-en.jpg" alt="BEFORE WE ARE BORN" loading="lazy" width="520" height="780"><img class="b" src="/home/vol/antes-de-nascermos-verso.jpg" alt="" loading="lazy" width="520" height="780"></span></a>
+      <div class="vol__t"><span class="mono"><b>In development</b></span><h3><a href="/en/chronicles/antes-de-nascermos/">BEFORE WE ARE BORN</a></h3><p>Some children remember a place where they have never been.</p></div></article><article class="vol vol--r" data-vol data-r><span class="vol__n" aria-hidden="true">VII</span>
+      <a class="vol__book" href="/en/chronicles/o-ceu-esta-errado/"><span class="vol__flip"><img class="f" src="/home/vol/o-ceu-esta-errado-en.jpg" alt="THE SKY IS WRONG" loading="lazy" width="520" height="780"><img class="b" src="/home/vol/o-ceu-esta-errado-verso.jpg" alt="" loading="lazy" width="520" height="780"></span></a>
+      <div class="vol__t"><span class="mono"><b>In development</b></span><h3><a href="/en/chronicles/o-ceu-esta-errado/">THE SKY IS WRONG</a></h3><p>First the stars disappear. Then the people. The worst part is when no one notices they are missing.</p></div></article><article class="vol " data-vol data-r><span class="vol__n" aria-hidden="true">VIII</span>
+      <a class="vol__book" href="/en/chronicles/o-retangulo-negro/"><span class="vol__flip"><img class="f" src="/home/vol/o-retangulo-negro-en.jpg" alt="THE BLACK RECTANGLE" loading="lazy" width="520" height="780"><img class="b" src="/home/vol/o-retangulo-negro-verso.jpg" alt="" loading="lazy" width="520" height="780"></span></a>
+      <div class="vol__t"><span class="mono"><b>In development</b></span><h3><a href="/en/chronicles/o-retangulo-negro/">THE BLACK RECTANGLE</a></h3><p>Not everything that vanishes was lost.</p></div></article><article class="vol vol--r" data-vol data-r><span class="vol__n" aria-hidden="true">IX</span>
+      <a class="vol__book" href="/en/chronicles/nao-tem-a-palavra/"><span class="vol__flip"><img class="f" src="/home/vol/nao-tem-a-palavra-en.jpg" alt="NO WORD FOR IT" loading="lazy" width="520" height="780"><img class="b" src="/home/vol/nao-tem-a-palavra-verso.jpg" alt="" loading="lazy" width="520" height="780"></span></a>
+      <div class="vol__t"><span class="mono"><b>In development</b></span><h3><a href="/en/chronicles/nao-tem-a-palavra/">NO WORD FOR IT</a></h3><p>Some things disappear when they stop having a name.</p></div></article><article class="vol " data-vol data-r><span class="vol__n" aria-hidden="true">X</span>
+      <a class="vol__book" href="/en/chronicles/o-ultimo-sinal/"><span class="vol__flip"><img class="f" src="/home/vol/o-ultimo-sinal-en.jpg" alt="THE LAST SIGNAL" loading="lazy" width="520" height="780"><img class="b" src="/home/vol/o-ultimo-sinal-verso.jpg" alt="" loading="lazy" width="520" height="780"></span></a>
+      <div class="vol__t"><span class="mono"><b>In development</b></span><h3><a href="/en/chronicles/o-ultimo-sinal/">THE LAST SIGNAL</a></h3><p>If one of us arrives first, wait for the other.</p></div></article></div>
+  <div class="wrap" style="margin-top:50px"><a class="link-arrow" href="/en/chronicles/">See the whole series <span class="arrow">→</span></a></div></section>
+
+<section class="mapa" id="mapa-sinais"><div class="wrap"><span class="mono" data-r><b>●</b> World Map of Signals</span><h2 class="big" data-r>The signals are appearing.</h2><p class="cron__sub" data-r>SIGNAL/NOISE began as a story about an impossible signal. Now the signal is crossing the real world.</p>
+  <dl class="mapa__stats" data-r><div><dd>3</dd><dt class="mono">Confirmed signals</dt></div><div><dd>3</dd><dt class="mono">Cities</dt></div><div><dd>2</dd><dt class="mono">Countries</dt></div></dl>
+  <div class="signal-map" id="signal-map" data-signal-map data-src="/data/signals.public.json" data-lang="en" data-confirmed="Confirmed signal" data-photo-alt="Poster displayed at" role="region" aria-label="World map of confirmed locations"></div>
+  <noscript><p class="mono">The map needs JavaScript to be displayed.</p></noscript>
+  <p class="mono mapa__hint">Drag to move, use + and − to zoom. Hover, tap or press Enter on a marker. <span>Map: © OpenStreetMap contributors</span></p>
+  <div style="margin-top:28px"><a class="link-arrow" href="/en/world-map-of-signals/">Open the full map <span class="arrow">→</span></a></div></div></section>
+
+<section class="bridge"><div class="wrap"><div class="bridge__lines"><p><span>What we know.</span></p><p><span>What we do not know.</span></p><p><span>What we have yet to find.</span></p></div><p class="bridge__note" data-r>In the public archive, documents, testimony and hypotheses stay separate from fiction. “Unidentified” does not mean “extraterrestrial”.</p></div></section>
+
+<section class="cases"><div class="wrap cases__head"><div><span class="mono" data-r><b>●</b> The archive</span><h2 class="big" data-r style="font-size:clamp(1.8rem,4vw,3.4rem)">Real cases</h2></div><a class="link-arrow" href="/en/archive/">Enter the archive <span class="arrow">→</span></a></div>
+  <div class="rail"><a class="case" href="/en/archive/cases/sinal-wow/"><img src="/home/casos/sinal-wow.jpg" alt="" loading="lazy"><div class="case__t"><span class="mono"><b>15·08·1977</b> · EUA</span><h3>Sinal Wow!</h3></div></a><a class="case" href="/en/archive/cases/operacao-prato-colares/"><img src="/home/casos/operacao-prato-colares.jpg" alt="" loading="lazy"><div class="case__t"><span class="mono"><b>set·1977</b> · Colares e Santo Antônio do Tauá / PA</span><h3>Operação Prato</h3></div></a><a class="case" href="/en/archive/"><img src="/home/casos/varginha.jpg" alt="" loading="lazy"><div class="case__t"><span class="mono"><b>20·01·1996</b> · Varginha / MG</span><h3>Varginha</h3></div></a><a class="case" href="/en/archive/"><img src="/home/casos/noite-oficial-dos-ovnis.jpg" alt="" loading="lazy"><div class="case__t"><span class="mono"><b>19·05·1986</b> · MG e GO</span><h3>The Official UFO Night</h3></div></a></div></section>
+
+<section class="author"><div class="wrap author__grid">
+  <div class="author__img" data-r><img src="/home/retrato.jpg" alt="Alex Jr. Kich" loading="lazy" width="700" height="833"></div>
+  <div data-r><span class="mono"><b>●</b> About the author</span><h2 class="big">Alex Jr. Kich</h2><p>Writer, artist and worldbuilder. Based in Rio Grande do Sul, Brazil, he draws, composes and writes stories at different scales.</p><a class="btn btn--ghost" href="/en/author/"><span>Meet Alex Jr. Kich <span class="arrow">→</span></span></a></div>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap"><div class="foot__big" aria-hidden="true">SIGNAL/NOISE</div>
+  <div class="foot__row mono"><nav><a href="/en/press/">Press</a><a href="/en/method/">Method</a><a href="/en/privacy/">Privacy</a><a href="#" data-replay>Replay the transmission</a></nav><span>© 2026 Alex Jr. Kich</span></div></div></footer>
+</body></html>

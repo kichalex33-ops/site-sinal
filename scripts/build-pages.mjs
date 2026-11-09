@@ -7,6 +7,7 @@ import { caseCard, collectionCard, mediaCard } from "../src/js/render/cards.js";
 import { editorialBadge, maturityBadge, provenanceBadge, integrityBadge, escapeHtml } from "../src/js/render/badges.js";
 import { marketList, buyLinks, buyData, validateI18n } from "./i18n.mjs";
 import { mapaBody, escolhaBody, MAPA_SEO, ESCOLHA_SEO, homeCallout, writePublicSignals } from "./mapa.mjs";
+import { writeHomeV2 } from "./home-v2.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -1333,9 +1334,9 @@ function livroSampleEnPage() {
 function livrosPage() {
   const body = `
     <section class="section container--narrow">
-      <p>Os livros agora ficam na página inicial. <a href="/#livros">Ir para os livros →</a></p>
+      <p>Os livros agora ficam na página inicial. <a href="/#cronicas">Ir para os livros →</a></p>
     </section>`;
-  write("/livros", page({ title: "Livros", description: "Os livros de SINAL/RUÍDO estão na página inicial.", path: "/", bodyHtml: body, robots: "noindex,follow", extraHead: `<meta http-equiv="refresh" content="0; url=/#livros" />` }));
+  write("/livros", page({ title: "Livros", description: "Os livros de SINAL/RUÍDO estão na página inicial.", path: "/", bodyHtml: body, robots: "noindex,follow", extraHead: `<meta http-equiv="refresh" content="0; url=/#cronicas" />` }));
 }
 
 // ---------------------------------------------------------------------
@@ -1402,7 +1403,7 @@ function bookSheetPage(b, list, lang) {
   const path = isOrigin ? (en ? "/en/signal-noise/" : "/livros/sinal-ruido/") : `${base}${b.slug}/`;
   const ptPath = isOrigin ? "/livros/sinal-ruido/" : `/livros/${b.slug}/`;
   const enPath = isOrigin ? "/en/signal-noise/" : `/en/chronicles/${b.slug}/`;
-  const backHref = en ? "/en/chronicles/" : "/#livros";
+  const backHref = en ? "/en/chronicles/" : "/#cronicas";
   const sections = (sh.secoes || []).filter((s) => !HIDDEN_SECTIONS.has(s.titulo));
   const badge = isOrigin ? (en ? "ORIGIN" : "OBRA DE ORIGEM") : `${b.numeral} · ${status}`;
   const switchHref = en ? ptPath : enPath;
@@ -2119,7 +2120,7 @@ function autorPage() {
         <p>Vivo no Rio Grande do Sul. Desenho, componho e escrevo histórias em escalas muito diferentes: algumas olham para o céu, outras constroem mundos inteiros, outras cabem debaixo de uma cama.</p>
         <p>Mas a regra é sempre a mesma:</p>
         <p class="autor-cite">O conceito pode ser enorme, mas o conflito precisa continuar humano.</p>
-        <p><a class="btn btn--primary" href="/#livros">Conhecer os livros</a></p>
+        <p><a class="btn btn--primary" href="/#cronicas">Conhecer os livros</a></p>
       </div>
       <div class="autor-hero__photo"><img src="/autor/retrato.jpg" alt="Retrato de Alex Jr. Kich, de mãos juntas, olhando para o lado" width="1149" height="1368" loading="lazy" /></div>
     </section>
@@ -2324,7 +2325,7 @@ function autorPage() {
           <li><strong>Duas Irmãs e Oito Patas · O Mapa Debaixo da Cama:</strong> publicado. <a href="${AMAZON_DUAS_IRMAS}" target="_blank" rel="noopener">Comprar na Amazon</a></li>
           <li><strong>Crônicas Cosmológicas:</strong> coleção em desenvolvimento. O Livro I, <a href="/livros/os-deuses-nao-tem-filhos/">Os Deuses Não Têm Filhos</a>, já está à venda.</li>
         </ul>
-        <p><a class="btn btn--primary" href="/#livros">Ver todos os livros</a> <a class="btn" href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a> <a class="btn" href="${AMAZON_AUTHOR_PAGE}" target="_blank" rel="noopener">Página do autor na Amazon</a> <a class="btn" href="/imprensa/">Imprensa</a></p>
+        <p><a class="btn btn--primary" href="/#cronicas">Ver todos os livros</a> <a class="btn" href="https://www.instagram.com/sinal_ruido/" target="_blank" rel="noopener">Instagram</a> <a class="btn" href="${AMAZON_AUTHOR_PAGE}" target="_blank" rel="noopener">Página do autor na Amazon</a> <a class="btn" href="/imprensa/">Imprensa</a></p>
       </div>
     </section>`;
   write("/autor", page({
@@ -2335,7 +2336,7 @@ function autorPage() {
     ogImage: "/autor/retrato.jpg",
     alternates: ptEnAlternates("/autor/", "/en/author/"),
     langSwitch: "/en/author/",
-    extraHead: `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" />`,
+    extraHead: `<link rel="stylesheet" href="/src/css/fonts-caveat.css" />`,
   }));
 }
 
@@ -2576,7 +2577,7 @@ function enAuthorPage() {
     lang: "en", ogLocale: "en_US", minimal: true,
     alternates: ptEnAlternates("/autor/", "/en/author/"),
     langSwitch: "/autor/",
-    extraHead: `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" />`,
+    extraHead: `<link rel="stylesheet" href="/src/css/fonts-caveat.css" />`,
   }));
 }
 
@@ -2749,6 +2750,7 @@ const chroniclesEn = chroniclesPt.filter((b) => (bookSheetsEn[b.slug] || {}).syn
 chroniclesEn.forEach((b, _i, arr) => bookSheetPage(b, arr, "en"));
 chroniclesEnPage(chroniclesPt);
 enHomePage(chroniclesPt);
+writeHomeV2(); // Home v2 (cinematográfica) substitui a home anterior; as rotas já foram registradas acima
 if ((bookSheetsEn["sinal-ruido"] || {}).synopsis) bookSheetPage(SINAL_RUIDO_ORIGIN, chroniclesEn, "en");
 bookSheetPage(books.find((b) => b.slug === "sinal-ruido"), chroniclesPt, "pt");
 leitoresPage();

@@ -32,9 +32,23 @@ Atenção: antes de 06/10/2026 o site no ar tinha arquivos que não estavam no G
 | 1 — Auditoria e correções de base | ✅ | ✅ | ✅ 06/10 |
 | 2 — Hero e primeira dobra | ✅ | ✅ | ✅ |
 | 3 — Fluxo de desejo e amostra | ✅ | ✅ | ✅ |
-| 4 — Prova social, autor e segundo livro | ✅ | ✅ | ⏳ aguardando deploy |
-| 5 — Universo sem atrapalhar a venda | ✅ | ✅ | ⏳ aguardando deploy |
-| 6 — Polimento final e auditoria | ⏳ | ⏳ | — |
+| 4 — Prova social, autor e segundo livro | ✅ | ✅ | ✅ 10/10 |
+| 5 — Universo sem atrapalhar a venda | ✅ | ✅ | ✅ 10/10 |
+| 6 — Polimento final e auditoria | 🔶 em andamento | 🔶 em andamento | — |
+
+### Etapa 6 — Polimento (em andamento, pausada em 10/10 a pedido do autor; commit local, não publicada)
+Feito (PT + EN):
+- Links: 141 páginas sem link interno ou âncora quebrada. Externos: só o justica.gov.br estava fora do ar → trocado pela cópia no Internet Archive (PT e EN). Os 403 (gov.br EUA, NYT etc.) são bloqueio de robô; Amazon BR conferida à mão.
+- Fontes Oswald e Caveat agora servidas pelo próprio site (`public/fonts`, `src/css/fonts.css`, `fonts-caveat.css`): nenhuma requisição ao Google, IP do visitante não sai do domínio, carregamento mais rápido.
+- Contraste AA: `--signal-ink` passou a escuro (#101216, 5,1:1 sobre o laranja; branco dava 3,7:1) e `--paper-muted` #62685f (5,2:1 no papel; antes 4,0:1).
+- Menu: celular PT na mesma ordem do desktop (Ler, Livros, Arquivo, Mapa, Autor; busca no ⌕). "Autor" fica marcado também em /contato/ e /imprensa/. Menu EN do celular reordenado igual.
+- Celular: links do rodapé, botão de idioma e busca do Arquivo com alvo de toque ~44 px.
+- Conferido: sem erros de console, sem rolagem horizontal, um h1 por página, foco visível, `prefers-reduced-motion` respeitado.
+
+Falta:
+- Revisar os prints do celular depois da mudança do rodapé; conferir de novo o contraste na amostra (fim de capítulo).
+- Funil de usuários A–E (não havia definição; proposta: A compra direto pelo hero, B lê a amostra e compra, C visitante EN, D vem pelo Arquivo/casos reais e volta ao livro, E imprensa/contato).
+- Auditoria visual página a página (desktop 1366 e celular 390) e build final antes de publicar.
 
 ### Etapa 5 — Universo (concluída PT + EN, publicada em 10/10 no deploy 0143743b)
 - "A história começou antes do romance" (PT/EN): o sinal Wow! em quatro fatos — 15/08/1977, Big Ear (Ohio State), 72 s, 6EQUJ5 — com Jerry Ehman e o "Wow!"; links para o caso e o arquivo.
