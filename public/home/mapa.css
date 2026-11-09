@@ -1,0 +1,51 @@
+/* GERADO de src/css/components.css por prototipo-home/extrair-css-mapa.mjs */
+.signal-map { height: clamp(360px, 62vh, 560px); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; background: var(--surface); }
+.signal-map .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.82) contrast(.9) saturate(.7); }
+.signal-map.leaflet-container { background: var(--bg); font-family: var(--sans); }
+.signal-map .leaflet-control-zoom a { width: 40px; height: 40px; line-height: 40px; font-size: 20px; }
+.signal-map .leaflet-control-attribution { background: rgba(11,14,20,.8); color: var(--muted); }
+.signal-map .leaflet-control-attribution a { color: var(--text); }
+.signal-map .leaflet-marker-icon:focus-visible span { box-shadow: var(--focus-ring); }
+.signal-map .leaflet-pane,.signal-map .leaflet-zoom-animated {transition-property:none;}
+.signal-map .leaflet-popup-content-wrapper { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm); }
+.signal-map .leaflet-popup-tip { background: var(--surface); }
+.signal-map .leaflet-popup-close-button { color: var(--muted); width: 32px; height: 32px; font-size: 22px; }
+.signal-popup { display: flex; flex-direction: column; gap: 4px; min-width: 190px; }
+.signal-popup strong { font-size: 14px; }
+.signal-popup span { font-size: 13px; color: var(--muted); }
+.signal-popup em { font-family: var(--mono); font-size: 11px; font-style: normal; text-transform: uppercase; letter-spacing: .08em; color: var(--signal); }
+.signal-marker span { display: block; width: 14px; height: 14px; margin: 6px; border-radius: 50%; background: var(--signal); border: 2px solid #fff; box-shadow: 0 0 0 0 rgba(232,84,29,.6); animation: signal-pulse 2.8s ease-out infinite; }
+@keyframes signal-pulse { 0% { box-shadow: 0 0 0 0 rgba(232,84,29,.55); } 70%, 100% { box-shadow: 0 0 0 16px rgba(232,84,29,0); } }
+.signal-map__hint { margin-top: 10px; font-size: 11px; color: var(--muted); }
+.signal-map__hint span { display: block; margin-top: 2px; }
+.signal-popup img { display: block; width: 200px; max-width: 100%; height: 260px; object-fit: cover; object-position: center 55%; border-radius: 6px; margin-bottom: 6px; }
+/* Editorial location status: labels accompany every color. */
+.signal-status--photo, .signal-status--waiting-photo {color:#70d99a !important;}
+.signal-status--installation {color:#8bc9ff !important;}
+.signal-status--negotiation {color:#f0cc73 !important;}
+.signal-marker span {width:20px;height:20px;margin:5px;display:grid;place-items:center;background:#3b9860;animation:none;color:#07120c;font-weight:700;font-size:12px;}
+.signal-marker--waiting-photo span {background:#3b9860;border-style:dashed;}
+.signal-marker--installation span {background:#74b9f4;}
+.signal-marker--negotiation span {background:#e4bb53;}
+.signal-status::before {content:'●';margin-right:7px;}
+.signal-popup-group {display:grid;gap:18px;}
+.signal-popup + .signal-popup {border-top:1px solid var(--border);padding-top:14px;}
+.signal-popup em {text-transform:none;letter-spacing:0;line-height:1.5;}
+/* Small orange signal points, with status retained in every popup and directory. */
+.signal-marker span {width:12px;height:12px;margin:9px;background:#e8541d;border:1px solid #fff;border-radius:50%;animation:signal-pulse 2.8s ease-out infinite;color:#fff;font-size:9px;}
+.signal-marker--waiting-photo span {border-style:solid;}
+.signal-popup a:focus-visible {outline:2px solid var(--interactive-text);outline-offset:3px;}
+@media(prefers-reduced-motion:reduce) {.signal-marker span {animation:none;}}
+/* Participation status is independent from reference photos of venues. */
+.signal-status::before {content:none;}
+.signal-status--accepted {color:#8bc9ff !important;}
+.signal-pending-note {color:var(--muted);font-size:13px;line-height:1.6;}
+.signal-description,.signal-address {line-height:1.65;overflow-wrap:anywhere;}
+.signal-contacts {list-style:none;padding:0;margin:10px 0;display:grid;gap:8px;font-size:13px;overflow-wrap:anywhere;}
+.signal-contacts a {color:inherit;text-decoration:underline;text-underline-offset:3px;}
+.signal-photo {margin:12px 0;}
+.signal-photo img,.signal-popup .signal-photo img {width:100%;height:auto;max-height:230px;object-fit:contain;margin:0;border-radius:4px;}
+.signal-photo figcaption {font-size:11px;line-height:1.5;color:var(--muted);margin-top:8px;}
+.signal-popup-details {display:grid;gap:8px;font-size:13px;line-height:1.6;}
+.signal-popup .signal-address strong {display:inline;font-size:13px;}
+.signal-popup-details p {margin:0;}

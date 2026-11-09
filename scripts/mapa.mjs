@@ -37,8 +37,8 @@ export function publicSignals() {
   return signalsData.signals
     .filter((s) => PUBLIC_SIGNAL_STATUSES.includes(s.status))
     // campos publicos apenas: nada de "interno", coord_source etc.
-    .map(({ id, nome, nome_en, tipo, cidade, estado, estado_sigla, pais, pais_en, pais_codigo, latitude, longitude, coord_precision, status, data_confirmacao, foto, foto_local, foto_local_legenda, foto_local_legenda_en, endereco, contatos, descricao, descricao_en, link }) =>
-      ({ id, nome, nome_en: nome_en || nome, tipo, cidade, estado, estado_sigla, pais, pais_en, pais_codigo, latitude, longitude, coord_precision, status, data_confirmacao, foto, foto_local, foto_local_legenda, foto_local_legenda_en, endereco, contatos, descricao, descricao_en, link }));
+    .map(({ id, nome, nome_en, tipo, cidade, estado, estado_sigla, pais, pais_en, pais_codigo, latitude, longitude, coord_precision, status, data_confirmacao, foto, foto_legenda, foto_legenda_en, foto_local, foto_local_legenda, foto_local_legenda_en, endereco, contatos, descricao, descricao_en, link }) =>
+      ({ id, nome, nome_en: nome_en || nome, tipo, cidade, estado, estado_sigla, pais, pais_en, pais_codigo, latitude, longitude, coord_precision, status, data_confirmacao, foto, foto_legenda, foto_legenda_en, foto_local, foto_local_legenda, foto_local_legenda_en, endereco, contatos, descricao, descricao_en, link }));
 }
 
 export function writePublicSignals() {
@@ -61,17 +61,18 @@ const T = {
     path: "/mapa-dos-sinais/",
     lang: "pt",
     kicker: "Mapa dos Sinais",
-    h1: "Ajude o sinal a chegar à sua cidade.",
-    lead1: "SINAL/RUÍDO começou como uma história sobre um sinal impossível.",
-    lead2: "Agora o sinal está atravessando o mundo real.",
-    lead3: "Baixe um dos cartazes, coloque-o em um espaço da sua cidade e envie uma foto. Cada local confirmado passa a fazer parte do Mapa dos Sinais.",
+    h1: "O sinal está chegando.",
+    lead1: "Uma história nasceu de um mistério no céu.",
+    lead2: "Agora, leitores e espaços culturais estão levando esse sinal para diferentes lugares do mundo.",
+    lead3: "Cada ponto no mapa é um cartaz confirmado com foto.",
     cta1: "Leve o sinal para sua cidade",
-    cta2: "Ver o mapa",
+    cta2: "Explorar o mapa",
     tagline: "Um sinal começou no Brasil. Agora ele pode aparecer em qualquer lugar do mundo.",
     statsLabel: "Números do mapa",
-    statNames: ["Locais acompanhados", "Cidades", "Países"],
+    statNames: ["Sinais confirmados", "Cidades", "Países"],
     mapH: "Por onde o sinal está chegando",
-    mapLabel: "Mapa-múndi com locais confirmados e em negociação",
+    regionsLabel: "Regiões do mapa", searchPh: "Buscar cidade, país ou local", storiesH: "Histórias dos sinais", storyMore: "Conhecer essa história →", partH: "O próximo sinal pode aparecer na sua cidade.", partSteps: [["1", "Escolha um cartaz.", "Baixe a versão que preferir."], ["2", "Escolha um lugar.", "Pode ser uma biblioteca, livraria, café, escola ou espaço cultural. Peça autorização ao responsável."], ["3", "Envie uma foto.", "Conte onde o cartaz foi colocado e informe quais dados podemos publicar."]], partAfter: "Depois de conferir as informações, adicionamos o local ao mapa.", partCta: "Quero participar", partPosters: "Ver os cartazes", bookK: "O romance", bookH: "Tudo começou com uma história.", bookP: "Em 1977, um sinal foi registrado por 72 segundos. Décadas depois, uma investigação encontra nele um padrão que não consegue explicar.", bookP2: "Conheça o romance que deu origem ao Mapa dos Sinais.", bookCta: "Ler os primeiros capítulos", bookUrl: "/livro/amostra/", bookCover: "/livro/capa.jpg", bookAlt: "Capa de SINAL/RUÍDO", closeH: "O próximo ponto ainda não apareceu.", closeP: "Talvez ele esteja esperando na sua cidade.", closeCta: "Leve o sinal adiante",
+    mapLabel: "Mapa-múndi com os locais confirmados, aceitos e em negociação",
     mapHint: "Arraste para mover, use os botões + e − para ampliar. Passe o mouse, toque ou pressione Enter em um marcador para ver o local.",
     mapNoJs: "O mapa precisa de JavaScript para ser exibido.",
     photoAlt: "Cartaz exposto em",
@@ -124,17 +125,18 @@ const T = {
     path: "/en/world-map-of-signals/",
     lang: "en",
     kicker: "World Map of Signals",
-    h1: "Help the signal reach your city.",
-    lead1: "SIGNAL/NOISE began as a story about an impossible signal.",
-    lead2: "Now the signal is crossing the real world.",
-    lead3: "Download one of the official posters, place it in a space in your city, and send us a photo. Every confirmed location can become part of the World Map of Signals.",
+    h1: "The signal is arriving.",
+    lead1: "A story was born from a mystery in the sky.",
+    lead2: "Now readers and cultural spaces are carrying that signal to different places around the world.",
+    lead3: "Every point on the map is a poster confirmed with a photo.",
     cta1: "Bring the signal to your city",
     cta2: "Explore the map",
     tagline: "A signal began in Brazil. Now it can appear anywhere in the world.",
     statsLabel: "Map numbers",
-    statNames: ["Locations tracked", "Cities", "Countries"],
+    statNames: ["Confirmed signals", "Cities", "Countries"],
     mapH: "Where the signal is reaching",
-    mapLabel: "World map of confirmed locations and negotiations",
+    regionsLabel: "Map regions", searchPh: "Search city, country or venue", storiesH: "Stories of the signals", storyMore: "Read this story →", partH: "The next signal could appear in your city.", partSteps: [["1", "Choose a poster.", "Download the version you prefer."], ["2", "Choose a place.", "A library, bookstore, café, school or cultural space. Ask the person in charge for permission."], ["3", "Send a photo.", "Tell us where the poster was placed and which details we may publish."]], partAfter: "After we check the information, we add the place to the map.", partCta: "I want to take part", partPosters: "See the posters", bookK: "The novel", bookH: "It all began with a story.", bookP: "In 1977, a signal was recorded for 72 seconds. Decades later, an investigation finds in it a pattern it cannot explain.", bookP2: "Meet the novel that gave rise to the World Map of Signals.", bookCta: "Read the first chapters", bookUrl: "/livro/sample/", bookCover: "/livro/capa-en.jpg", bookAlt: "Cover of SIGNAL/NOISE", closeH: "The next point has not appeared yet.", closeP: "Maybe it is waiting in your city.", closeCta: "Carry the signal forward",
+    mapLabel: "World map of confirmed, accepted and in-negotiation locations",
     mapHint: "Drag to move, use the + and − buttons to zoom. Hover, tap or press Enter on a marker to see the venue.",
     mapNoJs: "The map needs JavaScript to be displayed.",
     photoAlt: "Poster displayed at",
@@ -224,17 +226,14 @@ function chip(group, value, label, pressed) {
 
 
 function signalDirectory(t, list) {
-  const en = t.lang === 'en';
-  const categories = [{status:'confirmed',foto:'proof'}, {status:'accepted_waiting_photo'}, {status:'in_negotiation'}].map(s=>signalStatus(s,t.lang));
-  return `<p class="signal-directory__intro">${en ? '📸 Confirmed means we have a photo of the installed poster. 📡 Accepted means the venue has agreed to participate and installation or a photo is still pending. Venue images do not confirm installation.' : '📸 Confirmado significa que temos foto do cartaz instalado. 📡 Aceito significa que o espaço aceitou participar e ainda aguardamos instalação ou foto. Imagens dos espaços não confirmam a instalação.'}</p>
-    <ul class="signal-legend" aria-label="${en ? 'Location status legend' : 'Legenda dos status'}">${categories.map(({key,label})=>`<li class="signal-status signal-status--${key}">${escapeHtml(label)} · ${list.filter(s=>signalStatus(s,t.lang).key===key).length}</li>`).join('')}</ul>
-    <details class="signal-directory" open><summary>${en ? 'All locations and their status' : 'Todos os locais e seus status'} (${list.length})</summary>
-    <ul class="signal-directory__grid">${list.map(s=>{const status=signalStatus(s,t.lang);return `<li data-signal-card="${escapeHtml(s.id)}"><h3>${escapeHtml(en?s.nome_en:s.nome)}</h3><p>${escapeHtml([s.cidade,s.estado,en?s.pais_en:s.pais].filter(Boolean).join(' — '))}</p><p class="signal-status signal-status--${status.key}">${escapeHtml(status.label)}</p>${signalDetailsHtml(s,t.lang)}<button type="button" class="btn" data-signal-focus="${escapeHtml(s.id)}">${en?'View on map':'Ver no mapa'}</button></li>`;}).join('')}</ul></details>`;
+  return `<h2 class="signal-stories__h" style="margin-top:40px">${escapeHtml(t.storiesH)}</h2>
+    <ul class="signal-directory__grid">${list.map((s) => { const en = t.lang === "en"; return `<li data-signal-card="${escapeHtml(s.id)}"><h3>${escapeHtml(en ? s.nome_en : s.nome)}</h3><p>${escapeHtml([s.cidade, en ? s.pais_en : s.pais].filter(Boolean).join(" · "))}</p>${signalDetailsHtml(s, t.lang, true)}<button type="button" class="btn" data-signal-focus="${escapeHtml(s.id)}">${escapeHtml(t.storyMore)}</button></li>`; }).join("")}</ul>`;
 }
 
 export function mapaBody(lang) {
   const t = T[lang];
-  const list = publicSignals();
+  const all = publicSignals();
+  const list = all.filter((s) => s.status === "confirmed");
   const st = stats(list);
   const nums = [st.signals, st.cities, st.countries];
 
@@ -262,10 +261,21 @@ export function mapaBody(lang) {
     <section class="section" id="mapa">
       <div class="container">
         <div class="section-heading"><div><span class="kicker">${escapeHtml(t.kicker)}</span><h2>${escapeHtml(t.mapH)}</h2></div></div>
+        <div class="buy-chips" data-region-bar role="group" aria-label="${escapeHtml(t.regionsLabel)}" style="margin-bottom:10px"></div>
+        <div class="signal-search"><input type="search" data-signal-search list="signal-search-list" placeholder="${escapeHtml(t.searchPh)}" aria-label="${escapeHtml(t.searchPh)}" autocomplete="off" /><datalist id="signal-search-list"></datalist></div>
         <div class="signal-map" id="signal-map" data-signal-map data-src="/data/signals.public.json" data-lang="${lang}" data-confirmed="${escapeHtml(t.confirmedLabel)}" data-photo-alt="${escapeHtml(t.photoAlt)}" role="region" aria-label="${escapeHtml(t.mapLabel)}"></div>
         <noscript><p class="mono" style="margin-top:10px">${escapeHtml(t.mapNoJs)}</p></noscript>
         <p class="mono signal-map__hint">${escapeHtml(t.mapHint)} <span>${escapeHtml(t.mapAttr)}</span></p>
         ${signalDirectory(t, list)}
+      </div>
+    </section>
+
+    <section class="section section--divider" id="participar">
+      <div class="container--medium">
+        <h2>${escapeHtml(t.partH)}</h2>
+        <ol class="mapa-steps">${t.partSteps.map(([n, h, p]) => `<li class="mapa-step"><span class="mapa-step__n mono">${n}</span><h3>${escapeHtml(h)}</h3><p>${escapeHtml(p)}</p></li>`).join("")}</ol>
+        <p class="mapa-steps__after">${escapeHtml(t.partAfter)}</p>
+        <div class="home-hero-book__actions"><a class="btn btn--primary" href="#envie">${escapeHtml(t.partCta)}</a><a class="btn" href="${t.choosePath}">${escapeHtml(t.partPosters)}</a></div>
       </div>
     </section>
 
@@ -276,6 +286,17 @@ export function mapaBody(lang) {
         <p style="margin-top:10px;color:var(--muted);max-width:66ch">${escapeHtml(t.sendLead)}</p>
         ${signalForm(t)}
       </div>
+    </section>
+
+    <section class="section section--divider" id="o-romance">
+      <div class="container--medium" style="display:flex;gap:28px;flex-wrap:wrap;align-items:center">
+        <a href="${t.bookUrl}" style="flex:0 0 180px"><img src="${t.bookCover}" alt="${escapeHtml(t.bookAlt)}" width="180" height="270" loading="lazy" decoding="async" style="width:180px;height:auto" /></a>
+        <div style="flex:1 1 280px"><span class="kicker">${escapeHtml(t.bookK)}</span><h2 style="margin-top:10px">${escapeHtml(t.bookH)}</h2><p style="margin-top:10px">${escapeHtml(t.bookP)}</p><p style="margin-top:10px;color:var(--muted)">${escapeHtml(t.bookP2)}</p><p style="margin-top:16px"><a class="btn btn--primary" href="${t.bookUrl}">${escapeHtml(t.bookCta)}</a></p></div>
+      </div>
+    </section>
+
+    <section class="section section--divider" id="fechamento" style="text-align:center">
+      <div class="container--medium"><h2>${escapeHtml(t.closeH)}</h2><p style="margin-top:10px;color:var(--muted)">${escapeHtml(t.closeP)}</p><p style="margin-top:18px"><a class="btn btn--primary" href="#participar">${escapeHtml(t.closeCta)}</a></p></div>
     </section>`;
 }
 

@@ -516,6 +516,45 @@
           "url": "https://www.joia.rs.gov.br/"
         }
       ]
+    },
+    {
+      "id": "gb-bournemouth-camden",
+      "nome": "The Platform Poetry Open Mic",
+      "nome_en": "The Platform Poetry Open Mic",
+      "tipo": "cultural",
+      "cidade": "Bournemouth",
+      "estado": "Inglaterra",
+      "estado_sigla": null,
+      "pais": "Reino Unido",
+      "pais_en": "United Kingdom",
+      "pais_codigo": "GB",
+      "latitude": 50.7222479,
+      "longitude": -1.9043126,
+      "coord_precision": "exact",
+      "coord_source": "OpenStreetMap/Nominatim: Camden, 46 Seamoor Road, Westbourne, BH4 9AS. Endereço fornecido pelo autor. Foto publicada com autorização das pessoas retratadas (informado pelo autor).",
+      "status": "confirmed",
+      "data_confirmacao": null,
+      "foto": "/sinais/gb-bournemouth-camden.jpg",
+      "descricao": "Uma comunidade de poesia recebeu o sinal em seu espaço de encontros: o Camden, em Westbourne, onde acontece The Platform, o mais antigo evento de microfone aberto de poesia de Bournemouth, apresentado por Abby G Poetree. Ao lado dela, o Sr. Blandford Cavern também faz parte dessa história.",
+      "descricao_en": "A poetry community received the signal in its meeting place: the Camden, in Westbourne, home to The Platform, Bournemouth's longest-running poetry open mic, hosted by Abby G Poetree. Alongside her is Mr. Blandford Cavern, who is also part of this story.",
+      "link": "https://www.abbygpoetree.com/",
+      "endereco": "46 Seamoor Rd, Westbourne, Bournemouth BH4 9AS, Reino Unido",
+      "contatos": [
+        {
+          "tipo": "website",
+          "nome": "Abby G Poetree",
+          "nome_en": "Abby G Poetree",
+          "url": "https://www.abbygpoetree.com/"
+        },
+        {
+          "tipo": "facebook",
+          "nome": "The Platform",
+          "nome_en": "The Platform",
+          "url": "https://www.facebook.com/theplatform.poolehillbrewery"
+        }
+      ],
+      "foto_legenda": "Abby G Poetree e Sr. Blandford Cavern com o cartaz, no Camden.",
+      "foto_legenda_en": "Abby G Poetree and Mr. Blandford Cavern with the poster at the Camden."
     }
   ]
 }

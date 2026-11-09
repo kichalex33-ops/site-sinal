@@ -7,7 +7,7 @@ const NAV = [
     ],
   },
   {
-    href: "/#livros", label: "Livros", match: ["/livros/", "/livro/"],
+    href: "/#cronicas", label: "Livros", match: ["/livros/", "/livro/"],
     children: [
       { href: "/livros/sinal-ruido/", label: "SINAL/RUÍDO — Origem" },
       { href: "/#cronicas", label: "Crônicas Cosmológicas I–X" },

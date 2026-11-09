@@ -64,10 +64,10 @@
     <section class="mapa-hero grid-texture">
       <div class="container--medium mapa-hero__inner">
         <span class="kicker">World Map of Signals</span>
-        <h1 class="mapa-hero__title">Help the signal reach your city.</h1>
+        <h1 class="mapa-hero__title">The signal is arriving.</h1>
         <p class="mapa-hero__tagline">A signal began in Brazil. Now it can appear anywhere in the world.</p>
-        <p class="mapa-hero__lead">SIGNAL/NOISE began as a story about an impossible signal.<br />Now the signal is crossing the real world.</p>
-        <p class="mapa-hero__lead mapa-hero__lead--muted">Download one of the official posters, place it in a space in your city, and send us a photo. Every confirmed location can become part of the World Map of Signals.</p>
+        <p class="mapa-hero__lead">A story was born from a mystery in the sky.<br />Now readers and cultural spaces are carrying that signal to different places around the world.</p>
+        <p class="mapa-hero__lead mapa-hero__lead--muted">Every point on the map is a poster confirmed with a photo.</p>
         <div class="home-hero-book__actions">
           <a class="btn btn--primary" href="/en/world-map-of-signals/choose-your-signal/">Bring the signal to your city</a>
           <a class="btn" href="#mapa">Explore the map</a>
@@ -77,116 +77,47 @@
 
     <section class="mapa-stats" aria-label="Map numbers" data-signal-stats>
       <dl class="container--medium mapa-stats__grid">
-        <div><dt class="mono">Locations tracked</dt><dd class="mapa-stats__num" data-stat="signals">16</dd></div><div><dt class="mono">Cities</dt><dd class="mapa-stats__num" data-stat="cities">15</dd></div><div><dt class="mono">Countries</dt><dd class="mapa-stats__num" data-stat="countries">4</dd></div>
+        <div><dt class="mono">Confirmed signals</dt><dd class="mapa-stats__num" data-stat="signals">3</dd></div><div><dt class="mono">Cities</dt><dd class="mapa-stats__num" data-stat="cities">3</dd></div><div><dt class="mono">Countries</dt><dd class="mapa-stats__num" data-stat="countries">2</dd></div>
       </dl>
     </section>
 
     <section class="section" id="mapa">
       <div class="container">
         <div class="section-heading"><div><span class="kicker">World Map of Signals</span><h2>Where the signal is reaching</h2></div></div>
-        <div class="signal-map" id="signal-map" data-signal-map data-src="/data/signals.public.json" data-lang="en" data-confirmed="Confirmed signal" data-photo-alt="Poster displayed at" role="region" aria-label="World map of confirmed locations and negotiations"></div>
+        <div class="buy-chips" data-region-bar role="group" aria-label="Map regions" style="margin-bottom:10px"></div>
+        <div class="signal-search"><input type="search" data-signal-search list="signal-search-list" placeholder="Search city, country or venue" aria-label="Search city, country or venue" autocomplete="off" /><datalist id="signal-search-list"></datalist></div>
+        <div class="signal-map" id="signal-map" data-signal-map data-src="/data/signals.public.json" data-lang="en" data-confirmed="Confirmed signal" data-photo-alt="Poster displayed at" role="region" aria-label="World map of confirmed, accepted and in-negotiation locations"></div>
         <noscript><p class="mono" style="margin-top:10px">The map needs JavaScript to be displayed.</p></noscript>
         <p class="mono signal-map__hint">Drag to move, use the + and − buttons to zoom. Hover, tap or press Enter on a marker to see the venue. <span>Map: © OpenStreetMap contributors</span></p>
-        <p class="signal-directory__intro">📸 Confirmed means we have a photo of the installed poster. 📡 Accepted means the venue has agreed to participate and installation or a photo is still pending. Venue images do not confirm installation.</p>
-    <ul class="signal-legend" aria-label="Location status legend"><li class="signal-status signal-status--photo">📸 Signal confirmed · 2</li><li class="signal-status signal-status--accepted">📡 Signal accepted · 7</li><li class="signal-status signal-status--negotiation">🟡 In negotiation · 7</li></ul>
-    <details class="signal-directory" open><summary>All locations and their status (16)</summary>
-    <ul class="signal-directory__grid"><li data-signal-card="br-eldorado-do-sul-biblioteca"><h3>Eldorado do Sul Municipal Public Library</h3><p>Eldorado do Sul — Rio Grande do Sul — Brazil</p><p class="signal-status signal-status--photo">📸 Signal confirmed</p>
-    
+        <h2 class="signal-stories__h" style="margin-top:40px">Stories of the signals</h2>
+    <ul class="signal-directory__grid"><li data-signal-card="br-eldorado-do-sul-biblioteca"><h3>Eldorado do Sul Municipal Public Library</h3><p>Eldorado do Sul · Brazil</p>
+    <figure class="signal-photo"><a href="/sinais/eldorado-espaco.jpg" target="_blank" rel="noopener" aria-label="Open photo: Venue reference image — Eldorado do Sul Municipal Public Library"><img src="/sinais/eldorado-espaco.jpg" alt="Venue reference image — Eldorado do Sul Municipal Public Library" loading="lazy" decoding="async"></a><figcaption>Venue reference image — Eldorado do Sul Municipal Public Library</figcaption></figure><figure class="signal-photo signal-photo--proof"><a href="/sinais/br-eldorado-do-sul-biblioteca.jpg" target="_blank" rel="noopener" aria-label="Open photo: Installed poster — Eldorado do Sul Municipal Public Library"><img src="/sinais/br-eldorado-do-sul-biblioteca.jpg" alt="Installed poster — Eldorado do Sul Municipal Public Library" loading="lazy" decoding="async"></a><figcaption>Installed poster — Eldorado do Sul Municipal Public Library</figcaption></figure>
     <p class="signal-description">A municipal public library and a space for reading and access to culture for the Eldorado do Sul community.</p>
-    <p class="signal-address"><strong>Address:</strong> Rua Argentina, 19, Centro, Eldorado do Sul/RS, Brasil</p>
+    <p class="signal-address"><strong>Address:</strong> Rua Argentina, 19, Centro, Eldorado do Sul/RS, Brazil</p>
     
     <ul class="signal-contacts"><li><a href="https://www.eldorado.rs.gov.br/" target="_blank" rel="noopener noreferrer">Website: Eldorado do Sul City Hall</a></li><li><a href="https://www.instagram.com/bibliotecaeldoradodosul/" target="_blank" rel="noopener noreferrer">Instagram: @bibliotecaeldoradodosul</a></li><li>Facebook: Biblioteca Pública de Eldorado do Sul</li></ul>
-    <figure class="signal-photo"><a href="/sinais/eldorado-espaco.jpg" target="_blank" rel="noopener" aria-label="Open photo: Venue reference image — Eldorado do Sul Municipal Public Library"><img src="/sinais/eldorado-espaco.jpg" alt="Venue reference image — Eldorado do Sul Municipal Public Library" loading="lazy" decoding="async"></a><figcaption>Venue reference image — Eldorado do Sul Municipal Public Library</figcaption></figure><figure class="signal-photo signal-photo--proof"><a href="/sinais/br-eldorado-do-sul-biblioteca.jpg" target="_blank" rel="noopener" aria-label="Open photo: Installed poster — Eldorado do Sul Municipal Public Library"><img src="/sinais/br-eldorado-do-sul-biblioteca.jpg" alt="Installed poster — Eldorado do Sul Municipal Public Library" loading="lazy" decoding="async"></a><figcaption>Installed poster — Eldorado do Sul Municipal Public Library</figcaption></figure><button type="button" class="btn" data-signal-focus="br-eldorado-do-sul-biblioteca">View on map</button></li><li data-signal-card="br-santa-maria-ufsm-ru"><h3>UFSM University Restaurant</h3><p>Santa Maria — Rio Grande do Sul — Brazil</p><p class="signal-status signal-status--photo">📸 Signal confirmed</p>
-    
+    <button type="button" class="btn" data-signal-focus="br-eldorado-do-sul-biblioteca">Read this story →</button></li><li data-signal-card="br-santa-maria-ufsm-ru"><h3>UFSM University Restaurant</h3><p>Santa Maria · Brazil</p>
+    <figure class="signal-photo"><a href="/sinais/ufsm-espaco.jpg" target="_blank" rel="noopener" aria-label="Open photo: UFSM — reference image supplied by the author."><img src="/sinais/ufsm-espaco.jpg" alt="UFSM — reference image supplied by the author." loading="lazy" decoding="async"></a><figcaption>UFSM — reference image supplied by the author.</figcaption></figure><figure class="signal-photo signal-photo--proof"><a href="/sinais/br-santa-maria-ufsm-ru.jpg" target="_blank" rel="noopener" aria-label="Open photo: Installed poster — UFSM University Restaurant"><img src="/sinais/br-santa-maria-ufsm-ru.jpg" alt="Installed poster — UFSM University Restaurant" loading="lazy" decoding="async"></a><figcaption>Installed poster — UFSM University Restaurant</figcaption></figure>
     <p class="signal-description">A university space at the Federal University of Santa Maria, used daily by students and the academic community.</p>
-    <p class="signal-address"><strong>Address:</strong> Campus da UFSM, Av. Roraima, 1000, Camobi, Santa Maria/RS, Brasil</p>
+    <p class="signal-address"><strong>Address:</strong> Campus da UFSM, Av. Roraima, 1000, Camobi, Santa Maria/RS, Brazil</p>
     
     <ul class="signal-contacts"><li><a href="https://www.ufsm.br/orgaos-suplementares/ru" target="_blank" rel="noopener noreferrer">Website: Federal University of Santa Maria / University Restaurant</a></li><li><a href="https://www.instagram.com/ru.ufsm.sm/" target="_blank" rel="noopener noreferrer">Instagram: @ru.ufsm.sm</a></li><li>Facebook: UFSM RU</li></ul>
-    <figure class="signal-photo"><a href="/sinais/ufsm-espaco.jpg" target="_blank" rel="noopener" aria-label="Open photo: UFSM — reference image supplied by the author."><img src="/sinais/ufsm-espaco.jpg" alt="UFSM — reference image supplied by the author." loading="lazy" decoding="async"></a><figcaption>UFSM — reference image supplied by the author.</figcaption></figure><figure class="signal-photo signal-photo--proof"><a href="/sinais/br-santa-maria-ufsm-ru.jpg" target="_blank" rel="noopener" aria-label="Open photo: Installed poster — UFSM University Restaurant"><img src="/sinais/br-santa-maria-ufsm-ru.jpg" alt="Installed poster — UFSM University Restaurant" loading="lazy" decoding="async"></a><figcaption>Installed poster — UFSM University Restaurant</figcaption></figure><button type="button" class="btn" data-signal-focus="br-santa-maria-ufsm-ru">View on map</button></li><li data-signal-card="br-sao-jose-do-sul-posto-saude"><h3>São José do Sul Health Centre</h3><p>São José do Sul — Rio Grande do Sul — Brazil</p><p class="signal-status signal-status--accepted">📡 Signal accepted</p><p class="signal-pending-note">Participation accepted; awaiting a photo of the installed poster.</p>
+    <button type="button" class="btn" data-signal-focus="br-santa-maria-ufsm-ru">Read this story →</button></li><li data-signal-card="gb-bournemouth-camden"><h3>The Platform Poetry Open Mic</h3><p>Bournemouth · United Kingdom</p>
+    <figure class="signal-photo signal-photo--proof"><a href="/sinais/gb-bournemouth-camden.jpg" target="_blank" rel="noopener" aria-label="Open photo: Abby G Poetree and Mr. Blandford Cavern with the poster at the Camden."><img src="/sinais/gb-bournemouth-camden.jpg" alt="Abby G Poetree and Mr. Blandford Cavern with the poster at the Camden." loading="lazy" decoding="async"></a><figcaption>Abby G Poetree and Mr. Blandford Cavern with the poster at the Camden.</figcaption></figure>
+    <p class="signal-description">A poetry community received the signal in its meeting place: the Camden, in Westbourne, home to The Platform, Bournemouth&#39;s longest-running poetry open mic, hosted by Abby G Poetree. Alongside her is Mr. Blandford Cavern, who is also part of this story.</p>
+    <p class="signal-address"><strong>Address:</strong> 46 Seamoor Rd, Westbourne, Bournemouth BH4 9AS, United Kingdom</p>
     
-    
-    
-    
-    
-    <button type="button" class="btn" data-signal-focus="br-sao-jose-do-sul-posto-saude">View on map</button></li><li data-signal-card="nz-christchurch-city-libraries"><h3>Christchurch City Libraries / Ngā Kete Wānanga o Ōtautahi</h3><p>Christchurch — Canterbury — New Zealand</p><p class="signal-status signal-status--accepted">📡 Signal accepted</p><p class="signal-pending-note">Participation accepted; awaiting installation and a photo of the poster.</p>
-    
-    <p class="signal-description">Christchurch’s public library network, with branches throughout the city and spaces for reading, culture, learning and community.</p>
-    <p class="signal-address"><strong>Address:</strong> Christchurch, Canterbury, New Zealand</p>
-    <small>Approximate city location.</small>
-    <ul class="signal-contacts"><li><a href="https://my.christchurchcitylibraries.com/" target="_blank" rel="noopener noreferrer">Website: Christchurch City Libraries</a></li><li><a href="https://www.instagram.com/christchurchlib/" target="_blank" rel="noopener noreferrer">Instagram: @christchurchlib</a></li><li>Facebook: Christchurch City Libraries</li><li>YouTube: Christchurch City Libraries NZ</li></ul>
-    <figure class="signal-photo"><a href="/sinais/christchurch-turanga.jpg" target="_blank" rel="noopener" aria-label="Open photo: Tūranga — one of the network’s branches. Venue image; poster installation has not been confirmed."><img src="/sinais/christchurch-turanga.jpg" alt="Tūranga — one of the network’s branches. Venue image; poster installation has not been confirmed." loading="lazy" decoding="async"></a><figcaption>Tūranga — one of the network’s branches. Venue image; poster installation has not been confirmed.</figcaption></figure><button type="button" class="btn" data-signal-focus="nz-christchurch-city-libraries">View on map</button></li><li data-signal-card="us-seattle-fishbowl"><h3>The Fishbowl Open Mic / Art Gallery</h3><p>Seattle — Washington — United States</p><p class="signal-status signal-status--accepted">📡 Signal accepted</p><p class="signal-pending-note">Participation accepted; awaiting a photo of the installed poster.</p>
-    
-    <p class="signal-description">A space for performances, art, music, poetry and Seattle’s creative community.</p>
-    <p class="signal-address"><strong>Address:</strong> 424 2nd Ave W, Seattle, WA 98119, USA</p>
-    
-    <ul class="signal-contacts"><li><a href="https://www.thefishbowlseattle.com/" target="_blank" rel="noopener noreferrer">Website: The Fishbowl</a></li><li><a href="https://www.instagram.com/thefishbowlseattle/" target="_blank" rel="noopener noreferrer">Instagram: @thefishbowlseattle</a></li></ul>
-    <button type="button" class="btn" data-signal-focus="us-seattle-fishbowl">View on map</button></li><li data-signal-card="br-sao-paulo-ccj"><h3>Ruth Cardoso Youth Cultural Centre, CCJ</h3><p>São Paulo — São Paulo — Brazil</p><p class="signal-status signal-status--accepted">📡 Signal accepted</p><p class="signal-pending-note">Participation accepted; awaiting a photo of the installed poster.</p>
-    
-    <p class="signal-description">A public cultural centre for young people, with music, literature, arts, education and cultural activities.</p>
-    <p class="signal-address"><strong>Address:</strong> Av. Deputado Emílio Carlos, 3641, Vila Nova Cachoeirinha, São Paulo/SP, Brasil</p>
-    
-    <ul class="signal-contacts"><li><a href="https://ccj.prefeitura.sp.gov.br/" target="_blank" rel="noopener noreferrer">Website: Youth Cultural Centre</a></li><li><a href="https://www.instagram.com/ccjuventude/" target="_blank" rel="noopener noreferrer">Instagram: @ccjuventude</a></li><li>Facebook: CCJuventude</li></ul>
-    <button type="button" class="btn" data-signal-focus="br-sao-paulo-ccj">View on map</button></li><li data-signal-card="br-curitiba-gibiteca"><h3>Curitiba Comic Book Library</h3><p>Curitiba — Paraná — Brazil</p><p class="signal-status signal-status--accepted">📡 Signal accepted</p><p class="signal-pending-note">Participation accepted; awaiting a photo of the installed poster.</p>
-    
-    <p class="signal-description">A cultural space specialising in comics, illustration, graphic storytelling and arts education, linked to the Curitiba Cultural Foundation.</p>
-    <p class="signal-address"><strong>Address:</strong> Rua São Francisco, 326, Largo da Ordem, Curitiba/PR, Brasil</p>
-    <small>Approximate street location.</small>
-    <ul class="signal-contacts"><li><a href="https://locais.curitiba.pr.gov.br/gibiteca-de-curitiba/500" target="_blank" rel="noopener noreferrer">Website: Curitiba Cultural Foundation / Comic Book Library</a></li><li><a href="https://www.instagram.com/gibitecadecuritiba/" target="_blank" rel="noopener noreferrer">Instagram: @gibitecadecuritiba</a></li><li>Facebook: Gibiteca de Curitiba</li></ul>
-    <figure class="signal-photo"><a href="/sinais/gibiteca-espaco.webp" target="_blank" rel="noopener" aria-label="Open photo: Curitiba Comic Book Library — reference image supplied by the author."><img src="/sinais/gibiteca-espaco.webp" alt="Curitiba Comic Book Library — reference image supplied by the author." loading="lazy" decoding="async"></a><figcaption>Curitiba Comic Book Library — reference image supplied by the author.</figcaption></figure><button type="button" class="btn" data-signal-focus="br-curitiba-gibiteca">View on map</button></li><li data-signal-card="br-londrina-bibliotecas"><h3>Londrina Library Directorate</h3><p>Londrina — Paraná — Brazil</p><p class="signal-status signal-status--negotiation">🟡 In negotiation</p>
-    
-    
-    
-    <small>Approximate city location.</small>
-    
-    <button type="button" class="btn" data-signal-focus="br-londrina-bibliotecas">View on map</button></li><li data-signal-card="br-sao-leopoldo-vianna-moog"><h3>Vianna Moog Municipal Public Library</h3><p>São Leopoldo — Rio Grande do Sul — Brazil</p><p class="signal-status signal-status--negotiation">🟡 In negotiation</p>
-    
-    
-    
-    <small>Approximate city location.</small>
-    
-    <button type="button" class="btn" data-signal-focus="br-sao-leopoldo-vianna-moog">View on map</button></li><li data-signal-card="br-canela-cultura-biblioteca"><h3>Canela Culture Department / Library</h3><p>Canela — Rio Grande do Sul — Brazil</p><p class="signal-status signal-status--negotiation">🟡 In negotiation</p>
-    
-    
-    
-    <small>Approximate city location.</small>
-    
-    <button type="button" class="btn" data-signal-focus="br-canela-cultura-biblioteca">View on map</button></li><li data-signal-card="br-varginha-cultura"><h3>Varginha City Hall / Culture Department</h3><p>Varginha — Minas Gerais — Brazil</p><p class="signal-status signal-status--negotiation">🟡 In negotiation</p>
-    
-    
-    
-    <small>Approximate city location.</small>
-    
-    <button type="button" class="btn" data-signal-focus="br-varginha-cultura">View on map</button></li><li data-signal-card="br-lages-biblioteca-cultura"><h3>Lages Library / Cultural Foundation</h3><p>Lages — Santa Catarina — Brazil</p><p class="signal-status signal-status--negotiation">🟡 In negotiation</p>
-    
-    
-    
-    <small>Approximate city location.</small>
-    
-    <button type="button" class="btn" data-signal-focus="br-lages-biblioteca-cultura">View on map</button></li><li data-signal-card="br-brasilia-biblioteca-nacional"><h3>National Library of Brasília</h3><p>Brasília — Distrito Federal — Brazil</p><p class="signal-status signal-status--negotiation">🟡 In negotiation</p>
-    
-    
-    
-    <small>Approximate city location.</small>
-    
-    <button type="button" class="btn" data-signal-focus="br-brasilia-biblioteca-nacional">View on map</button></li><li data-signal-card="br-brasilia-paulo-bertran"><h3>Paulo Bertran Library, Federal District Legislative Chamber</h3><p>Brasília — Distrito Federal — Brazil</p><p class="signal-status signal-status--negotiation">🟡 In negotiation</p>
-    
-    
-    
-    <small>Approximate city location.</small>
-    
-    <button type="button" class="btn" data-signal-focus="br-brasilia-paulo-bertran">View on map</button></li><li data-signal-card="au-sydney-sappho-books"><h3>Sappho Books, Cafe &amp; Bar</h3><p>Sydney — New South Wales — Australia</p><p class="signal-status signal-status--accepted">📡 Signal accepted</p><p class="signal-pending-note">Participation accepted; awaiting a photo of the installed poster.</p>
-    
-    <p class="signal-description">Among books, coffee, music and poetry, Sappho Books, Cafe &amp; Bar made room for SIGNAL/NOISE and confirmed its place on the World Map of Signals.</p>
-    <p class="signal-address"><strong>Address:</strong> 51 Glebe Point Rd, Glebe NSW 2037, Australia</p>
-    
-    <ul class="signal-contacts"><li><a href="https://www.sapphobooks.com.au/" target="_blank" rel="noopener noreferrer">Website: Sappho Books</a></li><li><a href="https://www.instagram.com/sapphobooks/" target="_blank" rel="noopener noreferrer">Instagram: @sapphobooks</a></li><li><a href="https://www.facebook.com/Sapphobooks" target="_blank" rel="noopener noreferrer">Facebook: Sapphobooks</a></li></ul>
-    <button type="button" class="btn" data-signal-focus="au-sydney-sappho-books">View on map</button></li><li data-signal-card="br-joia-biblioteca-municipal"><h3>Jóia Municipal Public Library</h3><p>Jóia — Rio Grande do Sul — Brazil</p><p class="signal-status signal-status--accepted">📡 Signal accepted</p><p class="signal-pending-note">Participation accepted; awaiting installation and a photo of the poster.</p>
-    
-    <p class="signal-description">The Jóia Municipal Public Library confirmed its participation through the Municipal Department of Culture and will receive the SIGNAL/NOISE material to print and display.</p>
-    
-    <small>Approximate city location.</small>
-    <ul class="signal-contacts"><li><a href="https://www.joia.rs.gov.br/" target="_blank" rel="noopener noreferrer">Website: Jóia City Hall</a></li></ul>
-    <button type="button" class="btn" data-signal-focus="br-joia-biblioteca-municipal">View on map</button></li></ul></details>
+    <ul class="signal-contacts"><li><a href="https://www.abbygpoetree.com/" target="_blank" rel="noopener noreferrer">Website: Abby G Poetree</a></li><li><a href="https://www.facebook.com/theplatform.poolehillbrewery" target="_blank" rel="noopener noreferrer">Facebook: The Platform</a></li></ul>
+    <button type="button" class="btn" data-signal-focus="gb-bournemouth-camden">Read this story →</button></li></ul>
+      </div>
+    </section>
+
+    <section class="section section--divider" id="participar">
+      <div class="container--medium">
+        <h2>The next signal could appear in your city.</h2>
+        <ol class="mapa-steps"><li class="mapa-step"><span class="mapa-step__n mono">1</span><h3>Choose a poster.</h3><p>Download the version you prefer.</p></li><li class="mapa-step"><span class="mapa-step__n mono">2</span><h3>Choose a place.</h3><p>A library, bookstore, café, school or cultural space. Ask the person in charge for permission.</p></li><li class="mapa-step"><span class="mapa-step__n mono">3</span><h3>Send a photo.</h3><p>Tell us where the poster was placed and which details we may publish.</p></li></ol>
+        <p class="mapa-steps__after">After we check the information, we add the place to the map.</p>
+        <div class="home-hero-book__actions"><a class="btn btn--primary" href="#envie">I want to take part</a><a class="btn" href="/en/world-map-of-signals/choose-your-signal/">See the posters</a></div>
       </div>
     </section>
 
@@ -226,6 +157,17 @@
       </div>
     </form>
       </div>
+    </section>
+
+    <section class="section section--divider" id="o-romance">
+      <div class="container--medium" style="display:flex;gap:28px;flex-wrap:wrap;align-items:center">
+        <a href="/livro/sample/" style="flex:0 0 180px"><img src="/livro/capa-en.jpg" alt="Cover of SIGNAL/NOISE" width="180" height="270" loading="lazy" decoding="async" style="width:180px;height:auto" /></a>
+        <div style="flex:1 1 280px"><span class="kicker">The novel</span><h2 style="margin-top:10px">It all began with a story.</h2><p style="margin-top:10px">In 1977, a signal was recorded for 72 seconds. Decades later, an investigation finds in it a pattern it cannot explain.</p><p style="margin-top:10px;color:var(--muted)">Meet the novel that gave rise to the World Map of Signals.</p><p style="margin-top:16px"><a class="btn btn--primary" href="/livro/sample/">Read the first chapters</a></p></div>
+      </div>
+    </section>
+
+    <section class="section section--divider" id="fechamento" style="text-align:center">
+      <div class="container--medium"><h2>The next point has not appeared yet.</h2><p style="margin-top:10px;color:var(--muted)">Maybe it is waiting in your city.</p><p style="margin-top:18px"><a class="btn btn--primary" href="#participar">Carry the signal forward</a></p></div>
     </section></main>
 
   <footer class="site-footer">
